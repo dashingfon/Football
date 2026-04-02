@@ -46,5 +46,9 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
+def update_Football_spot():
+    ...
+    
+
 if __name__ == "__main__":
     calculate()
