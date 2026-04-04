@@ -6,7 +6,31 @@
 @source "../../matches.html";
 @source "../../profile.html";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+@theme {
+  --color-bg: white;
+  --color-fg: black;
+  /* two bg levels in between */
+  /* --color-brand */
+  /* --color-success */
+  /* --color-failure */
+  /* --color-warning */
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  html[data-theme="dark"] {
+    --color-bg: #0f172a;
+    --color-fg: #e2e8f0;
+  }
+}
 
 html {
     scroll-behavior: smooth
