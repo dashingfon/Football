@@ -9,6 +9,7 @@ dependencies = []
 [dependency-groups]
 dev = [
     "poethepoet>=0.42.1",
+    "rich>=14.3.3",
 ]
 
 [tool.poe.tasks]
