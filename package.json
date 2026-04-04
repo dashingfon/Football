@@ -1,0 +1,21 @@
+{
+  "name": "fotclan",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./frontend/assets/index.css -o ./frontend/assets/output.css",
+    "build:css-prod": "npx @tailwindcss/cli -i ./frontend/assets/index.css -o ./frontend/assets/output.css --minify",
+    "build:css-watch": "npx @tailwindcss/cli -i ./frontend/assets/index.css -o ./frontend/assets/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "vite": "^7.0.0"
+  }
+}
