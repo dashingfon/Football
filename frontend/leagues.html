@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
 
-    {% block animation %}
+    <style>
+        @keyframes fade-up {
+            0% {
+            opacity: 0;
+            transform: translateY(40px)
+            }
 
-        <style>
-@keyframes fade-up {
-    0% {
-    opacity: 0;
-    transform: translateY(40px)
-    }
+            100% {
+            opacity: 1;
+            transform: translateY(0)
+            }
+        }
 
-    100% {
-    opacity: 1;
-    transform: translateY(0)
-    }
-}
-
-.fadeUp {
-    opacity: 0;
-    animation: fade-up 0.8s forwards
-}
+        .fadeUp {
+            opacity: 0;
+            animation: fade-up 0.8s forwards
+        }
     </style>
-    
-    {% endblock animation %}
 
-    {% block title %}
     <title>Trade Pro - Admin</title>
-    {% endblock title %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,12 +34,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter&display=swap"
         rel="stylesheet">
-    
-    {% block imports %}
+
     
     <script src="{{ url_for('dist', path='/htmx.min.js') }}" type="module" defer></script>
     <script src="{{ url_for('dist', path='/dashboard.js') }}" type="module" defer></script>
-    {% endblock imports %}
+
 
 </head>
 
@@ -472,6 +465,7 @@
     </main>
 
     <!-- Bottom Navigation (Mobile) -->
+
     <nav class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
     data-active="{{ view }}"
     >
