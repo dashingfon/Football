@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotclan | The Football Social Network</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <style>
+        :root {
+            --orange-500: #f97316;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-geist {
+            font-family: 'Geist Sans', sans-serif;
+        }
+        
+        /* Minimalist Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--orange-500);
+        }
+
+        /* Subtle glow effects */
+        .glow-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+        }
+        .glow-line {
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+        }
+
+        /* Animations */
+        .fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom Input Auto-fill fix for dark mode */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-box-shadow: 0 0 0 30px black inset !important;
+            -webkit-text-fill-color: white !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</head>
+<body class="bg-black text-neutral-300 selection:bg-orange-500/30 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-white/[0.05] bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-geist font-semibold text-lg tracking-tighter text-white group-hover:text-orange-500 transition-colors duration-300">fotclan</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#features" class="text-neutral-400 hover:text-white transition-colors">Features</a>
+                <a href="#network" class="text-neutral-400 hover:text-white transition-colors">Network</a>
+                <a href="#pro" class="text-neutral-400 hover:text-white transition-colors">Pro</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:block text-sm font-medium text-neutral-400 hover:text-white transition-colors">Log in</a>
+                <a href="#download" class="text-xs md:text-sm font-medium bg-white text-black px-4 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 tracking-wide">
+                    Get App
+                </a>
+                <button class="md:hidden text-neutral-400 hover:text-white flex items-center" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="20" height="20"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/[0.05] bg-black/95 backdrop-blur-xl">
+            <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+                <a href="#features" class="text-neutral-400 hover:text-white">Features</a>
+                <a href="#network" class="text-neutral-400 hover:text-white">Network</a>
+                <a href="#pro" class="text-neutral-400 hover:text-white">Pro</a>
+                <a href="#" class="text-neutral-400 hover:text-white pt-4 border-t border-white/[0.05]">Log in</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16">
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[800px] h-[800px] glow-bg opacity-70"></div>
+            </div>
+            
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+                
+                <div class="fade-up inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                    </span>
+                    <span class="text-xs font-medium tracking-wide text-neutral-300">Fotclan v2.0 is now live</span>
+                </div>
+
+                <h1 class="fade-up delay-100 font-geist font-semibold text-5xl md:text-7xl lg:text-8xl tracking-tight text-white leading-[1.05] mb-6">
+                    Your football life,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-orange-500">digitized.</span>
+                </h1>
+                
+                <p class="fade-up delay-200 max-w-2xl text-base md:text-lg text-neutral-400 font-light leading-relaxed mb-10">
+                    The ultimate social network built exclusively for footballers. Connect with local players, track your match stats, find squads, and elevate your game.
+                </p>
+
+                <div class="fade-up delay-300 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black hover:bg-orange-500 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 group">
+                        <iconify-icon icon="solar:apple-linear" width="18" height="18"></iconify-icon>
+                        Download for iOS
+                    </a>
+                    <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent text-white border border-white/10 hover:bg-white/5 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300">
+                        <iconify-icon icon="solar:smartphone-android-linear" width="18" height="18"></iconify-icon>
+                        Download for Android
+                    </a>
+                </div>
+
+                <!-- Abstract App Preview -->
+                <div class="fade-up delay-300 mt-20 w-full max-w-4xl relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                    <div class="rounded-t-2xl border border-white/10 border-b-0 bg-[#0a0a0a] overflow-hidden relative shadow-2xl shadow-orange-500/10 flex">
+                        <!-- Sidebar Mock -->
+                        <div class="w-1/4 hidden md:flex flex-col gap-4 p-6 border-r border-white/5">
+                            <div class="w-8 h-8 rounded-full bg-white/10 mb-4"></div>
+                            <div class="w-3/4 h-3 rounded-full bg-white/5"></div>
+                            <div class="w-1/2 h-3 rounded-full bg-white/5"></div>
+                            <div class="w-2/3 h-3 rounded-full bg-white/5"></div>
+                        </div>
+                        <!-- Main Content Mock -->
+                        <div class="flex-1 p-6 md:p-10 flex flex-col gap-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-1/3 h-6 rounded-md bg-white/10"></div>
+                                <div class="w-10 h-6 rounded-full bg-orange-500/20 border border-orange-500/50"></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="aspect-video rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/5 p-4 flex flex-col justify-end">
+                                    <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center mb-2 text-white">
+                                        <iconify-icon icon="solar:cup-star-linear" width="16"></iconify-icon>
+                                    </div>
+                                    <div class="w-1/2 h-2 rounded bg-white/20 mb-1"></div>
+                                    <div class="w-1/3 h-2 rounded bg-white/10"></div>
+                                </div>
+                                <div class="aspect-video rounded-xl bg-white/5 border border-white/5"></div>
+                            </div>
+                            <div class="h-32 rounded-xl border border-white/5 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="w-full h-px glow-line"></div>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-black relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-geist font-semibold text-3xl md:text-5xl tracking-tight text-white mb-4">Built for the pitch.</h2>
+                    <p class="text-neutral-400 text-sm md:text-base max-w-2xl mx-auto font-light">Everything you need to manage your football identity, find games, and connect with players around you.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="group p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 flex flex-col h-full">
+                        <div class="w-10 h-10 rounded-full border border-white/10 bg-black flex items-center justify-center text-white mb-6 group-hover:border-orange-500/50 group-hover:text-orange-500 transition-colors">
+                            <iconify-icon icon="solar:user-id-linear" width="20" height="20"></iconify-icon>
+                        </div>
+                        <h3 class="font-geist font-medium text-xl tracking-tight text-white mb-3">Player Identity</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed flex-grow">Create your professional-looking digital card. Log your positions, dominant foot, play style, and match history.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="group p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 flex flex-col h-full">
+                        <div class="w-10 h-10 rounded-full border border-white/10 bg-black flex items-center justify-center text-white mb-6 group-hover:border-orange-500/50 group-hover:text-orange-500 transition-colors">
+                            <iconify-icon icon="solar:radar-linear" width="20" height="20"></iconify-icon>
+                        </div>
+                        <h3 class="font-geist font-medium text-xl tracking-tight text-white mb-3">Match Radar</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed flex-grow">Discover public matches happening nearby. Filter by skill level, pitch type, and join instantly to secure your spot.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="group p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 flex flex-col h-full">
+                        <div class="w-10 h-10 rounded-full border border-white/10 bg-black flex items-center justify-center text-white mb-6 group-hover:border-orange-500/50 group-hover:text-orange-500 transition-colors">
+                            <iconify-icon icon="solar:users-group-rounded-linear" width="20" height="20"></iconify-icon>
+                        </div>
+                        <h3 class="font-geist font-medium text-xl tracking-tight text-white mb-3">Squad Management</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed flex-grow">Form your clan. Manage team rosters, schedule private training sessions, and track squad statistics over seasons.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="group p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 flex flex-col h-full">
+                        <div class="w-10 h-10 rounded-full border border-white/10 bg-black flex items-center justify-center text-white mb-6 group-hover:border-orange-500/50 group-hover:text-orange-500 transition-colors">
+                            <iconify-icon icon="solar:chart-square-linear" width="20" height="20"></iconify-icon>
+                        </div>
+                        <h3 class="font-geist font-medium text-xl tracking-tight text-white mb-3">Performance Tracking</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed flex-grow">Log goals, assists, and clean sheets. Watch your metrics grow and compare your stats with friends on the leaderboard.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="group p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 flex flex-col h-full md:col-span-2 lg:col-span-2 relative overflow-hidden">
+                        <div class="absolute right-0 bottom-0 w-64 h-64 bg-orange-500/10 blur-[80px] pointer-events-none rounded-full"></div>
+                        <div class="relative z-10 flex flex-col md:flex-row gap-8 items-center h-full">
+                            <div class="flex-1">
+                                <div class="w-10 h-10 rounded-full border border-white/10 bg-black flex items-center justify-center text-white mb-6 group-hover:border-orange-500/50 group-hover:text-orange-500 transition-colors">
+                                    <iconify-icon icon="solar:chat-round-line-linear" width="20" height="20"></iconify-icon>
+                                </div>
+                                <h3 class="font-geist font-medium text-2xl tracking-tight text-white mb-3">Locker Room Chat</h3>
+                                <p class="text-sm text-neutral-400 font-light leading-relaxed">Dedicated channels for your squads. Discuss tactics, share highlights, and organize the post-match hangout without leaving the app. Integrated polls for match attendance.</p>
+                            </div>
+                            <div class="flex-1 w-full flex justify-center md:justify-end">
+                                <!-- Abstract UI Chat Bubble -->
+                                <div class="bg-black border border-white/10 rounded-2xl p-4 w-full max-w-sm space-y-4 shadow-xl">
+                                    <div class="flex items-end gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-white/10"></div>
+                                        <div class="bg-white/5 rounded-2xl rounded-bl-none px-4 py-2 text-xs text-neutral-300 w-3/4 h-8 flex items-center">Who's bringing the ball?</div>
+                                    </div>
+                                    <div class="flex items-end gap-2 flex-row-reverse">
+                                        <div class="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/50"></div>
+                                        <div class="bg-orange-500 text-white rounded-2xl rounded-br-none px-4 py-2 text-xs w-1/2 h-8 flex items-center justify-end">I got it covered. ⚽</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic UI Showcase -->
+        <section id="network" class="py-24 border-t border-white/[0.02] bg-[#050505] overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Text Content -->
+                    <div class="space-y-8 relative z-10">
+                        <div>
+                            <h2 class="font-geist font-semibold text-3xl md:text-5xl tracking-tight text-white mb-4">Connect.<br>Play.<br><span class="text-neutral-500">Elevate.</span></h2>
+                            <p class="text-neutral-400 text-sm md:text-base font-light max-w-md">The pitch is just the beginning. Build your network, find rivals, and scout talent in your city.</p>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Toggle Item 1 -->
+                            <div class="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-white/5 cursor-pointer hover:border-orange-500/50 transition-colors">
+                                <div class="text-orange-500 mt-0.5">
+                                    <iconify-icon icon="solar:check-circle-linear" width="20" height="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">Global Player Database</h4>
+                                    <p class="text-xs text-neutral-400 font-light">Search players by position, skill tier, and availability.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Toggle Item 2 -->
+                            <div class="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:bg-white/[0.02] transition-colors cursor-pointer">
+                                <div class="text-neutral-600 mt-0.5">
+                                    <iconify-icon icon="solar:record-circle-linear" width="20" height="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-neutral-300 mb-1">Automated Match Rating</h4>
+                                    <p class="text-xs text-neutral-500 font-light">Peer-reviewed ratings keep the community competitive and fair.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Representation -->
+                    <div class="relative h-[400px] md:h-[500px] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-orange-500/5 blur-[100px] rounded-full"></div>
+                        
+                        <!-- Central Hub -->
+                        <div class="relative z-10 w-20 h-20 rounded-full bg-black border border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.2)] flex items-center justify-center z-20">
+                            <span class="font-geist font-semibold text-white tracking-tighter">FC</span>
+                        </div>
+
+                        <!-- Orbiting Nodes (Abstract players) -->
+                        <div class="absolute w-full h-full animate-[spin_40s_linear_infinite]">
+                            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border border-white/20 bg-[#111] flex items-center justify-center backdrop-blur-sm -rotate-[0deg] [animation:spin_40s_linear_infinite_reverse]">
+                                <iconify-icon icon="solar:user-linear" width="16" class="text-neutral-400"></iconify-icon>
+                            </div>
+                            <div class="absolute bottom-1/4 right-10 w-12 h-12 rounded-full border border-white/20 bg-[#111] flex items-center justify-center backdrop-blur-sm -rotate-[0deg] [animation:spin_40s_linear_infinite_reverse]">
+                                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=100&auto=format&fit=crop" class="w-full h-full object-cover rounded-full opacity-60" alt="Player">
+                            </div>
+                            <div class="absolute top-1/3 left-10 w-8 h-8 rounded-full border border-orange-500/30 bg-[#111] flex items-center justify-center backdrop-blur-sm -rotate-[0deg] [animation:spin_40s_linear_infinite_reverse]">
+                                <iconify-icon icon="solar:star-linear" width="14" class="text-orange-500"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Connecting Lines (SVG) -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 500 500">
+                            <circle cx="250" cy="250" r="150" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" class="text-white"/>
+                            <circle cx="250" cy="250" r="220" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 6" class="text-white"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 border-y border-white/[0.05] bg-black">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/[0.05]">
+                    <div class="text-center px-4">
+                        <span class="block font-geist font-semibold text-3xl md:text-4xl tracking-tight text-white mb-2">50k+</span>
+                        <span class="text-xs text-neutral-500 font-medium tracking-wide uppercase">Active Players</span>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="block font-geist font-semibold text-3xl md:text-4xl tracking-tight text-white mb-2">12k</span>
+                        <span class="text-xs text-neutral-500 font-medium tracking-wide uppercase">Squads Formed</span>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="block font-geist font-semibold text-3xl md:text-4xl tracking-tight text-white mb-2">500+</span>
+                        <span class="text-xs text-neutral-500 font-medium tracking-wide uppercase">Matches Daily</span>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="block font-geist font-semibold text-3xl md:text-4xl tracking-tight text-white mb-2">4.9</span>
+                        <span class="text-xs text-neutral-500 font-medium tracking-wide uppercase">App Store Rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="download" class="py-32 relative overflow-hidden bg-[#050505]">
+            <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[600px] h-[600px] glow-bg opacity-40 mix-blend-screen"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto px-6 relative z-10 text-center">
+                <iconify-icon icon="solar:cup-first-linear" width="48" height="48" class="text-orange-500 mb-6 mx-auto"></iconify-icon>
+                <h2 class="font-geist font-semibold text-4xl md:text-6xl tracking-tight text-white mb-6">Ready for kick-off?</h2>
+                <p class="text-neutral-400 text-base font-light mb-10 max-w-lg mx-auto">
+                    Join the fastest growing network of amateur and semi-pro footballers. Claim your username before it's gone.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto" onsubmit="event.preventDefault();">
+                    <div class="relative w-full">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-neutral-500">
+                            <iconify-icon icon="solar:letter-linear" width="18"></iconify-icon>
+                        </div>
+                        <input type="email" placeholder="Enter your email" class="w-full bg-black border border-white/10 text-sm text-white rounded-full py-3 pl-10 pr-4 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all placeholder:text-neutral-600" required>
+                    </div>
+                    <button type="submit" class="w-full sm:w-auto flex-shrink-0 bg-white text-black hover:bg-orange-500 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300">
+                        Get Invite Link
+                    </button>
+                </form>
+                <p class="text-xs text-neutral-600 mt-4 font-light">Available on iOS and Android.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/[0.05]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white">
+                <span class="font-geist font-semibold tracking-tighter text-lg">fotclan</span>
+                <span class="text-neutral-700 text-sm border-l border-white/10 pl-2 ml-1">© 2024</span>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-neutral-500 font-light">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Support</a>
+                <a href="#" class="hover:text-white transition-colors flex items-center gap-1">
+                    <iconify-icon icon="solar:basketball-linear" width="16"></iconify-icon> Press
+                </a>
+            </div>
+
+            <div class="flex gap-4 text-neutral-400">
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer Script for subtle animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-up');
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select elements to animate that aren't already animated in hero
+            document.querySelectorAll('section#features h2, section#features p, section#features .group, section#network h2, section#network .space-y-6 > div, section#network .relative.h-\\[400px\\]').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(16px)';
+                el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                el.style.transitionDelay = `${index % 3 * 100}ms`;
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

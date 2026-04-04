@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% block animation %}
+
+        <style>
+@keyframes fade-up {
+    0% {
+    opacity: 0;
+    transform: translateY(40px)
+    }
+
+    100% {
+    opacity: 1;
+    transform: translateY(0)
+    }
+}
+
+.fadeUp {
+    opacity: 0;
+    animation: fade-up 0.8s forwards
+}
+    </style>
+    
+    {% endblock animation %}
+
+    {% block title %}
+    <title>Trade Pro - Admin</title>
+    {% endblock title %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="{{ url_for('dist', path='/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('dist', path='/index.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('dist', path='/favicon.ico') }}" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter&display=swap"
+        rel="stylesheet">
+    
+    {% block imports %}
+    
+    <script src="{{ url_for('dist', path='/htmx.min.js') }}" type="module" defer></script>
+    <script src="{{ url_for('dist', path='/dashboard.js') }}" type="module" defer></script>
+    {% endblock imports %}
+
+</head>
+
+<body class="{{ theme }} font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen">
+    
+    <desktop-sidebar>
+        <aside class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700" aria-label="Sidebar" separator-sidebar>
+            <!-- Toggle button -->
+            <button class="absolute right-0 bottom-18 -mr-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md p-1.5 z-50 transition-all duration-300 border border-gray-300 dark:border-gray-600" sidebar-button>
+                <svg class="w-4 h-4 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" toggle-icon>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group data-[expanded=true]:w-[280px] data-[expanded=false]:w-[60px]"  data-expanded="{{ sidebar }}" data-active="{{ view }}"
+            >
+                <div>
+                    <ul class="space-y-2 font-medium pb-3">
+                        <li>
+                            <a href="/" class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white">
+                            <img src="/dist/favicon.ico" class="w-5 h-5">
+                            <span class="ms-3 hidden group-data-[expanded=true]:block">TradePro</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3">
+                        <li>
+                            <a href="/dashboard" class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200">
+                            <svg-icon source="house-line-bold" class="w-5 h-5 group-data-[active=home]:text-white group-data-[active=home]:dark:text-black text-gray-500 group-data-[active=home]:hidden block">
+                            </svg-icon>
+                            <svg-icon source="house-fill" class="w-5 h-5 group-data-[active=home]:block hidden group-data-[active=home]:fill-black group-data-[active=home]:dark:fill-white">
+                            </svg-icon>
+                            <span class="ms-3 hidden group-data-[active=home]:text-black group-data-[active=home]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/explore" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg-icon source="compass-bold" class="w-5 h-5 group-data-[active=stock]:text-white group-data-[active=stock]:dark:text-black text-gray-500 group-data-[active=stock]:hidden block">
+                            </svg-icon>
+                            <svg-icon source="compass-fill" class="w-5 h-5 group-data-[active=stock]:block fill-black dark:fill-white hidden">
+                            </svg-icon>
+                            <span class="flex-1 ms-3 whitespace-nowrap hidden group-data-[active=stock]:text-black group-data-[active=stock]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Stocks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/profile" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg-icon source="user-circle-bold" class="w-5 h-5 group-data-[active=account]:text-white group-data-[active=account]:dark:text-black text-gray-500 group-data-[active=account]:hidden block">
+                            </svg-icon>
+                            <svg-icon source="user-circle-fill" class="w-5 h-5 group-data-[active=account]:block fill-black dark:fill-white hidden">
+                            </svg-icon>
+                            <span class="flex-1 ms-3 whitespace-nowrap hidden group-data-[active=account]:text-black group-data-[active=account]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Accounts</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <mode-toggle-button data-theme="{{ theme }}" class="group">
+                    <button class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md" mode-toggle>
+                        <svg-icon source="moon-stars-bold" class="w-5 h-5 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></svg-icon>
+                        <svg-icon source="sun-bold" class="w-5 h-5 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></svg-icon>
+                    </button>
+                </mode-toggle-button>
+    
+            </div>
+        </aside>
+    </desktop-sidebar>
+
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen @container max-w-8xl mr-auto bg-gray-100 dark:bg-gray-800">
+
+        {% block dialogs %}
+
+            <dialog id="deposit-modal" class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
+                <div class="flex items-center justify-between">
+                    <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
+                    Deposit
+                    </h2>
+    
+                    <button
+                        type="button"
+                        class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
+                        aria-label="Close"
+                        onclick="document.getElementById('deposit-modal').close()"
+                    >
+                        <svg-icon source="x">
+                        </svg-icon>
+                    </button>
+                </div>
+                
+                <form id="form_modal">
+                    <div class="mt-4">
+                        <label class="text-sm font-medium text-gray-500">Account Name</label>
+                        <!-- change this to search input with result below -->
+                        <div class="relative flex items-center mt-4  mb-4">
+    
+                            <div class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                            Bank of America
+                            </div>
+    
+                        </div>
+                        <label class="text-sm font-medium text-gray-500">Account Number</label>
+                        <!-- change this to search input with result below -->
+                        <div class="relative flex items-center mt-4  mb-4">
+    
+                            <div class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                            09237483943
+                            </div>
+    
+                        </div>
+                        <label class="text-sm font-medium text-gray-500">Amount</label>
+                            <!-- change this to search input with result below -->
+                            <div class="relative flex items-center mt-4">
+                                <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                                    <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                                    </svg-icon>
+                                </span>
+    
+                                <input name="amount" type="text" placeholder="Amount" class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                            </div>
+                    </div>
+                    <footer class="mt-6 flex justify-end gap-2">
+                    <button
+                        type="button"
+                        class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                        onclick="document.getElementById('deposit-modal').close()"
+                    >
+                        Cancel
+                    </button>
+    
+                    <button
+                    id="send_button"
+                    hx-post="/user_deposit"
+                    hx-swap="none"
+                    hx-on::after-request="
+                if (event.target.id === 'send_button') {document.getElementById('deposit-modal').close()};
+                "
+                        class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                    >
+                        Done
+                    </button>
+                    </footer>
+                </form>
+
+
+            </dialog>
+
+            <dialog id="withdraw-modal" class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
+                    <div class="flex items-center justify-between">
+                        <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
+                        Withdraw
+                        </h2>
+        
+                        <button
+                            type="button"
+                            class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
+                            aria-label="Close"
+                            onclick="document.getElementById('withdraw-modal').close()"
+                        >
+                            <svg-icon source="x">
+                            </svg-icon>
+                        </button>
+                    </div>
+
+                    <form>
+                        <div class="mt-4">
+                            <label class="text-sm font-medium text-gray-500">Enter Account Name</label>
+                            <!-- change this to search input with result below -->
+                            <div class="relative flex items-center mt-4 mb-3">
+                                <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                                    <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                                    </svg-icon>
+                                </span>
+    
+                                <input name="acc_name" type="text" placeholder="Account Name" class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+    
+                            </div>
+                            <label class="text-sm font-medium text-gray-500">Enter Account Details</label>
+                            <!-- change this to search input with result below -->
+                            <div class="relative flex items-center mt-4">
+                                <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                                    <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                                    </svg-icon>
+                                </span>
+    
+                                <input name=acc_number type="number" placeholder="Account Details" class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+    
+                            </div>
+    
+                            <label class="text-sm font-medium text-gray-500">Amount</label>
+                            <!-- change this to search input with result below -->
+                            <div class="relative flex items-center mt-4">
+                                <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                                    <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                                    </svg-icon>
+                                </span>
+    
+                                <input name="amount" type="number" placeholder="Amount" class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+    
+                            </div>
+                        </div>
+    
+                        <footer class="mt-6 flex justify-end gap-2">
+                        <button
+                            type="button"
+                            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                            onclick="document.getElementById('withdraw-modal').close()"
+                        >
+                            Cancel
+                        </button>
+    
+                        <button
+                        id="withdraw_modal_button"
+                        hx-post="/user_withdraw"
+                        hx-swap="none"
+                        hx-on::after-request="
+                    if (event.target.id === 'withdraw_modal_button') {document.getElementById('withdraw-modal').close()};
+                    "
+                            class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                        >
+                            Done
+                        </button>
+                        </footer>
+                    </form>
+            </dialog>
+        
+        {% endblock dialogs %}
+
+        {% block main %}
+
+        <!-- Top cards -->
+        <section class="grid md:grid-cols-3 gap-4 fadeUp">
+            <div class="glass dark:glass-light rounded-2xl p-6 fadeUp bg-gray-50 dark:bg-gray-900 shadow-md shadow-gray-200 dark:shadow-gray-950" style="animation-delay:.05s">
+                <h2 class="text-base font-semibold tracking-tight mb-2 text-gray-500">Balance</h2>
+                <p id="totalValue" class="text-2xl font-semibold tracking-tight mb-3 text-gray-900 dark:text-gray-100">$ {{ user_balance }}</p>
+                <div>
+                <button class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-800 dark:hover:bg-blue-400 px-3 py-2 rounded-md" 
+                onclick="document.getElementById('deposit-modal').showModal()">
+                Deposit</button>
+
+                <button class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-800 dark:hover:bg-blue-400 ml-2 px-3 py-2 rounded-md"
+                onclick="document.getElementById('withdraw-modal').showModal()">
+                Withdraw</button>
+                </div>
+            </div>
+            <div class="glass dark:glass-light rounded-2xl p-6 fadeUp bg-gray-50 dark:bg-gray-900 shadow-md shadow-gray-200 dark:shadow-gray-950" style="animation-delay:.05s">
+                <h2 class="text-base font-semibold tracking-tight mb-2 text-gray-500">Total Profits</h2>
+                <p id="totalValue" class="text-2xl font-semibold tracking-tight mb-3 text-gray-900 dark:text-gray-100">$ {{ user_profit }}</p>
+
+            </div>
+            <div class="glass dark:glass-light rounded-2xl p-6 fadeUp bg-gray-50 dark:bg-gray-900 shadow-md shadow-gray-200 dark:shadow-gray-950" style="animation-delay:.05s">
+                <h2 class="text-base font-semibold tracking-tight mb-2 text-gray-500">Daily Profit</h2>
+                <p id="dayGain" class="text-2xl font-semibold tracking-tight mb-3 text-gray-900 dark:text-gray-100">{{ pnl }}</p>
+            </div>
+        </section>
+
+        <!-- Chart and buy/sell -->
+        <section class="grid auto-rows-fr @2xl:grid-cols-[3fr_1fr] gap-4 rounded-2xl fadeUp">
+            <!-- Chart -->
+            <div class="glass dark:glass-light rounded-2xl p-4 fadeUp relative overflow-hidden bg-gray-50 dark:bg-gray-900 backdrop-blur-md shadow @xl:h-full">
+                <div class="absolute pl-2 pr-5 py-2 top-4 left-4 z-50  bg-gray-50 dark:bg-gray-900 text-gray-500 rounded-br-md text-base font-semibold">Portfolio Chart</div>
+                <div id="chart-container" style="height: 100%;"></div>
+            </div>
+
+            <!-- Buy/Sell -->
+            <div class="px-12 py-8 rounded-xl bg-gray-50 dark:bg-gray-900 backdrop-blur-md shadow flex flex-col gap-4 group" data-stock="false" id="buy_sell_card"
+            >
+                
+                <div class="flex items-center mb-2">
+                    <button type="button" data-inert id="buyTab" class="flex-1 py-2 rounded-l-lg data-[inert]:text-green-500 data-[inert]:bg-green-50 data-[inert]:dark:bg-green-950 bg-green-600 hover:bg-green-400 dark:hover:bg-green-700 text-white font-medium tracking-tight"
+                    onclick="document.getElementById('sellTab').removeAttribute('data-inert');document.getElementById('buyTab').setAttribute('data-inert','');document.getElementById('buy_sell_mode').value='buy';
+                    document.getElementById('qty').value = 0
+                    " >
+                        Buy
+                    </button>
+                    <button type="button" id="sellTab" class="flex-1 py-2 rounded-r-lg data-[inert]:text-red-500 data-[inert]:bg-red-50 data-[inert]:dark:bg-red-950 bg-red-600 hover:bg-red-400 dark:hover:bg-red-700 text-white font-medium tracking-tight"
+                    onclick="document.getElementById('buyTab').removeAttribute('data-inert');document.getElementById('sellTab').setAttribute('data-inert','');document.getElementById('buy_sell_mode').value='sell';
+                    document.getElementById('qty').value = 0
+                    " >
+                        Sell
+                    </button>
+                </div>
+
+                <form class="rounded-xl bg-gray-50 dark:bg-gray-900  flex flex-col gap-4 group">
+
+                <input type="text" name="mode" value="buy" id="buy_sell_mode" class="hidden">
+                <label class="text-sm font-medium text-gray-500 ">Stock</label>
+                <!-- change this to search input with result below -->
+                <div class="relative items-center mt-4 md:mt-0 group-data-[stock=false]:flex hidden">
+                    <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                        <svg-icon source="magnifying-glass-bold" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                        </svg-icon>
+                    </span>
+
+                    <input type="text" placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    name="search"
+                    hx-get="/user_search_preview"
+                    hx-target="#stock_content"
+                    hx-trigger="input changed delay:300ms"
+                    hx-swap="outerHTML">
+
+                    <ul id="stock_content" class="z-10 hidden absolute top-full max-h-56 w-full overflow-y-auto text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-600 *:even:bg-gray-50 dark:*:even:bg-gray-700">
+
+                    </ul>
+
+                </div>
+                <div class="relative items-center mt-4 md:mt-0 group-data-[stock=true]:flex hidden">
+
+                    <div class="flex w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" name="stock_search">
+                        <svg-icon source="x" class="w-5 h-5 text-gray-700 dark:text-gray-300" onclick="
+                        document.getElementById('max-button').setAttribute('inert', true);
+                        document.getElementById('max-button').setAttribute('data-inert', true);
+                        document.getElementById('buy_sell_card').dataset.stock='false';
+                        ">
+                        </svg-icon>
+                        <span class="pl-5" id="stock_name_preview" data-price="0">
+                            Apple Technologies
+                        </span>
+                    </div>
+                </div>
+
+                <input type="text" name="stock_id" value="stock_id" class="hidden" id="stock_id_sending">
+
+                <label class="text-sm font-medium text-gray-500 mt-2">Quantity</label>
+                <div class="flex items-center gap-2">
+                    <button type="button"
+                    onclick="document.getElementById('qty').value -= 1;
+                    document.getElementById('qty').dispatchEvent(new Event('input', { bubbles: true }));
+                    " 
+                    
+                    class="p-2 rounded bg-gray-200 dark:bg-gray-700 w-9 h-9 text-gray-900 dark:text-gray-100">
+                        <svg-icon source="minus" class="w-5 h-5"></svg-icon>
+                    </button>
+                    <input name="quantity" id="qty" type="number" value="0" class="flex-1 px-3 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-center text-lg w-50 border border-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" min="0">
+                    <button type="button"
+                    onclick="document.getElementById('qty').value = parseInt(document.getElementById('qty').value.replace(/,/g, ''), 10) + 1;
+                    document.getElementById('qty').dispatchEvent(new Event('input', { bubbles: true }));
+                    " 
+                    
+                    class="p-2 rounded bg-gray-200 dark:bg-gray-700 w-9 h-9 text-gray-900 dark:text-gray-100">
+                        <svg-icon source="plus"></svg-icon>
+                    </button>
+                </div>
+
+                <div class="mt-2 flex justify-between text-sm text-gray-500">
+                    <span>Total Cost</span>
+                    <div>
+                    <span>$</span>
+                    <span id="totalCost">0.00</span>
+                    </div>
+                </div>
+                <div class="h-2 bg-gray-200/50 dark:bg-gray-700 rounded overflow-hidden">
+                    <div id="availBar" class="h-full bg-indigo-500" style="width:0%"></div>
+                </div>
+                <p class="mt-2 flex justify-between text-sm text-gray-500">
+                <button inert data-inert id="max-button" type=button 
+                class="p-2 border rounded-md  border-blue-500 data-[inert]:border-gray-500 dark:text-white text-gray-900 data-[inert]:text-gray-500"
+                onclick="
+                let mode = document.getElementById('buy_sell_mode');
+                let tag = document.getElementById('qty');
+                let max;
+                if (mode.value == 'buy') {
+                    max = parseInt(tag.getAttribute('buymax'), 10);
+                    tag.max = max;
+                    document.getElementById('qty').value = max;
+                } 
+                else {
+                    max = parseInt(tag.getAttribute('sellmax'), 10);
+                    tag.max = max;
+                    document.getElementById('qty').value = max;
+                }
+                update_price_and_meter(max)
+                " 
+                >use max</button>
+                </p>
+                <button id="placeOrder" class="mt-2 py-2 rounded-lg bg-blue-600 hover:bg-blue-800 dark:hover:bg-blue-400 text-white font-semibold tracking-tight flex items-center justify-center gap-2 text-base" type="submit"
+                hx-post="/trade_stock" hx-params="mode,stock_id,quantity"
+                hx-swap="none"
+                hx-on::after-request="if (event.detail.target.id === 'placeOrder') {location.reload()}"
+                >
+                    Place Order 
+                    <svg-icon source="arrow-right-bold" class="w-5 h-5">
+                    </svg-icon>
+                </button>
+                <p class="invisible text-center text-sm text-red-500">Available Balance: $5,000.00</p>
+
+                <script>
+
+                function update_price_and_meter(quantity) {
+                    let price_str = document.getElementById('stock_name_preview').dataset.price;
+                    let price = parseInt(price_str, 10);
+                    let cost =  price * quantity;
+                    let balance = parseInt('{{ user_balance }}'.replace(/,/g, ""), 10);
+                    let percent = cost / balance;
+                    if (percent > 1) percent = 1;
+                    document.getElementById('totalCost').innerHTML = cost;
+                    document.getElementById('availBar').style.width = `${percent * 100}%`;
+
+                }
+
+                const input = document.getElementById("qty");
+
+                input.addEventListener("input", () => {
+                    if (parseInt(input.value, 10) > parseInt(input.max, 10)) {
+                    input.value = input.max;
+                    }
+                    if (parseInt(input.value, 10) < 0) {
+                    input.value = 0;
+                    }
+                    update_price_and_meter(parseInt(input.value, 10));
+                });
+                
+                </script>
+            </form>
+            </div>
+        </section>
+
+        <section class="grid xl:grid-cols-2 gap-4 fadeUp">
+            {% include "/components/user_holdings.jinja" %}
+            {% include "/components/user_activities.jinja" %}
+        </section>
+        
+        {% endblock main %}
+
+        <div class="h-12 md:h-0 lg:h-0"></div>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
+    data-active="{{ view }}"
+    >
+        <a href="/dashboard" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md" data-active="true">
+            <svg-icon source="house-line-bold" class="w-5 h-5 group-data-[active=home]:text-white group-data-[active=home]:dark:text-black text-gray-500 group-data-[active=home]:hidden block">
+            </svg-icon>
+            <svg-icon source="house-fill" class="w-5 h-5 group-data-[active=home]:block hidden group-data-[active=home]:fill-black group-data-[active=home]:dark:fill-white">
+            </svg-icon>
+        <span class="group-data-[active=home]:text-black group-data-[active=home]:dark:text-white text-gray-500 dark:text-gray-300">Home</span>
+        </a>
+        <a href="/explore" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md" data-active="false">
+            <svg-icon source="compass-bold" class="w-5 h-5 group-data-[active=stock]:text-white group-data-[active=stock]:dark:text-black text-gray-500 group-data-[active=stock]:hidden block">
+            </svg-icon>
+            <svg-icon source="compass-fill" class="w-5 h-5 group-data-[active=stock]:block fill-black dark:fill-white hidden">
+            </svg-icon>
+        <span class="group-data-[active=stock]:text-black group-data-[active=stock]:dark:text-white text-gray-500">Explore</span>
+        </a>
+        <a href="/profile" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md" data-active="false">
+            <svg-icon source="user-circle-bold" class="w-5 h-5 group-data-[active=account]:text-white group-data-[active=account]:dark:text-black text-gray-500 group-data-[active=account]:hidden block">
+            </svg-icon>
+            <svg-icon source="user-circle-fill" class="w-5 h-5 group-data-[active=account]:block fill-black dark:fill-white hidden">
+            </svg-icon>
+            <span class="group-data-[active=account]:text-black group-data-[active=account]:dark:text-white text-gray-500">Profile</span>
+        </a>
+    </nav>
+
+</body>
+<script>
+    /* ---------- ANIMATE CARDS ---------- */
+    document.querySelectorAll('.fadeUp').forEach((el,i)=>{
+      setTimeout(()=>el.style.opacity=1,300+i*80);
+    });
+</script>
+</html>
