@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-@source "../../../templates";
-@source "../../index.html";
-@source "../../leagues.html";
-@source "../../matches.html";
-@source "../../profile.html";
+@source "../../templates";
+@source "../index.html";
+@source "../leagues.html";
+@source "../matches.html";
+@source "../news.html";
+@source "../profile.html";
 
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 

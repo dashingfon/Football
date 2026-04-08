@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="./assets/output.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,6 +18,170 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            backdrop-filter: blur(20px);
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
+            mask: linear-gradient(#fff 0 0)content-box, linear-gradient(#fff 0 0);
+            mask-composite: subtract;
+            -webkit-mask-composite: xor
+        }
+
+        .glass-button {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
+            transition: all .3s ease;
+            opacity: .75
+        }
+
+        .glass-button:hover {
+            background: #22d3ee33;
+            transform: translateY(-2px)
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #22d3ee 0%, #6366f1 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .lift {
+            transition: all .3s ease
+        }
+
+        .lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
+        }
+
+        .skill-badge {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        .fade-in {
+            animation: fade 1s forwards
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* techy hero canvas overrides */
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .4;
+            z-index: -1
+        }
+
+        .switch {
+            font-size: 17px;
+            position: relative;
+            display: inline-block;
+            width: 4em;
+            height: 2em;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 1.2em;
+            width: 1.2em;
+            border-radius: 20px;
+            left: 0.5em;
+            bottom: 0.5em;
+            transition: 0.4s;
+            transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+            box-shadow: inset 8px -4px 0px 0px #fff;
+        }
+
+        .switch input:checked+.slider:before {
+            transform: translateX(1.8em);
+            box-shadow: inset 15px -4px 0px 15px #ffcf48;
+        }
+
+        .star {
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            width: 5px;
+            transition: all 0.4s;
+            height: 5px;
+        }
+
+        .star_1 {
+            left: 2.5em;
+            top: 0.5em;
+        }
+
+        .star_2 {
+            left: 2.2em;
+            top: 1.2em;
+        }
+
+        .star_3 {
+            left: 3em;
+            top: 0.9em;
+        }
+
+        .switch input:checked~.slider .star {
+            opacity: 0;
+        }
+
+        .switch input:checked~.slider .cloud {
+            opacity: 1;
         }
     </style>
 </head>
@@ -47,9 +211,10 @@
                     Join Beta
                 </a>
             </div> -->
-            <div class="flex flex-row items-center gap-4">
+            <div class="flex flex-row items-center gap-6">
 
                 <label class="inline-block z-0 relative shadow-md rounded-full w-16 h-9 switch">
+                    <!-- requires custom styles above -->
                     <input type="checkbox" id="checkbox" class="peer opacity-0 w-0 h-0">
                     <span
                         class="top-0 right-0 bottom-0 left-0 absolute bg-neutral-800 peer-checked:bg-sky-500 rounded-full overflow-hidden transition-colors duration-400 cursor-pointer slider">
@@ -73,12 +238,39 @@
 
                 <div class="group md:hidden lg:hidden hover:bg-gray-200 dark:hover:bg-gray-900 p-2 w-12 h-12"
                     onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')">
-                    <iconify-icon icon="solar:arrow-right-linear" width="18" height="18">
+                    <iconify-icon icon="solar:hamburger-menu-broken" width="100%" height="100%">
                     </iconify-icon>
                 </div>
             </div>
         </div>
     </nav>
+
+    <div id="side-menu"
+        class="bg-gray-50 dark:bg-gray-950 md:hidden lg:hidden top-0 right-0 z-[130] fixed w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
+        <div class="flex flex-col p-6 h-full justify-between">
+            <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
+                <a href="#" class="font-semibold text-xl tracking-tigh">Mfon Stephen</a>
+                <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')"
+                    class="w-8 h-8">
+                    <svg-icon source="close">
+                    </svg-icon>
+                </button>
+            </div>
+            <ul class="flex flex-col mb-40 font-medium text-lg">
+                <li><a href="#about"
+                        class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
+                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">About</a></li>
+                <li><a href="#projects"
+                        class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
+                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Experience</a>
+                </li>
+                <li><a href="#contact"
+                        class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
+                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <main class="relative z-10 pt-32 pb-24">
         <!-- Hero Section -->
@@ -194,7 +386,7 @@
                 <div
                     class="p-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 hover:bg-zinc-900/60 transition-colors group">
                     <div
-                        class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center mb-6 border border-orange-500/20 group-hover:scale-105 transition-transform">
+                        class="w-12 h-12 rounded-xl bg-zinc-800/50 text-zinc-300 flex items-center justify-center mb-6 border border-zinc-700/50 group-hover:scale-105 transition-transform group-hover:text-orange-400 group-hover:bg-orange-500/10 group-hover:border-orange-500/20">
                         <iconify-icon icon="solar:cup-linear" width="24" height="24" stroke-width="1.5"></iconify-icon>
                     </div>
                     <h3 class="text-lg font-medium text-zinc-100 mb-2">Join Competitions</h3>
@@ -300,7 +492,7 @@
                     class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-zinc-950 to-zinc-950 pointer-events-none">
                 </div>
                 <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter text-zinc-50 mb-6 relative z-10">Ready to
-                    step on the pitch?</h2>
+                    join the Clan?</h2>
                 <p class="text-zinc-400 text-base font-normal mb-10 max-w-xl mx-auto relative z-10">Join thousands of
                     players already tracking their careers, sharing highlights, and finding their next game.</p>
 
@@ -320,13 +512,22 @@
     <footer class="border-t border-zinc-800/80 bg-zinc-950 py-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <span class="text-lg font-semibold tracking-tighter text-zinc-300">PITCH</span>
-                <span class="text-xs text-zinc-600">© 2024</span>
+                <span class="text-lg font-semibold tracking-tighter text-zinc-300">FOTCLAN</span>
+                <span class="text-xs text-zinc-600">© 2026</span>
             </div>
 
             <div class="flex items-center gap-6 text-sm font-normal text-zinc-500">
-                <a href="#" class="hover:text-zinc-300 transition-colors">Twitter</a>
-                <a href="#" class="hover:text-zinc-300 transition-colors">Instagram</a>
+                <a href="#" class="hover:text-zinc-300 transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                    </svg></a>
+                <a href="#" class="hover:text-zinc-300 transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 256 180">
+                        <path fill="#f00"
+                            d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134" />
+                        <path fill="#fff" d="m102.421 128.06l66.328-38.418l-66.328-38.418z" />
+                    </svg></a>
                 <a href="#" class="hover:text-zinc-300 transition-colors">Terms</a>
                 <a href="#" class="hover:text-zinc-300 transition-colors">Privacy</a>
             </div>
