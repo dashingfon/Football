@@ -5,9 +5,9 @@ Fotclan is a social network for footballers
 ## Next Steps
 
 - [ ] light dark mode
-- [ ] icons setup
+- [x] icons setup
 - [ ] desktop sidebar functionality
-- [ ] mobile sidebars functionality
+- [ ] mobile sidebars functionality; hiding navbar
 - [ ] notification banner
 - [ ] complete the wireframe
 - [ ] build skeleton where necessary

@@ -1376,51 +1376,6 @@
       }
     }
   }
-  .group-data-\[active\=account\]\:block {
-    &:is(:where(.group)[data-active="account"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=account\]\:hidden {
-    &:is(:where(.group)[data-active="account"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=account\]\:text-black {
-    &:is(:where(.group)[data-active="account"] *) {
-      color: var(--color-black);
-    }
-  }
-  .group-data-\[active\=account\]\:text-white {
-    &:is(:where(.group)[data-active="account"] *) {
-      color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=home\]\:block {
-    &:is(:where(.group)[data-active="home"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=home\]\:hidden {
-    &:is(:where(.group)[data-active="home"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=home\]\:fill-black {
-    &:is(:where(.group)[data-active="home"] *) {
-      fill: var(--color-black);
-    }
-  }
-  .group-data-\[active\=home\]\:text-black {
-    &:is(:where(.group)[data-active="home"] *) {
-      color: var(--color-black);
-    }
-  }
-  .group-data-\[active\=home\]\:text-white {
-    &:is(:where(.group)[data-active="home"] *) {
-      color: var(--color-white);
-    }
-  }
   .group-data-\[active\=league\]\:block {
     &:is(:where(.group)[data-active="league"] *) {
       display: block;
@@ -1503,26 +1458,6 @@
   }
   .group-data-\[active\=profile\]\:text-white {
     &:is(:where(.group)[data-active="profile"] *) {
-      color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=stock\]\:block {
-    &:is(:where(.group)[data-active="stock"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=stock\]\:hidden {
-    &:is(:where(.group)[data-active="stock"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=stock\]\:text-black {
-    &:is(:where(.group)[data-active="stock"] *) {
-      color: var(--color-black);
-    }
-  }
-  .group-data-\[active\=stock\]\:text-white {
-    &:is(:where(.group)[data-active="stock"] *) {
       color: var(--color-white);
     }
   }
@@ -1755,19 +1690,9 @@
       width: calc(var(--spacing) * 16);
     }
   }
-  .data-\[expanded\=false\]\:w-\[60px\] {
-    &[data-expanded="false"] {
-      width: 60px;
-    }
-  }
   .data-\[expanded\=true\]\:w-70 {
     &[data-expanded="true"] {
       width: calc(var(--spacing) * 70);
-    }
-  }
-  .data-\[expanded\=true\]\:w-\[280px\] {
-    &[data-expanded="true"] {
-      width: 280px;
     }
   }
   .sm\:flex {
@@ -1978,41 +1903,6 @@
       }
     }
   }
-  .group-data-\[active\=account\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="account"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=account\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="account"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=home\]\:dark\:fill-white {
-    &:is(:where(.group)[data-active="home"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        fill: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=home\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="home"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=home\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="home"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-white);
-      }
-    }
-  }
   .group-data-\[active\=league\]\:dark\:text-black {
     &:is(:where(.group)[data-active="league"] *) {
       &:where([data-theme="dark"], [data-theme="dark"] *) {
@@ -2071,20 +1961,6 @@
   }
   .group-data-\[active\=profile\]\:dark\:text-white {
     &:is(:where(.group)[data-active="profile"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=stock\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="stock"] *) {
-      &:where([data-theme="dark"], [data-theme="dark"] *) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=stock\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="stock"] *) {
       &:where([data-theme="dark"], [data-theme="dark"] *) {
         color: var(--color-white);
       }
