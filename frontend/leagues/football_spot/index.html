@@ -297,7 +297,7 @@
         </dialog>
 
         <!-- use grid to maitain spacing -->
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_1fr] h-full">
 
 
             <!-- Nav -->
@@ -374,65 +374,60 @@
             </section>
 
             <!-- Tabs -->
-            <tab-sections class="fadeUp overflow-auto">
-
-
-
-                <nav class="text-sm font-medium text-center text-body border-b border-default">
-                    <ul class="flex flex-wrap -mb-px">
+            <tab-sections class="fadeUp grid grid-rows-[auto_1fr] overflow-scroll">
+                <nav class="text-sm font-medium text-center text-body border-b border-default overflow-auto">
+                    <ul class="flex overflow-x-auto no-scrollbar">
                         <li class="me-2">
-                            <a href="#"
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Table</a>
+                            <button
+                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Table</button>
                         </li>
                         <li class="me-2">
-                            <a href="#"
-                                class="inline-block p-4 text-fg-brand border-b border-brand rounded-t-base active"
-                                aria-current="page">Fixtures</a>
+                            <button class="inline-block p-4 text-fg-brand border-b border-brand rounded-t-base active"
+                                aria-current="page">Fixtures</button>
                         </li>
                         <li class="me-2">
-                            <a href="#"
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Player Stats</a>
+                            <button
+                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Player
+                                Stats</button>
                         </li>
                         <li class="me-2">
-                            <a href="#"
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Admin</a>
+                            <button
+                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Admin</button>
                         </li>
                         <li class="me-2">
-                            <a href="#"
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Players</a>
+                            <button
+                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Players</button>
                         </li>
                     </ul>
                 </nav>
 
-
-                <div class="">
+                <div class="bg-gray-700 w-full h-full rounded-b-md flex overflow-scroll">
 
                     <!-- Table -->
-                    <section class="overflow-auto">
+                    <section class="overflow-auto flex-none w-full h-full bg-amber-400">
 
                     </section>
 
                     <!-- Fixtures -->
-                    <section class="overflow-auto">
+                    <section class="overflow-auto flex-none w-full h-full bg-gray-900">
 
                     </section>
 
                     <!-- Player Stats -->
-                    <section class="overflow-auto">
+                    <section class="overflow-auto flex-none w-full h-full bg-amber-400">
 
                     </section>
 
                     <!-- Players -->
-                    <section class="overflow-auto">
+                    <section class="overflow-auto flex-none w-full h-full bg-gray-900">
 
                     </section>
 
                     <!-- Admin -->
-                    <section class="overflow-auto">
+                    <section class="overflow-auto flex-none w-full h-full bg-amber-400">
 
                     </section>
                 </div>
-
 
             </tab-sections>
 
