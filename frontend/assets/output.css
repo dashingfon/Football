@@ -1759,6 +1759,11 @@
       width: 60px;
     }
   }
+  .data-\[expanded\=false\]\:w-\[64px\] {
+    &[data-expanded="false"] {
+      width: 64px;
+    }
+  }
   .data-\[expanded\=true\]\:w-\[280px\] {
     &[data-expanded="true"] {
       width: 280px;
