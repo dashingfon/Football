@@ -444,6 +444,9 @@
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -515,6 +518,9 @@
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
@@ -1419,6 +1425,91 @@
       color: var(--color-white);
     }
   }
+  .group-data-\[active\=league\]\:block {
+    &:is(:where(.group)[data-active="league"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[active\=league\]\:hidden {
+    &:is(:where(.group)[data-active="league"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[active\=league\]\:text-black {
+    &:is(:where(.group)[data-active="league"] *) {
+      color: var(--color-black);
+    }
+  }
+  .group-data-\[active\=league\]\:text-white {
+    &:is(:where(.group)[data-active="league"] *) {
+      color: var(--color-white);
+    }
+  }
+  .group-data-\[active\=matches\]\:block {
+    &:is(:where(.group)[data-active="matches"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[active\=matches\]\:hidden {
+    &:is(:where(.group)[data-active="matches"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[active\=matches\]\:fill-black {
+    &:is(:where(.group)[data-active="matches"] *) {
+      fill: var(--color-black);
+    }
+  }
+  .group-data-\[active\=matches\]\:text-black {
+    &:is(:where(.group)[data-active="matches"] *) {
+      color: var(--color-black);
+    }
+  }
+  .group-data-\[active\=matches\]\:text-white {
+    &:is(:where(.group)[data-active="matches"] *) {
+      color: var(--color-white);
+    }
+  }
+  .group-data-\[active\=news\]\:block {
+    &:is(:where(.group)[data-active="news"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[active\=news\]\:hidden {
+    &:is(:where(.group)[data-active="news"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[active\=news\]\:text-black {
+    &:is(:where(.group)[data-active="news"] *) {
+      color: var(--color-black);
+    }
+  }
+  .group-data-\[active\=news\]\:text-white {
+    &:is(:where(.group)[data-active="news"] *) {
+      color: var(--color-white);
+    }
+  }
+  .group-data-\[active\=profile\]\:block {
+    &:is(:where(.group)[data-active="profile"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[active\=profile\]\:hidden {
+    &:is(:where(.group)[data-active="profile"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[active\=profile\]\:text-black {
+    &:is(:where(.group)[data-active="profile"] *) {
+      color: var(--color-black);
+    }
+  }
+  .group-data-\[active\=profile\]\:text-white {
+    &:is(:where(.group)[data-active="profile"] *) {
+      color: var(--color-white);
+    }
+  }
   .group-data-\[active\=stock\]\:block {
     &:is(:where(.group)[data-active="stock"] *) {
       display: block;
@@ -1911,6 +2002,69 @@
   }
   .group-data-\[active\=home\]\:dark\:text-white {
     &:is(:where(.group)[data-active="home"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .group-data-\[active\=league\]\:dark\:text-black {
+    &:is(:where(.group)[data-active="league"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .group-data-\[active\=league\]\:dark\:text-white {
+    &:is(:where(.group)[data-active="league"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .group-data-\[active\=matches\]\:dark\:fill-white {
+    &:is(:where(.group)[data-active="matches"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        fill: var(--color-white);
+      }
+    }
+  }
+  .group-data-\[active\=matches\]\:dark\:text-black {
+    &:is(:where(.group)[data-active="matches"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .group-data-\[active\=matches\]\:dark\:text-white {
+    &:is(:where(.group)[data-active="matches"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .group-data-\[active\=news\]\:dark\:text-black {
+    &:is(:where(.group)[data-active="news"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .group-data-\[active\=news\]\:dark\:text-white {
+    &:is(:where(.group)[data-active="news"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .group-data-\[active\=profile\]\:dark\:text-black {
+    &:is(:where(.group)[data-active="profile"] *) {
+      &:where([data-theme="dark"], [data-theme="dark"] *) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .group-data-\[active\=profile\]\:dark\:text-white {
+    &:is(:where(.group)[data-active="profile"] *) {
       &:where([data-theme="dark"], [data-theme="dark"] *) {
         color: var(--color-white);
       }
