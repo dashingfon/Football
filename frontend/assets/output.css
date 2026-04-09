@@ -569,9 +569,6 @@
   .w-full {
     width: 100%;
   }
-  .w-max {
-    width: max-content;
-  }
   .max-w-2xl {
     max-width: var(--container-2xl);
   }
@@ -622,6 +619,18 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  .snap-always {
+    scroll-snap-stop: always;
   }
   .auto-rows-\[240px\] {
     grid-auto-rows: 240px;
@@ -722,6 +731,9 @@
   }
   .overflow-y-auto {
     overflow-y: auto;
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -2217,6 +2229,11 @@ html {
   syntax: "*";
   inherits: false;
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
@@ -2479,6 +2496,7 @@ html {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-scroll-snap-strictness: proximity;
       --tw-space-y-reverse: 0;
       --tw-divide-y-reverse: 0;
       --tw-border-style: solid;
