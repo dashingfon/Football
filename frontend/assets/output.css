@@ -468,6 +468,9 @@
   .h-36 {
     height: calc(var(--spacing) * 36);
   }
+  .h-100 {
+    height: calc(var(--spacing) * 100);
+  }
   .h-\[30\%\] {
     height: 30%;
   }
@@ -488,9 +491,6 @@
   }
   .h-\[90\%\] {
     height: 90%;
-  }
-  .h-\[400px\] {
-    height: 400px;
   }
   .h-full {
     height: 100%;
@@ -1252,10 +1252,6 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
-  .backdrop-filter {
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1754,14 +1750,19 @@
       outline-style: none;
     }
   }
+  .data-\[expanded\=false\]\:w-16 {
+    &[data-expanded="false"] {
+      width: calc(var(--spacing) * 16);
+    }
+  }
   .data-\[expanded\=false\]\:w-\[60px\] {
     &[data-expanded="false"] {
       width: 60px;
     }
   }
-  .data-\[expanded\=false\]\:w-\[64px\] {
-    &[data-expanded="false"] {
-      width: 64px;
+  .data-\[expanded\=true\]\:w-70 {
+    &[data-expanded="true"] {
+      width: calc(var(--spacing) * 70);
     }
   }
   .data-\[expanded\=true\]\:w-\[280px\] {

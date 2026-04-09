@@ -47,9 +47,6 @@ customElements.define('desktop-sidebar',
 );
 
 
-// Add the option to toggle input
-
-
 customElements.define('mode-toggle-button',
     class ModeToggleButton extends HTMLElement {
 
@@ -78,6 +75,36 @@ customElements.define('mode-toggle-button',
                     toggle.dataset.theme = 'dark';
                 }
             });
+        };
+    }
+);
+
+
+customElements.define('tab-sections',
+    class TabSections extends HTMLElement {
+
+        connectedCallback() {
+
+        };
+    }
+);
+
+
+customElements.define('chart-race',
+    class ChartRace extends HTMLElement {
+
+        connectedCallback() {
+        
+        };
+    }
+);
+
+
+customElements.define('stats-feed',
+    class ChartRace extends HTMLElement {
+
+        connectedCallback() {
+        
         };
     }
 );
