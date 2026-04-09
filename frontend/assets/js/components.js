@@ -80,6 +80,16 @@ customElements.define('mode-toggle-button',
 );
 
 
+customElements.define('drop-down',
+    class DropDown extends HTMLElement {
+
+        connectedCallback() {
+
+        };
+    }
+);
+
+
 customElements.define('tab-sections',
     class TabSections extends HTMLElement {
 
