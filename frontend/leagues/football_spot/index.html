@@ -21,6 +21,30 @@
             opacity: 0;
             animation: fade-up 0.8s forwards
         }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e5e7eb;
+            /* Tailwind gray-200 */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+            /* Tailwind blue-500 */
+            border-radius: 9999px;
+        }
     </style>
 
     <title>Football Spot</title>
@@ -44,16 +68,6 @@
     class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap">
 
     <desktop-sidebar>
-        <style>
-            .no-scrollbar::-webkit-scrollbar {
-                display: none;
-            }
-
-            .no-scrollbar {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-        </style>
 
         <aside class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
             aria-label="Sidebar" separator-sidebar>
@@ -299,9 +313,8 @@
         <!-- use grid to maitain spacing -->
         <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_1fr] h-full">
 
-
             <!-- Nav -->
-            <section class="mb-6 fadeUp flex justify-between">
+            <section class="mb-4 fadeUp flex justify-between">
                 <nav class="flex items-center gap-8">
                     <a class="flex items-center gap-3" href="../../leagues.html">
                         <iconify-icon icon="ep:back" width="100%" height="100%"
@@ -325,18 +338,18 @@
             </section>
 
             <!-- Heading -->
-            <section class="mb-6 fadeUp">
+            <section class="mb-4 fadeUp">
                 <div class="flex justify-between flex-col-reverse md:flex-row">
-                    <div class="pt-5 md:pt-0 flex">
-                        <img src="../../assets/42.png" class="w-16 h-16">
+                    <div class="pt-2 md:pt-0 flex">
+                        <img src="../../assets/42.png" class="w-10 h-10">
                         <div class="pl-6 flex flex-col justify-center">
-                            <span class="text-2xl font-bold tracking-wide">Football Spot</span>
-                            <span class="text-md">Nigeria</span>
+                            <span class="text-xl font-bold tracking-wide">Football Spot</span>
+                            <span class="text-sm">Nigeria</span>
                         </div>
                     </div>
                     <drop-down class="relative ml-auto">
                         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-                            class="inline-flex items-center justify-center text-white bg-orange-300 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none"
+                            class="inline-flex items-center justify-center text-white bg-orange-300 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2 focus:outline-none"
                             type="button">
                             Season
                             <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -379,24 +392,24 @@
                     <ul class="flex overflow-x-auto no-scrollbar">
                         <li class="me-2">
                             <button
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Table</button>
+                                class="inline-block p-2 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Table</button>
                         </li>
                         <li class="me-2">
-                            <button class="inline-block p-4 text-fg-brand border-b border-brand rounded-t-base active"
+                            <button class="inline-block p-2 text-fg-brand border-b border-brand rounded-t-base active"
                                 aria-current="page">Fixtures</button>
                         </li>
                         <li class="me-2">
                             <button
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Player
+                                class="inline-block p-2 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Player
                                 Stats</button>
                         </li>
                         <li class="me-2">
                             <button
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Admin</button>
+                                class="inline-block p-2 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Admin</button>
                         </li>
                         <li class="me-2">
                             <button
-                                class="inline-block p-4 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Players</button>
+                                class="inline-block p-2 border-b border-transparent rounded-t-base hover:text-fg-brand hover:border-brand">Players</button>
                         </li>
                     </ul>
                 </nav>
@@ -405,34 +418,35 @@
                     class="bg-gray-700 w-full h-full rounded-b-md flex overflow-scroll snap-x snap-mandatory scroll-smooth no-scrollbar">
 
                     <!-- Table -->
-                    <section class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always">
+                    <section
+                        class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar">
 
                         <!-- controls -->
-                        <div class="flex">
+                        <div class="flex mt-2">
                             <button
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </button>
                             <button
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </button>
                             <button
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </button>
                             <button
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </button>
                         </div>
 
                         <!-- heading -->
-                        <div class="flex gap-6">
+                        <div class="flex gap-6 my-2 p-2 bg-gray-950 rounded-md text-sm">
                             <span>#</span>
                             <span>Player</span>
                             <span>Pts</span>
@@ -444,6 +458,20 @@
 
                         <!-- table -->
                         <div class="">
+                            <div class="bg-gray-900 p-2 rounded-t-md">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 h-2 mb-4 rounded-b-md">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 80%;">
+                                </div>
+                            </div>
+
                             <div class="bg-gray-900 p-2">
                                 <span>1</span>
                                 <span>Mfon</span>
@@ -453,7 +481,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -467,7 +495,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -481,7 +509,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -495,7 +523,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -509,7 +537,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -523,7 +551,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -537,7 +565,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -551,7 +579,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -565,7 +593,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
@@ -579,21 +607,7 @@
                                 <span>2</span>
                                 <span>5</span>
                             </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
-                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
-                                </div>
-                            </div>
-
-                            <div class="bg-gray-900 p-2">
-                                <span>1</span>
-                                <span>Mfon</span>
-                                <span>11</span>
-                                <span>1</span>
-                                <span>3</span>
-                                <span>2</span>
-                                <span>5</span>
-                            </div>
-                            <div class="bg-gray-950 w-full h-3 mb-6">
+                            <div class="bg-gray-950 h-2 mb-4">
                                 <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
                                 </div>
                             </div>
