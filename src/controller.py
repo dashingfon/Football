@@ -49,6 +49,9 @@ def calculate(match_day: int = 1, month: str = "march"):
 def update_football_spot():
     ...
 
+def end_football_spot_season():
+    ...
+
 
 if __name__ == "__main__":
     calculate()

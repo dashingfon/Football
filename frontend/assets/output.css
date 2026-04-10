@@ -500,9 +500,6 @@
   .h-\[40\%\] {
     height: 40%;
   }
-  .h-\[41\.6\] {
-    height: 41.6;
-  }
   .h-\[50\%\] {
     height: 50%;
   }
@@ -1185,6 +1182,10 @@
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
   }
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
