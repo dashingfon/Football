@@ -374,7 +374,7 @@
             </section>
 
             <!-- Tabs -->
-            <tab-sections class="fadeUp grid grid-rows-[auto_1fr] overflow-scroll">
+            <tab-sections class="fadeUp grid grid-rows-[auto_1fr] overflow-scroll no-scrollbar">
                 <nav class="text-sm font-medium text-center text-body border-b border-default overflow-auto">
                     <ul class="flex overflow-x-auto no-scrollbar">
                         <li class="me-2">
@@ -401,20 +401,219 @@
                     </ul>
                 </nav>
 
-                <div class="bg-gray-700 w-full h-full rounded-b-md flex overflow-scroll snap-x snap-mandatory scroll-smooth">
+                <div
+                    class="bg-gray-700 w-full h-full rounded-b-md flex overflow-scroll snap-x snap-mandatory scroll-smooth no-scrollbar">
 
                     <!-- Table -->
-                    <section class="overflow-auto flex-none w-full h-full bg-amber-400 no-scrollbar snap-start snap-always">
+                    <section class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always">
 
+
+                        <!-- controls -->
+                        <div class="flex">
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <!-- heading -->
+                        <div class="flex gap-6">
+                            <span>#</span>
+                            <span>Player</span>
+                            <span>Pts</span>
+                            <span>P</span>
+                            <span>W</span>
+                            <span>D</span>
+                            <span>L</span>
+                        </div>
+
+                        <!-- table -->
+                        <div class="">
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-900 p-2">
+                                <span>1</span>
+                                <span>Mfon</span>
+                                <span>11</span>
+                                <span>1</span>
+                                <span>3</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <div class="bg-gray-950 w-full h-3 mb-6">
+                                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%;">
+                                </div>
+                            </div>
+
+                        </div>
                     </section>
 
                     <!-- Fixtures -->
-                    <section class="overflow-auto flex-none w-full h-full bg-gray-900 no-scrollbar snap-start snap-always">
+                    <section
+                        class="overflow-auto flex-none w-full h-full bg-gray-900 no-scrollbar snap-start snap-always">
+                        <div>
+
+                        </div>
 
                     </section>
 
                     <!-- Player Stats -->
-                    <section class="overflow-auto flex-none w-full h-full bg-amber-400 no-scrollbar snap-start snap-always">
+                    <section
+                        class="overflow-auto flex-none w-full h-full bg-gray-800 no-scrollbar snap-start snap-always">
 
                     </section>
 
@@ -424,17 +623,12 @@
                     </section>
 
                     <!-- Admin -->
-                    <section class="overflow-auto flex-none w-full h-full bg-amber-400 snap-start snap-always">
+                    <section class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always">
 
                     </section>
                 </div>
-
             </tab-sections>
-
-            <!-- <div class="h-12 md:h-0 lg:h-0"></div> -->
         </div>
-
-
     </main>
 
     <!-- Bottom Navigation (Mobile) -->
