@@ -43,114 +43,159 @@
 <body data-theme="light"
     class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap">
 
-    <desktop-sidebar>
-        <style>
-            .no-scrollbar::-webkit-scrollbar {
-                display: none;
-            }
+    <aside
+      class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
+      aria-label="Sidebar"
+    >
+      <div
+        class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
+        data-active="league"
+      >
+        <div>
+          <ul class="space-y-2 font-medium pb-3">
+            <li>
+              <a
+                href="../../index.html"
+                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white"
+              >
+                <img src="../../assets/favicon.ico" class="w-6 h-6" />
+                <span
+                  class="text-md ms-3 hidden group-hover:block"
+                  >Fotclan</span
+                >
+              </a>
+            </li>
+          </ul>
+          <ul
+            class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3"
+          >
+            <li>
+              <a
+                href="../../matches.html"
+                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200"
+              >
+                <iconify-icon
+                  icon="boxicons:football-pitch"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="boxicons:football-pitch"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white"
+                ></iconify-icon>
 
-            .no-scrollbar {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-        </style>
+                <span
+                  class="text-sm ms-3 hidden group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 group-hover:block"
+                  >Matches</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../leagues.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <iconify-icon
+                  icon="ix:trophy"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block"
+                >
+                </iconify-icon>
 
-        <aside class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
-            aria-label="Sidebar" separator-sidebar>
-            <!-- Toggle button -->
-            <button
-                class="absolute right-0 bottom-18 -mr-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md p-1.5 z-50 transition-all duration-300 border border-gray-300 dark:border-gray-600"
-                sidebar-button>
-                <svg class="w-4 h-4 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" toggle-icon>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7" />
-                </svg>
-            </button>
-            <div class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group data-[expanded=true]:w-70 data-[expanded=false]:w-16"
-                data-expanded="true" data-active="news">
-                <div>
-                    <ul class="space-y-2 font-medium pb-3">
-                        <li>
-                            <a href="./index.html"
-                                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white">
-                                <img src="./assets/favicon.ico" class="w-6 h-6">
-                                <span class="text-md ms-3 hidden group-data-[expanded=true]:block">Fotclan</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3">
-                        <li>
-                            <a href="./matches.html"
-                                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200">
-                                <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"></iconify-icon>
-                                <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white"></iconify-icon>
+                <iconify-icon
+                  icon="ix:trophy"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=league]:block fill-black dark:fill-white hidden"
+                >
+                </iconify-icon>
+                <span
+                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500 group-hover:block"
+                  >Leagues</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../news.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <iconify-icon
+                  icon="streamline-plump:news-paper"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block"
+                >
+                </iconify-icon>
 
-                                <span
-                                    class="text-sm ms-3 hidden group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Matches</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./leagues.html"
-                                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                <iconify-icon icon="ix:trophy" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
-                                </iconify-icon>
+                <iconify-icon
+                  icon="streamline-plump:news-paper"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=news]:block fill-black dark:fill-white hidden"
+                >
+                </iconify-icon>
+                <span
+                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500 group-hover:block"
+                  >News</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../profile.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <iconify-icon
+                  icon="healthicons:ui-user-profile"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block"
+                >
+                </iconify-icon>
 
-                                <iconify-icon icon="ix:trophy" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=league]:block fill-black dark:fill-white hidden">
-                                </iconify-icon>
-                                <span
-                                    class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Leagues</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./news.html"
-                                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
-                                </iconify-icon>
+                <iconify-icon
+                  icon="solar:arrow-right-linear"
+                  width="100%"
+                  height="100%"
+                  class="w-6 h-6 group-data-[active=profile]:block fill-black dark:fill-white hidden"
+                >
+                </iconify-icon>
+                <span
+                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500 group-hover:block"
+                  >Profile</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
 
-                                <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=news]:block fill-black dark:fill-white hidden">
-                                </iconify-icon>
-                                <span
-                                    class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500 group-data-[expanded=true]:block">News</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./profile.html"
-                                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
-                                </iconify-icon>
+        <mode-toggle-button data-theme="light" class="group">
+          <button
+            class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
+            mode-toggle
+          >
+            <iconify-icon
+              icon="tdesign:mode-dark"
+              width="100%"
+              height="100%"
+              class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"
+            ></iconify-icon>
 
-                                <iconify-icon icon="solar:arrow-right-linear" width="100%" height="100%"
-                                    class="w-6 h-6 group-data-[active=profile]:block fill-black dark:fill-white hidden">
-                                </iconify-icon>
-                                <span
-                                    class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500 group-data-[expanded=true]:block">Profile</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <mode-toggle-button data-theme="light" class="group">
-                    <button
-                        class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
-                        mode-toggle>
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-
-                        <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></iconify-icon>
-                    </button>
-                </mode-toggle-button>
-
-            </div>
-        </aside>
-    </desktop-sidebar>
+            <iconify-icon
+              icon="tdesign:mode-light"
+              width="100%"
+              height="100%"
+              class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"
+            ></iconify-icon>
+          </button>
+        </mode-toggle-button>
+      </div>
+    </aside>
 
     <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-gray-100 dark:bg-gray-800">
 

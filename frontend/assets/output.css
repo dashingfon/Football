@@ -1541,20 +1541,6 @@
       }
     }
   }
-  .group-hover\:hidden {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        display: none;
-      }
-    }
-  }
-  .group-hover\:w-70 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        width: calc(var(--spacing) * 70);
-      }
-    }
-  }
   .group-hover\:scale-105 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1599,20 +1585,6 @@
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-orange-500) 10%, transparent);
         }
-      }
-    }
-  }
-  .group-hover\:fill-black {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        fill: var(--color-black);
-      }
-    }
-  }
-  .group-hover\:text-black {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        color: var(--color-black);
       }
     }
   }
@@ -2194,24 +2166,6 @@
       --tw-shadow-color: oklch(21% 0.034 264.665);
       @supports (color: color-mix(in lab, red, red)) {
         --tw-shadow-color: color-mix(in oklab, var(--color-gray-900) var(--tw-shadow-alpha), transparent);
-      }
-    }
-  }
-  .group-hover\:dark\:fill-white {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        @media (prefers-color-scheme: dark) {
-          fill: var(--color-white);
-        }
-      }
-    }
-  }
-  .group-hover\:dark\:text-white {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        @media (prefers-color-scheme: dark) {
-          color: var(--color-white);
-        }
       }
     }
   }
