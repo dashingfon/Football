@@ -18,6 +18,7 @@ Fotclan is a social network for footballers
 - [ ] use html templates from js for alerts
 
 
-- [ ] smart contracts
-- [ ] polish
+- [ ] smart contracts integration
+- [ ] polish ui
 - [ ] data script
+- [ ] slides
