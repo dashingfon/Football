@@ -69,7 +69,7 @@ async function connectWallet() {
     userAddress = account;
    
     console.log("Connected to address:", userAddress);
-    document.getElementById('wallet-status').innerText = \`Connected: \${userAddress}\`;
+    // document.getElementById('wallet-status').innerText = \`Connected: \${userAddress}\`;
   } catch (error) {
     console.error("User rejected the request or an error occurred", error);
   }
@@ -98,7 +98,7 @@ async function fetchNextOrderId() {
     });
 
     console.log('Next Order ID:', Number(nextOrderId));
-    document.getElementById('order-info').innerText = \`Next Order ID: \${Number(nextOrderId)}\`;
+    // document.getElementById('order-info').innerText = \`Next Order ID: \${Number(nextOrderId)}\`;
   } catch (error) {
     console.error('Error fetching data:', error);
   }
