@@ -32,3 +32,10 @@ Fotclan is a social network for footballers
     - [ ] spacing, color, player profile, icons
 - [ ] data script
 <!-- - [ ] slides -->
+
+
+# Extra features for monad deltav
+
+- [ ] change to competions in general, add one for tagging fotclan
+- [ ] research competitions and games theory
+
