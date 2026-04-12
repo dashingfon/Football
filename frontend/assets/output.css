@@ -1168,6 +1168,9 @@
   .fill-black {
     fill: var(--color-black);
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
   }
