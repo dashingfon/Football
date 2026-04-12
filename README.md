@@ -25,7 +25,7 @@ Fotclan is a social network for footballers
     - [ ] componentize elements
     - [ ] url argument scroll
     - [ ] data fetch url argument
-    - [ ] seasons dropdown
+    - [ ] dropdowns
     - [ ] league scrollbar functionality
     - [ ] table controls
     - [ ] stat page

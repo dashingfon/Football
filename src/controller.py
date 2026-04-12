@@ -51,6 +51,9 @@ def update_football_spot(teams, results, end: bool = False):
     for result in results:
         ...
 
+def start_football_spot(players):
+    ...
+
 
 
 def end_football_spot_season():
