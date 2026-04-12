@@ -20,5 +20,15 @@ Fotclan is a social network for footballers
 
 <!-- - [ ] smart contracts integration -->
 - [ ] polish ui
+    - [ ] fix the theme switch
+    - [ ] hadd mobile sliding navbar
+    - [ ] componentize elements
+    - [ ] url argument scroll
+    - [ ] data fetch url argument
+    - [ ] seasons dropdown
+    - [ ] league scrollbar functionality
+    - [ ] table controls
+    - [ ] stat page
+    - [ ] spacing, color, player profile, icons
 - [ ] data script
 <!-- - [ ] slides -->

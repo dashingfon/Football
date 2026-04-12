@@ -46,8 +46,8 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
-def update_football_spot(teams, results):
-    
+def update_football_spot(teams, results, end: bool = False):
+
     for result in results:
         ...
 
