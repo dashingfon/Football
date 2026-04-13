@@ -41,7 +41,7 @@
 </head>
 
 <body data-theme="light"
-    class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap">
+    class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap group/body">
 
     <aside
       class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
@@ -174,7 +174,7 @@
           </ul>
         </div>
 
-        <mode-toggle-button data-theme="light" class="group">
+        <mode-toggle-button>
           <button
             class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
             mode-toggle
@@ -183,14 +183,14 @@
               icon="meteocons:starry-night-fill"
               width="100%"
               height="100%"
-              class="w-8 h-8 group-data-[theme=dark]:hidden group-data-[theme=light]:block"
+              class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"
             ></iconify-icon>
 
             <iconify-icon
               icon="meteocons:clear-day-fill"
               width="100%"
               height="100%"
-              class="w-8 h-8 group-data-[theme=dark]:block group-data-[theme=light]:hidden"
+              class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"
             ></iconify-icon>
           </button>
         </mode-toggle-button>
@@ -201,162 +201,20 @@
 
         <div class="@container max-w-5xl mx-auto">
 
-            <!-- Dialogs -->
-
-            <dialog id="deposit-modal"
-                class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-                <div class="flex items-center justify-between">
-                    <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                        Deposit
-                    </h2>
-
-                    <button type="button"
-                        class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-                        aria-label="Close" onclick="document.getElementById('deposit-modal').close()">
-                        <svg-icon source="x">
-                        </svg-icon>
-                    </button>
-                </div>
-
-                <form id="form_modal">
-                    <div class="mt-4">
-                        <label class="text-sm font-medium text-gray-500">Account Name</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4  mb-4">
-
-                            <div
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                                Bank of America
-                            </div>
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Account Number</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4  mb-4">
-
-                            <div
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                                09237483943
-                            </div>
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Amount</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="amount" type="text" placeholder="Amount"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                        </div>
-                    </div>
-                    <footer class="mt-6 flex justify-end gap-2">
-                        <button type="button"
-                            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                            onclick="document.getElementById('deposit-modal').close()">
-                            Cancel
-                        </button>
-
-                        <button id="send_button" hx-post="/user_deposit" hx-swap="none" hx-on::after-request="
-                    if (event.target.id === 'send_button') {document.getElementById('deposit-modal').close()};
-                    " class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                            Done
-                        </button>
-                    </footer>
-                </form>
-
-
-            </dialog>
-
-            <dialog id="withdraw-modal"
-                class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-                <div class="flex items-center justify-between">
-                    <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                        Withdraw
-                    </h2>
-
-                    <button type="button"
-                        class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-                        aria-label="Close" onclick="document.getElementById('withdraw-modal').close()">
-                        <svg-icon source="x">
-                        </svg-icon>
-                    </button>
-                </div>
-
-                <form>
-                    <div class="mt-4">
-                        <label class="text-sm font-medium text-gray-500">Enter Account Name</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4 mb-3">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="acc_name" type="text" placeholder="Account Name"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Enter Account Details</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name=acc_number type="number" placeholder="Account Details"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-
-                        <label class="text-sm font-medium text-gray-500">Amount</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="amount" type="number" placeholder="Amount"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-                    </div>
-
-                    <footer class="mt-6 flex justify-end gap-2">
-                        <button type="button"
-                            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                            onclick="document.getElementById('withdraw-modal').close()">
-                            Cancel
-                        </button>
-
-                        <button id="withdraw_modal_button" hx-post="/user_withdraw" hx-swap="none" hx-on::after-request="
-                        if (event.target.id === 'withdraw_modal_button') {document.getElementById('withdraw-modal').close()};
-                        "
-                            class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                            Done
-                        </button>
-                    </footer>
-                </form>
-            </dialog>
-
             <!-- Nav -->
             <section class="mb-6 fadeUp flex justify-between">
                 <div class="relative flex items-center">
                     <span>Leagues</span>
                 </div>
-                <mode-toggle-button data-theme="light" class="group">
+                <mode-toggle-button>
                     <button
                         class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
                         mode-toggle>
                         <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            class="w-6 h-6 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
                         <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></iconify-icon>
+                            class="w-6 h-6 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
                     </button>
                 </mode-toggle-button>
             </section>
@@ -373,12 +231,6 @@
                     <input type="text" list="browsers" placeholder="Find Leagues"
                         class="text-sm block w-full py-2.5 pr-5 text-gray-500 bg-gray-200 border border-gray-900 dark:border-gray-100 rounded-xl placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                         name="search">
-
-                    <datalist id="browsers">
-                        <option value="Chrome"></option>
-                        <option value="Champions League"></option>
-
-                    </datalist>
 
                 </div>
             </section>

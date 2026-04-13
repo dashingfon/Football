@@ -2,604 +2,525 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
-  <style>
-    @keyframes fade-up {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
+    <style>
+        @keyframes fade-up {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .fadeUp {
-      opacity: 0;
-      animation: fade-up 0.8s forwards;
-    }
+        .fadeUp {
+            opacity: 0;
+            animation: fade-up 0.8s forwards;
+        }
 
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 8px;
-    }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #e5e7eb;
-    }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e5e7eb;
+        }
 
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #3b82f6;
-      border-radius: 9999px;
-    }
-  </style>
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+            border-radius: 9999px;
+        }
+    </style>
 
-  <title>Football Spot</title>
+    <title>Football Spot</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="stylesheet" href="../../assets/output.css" />
-  <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter&display=swap"
-    rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/output.css" />
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter&display=swap"
+        rel="stylesheet" />
 
-  <script src="../../assets/js/components.js" type="module" defer></script>
-  <script src="../../assets/js/iconify.min.js"></script>
+    <script src="../../assets/js/components.js" type="module" defer></script>
+    <script src="../../assets/js/iconify.min.js"></script>
 </head>
 
 <body data-theme="light"
-  class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap">
-  <!-- <desktop-sidebar>
+    class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap group/body">
+    <!-- <desktop-sidebar>
     </desktop-sidebar> -->
-  <aside class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
-    aria-label="Sidebar">
-    <div
-      class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
-      data-active="league">
-      <div>
-        <ul class="space-y-2 font-medium pb-3">
-          <li>
-            <a href="../../index.html" class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white">
-              <img src="../../assets/favicon.ico" class="w-6 h-6" />
-              <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3">
-          <li>
-            <a href="../../matches.html"
-              class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200">
-              <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"></iconify-icon>
-              <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white"></iconify-icon>
+    <aside class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
+            data-active="league">
+            <div>
+                <ul class="space-y-2 font-medium pb-3">
+                    <li>
+                        <a href="../../index.html"
+                            class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white">
+                            <img src="../../assets/favicon.ico" class="w-6 h-6" />
+                            <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3">
+                    <li>
+                        <a href="../../matches.html"
+                            class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200">
+                            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"></iconify-icon>
+                            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white"></iconify-icon>
 
-              <span
-                class="text-sm ms-3 hidden group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 group-hover:block">Matches</span>
-            </a>
-          </li>
-          <li>
-            <a href="../../leagues.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <iconify-icon icon="ix:trophy" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
-              </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 group-hover:block">Matches</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../leagues.html"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
+                            </iconify-icon>
 
-              <iconify-icon icon="ix:trophy" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=league]:block fill-black dark:fill-white hidden">
-              </iconify-icon>
-              <span
-                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500 group-hover:block">Leagues</span>
-            </a>
-          </li>
-          <li>
-            <a href="../../news.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
-              </iconify-icon>
+                            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=league]:block fill-black dark:fill-white hidden">
+                            </iconify-icon>
+                            <span
+                                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500 group-hover:block">Leagues</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../news.html"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
+                            </iconify-icon>
 
-              <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=news]:block fill-black dark:fill-white hidden">
-              </iconify-icon>
-              <span
-                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500 group-hover:block">News</span>
-            </a>
-          </li>
-          <li>
-            <a href="../../profile.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
-              </iconify-icon>
+                            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=news]:block fill-black dark:fill-white hidden">
+                            </iconify-icon>
+                            <span
+                                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500 group-hover:block">News</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../profile.html"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
+                            </iconify-icon>
 
-              <iconify-icon icon="solar:arrow-right-linear" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=profile]:block fill-black dark:fill-white hidden">
-              </iconify-icon>
-              <span
-                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500 group-hover:block">Profile</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <mode-toggle-button data-theme="light" class="group">
-        <button
-          class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
-          mode-toggle>
-          <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-            class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-
-          <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
-            class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></iconify-icon>
-        </button>
-      </mode-toggle-button>
-    </div>
-  </aside>
-
-  <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-gray-100 dark:bg-gray-800">
-    <!-- Dialogs -->
-
-    <dialog id="deposit-modal"
-      class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-      <div class="flex items-center justify-between">
-        <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-          Deposit
-        </h2>
-
-        <button type="button"
-          class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-          aria-label="Close" onclick="document.getElementById('deposit-modal').close()">
-          <svg-icon source="x"> </svg-icon>
-        </button>
-      </div>
-
-      <form id="form_modal">
-        <div class="mt-4">
-          <label class="text-sm font-medium text-gray-500">Account Name</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4 mb-4">
-            <div
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-              Bank of America
+                            <iconify-icon icon="solar:arrow-right-linear" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=profile]:block fill-black dark:fill-white hidden">
+                            </iconify-icon>
+                            <span
+                                class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500 group-hover:block">Profile</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <label class="text-sm font-medium text-gray-500">Account Number</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4 mb-4">
-            <div
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-              09237483943
-            </div>
-          </div>
-          <label class="text-sm font-medium text-gray-500">Amount</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4">
-            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-              <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-              </svg-icon>
-            </span>
 
-            <input name="amount" type="text" placeholder="Amount"
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
-          </div>
+            <mode-toggle-button>
+                <button
+                    class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
+                    mode-toggle>
+                    <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                        class="w-6 h-6 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
+
+                    <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
+                        class="w-6 h-6 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+                </button>
+            </mode-toggle-button>
         </div>
-        <footer class="mt-6 flex justify-end gap-2">
-          <button type="button"
-            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-            onclick="document.getElementById('deposit-modal').close()">
-            Cancel
-          </button>
+    </aside>
 
-          <button id="send_button" hx-post="/user_deposit" hx-swap="none" hx-on::after-request="
-                if (event.target.id === 'send_button') {document.getElementById('deposit-modal').close()};
-                "
-            class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-            Done
-          </button>
-        </footer>
-      </form>
-    </dialog>
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-gray-100 dark:bg-gray-800">
 
-    <dialog id="withdraw-modal"
-      class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-      <div class="flex items-center justify-between">
-        <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-          Withdraw
-        </h2>
+        <!-- use grid to maitain spacing -->
+        <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_auto_1fr] h-full">
+            <!-- Nav -->
+            <section class="mb-4 fadeUp flex justify-between">
+                <nav class="flex items-center gap-8">
+                    <a class="flex items-center gap-3" href="../football_spot/">
+                        <iconify-icon icon="ep:back" width="100%" height="100%"
+                            class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                        <span class="text-sm">Football Spot</span>
+                    </a>
+                </nav>
+                <mode-toggle-button>
+                    <button
+                        class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
+                        mode-toggle>
+                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                            class="w-6 h-6 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
-        <button type="button"
-          class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-          aria-label="Close" onclick="document.getElementById('withdraw-modal').close()">
-          <svg-icon source="x"> </svg-icon>
-        </button>
-      </div>
+                        <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
+                            class="w-6 h-6 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+                    </button>
+                </mode-toggle-button>
+            </section>
 
-      <form>
-        <div class="mt-4">
-          <label class="text-sm font-medium text-gray-500">Enter Account Name</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4 mb-3">
-            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-              <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-              </svg-icon>
-            </span>
+            <!-- Season select -->
+            <section class="overflow-auto flex-none mb-2 w-full h-full bg-gray-800 no-scrollbar">
+                <drop-down data-target="season dropdown">
+                <!-- Season -->
+                <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
+                    <div class="flex justify-between p-2 w-full h-fit">
+                        <span class="pt-2 pl-2">Football Spot March</span>
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                        </div>
+                    </drop-down>
+            </section>
 
-            <input name="acc_name" type="text" placeholder="Account Name"
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
-          </div>
-          <label class="text-sm font-medium text-gray-500">Enter Account Details</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4">
-            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-              <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-              </svg-icon>
-            </span>
+            <!-- Stats select -->
+            <section class="overflow-auto flex-none mb-4 w-full h-full bg-gray-800 no-scrollbar">
+                <drop-down data-target="stats dropdown">
+                    <!-- Stats -->
+                    <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
+                        <div class="flex justify-between p-2 w-full h-fit">
+                            <span class="pt-2 pl-2">Top Scorer</span>
+                            <button
+                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+                </drop-down>
+            </section>
 
-            <input name="acc_number" type="number" placeholder="Account Details"
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
-          </div>
-
-          <label class="text-sm font-medium text-gray-500">Amount</label>
-          <!-- change this to search input with result below -->
-          <div class="relative flex items-center mt-4">
-            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-              <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-              </svg-icon>
-            </span>
-
-            <input name="amount" type="number" placeholder="Amount"
-              class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
-          </div>
-        </div>
-
-        <footer class="mt-6 flex justify-end gap-2">
-          <button type="button"
-            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-            onclick="document.getElementById('withdraw-modal').close()">
-            Cancel
-          </button>
-
-          <button id="withdraw_modal_button" hx-post="/user_withdraw" hx-swap="none" hx-on::after-request="
-                    if (event.target.id === 'withdraw_modal_button') {document.getElementById('withdraw-modal').close()};
-                    "
-            class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-            Done
-          </button>
-        </footer>
-      </form>
-    </dialog>
-
-    <!-- use grid to maitain spacing -->
-    <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_auto_1fr] h-full">
-      <!-- Nav -->
-      <section class="mb-4 fadeUp flex justify-between">
-        <nav class="flex items-center gap-8">
-          <a class="flex items-center gap-3" href="../football_spot/">
-            <iconify-icon icon="ep:back" width="100%" height="100%"
-              class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-            <span class="text-sm">Football Spot</span>
-          </a>
-        </nav>
-        <mode-toggle-button data-theme="light" class="group">
-          <button
-            class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
-            mode-toggle>
-            <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-              class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-
-            <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
-              class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></iconify-icon>
-          </button>
-        </mode-toggle-button>
-      </section>
-
-    <!-- Season select -->
-      <section class="overflow-auto flex-none mb-2 w-full h-full bg-gray-800 no-scrollbar">
-            <!-- Season -->
-            <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
-              <div class="flex justify-between p-2 w-full h-fit">
-                <span class="pt-2 pl-2">Football Spot March</span>
-                <a href="./stats.html?season=1&stats=goals"
-                  class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                  <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </a>
-            </div>
-        </section>
-
-        <!-- Stats select -->
-        <section class="overflow-auto flex-none mb-4 w-full h-full bg-gray-800 no-scrollbar">
             <!-- Stats -->
-            <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
-              <div class="flex justify-between p-2 w-full h-fit">
-                <span class="pt-2 pl-2">Top Scorer</span>
-                <a href="./stats.html?season=1&stats=goals"
-                  class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                  <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </a>
-            </div>
-      </section>
+            <section
+                class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar group"
+                data-loading="false">
 
-      <!-- Stats -->
-          <section
-            class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar group"
-            data-loading="false">
+                <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
 
-            <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
+                    <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
+                        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor" />
+                        <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill" />
+                    </svg>
+                    <span class="sr-only">Loading...</span>
 
-              <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
-                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                  fill="currentColor" />
-                <path
-                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                  fill="currentFill" />
-              </svg>
-              <span class="sr-only">Loading...</span>
+                </div>
+                <!-- controls -->
+                <div class="group-data-[loading=true]:hidden flex mt-2">
+                    <button
+                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                    </button>
+                    <button
+                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                    </button>
+                    <button
+                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                    </button>
+                    <button
+                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
+                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                    </button>
+                </div>
 
-            </div>
-            <!-- controls -->
-            <div class="group-data-[loading=true]:hidden flex mt-2">
-              <button
-                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                  class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-              </button>
-              <button
-                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                  class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-              </button>
-              <button
-                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                  class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-              </button>
-              <button
-                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                  class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-              </button>
-            </div>
+                <!-- heading -->
+                <div class="group-data-[loading=true]:hidden flex gap-6 my-2 p-2 bg-gray-950 rounded-md text-sm">
+                    <span>#</span>
+                    <span>Player</span>
+                    <span>Pts</span>
+                    <span>P</span>
+                    <span>W</span>
+                    <span>D</span>
+                    <span>L</span>
+                </div>
 
-            <!-- heading -->
-            <div class="group-data-[loading=true]:hidden flex gap-6 my-2 p-2 bg-gray-950 rounded-md text-sm">
-              <span>#</span>
-              <span>Player</span>
-              <span>Pts</span>
-              <span>P</span>
-              <span>W</span>
-              <span>D</span>
-              <span>L</span>
-            </div>
+                <!-- table -->
+                <div class="group-data-[loading=true]:hidden ">
+                    <div class="bg-gray-900 p-2 rounded-t-md">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4 rounded-b-md">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 80%"></div>
+                    </div>
 
-            <!-- table -->
-            <div class="group-data-[loading=true]:hidden ">
-              <div class="bg-gray-900 p-2 rounded-t-md">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4 rounded-b-md">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 80%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
+                    <div class="bg-gray-900 p-2">
+                        <span>1</span>
+                        <span>Mfon</span>
+                        <span>11</span>
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>5</span>
+                    </div>
+                    <div class="bg-gray-950 h-2 mb-4">
+                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    </div>
+                </div>
+            </section>
 
-              <div class="bg-gray-900 p-2">
-                <span>1</span>
-                <span>Mfon</span>
-                <span>11</span>
-                <span>1</span>
-                <span>3</span>
-                <span>2</span>
-                <span>5</span>
-              </div>
-              <div class="bg-gray-950 h-2 mb-4">
-                <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-              </div>
-            </div>
-          </section>
+        </div>
+    </main>
 
+    <!-- Season Dropdown menu -->
+    <div id="season dropdown"
+        class="hidden not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                    out</a>
+            </li>
+        </ul>
     </div>
-  </main>
 
-  <!-- Bottom Navigation (Mobile) -->
+    <!-- Season Dropdown menu -->
+    <div id="stats dropdown"
+        class="hidden not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                    out</a>
+            </li>
+        </ul>
+    </div>
 
-  <nav
-    class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
-    data-active="league">
-    <a href="../../matches.html"
-      class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
-      data-active="true">
-      <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-        class="group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block">
-      </iconify-icon>
-      <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-        class="group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white">
-      </iconify-icon>
-      <span
-        class="group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 dark:text-gray-300">Matches</span>
-    </a>
-    <a href="../../leagues.html"
-      class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
-      data-active="false">
-      <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-        class="group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
-      </iconify-icon>
-      <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-        class="group-data-[active=league]:block fill-black dark:fill-white hidden">
-      </iconify-icon>
-      <span
-        class="group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500">Leagues</span>
-    </a>
-    <a href="../../news.html"
-      class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
-      data-active="false">
-      <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-        class="group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
-      </iconify-icon>
-      <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-        class="group-data-[active=news]:block fill-black dark:fill-white hidden">
-      </iconify-icon>
-      <span
-        class="group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500">News</span>
-    </a>
-    <a href="../../profile.html"
-      class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
-      data-active="false">
-      <iconify-icon icon="healthicons:ui-user-profile" width="30" height="30"
-        class="group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
-      </iconify-icon>
-      <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-        class="group-data-[active=profile]:block fill-black dark:fill-white hidden">
-      </iconify-icon>
-      <span
-        class="group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500">Profile</span>
-    </a>
-  </nav>
+    <!-- Bottom Navigation (Mobile) -->
+
+    <nav class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
+        data-active="league">
+        <a href="../../matches.html"
+            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+            data-active="true">
+            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
+                class="group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block">
+            </iconify-icon>
+            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
+                class="group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white">
+            </iconify-icon>
+            <span
+                class="group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 dark:text-gray-300">Matches</span>
+        </a>
+        <a href="../../leagues.html"
+            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+            data-active="false">
+            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
+                class="group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
+            </iconify-icon>
+            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
+                class="group-data-[active=league]:block fill-black dark:fill-white hidden">
+            </iconify-icon>
+            <span
+                class="group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500">Leagues</span>
+        </a>
+        <a href="../../news.html"
+            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+            data-active="false">
+            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
+                class="group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
+            </iconify-icon>
+            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
+                class="group-data-[active=news]:block fill-black dark:fill-white hidden">
+            </iconify-icon>
+            <span
+                class="group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500">News</span>
+        </a>
+        <a href="../../profile.html"
+            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+            data-active="false">
+            <iconify-icon icon="healthicons:ui-user-profile" width="30" height="30"
+                class="group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
+            </iconify-icon>
+            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
+                class="group-data-[active=profile]:block fill-black dark:fill-white hidden">
+            </iconify-icon>
+            <span
+                class="group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500">Profile</span>
+        </a>
+    </nav>
 </body>
 <script>
-  /* ---------- ANIMATE CARDS ---------- */
-  document.querySelectorAll(".fadeUp").forEach((el, i) => {
-    setTimeout(() => (el.style.opacity = 1), 300 + i * 80);
-  });
+    /* ---------- ANIMATE CARDS ---------- */
+    document.querySelectorAll(".fadeUp").forEach((el, i) => {
+        setTimeout(() => (el.style.opacity = 1), 300 + i * 80);
+    });
 </script>
 
 </html>

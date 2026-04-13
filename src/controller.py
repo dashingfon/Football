@@ -46,8 +46,9 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
-def update_football_spot(teams, results, end: bool = False):
-
+def update_football_spot(teams, results, end: bool = False, start: bool = False):
+    if end and start:
+        raise ValueError("cannot start and end at the same time")
     for result in results:
         ...
 

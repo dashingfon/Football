@@ -1,7 +1,7 @@
 
 
 customElements.define('desktop-sidebar',
-    class DesktopSidebar extends HTMLElement {   
+    class DesktopSidebar extends HTMLElement {
 
         expand(toggleIcon, sidebarContent) {
             toggleIcon.style.transform = 'rotate(0deg)';
@@ -41,40 +41,78 @@ customElements.define('desktop-sidebar',
                     } else {
                         this.expand(this.toggleIcon, this.sidebarContent);
                     }
-            } 
-        )}
+                }
+            )
+        }
     }
 );
 
+customElements.define('mode-toggle-checkbox',
+    class ModeToggleCheckbox extends HTMLElement {
+        connectedCallback() {
+            // console.log("opening");
+            const checkbox = this.querySelector("input");
+            // console.log("Checkbox found:", checkbox); // Debug
+            const stored = localStorage.getItem('theme');
+            // const body = document.body;
+
+            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                checkbox.checked = false;
+                document.body.dataset.theme = 'dark';
+                localStorage.setItem('theme', "dark");
+            } else {
+                checkbox.checked = true;
+                document.body.dataset.theme = 'light';
+                localStorage.setItem('theme', "light");
+            }
+            if (checkbox) {
+                checkbox.addEventListener('change', function () {
+                // console.log("Change event fired, checked:", this.checked); // Debug
+                    if (this.checked) {
+                    document.body.dataset.theme = "light";
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.body.dataset.theme = "dark";
+                    localStorage.setItem('theme', 'dark')
+                }
+                });
+            }
+        }
+    })
 
 customElements.define('mode-toggle-button',
     class ModeToggleButton extends HTMLElement {
 
-        setTheme(theme) {
-            const body = document.body;
-            if (theme === 'dark') {
-                body.classList.add('dark');
-                document.cookie = `theme=dark; path=/; max-age=31536000`
-            } else {
-                body.classList.remove('dark');
-                document.cookie = `theme=light; path=/; max-age=31536000`
-            }
-        }
-
         connectedCallback() {
-            const button = this.querySelector("[mode-toggle]");
-            const toggle = this;
+            const mode_button = this.querySelector('button');
+            // const body = document.body;
+            const stored = localStorage.getItem('theme');
 
-            button.addEventListener('click', function() {
-                const stored = document.body.classList.contains("dark")
-                if (stored) {
-                    toggle.setTheme("light");
-                    toggle.dataset.theme = 'light';
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.dataset.theme = 'dark';
                 } else {
-                    toggle.setTheme("dark");
-                    toggle.dataset.theme = 'dark';
+                    document.body.dataset.theme = 'light';
                 }
-            });
+                localStorage.setItem('theme', theme);
+            }
+
+            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+            if (mode_button) {
+                mode_button.addEventListener("click", () => {
+                    if (document.body.dataset.theme === "dark") {
+                        document.body.dataset.theme = "light";
+                        localStorage.setItem("theme", "light");
+                    } else {
+                        document.body.dataset.theme = "dark";
+                        localStorage.setItem("theme", "dark");
+                    }
+                })
+            }
         };
     }
 );
@@ -84,7 +122,35 @@ customElements.define('drop-down',
     class DropDown extends HTMLElement {
 
         connectedCallback() {
+            const target_id = this.dataset.target
+            const dropdown = document.getElementById(target_id);
+            const top = this.dataset.position;
+            const button = this.querySelector("button")
+            const rect = this.getBoundingClientRect();
 
+            if (rect) {
+                dropdown.style.position = "absolute";
+                if (top === "top") {
+                    dropdown.style.top = `${rect.top}px`;
+                } else {
+                    dropdown.style.top = `${rect.bottom}px`;
+                }
+                dropdown.style.right = `${16}px`;
+                // dropdown.style.left = `${rect.right}px`;
+                // dropdown.style.right = `${rect.left - 20}px`;
+            }
+
+            button?.addEventListener("click", () => {
+                if (button.dataset.dropdown === "dropdown") {
+                    dropdown?.classList.toggle("hidden")
+                    button.dataset.dropdown = ""
+                    // remove event listener
+                } else {
+                    dropdown?.classList.toggle("hidden")
+                    button.dataset.dropdown = "dataset"
+                    // add event listener
+                }
+            })
         };
     }
 );
@@ -104,7 +170,7 @@ customElements.define('chart-race',
     class ChartRace extends HTMLElement {
 
         connectedCallback() {
-        
+
         };
     }
 );
@@ -114,7 +180,7 @@ customElements.define('stats-feed',
     class ChartRace extends HTMLElement {
 
         connectedCallback() {
-        
+
         };
     }
 );
