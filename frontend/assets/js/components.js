@@ -118,42 +118,42 @@ customElements.define('mode-toggle-button',
 );
 
 
-customElements.define('drop-down',
-    class DropDown extends HTMLElement {
+// customElements.define('drop-down',
+//     class DropDown extends HTMLElement {
 
-        connectedCallback() {
-            const target_id = this.dataset.target
-            const dropdown = document.getElementById(target_id);
-            const top = this.dataset.position;
-            const button = this.querySelector("button")
-            const rect = this.getBoundingClientRect();
+//         connectedCallback() {
+//             const target_id = this.dataset.target
+//             const dropdown = document.getElementById(target_id);
+//             const top = this.dataset.position;
+//             const button = this.querySelector("button")
+//             const rect = this.getBoundingClientRect();
 
-            if (rect) {
-                dropdown.style.position = "absolute";
-                if (top === "top") {
-                    dropdown.style.top = `${rect.top}px`;
-                } else {
-                    dropdown.style.top = `${rect.bottom}px`;
-                }
-                dropdown.style.right = `${16}px`;
-                // dropdown.style.left = `${rect.right}px`;
-                // dropdown.style.right = `${rect.left - 20}px`;
-            }
+//             if (rect) {
+//                 dropdown.style.position = "absolute";
+//                 if (top === "top") {
+//                     dropdown.style.top = `${rect.top}px`;
+//                 } else {
+//                     dropdown.style.top = `${rect.bottom}px`;
+//                 }
+//                 dropdown.style.right = `${16}px`;
+//                 // dropdown.style.left = `${rect.right}px`;
+//                 // dropdown.style.right = `${rect.left - 20}px`;
+//             }
 
-            button?.addEventListener("click", () => {
-                if (button.dataset.dropdown === "dropdown") {
-                    dropdown?.classList.toggle("hidden")
-                    button.dataset.dropdown = ""
-                    // remove event listener
-                } else {
-                    dropdown?.classList.toggle("hidden")
-                    button.dataset.dropdown = "dataset"
-                    // add event listener
-                }
-            })
-        };
-    }
-);
+//             button?.addEventListener("click", () => {
+//                 if (button.dataset.dropdown === "dropdown") {
+//                     dropdown?.classList.toggle("hidden")
+//                     button.dataset.dropdown = ""
+//                     // remove event listener
+//                 } else {
+//                     dropdown?.classList.toggle("hidden")
+//                     button.dataset.dropdown = "dataset"
+//                     // add event listener
+//                 }
+//             })
+//         };
+//     }
+// );
 
 
 customElements.define('tab-sections',

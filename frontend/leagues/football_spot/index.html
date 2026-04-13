@@ -188,7 +188,21 @@
             </div>
           </div>
           <drop-down class="relative ml-auto overflow-visible" data-target="dropdown" data-position="top">
-            <button id="dropdownDefaultButton" data-mode=""
+            <style>
+              #season-dropdown-button {
+                anchor-name: --my-anchor;
+              }
+
+              #season-dropdown {
+                margin: 0;
+                inset: auto;
+                position-anchor: --my-anchor;
+                top: anchor(bottom);
+                right: anchor(right);
+              }
+              
+            </style>
+            <button id="season-dropdown-button" data-mode="" popovertarget="season-dropdown"
               class="inline-flex items-center justify-center text-white bg-orange-300 box-border border border-transparent hover:bg-brand-strong focus:ring-2 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2 focus:outline-none"
               type="button">
               Season
@@ -198,6 +212,30 @@
                   d="m19 9-7 7-7-7" />
               </svg>
             </button>
+
+            <!-- Dropdown menu -->
+            <div id="season-dropdown" popover
+              class="absolute not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+              <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                <li>
+                  <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                    out</a>
+                </li>
+              </ul>
+            </div>
           </drop-down>
         </div>
       </section>
@@ -864,30 +902,6 @@
       </tab-sections>
     </div>
   </main>
-
-  <!-- Dropdown menu -->
-  <div id="dropdown"
-    class="hidden not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
-    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
-      <li>
-        <a href="#"
-          class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
-      </li>
-      <li>
-        <a href="#"
-          class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
-      </li>
-      <li>
-        <a href="#"
-          class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
-      </li>
-      <li>
-        <a href="#"
-          class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
-          out</a>
-      </li>
-    </ul>
-  </div>
 
   <!-- Bottom Navigation (Mobile) -->
 
