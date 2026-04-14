@@ -139,24 +139,26 @@
 
             <!-- Search -->
             <section class="mb-10 fadeUp">
-                <div class="relative flex items-center mt-4 md:mt-0">
-                    <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                        <iconify-icon width="24" height="24" icon="jam:search"
-                            class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                        </iconify-icon>
-                    </span>
-
-                    <input type="text" list="browsers" placeholder="Find Leagues"
-                        class="text-sm block w-full py-2.5 pr-5 text-gray-500 bg-gray-200 border border-gray-900 dark:border-gray-100 rounded-xl placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
-                        name="search">
-
-                </div>
+                <search-filter>
+                    <div class="relative flex items-center mt-4 md:mt-0">
+                        <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
+                            <iconify-icon width="24" height="24" icon="jam:search"
+                                class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                            </iconify-icon>
+                        </span>
+    
+                        <input type="text" list="browsers" placeholder="Find Leagues"
+                            class="text-sm block w-full py-2.5 pr-5 text-gray-500 bg-gray-200 border border-gray-900 dark:border-gray-100 rounded-xl placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
+                            name="search">
+    
+                    </div>
+                </search-filter>
             </section>
 
             <!-- Leagues -->
             <section
                 class="mb-10 fadeUp dark:glass-light rounded-md fadeUp">
-                <div class="relative flex flex-col items-center gap-4 overflow-x-auto w-full">
+                <div class="relative flex flex-col items-center gap-4 overflow-x-auto w-full" id="leagues">
 
                         <a class="flex p-4 items-center w-full bg-gray-900 rounded-md shadow-md shadow-gray-200 dark:shadow-gray-900 hover:bg-bg-3" href="./leagues/champions_league">
                             <img src="./assets/uefa-champions-league.svg" class="w-10 h-10 text-text-1">

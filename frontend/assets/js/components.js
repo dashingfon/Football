@@ -165,6 +165,35 @@ customElements.define('tab-sections',
     }
 );
 
+customElements.define('search-filter',
+class SearchFilter extends HTMLElement {
+
+    connectedCallback() {
+        const input = this.querySelector("input");
+        input?.addEventListener("input", () => {
+            const value = input.value.toLowerCase().trim();
+            const leagues = document.querySelectorAll("#leagues a");
+
+            if (value === "") {
+                leagues.forEach((el) => {
+                    el.classList.remove("hidden");
+                });
+            } else {
+                leagues.forEach((el) => {
+                    const p = el.querySelector("p");
+                    const text = p.textContent.toLowerCase();
+
+                    if (text.includes(value)) {
+                        el.classList.remove("hidden");
+                    } else {
+                        el.classList.add("hidden");
+                    }
+                });
+            }
+        });
+    };
+});
+
 
 customElements.define('chart-race',
     class ChartRace extends HTMLElement {
