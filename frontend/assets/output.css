@@ -34,12 +34,9 @@
     --color-zinc-100: oklch(96.7% 0.001 286.375);
     --color-zinc-300: oklch(87.1% 0.006 286.286);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
-    --color-zinc-500: oklch(55.2% 0.016 285.938);
     --color-zinc-600: oklch(44.2% 0.017 285.786);
-    --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
     --color-zinc-900: oklch(21% 0.006 285.885);
-    --color-zinc-950: oklch(14.1% 0.005 285.823);
     --color-neutral-800: oklch(26.9% 0 0);
     --color-black: #000;
     --color-white: #fff;
@@ -917,6 +914,9 @@
   .border-bg-1 {
     border-color: var(--bg-1);
   }
+  .border-bg-2 {
+    border-color: var(--bg-2);
+  }
   .border-bg-2\/50 {
     border-color: var(--bg-2);
     @supports (color: color-mix(in lab, red, red)) {
@@ -930,6 +930,12 @@
     border-color: var(--bg-3);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--bg-3) 50%, transparent);
+    }
+  }
+  .border-bg-3\/80 {
+    border-color: var(--bg-3);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--bg-3) 80%, transparent);
     }
   }
   .border-brand {
@@ -971,32 +977,23 @@
   .border-transparent {
     border-color: transparent;
   }
-  .border-zinc-700\/50 {
-    border-color: color-mix(in srgb, oklch(37% 0.013 285.805) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-zinc-700) 50%, transparent);
-    }
-  }
-  .border-zinc-800 {
-    border-color: var(--color-zinc-800);
-  }
-  .border-zinc-800\/50 {
-    border-color: color-mix(in srgb, oklch(27.4% 0.006 286.033) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-zinc-800) 50%, transparent);
-    }
-  }
-  .border-zinc-800\/80 {
-    border-color: color-mix(in srgb, oklch(27.4% 0.006 286.033) 80%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-zinc-800) 80%, transparent);
-    }
-  }
   .bg-amber-800 {
     background-color: var(--color-amber-800);
   }
   .bg-bg-1 {
     background-color: var(--bg-1);
+  }
+  .bg-bg-1\/30 {
+    background-color: var(--bg-1);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--bg-1) 30%, transparent);
+    }
+  }
+  .bg-bg-1\/40 {
+    background-color: var(--bg-1);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--bg-1) 40%, transparent);
+    }
   }
   .bg-bg-1\/70 {
     background-color: var(--bg-1);
@@ -1006,6 +1003,12 @@
   }
   .bg-bg-2 {
     background-color: var(--bg-2);
+  }
+  .bg-bg-2\/40 {
+    background-color: var(--bg-2);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--bg-2) 40%, transparent);
+    }
   }
   .bg-bg-2\/50 {
     background-color: var(--bg-2);
@@ -1017,6 +1020,15 @@
     background-color: var(--bg-2);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--bg-2) 80%, transparent);
+    }
+  }
+  .bg-bg-3 {
+    background-color: var(--bg-3);
+  }
+  .bg-bg-3\/50 {
+    background-color: var(--bg-3);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--bg-3) 50%, transparent);
     }
   }
   .bg-bg-3\/80 {
@@ -1035,6 +1047,12 @@
     background-color: var(--brand);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--brand) 20%, transparent);
+    }
+  }
+  .bg-brand\/80 {
+    background-color: var(--brand);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--brand) 80%, transparent);
     }
   }
   .bg-gray-50 {
@@ -1073,12 +1091,6 @@
       background-color: color-mix(in oklab, var(--color-orange-500) 10%, transparent);
     }
   }
-  .bg-orange-500\/80 {
-    background-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 80%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-orange-500) 80%, transparent);
-    }
-  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1093,30 +1105,6 @@
   }
   .bg-zinc-800 {
     background-color: var(--color-zinc-800);
-  }
-  .bg-zinc-800\/50 {
-    background-color: color-mix(in srgb, oklch(27.4% 0.006 286.033) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-zinc-800) 50%, transparent);
-    }
-  }
-  .bg-zinc-900 {
-    background-color: var(--color-zinc-900);
-  }
-  .bg-zinc-900\/30 {
-    background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-zinc-900) 30%, transparent);
-    }
-  }
-  .bg-zinc-900\/40 {
-    background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-zinc-900) 40%, transparent);
-    }
-  }
-  .bg-zinc-950 {
-    background-color: var(--color-zinc-950);
   }
   .bg-gradient-to-b {
     --tw-gradient-position: to bottom in oklab;
@@ -1144,6 +1132,13 @@
     --tw-gradient-from: var(--bg-1);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .from-brand\/10 {
+    --tw-gradient-from: var(--brand);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-gradient-from: color-mix(in oklab, var(--brand) 10%, transparent);
+    }
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
   .from-brand\/20 {
     --tw-gradient-from: var(--brand);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1158,16 +1153,14 @@
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
-  .from-orange-500\/10 {
-    --tw-gradient-from: color-mix(in srgb, oklch(70.5% 0.213 47.604) 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-gradient-from: color-mix(in oklab, var(--color-orange-500) 10%, transparent);
-    }
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
   .from-text-1 {
     --tw-gradient-from: var(--text-1);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .via-bg-1 {
+    --tw-gradient-via: var(--bg-1);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
   .via-bg-1\/80 {
     --tw-gradient-via: var(--bg-1);
@@ -1185,10 +1178,9 @@
     --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .via-zinc-950 {
-    --tw-gradient-via: var(--color-zinc-950);
-    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  .to-bg-1 {
+    --tw-gradient-to: var(--bg-1);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-bg-1\/20 {
     --tw-gradient-to: var(--bg-1);
@@ -1213,10 +1205,6 @@
   }
   .to-transparent {
     --tw-gradient-to: transparent;
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .to-zinc-950 {
-    --tw-gradient-to: var(--color-zinc-950);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .bg-clip-text {
@@ -1436,6 +1424,9 @@
   .text-text-2 {
     color: var(--text-2);
   }
+  .text-text-3 {
+    color: var(--text-3);
+  }
   .text-text-4 {
     color: var(--text-4);
   }
@@ -1448,20 +1439,8 @@
   .text-zinc-50 {
     color: var(--color-zinc-50);
   }
-  .text-zinc-100 {
-    color: var(--color-zinc-100);
-  }
-  .text-zinc-300 {
-    color: var(--color-zinc-300);
-  }
   .text-zinc-400 {
     color: var(--color-zinc-400);
-  }
-  .text-zinc-500 {
-    color: var(--color-zinc-500);
-  }
-  .text-zinc-600 {
-    color: var(--color-zinc-600);
   }
   .capitalize {
     text-transform: capitalize;
@@ -1676,12 +1655,12 @@
       }
     }
   }
-  .group-hover\:border-orange-500\/20 {
+  .group-hover\:border-brand\/20 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        border-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 20%, transparent);
+        border-color: var(--brand);
         @supports (color: color-mix(in lab, red, red)) {
-          border-color: color-mix(in oklab, var(--color-orange-500) 20%, transparent);
+          border-color: color-mix(in oklab, var(--brand) 20%, transparent);
         }
       }
     }
@@ -1693,27 +1672,27 @@
       }
     }
   }
-  .group-hover\:bg-orange-500\/10 {
+  .group-hover\:bg-brand\/10 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 10%, transparent);
+        background-color: var(--brand);
         @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-orange-500) 10%, transparent);
+          background-color: color-mix(in oklab, var(--brand) 10%, transparent);
         }
       }
     }
   }
-  .group-hover\:text-orange-400 {
+  .group-hover\:text-brand {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        color: var(--color-orange-400);
+        color: var(--brand);
       }
     }
   }
-  .group-hover\:text-orange-500 {
+  .group-hover\:text-text-3 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        color: var(--color-orange-500);
+        color: var(--text-3);
       }
     }
   }
@@ -1721,13 +1700,6 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         color: var(--color-white);
-      }
-    }
-  }
-  .group-hover\:text-zinc-300 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        color: var(--color-zinc-300);
       }
     }
   }
@@ -1930,9 +1902,9 @@
       color: var(--bg-2);
     }
   }
-  .placeholder\:text-zinc-500 {
+  .placeholder\:text-text-4 {
     &::placeholder {
-      color: var(--color-zinc-500);
+      color: var(--text-4);
     }
   }
   .\*\:even\:bg-gray-50 {
@@ -1956,6 +1928,26 @@
       }
     }
   }
+  .hover\:bg-bg-1\/60 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--bg-1);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--bg-1) 60%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-bg-2\/60 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--bg-2);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--bg-2) 60%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-bg-3 {
     &:hover {
       @media (hover: hover) {
@@ -1967,6 +1959,26 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-700);
+      }
+    }
+  }
+  .hover\:bg-brand\/50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--brand);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--brand) 50%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-brand\/80 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--brand);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--brand) 80%, transparent);
+        }
       }
     }
   }
@@ -1998,26 +2010,6 @@
       }
     }
   }
-  .hover\:bg-orange-500\/50 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 50%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-orange-500) 50%, transparent);
-        }
-      }
-    }
-  }
-  .hover\:bg-zinc-900\/60 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 60%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-zinc-900) 60%, transparent);
-        }
-      }
-    }
-  }
   .hover\:text-brand {
     &:hover {
       @media (hover: hover) {
@@ -2039,16 +2031,21 @@
       }
     }
   }
-  .hover\:text-zinc-300 {
+  .hover\:text-text-3 {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-zinc-300);
+        color: var(--text-3);
       }
     }
   }
   .focus\:border-blue-400 {
     &:focus {
       border-color: var(--color-blue-400);
+    }
+  }
+  .focus\:border-brand {
+    &:focus {
+      border-color: var(--brand);
     }
   }
   .focus\:border-orange-500 {
@@ -2071,6 +2068,14 @@
   .focus\:ring-blue-300 {
     &:focus {
       --tw-ring-color: var(--color-blue-300);
+    }
+  }
+  .focus\:ring-brand\/50 {
+    &:focus {
+      --tw-ring-color: var(--brand);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-ring-color: color-mix(in oklab, var(--brand) 50%, transparent);
+      }
     }
   }
   .focus\:ring-orange-500\/50 {
