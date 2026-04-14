@@ -31,12 +31,9 @@
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-gray-950: oklch(13% 0.028 261.692);
     --color-zinc-50: oklch(98.5% 0 0);
-    --color-zinc-100: oklch(96.7% 0.001 286.375);
-    --color-zinc-300: oklch(87.1% 0.006 286.286);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-600: oklch(44.2% 0.017 285.786);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
-    --color-zinc-900: oklch(21% 0.006 285.885);
     --color-neutral-800: oklch(26.9% 0 0);
     --color-black: #000;
     --color-white: #fff;
@@ -813,11 +810,6 @@
       }
     }
   }
-  .divide-gray-200 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-gray-200);
-    }
-  }
   .divide-gray-400 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-gray-400);
@@ -914,9 +906,6 @@
   .border-bg-1 {
     border-color: var(--bg-1);
   }
-  .border-bg-2 {
-    border-color: var(--bg-2);
-  }
   .border-bg-2\/50 {
     border-color: var(--bg-2);
     @supports (color: color-mix(in lab, red, red)) {
@@ -983,12 +972,6 @@
   .bg-bg-1 {
     background-color: var(--bg-1);
   }
-  .bg-bg-1\/30 {
-    background-color: var(--bg-1);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--bg-1) 30%, transparent);
-    }
-  }
   .bg-bg-1\/40 {
     background-color: var(--bg-1);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1003,12 +986,6 @@
   }
   .bg-bg-2 {
     background-color: var(--bg-2);
-  }
-  .bg-bg-2\/40 {
-    background-color: var(--bg-2);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--bg-2) 40%, transparent);
-    }
   }
   .bg-bg-2\/50 {
     background-color: var(--bg-2);
@@ -1718,6 +1695,11 @@
       color: var(--color-black);
     }
   }
+  .group-data-\[active\=league\]\:text-brand {
+    &:is(:where(.group)[data-active="league"] *) {
+      color: var(--brand);
+    }
+  }
   .group-data-\[active\=league\]\:text-white {
     &:is(:where(.group)[data-active="league"] *) {
       color: var(--color-white);
@@ -1907,13 +1889,6 @@
       color: var(--text-4);
     }
   }
-  .\*\:even\:bg-gray-50 {
-    :is(& > *) {
-      &:nth-child(even) {
-        background-color: var(--color-gray-50);
-      }
-    }
-  }
   .hover\:w-70 {
     &:hover {
       @media (hover: hover) {
@@ -1925,16 +1900,6 @@
     &:hover {
       @media (hover: hover) {
         border-color: var(--brand);
-      }
-    }
-  }
-  .hover\:bg-bg-1\/60 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--bg-1);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--bg-1) 60%, transparent);
-        }
       }
     }
   }
@@ -2243,13 +2208,6 @@
       padding-left: calc(var(--spacing) * 5);
     }
   }
-  .dark\:divide-gray-700 {
-    @media (prefers-color-scheme: dark) {
-      :where(& > :not(:last-child)) {
-        border-color: var(--color-gray-700);
-      }
-    }
-  }
   .dark\:border-gray-100 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-gray-100);
@@ -2325,6 +2283,13 @@
       }
     }
   }
+  .group-data-\[active\=league\]\:dark\:text-brand {
+    &:is(:where(.group)[data-active="league"] *) {
+      @media (prefers-color-scheme: dark) {
+        color: var(--brand);
+      }
+    }
+  }
   .group-data-\[active\=league\]\:dark\:text-white {
     &:is(:where(.group)[data-active="league"] *) {
       @media (prefers-color-scheme: dark) {
@@ -2378,15 +2343,6 @@
     &:is(:where(.group)[data-active="profile"] *) {
       @media (prefers-color-scheme: dark) {
         color: var(--color-white);
-      }
-    }
-  }
-  .dark\:\*\:even\:bg-gray-900 {
-    @media (prefers-color-scheme: dark) {
-      :is(& > *) {
-        &:nth-child(even) {
-          background-color: var(--color-gray-900);
-        }
       }
     }
   }
