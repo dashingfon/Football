@@ -187,22 +187,22 @@
               <span class="text-sm">Nigeria</span>
             </div>
           </div>
-          <drop-down class="relative ml-auto overflow-visible" data-target="dropdown" data-position="top">
+          <drop-down class="relative ml-auto overflow-visible">
             <style>
               #season-dropdown-button {
                 anchor-name: --my-anchor;
               }
 
               #season-dropdown {
+                position-anchor: --my-anchor;
                 margin: 0;
                 inset: auto;
-                position-anchor: --my-anchor;
                 top: anchor(bottom);
                 right: anchor(right);
               }
               
             </style>
-            <button id="season-dropdown-button" data-mode="" popovertarget="season-dropdown"
+            <button id="season-dropdown-button" popovertarget="season-dropdown"
               class="inline-flex items-center justify-center text-white bg-orange-300 box-border border border-transparent hover:bg-brand-strong focus:ring-2 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2 focus:outline-none"
               type="button">
               Season

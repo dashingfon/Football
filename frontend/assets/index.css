@@ -31,24 +31,24 @@
 
 :root {
 --pitch: theme(color.green.300);
---success: theme(color.green.400);
---failure: theme(color.red.400);
---warning: theme(color.yellow.400);
---alert: theme(color.blue.400);
---brand: theme(color.orange.400);
+--success: theme(color.green.600);
+--failure: theme(color.red.600);
+--warning: theme(color.yellow.600);
+--alert: theme(color.blue.600);
+--brand: theme(color.orange.600);
 
 --bg-1: theme(color.olive.50);
 --bg-2: theme(color.olive.100);
 --bg-3: theme(color.olive.200);
 
---fg-1: theme(color.olive.50);
---fg-2: theme(color.olive.100);
---fg-3: theme(color.olive.200);
+--fg-1: theme(color.olive.950);
+--fg-2: theme(color.olive.900);
+--fg-3: theme(color.olive.800);
 
---text-1: theme(color.olive.50);
---text-2: theme(color.olive.100);
---text-3: theme(color.olive.200);
---text-4: theme(color.olive.300);
+--text-1: theme(color.olive.950);
+--text-2: theme(color.olive.900);
+--text-3: theme(color.olive.800);
+--text-4: theme(color.olive.700);
 
 color-scheme: light;
 }

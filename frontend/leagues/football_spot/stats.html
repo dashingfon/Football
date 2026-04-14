@@ -179,33 +179,111 @@
 
             <!-- Season select -->
             <section class="overflow-auto flex-none mb-2 w-full h-full bg-gray-800 no-scrollbar">
-                <drop-down data-target="season dropdown">
-                <!-- Season -->
-                <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
-                    <div class="flex justify-between p-2 w-full h-fit">
-                        <span class="pt-2 pl-2">Football Spot March</span>
-                            <button
+                <drop-down>
+                    <style>
+                        #season-dropdown-button {
+                            anchor-name: --season-anchor;
+                        }
+
+                        #season-dropdown {
+                            position-anchor: --season-anchor;
+                            margin: 0;
+                            inset: auto;
+                            top: anchor(bottom);
+                            right: anchor(right);
+                        }
+                    </style>
+                    <!-- Season -->
+                    <button id="season-dropdown-button"
+                        class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
+                        popovertarget="season-dropdown">
+                        <div class="flex justify-between p-2 h-fit">
+                            <span class="pt-2 pl-2">Football Spot March</span>
+                            <div
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                            </button>
+                            </div>
                         </div>
-                    </drop-down>
+                    </button>
+
+                    <!-- Season Dropdown menu -->
+                    <div id="season-dropdown" popover
+                        class="not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+                        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </drop-down>
             </section>
 
             <!-- Stats select -->
             <section class="overflow-auto flex-none mb-4 w-full h-full bg-gray-800 no-scrollbar">
-                <drop-down data-target="stats dropdown">
+                <drop-down>
+                    <style>
+                        #stats-dropdown-button {
+                            anchor-name: --stats-anchor;
+                        }
+
+                        #stats-dropdown {
+                            position-anchor: --stats-anchor;
+                            margin: 0;
+                            inset: auto;
+                            top: anchor(bottom);
+                            right: anchor(right);
+                        }
+                    </style>
                     <!-- Stats -->
-                    <div class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit">
-                        <div class="flex justify-between p-2 w-full h-fit">
+                    <button id="stats-dropdown-button" class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
+                        popovertarget="stats-dropdown">
+                        <div class="flex justify-between p-2 h-fit">
                             <span class="pt-2 pl-2">Top Scorer</span>
-                            <button
+                            <div
                                 class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
                                 <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                            </button>
+                            </div>
                         </div>
+                    </button>
+
+                    <!-- Stats Dropdown menu -->
+                    <div id="stats-dropdown" popover
+                        class="not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+                        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                                    out</a>
+                            </li>
+                        </ul>
                     </div>
                 </drop-down>
             </section>
@@ -413,54 +491,6 @@
 
         </div>
     </main>
-
-    <!-- Season Dropdown menu -->
-    <div id="season dropdown"
-        class="hidden not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
-        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
-                    out</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Season Dropdown menu -->
-    <div id="stats dropdown"
-        class="hidden not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
-        <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
-            </li>
-            <li>
-                <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
-                    out</a>
-            </li>
-        </ul>
-    </div>
 
     <!-- Bottom Navigation (Mobile) -->
 
