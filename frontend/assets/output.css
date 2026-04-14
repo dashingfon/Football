@@ -808,6 +808,14 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
+  .divide-fg-1\/40 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--fg-1);
+      @supports (color: color-mix(in lab, red, red)) {
+        border-color: color-mix(in oklab, var(--fg-1) 40%, transparent);
+      }
+    }
+  }
   .divide-gray-200 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-gray-200);
@@ -931,6 +939,12 @@
     border-color: var(--brand);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--brand) 30%, transparent);
+    }
+  }
+  .border-fg-1\/40 {
+    border-color: var(--fg-1);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--fg-1) 40%, transparent);
     }
   }
   .border-gray-200 {
@@ -1099,12 +1113,6 @@
     background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 40%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-zinc-900) 40%, transparent);
-    }
-  }
-  .bg-zinc-900\/80 {
-    background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 80%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-zinc-900) 80%, transparent);
     }
   }
   .bg-zinc-950 {
@@ -1823,6 +1831,16 @@
       display: none;
     }
   }
+  .group-data-\[opened\=true\]\:block {
+    &:is(:where(.group)[data-opened="true"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[opened\=true\]\:hidden {
+    &:is(:where(.group)[data-opened="true"] *) {
+      display: none;
+    }
+  }
   .group-data-\[theme\=dark\]\:block {
     &:is(:where(.group)[data-theme="dark"] *) {
       display: block;
@@ -1973,13 +1991,6 @@
       }
     }
   }
-  .hover\:bg-gray-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-300);
-      }
-    }
-  }
   .hover\:bg-orange-400 {
     &:hover {
       @media (hover: hover) {
@@ -1994,13 +2005,6 @@
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-orange-500) 50%, transparent);
         }
-      }
-    }
-  }
-  .hover\:bg-zinc-800 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-zinc-800);
       }
     }
   }
@@ -2032,13 +2036,6 @@
     &:hover {
       @media (hover: hover) {
         color: var(--text-1);
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
       }
     }
   }
@@ -2281,11 +2278,6 @@
   .dark\:bg-gray-900 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-900);
-    }
-  }
-  .dark\:bg-gray-950 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-gray-950);
     }
   }
   .dark\:fill-white {

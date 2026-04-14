@@ -75,74 +75,74 @@
 
 
                 <mode-toggle-checkbox>
-                        <style>
-                            .switch {
-                                font-size: 17px;
-                                position: relative;
-                                display: inline-block;
-                                width: 4em;
-                                height: 2em;
-                                border-radius: 30px;
-                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                            }
+                    <style>
+                        .switch {
+                            font-size: 17px;
+                            position: relative;
+                            display: inline-block;
+                            width: 4em;
+                            height: 2em;
+                            border-radius: 30px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        }
 
-                            /* Hide default HTML checkbox */
-                            .switch input {
-                                opacity: 0;
-                                width: 0;
-                                height: 0;
-                            }
+                        /* Hide default HTML checkbox */
+                        .switch input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+                        }
 
-                            .slider:before {
-                                position: absolute;
-                                content: "";
-                                height: 1.2em;
-                                width: 1.2em;
-                                border-radius: 20px;
-                                left: 0.5em;
-                                bottom: 0.5em;
-                                transition: 0.4s;
-                                transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
-                                box-shadow: inset 8px -4px 0px 0px #fff;
-                            }
+                        .slider:before {
+                            position: absolute;
+                            content: "";
+                            height: 1.2em;
+                            width: 1.2em;
+                            border-radius: 20px;
+                            left: 0.5em;
+                            bottom: 0.5em;
+                            transition: 0.4s;
+                            transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+                            box-shadow: inset 8px -4px 0px 0px #fff;
+                        }
 
-                            .switch input:checked+.slider:before {
-                                transform: translateX(1.8em);
-                                box-shadow: inset 15px -4px 0px 15px #ffcf48;
-                            }
+                        .switch input:checked+.slider:before {
+                            transform: translateX(1.8em);
+                            box-shadow: inset 15px -4px 0px 15px #ffcf48;
+                        }
 
-                            .star {
-                                background-color: #fff;
-                                border-radius: 50%;
-                                position: absolute;
-                                width: 5px;
-                                transition: all 0.4s;
-                                height: 5px;
-                            }
+                        .star {
+                            background-color: #fff;
+                            border-radius: 50%;
+                            position: absolute;
+                            width: 5px;
+                            transition: all 0.4s;
+                            height: 5px;
+                        }
 
-                            .star_1 {
-                                left: 2.5em;
-                                top: 0.5em;
-                            }
+                        .star_1 {
+                            left: 2.5em;
+                            top: 0.5em;
+                        }
 
-                            .star_2 {
-                                left: 2.2em;
-                                top: 1.2em;
-                            }
+                        .star_2 {
+                            left: 2.2em;
+                            top: 1.2em;
+                        }
 
-                            .star_3 {
-                                left: 3em;
-                                top: 0.9em;
-                            }
+                        .star_3 {
+                            left: 3em;
+                            top: 0.9em;
+                        }
 
-                            .switch input:checked~.slider .star {
-                                opacity: 0;
-                            }
+                        .switch input:checked~.slider .star {
+                            opacity: 0;
+                        }
 
-                            .switch input:checked~.slider .cloud {
-                                opacity: 1;
-                            }
-                        </style>
+                        .switch input:checked~.slider .cloud {
+                            opacity: 1;
+                        }
+                    </style>
                     <label class="inline-block z-0 relative shadow-md rounded-full w-16 h-9 switch">
 
                         <input type="checkbox" id="checkbox" class="peer opacity-0 w-0 h-0">
@@ -168,8 +168,13 @@
                 </mode-toggle-checkbox>
 
                 <div class="group md:hidden lg:hidden hover:bg-bg-3 dark:hover:bg-gray-900 p-2 w-12 h-12"
-                    onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')">
-                    <iconify-icon icon="solar:hamburger-menu-broken" width="100%" height="100%">
+                    onclick="document.getElementById('side-menu').classList.toggle('translate-x-full'); this.dataset.opened = this.dataset.opened === 'true' ? '' : 'true'">
+
+                    <iconify-icon class="block group-data-[opened=true]:hidden" icon="solar:hamburger-menu-broken"
+                        width="100%" height="100%">
+                    </iconify-icon>
+                    <iconify-icon class="hidden group-data-[opened=true]:block" icon="solar:close-circle-outline" width="100%"
+                        height="100%">
                     </iconify-icon>
                 </div>
             </div>
@@ -177,29 +182,36 @@
     </nav>
 
     <div id="side-menu"
-        class="bg-gray-50 dark:bg-gray-950 md:hidden lg:hidden top-16 right-0 z-[130] fixed w-40 h-40 transition-transform translate-x-full duration-300 ease-in-out transform rounded-md">
-        <div class="flex flex-col p-6 h-full justify-between">
-            <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
-                <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')"
-                    class="w-8 h-8">
-                    <iconify-icon icon="solar:hamburger-menu-broken" width="100%" height="100%">
-                    </iconify-icon>
-                </button>
-            </div>
-            <ul class="flex flex-col font-medium text-lg">
-                <li><a href="#about"
-                        class="text-3xl flex py-2 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
-                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">About</a></li>
-                <li><a href="#projects"
-                        class="text-3xl flex py-2 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
-                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Experience</a>
-                </li>
-                <li><a href="#contact"
-                        class="text-3xl flex py-2 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center"
-                        onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Contact</a>
-                </li>
-            </ul>
-        </div>
+        class="bg-bg-1 md:hidden lg:hidden top-16 right-0 z-[130] fixed w-40 h-40 transition-transform translate-x-full duration-300 ease-in-out transform rounded-md border border-fg-1/40 shadow-md">
+        <ul class="p-2 text-sm text-body font-medium divide-y divide-fg-1/40" aria-labelledby="dropdownDefaultButton">
+            <li class="flex items-center">
+                <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                    class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"></iconify-icon>
+                <a href="./matches.html"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Matches</a>
+            </li>
+            <li class="flex items-center">
+                <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                    class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
+                </iconify-icon>
+                <a href="./leagues.html"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Leagues</a>
+            </li>
+            <li class="flex items-center">
+                <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                    class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
+                </iconify-icon>
+                <a href="./news.html"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">News</a>
+            </li>
+            <li class="flex items-center">
+                <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                    class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
+                </iconify-icon>
+                <a href="./profile.html"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Profile</a>
+            </li>
+        </ul>
     </div>
 
     <main class="relative z-10 pt-32 pb-24">
@@ -256,8 +268,7 @@
                     </div>
 
                     <!-- App Content Area (Video Highlight focus) -->
-                    <div
-                        class="rounded-xl bg-bg-1 border border-bg-3/50 aspect-video relative overflow-hidden group">
+                    <div class="rounded-xl bg-bg-1 border border-bg-3/50 aspect-video relative overflow-hidden group">
                         <!-- Abstract Video Background -->
                         <div
                             class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMxMThBMTEiPjwvcmVjdD48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMWQxZDIwIj48L3JlY3Q+PC9zdmc+')] opacity-20">
