@@ -35,7 +35,8 @@
 --failure: theme(color.red.600);
 --warning: theme(color.yellow.600);
 --alert: theme(color.blue.600);
---brand: theme(color.orange.600);
+
+--brand: theme(color.orange.500);
 
 --bg-1: theme(color.olive.50);
 --bg-2: theme(color.olive.100);
@@ -53,14 +54,15 @@
 color-scheme: light;
 }
 
-body[data-theme="dark"] {
+[data-theme="dark"] {
 
 --pitch: theme(color.green.700);
 --success: theme(color.green.400);
 --failure: theme(color.red.400);
 --warning: theme(color.yellow.400);
 --alert: theme(color.blue.400);
---brand: theme(color.orange.400);
+
+--brand: theme(color.orange.500);
 
 --bg-1: theme(color.olive.950);
 --bg-2: theme(color.olive.900);
