@@ -906,6 +906,9 @@
   .border-bg-1 {
     border-color: var(--bg-1);
   }
+  .border-bg-2 {
+    border-color: var(--bg-2);
+  }
   .border-bg-2\/50 {
     border-color: var(--bg-2);
     @supports (color: color-mix(in lab, red, red)) {
@@ -950,9 +953,6 @@
   }
   .border-gray-400 {
     border-color: var(--color-gray-400);
-  }
-  .border-gray-900 {
-    border-color: var(--color-gray-900);
   }
   .border-gray-950 {
     border-color: var(--color-gray-950);
@@ -1407,6 +1407,9 @@
   .text-text-4 {
     color: var(--text-4);
   }
+  .text-text-6 {
+    color: var(--text-6);
+  }
   .text-transparent {
     color: transparent;
   }
@@ -1438,6 +1441,11 @@
   .placeholder-gray-500 {
     &::placeholder {
       color: var(--color-gray-500);
+    }
+  }
+  .placeholder-text-6 {
+    &::placeholder {
+      color: var(--text-6);
     }
   }
   .scheme-dark {
@@ -1700,6 +1708,11 @@
       color: var(--brand);
     }
   }
+  .group-data-\[active\=league\]\:text-text-1 {
+    &:is(:where(.group)[data-active="league"] *) {
+      color: var(--text-1);
+    }
+  }
   .group-data-\[active\=league\]\:text-white {
     &:is(:where(.group)[data-active="league"] *) {
       color: var(--color-white);
@@ -1725,6 +1738,16 @@
       color: var(--color-black);
     }
   }
+  .group-data-\[active\=matches\]\:text-brand {
+    &:is(:where(.group)[data-active="matches"] *) {
+      color: var(--brand);
+    }
+  }
+  .group-data-\[active\=matches\]\:text-text-1 {
+    &:is(:where(.group)[data-active="matches"] *) {
+      color: var(--text-1);
+    }
+  }
   .group-data-\[active\=matches\]\:text-white {
     &:is(:where(.group)[data-active="matches"] *) {
       color: var(--color-white);
@@ -1745,6 +1768,16 @@
       color: var(--color-black);
     }
   }
+  .group-data-\[active\=news\]\:text-brand {
+    &:is(:where(.group)[data-active="news"] *) {
+      color: var(--brand);
+    }
+  }
+  .group-data-\[active\=news\]\:text-text-1 {
+    &:is(:where(.group)[data-active="news"] *) {
+      color: var(--text-1);
+    }
+  }
   .group-data-\[active\=news\]\:text-white {
     &:is(:where(.group)[data-active="news"] *) {
       color: var(--color-white);
@@ -1763,6 +1796,16 @@
   .group-data-\[active\=profile\]\:text-black {
     &:is(:where(.group)[data-active="profile"] *) {
       color: var(--color-black);
+    }
+  }
+  .group-data-\[active\=profile\]\:text-brand {
+    &:is(:where(.group)[data-active="profile"] *) {
+      color: var(--brand);
+    }
+  }
+  .group-data-\[active\=profile\]\:text-text-1 {
+    &:is(:where(.group)[data-active="profile"] *) {
+      color: var(--text-1);
     }
   }
   .group-data-\[active\=profile\]\:text-white {
@@ -1903,6 +1946,20 @@
       }
     }
   }
+  .hover\:bg-bg-1 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--bg-1);
+      }
+    }
+  }
+  .hover\:bg-bg-2 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--bg-2);
+      }
+    }
+  }
   .hover\:bg-bg-2\/60 {
     &:hover {
       @media (hover: hover) {
@@ -2013,11 +2070,6 @@
       border-color: var(--brand);
     }
   }
-  .focus\:border-orange-500 {
-    &:focus {
-      border-color: var(--color-orange-500);
-    }
-  }
   .focus\:ring {
     &:focus {
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
@@ -2040,14 +2092,6 @@
       --tw-ring-color: var(--brand);
       @supports (color: color-mix(in lab, red, red)) {
         --tw-ring-color: color-mix(in oklab, var(--brand) 50%, transparent);
-      }
-    }
-  }
-  .focus\:ring-orange-500\/50 {
-    &:focus {
-      --tw-ring-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-ring-color: color-mix(in oklab, var(--color-orange-500) 50%, transparent);
       }
     }
   }
@@ -2206,11 +2250,6 @@
   .rtl\:pl-5 {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       padding-left: calc(var(--spacing) * 5);
-    }
-  }
-  .dark\:border-gray-100 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-gray-100);
     }
   }
   .dark\:border-gray-600 {
@@ -2407,6 +2446,8 @@
   --text-2: oklch(22.8% 0.013 107.4);
   --text-3: oklch(28.6% 0.016 107.4);
   --text-4: oklch(39.4% 0.023 107.4);
+  --text-5: oklch(46.6% 0.025 107.3);
+  --text-6: oklch(58% 0.031 107.3);
   color-scheme: light;
 }
 [data-theme="dark"] {
@@ -2426,6 +2467,8 @@
   --text-2: oklch(96.6% 0.005 106.5);
   --text-3: oklch(93% 0.007 106.5);
   --text-4: oklch(88% 0.011 106.6);
+  --text-5: oklch(73.7% 0.021 106.9);
+  --text-6: oklch(58% 0.031 107.3);
   color-scheme: dark;
 }
 html {
