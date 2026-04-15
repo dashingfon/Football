@@ -1503,12 +1503,6 @@
       --tw-shadow-color: color-mix(in oklab, var(--bg-1) var(--tw-shadow-alpha), transparent);
     }
   }
-  .shadow-gray-200 {
-    --tw-shadow-color: oklch(92.8% 0.006 264.531);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-gray-200) var(--tw-shadow-alpha), transparent);
-    }
-  }
   .shadow-gray-300 {
     --tw-shadow-color: oklch(87.2% 0.01 258.338);
     @supports (color: color-mix(in lab, red, red)) {
@@ -2109,6 +2103,12 @@
   .data-\[expanded\=true\]\:w-70 {
     &[data-expanded="true"] {
       width: calc(var(--spacing) * 70);
+    }
+  }
+  .data-\[hidden\=true\]\:translate-y-full {
+    &[data-hidden="true"] {
+      --tw-translate-y: 100%;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
   .sm\:flex {
