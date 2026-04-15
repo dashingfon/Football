@@ -156,6 +156,37 @@ customElements.define('mode-toggle-button',
 // );
 
 
+customElements.define('nav-controller',
+    class NavController extends HTMLElement {
+
+        connectedCallback() {
+            this.lastTogglePos = 0;
+            const nav = document.getElementById(this.dataset.nav);
+            const mainElement = this;
+            const scrollThreshold = 20;
+
+            function hide_nav() {
+                const currentScrollPos = mainElement.scrollTop;
+                const scrollDelta = Math.abs(currentScrollPos - this.lastTogglePos);
+
+                if (scrollDelta >= scrollThreshold) {
+                if (currentScrollPos > this.lastTogglePos) {
+                    // Scrolling down - hide nav
+                    nav.setAttribute('data-hidden', 'true');
+                } else {
+                    // Scrolling up - show nav
+                    nav.setAttribute('data-hidden', 'false');
+                }
+                this.lastTogglePos = currentScrollPos;
+                }
+            }
+            if (mainElement && nav) {
+                mainElement.addEventListener('scroll', hide_nav);
+            }
+        };
+    }
+);
+
 customElements.define('tab-sections',
     class TabSections extends HTMLElement {
 
