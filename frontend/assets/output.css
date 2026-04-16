@@ -990,9 +990,6 @@
   .border-transparent {
     border-color: transparent;
   }
-  .bg-amber-800 {
-    background-color: var(--color-amber-800);
-  }
   .bg-bg-1 {
     background-color: var(--bg-1);
   }
@@ -1070,9 +1067,6 @@
   }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
-  }
-  .bg-gray-950 {
-    background-color: var(--color-gray-950);
   }
   .bg-green-500 {
     background-color: var(--color-green-500);
@@ -2316,6 +2310,11 @@
   .dark\:text-gray-300 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-gray-300);
+    }
+  }
+  .dark\:text-text-1 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--text-1);
     }
   }
   .dark\:text-white {
