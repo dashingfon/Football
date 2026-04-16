@@ -1,0 +1,52 @@
+{
+    "players": [
+        "Majiri",
+        "Abu",
+        "Mfon",
+        "John Ohaka",
+        "Elems",
+        "Daniel Felix",
+        "Geepee",
+        "Scholes",
+        "Samailia",
+        "Balo",
+        "Martins",
+        "Amin",
+        "Greg",
+        "Jon Dust",
+        "Ekene",
+        "Epic",
+        "Yomi",
+        "Kelvin",
+        "Damian",
+        "Ayomide"
+    ],
+    "rounds": {
+        "0": {
+            "teams": {
+                "1": [],
+                "2": [],
+                "3": [],
+                "4": []
+            },
+            "results": [
+                []
+            ],
+            "table": {
+
+            }
+        },
+        "1": {
+
+        },
+        "2": {
+
+        },
+        "3": {
+
+        },
+        "4": {
+
+        }
+    }
+}
