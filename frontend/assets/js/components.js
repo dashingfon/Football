@@ -196,6 +196,19 @@ customElements.define('tab-sections',
     }
 );
 
+customElements.define('drop-down-toggle',
+    class DropDownToggle extends HTMLElement {
+
+        connectedCallback() {
+            const button = this.querySelector("[dropdowntoggle]");
+            const dropdown = this.querySelector("[dropdown]");
+            button?.addEventListener("click", () => {
+                dropdown?.classList.toggle("hidden")
+            })
+        };
+    }
+);
+
 customElements.define('search-filter',
 class SearchFilter extends HTMLElement {
 
