@@ -40,20 +40,20 @@
 
 --brand: theme(color.orange.500);
 
---bg-1: theme(color.olive.50);
---bg-2: theme(color.olive.100);
---bg-3: theme(color.olive.200);
+--bg-1: theme(color.mist.50);
+--bg-2: theme(color.mist.100);
+--bg-3: theme(color.mist.200);
 
---fg-1: theme(color.olive.950);
---fg-2: theme(color.olive.900);
---fg-3: theme(color.olive.800);
+--fg-1: theme(color.mist.950);
+--fg-2: theme(color.mist.900);
+--fg-3: theme(color.mist.800);
 
---text-1: theme(color.olive.950);
---text-2: theme(color.olive.900);
---text-3: theme(color.olive.800);
---text-4: theme(color.olive.700);
---text-5: theme(color.olive.600);
---text-6: theme(color.olive.500);
+--text-1: theme(color.mist.950);
+--text-2: theme(color.mist.900);
+--text-3: theme(color.mist.800);
+--text-4: theme(color.mist.700);
+--text-5: theme(color.mist.600);
+--text-6: theme(color.mist.500);
 
 color-scheme: light;
 }
@@ -68,20 +68,20 @@ color-scheme: light;
 
 --brand: theme(color.orange.500);
 
---bg-1: theme(color.olive.950);
---bg-2: theme(color.olive.900);
---bg-3: theme(color.olive.800);
+--bg-1: theme(color.mist.950);
+--bg-2: theme(color.mist.900);
+--bg-3: theme(color.mist.800);
 
---fg-1: theme(color.olive.50);
---fg-2: theme(color.olive.100);
---fg-3: theme(color.olive.200);
+--fg-1: theme(color.mist.50);
+--fg-2: theme(color.mist.100);
+--fg-3: theme(color.mist.200);
 
---text-1: theme(color.olive.50);
---text-2: theme(color.olive.100);
---text-3: theme(color.olive.200);
---text-4: theme(color.olive.300);
---text-5: theme(color.olive.400);
---text-6: theme(color.olive.500);
+--text-1: theme(color.mist.50);
+--text-2: theme(color.mist.100);
+--text-3: theme(color.mist.200);
+--text-4: theme(color.mist.300);
+--text-5: theme(color.mist.400);
+--text-6: theme(color.mist.500);
 
 color-scheme: dark;
 }

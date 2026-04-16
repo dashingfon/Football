@@ -66,67 +66,73 @@
     <!-- <desktop-sidebar>
     </desktop-sidebar> -->
     <aside class="hidden md:block z-40 h-screen relative border-r border-bg-3" aria-label="Sidebar">
-    <div
-      class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-bg-1 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
-      data-active="league">
-      <div>
-        <ul class="space-y-2 font-medium pb-3">
-          <li>
-            <a href="../../index.html" class="relative flex items-center p-2 text-text-1 rounded-lg">
-              <img src="../../assets/favicon.ico" class="w-6 h-6" />
-              <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="space-y-2 font-medium border-t border-bg-3 pt-3">
-          <li>
-            <a href="./matches.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
-              <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=matches]:text-brand"></iconify-icon>
+        <div class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-bg-1 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
+            data-active="league">
+            <div>
+                <ul class="space-y-2 font-medium pb-3">
+                    <li>
+                        <a href="../../index.html" class="relative flex items-center p-2 text-text-1 rounded-lg">
+                            <img src="../../assets/favicon.ico" class="w-6 h-6" />
+                            <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="space-y-2 font-medium border-t border-bg-3 pt-3">
+                    <li>
+                        <a href="./matches.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=matches]:text-brand"></iconify-icon>
 
-              <span class="text-sm ms-3 hidden group-data-[active=matches]:text-brand group-hover:block">Matches</span>
-            </a>
-          </li>
-          <li>
-            <a href="./leagues.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
-              <iconify-icon icon="ix:trophy" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
-              </iconify-icon>
-              <span class="text-sm ms-3 hidden group-data-[active=league]:text-brand group-hover:block">Leagues</span>
-            </a>
-          </li>
-          <li>
-            <a href="./news.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
-              <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
-              </iconify-icon>
-              <span class="text-sm ms-3 hidden group-data-[active=news]:text-brand group-hover:block">News</span>
-            </a>
-          </li>
-          <li>
-            <a href="./profile.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
-              <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
-                class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
-              </iconify-icon>
-              <span class="text-sm ms-3 hidden group-data-[active=profile]:text-brand group-hover:block">Profile</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=matches]:text-brand group-hover:block">Matches</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./leagues.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=league]:text-brand group-hover:block">Leagues</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./news.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=news]:text-brand group-hover:block">News</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./profile.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=profile]:text-brand group-hover:block">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      <mode-toggle-button>
-        <button class="p-1 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3" mode-toggle>
-          <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
-            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
+            <mode-toggle-button>
+                <button class="p-1 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3" mode-toggle>
+                    <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
+                        class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
-          <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
-            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
-        </button>
-      </mode-toggle-button>
-    </div>
-  </aside>
+                    <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
+                        class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+                </button>
+            </mode-toggle-button>
+        </div>
+    </aside>
 
-    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-gray-100 dark:bg-gray-800">
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-bg-2">
 
         <!-- use grid to maitain spacing -->
         <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_auto_1fr] h-full">
@@ -140,18 +146,18 @@
                     </a>
                 </nav>
                 <mode-toggle-button>
-        <button class="p-1 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3" mode-toggle>
-          <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
-            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
+                    <button class="p-1 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3" mode-toggle>
+                        <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
-          <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
-            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
-        </button>
-      </mode-toggle-button>
+                        <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+                    </button>
+                </mode-toggle-button>
             </section>
 
             <!-- Season select -->
-            <section class="overflow-auto flex-none mb-2 w-full h-full bg-gray-800 no-scrollbar">
+            <section class="overflow-auto flex-none mb-2 w-full h-full bg-bg-2 no-scrollbar">
                 <drop-down>
                     <style>
                         #season-dropdown-button {
@@ -168,13 +174,13 @@
                     </style>
                     <!-- Season -->
                     <button id="season-dropdown-button"
-                        class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
+                        class="bg-bg-3 border border-bg-1 flex flex-col rounded-md h-fit w-full"
                         popovertarget="season-dropdown">
                         <div class="flex justify-between p-2 h-fit">
                             <span class="pt-2 pl-2">Football Spot March</span>
                             <div
-                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                class="m-2 p-2 bg-3 text-text-2 rounded-md border border-bg-1 leading-none">
+                                <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </div>
                         </div>
@@ -182,7 +188,7 @@
 
                     <!-- Season Dropdown menu -->
                     <div id="season-dropdown" popover
-                        class="not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+                        class="not-even:absolute max-h-96 bg-bg-3 border border-bg-1 rounded-md shadow-lg w-44">
                         <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
                             <li>
                                 <a href="#"
@@ -207,7 +213,7 @@
             </section>
 
             <!-- Stats select -->
-            <section class="overflow-auto flex-none mb-4 w-full h-full bg-gray-800 no-scrollbar">
+            <section class="overflow-auto flex-none mb-4 w-full h-full bg-bg-2 no-scrollbar">
                 <drop-down>
                     <style>
                         #stats-dropdown-button {
@@ -224,13 +230,13 @@
                     </style>
                     <!-- Stats -->
                     <button id="stats-dropdown-button"
-                        class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
+                        class="bg-bg-3 border border-bg-1 flex flex-col rounded-md h-fit w-full"
                         popovertarget="stats-dropdown">
                         <div class="flex justify-between p-2 h-fit">
                             <span class="pt-2 pl-2">Top Scorer</span>
                             <div
-                                class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                                <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
+                                class="m-2 p-2 hover:bg-bg-3 text-text-2 rounded-md border border-bg-1 leading-none">
+                                <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </div>
                         </div>
@@ -238,7 +244,7 @@
 
                     <!-- Stats Dropdown menu -->
                     <div id="stats-dropdown" popover
-                        class="not-even:absolute max-h-96 bg-gray-900 border border-default-medium rounded-md shadow-lg w-44">
+                        class="not-even:absolute max-h-96 bg-bg-3 border border-bg-1 border-default-medium rounded-md shadow-lg w-44">
                         <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
                             <li>
                                 <a href="#"
@@ -262,27 +268,26 @@
                 </drop-down>
             </section>
 
-            
-            <nav-controller data-nav="mobile-nav" class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar group">
-                    <!-- Stats -->
-                    <section
-                        
-                        data-loading="false">
-        
-                        <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
-        
-                            <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
-                                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                                    fill="currentFill" />
-                            </svg>
-                            <span class="sr-only">Loading...</span>
-        
-                        </div>
+
+            <nav-controller data-nav="mobile-nav"
+                class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always custom-scrollbar group">
+                <!-- Stats -->
+                <section data-loading="false">
+
+                    <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
+
+                        <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
+                            viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                fill="currentColor" />
+                            <path
+                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                fill="currentFill" />
+                        </svg>
+                        <span class="sr-only">Loading...</span>
+
+                    </div>
                     <!-- controls -->
                     <div class="group-data-[loading=true]:hidden flex mt-2">
                         <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
