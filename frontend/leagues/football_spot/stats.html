@@ -250,7 +250,8 @@
                         }
                     </style>
                     <!-- Stats -->
-                    <button id="stats-dropdown-button" class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
+                    <button id="stats-dropdown-button"
+                        class="bg-gray-800 border border-gray-950 flex flex-col rounded-md h-fit w-full"
                         popovertarget="stats-dropdown">
                         <div class="flex justify-between p-2 h-fit">
                             <span class="pt-2 pl-2">Top Scorer</span>
@@ -288,261 +289,438 @@
                 </drop-down>
             </section>
 
-            <!-- Stats -->
-            <section
-                class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar group"
-                data-loading="false">
+            
+            <nav-controller data-nav="mobile-nav" class="overflow-auto flex-none w-full h-full bg-gray-800 snap-start snap-always custom-scrollbar group">
+                    <!-- Stats -->
+                    <section
+                        
+                        data-loading="false">
+        
+                        <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
+        
+                            <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
+                                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                    fill="currentFill" />
+                            </svg>
+                            <span class="sr-only">Loading...</span>
+        
+                        </div>
+                    <!-- controls -->
+                    <div class="group-data-[loading=true]:hidden flex mt-2">
+                        <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                            <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
+                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                        </button>
+                        <style>
+                            #round-dropdown-button {
+                                anchor-name: --round-anchor;
+                            }
 
-                <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
-
-                    <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand"
-                        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                            fill="currentColor" />
-                        <path
-                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                            fill="currentFill" />
-                    </svg>
-                    <span class="sr-only">Loading...</span>
-
-                </div>
-                <!-- controls -->
-                <div class="group-data-[loading=true]:hidden flex mt-2">
-                    <button
-                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                    </button>
-                    <button
-                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                    </button>
-                    <button
-                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                    </button>
-                    <button
-                        class="m-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200 leading-none">
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                    </button>
-                </div>
-
-                <!-- heading -->
-                <div class="group-data-[loading=true]:hidden flex gap-6 my-2 p-2 bg-gray-950 rounded-md text-sm">
-                    <span>#</span>
-                    <span>Player</span>
-                    <span>Pts</span>
-                    <span>P</span>
-                    <span>W</span>
-                    <span>D</span>
-                    <span>L</span>
-                </div>
-
-                <!-- table -->
-                <div class="group-data-[loading=true]:hidden ">
-                    <div class="bg-gray-900 p-2 rounded-t-md">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4 rounded-b-md">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 80%"></div>
-                    </div>
-
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                            #round-dropdown {
+                                position-anchor: --round-anchor;
+                                margin: 0;
+                                inset: auto;
+                                top: anchor(bottom);
+                                right: anchor(right);
+                            }
+                        </style>
+                        <button id="round-dropdown-button" popovertarget="round-dropdown"
+                            class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none items-center">
+                            <span class="px-2">1</span>
+                            <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
+                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="round-dropdown" popover
+                            class="absolute not-even:absolute max-h-96 bg-bg-2 border border-fg-2 text-text-5 border-default-medium rounded-md shadow-lg w-15">
+                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <button
+                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">2</button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">3</button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">4</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                            <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
+                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                        </button>
+                        <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                            <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
+                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                        </button>
                     </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
-
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
+                    <!-- heading -->
+                    <div
+                        class="group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10">
+                        <span class="col-span-1">#</span>
+                        <span class="col-span-4 overflow-hidden">Player</span>
+                        <span class="col-span-1">P</span>
+                        <span class="col-span-1">W</span>
+                        <span class="col-span-1">D</span>
+                        <span class="col-span-1">L</span>
+                        <span class="col-span-1">PTS</span>
                     </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
+                    <!-- table -->
+                    <div class="group-data-[loading=true]:hidden ">
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
+                        <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
-                    </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
 
-                    <div class="bg-gray-900 p-2">
-                        <span>1</span>
-                        <span>Mfon</span>
-                        <span>11</span>
-                        <span>1</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>5</span>
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+                        <div class="bg-bg-3 p-2 rounded-t-md grid grid-cols-10">
+                            <span class="col-span-1">1</span>
+                            <span class="col-span-4 overflow-hidden">Mfon</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                            <span class="col-span-1">99</span>
+                        </div>
+
+                        <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                            <div class="h-full bg-brand rounded-r-full" style="width: 80%"></div>
+                        </div>
+
+
+
                     </div>
-                    <div class="bg-gray-950 h-2 mb-4">
-                        <div class="h-full bg-amber-800 rounded-r-full" style="width: 69%"></div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </nav-controller>
 
         </div>
     </main>
 
     <!-- Bottom Navigation (Mobile) -->
 
-    <nav class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
+    <nav id="mobile-nav" data-hidden="false"
+        class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-bg-2 bg-bg-2 flex justify-around pb-3 text-text-2 group data-[hidden=true]:translate-y-full transition-transform duration-300"
         data-active="league">
-        <a href="../../matches.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./matches.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="true">
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block">
-            </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white">
-            </iconify-icon>
-            <span
-                class="group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 dark:text-gray-300">Matches</span>
+            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=matches]:text-brand text-text-6"></iconify-icon>
+            <span class="group-data-[active=matches]:text-brand text-text-6">Matches</span>
         </a>
-        <a href="../../leagues.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./leagues.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
+            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=league]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500">Leagues</span>
+            <span class="group-data-[active=league]:text-brand text-text-6">Leagues</span>
         </a>
-        <a href="../../news.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./news.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-                class="group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
+            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-                class="group-data-[active=news]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500">News</span>
+            <span class="group-data-[active=news]:text-brand text-text-6">News</span>
         </a>
-        <a href="../../profile.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./profile.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="healthicons:ui-user-profile" width="30" height="30"
-                class="group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
+            <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=profile]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500">Profile</span>
+            <span class="group-data-[active=profile]:text-brand text-text-6">Profile</span>
         </a>
     </nav>
 </body>
