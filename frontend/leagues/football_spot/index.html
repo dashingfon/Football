@@ -212,25 +212,29 @@
       <tab-sections class="fadeUp grid grid-rows-[auto_1fr] overflow-scroll no-scrollbar">
         <nav class="text-sm font-medium text-center text-body border-b border-text-5 overflow-auto">
           <ul class="flex overflow-x-auto no-scrollbar">
-            <li class="me-2">
-              <button class="inline-block p-2 border-b-2 border-transparent rounded-t-base hover:bg-bg-3">
+            <li class="tab group" data-index="0" data-active="false">
+              <button
+                class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3">
                 Table
               </button>
             </li>
-            <li class="me-2">
-              <button class="inline-block p-2 border-b-4 border-brand hover:bg-bg-3 active" aria-current="page">
+            <li class="tab group" data-index="1" data-active="true">
+              <button
+                class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent group-data-[active=true]:border-brand hover:bg-bg-3"
+                aria-current="page">
                 Fixtures
               </button>
             </li>
-            <li class="me-2">
-              <button class="inline-block p-2 border-b-2 border-transparent hover:bg-bg-3">
+            <li class="tab group" data-index="2" data-active="false">
+              <button
+                class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent group-data-[active=true]:border-brand hover:bg-bg-3">
                 Player Stats
               </button>
             </li>
           </ul>
         </nav>
 
-        <div
+        <div id="scroll-controller"
           class="w-full h-full rounded-b-md flex overflow-scroll snap-x snap-mandatory scroll-smooth no-scrollbar z-0">
 
           <nav-controller data-nav="mobile-nav"
@@ -821,7 +825,7 @@
           </section>
 
           <!-- Player Stats -->
-          <section class="overflow-auto flex-none w-full h-full bg-bg-2 no-scrollbar snap-start snap-always">
+          <section class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always">
 
             <!-- Goals + Assists -->
             <div class="bg-bg-1 border border-bg-3 m-2 flex flex-col rounded-md h-fit pb-4">

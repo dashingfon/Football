@@ -1,52 +1,4 @@
 
-
-customElements.define('desktop-sidebar',
-    class DesktopSidebar extends HTMLElement {
-
-        expand(toggleIcon, sidebarContent) {
-            toggleIcon.style.transform = 'rotate(0deg)';
-            sidebarContent.setAttribute('data-expanded', 'true');
-            document.cookie = `sidebar=expanded; path=/; max-age=31536000`
-        }
-
-        collapse(toggleIcon, sidebarContent) {
-            // this.sidebarContent.setAttribute("data-expanded", "false")
-            // Array.from(spans).forEach(span => span.classList.add('hidden'));
-            toggleIcon.style.transform = 'rotate(180deg)';
-            sidebarContent.setAttribute('data-expanded', 'false');
-            document.cookie = `sidebar=collapsed; path=/; max-age=31536000`
-        }
-
-        connectedCallback() {
-            // set the default sidebar width
-
-            this.sidebar = this.querySelector('[separator-sidebar]');
-            this.toggleIcon = this.querySelector('[toggle-icon]');
-            this.sidebarContent = this.sidebar.querySelector('div');
-
-            const isExpanded = this.sidebarContent.dataset.expanded === "true";
-            if (isExpanded) {
-                this.toggleIcon.style.transform = 'rotate(0deg)';
-            } else {
-                this.toggleIcon.style.transform = 'rotate(180deg)';
-            }
-
-            // add event listiner
-            const button = this.querySelector("[sidebar-button]");
-            button.addEventListener(
-                "click", () => {
-                    const isExpanded = this.sidebarContent.dataset.expanded === "true";
-                    if (isExpanded) {
-                        this.collapse(this.toggleIcon, this.sidebarContent);
-                    } else {
-                        this.expand(this.toggleIcon, this.sidebarContent);
-                    }
-                }
-            )
-        }
-    }
-);
-
 customElements.define('mode-toggle-checkbox',
     class ModeToggleCheckbox extends HTMLElement {
         connectedCallback() {
@@ -67,14 +19,14 @@ customElements.define('mode-toggle-checkbox',
             }
             if (checkbox) {
                 checkbox.addEventListener('change', function () {
-                // console.log("Change event fired, checked:", this.checked); // Debug
+                    // console.log("Change event fired, checked:", this.checked); // Debug
                     if (this.checked) {
-                    document.body.dataset.theme = "light";
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    document.body.dataset.theme = "dark";
-                    localStorage.setItem('theme', 'dark')
-                }
+                        document.body.dataset.theme = "light";
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.body.dataset.theme = "dark";
+                        localStorage.setItem('theme', 'dark')
+                    }
                 });
             }
         }
@@ -118,44 +70,6 @@ customElements.define('mode-toggle-button',
 );
 
 
-// customElements.define('drop-down',
-//     class DropDown extends HTMLElement {
-
-//         connectedCallback() {
-//             const target_id = this.dataset.target
-//             const dropdown = document.getElementById(target_id);
-//             const top = this.dataset.position;
-//             const button = this.querySelector("button")
-//             const rect = this.getBoundingClientRect();
-
-//             if (rect) {
-//                 dropdown.style.position = "absolute";
-//                 if (top === "top") {
-//                     dropdown.style.top = `${rect.top}px`;
-//                 } else {
-//                     dropdown.style.top = `${rect.bottom}px`;
-//                 }
-//                 dropdown.style.right = `${16}px`;
-//                 // dropdown.style.left = `${rect.right}px`;
-//                 // dropdown.style.right = `${rect.left - 20}px`;
-//             }
-
-//             button?.addEventListener("click", () => {
-//                 if (button.dataset.dropdown === "dropdown") {
-//                     dropdown?.classList.toggle("hidden")
-//                     button.dataset.dropdown = ""
-//                     // remove event listener
-//                 } else {
-//                     dropdown?.classList.toggle("hidden")
-//                     button.dataset.dropdown = "dataset"
-//                     // add event listener
-//                 }
-//             })
-//         };
-//     }
-// );
-
-
 customElements.define('nav-controller',
     class NavController extends HTMLElement {
 
@@ -170,14 +84,14 @@ customElements.define('nav-controller',
                 const scrollDelta = Math.abs(currentScrollPos - this.lastTogglePos);
 
                 if (scrollDelta >= scrollThreshold) {
-                if (currentScrollPos > this.lastTogglePos) {
-                    // Scrolling down - hide nav
-                    nav.setAttribute('data-hidden', 'true');
-                } else {
-                    // Scrolling up - show nav
-                    nav.setAttribute('data-hidden', 'false');
-                }
-                this.lastTogglePos = currentScrollPos;
+                    if (currentScrollPos > this.lastTogglePos) {
+                        // Scrolling down - hide nav
+                        nav.setAttribute('data-hidden', 'true');
+                    } else {
+                        // Scrolling up - show nav
+                        nav.setAttribute('data-hidden', 'false');
+                    }
+                    this.lastTogglePos = currentScrollPos;
                 }
             }
             if (mainElement && nav) {
@@ -191,7 +105,47 @@ customElements.define('tab-sections',
     class TabSections extends HTMLElement {
 
         connectedCallback() {
+            const container = document.getElementById("scroll-controller");
+            const tabs = document.querySelectorAll(".tab");
 
+            function setActiveTab(index) {
+                tabs.forEach((tab, i) => {
+                    if (i === index) {
+                        tab.dataset.active = "true";
+                    } else {
+                        tab.dataset.active = "false";
+                    }
+                });
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    const index = Number(tab.dataset.index);
+                    container.scrollTo({
+                        left: index * container.clientWidth,
+                        behavior: "smooth",
+                    });
+                });
+            });
+
+            const sections = container.children;
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const index = [...sections].indexOf(entry.target);
+                            setActiveTab(index);
+                        }
+                    });
+                },
+                {
+                    root: container,
+                    threshold: 0.6, // 60% visible = active
+                }
+            );
+
+            [...sections].forEach((section) => observer.observe(section));
         };
     }
 );
@@ -210,33 +164,33 @@ customElements.define('drop-down-toggle',
 );
 
 customElements.define('search-filter',
-class SearchFilter extends HTMLElement {
+    class SearchFilter extends HTMLElement {
 
-    connectedCallback() {
-        const input = this.querySelector("input");
-        input?.addEventListener("input", () => {
-            const value = input.value.toLowerCase().trim();
-            const leagues = document.querySelectorAll("#leagues a");
+        connectedCallback() {
+            const input = this.querySelector("input");
+            input?.addEventListener("input", () => {
+                const value = input.value.toLowerCase().trim();
+                const leagues = document.querySelectorAll("#leagues a");
 
-            if (value === "") {
-                leagues.forEach((el) => {
-                    el.classList.remove("hidden");
-                });
-            } else {
-                leagues.forEach((el) => {
-                    const p = el.querySelector("p");
-                    const text = p.textContent.toLowerCase();
-
-                    if (text.includes(value)) {
+                if (value === "") {
+                    leagues.forEach((el) => {
                         el.classList.remove("hidden");
-                    } else {
-                        el.classList.add("hidden");
-                    }
-                });
-            }
-        });
-    };
-});
+                    });
+                } else {
+                    leagues.forEach((el) => {
+                        const p = el.querySelector("p");
+                        const text = p.textContent.toLowerCase();
+
+                        if (text.includes(value)) {
+                            el.classList.remove("hidden");
+                        } else {
+                            el.classList.add("hidden");
+                        }
+                    });
+                }
+            });
+        };
+    });
 
 
 customElements.define('chart-race',
@@ -250,7 +204,7 @@ customElements.define('chart-race',
 
 
 customElements.define('stats-feed',
-    class ChartRace extends HTMLElement {
+    class StatsFeed extends HTMLElement {
 
         connectedCallback() {
 

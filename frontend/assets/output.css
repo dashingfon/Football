@@ -361,6 +361,24 @@
   .col-span-4 {
     grid-column: span 4 / span 4;
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -390,9 +408,6 @@
   }
   .-me-4 {
     margin-inline-end: calc(var(--spacing) * -4);
-  }
-  .me-2 {
-    margin-inline-end: calc(var(--spacing) * 2);
   }
   .-mt-4 {
     margin-top: calc(var(--spacing) * -4);
@@ -912,14 +927,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-b-2 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 2px;
-  }
-  .border-b-4 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 4px;
-  }
   .border-bg-1 {
     border-color: var(--bg-1);
   }
@@ -946,9 +953,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--bg-3) 80%, transparent);
     }
-  }
-  .border-brand {
-    border-color: var(--brand);
   }
   .border-brand\/30 {
     border-color: var(--brand);
@@ -985,9 +989,6 @@
   }
   .border-text-5 {
     border-color: var(--text-5);
-  }
-  .border-transparent {
-    border-color: transparent;
   }
   .bg-bg-1 {
     background-color: var(--bg-1);
@@ -1705,6 +1706,17 @@
       }
     }
   }
+  .group-data-\[active\=false\]\:border-b-2 {
+    &:is(:where(.group)[data-active="false"] *) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 2px;
+    }
+  }
+  .group-data-\[active\=false\]\:border-transparent {
+    &:is(:where(.group)[data-active="false"] *) {
+      border-color: transparent;
+    }
+  }
   .group-data-\[active\=league\]\:block {
     &:is(:where(.group)[data-active="league"] *) {
       display: block;
@@ -1828,6 +1840,17 @@
   .group-data-\[active\=profile\]\:text-white {
     &:is(:where(.group)[data-active="profile"] *) {
       color: var(--color-white);
+    }
+  }
+  .group-data-\[active\=true\]\:border-b-4 {
+    &:is(:where(.group)[data-active="true"] *) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 4px;
+    }
+  }
+  .group-data-\[active\=true\]\:border-brand {
+    &:is(:where(.group)[data-active="true"] *) {
+      border-color: var(--brand);
     }
   }
   .group-data-\[expanded\=true\]\:block {
