@@ -7,6 +7,7 @@
 
 import json
 import pathlib
+from copy import deepcopy
 from rich import print
 
 
@@ -46,21 +47,29 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
-def update_football_spot(teams, season, results, day, write: bool = False):
-    assert(day != 0)
+def get_result_data(season, end: bool):
+    ...
+    # if new season, get players
+    # get teams
+    # get results
+    # write
+
+def update_football_spot(teams, results, season, write: bool = False):
 
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
 
     with open(PATH) as f:
         data = json.load(f)
 
-    table = data["rounds"][f"{day - 1}"]["table"]
-    # print(table)
+    curr_round = data["current_round"]
+    table = deepcopy(data["rounds"][f"{curr_round - 1}"]["table"])
+    teams = data["rounds"][f"{curr_round}"]["teams"]
+    results = data["rounds"][f"{curr_round}"]["results"]
 
     # teams and results will be passed in
     team_stats = {}
     player_teams = {}
-    teams = data["rounds"][f"{day}"]["teams"]
+
     for key, value in teams.items():
         team_stats[key] = {
             "pts": 0,
@@ -72,8 +81,6 @@ def update_football_spot(teams, season, results, day, write: bool = False):
         }
         for player in value:
             player_teams[player] = key
-
-    results = data["rounds"][f"{day}"]["results"]
 
     for result in results:
         team_stats[f"{result[1]["team"]}"]["p"] += 1
@@ -130,10 +137,13 @@ def update_football_spot(teams, season, results, day, write: bool = False):
     if write:
         # write table to file
         with open(PATH, "w") as f:
-            data["rounds"][f"{day}"]["table"] = table
+            data["current_round"] = curr_round + 1
+            data["rounds"][f"{curr_round + 1}"] = {}
+            data["rounds"][f"{curr_round}"]["table"] = table
             json.dump(data, f, indent=2)
     else:
         print(table)
+
 
 def test_football_spot(season):
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
@@ -176,6 +186,7 @@ def fill_football_spot_result(season):
     # get teams from user
     # get results from user
 
+
 def start_football_spot(players, season):
     ...
     # add the teams and create the table
@@ -183,7 +194,7 @@ def start_football_spot(players, season):
 
 def main():
     # test_football_spot("february_2026")
-    update_football_spot(0, "february_2026", 0, 3, False)
+    update_football_spot(0, 0, "february_2026", True)
 
 
 if __name__ == "__main__":

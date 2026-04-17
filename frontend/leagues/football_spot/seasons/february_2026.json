@@ -21,54 +21,55 @@
     "Damian",
     "Ayomide"
   ],
+  "current_round": 1,
   "rounds": {
     "0": {
       "teams": {},
       "results": [],
       "table": {
         "Majiri": {
-          "pts": 1,
-          "p": 4,
+          "pts": 0,
+          "p": 0,
           "w": 0,
-          "d": 1,
-          "l": 3,
+          "d": 0,
+          "l": 0,
           "goals": 0,
-          "assists": 1,
-          "g/a": 1,
+          "assists": 0,
+          "g/a": 0,
           "cleansheets": 0
         },
         "Abu": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
           "d": 0,
-          "l": 3,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
-          "cleansheets": 1
+          "cleansheets": 0
         },
         "Mfon": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
-          "d": 1,
-          "l": 2,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 4
-        },
-        "John Ohaka": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
           "d": 0,
-          "l": 3,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
-          "cleansheets": 1
+          "cleansheets": 0
+        },
+        "John Ohaka": {
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Elems": {
           "pts": 0,
@@ -82,33 +83,33 @@
           "cleansheets": 0
         },
         "Daniel Felix": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
-          "cleansheets": 3
+          "cleansheets": 0
         },
         "Geepee": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 2,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
           "assists": 0,
-          "g/a": 2,
-          "cleansheets": 3
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Scholes": {
-          "pts": 1,
-          "p": 4,
+          "pts": 0,
+          "p": 0,
           "w": 0,
-          "d": 1,
-          "l": 3,
+          "d": 0,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
@@ -126,15 +127,15 @@
           "cleansheets": 0
         },
         "Balo": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
-          "cleansheets": 3
+          "cleansheets": 0
         },
         "Martins": {
           "pts": 0,
@@ -148,22 +149,22 @@
           "cleansheets": 0
         },
         "Amin": {
-          "pts": 1,
-          "p": 4,
+          "pts": 0,
+          "p": 0,
           "w": 0,
-          "d": 1,
-          "l": 3,
+          "d": 0,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
           "cleansheets": 0
         },
         "Greg": {
-          "pts": 1,
-          "p": 4,
+          "pts": 0,
+          "p": 0,
           "w": 0,
-          "d": 1,
-          "l": 3,
+          "d": 0,
+          "l": 0,
           "goals": 0,
           "assists": 0,
           "g/a": 0,
@@ -181,70 +182,70 @@
           "cleansheets": 0
         },
         "Ekene": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
-          "d": 1,
-          "l": 2,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
           "goals": 0,
-          "assists": 2,
-          "g/a": 2,
-          "cleansheets": 4
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Epic": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
-          "d": 1,
-          "l": 2,
-          "goals": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
           "assists": 0,
-          "g/a": 1,
-          "cleansheets": 4
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Yomi": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 1,
-          "assists": 1,
-          "g/a": 2,
-          "cleansheets": 3
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         },
         "McKen": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 1,
-          "assists": 3,
-          "g/a": 4,
-          "cleansheets": 3
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Damian": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
+          "pts": 0,
+          "p": 0,
+          "w": 0,
           "d": 0,
-          "l": 3,
+          "l": 0,
           "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 1
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         },
         "Ayomide": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
-          "d": 1,
-          "l": 2,
-          "goals": 1,
-          "assists": 3,
-          "g/a": 4,
-          "cleansheets": 4
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         }
       }
     },
@@ -260,24 +261,14 @@
           {
             "team": 1,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Ayomide",
-                "assist": "Ekene"
-              }
-            ]
+            "goals": [{ "scorer": "Ayomide", "assist": "Ekene" }]
           },
           {
             "team": 2,
             "score": 2,
             "goals": [
-              {
-                "scorer": "Yomi",
-                "assist": "McKen"
-              },
-              {
-                "scorer": "Geepee"
-              }
+              { "scorer": "Yomi", "assist": "McKen" },
+              { "scorer": "Geepee" }
             ]
           }
         ],
@@ -285,21 +276,12 @@
           {
             "team": 2,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "McKen"
-              }
-            ]
+            "goals": [{ "scorer": "McKen" }]
           },
           {
             "team": 3,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "Majiri"
-              }
-            ]
+            "goals": [{ "scorer": "Unknown", "assist": "Majiri" }]
           }
         ],
         [
@@ -312,14 +294,8 @@
             "team": 1,
             "score": 2,
             "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "Ayomide"
-              },
-              {
-                "scorer": "Unknown",
-                "assist": "Ekene"
-              }
+              { "scorer": "Unknown", "assist": "Ayomide" },
+              { "scorer": "Unknown", "assist": "Ekene" }
             ]
           }
         ],
@@ -333,13 +309,8 @@
             "team": 2,
             "score": 2,
             "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "McKen"
-              },
-              {
-                "scorer": "Geepee"
-              }
+              { "scorer": "Unknown", "assist": "McKen" },
+              { "scorer": "Geepee" }
             ]
           }
         ],
@@ -348,14 +319,8 @@
             "team": 2,
             "score": 2,
             "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "McKen"
-              },
-              {
-                "scorer": "Unknown",
-                "assist": "Yomi"
-              }
+              { "scorer": "Unknown", "assist": "McKen" },
+              { "scorer": "Unknown", "assist": "Yomi" }
             ]
           },
           {
@@ -368,11 +333,7 @@
           {
             "team": 2,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown"
-              }
-            ]
+            "goals": [{ "scorer": "Unknown" }]
           },
           {
             "team": 4,
@@ -384,21 +345,12 @@
           {
             "team": 2,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown"
-              }
-            ]
+            "goals": [{ "scorer": "Unknown" }]
           },
           {
             "team": 1,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "Ayomide"
-              }
-            ]
+            "goals": [{ "scorer": "Unknown", "assist": "Ayomide" }]
           }
         ],
         [
@@ -410,12 +362,7 @@
           {
             "team": 4,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "Damian"
-              }
-            ]
+            "goals": [{ "scorer": "Unknown", "assist": "Damian" }]
           }
         ],
         [
@@ -428,13 +375,8 @@
             "team": 1,
             "score": 2,
             "goals": [
-              {
-                "scorer": "Unknown",
-                "assist": "Ayomide"
-              },
-              {
-                "scorer": "Unknown"
-              }
+              { "scorer": "Unknown", "assist": "Ayomide" },
+              { "scorer": "Unknown" }
             ]
           }
         ],
@@ -442,11 +384,7 @@
           {
             "team": 1,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Mfon"
-              }
-            ]
+            "goals": [{ "scorer": "Mfon" }]
           },
           {
             "team": 2,
@@ -458,881 +396,15 @@
           {
             "team": 1,
             "score": 1,
-            "goals": [
-              {
-                "scorer": "Epic"
-              }
-            ]
+            "goals": [{ "scorer": "Epic" }]
           },
           {
             "team": 3,
             "score": 0,
             "goals": []
-          }
-        ]
-      ],
-      "table": {
-        "Majiri": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 0
-        },
-        "Abu": {
-          "pts": 21,
-          "p": 12,
-          "w": 6,
-          "d": 3,
-          "l": 3,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 5
-        },
-        "Mfon": {
-          "pts": 31,
-          "p": 15,
-          "w": 9,
-          "d": 4,
-          "l": 2,
-          "goals": 3,
-          "assists": 2,
-          "g/a": 5,
-          "cleansheets": 8
-        },
-        "John Ohaka": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
-          "d": 0,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Elems": {
-          "pts": 2,
-          "p": 4,
-          "w": 0,
-          "d": 2,
-          "l": 2,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 0
-        },
-        "Daniel Felix": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 3
-        },
-        "Geepee": {
-          "pts": 17,
-          "p": 12,
-          "w": 4,
-          "d": 5,
-          "l": 3,
-          "goals": 3,
-          "assists": 0,
-          "g/a": 3,
-          "cleansheets": 4
-        },
-        "Scholes": {
-          "pts": 4,
-          "p": 9,
-          "w": 0,
-          "d": 4,
-          "l": 5,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Samailia": {
-          "pts": 3,
-          "p": 5,
-          "w": 0,
-          "d": 3,
-          "l": 2,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Balo": {
-          "pts": 16,
-          "p": 10,
-          "w": 4,
-          "d": 4,
-          "l": 2,
-          "goals": 3,
-          "assists": 0,
-          "g/a": 3,
-          "cleansheets": 3
-        },
-        "Martins": {
-          "pts": 2,
-          "p": 3,
-          "w": 0,
-          "d": 2,
-          "l": 1,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Amin": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Greg": {
-          "pts": 3,
-          "p": 8,
-          "w": 0,
-          "d": 3,
-          "l": 5,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Jon Dust": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Ekene": {
-          "pts": 15,
-          "p": 10,
-          "w": 4,
-          "d": 3,
-          "l": 3,
-          "goals": 0,
-          "assists": 2,
-          "g/a": 2,
-          "cleansheets": 4
-        },
-        "Epic": {
-          "pts": 15,
-          "p": 10,
-          "w": 4,
-          "d": 3,
-          "l": 3,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 4
-        },
-        "Yomi": {
-          "pts": 16,
-          "p": 11,
-          "w": 4,
-          "d": 4,
-          "l": 3,
-          "goals": 3,
-          "assists": 1,
-          "g/a": 4,
-          "cleansheets": 3
-        },
-        "McKen": {
-          "pts": 16,
-          "p": 11,
-          "w": 4,
-          "d": 4,
-          "l": 3,
-          "goals": 1,
-          "assists": 5,
-          "g/a": 6,
-          "cleansheets": 3
-        },
-        "Damian": {
-          "pts": 6,
-          "p": 9,
-          "w": 1,
-          "d": 3,
-          "l": 5,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 2
-        },
-        "Ayomide": {
-          "pts": 16,
-          "p": 12,
-          "w": 4,
-          "d": 4,
-          "l": 4,
-          "goals": 1,
-          "assists": 3,
-          "g/a": 4,
-          "cleansheets": 5
-        }
-      }
-    },
-    "2": {
-      "teams": {
-        "1": ["Mfon", "Abu"],
-        "2": ["Scholes", "Ayomide", "Geepee", "Damian", "Samailia"],
-        "3": ["McKen", "Elems", "Yomi", "Greg"],
-        "4": ["Epic", "Ekene", "Balo", "Martins"]
-      },
-      "results": [
-        [
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Prosper",
-                "assist": "Mfon"
-              }
-            ]
-          },
-          {
-            "team": 2,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 2,
-            "goals": [
-              {
-                "scorer": "Naka"
-              },
-              {
-                "scorer": "Prosper",
-                "assist": "Naka"
-              }
-            ]
-          },
-          {
-            "team": 3,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Yomi",
-                "assist": "McKen"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 2,
-            "goals": [
-              {
-                "scorer": "Abu",
-                "assist": "Mfon"
-              },
-              {
-                "scorer": "Naka",
-                "assist": "Prosper"
-              }
-            ]
-          },
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Balo"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 2,
-            "goals": [
-              {
-                "scorer": "OG"
-              },
-              {
-                "scorer": "OG"
-              }
-            ]
-          },
-          {
-            "team": 2,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Warri",
-                "assist": "Naka"
-              }
-            ]
-          },
-          {
-            "team": 3,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Yomi",
-                "assist": "McKen"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 2,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Unknown"
-              }
-            ]
-          },
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Balo",
-                "assist": "Kylian"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 2,
-            "goals": [
-              {
-                "scorer": "Mfon"
-              },
-              {
-                "scorer": "Mfon",
-                "assist": "Ibk"
-              }
-            ]
-          },
-          {
-            "team": 3,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Prosper",
-                "assist": "Ibk"
-              }
-            ]
-          },
-          {
-            "team": 2,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Geepee",
-                "assist": "Samialia"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Derry",
-                "assist": "Elems"
-              }
-            ]
-          },
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Balo"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 0,
-            "goals": []
-          },
-          {
-            "team": 2,
-            "score": 0,
-            "goals": []
-          }
-        ]
-      ],
-      "table": {
-        "Majiri": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 0
-        },
-        "Abu": {
-          "pts": 21,
-          "p": 12,
-          "w": 6,
-          "d": 3,
-          "l": 3,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 5
-        },
-        "Mfon": {
-          "pts": 31,
-          "p": 15,
-          "w": 9,
-          "d": 4,
-          "l": 2,
-          "goals": 3,
-          "assists": 2,
-          "g/a": 5,
-          "cleansheets": 8
-        },
-        "John Ohaka": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
-          "d": 0,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Elems": {
-          "pts": 2,
-          "p": 4,
-          "w": 0,
-          "d": 2,
-          "l": 2,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 0
-        },
-        "Daniel Felix": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 3
-        },
-        "Geepee": {
-          "pts": 17,
-          "p": 12,
-          "w": 4,
-          "d": 5,
-          "l": 3,
-          "goals": 3,
-          "assists": 0,
-          "g/a": 3,
-          "cleansheets": 4
-        },
-        "Scholes": {
-          "pts": 4,
-          "p": 9,
-          "w": 0,
-          "d": 4,
-          "l": 5,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Samailia": {
-          "pts": 3,
-          "p": 5,
-          "w": 0,
-          "d": 3,
-          "l": 2,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Balo": {
-          "pts": 16,
-          "p": 10,
-          "w": 4,
-          "d": 4,
-          "l": 2,
-          "goals": 3,
-          "assists": 0,
-          "g/a": 3,
-          "cleansheets": 3
-        },
-        "Martins": {
-          "pts": 2,
-          "p": 3,
-          "w": 0,
-          "d": 2,
-          "l": 1,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Amin": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Greg": {
-          "pts": 3,
-          "p": 8,
-          "w": 0,
-          "d": 3,
-          "l": 5,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Jon Dust": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Ekene": {
-          "pts": 15,
-          "p": 10,
-          "w": 4,
-          "d": 3,
-          "l": 3,
-          "goals": 0,
-          "assists": 2,
-          "g/a": 2,
-          "cleansheets": 4
-        },
-        "Epic": {
-          "pts": 15,
-          "p": 10,
-          "w": 4,
-          "d": 3,
-          "l": 3,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 4
-        },
-        "Yomi": {
-          "pts": 16,
-          "p": 11,
-          "w": 4,
-          "d": 4,
-          "l": 3,
-          "goals": 3,
-          "assists": 1,
-          "g/a": 4,
-          "cleansheets": 3
-        },
-        "McKen": {
-          "pts": 16,
-          "p": 11,
-          "w": 4,
-          "d": 4,
-          "l": 3,
-          "goals": 1,
-          "assists": 5,
-          "g/a": 6,
-          "cleansheets": 3
-        },
-        "Damian": {
-          "pts": 6,
-          "p": 9,
-          "w": 1,
-          "d": 3,
-          "l": 5,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 2
-        },
-        "Ayomide": {
-          "pts": 16,
-          "p": 12,
-          "w": 4,
-          "d": 4,
-          "l": 4,
-          "goals": 1,
-          "assists": 3,
-          "g/a": 4,
-          "cleansheets": 5
-        }
-      }
-    },
-    "3": {
-      "teams": {
-        "1": ["Majiri", "Greg", "Amin"],
-        "2": ["Epic", "McKen", "Damian", "Abu"],
-        "3": ["Scholes", "Geepee", "Mfon", "Balo", "Daniel Felix"],
-        "4": ["Martins", "Elems", "Ayomide", "John Ohaka", "Ekene"]
-      },
-      "results": [
-        [
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Yomi",
-                "assist": "Yerima"
-              }
-            ]
-          },
-          {
-            "team": 2,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 1,
-            "goals": [
-              {
-                "scorer": "Daniel Felix",
-                "assist": "Scholes"
-              }
-            ]
-          },
-          {
-            "team": 1,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 0,
-            "goals": []
-          },
-          {
-            "team": 4,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [{
-              "scorer": "Yomi", "assist": "Jozi"
-            }]
-          },
-          {
-            "team": 2,
-            "score": 1,
-            "goals": [{
-              "scorer": "Evans", "assist": "McKen"
-            }]
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 0,
-            "goals": []
-          },
-          {
-            "team": 4,
-            "score": 2,
-            "goals": [
-              {"scorer": "Ekene", "assist": "Ayomide"},
-              {"scorer": "Ayomide", "assist": "Greg"}
-            ]
-          }
-        ],
-        [
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [{"scorer": "Gabby"}]
-          },
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {"scorer": "OG"}
-            ]
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 0,
-            "goals": []
-          },
-          {
-            "team": 2,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 4,
-            "score": 2,
-            "goals": [
-              {"scorer": "Ayomide"},
-              {"scorer": "Ayomide"}
-            ]
-          },
-          {
-            "team": 1,
-            "score": 1,
-            "goals": [
-              {"scorer": "Jozi"}
-            ]
-          }
-        ],
-        [
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [
-              {"scorer": "Ekene", "assist": "Elems"}
-            ]
-          },
-          {
-            "team": 2,
-            "score": 1,
-            "goals": [
-              {"scorer": "Unknown"}
-            ]
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 2,
-            "goals": [
-              {"scorer": "Mfon", "assist": "Ibk"},
-              {"scorer": "Mfon"}
-            ]
-          },
-          {
-            "team": 1,
-            "score": 0,
-            "goals": []
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 2,
-            "goals": [
-              {"scorer": "Somto", "assist": "Scholes"},
-              {"scorer": "Somto"}
-            ]
-          },
-          {
-            "team": 4,
-            "score": 1,
-            "goals": [
-              {"scorer": "Ekene"}
-            ]
-          }
-        ],
-        [
-          {
-            "team": 3,
-            "score": 1,
-            "goals": [
-              {"scorer": "Somto", "assist": "Scholes"}
-            ]
-          },
-          {
-            "team": 1,
-            "score": 2,
-            "goals": [
-              {"scorer": "Majiri", "assist": "Amin"},
-              {"scorer": "Majiri", "assist": "Ayomide"}
-            ]
           }
         ]
       ]
-    },
-    "4": {
-      "teams": {
-        "1": ["Elems", "Abu", "Yomi", "Balo"],
-        "2": ["Geepee", "Ekene", "Ayomide", "Amin", "Martins"],
-        "3": ["Scholes", "Daniel Felix", "Greg", "Damian", "Epic"],
-        "4": ["McKen", "Mfon"]
-      },
-      "results": []
     }
   }
 }
