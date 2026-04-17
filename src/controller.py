@@ -127,9 +127,6 @@ def update_football_spot(teams, season, results, day):
         table[player]["l"] = team_stats[value]["l"]
         table[player]["cleansheets"] = team_stats[value]["cleansheets"]
 
-    # print(team_stats)
-    print(table)
-
     # write table to file
     with open(PATH, "w") as f:
         data["rounds"][f"{day}"]["table"] = table
@@ -170,10 +167,7 @@ def test_football_spot(season):
 
 def start_football_spot(players, season):
     ...
-
-
-def end_football_spot(season):
-    ...
+    # add the teams and create the table
 
 
 def main():
