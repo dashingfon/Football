@@ -1237,6 +1237,280 @@
         }
       ]
     },
-    "3": {}
+    "3": {
+      "teams": {
+        "1": [
+          "Majiri",
+          "Greg",
+          "Amin"
+        ],
+        "2": [
+          "Epic",
+          "McKen",
+          "Damian",
+          "Abu"
+        ],
+        "3": [
+          "Scholes",
+          "Geepee",
+          "Mfon",
+          "Balo",
+          "Daniel-Felix"
+        ],
+        "4": [
+          "Martins",
+          "Elems",
+          "Ayomide",
+          "John-Ohaka",
+          "Ekene"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Yerima"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Daniel-Felix",
+                "assist": "Scholes"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Jozi"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Evans",
+                "assist": "McKen"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": "Ayomide"
+              },
+              {
+                "scorer": "Ayomide",
+                "assist": "Greg"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "OG",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Ayomide",
+                "assist": ""
+              },
+              {
+                "scorer": "Ayomide",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Jozi",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": "Elems"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Unknown",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Mfon",
+                "assist": "Ibk"
+              },
+              {
+                "scorer": "Mfon",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Somto",
+                "assist": "Scholes"
+              },
+              {
+                "scorer": "Somto",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": "Amin"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Somto",
+                "assist": "Scholes"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Majiri",
+                "assist": "Amin"
+              },
+              {
+                "scorer": "Majiri",
+                "assist": "Ayomide"
+              }
+            ]
+          }
+        ]
+      ]
+    }
   }
 }
