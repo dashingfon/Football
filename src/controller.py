@@ -48,8 +48,9 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
     result = []
     num_result = input("enter the number of results: ")
     for i in range(int(num_result)):
+        print("\n")
 
-        home = input("enter the home team: ")
+        home = input(f"enter the match {i + 1} home team: ")
         home_goals = input("enter the number of goals scored by the home team: ")
         home_result = {
             "team": int(home),
@@ -66,7 +67,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
             })
 
         
-        away = input("enter the away team: ")
+        away = input(f"enter the match {i + 1} away team: ")
         away_goals = input("enter the number of goals scored by the away team: ")
         away_result = {
             "team": int(home),
@@ -234,8 +235,8 @@ def main():
     # test_football_spot("february_2026")
     # update_football_spot(0, 0, "february_2026", True)
 
-    get_football_spot_result_data("testing", True, False)
-    # get_football_spot_result_data("february_2026", False, False)
+    # get_football_spot_result_data("testing", True, False)
+    get_football_spot_result_data("february_2026", False, False)
 
 
 if __name__ == "__main__":

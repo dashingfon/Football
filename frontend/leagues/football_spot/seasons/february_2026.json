@@ -3,9 +3,9 @@
     "Majiri",
     "Abu",
     "Mfon",
-    "John Ohaka",
+    "John-Ohaka",
     "Elems",
-    "Daniel Felix",
+    "Daniel-Felix",
     "Geepee",
     "Scholes",
     "Samailia",
@@ -13,7 +13,7 @@
     "Martins",
     "Amin",
     "Greg",
-    "Jon Dust",
+    "Jon-Dust",
     "Ekene",
     "Epic",
     "Yomi",
@@ -60,7 +60,7 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "John Ohaka": {
+        "John-Ohaka": {
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -82,7 +82,7 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Daniel Felix": {
+        "Daniel-Felix": {
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -170,7 +170,7 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Jon Dust": {
+        "Jon-Dust": {
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -259,7 +259,7 @@
         ],
         "2": [
           "McKen",
-          "Daniel Felix",
+          "Daniel-Felix",
           "Geepee",
           "Yomi",
           "Balo"
@@ -273,7 +273,7 @@
         "4": [
           "Damian",
           "Abu",
-          "John Ohaka"
+          "John-Ohaka"
         ]
       },
       "results": [
@@ -526,7 +526,7 @@
           "g/a": 1,
           "cleansheets": 4
         },
-        "John Ohaka": {
+        "John-Ohaka": {
           "pts": 3,
           "p": 4,
           "w": 1,
@@ -548,7 +548,7 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Daniel Felix": {
+        "Daniel-Felix": {
           "pts": 14,
           "p": 7,
           "w": 4,
@@ -636,7 +636,7 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Jon Dust": {
+        "Jon-Dust": {
           "pts": 0,
           "p": 0,
           "w": 0,
