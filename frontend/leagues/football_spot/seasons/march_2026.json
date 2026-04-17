@@ -280,6 +280,228 @@
         }
       ]
     },
-    "1": {}
+    "1": {
+      "teams": {
+        "1": [
+          "paszytin",
+          "steve",
+          "daniel-felix",
+          "john-ohaka",
+          "abu"
+        ],
+        "2": [
+          "pazzy",
+          "scholes",
+          "ekene",
+          "ayomide",
+          "balo"
+        ],
+        "3": [
+          "majiri",
+          "hamis",
+          "elems",
+          "jozi",
+          "john-dust"
+        ],
+        "4": [
+          "geepee",
+          "martins",
+          "mfon",
+          "damian"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "ekene",
+                "assist": "balo"
+              },
+              {
+                "scorer": "ayomide",
+                "assist": "ekene"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "ekene",
+                "assist": "ayomide"
+              },
+              {
+                "scorer": "ayomide",
+                "assist": "martins"
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "achibu",
+                "assist": ""
+              },
+              {
+                "scorer": "achibu",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "geepee",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "ekene",
+                "assist": ""
+              },
+              {
+                "scorer": "ekene",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "jozi",
+                "assist": "majiri"
+              }
+            ]
+          }
+        ]
+      ]
+    }
   }
 }
