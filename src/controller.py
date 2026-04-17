@@ -104,7 +104,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
         print(result)
 
 
-def update_football_spot(teams, results, season, write: bool = False):
+def update_football_spot(season, write: bool = False):
 
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
 
@@ -237,22 +237,22 @@ def test_football_spot(season):
 
 def main():
     # test_football_spot("february_2026")
-    # update_football_spot(0, 0, "february_2026", True)
+    update_football_spot("february_2026", True)
 
     # get_football_spot_result_data("testing", True)
 
-    get_football_spot_result_data("february_2026", write = True)
+    # get_football_spot_result_data("february_2026", write = True)
 
-    # PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
+    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
 
-    # with open(PATH) as f:
-    #     data = json.load(f)
+    with open(PATH) as f:
+        data = json.load(f)
 
-    # table = data["rounds"]["1"]["table"]
-    # sorted_table = dict(
-    #     sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
-    # )
-    # print(sorted_table)
+    table = data["rounds"]["1"]["table"]
+    sorted_table = dict(
+        sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
+    )
+    print(sorted_table)
 
 
 if __name__ == "__main__":
