@@ -755,6 +755,245 @@
         }
       ]
     },
-    "2": {}
+    "2": {
+      "teams": {
+        "1": [
+          "Mfon",
+          "Abu"
+        ],
+        "2": [
+          "Scholes",
+          "Ayomide",
+          "Geepee",
+          "Damian",
+          "Samailia"
+        ],
+        "3": [
+          "McKen",
+          "Elems",
+          "Yomi",
+          "Greg"
+        ],
+        "4": [
+          "Epic",
+          "Ekene",
+          "Balo",
+          "Martins"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Prosper",
+                "assist": "Mfon"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Naka",
+                "assist": ""
+              },
+              {
+                "scorer": "Prosper",
+                "assist": "Naka"
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "McKen"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Abu",
+                "assist": "Mfon"
+              },
+              {
+                "scorer": "Naka",
+                "assist": "Prosper"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "OG",
+                "assist": ""
+              },
+              {
+                "scorer": "OG",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Warri",
+                "assist": "Naka"
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "McKen"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Prosper",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": "Kylian"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Mfon",
+                "assist": ""
+              },
+              {
+                "scorer": "Mfon",
+                "assist": "Ibk"
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Prosper",
+                "assist": "Ibk"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Geepee",
+                "assist": "Samailia"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Derry",
+                "assist": "Elems"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ]
+      ]
+    }
   }
 }
