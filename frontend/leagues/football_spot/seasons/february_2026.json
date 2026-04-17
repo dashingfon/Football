@@ -21,7 +21,7 @@
     "Damian",
     "Ayomide"
   ],
-  "current_round": 4,
+  "current_round": 5,
   "rounds": {
     "0": {
       "teams": {},
@@ -2010,7 +2010,250 @@
             ]
           }
         ]
+      ],
+      "table": [
+        {
+          "name": "Mfon",
+          "pts": 49,
+          "p": 28,
+          "w": 14,
+          "d": 7,
+          "l": 7,
+          "goals": 6,
+          "assists": 3,
+          "g/a": 9,
+          "cleansheets": 13
+        },
+        {
+          "name": "Balo",
+          "pts": 44,
+          "p": 25,
+          "w": 12,
+          "d": 8,
+          "l": 5,
+          "goals": 3,
+          "assists": 0,
+          "g/a": 3,
+          "cleansheets": 12
+        },
+        {
+          "name": "Abu",
+          "pts": 41,
+          "p": 24,
+          "w": 11,
+          "d": 8,
+          "l": 5,
+          "goals": 3,
+          "assists": 0,
+          "g/a": 3,
+          "cleansheets": 11
+        },
+        {
+          "name": "Geepee",
+          "pts": 36,
+          "p": 25,
+          "w": 9,
+          "d": 9,
+          "l": 7,
+          "goals": 3,
+          "assists": 0,
+          "g/a": 3,
+          "cleansheets": 12
+        },
+        {
+          "name": "Ayomide",
+          "pts": 33,
+          "p": 24,
+          "w": 8,
+          "d": 9,
+          "l": 7,
+          "goals": 7,
+          "assists": 5,
+          "g/a": 12,
+          "cleansheets": 11
+        },
+        {
+          "name": "Yomi",
+          "pts": 33,
+          "p": 19,
+          "w": 9,
+          "d": 6,
+          "l": 4,
+          "goals": 8,
+          "assists": 1,
+          "g/a": 9,
+          "cleansheets": 8
+        },
+        {
+          "name": "Elems",
+          "pts": 28,
+          "p": 18,
+          "w": 7,
+          "d": 7,
+          "l": 4,
+          "goals": 0,
+          "assists": 4,
+          "g/a": 4,
+          "cleansheets": 7
+        },
+        {
+          "name": "McKen",
+          "pts": 26,
+          "p": 21,
+          "w": 6,
+          "d": 8,
+          "l": 7,
+          "goals": 1,
+          "assists": 6,
+          "g/a": 7,
+          "cleansheets": 5
+        },
+        {
+          "name": "Daniel-Felix",
+          "pts": 26,
+          "p": 18,
+          "w": 7,
+          "d": 5,
+          "l": 6,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 8
+        },
+        {
+          "name": "Ekene",
+          "pts": 24,
+          "p": 16,
+          "w": 6,
+          "d": 6,
+          "l": 4,
+          "goals": 4,
+          "assists": 4,
+          "g/a": 8,
+          "cleansheets": 6
+        },
+        {
+          "name": "Epic",
+          "pts": 19,
+          "p": 18,
+          "w": 4,
+          "d": 7,
+          "l": 7,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 6
+        },
+        {
+          "name": "Martins",
+          "pts": 19,
+          "p": 15,
+          "w": 4,
+          "d": 7,
+          "l": 4,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 6
+        },
+        {
+          "name": "Amin",
+          "pts": 17,
+          "p": 17,
+          "w": 4,
+          "d": 5,
+          "l": 8,
+          "goals": 0,
+          "assists": 2,
+          "g/a": 2,
+          "cleansheets": 5
+        },
+        {
+          "name": "Scholes",
+          "pts": 16,
+          "p": 20,
+          "w": 3,
+          "d": 7,
+          "l": 10,
+          "goals": 0,
+          "assists": 3,
+          "g/a": 3,
+          "cleansheets": 6
+        },
+        {
+          "name": "Greg",
+          "pts": 12,
+          "p": 19,
+          "w": 2,
+          "d": 6,
+          "l": 11,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 2
+        },
+        {
+          "name": "John-Ohaka",
+          "pts": 12,
+          "p": 10,
+          "w": 3,
+          "d": 3,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 3
+        },
+        {
+          "name": "Damian",
+          "pts": 10,
+          "p": 17,
+          "w": 1,
+          "d": 7,
+          "l": 9,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 4
+        },
+        {
+          "name": "Majiri",
+          "pts": 9,
+          "p": 11,
+          "w": 2,
+          "d": 3,
+          "l": 6,
+          "goals": 2,
+          "assists": 1,
+          "g/a": 3,
+          "cleansheets": 1
+        },
+        {
+          "name": "Samailia",
+          "pts": 3,
+          "p": 5,
+          "w": 0,
+          "d": 3,
+          "l": 2,
+          "goals": 1,
+          "assists": 2,
+          "g/a": 3,
+          "cleansheets": 1
+        },
+        {
+          "name": "Jon-Dust",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        }
       ]
-    }
+    },
+    "5": {}
   }
 }
