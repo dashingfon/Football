@@ -17,9 +17,10 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
     if new:
         players = input("Enter list of players seperated by space: ")
         players_list = players.split(" ")
-        table = {}
+        table = []
         for player in players_list:
-            table[player] = {
+            table.append({
+                "name": player,
                 "pts": 0,
                 "p": 0,
                 "w": 0,
@@ -30,6 +31,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
                 "g/a": 0,
                 "cleansheets": 0,
             }
+            )
         data = {"players": players_list, "current_round": 1, "rounds": {"0": {"table": table}}}
 
         # update the seasons
@@ -84,11 +86,6 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
             })
 
         result.append([home_result, away_result])
-    # if new season, get players
-    
-    # get teams
-    # get results
-    # write
 
     with open(PATH) as f:
         data = json.load(f)
@@ -113,6 +110,10 @@ def update_football_spot(season, write: bool = False):
 
     curr_round = data["current_round"]
     table = deepcopy(data["rounds"][f"{curr_round - 1}"]["table"])
+    table_map = {}
+    for item in table:
+        table_map[item["name"]] = item
+
     teams = data["rounds"][f"{curr_round}"]["teams"]
     results = data["rounds"][f"{curr_round}"]["results"]
 
@@ -159,41 +160,41 @@ def update_football_spot(season, write: bool = False):
             team_stats[f"{result[0]["team"]}"]["d"] += 1
 
         for goals in result[0]["goals"]:
-            if goals["scorer"] in table:
-                table[goals["scorer"]]["goals"] += 1
-                table[goals["scorer"]]["g/a"] += 1
+            if goals["scorer"] in table_map:
+                table_map[goals["scorer"]]["goals"] += 1
+                table_map[goals["scorer"]]["g/a"] += 1
             
-            if ("assist" in goals) and (goals["assist"] in table):
-                table[goals["assist"]]["assists"] += 1
-                table[goals["assist"]]["g/a"] += 1
+            if ("assist" in goals) and (goals["assist"] in table_map):
+                table_map[goals["assist"]]["assists"] += 1
+                table_map[goals["assist"]]["g/a"] += 1
         
         for goals in result[1]["goals"]:
-            if goals["scorer"] in table:
-                table[goals["scorer"]]["goals"] += 1
-                table[goals["scorer"]]["g/a"] += 1
+            if goals["scorer"] in table_map:
+                table_map[goals["scorer"]]["goals"] += 1
+                table_map[goals["scorer"]]["g/a"] += 1
             
-            if ("assist" in goals) and (goals["assist"] in table):
-                table[goals["assist"]]["assists"] += 1
-                table[goals["assist"]]["g/a"] += 1
+            if ("assist" in goals) and (goals["assist"] in table_map):
+                table_map[goals["assist"]]["assists"] += 1
+                table_map[goals["assist"]]["g/a"] += 1
 
     for player, value in player_teams.items():
-        table[player]["pts"] += team_stats[value]["pts"]
-        table[player]["p"] += team_stats[value]["p"]
-        table[player]["w"] += team_stats[value]["w"]
-        table[player]["d"] += team_stats[value]["d"]
-        table[player]["l"] += team_stats[value]["l"]
-        table[player]["cleansheets"] += team_stats[value]["cleansheets"]
+        table_map[player]["pts"] += team_stats[value]["pts"]
+        table_map[player]["p"] += team_stats[value]["p"]
+        table_map[player]["w"] += team_stats[value]["w"]
+        table_map[player]["d"] += team_stats[value]["d"]
+        table_map[player]["l"] += team_stats[value]["l"]
+        table_map[player]["cleansheets"] += team_stats[value]["cleansheets"]
 
-    sorted_table = dict(
-    sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
-)
+    sorted_table = list(
+        sorted(list(table_map.values()), key=lambda item: (item["pts"], item["p"], item["w"]), reverse=True)
+    )
 
     if write:
         # write table to file
         with open(PATH, "w") as f:
             data["current_round"] = curr_round + 1
             data["rounds"][f"{curr_round + 1}"] = {}
-            data["rounds"][f"{curr_round}"]["table"] = table
+            data["rounds"][f"{curr_round}"]["table"] = sorted_table
             json.dump(data, f, indent=2)
     else:
         print(table)
@@ -237,22 +238,22 @@ def test_football_spot(season):
 
 def main():
     # test_football_spot("february_2026")
-    update_football_spot("february_2026", True)
+    # update_football_spot("february_2026", True)
 
     # get_football_spot_result_data("testing", True)
 
-    # get_football_spot_result_data("february_2026", write = True)
+    get_football_spot_result_data("february_2026", write = Flase)
 
-    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
+    # PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
 
-    with open(PATH) as f:
-        data = json.load(f)
+    # with open(PATH) as f:
+    #     data = json.load(f)
 
-    table = data["rounds"]["1"]["table"]
-    sorted_table = dict(
-        sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
-    )
-    print(sorted_table)
+    # table = data["rounds"]["1"]["table"]
+    # sorted_table = list(
+    #     sorted(table, key=lambda item: (item["pts"], item["p"], item["w"]), reverse=True)
+    # )
+    # print(sorted_table)
 
 
 if __name__ == "__main__":

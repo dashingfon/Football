@@ -26,8 +26,9 @@
     "0": {
       "teams": {},
       "results": [],
-      "table": {
-        "Majiri": {
+      "table": [
+        {
+          "name": "Majiri",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -38,7 +39,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Abu": {
+        {
+          "name": "Abu",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -49,7 +51,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Mfon": {
+        {
+          "name": "Mfon",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -60,7 +63,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "John-Ohaka": {
+        {
+          "name": "John-Ohaka",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -71,7 +75,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Elems": {
+        {
+          "name": "Elems",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -82,7 +87,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Daniel-Felix": {
+        {
+          "name": "Daniel-Felix",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -93,7 +99,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Geepee": {
+        {
+          "name": "Geepee",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -104,7 +111,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Scholes": {
+        {
+          "name": "Scholes",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -115,7 +123,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Samailia": {
+        {
+          "name": "Samailia",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -126,7 +135,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Balo": {
+        {
+          "name": "Balo",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -137,7 +147,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Martins": {
+        {
+          "name": "Martins",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -148,7 +159,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Amin": {
+        {
+          "name": "Amin",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -159,7 +171,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Greg": {
+        {
+          "name": "Greg",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -170,7 +183,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Jon-Dust": {
+        {
+          "name": "Jon-Dust",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -181,7 +195,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Ekene": {
+        {
+          "name": "Ekene",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -192,7 +207,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Epic": {
+        {
+          "name": "Epic",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -203,7 +219,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Yomi": {
+        {
+          "name": "Yomi",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -214,7 +231,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "McKen": {
+        {
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -225,7 +243,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Damian": {
+        {
+          "name": "Damian",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -236,7 +255,8 @@
           "g/a": 0,
           "cleansheets": 0
         },
-        "Ayomide": {
+        {
+          "name": "Ayomide",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -247,7 +267,7 @@
           "g/a": 0,
           "cleansheets": 0
         }
-      }
+      ]
     },
     "1": {
       "teams": {
@@ -492,63 +512,9 @@
           }
         ]
       ],
-      "table": {
-        "Majiri": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 1,
-          "g/a": 1,
-          "cleansheets": 0
-        },
-        "Abu": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
-          "d": 0,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Mfon": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
-          "d": 1,
-          "l": 2,
-          "goals": 1,
-          "assists": 0,
-          "g/a": 1,
-          "cleansheets": 4
-        },
-        "John-Ohaka": {
-          "pts": 3,
-          "p": 4,
-          "w": 1,
-          "d": 0,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 1
-        },
-        "Elems": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Daniel-Felix": {
+      "table": [
+        {
+          "name": "Daniel-Felix",
           "pts": 14,
           "p": 7,
           "w": 4,
@@ -559,7 +525,8 @@
           "g/a": 0,
           "cleansheets": 3
         },
-        "Geepee": {
+        {
+          "name": "Geepee",
           "pts": 14,
           "p": 7,
           "w": 4,
@@ -570,29 +537,8 @@
           "g/a": 2,
           "cleansheets": 3
         },
-        "Scholes": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Samailia": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Balo": {
+        {
+          "name": "Balo",
           "pts": 14,
           "p": 7,
           "w": 4,
@@ -603,51 +549,44 @@
           "g/a": 0,
           "cleansheets": 3
         },
-        "Martins": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
+        {
+          "name": "Yomi",
+          "pts": 14,
+          "p": 7,
+          "w": 4,
+          "d": 2,
+          "l": 1,
+          "goals": 1,
+          "assists": 1,
+          "g/a": 2,
+          "cleansheets": 3
         },
-        "Amin": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
+        {
+          "name": "McKen",
+          "pts": 14,
+          "p": 7,
+          "w": 4,
+          "d": 2,
+          "l": 1,
+          "goals": 1,
+          "assists": 3,
+          "g/a": 4,
+          "cleansheets": 3
+        },
+        {
+          "name": "Mfon",
+          "pts": 13,
+          "p": 7,
+          "w": 4,
           "d": 1,
-          "l": 3,
-          "goals": 0,
+          "l": 2,
+          "goals": 1,
           "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
+          "g/a": 1,
+          "cleansheets": 4
         },
-        "Greg": {
-          "pts": 1,
-          "p": 4,
-          "w": 0,
-          "d": 1,
-          "l": 3,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Jon-Dust": {
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "goals": 0,
-          "assists": 0,
-          "g/a": 0,
-          "cleansheets": 0
-        },
-        "Ekene": {
+        {
+          "name": "Ekene",
           "pts": 13,
           "p": 7,
           "w": 4,
@@ -658,7 +597,8 @@
           "g/a": 2,
           "cleansheets": 4
         },
-        "Epic": {
+        {
+          "name": "Epic",
           "pts": 13,
           "p": 7,
           "w": 4,
@@ -669,29 +609,44 @@
           "g/a": 1,
           "cleansheets": 4
         },
-        "Yomi": {
-          "pts": 14,
+        {
+          "name": "Ayomide",
+          "pts": 13,
           "p": 7,
           "w": 4,
-          "d": 2,
-          "l": 1,
-          "goals": 1,
-          "assists": 1,
-          "g/a": 2,
-          "cleansheets": 3
-        },
-        "McKen": {
-          "pts": 14,
-          "p": 7,
-          "w": 4,
-          "d": 2,
-          "l": 1,
+          "d": 1,
+          "l": 2,
           "goals": 1,
           "assists": 3,
           "g/a": 4,
-          "cleansheets": 3
+          "cleansheets": 4
         },
-        "Damian": {
+        {
+          "name": "Abu",
+          "pts": 3,
+          "p": 4,
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 1
+        },
+        {
+          "name": "John-Ohaka",
+          "pts": 3,
+          "p": 4,
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 1
+        },
+        {
+          "name": "Damian",
           "pts": 3,
           "p": 4,
           "w": 1,
@@ -702,18 +657,103 @@
           "g/a": 1,
           "cleansheets": 1
         },
-        "Ayomide": {
-          "pts": 13,
-          "p": 7,
-          "w": 4,
+        {
+          "name": "Majiri",
+          "pts": 1,
+          "p": 4,
+          "w": 0,
           "d": 1,
-          "l": 2,
-          "goals": 1,
-          "assists": 3,
-          "g/a": 4,
-          "cleansheets": 4
+          "l": 3,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 0
+        },
+        {
+          "name": "Scholes",
+          "pts": 1,
+          "p": 4,
+          "w": 0,
+          "d": 1,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Amin",
+          "pts": 1,
+          "p": 4,
+          "w": 0,
+          "d": 1,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Greg",
+          "pts": 1,
+          "p": 4,
+          "w": 0,
+          "d": 1,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Elems",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Samailia",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Martins",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        },
+        {
+          "name": "Jon-Dust",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
         }
-      }
+      ]
     },
     "2": {}
   }
