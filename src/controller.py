@@ -59,8 +59,9 @@ def update_football_spot(teams, season, results, day):
 
     # teams and results will be passed in
     team_stats = {}
+    player_teams = {}
     teams = data["rounds"][f"{day}"]["teams"]
-    for key in teams:
+    for key, value in teams.items():
         team_stats[key] = {
             "pts": 0,
             "p": 0,
@@ -69,10 +70,10 @@ def update_football_spot(teams, season, results, day):
             "l": 0,
             "cleansheets": 0,
         }
-    # print(teams)
+        for player in value:
+            player_teams[player] = key
 
     results = data["rounds"][f"{day}"]["results"]
-    # print(results)
 
     for result in results:
         team_stats[f"{result[1]["team"]}"]["p"] += 1
@@ -85,13 +86,13 @@ def update_football_spot(teams, season, results, day):
 
         if result[0]["score"] > result[1]["score"]:
             team_stats[f"{result[0]["team"]}"]["pts"] += 3
-            team_stats[f"{result[0]["team"]}"]["w"] += 3
 
+            team_stats[f"{result[0]["team"]}"]["w"] += 1
             team_stats[f"{result[1]["team"]}"]["l"] += 1
         elif result[0]["score"] < result[1]["score"]:
             team_stats[f"{result[1]["team"]}"]["pts"] += 3
-            team_stats[f"{result[1]["team"]}"]["w"] += 3
 
+            team_stats[f"{result[1]["team"]}"]["w"] +=1
             team_stats[f"{result[0]["team"]}"]["l"] += 1
         else:
             team_stats[f"{result[1]["team"]}"]["pts"] += 1
@@ -118,7 +119,15 @@ def update_football_spot(teams, season, results, day):
                 table[goals["assist"]]["assists"] += 1
                 table[goals["assist"]]["g/a"] += 1
 
-    print(team_stats)
+    for player, value in player_teams.items():
+        table[player]["pts"] = team_stats[value]["pts"]
+        table[player]["p"] = team_stats[value]["p"]
+        table[player]["w"] = team_stats[value]["w"]
+        table[player]["d"] = team_stats[value]["d"]
+        table[player]["l"] = team_stats[value]["l"]
+        table[player]["cleansheets"] = team_stats[value]["cleansheets"]
+
+    # print(team_stats)
     print(table)
 
     # write table to file
