@@ -237,23 +237,9 @@ def test_football_spot(season):
 
 
 def main():
-    # test_football_spot("february_2026")
-    # update_football_spot("february_2026", True)
-
-    # get_football_spot_result_data("testing", True)
 
     get_football_spot_result_data("february_2026", write = Flase)
-
-    # PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
-
-    # with open(PATH) as f:
-    #     data = json.load(f)
-
-    # table = data["rounds"]["1"]["table"]
-    # sorted_table = list(
-    #     sorted(table, key=lambda item: (item["pts"], item["p"], item["w"]), reverse=True)
-    # )
-    # print(sorted_table)
+    # update_football_spot("february_2026", True)
 
 
 if __name__ == "__main__":
