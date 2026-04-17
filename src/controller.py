@@ -46,7 +46,7 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
-def update_football_spot(teams, season, results, day):
+def update_football_spot(teams, season, results, day, write: bool = False):
     assert(day != 0)
 
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
@@ -120,17 +120,20 @@ def update_football_spot(teams, season, results, day):
                 table[goals["assist"]]["g/a"] += 1
 
     for player, value in player_teams.items():
-        table[player]["pts"] = team_stats[value]["pts"]
-        table[player]["p"] = team_stats[value]["p"]
-        table[player]["w"] = team_stats[value]["w"]
-        table[player]["d"] = team_stats[value]["d"]
-        table[player]["l"] = team_stats[value]["l"]
-        table[player]["cleansheets"] = team_stats[value]["cleansheets"]
+        table[player]["pts"] += team_stats[value]["pts"]
+        table[player]["p"] += team_stats[value]["p"]
+        table[player]["w"] += team_stats[value]["w"]
+        table[player]["d"] += team_stats[value]["d"]
+        table[player]["l"] += team_stats[value]["l"]
+        table[player]["cleansheets"] += team_stats[value]["cleansheets"]
 
-    # write table to file
-    with open(PATH, "w") as f:
-        data["rounds"][f"{day}"]["table"] = table
-        json.dump(data, f)
+    if write:
+        # write table to file
+        with open(PATH, "w") as f:
+            data["rounds"][f"{day}"]["table"] = table
+            json.dump(data, f, indent=2)
+    else:
+        print(table)
 
 def test_football_spot(season):
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
@@ -165,6 +168,14 @@ def test_football_spot(season):
                     assert game[1]["score"] == len(game[1]["goals"])
 
 
+def fill_football_spot_result(season):
+    ...
+    # check players present
+    # check results empty
+
+    # get teams from user
+    # get results from user
+
 def start_football_spot(players, season):
     ...
     # add the teams and create the table
@@ -172,7 +183,7 @@ def start_football_spot(players, season):
 
 def main():
     # test_football_spot("february_2026")
-    update_football_spot(0, "february_2026", 0, 1)
+    update_football_spot(0, "february_2026", 0, 3, False)
 
 
 if __name__ == "__main__":
