@@ -46,9 +46,115 @@ def calculate(match_day: int = 1, month: str = "march"):
         json.dump(f, data)
 
 
-def update_football_spot(teams, results):
+def update_football_spot(teams, season, results, day):
+    assert(day != 0)
+
+    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
+
+    with open(PATH) as f:
+        data = json.load(f)
+
+    table = data["rounds"][f"{day - 1}"]["table"]
+    # print(table)
+
+    # teams and results will be passed in
+    team_stats = {}
+    teams = data["rounds"][f"{day}"]["teams"]
+    for key in teams:
+        team_stats[key] = {
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "cleansheets": 0,
+        }
+    # print(teams)
+
+    results = data["rounds"][f"{day}"]["results"]
+    # print(results)
+
     for result in results:
-        ...
+        team_stats[f"{result[1]["team"]}"]["p"] += 1
+        team_stats[f"{result[0]["team"]}"]["p"] += 1
+
+        if result[0]["score"] == 0:
+            team_stats[f"{result[1]["team"]}"]["cleansheets"] += 1
+        if result[1]["score"] == 0:
+            team_stats[f"{result[0]["team"]}"]["cleansheets"] += 1
+
+        if result[0]["score"] > result[1]["score"]:
+            team_stats[f"{result[0]["team"]}"]["pts"] += 3
+            team_stats[f"{result[0]["team"]}"]["w"] += 3
+
+            team_stats[f"{result[1]["team"]}"]["l"] += 1
+        elif result[0]["score"] < result[1]["score"]:
+            team_stats[f"{result[1]["team"]}"]["pts"] += 3
+            team_stats[f"{result[1]["team"]}"]["w"] += 3
+
+            team_stats[f"{result[0]["team"]}"]["l"] += 1
+        else:
+            team_stats[f"{result[1]["team"]}"]["pts"] += 1
+            team_stats[f"{result[1]["team"]}"]["d"] += 1
+            
+            team_stats[f"{result[0]["team"]}"]["pts"] += 1
+            team_stats[f"{result[0]["team"]}"]["d"] += 1
+
+        for goals in result[0]["goals"]:
+            if goals["scorer"] in table:
+                table[goals["scorer"]]["goals"] += 1
+                table[goals["scorer"]]["g/a"] += 1
+            
+            if ("assist" in goals) and (goals["assist"] in table):
+                table[goals["assist"]]["assists"] += 1
+                table[goals["assist"]]["g/a"] += 1
+        
+        for goals in result[1]["goals"]:
+            if goals["scorer"] in table:
+                table[goals["scorer"]]["goals"] += 1
+                table[goals["scorer"]]["g/a"] += 1
+            
+            if ("assist" in goals) and (goals["assist"] in table):
+                table[goals["assist"]]["assists"] += 1
+                table[goals["assist"]]["g/a"] += 1
+
+    print(team_stats)
+    print(table)
+
+    # write table to file
+    return table
+
+def test_football_spot(season):
+    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
+
+    with open(PATH) as f:
+        data = json.load(f)
+    
+    players = data["players"]
+    rounds = data["rounds"]
+
+    for player in players:
+        for r in rounds.values():
+            if "table" not in r:
+                continue
+
+            assert len(players) == len(r['table'])
+            # print(player)
+            assert player in r["table"]
+            assert "pts" in r["table"][player]
+            assert "p" in r["table"][player]
+            assert "w" in r["table"][player]
+            assert "d" in r["table"][player]
+            assert "l" in r["table"][player]
+            assert "goals" in r["table"][player]
+            assert "assists" in r["table"][player]
+            assert "g/a" in r["table"][player]
+            assert "cleansheets" in r["table"][player]
+
+            if r["results"]:
+                for game in r["results"]:
+                    assert game[0]["score"] == len(game[0]["goals"])
+                    assert game[1]["score"] == len(game[1]["goals"])
 
 
 def start_football_spot(players, season):
@@ -59,6 +165,11 @@ def end_football_spot(season):
     ...
 
 
+def main():
+    # test_football_spot("february_2026")
+    update_football_spot(0, "february_2026", 0, 1)
+
+
 if __name__ == "__main__":
-    calculate()
+    main()
 
