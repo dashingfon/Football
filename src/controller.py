@@ -58,7 +58,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
             "goals": []
         }
 
-        for i in range(int(home_goals)):
+        for _ in range(int(home_goals)):
             scorer = input("enter the goalscorer: ")
             assist = input("enter the assist provider: ")
             home_result["goals"].append({
@@ -70,12 +70,12 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
         away = input(f"enter the match {i + 1} away team: ")
         away_goals = input("enter the number of goals scored by the away team: ")
         away_result = {
-            "team": int(home),
-            "score": int(home_goals),
+            "team": int(away),
+            "score": int(away_goals),
             "goals": []
         }
 
-        for i in range(int(away_goals)):
+        for _ in range(int(away_goals)):
             scorer = input("enter the goalscorer: ")
             assist = input("enter the assist provider: ")
             away_result["goals"].append({
@@ -184,6 +184,10 @@ def update_football_spot(teams, results, season, write: bool = False):
         table[player]["l"] += team_stats[value]["l"]
         table[player]["cleansheets"] += team_stats[value]["cleansheets"]
 
+    sorted_table = dict(
+    sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
+)
+
     if write:
         # write table to file
         with open(PATH, "w") as f:
@@ -235,8 +239,20 @@ def main():
     # test_football_spot("february_2026")
     # update_football_spot(0, 0, "february_2026", True)
 
-    # get_football_spot_result_data("testing", True, False)
-    get_football_spot_result_data("february_2026", False, False)
+    # get_football_spot_result_data("testing", True)
+
+    get_football_spot_result_data("february_2026", write = True)
+
+    # PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / "february_2026.json"
+
+    # with open(PATH) as f:
+    #     data = json.load(f)
+
+    # table = data["rounds"]["1"]["table"]
+    # sorted_table = dict(
+    #     sorted(table.items(), key=lambda item: (item[1]["pts"], item[1]["p"], item[1]["w"]), reverse=True)
+    # )
+    # print(sorted_table)
 
 
 if __name__ == "__main__":
