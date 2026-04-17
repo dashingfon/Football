@@ -131,7 +131,9 @@ def update_football_spot(teams, season, results, day):
     print(table)
 
     # write table to file
-    return table
+    with open(PATH, "w") as f:
+        data["rounds"][f"{day}"]["table"] = table
+        json.dump(data, f)
 
 def test_football_spot(season):
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
