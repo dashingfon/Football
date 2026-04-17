@@ -30,7 +30,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
                 "g/a": 0,
                 "cleansheets": 0,
             }
-        data = {"players": players, "current_round": 1, "rounds": {"0": {"table": table}}}
+        data = {"players": players_list, "current_round": 1, "rounds": {"0": {"table": table}}}
 
         # update the seasons
 
@@ -233,7 +233,7 @@ def test_football_spot(season):
 def main():
     # test_football_spot("february_2026")
     # update_football_spot(0, 0, "february_2026", True)
-    
+
     get_football_spot_result_data("testing", True, False)
     # get_football_spot_result_data("february_2026", False, False)
 
