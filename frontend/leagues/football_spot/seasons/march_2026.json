@@ -22,7 +22,7 @@
     "mcken",
     "damian"
   ],
-  "current_round": 3,
+  "current_round": 4,
   "rounds": {
     "0": {
       "table": [
@@ -1490,7 +1490,262 @@
             "goals": []
           }
         ]
+      ],
+      "table": [
+        {
+          "name": "ayomide",
+          "pts": 37,
+          "p": 22,
+          "w": 10,
+          "d": 7,
+          "l": 5,
+          "goals": 4,
+          "assists": 4,
+          "g/a": 8,
+          "cleansheets": 14
+        },
+        {
+          "name": "ekene",
+          "pts": 35,
+          "p": 20,
+          "w": 9,
+          "d": 8,
+          "l": 3,
+          "goals": 5,
+          "assists": 5,
+          "g/a": 10,
+          "cleansheets": 12
+        },
+        {
+          "name": "abu",
+          "pts": 28,
+          "p": 19,
+          "w": 7,
+          "d": 7,
+          "l": 5,
+          "goals": 4,
+          "assists": 3,
+          "g/a": 7,
+          "cleansheets": 11
+        },
+        {
+          "name": "steve",
+          "pts": 28,
+          "p": 19,
+          "w": 7,
+          "d": 7,
+          "l": 5,
+          "goals": 3,
+          "assists": 0,
+          "g/a": 3,
+          "cleansheets": 9
+        },
+        {
+          "name": "paszytin",
+          "pts": 27,
+          "p": 19,
+          "w": 7,
+          "d": 6,
+          "l": 6,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 11
+        },
+        {
+          "name": "mfon",
+          "pts": 25,
+          "p": 18,
+          "w": 6,
+          "d": 7,
+          "l": 5,
+          "goals": 4,
+          "assists": 0,
+          "g/a": 4,
+          "cleansheets": 9
+        },
+        {
+          "name": "geepee",
+          "pts": 25,
+          "p": 18,
+          "w": 6,
+          "d": 7,
+          "l": 5,
+          "goals": 2,
+          "assists": 1,
+          "g/a": 3,
+          "cleansheets": 11
+        },
+        {
+          "name": "balo",
+          "pts": 22,
+          "p": 18,
+          "w": 5,
+          "d": 7,
+          "l": 6,
+          "goals": 1,
+          "assists": 4,
+          "g/a": 5,
+          "cleansheets": 9
+        },
+        {
+          "name": "pazzy",
+          "pts": 20,
+          "p": 16,
+          "w": 4,
+          "d": 8,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 9
+        },
+        {
+          "name": "majiri",
+          "pts": 20,
+          "p": 15,
+          "w": 4,
+          "d": 8,
+          "l": 3,
+          "goals": 1,
+          "assists": 5,
+          "g/a": 6,
+          "cleansheets": 8
+        },
+        {
+          "name": "damian",
+          "pts": 18,
+          "p": 16,
+          "w": 4,
+          "d": 6,
+          "l": 6,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 10
+        },
+        {
+          "name": "martins",
+          "pts": 17,
+          "p": 14,
+          "w": 3,
+          "d": 8,
+          "l": 3,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 8
+        },
+        {
+          "name": "elems",
+          "pts": 16,
+          "p": 15,
+          "w": 3,
+          "d": 7,
+          "l": 5,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 7
+        },
+        {
+          "name": "epic",
+          "pts": 16,
+          "p": 12,
+          "w": 4,
+          "d": 4,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 4
+        },
+        {
+          "name": "hamis",
+          "pts": 15,
+          "p": 15,
+          "w": 3,
+          "d": 6,
+          "l": 6,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 9
+        },
+        {
+          "name": "jozi",
+          "pts": 15,
+          "p": 15,
+          "w": 3,
+          "d": 6,
+          "l": 6,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 9
+        },
+        {
+          "name": "john-dust",
+          "pts": 14,
+          "p": 11,
+          "w": 3,
+          "d": 5,
+          "l": 3,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 7
+        },
+        {
+          "name": "john-ohaka",
+          "pts": 13,
+          "p": 15,
+          "w": 2,
+          "d": 7,
+          "l": 6,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 8
+        },
+        {
+          "name": "daniel-felix",
+          "pts": 12,
+          "p": 15,
+          "w": 2,
+          "d": 6,
+          "l": 7,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 8
+        },
+        {
+          "name": "scholes",
+          "pts": 12,
+          "p": 8,
+          "w": 3,
+          "d": 3,
+          "l": 2,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 6
+        },
+        {
+          "name": "mcken",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        }
       ]
-    }
+    },
+    "4": {}
   }
 }
