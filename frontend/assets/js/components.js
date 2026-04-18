@@ -225,7 +225,43 @@ customElements.define('init-stats',
     class InitStats extends HTMLElement {
 
         connectedCallback() {
+            const params = new URLSearchParams(window.location.search);
+            let season = params.get("season");
+            if (season == null) {
+                season = "february_2026"
+            }
+            this.season = season
+            const season_el = document.getElementById("season-name")
+            const season_text = season.replace("_", " ")
+            let result = season_text[0].toUpperCase() + season_text.slice(1);
+            season_el.textContent = result
 
+            let stats = params.get("stats")
+            if (stats == null) {
+                stats = "goals"
+            }
+            this.stats = stats
+            this.season_data = fetch(`./seasons/${this.season}.json`)
+
+            // send to new stats url with season and stats
+            const season_dropdown = document.querySelectorAll("#season-dropdown button")
+            season_dropdown.forEach((el) => {
+                el.addEventListener("click", () => {
+                    const init = document.querySelector("init-stats")
+                    let url = new URL(window.location.href);
+                    url.searchParams.set("season", el.dataset.season);
+                    url.searchParams.set("stats", init.stats);
+                    window.location.href = url.toString();
+                })
+
+            })
+
+            // update the stats, and update the table
+            const stats_dropdown = document.querySelectorAll("#season-dropdown button")
+
+            // render the table and rounds
+
+            // set loading to true
         };
     }
 );

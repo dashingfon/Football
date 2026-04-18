@@ -4,6 +4,8 @@ import pathlib
 from copy import deepcopy
 from rich import print
 
+from jinja2 import Template
+
 
 def get_football_spot_result_data(season, new: bool = False, write: bool = False):
     PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
@@ -196,8 +198,10 @@ def update_football_spot(season, write: bool = False):
             data["rounds"][f"{curr_round}"]["table"] = sorted_table
             json.dump(data, f, indent=2)
 
-        # update season html
-        # update default html
+        # get season html
+        # write to season
+        # write to index
+
     else:
         print(table)
 
