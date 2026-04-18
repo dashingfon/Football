@@ -238,8 +238,8 @@ def test_football_spot(season):
 
 def main():
 
-    # get_football_spot_result_data("march_2026", write = True)
-    update_football_spot("march_2026", True)
+    get_football_spot_result_data("april_2026", new = True)
+    # update_football_spot("march_2026", True)
 
 
 if __name__ == "__main__":
