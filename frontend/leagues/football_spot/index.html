@@ -5,6 +5,26 @@
   <meta charset="UTF-8" />
 
   <style>
+    .skeleton {
+      background: var(--color-bg-1);
+      border-radius: 4px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
     @keyframes fade-up {
       0% {
         opacity: 0;
@@ -187,21 +207,21 @@
               <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
                 <li>
                   <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
+                    class="inline-flex items-center w-full p-2 hover:bg-bg-2 hover:text-heading rounded">February 2026</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
+                    class="inline-flex items-center w-full p-2 hover:bg-bg-2 hover:text-heading rounded">March 2026</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
+                    class="inline-flex items-center w-full p-2 hover:bg-bg-2 hover:text-heading rounded">April 2026</a>
                 </li>
-                <li>
+                <template id="season-template">
                   <a href="#"
-                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign
+                    class="inline-flex items-center w-full p-2 hover:bg-bg-2 hover:text-heading rounded">Sign
                     out</a>
-                </li>
+                </template>
               </ul>
             </div>
           </drop-down>

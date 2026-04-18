@@ -212,8 +212,17 @@ customElements.define('stats-feed',
     }
 );
 
-customElements.define('init-component',
-    class InitComponent extends HTMLElement {
+customElements.define('init-league',
+    class InitLeague extends HTMLElement {
+
+        connectedCallback() {
+
+        };
+    }
+);
+
+customElements.define('init-stats',
+    class InitStats extends HTMLElement {
 
         connectedCallback() {
 

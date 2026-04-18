@@ -1989,6 +1989,13 @@
       }
     }
   }
+  .hover\:bg-bg-2 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--bg-2);
+      }
+    }
+  }
   .hover\:bg-bg-2\/60 {
     &:hover {
       @media (hover: hover) {
