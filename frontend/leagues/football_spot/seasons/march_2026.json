@@ -1746,6 +1746,257 @@
         }
       ]
     },
-    "4": {}
+    "4": {
+      "teams": {
+        "1": [
+          "damian",
+          "abu",
+          "pazzy",
+          "mcken"
+        ],
+        "2": [
+          "ayomide",
+          "john-dust",
+          "elems",
+          "hamis",
+          "john-ohaka"
+        ],
+        "3": [
+          "balo",
+          "mfon",
+          "dainel-felix",
+          "martins",
+          "epic"
+        ],
+        "4": [
+          "majiri",
+          "ekene",
+          "paszytin",
+          "geepee",
+          "steve"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "ekene",
+                "assist": "steve"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "ayomide",
+                "assist": ""
+              },
+              {
+                "scorer": "unknown",
+                "assist": "ayomide"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "mfon",
+                "assist": "balo"
+              },
+              {
+                "scorer": "daniel-felix",
+                "assist": "kylian"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "john-dust",
+                "assist": "elems"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "abu",
+                "assist": "damian"
+              },
+              {
+                "scorer": "abu",
+                "assist": "mcken"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "balo",
+                "assist": "mfon"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "balo",
+                "assist": "mfon"
+              },
+              {
+                "scorer": "balo",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "abu",
+                "assist": "pazzy"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "damian",
+                "assist": "pazzy"
+              },
+              {
+                "scorer": "greg",
+                "assist": "mcken"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "kylian",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "balo",
+                "assist": "mfon"
+              }
+            ]
+          }
+        ]
+      ]
+    }
   }
 }
