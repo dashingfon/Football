@@ -1,9 +1,3 @@
-# check the results flow well
-
-# to do it?
-# 1. get the teams win, loss, draw and points
-# 2. get goal scorers
-# 3. get assists
 
 import json
 import pathlib
@@ -100,8 +94,10 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
 
     if write:
         with open(PATH, "w") as f:
-            data["rounds"][f"{curr_round}"]["teams"] = teams
-            data["rounds"][f"{curr_round}"]["results"] = result
+            data["current_round"] = curr_round + 1
+            data["rounds"][f"{curr_round + 1}"] = {}
+            data["rounds"][f"{curr_round + 1}"]["teams"] = teams
+            data["rounds"][f"{curr_round + 1}"]["results"] = result
             json.dump(data, f, indent=2)
     else:
         print(teams)
@@ -197,8 +193,6 @@ def update_football_spot(season, write: bool = False):
 
     if write:
         with open(PATH, "w") as f:
-            data["current_round"] = curr_round + 1
-            data["rounds"][f"{curr_round + 1}"] = {}
             data["rounds"][f"{curr_round}"]["table"] = sorted_table
             json.dump(data, f, indent=2)
 

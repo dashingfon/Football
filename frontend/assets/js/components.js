@@ -212,3 +212,12 @@ customElements.define('stats-feed',
     }
 );
 
+customElements.define('init-component',
+    class InitComponent extends HTMLElement {
+
+        connectedCallback() {
+
+        };
+    }
+);
+
