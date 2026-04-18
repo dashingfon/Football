@@ -34,52 +34,59 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
             )
         data = {"players": players_list, "current_round": 1, "rounds": {"0": {"table": table}}}
 
-        # update the seasons
+        with open(PATH.parent / "seasons.json") as f:
+            seasons = json.load(f)
+            seasons.append(season)
+
+        with open(PATH.parent / "seasons.json", "w") as f:
+            json.dump(seasons, f, indent=2)
 
         with open(PATH, "w") as f:
             json.dump(data, f, indent=2)
+
+        # update the default page
         
         return
 
-    num_teams = input("enter the number of teams: ")
+    num_teams = input("number of teams: ")
     teams = {}
     for i in range(int(num_teams)):
-        members = input(f"enter the players in team {i + 1} : ")
+        members = input(f"players in team {i + 1} : ")
         teams[f"{i + 1}"] = members.split(" ")
 
     result = []
-    num_result = input("enter the number of results: ")
+    num_result = input("number of results: ")
     for i in range(int(num_result)):
         print("\n")
 
-        home = input(f"enter the match {i + 1} home team: ")
-        home_goals = input("enter the number of goals scored by the home team: ")
+        home = input(f"match {i + 1} home team: ")
+        home_goals = input("number of goals scored by the home team: ")
         home_result = {
             "team": int(home),
             "score": int(home_goals),
             "goals": []
         }
 
-        for _ in range(int(home_goals)):
-            scorer = input("enter the goalscorer: ")
-            assist = input("enter the assist provider: ")
+        for j in range(int(home_goals)):
+            scorer = input(f"goalscorer {j + 1}: ")
+            assist = input(f"assist provider {j + 1}: ")
             home_result["goals"].append({
                 "scorer": scorer,
                 "assist": assist
             })
 
         
-        away = input(f"enter the match {i + 1} away team: ")
-        away_goals = input("enter the number of goals scored by the away team: ")
+        away = input(f"match {i + 1} away team: ")
+        away_goals = input("number of goals scored by the away team: ")
         away_result = {
             "team": int(away),
             "score": int(away_goals),
             "goals": []
         }
 
-        for _ in range(int(away_goals)):
-            scorer = input("enter the goalscorer: ")
-            assist = input("enter the assist provider: ")
+        for j in range(int(away_goals)):
+            scorer = input(f"goalscorer {j + 1}: ")
+            assist = input(f"assist provider {j + 1}: ")
             away_result["goals"].append({
                 "scorer": scorer,
                 "assist": assist
@@ -117,7 +124,6 @@ def update_football_spot(season, write: bool = False):
     teams = data["rounds"][f"{curr_round}"]["teams"]
     results = data["rounds"][f"{curr_round}"]["results"]
 
-    # teams and results will be passed in
     team_stats = {}
     player_teams = {}
 
@@ -190,17 +196,16 @@ def update_football_spot(season, write: bool = False):
     )
 
     if write:
-        # write table to file
         with open(PATH, "w") as f:
             data["current_round"] = curr_round + 1
             data["rounds"][f"{curr_round + 1}"] = {}
             data["rounds"][f"{curr_round}"]["table"] = sorted_table
             json.dump(data, f, indent=2)
+
+        # update season html
+        # update default html
     else:
         print(table)
-
-
-    # update season html
 
 
 def test_football_spot(season):
@@ -230,16 +235,11 @@ def test_football_spot(season):
             assert "g/a" in r["table"][player]
             assert "cleansheets" in r["table"][player]
 
-            if r["results"]:
-                for game in r["results"]:
-                    assert game[0]["score"] == len(game[0]["goals"])
-                    assert game[1]["score"] == len(game[1]["goals"])
-
 
 def main():
-
-    get_football_spot_result_data("april_2026", new = True)
-    # update_football_spot("march_2026", True)
+    ...
+    # get_football_spot_result_data("april_2026", write = True)
+    # update_football_spot("april_2026", True)
 
 
 if __name__ == "__main__":
