@@ -61,6 +61,8 @@
     <script src="../../assets/js/iconify.min.js"></script>
 </head>
 
+<init-stats>
+</init-stats>
 <body data-theme="light"
     class="font-[Inter] antialiased transition-colors duration-500 bg-bg-2 dark:text-text-1 flex h-screen whitespace-nowrap group/body">
     <!-- <desktop-sidebar>
@@ -273,8 +275,8 @@
 
             <nav-controller data-nav="mobile-nav" data-loading="true"
                 class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group">
-                <chart-race data-playing="false" class="group">
-                    <!-- Stats -->
+                <!-- Stats -->
+                <chart-race data-target="init-stats" data-playing="false" class="group">
                     <section>
 
                         <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
@@ -313,7 +315,7 @@
                                 }
                             </style>
                             <button id="round-dropdown-button" popovertarget="round-dropdown"
-                                class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none items-center">
+                                class="m-2 p-2 hover:bg-bg-3 text-text-1 font-bold rounded-md border border-text-6 leading-none items-center">
                                 <span class="px-2 id">1</span>
                                 <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
@@ -370,7 +372,7 @@
 
                         <template id="table-entry-template">
                             <div class="entries group" data-direction="">
-                                <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
+                                <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10 transition-all">
                                     <div class="flex">
                                         <span class="col-span-1 index">1</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -391,7 +393,7 @@
                                 </div>
 
                                 <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
-                                    <div class="h-full bg-brand rounded-r-full width" style="width: 80%"></div>
+                                    <div class="h-full bg-brand rounded-r-full width transition-all duration-[2s]" style="width: 80%"></div>
                                 </div>
                             </div>
                         </template>
@@ -411,7 +413,7 @@
     <!-- Bottom Navigation (Mobile) -->
 
     <nav id="mobile-nav" data-hidden="false"
-        class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-bg-2 bg-bg-2 flex justify-around pb-3 text-text-2 group data-[hidden=true]:translate-y-full transition-transform duration-300"
+        class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-bg-2 bg-bg-2 flex justify-around pb-3 text-text-2 group data-[hidden=true]:translate-y-full transition-transform duration-300 z-100"
         data-active="league">
         <a href="./matches.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="true">
@@ -442,8 +444,6 @@
         </a>
     </nav>
 </body>
-<init-stats>
-</init-stats>
 <script>
     /* ---------- ANIMATE CARDS ---------- */
     document.querySelectorAll(".fadeUp").forEach((el, i) => {

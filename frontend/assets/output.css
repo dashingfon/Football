@@ -336,6 +336,9 @@
   .z-50 {
     z-index: 50;
   }
+  .z-100 {
+    z-index: 100;
+  }
   .z-200 {
     z-index: 200;
   }
@@ -1624,6 +1627,10 @@
   .duration-500 {
     --tw-duration: 500ms;
     transition-duration: 500ms;
+  }
+  .duration-\[2s\] {
+    --tw-duration: 2s;
+    transition-duration: 2s;
   }
   .ease-\[cubic-bezier\(0\.81\,-0\.04\,0\.38\,1\.5\)\] {
     --tw-ease: cubic-bezier(0.81,-0.04,0.38,1.5);
