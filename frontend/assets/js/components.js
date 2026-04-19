@@ -209,28 +209,28 @@ customElements.define('chart-race',
 
         };
 
-        init() {
-
-        }
-
         set(round) {
             // use current round variable
         }
 
         play() {
-
+            this.dataset.playing = "true"
+            // set data-playing to true
         }
 
         pause() {
-
+            this.dataset.playing = "false"
+            // set data-playing to false
         }
 
         next() {
-
+            this.dataset.playing = "false"
+            // stop playing and set table to next
         }
 
         previous() {
-
+            this.dataset.playing = "false"
+            // stop playing and set table to previous
         }
     }
 );
@@ -245,17 +245,6 @@ customElements.define('init-league',
     }
 );
 
-// const season_template = document.getElementById("seasons-template")
-//             const season_container = document.getElementById("seasons-list")
-//             season_container.innerHTML = ""
-
-//             // set the seasons
-//             for (const season of this.seasons) {
-//                 const clone = season_template.content.cloneNode(true);
-//                 clone.querySelector(".btn").setAttribute("data-season", season)
-//                 const season_text = season.replaceAll("_", " ")
-//                 clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);;
-//                 season_container?.appendChild(clone)
 
 customElements.define('init-stats',
     class InitStats extends HTMLElement {
@@ -283,17 +272,17 @@ customElements.define('init-stats',
             let max_val = 5
             let min_val = 0
             let data = rounds["0"]
-            
+
             if (Object.keys(rounds).length == 1) {
                 // set just it
                 console.log("bypass")
-                
+
             } else {
-                for (const item of data.table) {
-                    max_val = Math.max(item[this.stats], max_val)
-                    min_val = Math.min(item[this.stats], min_val)
-                }
                 data = rounds[round];
+                for (const item of data.table) {
+                    max_val = Math.max(parseInt(item[this.stats]), max_val)
+                    min_val = Math.min(parseInt(item[this.stats]), min_val)
+                }
             }
 
             const table_template = document.getElementById("table-entry-template")
@@ -306,7 +295,7 @@ customElements.define('init-stats',
                 clone.querySelector(".index").textContent = `${index + 1}`
                 clone.querySelector(".name").textContent = item.name
                 clone.querySelector(".value").textContent = item[this.stats]
-                clone.querySelector(".width").style.width = `${10 + (parseInt(item[this.stats]) / max_val * 70)}%`
+                clone.querySelector(".width").style.width = `${5 + ((parseInt(item[this.stats]) / max_val) * 85)}%`
                 table_container?.appendChild(clone)
             })
 
@@ -386,9 +375,9 @@ customElements.define('init-stats',
                     let url = new URL(window.location.href);
                     url.searchParams.set("stats", el.dataset.stats);
                     window.history.replaceState({}, "", url)
-                    
+
                     const chart = document.querySelector("chart-race");
-                    if (chart.isplaying) {
+                    if (chart.dataset.playing != "false") {
                         chart.pause()
                     }
                     const round = document.querySelector("#round-dropdown-button .id")

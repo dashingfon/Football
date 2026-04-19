@@ -197,8 +197,7 @@
                         </template>
                         <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton"
                             id="seasons-list">
-                            <div
-                                class="w-full h-full flex items-center justify-center">
+                            <div class="w-full h-full flex items-center justify-center">
 
                                 <svg aria-hidden="true" class="w-8 h-8 animate-spin fill-brand" viewBox="0 0 100 101"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -274,7 +273,7 @@
 
             <nav-controller data-nav="mobile-nav" data-loading="true"
                 class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group">
-                <chart-race>
+                <chart-race data-playing="false" class="group">
                     <!-- Stats -->
                     <section>
 
@@ -293,10 +292,12 @@
                         </div>
                         <!-- controls -->
                         <div class="group-data-[loading=true]:hidden flex mt-2">
-                            <button
+                            <button id="play-controls"
                                 class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
                                 <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
-                                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                                    class="w-4 h-4 group-data-[playing=false]:block group-data-[playing=true]:hidden"></iconify-icon>
+                                <iconify-icon icon="mingcute:pause-fill" width="100%" height="100%"
+                                    class="w-4 h-4 group-data-[playing=false]:hidden group-data-[playing=true]:block"></iconify-icon>
                             </button>
                             <style>
                                 #round-dropdown-button {
@@ -327,7 +328,8 @@
                                     </li>
                                 </template>
 
-                                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton" id="rounds-list">
+                                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton"
+                                    id="rounds-list">
                                     <li>
                                         <button
                                             class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
@@ -346,12 +348,12 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button
+                            <button id="previous-button"
                                 class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
                                 <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                             </button>
-                            <button
+                            <button id="next-button"
                                 class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
                                 <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
                                     class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
@@ -362,24 +364,34 @@
                         <div
                             class="group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10 font-medium">
                             <span class="col-span-1">#</span>
-                            <span class="col-span-7 overflow-hidden">Player</span>
-                            <span class="col-span-2" id="specific-stats">Goals</span>
+                            <span class="col-span-6 overflow-hidden">Player</span>
+                            <span class="col-span-3" id="specific-stats">Goals</span>
                         </div>
 
                         <template id="table-entry-template">
-                            <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
-                                <span class="col-span-1 index">1</span>
-                                <span class="col-span-7 overflow-hidden name">Mfon</span>
-                                <span class="col-span-2 value">99</span>
-                            </div>
+                            <div class="entries group" data-direction="">
+                                <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
+                                    <div class="flex">
+                                        <span class="col-span-1 index">1</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" viewBox="0 0 24 24"><path d="m12 8l7 8H5z" class="fill-green-500 w-4 h-4 group-data-[direction=up]:block hidden"/></svg>
 
-                            <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
-                                <div class="h-full bg-brand rounded-r-full width" style="width: 80%"></div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="m5 8l7 8l7-8z"
+                                        class="fill-red-500 w-4 h-4 group-data-[direction=down]:block hidden"/></svg>
+                                        
+                                    </div>
+                                    <span class="col-span-7 overflow-hidden name">Mfon</span>
+                                    <span class="col-span-2 value">99</span>
+                                </div>
+
+                                <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                                    <div class="h-full bg-brand rounded-r-full width" style="width: 80%"></div>
+                                </div>
                             </div>
                         </template>
 
                         <!-- table -->
-                        <div class="group-data-[loading=true]:hidden" id="table-container">
+                        <div class="group-data-[loading=true]:hidden flex flex-col" id="table-container">
 
 
                         </div>

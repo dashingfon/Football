@@ -255,17 +255,6 @@
   .visible {
     visibility: visible;
   }
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border-width: 0;
-  }
   .absolute {
     position: absolute;
   }
@@ -359,8 +348,14 @@
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
+  .col-span-3 {
+    grid-column: span 3 / span 3;
+  }
   .col-span-4 {
     grid-column: span 4 / span 4;
+  }
+  .col-span-6 {
+    grid-column: span 6 / span 6;
   }
   .col-span-7 {
     grid-column: span 7 / span 7;
@@ -1218,6 +1213,12 @@
   .fill-brand {
     fill: var(--brand);
   }
+  .fill-green-500 {
+    fill: var(--color-green-500);
+  }
+  .fill-red-500 {
+    fill: var(--color-red-500);
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -1863,6 +1864,16 @@
       border-color: var(--brand);
     }
   }
+  .group-data-\[direction\=down\]\:block {
+    &:is(:where(.group)[data-direction="down"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[direction\=up\]\:block {
+    &:is(:where(.group)[data-direction="up"] *) {
+      display: block;
+    }
+  }
   .group-data-\[expanded\=true\]\:block {
     &:is(:where(.group)[data-expanded="true"] *) {
       display: block;
@@ -1885,6 +1896,26 @@
   }
   .group-data-\[opened\=true\]\:hidden {
     &:is(:where(.group)[data-opened="true"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[playing\=false\]\:block {
+    &:is(:where(.group)[data-playing="false"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[playing\=false\]\:hidden {
+    &:is(:where(.group)[data-playing="false"] *) {
+      display: none;
+    }
+  }
+  .group-data-\[playing\=true\]\:block {
+    &:is(:where(.group)[data-playing="true"] *) {
+      display: block;
+    }
+  }
+  .group-data-\[playing\=true\]\:hidden {
+    &:is(:where(.group)[data-playing="true"] *) {
       display: none;
     }
   }
