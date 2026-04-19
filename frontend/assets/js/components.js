@@ -200,8 +200,21 @@ customElements.define('search-filter',
 customElements.define('init-league',
     class InitLeague extends HTMLElement {
 
-        connectedCallback() {
+        async connectedCallback() {
+            const seasons = await fetch(`./seasons/seasons.json`)
+            this.seasons = await seasons.json()
 
+            const season_template = document.getElementById("seasons-template")
+            const season_container = document.getElementById("seasons-list")
+            season_container.innerHTML = ""
+
+            for (const season of this.seasons) {
+                const clone = season_template.content.cloneNode(true);
+                clone.querySelector("a").href = `./seasons/${season}.html`
+                const season_text = season.replaceAll("_", " ")
+                clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);
+                season_container?.appendChild(clone)
+            }
         };
     }
 );
@@ -353,6 +366,15 @@ customElements.define('init-stats',
         };
     }
 );
+
+
+customElements.define('chart-table',
+    class ChartTable extends HTMLElement {
+        async connectedCallback() {
+
+        }
+    }
+)
 
 
 customElements.define('chart-race',

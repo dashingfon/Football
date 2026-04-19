@@ -259,100 +259,104 @@
 
           <nav-controller data-nav="mobile-nav"
             class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group">
-            <!-- Table -->
-            <section data-loading="false">
-
-              <!-- controls -->
-              <div class="group-data-[loading=true]:hidden flex mt-2">
-                <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-bg-3 leading-none">
-                  <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </button>
-                <style>
-                  #round-dropdown-button {
-                    anchor-name: --round-anchor;
-                  }
-
-                  #round-dropdown {
-                    position-anchor: --round-anchor;
-                    margin: 0;
-                    inset: auto;
-                    top: anchor(bottom);
-                    right: anchor(right);
-                  }
-                </style>
-                <button id="round-dropdown-button" popovertarget="round-dropdown"
-                  class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none items-center">
-                  <span class="px-2">1</span>
-                  <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </button>
-                <!-- Dropdown menu -->
-                <div id="round-dropdown" popover
-                  class="absolute not-even:absolute max-h-96 bg-bg-2 border border-fg-2 text-text-5 border-default-medium rounded-md shadow-lg w-15">
-                  <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
-                    <li>
-                      <button
-                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
-                    </li>
-                    <li>
-                      <button
-                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">2</button>
-                    </li>
-                    <li>
-                      <button
-                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">3</button>
-                    </li>
-                    <li>
-                      <button
-                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">4</button>
-                    </li>
-                  </ul>
+            <chart-race data-target="init-stats" data-playing="false" class="group">
+              
+              <!-- Table -->
+              <section data-loading="false">
+  
+                <!-- controls -->
+                <div class="group-data-[loading=true]:hidden flex mt-2">
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-bg-3 leading-none">
+                    <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
+                      class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                  </button>
+                  <style>
+                    #round-dropdown-button {
+                      anchor-name: --round-anchor;
+                    }
+  
+                    #round-dropdown {
+                      position-anchor: --round-anchor;
+                      margin: 0;
+                      inset: auto;
+                      top: anchor(bottom);
+                      right: anchor(right);
+                    }
+                  </style>
+                  <button id="round-dropdown-button" popovertarget="round-dropdown"
+                    class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none items-center">
+                    <span class="px-2">1</span>
+                    <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
+                      class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                  </button>
+                  <!-- Dropdown menu -->
+                  <div id="round-dropdown" popover
+                    class="absolute not-even:absolute max-h-96 bg-bg-2 border border-fg-2 text-text-5 border-default-medium rounded-md shadow-lg w-15">
+                    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                      <li>
+                        <button
+                          class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
+                      </li>
+                      <li>
+                        <button
+                          class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">2</button>
+                      </li>
+                      <li>
+                        <button
+                          class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">3</button>
+                      </li>
+                      <li>
+                        <button
+                          class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">4</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-bg-3 leading-none">
+                    <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
+                      class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                  </button>
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                    <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
+                      class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                  </button>
                 </div>
-                <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-bg-3 leading-none">
-                  <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </button>
-                <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
-                  <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </button>
-              </div>
-
-              <!-- heading -->
-              <div class="group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10">
-                <span class="col-span-1">#</span>
-                <span class="col-span-4 overflow-hidden">Player</span>
-                <span class="col-span-1">P</span>
-                <span class="col-span-1">W</span>
-                <span class="col-span-1">D</span>
-                <span class="col-span-1">L</span>
-                <span class="col-span-1">PTS</span>
-              </div>
-
-              <!-- table -->
-              <div class="group-data-[loading=true]:hidden ">
-
-                {% for item in tables %}
-
-                <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
-                  <span class="col-span-1">{{ item["index"] }}</span>
-                  <span class="col-span-4 overflow-hidden">{{ item["name"] }}</span>
-                  <span class="col-span-1">{{ item["p"] }}</span>
-                  <span class="col-span-1">{{ item["w"] }}</span>
-                  <span class="col-span-1">{{ item["d"] }}</span>
-                  <span class="col-span-1">{{ item["l"] }}</span>
-                  <span class="col-span-1">{{ item["pts"] }}</span>
+  
+                <!-- heading -->
+                <div class="group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10">
+                  <span class="col-span-1">#</span>
+                  <span class="col-span-4 overflow-hidden">Player</span>
+                  <span class="col-span-1">P</span>
+                  <span class="col-span-1">W</span>
+                  <span class="col-span-1">D</span>
+                  <span class="col-span-1">L</span>
+                  <span class="col-span-1">PTS</span>
                 </div>
-
-                <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
-                  <div class="h-full bg-brand rounded-r-full" style="width: {{ item['width'] }}%"></div>
+  
+                <!-- table -->
+                <div class="group-data-[loading=true]:hidden ">
+  
+                  {% for item in tables %}
+  
+                  <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
+                    <span class="col-span-1">{{ item["index"] }}</span>
+                    <span class="col-span-4 overflow-hidden">{{ item["name"] }}</span>
+                    <span class="col-span-1">{{ item["p"] }}</span>
+                    <span class="col-span-1">{{ item["w"] }}</span>
+                    <span class="col-span-1">{{ item["d"] }}</span>
+                    <span class="col-span-1">{{ item["l"] }}</span>
+                    <span class="col-span-1">{{ item["pts"] }}</span>
+                  </div>
+  
+                  <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
+                    <div class="h-full bg-brand rounded-r-full" style="width: {{ item['width'] }}%"></div>
+                  </div>
+  
+                  {% endfor%}
+  
                 </div>
+              </section>
+            </chart-race>
 
-                {% endfor%}
-
-              </div>
-            </section>
           </nav-controller>
 
           <!-- Fixtures -->

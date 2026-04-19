@@ -52,7 +52,8 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
         with open(PATH, "w") as f:
             json.dump(data, f, indent=2)
 
-        # update the default page
+        # write season.html
+        # write default
 
         return
 
@@ -247,6 +248,13 @@ def test_football_spot(season):
             assert "assists" in r["table"][player]
             assert "g/a" in r["table"][player]
             assert "cleansheets" in r["table"][player]
+
+
+def get_season(season) -> str: ...
+
+
+def write_leagues(league):
+    ...
 
 
 def main():
