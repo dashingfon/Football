@@ -997,6 +997,9 @@
   .border-text-5 {
     border-color: var(--text-5);
   }
+  .border-text-6 {
+    border-color: var(--text-6);
+  }
   .bg-bg-1 {
     background-color: var(--bg-1);
   }

@@ -197,20 +197,40 @@ customElements.define('chart-race',
     class ChartRace extends HTMLElement {
 
         connectedCallback() {
+            // add the rounds dropdown event listeners
+                // 1. pause if playing
+                // 2. set table to target round
+
+            // add next and previous event listeners
+                // 1. pause if playing
+                // 2. set to target
+
+            // add play and pause event listeners
 
         };
+
+        init() {
+
+        }
+
+        play() {
+
+        }
+
+        pause() {
+
+        }
+
+        next() {
+
+        }
+
+        previous() {
+
+        }
     }
 );
 
-
-customElements.define('stats-feed',
-    class StatsFeed extends HTMLElement {
-
-        connectedCallback() {
-
-        };
-    }
-);
 
 customElements.define('init-league',
     class InitLeague extends HTMLElement {
@@ -226,21 +246,29 @@ customElements.define('init-stats',
 
         connectedCallback() {
             const params = new URLSearchParams(window.location.search);
+
             let season = params.get("season");
             if (season == null) {
                 season = "february_2026"
             }
             this.season = season
             const season_el = document.getElementById("season-name")
-            const season_text = season.replace("_", " ")
-            let result = season_text[0].toUpperCase() + season_text.slice(1);
-            season_el.textContent = result
+            const season_text = season.replaceAll("_", " ")
+            season_el.textContent = season_text[0].toUpperCase() + season_text.slice(1);
 
             let stats = params.get("stats")
             if (stats == null) {
                 stats = "goals"
             }
             this.stats = stats
+            const stats_el = document.getElementById("stats-name")
+            const stats_text = stats.replaceAll("_", " ")
+            if (stats == "g/a") {
+                stats_el.textContent = "Goals + Assists"
+            } else {
+                stats_el.textContent = stats_text[0].toUpperCase() + stats_text.slice(1);
+            }
+
             this.season_data = fetch(`./seasons/${this.season}.json`)
 
             // send to new stats url with season and stats
@@ -250,17 +278,33 @@ customElements.define('init-stats',
                     const init = document.querySelector("init-stats")
                     let url = new URL(window.location.href);
                     url.searchParams.set("season", el.dataset.season);
-                    url.searchParams.set("stats", init.stats);
                     window.location.href = url.toString();
                 })
 
             })
 
             // update the stats, and update the table
-            const stats_dropdown = document.querySelectorAll("#season-dropdown button")
+            const stats_dropdown = document.querySelectorAll("#stats-dropdown button")
+            stats_dropdown.forEach((el) => {
+                el.addEventListener("click", () => {
+                    stats_el.textContent = el.textContent
+                    const init = document.querySelector("init-stats")
+                    let url = new URL(window.location.href);
+                    url.searchParams.set("stats", el.dataset.stats);
+                    window.history.replaceState({}, "", url)
+                    document.getElementById("stats-dropdown")?.hidePopover()
 
-            // render the table and rounds
+                    const chart = document.querySelector("chart-race");
+                    if (chart.isplaying) {
+                        chart.pause()
+                    }
+                    // update round
+                })
 
+            })
+
+            // set the rounds
+            // set the table
             // set loading to true
         };
     }
