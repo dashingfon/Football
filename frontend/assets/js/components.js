@@ -294,6 +294,7 @@ customElements.define('init-stats',
                 const clone = table_template.content.cloneNode(true);
                 clone.querySelector(".index").textContent = `${index + 1}`
                 clone.querySelector(".name").textContent = item.name
+                clone.querySelector(".entries").id = item.name
                 clone.querySelector(".value").textContent = item[this.stats]
                 clone.querySelector(".width").style.width = `${5 + ((parseInt(item[this.stats]) / max_val) * 85)}%`
                 table_container?.appendChild(clone)
