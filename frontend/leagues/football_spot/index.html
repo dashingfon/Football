@@ -81,7 +81,7 @@
   <script src="../../assets/js/iconify.min.js"></script>
 </head>
 
-<init-league>
+<init-league data-season="february_2026">
 </init-league>
 
 <body data-theme="light"
@@ -266,14 +266,14 @@
 
           <nav-controller data-nav="mobile-nav"
             class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group">
-            <chart-table data-target="init-stats" data-playing="false" class="group">
+            <chart-table data-target="init-league" data-playing="false" class="group">
 
               <!-- Table -->
               <section data-loading="false">
 
                 <!-- controls -->
                 <div class="group-data-[loading=true]:hidden flex mt-2">
-                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none" id="play-controls">
                     <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
                       class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                   </button>
@@ -292,14 +292,21 @@
                   </style>
                   <button id="round-dropdown-button" popovertarget="round-dropdown"
                     class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none items-center">
-                    <span class="px-2">1</span>
+                    <span class="px-2 id">1</span>
                     <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
                       class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                   </button>
                   <!-- Dropdown menu -->
                   <div id="round-dropdown" popover
                     class="absolute not-even:absolute max-h-96 bg-bg-2 border border-fg-2 text-text-5 border-default-medium rounded-md shadow-lg w-15">
-                    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton">
+                    <template id="round-template">
+                      <li>
+                        <button
+                          class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded round">1</button>
+                      </li>
+                    </template>
+                    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton"
+                      id="rounds-list">
                       <li>
                         <button
                           class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
@@ -318,11 +325,11 @@
                       </li>
                     </ul>
                   </div>
-                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none" id="previous-button">
                     <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
                       class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                   </button>
-                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none">
+                  <button class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-fg-2 leading-none" id="next-button">
                     <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
                       class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
                   </button>
@@ -340,11 +347,22 @@
                   <span class="col-span-1">PTS</span>
                 </div>
 
-                <template id="table-entries">
-                  <div class="entries">
+                <template id="table-entry-template">
+                  <div class="entries group" data-direction="">
 
                     <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10">
-                      <span class="col-span-1 index">1</span>
+                      <div class="flex">
+                        <span class="col-span-1 index">1</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                          <path d="m12 8l7 8H5z"
+                            class="fill-green-500 w-4 h-4 group-data-[direction=up]:block hidden" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                          <path d="m5 8l7 8l7-8z"
+                            class="fill-red-500 w-4 h-4 group-data-[direction=down]:block hidden" />
+                        </svg>
+                      </div>
                       <span class="col-span-4 overflow-hidden name">Mfon</span>
                       <span class="col-span-1 p">99</span>
                       <span class="col-span-1 w">99</span>
@@ -360,7 +378,7 @@
                   </div>
                 </template>
                 <!-- table -->
-                <div class="group-data-[loading=true]:hidden flex flex-col" id="table-entries">
+                <div class="group-data-[loading=true]:hidden flex flex-col" id="table-container">
 
                   <div class="w-full h-full flex items-center justify-center">
 

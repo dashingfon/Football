@@ -201,6 +201,9 @@ customElements.define('init-league',
     class InitLeague extends HTMLElement {
 
         async connectedCallback() {
+            const season_data = await fetch(`./seasons/${this.dataset.season}.json`)
+            this.season_data = await season_data.json()
+
             const seasons = await fetch(`./seasons/seasons.json`)
             this.seasons = await seasons.json()
 
@@ -215,7 +218,66 @@ customElements.define('init-league',
                 clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);
                 season_container?.appendChild(clone)
             }
-        };
+
+            this.set_round()
+            this.set_table("1")
+            this.dispatchEvent(new CustomEvent("ready", {
+                bubbles: true,
+                composed: true
+            }));
+        }
+
+        set_round() {
+            const rounds = this.season_data.rounds
+            let keys = Object.keys(rounds)
+            if (keys.length > 1) {
+                keys = keys.slice(1)
+            }
+            this.rounds = keys;
+            document.querySelector("#round-dropdown-button .id").textContent = keys[0]
+            const round_template = document.getElementById("round-template")
+            const round_container = document.getElementById("rounds-list")
+            round_container.innerHTML = ""
+            for (const key of keys) {
+                const clone = round_template.content.cloneNode(true);
+                clone.querySelector(".round").textContent = key
+                round_container?.appendChild(clone)
+            }
+        }
+
+        set_table(round) {
+            const rounds = this.season_data.rounds
+            let max_val = 5
+            let min_val = 0
+            let data = rounds["0"]
+
+            if (Object.keys(rounds).length != 1) {
+                data = rounds[round];
+                for (const item of data.table) {
+                    max_val = Math.max(parseInt(item.pts), max_val)
+                    min_val = Math.min(parseInt(item.pts), min_val)
+                }
+            }
+
+            const table_template = document.getElementById("table-entry-template")
+            const table_container = document.getElementById("table-container")
+            table_container.innerHTML = ""
+
+            data.table.sort((a, b) => b[this.stats] - a[this.stats]);
+            data.table.forEach((item, index) => {
+                const clone = table_template.content.cloneNode(true);
+                clone.querySelector(".index").textContent = `${index + 1}`
+                clone.querySelector(".name").textContent = item.name
+                clone.querySelector(".entries").id = item.name
+                clone.querySelector(".pts").textContent = item.pts
+                clone.querySelector(".p").textContent = item.p
+                clone.querySelector(".w").textContent = item.w
+                clone.querySelector(".d").textContent = item.d
+                clone.querySelector(".l").textContent = item.l
+                clone.querySelector(".width").style.width = `${5 + ((parseInt(item.pts) / max_val) * 85)}%`
+                table_container?.appendChild(clone)
+            })
+        }
     }
 );
 
@@ -371,7 +433,135 @@ customElements.define('init-stats',
 customElements.define('chart-table',
     class ChartTable extends HTMLElement {
         async connectedCallback() {
+            await customElements.whenDefined(this.dataset.target);
+            this.init = document.querySelector(this.dataset.target);
 
+            if (this.init.rounds) {
+                this.useInit();
+            } else {
+                this.init.addEventListener("ready", () => this.useInit(), { once: true });
+            }
+        }
+
+        useInit() {
+            const self = this
+            this.rounds = this.init.rounds;
+            this.end = parseInt(this.rounds[this.rounds.length - 1]);
+            this.querySelector("#play-controls")?.addEventListener("click", ()=> {
+                if (self.dataset.playing == "true") {
+                    self.dataset.playing = "false"
+                } else {
+                    self.dataset.playing = "true";
+                    self.play()
+                }
+            })
+            this.querySelector("#previous-button")?.addEventListener("click", ()=> {
+                self.previous()
+            })
+            this.querySelector("#next-button")?.addEventListener("click", ()=> {
+                self.next()
+            })
+            this.querySelectorAll("#rounds-list .round").forEach((el) => {
+                el.addEventListener("click", () => {
+                    const round = el.textContent;
+                    self.set(round);
+                    document.getElementById("round-dropdown")?.hidePopover()
+                })
+            })
+        }
+
+        set(round) {
+            document.querySelector("#round-dropdown-button .id").textContent = `${round}`
+            self = this
+            const data = this.init.season_data.rounds[`${round}`].table
+
+            let max_val = 5
+            for (const item of data) {
+                max_val = Math.max(parseInt(item.pts), max_val)
+                document.getElementById(item.name).style.viewTransitionName = item.name
+            }
+            const len = data.length;
+            document.startViewTransition(() => {
+                data.forEach((item, index) => {
+                    const data_element = document.getElementById(item.name)
+                    const currentIndex = parseInt(data_element.querySelector(".index").textContent)
+                    if (currentIndex < index + 1) {
+                        data_element.dataset.direction = "down"
+                    } else if (currentIndex > index + 1) {
+                        data_element.dataset.direction = "up"
+                    }
+                    data_element.querySelector(".index").textContent = index + 1
+                    data_element.style.order = index
+                    data_element.style.zIndex = len - index
+                    data_element.querySelector(".pts").textContent = item.pts
+                    data_element.querySelector(".p").textContent = item.p
+                    data_element.querySelector(".w").textContent = item.w
+                    data_element.querySelector(".d").textContent = item.d
+                    data_element.querySelector(".l").textContent = item.l
+                    data_element.querySelector(".width").style.width = `${5 + ((parseInt(item.pts) / max_val) * 85)}%`
+
+                })
+            })
+        }
+
+        play() {
+            if (this.dataset.playing == "false") {
+                return
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            let next_round = parseInt(round) + 1
+            if (round == "0") {
+                this.dataset.playing = "false"
+                return
+            } else if (parseInt(round) == this.end) {
+                next_round = this.rounds[0]
+            }
+
+            this.set(next_round)
+
+            setTimeout(() => {
+                document.querySelectorAll("#table-container .entries").forEach((el) => {
+                    el.dataset.direction = ""
+                })
+            }, 1500)
+
+            if (next_round < this.end) {
+                setTimeout(() => {
+                    this.play()
+                }, 3000);
+            } else {
+                this.dataset.playing = "false"
+            }
+        }
+
+        pause() {
+            this.dataset.playing = "false"
+        }
+
+        next() {
+            if (this.dataset.playing == "true") {
+                this.dataset.playing = "false"
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            if (parseInt(round) == this.end) {
+                return
+            } else if (round == "0") {
+                return
+            }
+            let next_round = parseInt(round) + 1
+            this.set(next_round)
+        }
+
+        previous() {
+            if (this.dataset.playing == "true") {
+                this.dataset.playing = "false"
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            if ((round == "0") || (round == "1")) {
+                return
+            }
+            let next_round = parseInt(round) - 1
+            this.set(next_round)
         }
     }
 )
