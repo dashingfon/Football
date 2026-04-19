@@ -1,33 +1,36 @@
 {
   "players": [
-    "abu",
-    "majiri",
-    "epic",
-    "balo",
-    "greg",
-    "daniel-felix",
-    "martins",
-    "paszytin",
-    "hamis",
-    "john-ohaka",
-    "pazzy",
-    "yomi",
-    "geepee",
-    "warri",
-    "ayomide",
-    "mfon",
-    "mcken",
-    "scholes",
-    "john-dust",
-    "ekene",
-    "naka"
+    "Abu",
+    "Majiri",
+    "Epic",
+    "Balo",
+    "Greg",
+    "Daniel-Felix",
+    "Martins",
+    "Paszytin",
+    "Hamis",
+    "John-Ohaka",
+    "Pazzy",
+    "Yomi",
+    "Geepee",
+    "Warri",
+    "Ayomide",
+    "Mfon",
+    "McKen",
+    "Scholes",
+    "John-Dust",
+    "Ekene",
+    "Naka"
+  ],
+  "stats": [
+    "g/a", "goals", "assists", "cleansheets"
   ],
   "current_round": 1,
   "rounds": {
     "0": {
       "table": [
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -39,7 +42,7 @@
           "cleansheets": 0
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -51,7 +54,7 @@
           "cleansheets": 0
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -63,7 +66,7 @@
           "cleansheets": 0
         },
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -75,7 +78,7 @@
           "cleansheets": 0
         },
         {
-          "name": "greg",
+          "name": "Greg",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -87,7 +90,7 @@
           "cleansheets": 0
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -99,7 +102,7 @@
           "cleansheets": 0
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -111,7 +114,7 @@
           "cleansheets": 0
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -123,7 +126,7 @@
           "cleansheets": 0
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -135,7 +138,7 @@
           "cleansheets": 0
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -147,7 +150,7 @@
           "cleansheets": 0
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -159,7 +162,7 @@
           "cleansheets": 0
         },
         {
-          "name": "yomi",
+          "name": "Yomi",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -171,7 +174,7 @@
           "cleansheets": 0
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -183,7 +186,7 @@
           "cleansheets": 0
         },
         {
-          "name": "warri",
+          "name": "Warri",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -195,7 +198,7 @@
           "cleansheets": 0
         },
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -207,7 +210,7 @@
           "cleansheets": 0
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -219,7 +222,7 @@
           "cleansheets": 0
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -231,7 +234,7 @@
           "cleansheets": 0
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -243,7 +246,7 @@
           "cleansheets": 0
         },
         {
-          "name": "john-dust",
+          "name": "John-Dust",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -255,7 +258,7 @@
           "cleansheets": 0
         },
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -267,7 +270,7 @@
           "cleansheets": 0
         },
         {
-          "name": "naka",
+          "name": "Naka",
           "pts": 0,
           "p": 0,
           "w": 0,

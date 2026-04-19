@@ -21,6 +21,9 @@
     "Damian",
     "Ayomide"
   ],
+  "stats": [
+    "g/a", "goals", "assists", "cleansheets"
+  ],
   "current_round": 4,
   "rounds": {
     "0": {

@@ -1,33 +1,36 @@
 {
   "players": [
-    "abu",
-    "majiri",
-    "epic",
-    "john-ohaka",
-    "hamis",
-    "paszytin",
-    "martins",
-    "john-dust",
-    "ekene",
-    "jozi",
-    "pazzy",
-    "balo",
-    "daniel-felix",
-    "mfon",
-    "steve",
-    "scholes",
-    "elems",
-    "ayomide",
-    "geepee",
-    "mcken",
-    "damian"
+    "Abu",
+    "Majiri",
+    "Epic",
+    "John-Ohaka",
+    "Hamis",
+    "Paszytin",
+    "Martins",
+    "John-dust",
+    "Ekene",
+    "Jozi",
+    "Pazzy",
+    "Balo",
+    "Daniel-Felix",
+    "Mfon",
+    "Steve",
+    "Scholes",
+    "Elems",
+    "Ayomide",
+    "Geepee",
+    "McKen",
+    "Damian"
+  ],
+  "stats": [
+    "g/a", "goals", "assists", "cleansheets"
   ],
   "current_round": 4,
   "rounds": {
     "0": {
       "table": [
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -39,7 +42,7 @@
           "cleansheets": 0
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -51,7 +54,7 @@
           "cleansheets": 0
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -63,7 +66,7 @@
           "cleansheets": 0
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -75,7 +78,7 @@
           "cleansheets": 0
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -87,7 +90,7 @@
           "cleansheets": 0
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -99,7 +102,7 @@
           "cleansheets": 0
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -111,7 +114,7 @@
           "cleansheets": 0
         },
         {
-          "name": "john-dust",
+          "name": "John-dust",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -123,7 +126,7 @@
           "cleansheets": 0
         },
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -135,7 +138,7 @@
           "cleansheets": 0
         },
         {
-          "name": "jozi",
+          "name": "Jozi",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -147,7 +150,7 @@
           "cleansheets": 0
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -159,7 +162,7 @@
           "cleansheets": 0
         },
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -171,7 +174,7 @@
           "cleansheets": 0
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -183,7 +186,7 @@
           "cleansheets": 0
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -195,7 +198,7 @@
           "cleansheets": 0
         },
         {
-          "name": "steve",
+          "name": "Steve",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -207,7 +210,7 @@
           "cleansheets": 0
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -219,7 +222,7 @@
           "cleansheets": 0
         },
         {
-          "name": "elems",
+          "name": "Elems",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -231,7 +234,7 @@
           "cleansheets": 0
         },
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -243,7 +246,7 @@
           "cleansheets": 0
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -255,7 +258,7 @@
           "cleansheets": 0
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -267,7 +270,7 @@
           "cleansheets": 0
         },
         {
-          "name": "damian",
+          "name": "Damian",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -283,31 +286,31 @@
     "1": {
       "teams": {
         "1": [
-          "paszytin",
-          "steve",
-          "daniel-felix",
-          "john-ohaka",
-          "abu"
+          "Paszytin",
+          "Steve",
+          "Daniel-Felix",
+          "John-Ohaka",
+          "Abu"
         ],
         "2": [
-          "pazzy",
-          "scholes",
-          "ekene",
-          "ayomide",
-          "balo"
+          "Pazzy",
+          "Scholes",
+          "Ekene",
+          "Ayomide",
+          "Balo"
         ],
         "3": [
-          "majiri",
-          "hamis",
-          "elems",
-          "jozi",
-          "john-dust"
+          "Majiri",
+          "Hamis",
+          "Elems",
+          "Jozi",
+          "John-dust"
         ],
         "4": [
-          "geepee",
-          "martins",
-          "mfon",
-          "damian"
+          "Geepee",
+          "Martins",
+          "Mfon",
+          "Damian"
         ]
       },
       "results": [
@@ -346,12 +349,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "ekene",
-                "assist": "balo"
+                "scorer": "Ekene",
+                "assist": "Balo"
               },
               {
-                "scorer": "ayomide",
-                "assist": "ekene"
+                "scorer": "Ayomide",
+                "assist": "Ekene"
               }
             ]
           }
@@ -362,12 +365,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "ekene",
-                "assist": "ayomide"
+                "scorer": "Ekene",
+                "assist": "Ayomide"
               },
               {
-                "scorer": "ayomide",
-                "assist": "martins"
+                "scorer": "Ayomide",
+                "assist": "Martins"
               }
             ]
           },
@@ -452,7 +455,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "geepee",
+                "scorer": "Geepee",
                 "assist": ""
               }
             ]
@@ -474,11 +477,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "ekene",
+                "scorer": "Ekene",
                 "assist": ""
               },
               {
-                "scorer": "ekene",
+                "scorer": "Ekene",
                 "assist": ""
               }
             ]
@@ -495,8 +498,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "jozi",
-                "assist": "majiri"
+                "scorer": "Jozi",
+                "assist": "Majiri"
               }
             ]
           }
@@ -504,7 +507,7 @@
       ],
       "table": [
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -516,7 +519,7 @@
           "cleansheets": 6
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -528,7 +531,7 @@
           "cleansheets": 6
         },
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -540,7 +543,7 @@
           "cleansheets": 6
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -552,7 +555,7 @@
           "cleansheets": 6
         },
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -564,7 +567,7 @@
           "cleansheets": 6
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 9,
           "p": 6,
           "w": 2,
@@ -576,7 +579,7 @@
           "cleansheets": 5
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 9,
           "p": 6,
           "w": 2,
@@ -588,7 +591,7 @@
           "cleansheets": 5
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 9,
           "p": 6,
           "w": 2,
@@ -600,7 +603,7 @@
           "cleansheets": 5
         },
         {
-          "name": "damian",
+          "name": "Damian",
           "pts": 9,
           "p": 6,
           "w": 2,
@@ -612,7 +615,7 @@
           "cleansheets": 5
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -624,7 +627,7 @@
           "cleansheets": 4
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -636,7 +639,7 @@
           "cleansheets": 4
         },
         {
-          "name": "john-dust",
+          "name": "John-dust",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -648,7 +651,7 @@
           "cleansheets": 4
         },
         {
-          "name": "jozi",
+          "name": "Jozi",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -660,7 +663,7 @@
           "cleansheets": 4
         },
         {
-          "name": "elems",
+          "name": "Elems",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -672,7 +675,7 @@
           "cleansheets": 4
         },
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 3,
           "p": 5,
           "w": 0,
@@ -684,7 +687,7 @@
           "cleansheets": 3
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 3,
           "p": 5,
           "w": 0,
@@ -696,7 +699,7 @@
           "cleansheets": 3
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 3,
           "p": 5,
           "w": 0,
@@ -708,7 +711,7 @@
           "cleansheets": 3
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 3,
           "p": 5,
           "w": 0,
@@ -720,7 +723,7 @@
           "cleansheets": 3
         },
         {
-          "name": "steve",
+          "name": "Steve",
           "pts": 3,
           "p": 5,
           "w": 0,
@@ -732,7 +735,7 @@
           "cleansheets": 3
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -744,7 +747,7 @@
           "cleansheets": 0
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -760,30 +763,30 @@
     "2": {
       "teams": {
         "1": [
-          "ayomide",
-          "abu",
-          "geepee",
-          "john-ohaka"
+          "Ayomide",
+          "Abu",
+          "Geepee",
+          "John-Ohaka"
         ],
         "2": [
-          "jozi",
-          "damian",
-          "daniel-felix",
-          "hamis",
-          "paszytin"
+          "Jozi",
+          "Damian",
+          "Daniel-Felix",
+          "Hamis",
+          "Paszytin"
         ],
         "3": [
-          "balo",
-          "mfon",
-          "elems",
-          "steve",
-          "epic"
+          "Balo",
+          "Mfon",
+          "Elems",
+          "Steve",
+          "Epic"
         ],
         "4": [
-          "majiri",
-          "ekene",
-          "pazzy",
-          "martins"
+          "Majiri",
+          "Ekene",
+          "Pazzy",
+          "Martins"
         ]
       },
       "results": [
@@ -805,7 +808,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "mfon",
+                "scorer": "Mfon",
                 "assist": ""
               }
             ]
@@ -816,7 +819,7 @@
             "goals": [
               {
                 "scorer": "kylian",
-                "assist": "ekene"
+                "assist": "Ekene"
               }
             ]
           }
@@ -832,7 +835,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "hamis",
+                "scorer": "Hamis",
                 "assist": ""
               }
             ]
@@ -854,12 +857,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "mfon",
-                "assist": "balo"
+                "scorer": "Mfon",
+                "assist": "Balo"
               },
               {
-                "scorer": "mfon",
-                "assist": "balo"
+                "scorer": "Mfon",
+                "assist": "Balo"
               }
             ]
           }
@@ -875,7 +878,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "ekene",
+                "scorer": "Ekene",
                 "assist": ""
               }
             ]
@@ -887,8 +890,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "majiri",
-                "assist": "ekene"
+                "scorer": "Majiri",
+                "assist": "Ekene"
               }
             ]
           },
@@ -897,7 +900,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "abu",
+                "scorer": "Abu",
                 "assist": ""
               }
             ]
@@ -914,11 +917,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "daniel-felix",
+                "scorer": "Daniel-Felix",
                 "assist": ""
               },
               {
-                "scorer": "daniel-felix",
+                "scorer": "Daniel-Felix",
                 "assist": ""
               }
             ]
@@ -935,7 +938,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "abu",
+                "scorer": "Abu",
                 "assist": ""
               }
             ]
@@ -952,12 +955,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "balo",
+                "scorer": "Balo",
                 "assist": ""
               },
               {
-                "scorer": "elems",
-                "assist": "balo"
+                "scorer": "Elems",
+                "assist": "Balo"
               }
             ]
           }
@@ -994,7 +997,7 @@
                 "assist": ""
               },
               {
-                "scorer": "abu",
+                "scorer": "Abu",
                 "assist": ""
               }
             ]
@@ -1008,7 +1011,7 @@
       ],
       "table": [
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 20,
           "p": 14,
           "w": 5,
@@ -1020,7 +1023,7 @@
           "cleansheets": 7
         },
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 20,
           "p": 14,
           "w": 5,
@@ -1032,7 +1035,7 @@
           "cleansheets": 9
         },
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 18,
           "p": 12,
           "w": 4,
@@ -1044,7 +1047,7 @@
           "cleansheets": 7
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 18,
           "p": 12,
           "w": 4,
@@ -1056,7 +1059,7 @@
           "cleansheets": 7
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 17,
           "p": 12,
           "w": 4,
@@ -1068,7 +1071,7 @@
           "cleansheets": 6
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 17,
           "p": 12,
           "w": 4,
@@ -1080,7 +1083,7 @@
           "cleansheets": 8
         },
         {
-          "name": "damian",
+          "name": "Damian",
           "pts": 16,
           "p": 12,
           "w": 4,
@@ -1092,7 +1095,7 @@
           "cleansheets": 8
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 15,
           "p": 10,
           "w": 3,
@@ -1104,7 +1107,7 @@
           "cleansheets": 6
         },
         {
-          "name": "elems",
+          "name": "Elems",
           "pts": 14,
           "p": 11,
           "w": 3,
@@ -1116,7 +1119,7 @@
           "cleansheets": 5
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 13,
           "p": 11,
           "w": 3,
@@ -1128,7 +1131,7 @@
           "cleansheets": 7
         },
         {
-          "name": "jozi",
+          "name": "Jozi",
           "pts": 13,
           "p": 11,
           "w": 3,
@@ -1140,7 +1143,7 @@
           "cleansheets": 7
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 12,
           "p": 9,
           "w": 2,
@@ -1152,7 +1155,7 @@
           "cleansheets": 5
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -1164,7 +1167,7 @@
           "cleansheets": 6
         },
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 11,
           "p": 11,
           "w": 2,
@@ -1176,7 +1179,7 @@
           "cleansheets": 6
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 11,
           "p": 11,
           "w": 2,
@@ -1188,7 +1191,7 @@
           "cleansheets": 6
         },
         {
-          "name": "steve",
+          "name": "Steve",
           "pts": 11,
           "p": 11,
           "w": 2,
@@ -1200,7 +1203,7 @@
           "cleansheets": 4
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 10,
           "p": 11,
           "w": 2,
@@ -1212,7 +1215,7 @@
           "cleansheets": 6
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 10,
           "p": 11,
           "w": 2,
@@ -1224,7 +1227,7 @@
           "cleansheets": 6
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 8,
           "p": 6,
           "w": 2,
@@ -1236,7 +1239,7 @@
           "cleansheets": 1
         },
         {
-          "name": "john-dust",
+          "name": "John-dust",
           "pts": 6,
           "p": 5,
           "w": 1,
@@ -1248,7 +1251,7 @@
           "cleansheets": 4
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -1264,31 +1267,31 @@
     "3": {
       "teams": {
         "1": [
-          "steve",
-          "paszytin",
-          "abu",
-          "ekene",
-          "ayomide"
+          "Steve",
+          "Paszytin",
+          "Abu",
+          "Ekene",
+          "Ayomide"
         ],
         "2": [
-          "john-ohaka",
-          "martins",
-          "daniel-felix",
-          "balo"
+          "John-Ohaka",
+          "Martins",
+          "Daniel-Felix",
+          "Balo"
         ],
         "3": [
-          "epic",
-          "geepee",
-          "majiri",
-          "mfon",
-          "john-dust"
+          "Epic",
+          "Geepee",
+          "Majiri",
+          "Mfon",
+          "John-dust"
         ],
         "4": [
-          "hamis",
-          "pazzy",
-          "elems",
-          "jozi",
-          "damian"
+          "Hamis",
+          "Pazzy",
+          "Elems",
+          "Jozi",
+          "Damian"
         ]
       },
       "results": [
@@ -1298,8 +1301,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "paszytin",
-                "assist": "ayomide"
+                "scorer": "Paszytin",
+                "assist": "Ayomide"
               }
             ]
           },
@@ -1320,8 +1323,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "mfon",
-                "assist": "majiri"
+                "scorer": "Mfon",
+                "assist": "Majiri"
               }
             ]
           }
@@ -1344,12 +1347,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "steve",
-                "assist": "ayomide"
+                "scorer": "Steve",
+                "assist": "Ayomide"
               },
               {
-                "scorer": "abu",
-                "assist": "ayomide"
+                "scorer": "Abu",
+                "assist": "Ayomide"
               }
             ]
           },
@@ -1365,12 +1368,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "ayomide",
-                "assist": "abu"
+                "scorer": "Ayomide",
+                "assist": "Abu"
               },
               {
-                "scorer": "ayomide",
-                "assist": "abu"
+                "scorer": "Ayomide",
+                "assist": "Abu"
               }
             ]
           },
@@ -1379,8 +1382,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "geepee",
-                "assist": "majiri"
+                "scorer": "Geepee",
+                "assist": "Majiri"
               }
             ]
           }
@@ -1391,12 +1394,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "paszytin",
-                "assist": "ekene"
+                "scorer": "Paszytin",
+                "assist": "Ekene"
               },
               {
-                "scorer": "steve",
-                "assist": "abu"
+                "scorer": "Steve",
+                "assist": "Abu"
               }
             ]
           },
@@ -1425,11 +1428,11 @@
             "goals": [
               {
                 "scorer": "cypher",
-                "assist": "majiri"
+                "assist": "Majiri"
               },
               {
-                "scorer": "john-dust",
-                "assist": "majiri"
+                "scorer": "John-dust",
+                "assist": "Majiri"
               }
             ]
           },
@@ -1445,8 +1448,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "john-dust",
-                "assist": "geepee"
+                "scorer": "John-dust",
+                "assist": "Geepee"
               }
             ]
           },
@@ -1455,8 +1458,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "steve",
-                "assist": "ekene"
+                "scorer": "Steve",
+                "assist": "Ekene"
               }
             ]
           }
@@ -1493,7 +1496,7 @@
       ],
       "table": [
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 37,
           "p": 22,
           "w": 10,
@@ -1505,7 +1508,7 @@
           "cleansheets": 14
         },
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 35,
           "p": 20,
           "w": 9,
@@ -1517,7 +1520,7 @@
           "cleansheets": 12
         },
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 28,
           "p": 19,
           "w": 7,
@@ -1529,7 +1532,7 @@
           "cleansheets": 11
         },
         {
-          "name": "steve",
+          "name": "Steve",
           "pts": 28,
           "p": 19,
           "w": 7,
@@ -1541,7 +1544,7 @@
           "cleansheets": 9
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 27,
           "p": 19,
           "w": 7,
@@ -1553,7 +1556,7 @@
           "cleansheets": 11
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 25,
           "p": 18,
           "w": 6,
@@ -1565,7 +1568,7 @@
           "cleansheets": 9
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 25,
           "p": 18,
           "w": 6,
@@ -1577,7 +1580,7 @@
           "cleansheets": 11
         },
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 22,
           "p": 18,
           "w": 5,
@@ -1589,7 +1592,7 @@
           "cleansheets": 9
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 20,
           "p": 16,
           "w": 4,
@@ -1601,7 +1604,7 @@
           "cleansheets": 9
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 20,
           "p": 15,
           "w": 4,
@@ -1613,7 +1616,7 @@
           "cleansheets": 8
         },
         {
-          "name": "damian",
+          "name": "Damian",
           "pts": 18,
           "p": 16,
           "w": 4,
@@ -1625,7 +1628,7 @@
           "cleansheets": 10
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 17,
           "p": 14,
           "w": 3,
@@ -1637,7 +1640,7 @@
           "cleansheets": 8
         },
         {
-          "name": "elems",
+          "name": "Elems",
           "pts": 16,
           "p": 15,
           "w": 3,
@@ -1649,7 +1652,7 @@
           "cleansheets": 7
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 16,
           "p": 12,
           "w": 4,
@@ -1661,7 +1664,7 @@
           "cleansheets": 4
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 15,
           "p": 15,
           "w": 3,
@@ -1673,7 +1676,7 @@
           "cleansheets": 9
         },
         {
-          "name": "jozi",
+          "name": "Jozi",
           "pts": 15,
           "p": 15,
           "w": 3,
@@ -1685,7 +1688,7 @@
           "cleansheets": 9
         },
         {
-          "name": "john-dust",
+          "name": "John-dust",
           "pts": 14,
           "p": 11,
           "w": 3,
@@ -1697,7 +1700,7 @@
           "cleansheets": 7
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 13,
           "p": 15,
           "w": 2,
@@ -1709,7 +1712,7 @@
           "cleansheets": 8
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 12,
           "p": 15,
           "w": 2,
@@ -1721,7 +1724,7 @@
           "cleansheets": 8
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -1733,7 +1736,7 @@
           "cleansheets": 6
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 0,
           "p": 0,
           "w": 0,
@@ -1749,31 +1752,31 @@
     "4": {
       "teams": {
         "1": [
-          "damian",
-          "abu",
-          "pazzy",
-          "mcken"
+          "Damian",
+          "Abu",
+          "Pazzy",
+          "McKen"
         ],
         "2": [
-          "ayomide",
-          "john-dust",
-          "elems",
-          "hamis",
-          "john-ohaka"
+          "Ayomide",
+          "John-dust",
+          "Elems",
+          "Hamis",
+          "John-Ohaka"
         ],
         "3": [
-          "balo",
-          "mfon",
-          "daniel-felix",
-          "martins",
-          "epic"
+          "Balo",
+          "Mfon",
+          "Daniel-Felix",
+          "Martins",
+          "Epic"
         ],
         "4": [
-          "majiri",
-          "ekene",
-          "paszytin",
-          "geepee",
-          "steve"
+          "Majiri",
+          "Ekene",
+          "Paszytin",
+          "Geepee",
+          "Steve"
         ]
       },
       "results": [
@@ -1788,8 +1791,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "ekene",
-                "assist": "steve"
+                "scorer": "Ekene",
+                "assist": "Steve"
               }
             ]
           }
@@ -1805,12 +1808,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "ayomide",
+                "scorer": "Ayomide",
                 "assist": ""
               },
               {
                 "scorer": "unknown",
-                "assist": "ayomide"
+                "assist": "Ayomide"
               }
             ]
           }
@@ -1826,11 +1829,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "mfon",
-                "assist": "balo"
+                "scorer": "Mfon",
+                "assist": "Balo"
               },
               {
-                "scorer": "daniel-felix",
+                "scorer": "Daniel-Felix",
                 "assist": "kylian"
               }
             ]
@@ -1854,8 +1857,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "john-dust",
-                "assist": "elems"
+                "scorer": "John-dust",
+                "assist": "Elems"
               }
             ]
           },
@@ -1876,12 +1879,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "abu",
-                "assist": "damian"
+                "scorer": "Abu",
+                "assist": "Damian"
               },
               {
-                "scorer": "abu",
-                "assist": "mcken"
+                "scorer": "Abu",
+                "assist": "McKen"
               }
             ]
           }
@@ -1892,8 +1895,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "balo",
-                "assist": "mfon"
+                "scorer": "Balo",
+                "assist": "Mfon"
               }
             ]
           },
@@ -1909,11 +1912,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "balo",
-                "assist": "mfon"
+                "scorer": "Balo",
+                "assist": "Mfon"
               },
               {
-                "scorer": "balo",
+                "scorer": "Balo",
                 "assist": ""
               }
             ]
@@ -1942,8 +1945,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "abu",
-                "assist": "pazzy"
+                "scorer": "Abu",
+                "assist": "Pazzy"
               }
             ]
           },
@@ -1959,12 +1962,12 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "damian",
-                "assist": "pazzy"
+                "scorer": "Damian",
+                "assist": "Pazzy"
               },
               {
                 "scorer": "greg",
-                "assist": "mcken"
+                "assist": "McKen"
               }
             ]
           },
@@ -1990,8 +1993,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "balo",
-                "assist": "mfon"
+                "scorer": "Balo",
+                "assist": "Mfon"
               }
             ]
           }
@@ -1999,7 +2002,7 @@
       ],
       "table": [
         {
-          "name": "ayomide",
+          "name": "Ayomide",
           "pts": 44,
           "p": 28,
           "w": 12,
@@ -2011,7 +2014,7 @@
           "cleansheets": 17
         },
         {
-          "name": "abu",
+          "name": "Abu",
           "pts": 39,
           "p": 26,
           "w": 10,
@@ -2023,7 +2026,7 @@
           "cleansheets": 15
         },
         {
-          "name": "ekene",
+          "name": "Ekene",
           "pts": 38,
           "p": 25,
           "w": 10,
@@ -2035,7 +2038,7 @@
           "cleansheets": 13
         },
         {
-          "name": "mfon",
+          "name": "Mfon",
           "pts": 37,
           "p": 24,
           "w": 9,
@@ -2047,7 +2050,7 @@
           "cleansheets": 14
         },
         {
-          "name": "balo",
+          "name": "Balo",
           "pts": 34,
           "p": 24,
           "w": 8,
@@ -2059,7 +2062,7 @@
           "cleansheets": 14
         },
         {
-          "name": "steve",
+          "name": "Steve",
           "pts": 31,
           "p": 24,
           "w": 8,
@@ -2071,7 +2074,7 @@
           "cleansheets": 10
         },
         {
-          "name": "pazzy",
+          "name": "Pazzy",
           "pts": 31,
           "p": 23,
           "w": 7,
@@ -2083,7 +2086,7 @@
           "cleansheets": 13
         },
         {
-          "name": "paszytin",
+          "name": "Paszytin",
           "pts": 30,
           "p": 24,
           "w": 8,
@@ -2095,7 +2098,7 @@
           "cleansheets": 12
         },
         {
-          "name": "damian",
+          "name": "Damian",
           "pts": 29,
           "p": 23,
           "w": 7,
@@ -2107,7 +2110,7 @@
           "cleansheets": 14
         },
         {
-          "name": "martins",
+          "name": "Martins",
           "pts": 29,
           "p": 20,
           "w": 6,
@@ -2119,7 +2122,7 @@
           "cleansheets": 13
         },
         {
-          "name": "geepee",
+          "name": "Geepee",
           "pts": 28,
           "p": 23,
           "w": 7,
@@ -2131,7 +2134,7 @@
           "cleansheets": 12
         },
         {
-          "name": "epic",
+          "name": "Epic",
           "pts": 28,
           "p": 18,
           "w": 7,
@@ -2143,7 +2146,7 @@
           "cleansheets": 9
         },
         {
-          "name": "daniel-felix",
+          "name": "Daniel-Felix",
           "pts": 24,
           "p": 21,
           "w": 5,
@@ -2155,7 +2158,7 @@
           "cleansheets": 13
         },
         {
-          "name": "elems",
+          "name": "Elems",
           "pts": 23,
           "p": 21,
           "w": 5,
@@ -2167,7 +2170,7 @@
           "cleansheets": 10
         },
         {
-          "name": "majiri",
+          "name": "Majiri",
           "pts": 23,
           "p": 20,
           "w": 5,
@@ -2179,7 +2182,7 @@
           "cleansheets": 9
         },
         {
-          "name": "hamis",
+          "name": "Hamis",
           "pts": 22,
           "p": 21,
           "w": 5,
@@ -2191,7 +2194,7 @@
           "cleansheets": 12
         },
         {
-          "name": "john-dust",
+          "name": "John-dust",
           "pts": 21,
           "p": 17,
           "w": 5,
@@ -2203,7 +2206,7 @@
           "cleansheets": 10
         },
         {
-          "name": "john-ohaka",
+          "name": "John-Ohaka",
           "pts": 20,
           "p": 21,
           "w": 4,
@@ -2215,7 +2218,7 @@
           "cleansheets": 11
         },
         {
-          "name": "jozi",
+          "name": "Jozi",
           "pts": 15,
           "p": 15,
           "w": 3,
@@ -2227,7 +2230,7 @@
           "cleansheets": 9
         },
         {
-          "name": "scholes",
+          "name": "Scholes",
           "pts": 12,
           "p": 8,
           "w": 3,
@@ -2239,7 +2242,7 @@
           "cleansheets": 6
         },
         {
-          "name": "mcken",
+          "name": "McKen",
           "pts": 11,
           "p": 7,
           "w": 3,

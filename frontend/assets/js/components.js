@@ -198,12 +198,12 @@ customElements.define('chart-race',
 
         connectedCallback() {
             // add the rounds dropdown event listeners
-                // 1. pause if playing
-                // 2. set table to target round
+            // 1. pause if playing
+            // 2. set table to target round
 
             // add next and previous event listeners
-                // 1. pause if playing
-                // 2. set to target
+            // 1. pause if playing
+            // 2. set to target
 
             // add play and pause event listeners
 
@@ -211,6 +211,10 @@ customElements.define('chart-race',
 
         init() {
 
+        }
+
+        set(round) {
+            // use current round variable
         }
 
         play() {
@@ -241,10 +245,77 @@ customElements.define('init-league',
     }
 );
 
+// const season_template = document.getElementById("seasons-template")
+//             const season_container = document.getElementById("seasons-list")
+//             season_container.innerHTML = ""
+
+//             // set the seasons
+//             for (const season of this.seasons) {
+//                 const clone = season_template.content.cloneNode(true);
+//                 clone.querySelector(".btn").setAttribute("data-season", season)
+//                 const season_text = season.replaceAll("_", " ")
+//                 clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);;
+//                 season_container?.appendChild(clone)
+
 customElements.define('init-stats',
     class InitStats extends HTMLElement {
 
-        connectedCallback() {
+        set_rounds() {
+            const rounds = this.season_data.rounds
+            let keys = Object.keys(rounds)
+            if (keys.length > 1) {
+                keys = keys.slice(1)
+            }
+            this.rounds = keys;
+            document.querySelector("#round-dropdown-button .id").textContent = keys[0]
+            const round_template = document.getElementById("round-template")
+            const round_container = document.getElementById("rounds-list")
+            round_container.innerHTML = ""
+            for (const key of keys) {
+                const clone = round_template.content.cloneNode(true);
+                clone.querySelector(".round").textContent = key
+                round_container?.appendChild(clone)
+            }
+        }
+
+        set_table(round) {
+            const rounds = this.season_data.rounds
+            let max_val = 5
+            let min_val = 0
+            let data = rounds["0"]
+            
+            if (Object.keys(rounds).length == 1) {
+                // set just it
+                console.log("bypass")
+                
+            } else {
+                for (const item of data.table) {
+                    max_val = Math.max(item[this.stats], max_val)
+                    min_val = Math.min(item[this.stats], min_val)
+                }
+                data = rounds[round];
+            }
+
+            const table_template = document.getElementById("table-entry-template")
+            const table_container = document.getElementById("table-container")
+            table_container.innerHTML = ""
+
+            data.table.sort((a, b) => b[this.stats] - a[this.stats]);
+            data.table.forEach((item, index) => {
+                const clone = table_template.content.cloneNode(true);
+                clone.querySelector(".index").textContent = `${index + 1}`
+                clone.querySelector(".name").textContent = item.name
+                clone.querySelector(".value").textContent = item[this.stats]
+                clone.querySelector(".width").style.width = `${10 + (parseInt(item[this.stats]) / max_val * 70)}%`
+                table_container?.appendChild(clone)
+            })
+
+
+        }
+
+        async connectedCallback() {
+            const self = this
+            console.log(this)
             const params = new URLSearchParams(window.location.search);
 
             let season = params.get("season");
@@ -252,24 +323,47 @@ customElements.define('init-stats',
                 season = "february_2026"
             }
             this.season = season
-            const season_el = document.getElementById("season-name")
-            const season_text = season.replaceAll("_", " ")
-            season_el.textContent = season_text[0].toUpperCase() + season_text.slice(1);
 
             let stats = params.get("stats")
             if (stats == null) {
                 stats = "goals"
             }
             this.stats = stats
+
+            const season_el = document.getElementById("season-name")
+            const season_text = season.replaceAll("_", " ")
+            season_el.textContent = season_text[0].toUpperCase() + season_text.slice(1);
+
             const stats_el = document.getElementById("stats-name")
             const stats_text = stats.replaceAll("_", " ")
             if (stats == "g/a") {
-                stats_el.textContent = "Goals + Assists"
+                const val = "Goals + Assists"
+                stats_el.textContent = val;
+                document.getElementById("specific-stats").textContent = "Goals + Assists";
             } else {
-                stats_el.textContent = stats_text[0].toUpperCase() + stats_text.slice(1);
+                const val = stats_text[0].toUpperCase() + stats_text.slice(1);
+                stats_el.textContent = val;
+                document.getElementById("specific-stats").textContent = val;
             }
 
-            this.season_data = fetch(`./seasons/${this.season}.json`)
+            const season_data = await fetch(`./seasons/${this.season}.json`)
+            this.season_data = await season_data.json()
+
+            const seasons = await fetch(`./seasons/seasons.json`)
+            this.seasons = await seasons.json()
+
+            const season_template = document.getElementById("seasons-template")
+            const season_container = document.getElementById("seasons-list")
+            season_container.innerHTML = ""
+
+            // set the seasons
+            for (const season of this.seasons) {
+                const clone = season_template.content.cloneNode(true);
+                clone.querySelector(".btn").setAttribute("data-season", season)
+                const season_text = season.replaceAll("_", " ")
+                clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);;
+                season_container?.appendChild(clone)
+            }
 
             // send to new stats url with season and stats
             const season_dropdown = document.querySelectorAll("#season-dropdown button")
@@ -288,24 +382,27 @@ customElements.define('init-stats',
             stats_dropdown.forEach((el) => {
                 el.addEventListener("click", () => {
                     stats_el.textContent = el.textContent
-                    const init = document.querySelector("init-stats")
+                    document.getElementById("specific-stats").textContent = el.textContent
                     let url = new URL(window.location.href);
                     url.searchParams.set("stats", el.dataset.stats);
                     window.history.replaceState({}, "", url)
-                    document.getElementById("stats-dropdown")?.hidePopover()
-
+                    
                     const chart = document.querySelector("chart-race");
                     if (chart.isplaying) {
                         chart.pause()
                     }
-                    // update round
+                    const round = document.querySelector("#round-dropdown-button .id")
+                    self.stats = el.dataset.stats
+                    self.set_table(round.textContent)
+                    document.getElementById("stats-dropdown")?.hidePopover()
                 })
-
             })
 
-            // set the rounds
-            // set the table
-            // set loading to true
+            this.set_rounds()
+
+            this.set_table("1")
+
+            document.querySelector("nav-controller").dataset.loading = "false"
         };
     }
 );

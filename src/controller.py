@@ -1,4 +1,3 @@
-
 import json
 import pathlib
 from copy import deepcopy
@@ -8,27 +7,40 @@ from jinja2 import Template
 
 
 def get_football_spot_result_data(season, new: bool = False, write: bool = False):
-    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
+    PATH = (
+        pathlib.PurePath(__file__).parent.parent
+        / "frontend"
+        / "leagues"
+        / "football_spot"
+        / "seasons"
+        / f"{season}.json"
+    )
 
     if new:
         players = input("Enter list of players seperated by space: ")
         players_list = players.split(" ")
         table = []
         for player in players_list:
-            table.append({
-                "name": player,
-                "pts": 0,
-                "p": 0,
-                "w": 0,
-                "d": 0,
-                "l": 0,
-                "goals": 0,
-                "assists": 0,
-                "g/a": 0,
-                "cleansheets": 0,
-            }
+            table.append(
+                {
+                    "name": player,
+                    "pts": 0,
+                    "p": 0,
+                    "w": 0,
+                    "d": 0,
+                    "l": 0,
+                    "goals": 0,
+                    "assists": 0,
+                    "g/a": 0,
+                    "cleansheets": 0,
+                }
             )
-        data = {"players": players_list, "current_round": 1, "rounds": {"0": {"table": table}}}
+        data = {
+            "players": players_list,
+            "stats": ["g/a", "goals", "assists", "cleansheets"],
+            "current_round": 1,
+            "rounds": {"0": {"table": table}},
+        }
 
         with open(PATH.parent / "seasons.json") as f:
             seasons = json.load(f)
@@ -41,7 +53,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
             json.dump(data, f, indent=2)
 
         # update the default page
-        
+
         return
 
     num_teams = input("number of teams: ")
@@ -57,36 +69,21 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
 
         home = input(f"match {i + 1} home team: ")
         home_goals = input("number of goals scored by the home team: ")
-        home_result = {
-            "team": int(home),
-            "score": int(home_goals),
-            "goals": []
-        }
+        home_result = {"team": int(home), "score": int(home_goals), "goals": []}
 
         for j in range(int(home_goals)):
             scorer = input(f"goalscorer {j + 1}: ")
             assist = input(f"assist provider {j + 1}: ")
-            home_result["goals"].append({
-                "scorer": scorer,
-                "assist": assist
-            })
+            home_result["goals"].append({"scorer": scorer, "assist": assist})
 
-        
         away = input(f"match {i + 1} away team: ")
         away_goals = input("number of goals scored by the away team: ")
-        away_result = {
-            "team": int(away),
-            "score": int(away_goals),
-            "goals": []
-        }
+        away_result = {"team": int(away), "score": int(away_goals), "goals": []}
 
         for j in range(int(away_goals)):
             scorer = input(f"goalscorer {j + 1}: ")
             assist = input(f"assist provider {j + 1}: ")
-            away_result["goals"].append({
-                "scorer": scorer,
-                "assist": assist
-            })
+            away_result["goals"].append({"scorer": scorer, "assist": assist})
 
         result.append([home_result, away_result])
 
@@ -108,7 +105,14 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
 
 def update_football_spot(season, write: bool = False):
 
-    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
+    PATH = (
+        pathlib.PurePath(__file__).parent.parent
+        / "frontend"
+        / "leagues"
+        / "football_spot"
+        / "seasons"
+        / f"{season}.json"
+    )
 
     with open(PATH) as f:
         data = json.load(f)
@@ -154,12 +158,12 @@ def update_football_spot(season, write: bool = False):
         elif result[0]["score"] < result[1]["score"]:
             team_stats[f"{result[1]["team"]}"]["pts"] += 3
 
-            team_stats[f"{result[1]["team"]}"]["w"] +=1
+            team_stats[f"{result[1]["team"]}"]["w"] += 1
             team_stats[f"{result[0]["team"]}"]["l"] += 1
         else:
             team_stats[f"{result[1]["team"]}"]["pts"] += 1
             team_stats[f"{result[1]["team"]}"]["d"] += 1
-            
+
             team_stats[f"{result[0]["team"]}"]["pts"] += 1
             team_stats[f"{result[0]["team"]}"]["d"] += 1
 
@@ -167,16 +171,16 @@ def update_football_spot(season, write: bool = False):
             if goals["scorer"] in table_map:
                 table_map[goals["scorer"]]["goals"] += 1
                 table_map[goals["scorer"]]["g/a"] += 1
-            
+
             if ("assist" in goals) and (goals["assist"] in table_map):
                 table_map[goals["assist"]]["assists"] += 1
                 table_map[goals["assist"]]["g/a"] += 1
-        
+
         for goals in result[1]["goals"]:
             if goals["scorer"] in table_map:
                 table_map[goals["scorer"]]["goals"] += 1
                 table_map[goals["scorer"]]["g/a"] += 1
-            
+
             if ("assist" in goals) and (goals["assist"] in table_map):
                 table_map[goals["assist"]]["assists"] += 1
                 table_map[goals["assist"]]["g/a"] += 1
@@ -190,7 +194,11 @@ def update_football_spot(season, write: bool = False):
         table_map[player]["cleansheets"] += team_stats[value]["cleansheets"]
 
     sorted_table = list(
-        sorted(list(table_map.values()), key=lambda item: (item["pts"], item["p"], item["w"]), reverse=True)
+        sorted(
+            list(table_map.values()),
+            key=lambda item: (item["pts"], item["p"], item["w"]),
+            reverse=True,
+        )
     )
 
     if write:
@@ -207,11 +215,18 @@ def update_football_spot(season, write: bool = False):
 
 
 def test_football_spot(season):
-    PATH = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "football_spot" / "seasons" / f"{season}.json"
+    PATH = (
+        pathlib.PurePath(__file__).parent.parent
+        / "frontend"
+        / "leagues"
+        / "football_spot"
+        / "seasons"
+        / f"{season}.json"
+    )
 
     with open(PATH) as f:
         data = json.load(f)
-    
+
     players = data["players"]
     rounds = data["rounds"]
 
@@ -220,7 +235,7 @@ def test_football_spot(season):
             if "table" not in r:
                 continue
 
-            assert len(players) == len(r['table'])
+            assert len(players) == len(r["table"])
             # print(player)
             assert player in r["table"]
             assert "pts" in r["table"][player]
@@ -242,4 +257,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
