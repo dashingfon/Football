@@ -447,7 +447,7 @@ customElements.define('chart-table',
             const self = this
             this.rounds = this.init.rounds;
             this.end = parseInt(this.rounds[this.rounds.length - 1]);
-            this.querySelector("#play-controls")?.addEventListener("click", ()=> {
+            this.querySelector("#play-controls")?.addEventListener("click", () => {
                 if (self.dataset.playing == "true") {
                     self.dataset.playing = "false"
                 } else {
@@ -455,10 +455,10 @@ customElements.define('chart-table',
                     self.play()
                 }
             })
-            this.querySelector("#previous-button")?.addEventListener("click", ()=> {
+            this.querySelector("#previous-button")?.addEventListener("click", () => {
                 self.previous()
             })
-            this.querySelector("#next-button")?.addEventListener("click", ()=> {
+            this.querySelector("#next-button")?.addEventListener("click", () => {
                 self.next()
             })
             this.querySelectorAll("#rounds-list .round").forEach((el) => {
@@ -585,7 +585,7 @@ customElements.define('chart-race',
             const self = this
             this.rounds = this.init.rounds;
             this.end = parseInt(this.rounds[this.rounds.length - 1]);
-            this.querySelector("#play-controls")?.addEventListener("click", ()=> {
+            this.querySelector("#play-controls")?.addEventListener("click", () => {
                 if (self.dataset.playing == "true") {
                     self.dataset.playing = "false"
                 } else {
@@ -593,10 +593,10 @@ customElements.define('chart-race',
                     self.play()
                 }
             })
-            this.querySelector("#previous-button")?.addEventListener("click", ()=> {
+            this.querySelector("#previous-button")?.addEventListener("click", () => {
                 self.previous()
             })
-            this.querySelector("#next-button")?.addEventListener("click", ()=> {
+            this.querySelector("#next-button")?.addEventListener("click", () => {
                 self.next()
             })
             this.querySelectorAll("#rounds-list .round").forEach((el) => {

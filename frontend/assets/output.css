@@ -95,6 +95,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-bg-1: var(--bg-1);
+    --color-fg-1: var(--fg-1);
   }
 }
 @layer base {
@@ -1216,6 +1217,9 @@
   .fill-brand {
     fill: var(--brand);
   }
+  .fill-fg-1 {
+    fill: var(--fg-1);
+  }
   .fill-green-500 {
     fill: var(--color-green-500);
   }
@@ -1414,6 +1418,9 @@
   }
   .text-brand {
     color: var(--brand);
+  }
+  .text-fg-1 {
+    color: var(--fg-1);
   }
   .text-gray-400 {
     color: var(--color-gray-400);
@@ -2031,13 +2038,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--bg-1);
-      }
-    }
-  }
-  .hover\:bg-bg-2 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--bg-2);
       }
     }
   }
