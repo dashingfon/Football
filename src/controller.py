@@ -386,8 +386,7 @@ def main():
     ...
     # get_football_spot_result_data("april_2026", write = True)
     # update_football_spot("april_2026", True)
-    build_season_footballspot("march_2026")
-    # build_season_footballspot("february_2026")
+    # build_season_footballspot("april_2026")
 
 
 if __name__ == "__main__":
