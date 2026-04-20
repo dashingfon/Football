@@ -41,335 +41,105 @@
 </head>
 
 <body data-theme="light"
-    class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap group">
+    class="ont-[Inter] antialiased text-text-1 transition-colors duration-500 bg-bg-2 flex h-screen whitespace-nowrap group/body">
 
-    <aside
-      class="hidden md:block z-40 h-screen relative border-r border-gray-200 dark:border-gray-700"
-      aria-label="Sidebar"
-    >
-      <div
-        class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-gray-50 dark:bg-gray-900 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
-        data-active="league"
-      >
-        <div>
-          <ul class="space-y-2 font-medium pb-3">
-            <li>
-              <a
-                href="../../index.html"
-                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white"
-              >
-                <img src="../../assets/favicon.ico" class="w-6 h-6" />
-                <span
-                  class="text-md ms-3 hidden group-hover:block"
-                  >Fotclan</span
-                >
-              </a>
-            </li>
-          </ul>
-          <ul
-            class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700 pt-3"
-          >
-            <li>
-              <a
-                href="../../matches.html"
-                class="relative flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 z-200"
-              >
-                <iconify-icon
-                  icon="boxicons:football-pitch"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block"
-                ></iconify-icon>
-                <iconify-icon
-                  icon="boxicons:football-pitch"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white"
-                ></iconify-icon>
+    <aside class="hidden md:block z-40 h-screen relative border-r border-bg-3" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-bg-1 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
+            data-active="news">
+            <div>
+                <ul class="space-y-2 font-medium pb-3">
+                    <li>
+                        <a href="./index.html" class="relative flex items-center p-2 text-text-1 rounded-lg">
+                            <img src="./assets/favicon.ico" class="w-6 h-6" />
+                            <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="space-y-2 font-medium border-t border-bg-3 pt-3">
+                    <li>
+                        <a href="./matches.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=matches]:text-brand"></iconify-icon>
 
-                <span
-                  class="text-sm ms-3 hidden group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 group-hover:block"
-                  >Matches</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="../../leagues.html"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <iconify-icon
-                  icon="ix:trophy"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block"
-                >
-                </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=matches]:text-brand group-hover:block">Matches</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./leagues.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=league]:text-brand group-hover:block">Leagues</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./news.html" class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=news]:text-brand group-hover:block">News</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./profile.html"
+                            class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
+                            <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                                class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
+                            </iconify-icon>
+                            <span
+                                class="text-sm ms-3 hidden group-data-[active=profile]:text-brand group-hover:block">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                <iconify-icon
-                  icon="ix:trophy"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=league]:block fill-black dark:fill-white hidden"
-                >
-                </iconify-icon>
-                <span
-                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500 group-hover:block"
-                  >Leagues</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="../../news.html"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <iconify-icon
-                  icon="streamline-plump:news-paper"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block"
-                >
-                </iconify-icon>
+            <mode-toggle-button>
+                <button class="p-1 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3" mode-toggle>
+                    <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
+                        class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
-                <iconify-icon
-                  icon="streamline-plump:news-paper"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=news]:block fill-black dark:fill-white hidden"
-                >
-                </iconify-icon>
-                <span
-                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500 group-hover:block"
-                  >News</span
-                >
-              </a>
-            </li>
-            <li>
-              <a
-                href="../../profile.html"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <iconify-icon
-                  icon="healthicons:ui-user-profile"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block"
-                >
-                </iconify-icon>
-
-                <iconify-icon
-                  icon="solar:arrow-right-linear"
-                  width="100%"
-                  height="100%"
-                  class="w-6 h-6 group-data-[active=profile]:block fill-black dark:fill-white hidden"
-                >
-                </iconify-icon>
-                <span
-                  class="text-sm flex-1 ms-3 whitespace-nowrap hidden group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500 group-hover:block"
-                  >Profile</span
-                >
-              </a>
-            </li>
-          </ul>
+                    <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
+                        class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+                </button>
+            </mode-toggle-button>
         </div>
-
-        <mode-toggle-button>
-          <button
-            class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
-            mode-toggle
-          >
-            <iconify-icon
-              icon="tdesign:mode-dark"
-              width="100%"
-              height="100%"
-              class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"
-            ></iconify-icon>
-
-            <iconify-icon
-              icon="tdesign:mode-light"
-              width="100%"
-              height="100%"
-              class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"
-            ></iconify-icon>
-          </button>
-        </mode-toggle-button>
-      </div>
     </aside>
 
-    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-gray-100 dark:bg-gray-800">
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-bg-2">
 
-        <div class="@container max-w-6xl mr-auto">
-
-            <!-- Dialogs -->
-
-            <dialog id="deposit-modal"
-                class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-                <div class="flex items-center justify-between">
-                    <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                        Deposit
-                    </h2>
-
-                    <button type="button"
-                        class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-                        aria-label="Close" onclick="document.getElementById('deposit-modal').close()">
-                        <svg-icon source="x">
-                        </svg-icon>
-                    </button>
-                </div>
-
-                <form id="form_modal">
-                    <div class="mt-4">
-                        <label class="text-sm font-medium text-gray-500">Account Name</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4  mb-4">
-
-                            <div
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                                Bank of America
-                            </div>
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Account Number</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4  mb-4">
-
-                            <div
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                                09237483943
-                            </div>
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Amount</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="amount" type="text" placeholder="Amount"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-                        </div>
-                    </div>
-                    <footer class="mt-6 flex justify-end gap-2">
-                        <button type="button"
-                            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                            onclick="document.getElementById('deposit-modal').close()">
-                            Cancel
-                        </button>
-
-                        <button id="send_button" hx-post="/user_deposit" hx-swap="none" hx-on::after-request="
-                    if (event.target.id === 'send_button') {document.getElementById('deposit-modal').close()};
-                    " class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                            Done
-                        </button>
-                    </footer>
-                </form>
-
-
-            </dialog>
-
-            <dialog id="withdraw-modal"
-                class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900 shadow-gray-300 dark:shadow-gray-900 border border-gray-400 dark:border-gray-700">
-                <div class="flex items-center justify-between">
-                    <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                        Withdraw
-                    </h2>
-
-                    <button type="button"
-                        class="-me-4 -mt-4 w-9 h-9 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none"
-                        aria-label="Close" onclick="document.getElementById('withdraw-modal').close()">
-                        <svg-icon source="x">
-                        </svg-icon>
-                    </button>
-                </div>
-
-                <form>
-                    <div class="mt-4">
-                        <label class="text-sm font-medium text-gray-500">Enter Account Name</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4 mb-3">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="acc_name" type="text" placeholder="Account Name"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-                        <label class="text-sm font-medium text-gray-500">Enter Account Details</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name=acc_number type="number" placeholder="Account Details"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-
-                        <label class="text-sm font-medium text-gray-500">Amount</label>
-                        <!-- change this to search input with result below -->
-                        <div class="relative flex items-center mt-4">
-                            <span class="absolute text-gray-700 dark:text-gray-300 mx-3">
-                                <svg-icon source="briefcase" class="w-5 h-5 text-gray-700 dark:text-gray-300">
-                                </svg-icon>
-                            </span>
-
-                            <input name="amount" type="number" placeholder="Amount"
-                                class="block w-full py-1.5 pr-5 text-gray-500 bg-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg placeholder-gray-500 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-800 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-
-                        </div>
-                    </div>
-
-                    <footer class="mt-6 flex justify-end gap-2">
-                        <button type="button"
-                            class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                            onclick="document.getElementById('withdraw-modal').close()">
-                            Cancel
-                        </button>
-
-                        <button id="withdraw_modal_button" hx-post="/user_withdraw" hx-swap="none" hx-on::after-request="
-                        if (event.target.id === 'withdraw_modal_button') {document.getElementById('withdraw-modal').close()};
-                        "
-                            class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                            Done
-                        </button>
-                    </footer>
-                </form>
-            </dialog>
+        <div class="@container max-w-5xl mx-auto">
 
             <!-- Nav -->
-            <section class="mb-10 fadeUp flex">
+            <section class="mb-6 fadeUp flex justify-between">
                 <div class="relative flex items-center">
                     <span>News</span>
                 </div>
                 <mode-toggle-button>
-                    <button
-                        class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md border border-gray-200"
-                        mode-toggle>
-                        <iconify-icon icon="tdesign:mode-dark" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                    <button class="p-1 bg-bg-3 hover:bg-bg-1 text-text-2 rounded-md border border-bg-1" mode-toggle>
+                        <iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
 
-                        <iconify-icon icon="tdesign:mode-light" width="100%" height="100%"
-                            class="w-6 h-6 group-data-[theme=dark]:block group-data-[theme=light]:hidden"></iconify-icon>
+                        <iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
                     </button>
                 </mode-toggle-button>
             </section>
 
             <!-- Main -->
-            <section class="mb-10 fadeUp">
-                <div class="relative flex items-center">
+            <section class="mb-10 fadeUp text-3xl">
+                <div class="relative flex items-center justify-center">
                     <img src="./assets/loading.gif" alt="" class="w-96">
                 </div>
-                <p>
+
+                <p class="flex justify-center items-center">
                     Work In Progress
                 </p>
-                <p>
+                <p class="flex justify-center items-center">
                     Coming Soon
                 </p>
             </section>
@@ -382,55 +152,35 @@
 
     <!-- Bottom Navigation (Mobile) -->
 
-    <nav class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-gray-300 dark:border-gray-600 flex justify-around pb-3 text-gray-900 dark:text-gray-100 group"
-        data-active="league">
-        <a href="./matches.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+    <nav id="mobile-nav" data-hidden="false"
+        class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-bg-3 bg-bg-2 flex justify-around pb-3 text-text-2 group data-[hidden=true]:translate-y-full transition-transform duration-300"
+        data-active="news">
+        <a href="./matches.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="true">
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=matches]:text-white group-data-[active=matches]:dark:text-black text-gray-500 group-data-[active=matches]:hidden block">
-            </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=matches]:block hidden group-data-[active=matches]:fill-black group-data-[active=matches]:dark:fill-white">
-            </iconify-icon>
-            <span
-                class="group-data-[active=matches]:text-black group-data-[active=matches]:dark:text-white text-gray-500 dark:text-gray-300">Matches</span>
+            <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=matches]:text-brand text-text-6"></iconify-icon>
+            <span class="group-data-[active=matches]:text-brand text-text-6">Matches</span>
         </a>
-        <a href="./leagues.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./leagues.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=league]:text-white group-data-[active=league]:dark:text-black text-gray-500 group-data-[active=league]:hidden block">
+            <iconify-icon icon="ix:trophy" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=league]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=league]:text-black group-data-[active=league]:dark:text-white text-gray-500">Leagues</span>
+            <span class="group-data-[active=league]:text-brand text-text-6">Leagues</span>
         </a>
-        <a href="./news.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./news.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-                class="group-data-[active=news]:text-white group-data-[active=news]:dark:text-black text-gray-500 group-data-[active=news]:hidden block">
+            <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="streamline-plump:news-paper" width="30" height="30"
-                class="group-data-[active=news]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=news]:text-black group-data-[active=news]:dark:text-white text-gray-500">News</span>
+            <span class="group-data-[active=news]:text-brand text-text-6">News</span>
         </a>
-        <a href="./profile.html"
-            class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-gray-200 hover:dark:bg-gray-800 rounded-md"
+        <a href="./profile.html" class="flex flex-col items-center text-xs group py-2 px-5 hover:bg-bg-1 rounded-md"
             data-active="false">
-            <iconify-icon icon="healthicons:ui-user-profile" width="30" height="30"
-                class="group-data-[active=profile]:text-white group-data-[active=profile]:dark:text-black text-gray-500 group-data-[active=profile]:hidden block">
+            <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
+                class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
             </iconify-icon>
-            <iconify-icon icon="solar:arrow-right-linear" width="30" height="30"
-                class="group-data-[active=profile]:block fill-black dark:fill-white hidden">
-            </iconify-icon>
-            <span
-                class="group-data-[active=profile]:text-black group-data-[active=profile]:dark:text-white text-gray-500">Profile</span>
+            <span class="group-data-[active=profile]:text-brand text-text-6">Profile</span>
         </a>
     </nav>
 
