@@ -326,6 +326,7 @@ def build_season_footballspot(season):
 
     context = {
         "url": "./",
+        "root": "",
         "data": season_data,
         "raw_season": season,
         "season": season.replace("_", " ").capitalize(),
