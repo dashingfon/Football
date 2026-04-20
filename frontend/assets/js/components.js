@@ -213,7 +213,7 @@ customElements.define('init-league',
 
             for (const season of this.seasons) {
                 const clone = season_template.content.cloneNode(true);
-                clone.querySelector("a").href = `./seasons/${season}.html`
+                clone.querySelector("a").href = `${this.dataset.url}${season}.html`
                 const season_text = season.replaceAll("_", " ")
                 clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);
                 season_container?.appendChild(clone)
