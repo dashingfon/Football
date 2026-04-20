@@ -28,7 +28,7 @@
     "assists",
     "cleansheets"
   ],
-  "current_round": 2,
+  "current_round": 3,
   "rounds": {
     "0": {
       "table": [
@@ -1253,6 +1253,495 @@
           "assists": 0,
           "g/a": 0,
           "cleansheets": 1
+        },
+        {
+          "name": "Scholes",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        }
+      ]
+    },
+    "3": {
+      "teams": {
+        "1": [
+          "Pazzy",
+          "McKen",
+          "Daniel-Felix",
+          "Greg",
+          "Abu"
+        ],
+        "2": [
+          "Paszytin",
+          "Hamis",
+          "Ayomide",
+          "Mfon"
+        ],
+        "3": [
+          "Geepee",
+          "Martins",
+          "Majiri",
+          "Yomi",
+          "Warri"
+        ],
+        "4": [
+          "Balo",
+          "Naka"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Ayomide",
+                "assist": "Elems"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "OG",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Naka",
+                "assist": "Balo"
+              },
+              {
+                "scorer": "Naka",
+                "assist": "Balo"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Naka",
+                "assist": "Kylian"
+              },
+              {
+                "scorer": "Kylian",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Greg",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Majiri"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Naka",
+                "assist": ""
+              },
+              {
+                "scorer": "Balo",
+                "assist": "Naka"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Naka",
+                "assist": ""
+              },
+              {
+                "scorer": "Naka",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Abu",
+                "assist": "Outsider"
+              },
+              {
+                "scorer": "Daniel-Felix",
+                "assist": "Pazzy"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Warri",
+                "assist": "Majiri"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Paszytin",
+                "assist": "Mfon"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": "Naka"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ]
+      ],
+      "table": [
+        {
+          "name": "Warri",
+          "pts": 30,
+          "p": 18,
+          "w": 9,
+          "d": 3,
+          "l": 6,
+          "goals": 10,
+          "assists": 4,
+          "g/a": 14,
+          "cleansheets": 8
+        },
+        {
+          "name": "Balo",
+          "pts": 26,
+          "p": 15,
+          "w": 8,
+          "d": 2,
+          "l": 5,
+          "goals": 4,
+          "assists": 5,
+          "g/a": 9,
+          "cleansheets": 7
+        },
+        {
+          "name": "Daniel-Felix",
+          "pts": 23,
+          "p": 17,
+          "w": 7,
+          "d": 2,
+          "l": 8,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 7
+        },
+        {
+          "name": "Pazzy",
+          "pts": 23,
+          "p": 17,
+          "w": 7,
+          "d": 2,
+          "l": 8,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 7
+        },
+        {
+          "name": "Greg",
+          "pts": 23,
+          "p": 17,
+          "w": 7,
+          "d": 2,
+          "l": 8,
+          "goals": 2,
+          "assists": 1,
+          "g/a": 3,
+          "cleansheets": 6
+        },
+        {
+          "name": "Naka",
+          "pts": 22,
+          "p": 11,
+          "w": 7,
+          "d": 1,
+          "l": 3,
+          "goals": 8,
+          "assists": 3,
+          "g/a": 11,
+          "cleansheets": 6
+        },
+        {
+          "name": "Yomi",
+          "pts": 21,
+          "p": 15,
+          "w": 6,
+          "d": 3,
+          "l": 6,
+          "goals": 4,
+          "assists": 0,
+          "g/a": 4,
+          "cleansheets": 7
+        },
+        {
+          "name": "Ekene",
+          "pts": 20,
+          "p": 12,
+          "w": 6,
+          "d": 2,
+          "l": 4,
+          "goals": 1,
+          "assists": 2,
+          "g/a": 3,
+          "cleansheets": 6
+        },
+        {
+          "name": "Paszytin",
+          "pts": 18,
+          "p": 14,
+          "w": 5,
+          "d": 3,
+          "l": 6,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 7
+        },
+        {
+          "name": "Mfon",
+          "pts": 18,
+          "p": 14,
+          "w": 5,
+          "d": 3,
+          "l": 6,
+          "goals": 1,
+          "assists": 2,
+          "g/a": 3,
+          "cleansheets": 6
+        },
+        {
+          "name": "Majiri",
+          "pts": 17,
+          "p": 11,
+          "w": 5,
+          "d": 2,
+          "l": 4,
+          "goals": 1,
+          "assists": 2,
+          "g/a": 3,
+          "cleansheets": 5
+        },
+        {
+          "name": "Ayomide",
+          "pts": 15,
+          "p": 14,
+          "w": 4,
+          "d": 3,
+          "l": 7,
+          "goals": 1,
+          "assists": 3,
+          "g/a": 4,
+          "cleansheets": 6
+        },
+        {
+          "name": "Abu",
+          "pts": 14,
+          "p": 15,
+          "w": 4,
+          "d": 2,
+          "l": 9,
+          "goals": 4,
+          "assists": 0,
+          "g/a": 4,
+          "cleansheets": 4
+        },
+        {
+          "name": "McKen",
+          "pts": 14,
+          "p": 15,
+          "w": 4,
+          "d": 2,
+          "l": 9,
+          "goals": 1,
+          "assists": 1,
+          "g/a": 2,
+          "cleansheets": 4
+        },
+        {
+          "name": "John-Dust",
+          "pts": 14,
+          "p": 10,
+          "w": 4,
+          "d": 2,
+          "l": 4,
+          "goals": 4,
+          "assists": 1,
+          "g/a": 5,
+          "cleansheets": 4
+        },
+        {
+          "name": "Hamis",
+          "pts": 14,
+          "p": 10,
+          "w": 4,
+          "d": 2,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 5
+        },
+        {
+          "name": "John-Ohaka",
+          "pts": 13,
+          "p": 7,
+          "w": 4,
+          "d": 1,
+          "l": 2,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 4
+        },
+        {
+          "name": "Geepee",
+          "pts": 12,
+          "p": 13,
+          "w": 3,
+          "d": 3,
+          "l": 7,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 4
+        },
+        {
+          "name": "Epic",
+          "pts": 11,
+          "p": 9,
+          "w": 3,
+          "d": 2,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 5
+        },
+        {
+          "name": "Martins",
+          "pts": 8,
+          "p": 8,
+          "w": 2,
+          "d": 2,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 2
         },
         {
           "name": "Scholes",
