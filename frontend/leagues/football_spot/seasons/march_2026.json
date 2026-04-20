@@ -971,7 +971,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": ""
               }
             ]
@@ -1812,7 +1812,7 @@
                 "assist": ""
               },
               {
-                "scorer": "unknown",
+                "scorer": "Outsider",
                 "assist": "Ayomide"
               }
             ]

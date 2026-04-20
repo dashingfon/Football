@@ -341,7 +341,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Majiri"
               }
             ]
@@ -358,11 +358,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Ayomide"
               },
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Ekene"
               }
             ]
@@ -379,7 +379,7 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "McKen"
               },
               {
@@ -395,11 +395,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "McKen"
               },
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Yomi"
               }
             ]
@@ -416,7 +416,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": ""
               }
             ]
@@ -433,7 +433,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": ""
               }
             ]
@@ -443,7 +443,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Ayomide"
               }
             ]
@@ -460,7 +460,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Damian"
               }
             ]
@@ -477,11 +477,11 @@
             "score": 2,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": "Ayomide"
               },
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": ""
               }
             ]
@@ -1441,7 +1441,7 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown",
+                "scorer": "Outsider",
                 "assist": ""
               }
             ]
