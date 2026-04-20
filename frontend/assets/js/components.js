@@ -201,10 +201,10 @@ customElements.define('init-league',
     class InitLeague extends HTMLElement {
 
         async connectedCallback() {
-            const season_data = await fetch(`./seasons/${this.dataset.season}.json`)
+            const season_data = await fetch(`${this.dataset.url}${this.dataset.season}.json`)
             this.season_data = await season_data.json()
 
-            const seasons = await fetch(`./seasons/seasons.json`)
+            const seasons = await fetch(`${this.dataset.url}/seasons.json`)
             this.seasons = await seasons.json()
 
             const season_template = document.getElementById("seasons-template")
