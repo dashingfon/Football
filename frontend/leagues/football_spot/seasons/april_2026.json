@@ -23,7 +23,10 @@
     "Naka"
   ],
   "stats": [
-    "g/a", "goals", "assists", "cleansheets"
+    "g/a",
+    "goals",
+    "assists",
+    "cleansheets"
   ],
   "current_round": 1,
   "rounds": {
@@ -281,6 +284,237 @@
           "g/a": 0,
           "cleansheets": 0
         }
+      ]
+    },
+    "1": {
+      "teams": {
+        "1": [
+          "Abu",
+          "McKen",
+          "Greg",
+          "John-Dust"
+        ],
+        "2": [
+          "Pazzy",
+          "Daniel-Felix",
+          "Warri",
+          "Ekene"
+        ],
+        "3": [
+          "Balo",
+          "Geepee",
+          "Mfon",
+          "Martins"
+        ],
+        "4": [
+          "Ayomide",
+          "Paszytin",
+          "Epic",
+          "Yomi"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Abu",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Warri",
+                "assist": "Ekene"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Jozi"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Ayomide"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Greg",
+                "assist": "McKen"
+              },
+              {
+                "scorer": "Abu",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Warri",
+                "assist": "Kylian"
+              },
+              {
+                "scorer": "Warri",
+                "assist": "Kylian"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Warri",
+                "assist": "Ekene"
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": "Warri"
+              },
+              {
+                "scorer": "Kylian",
+                "assist": "Warri"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Kylian",
+                "assist": "Warri"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Kylian",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": "Outsider"
+              },
+              {
+                "scorer": "Mfon",
+                "assist": "Balo"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "John-Dust",
+                "assist": ""
+              }
+            ]
+          }
+        ]
       ]
     }
   }
