@@ -320,7 +320,8 @@
                 "assist": "McKen"
               },
               {
-                "scorer": "Geepee"
+                "scorer": "Geepee",
+                "assist": ""
               }
             ]
           }
@@ -382,7 +383,8 @@
                 "assist": "McKen"
               },
               {
-                "scorer": "Geepee"
+                "scorer": "Geepee",
+                "assist": ""
               }
             ]
           }
@@ -414,7 +416,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown"
+                "scorer": "Unknown",
+                "assist": ""
               }
             ]
           },
@@ -430,7 +433,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Unknown"
+                "scorer": "Unknown",
+                "assist": ""
               }
             ]
           },
@@ -477,7 +481,8 @@
                 "assist": "Ayomide"
               },
               {
-                "scorer": "Unknown"
+                "scorer": "Unknown",
+                "assist": ""
               }
             ]
           }
@@ -488,7 +493,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Mfon"
+                "scorer": "Mfon",
+                "assist": ""
               }
             ]
           },
@@ -504,7 +510,8 @@
             "score": 1,
             "goals": [
               {
-                "scorer": "Epic"
+                "scorer": "Epic",
+                "assist": ""
               }
             ]
           },
