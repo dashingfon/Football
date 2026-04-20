@@ -325,7 +325,6 @@ def build_season_footballspot(season):
  
 
     context = {
-        # "url": "./", for default
         "url": "./",
         "data": season_data,
         "raw_season": season,
@@ -354,6 +353,7 @@ def build_season_footballspot(season):
     with open(season_html, "w", encoding="utf-8") as s:
         s.write(rendered_template)
 
+
     default_html = (
         pathlib.PurePath(__file__).parent.parent
         / "frontend"
@@ -366,11 +366,9 @@ def build_season_footballspot(season):
         / "templates"
         / "football-spot-default.html"
     )
-
     with open(template_path) as t:
         raw_template = t.read()
     template = Template(raw_template)
-
     context["url"] = "./seasons/"
     rendered_template = template.render(**context)
     with open(default_html, "w", encoding="utf-8") as s:
@@ -386,7 +384,8 @@ def main():
     ...
     # get_football_spot_result_data("april_2026", write = True)
     # update_football_spot("april_2026", True)
-    # build_season_footballspot("april_2026")
+    build_season_footballspot("february_2026")
+    build_season_footballspot("march_2026")
 
 
 if __name__ == "__main__":
