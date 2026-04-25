@@ -252,9 +252,7 @@ def test_football_spot(season):
 
 def build_season_footballspot(season):
     template_path = (
-        pathlib.PurePath(__file__).parent.parent
-        / "templates"
-        / "football-spot.html"
+        pathlib.PurePath(__file__).parent.parent / "templates" / "football-spot.html"
     )
 
     with open(template_path) as t:
@@ -273,56 +271,41 @@ def build_season_footballspot(season):
         del season_data["rounds"]["0"]
 
     template = Template(raw_template)
-    team_to_color = {
-        1: "blue",
-        2: "red",
-        3: "green",
-        4: "yellow"
-    }
+    team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
     curr_round = season_data["current_round"]
-    table = season_data['rounds'][f"{curr_round}"]["table"]
+    table = season_data["rounds"][f"{curr_round}"]["table"]
 
     data_list = sorted(table, key=lambda x: x["goals"], reverse=True)
-    top_goal_scorer = {
-        "name": data_list[0]["name"],
-        "value": data_list[0]["goals"]
-    }
+    top_goal_scorer = {"name": data_list[0]["name"], "value": data_list[0]["goals"]}
     goals = {
         data_list[1]["name"]: data_list[1]["goals"],
         data_list[2]["name"]: data_list[2]["goals"],
     }
- 
-    data_list = sorted(table, key=lambda x: x["assists"], reverse=True) 
-    top_assists = {
-        "name": data_list[0]["name"],
-        "value": data_list[0]["assists"]
-    }
+
+    data_list = sorted(table, key=lambda x: x["assists"], reverse=True)
+    top_assists = {"name": data_list[0]["name"], "value": data_list[0]["assists"]}
     assists = {
         data_list[1]["name"]: data_list[1]["assists"],
         data_list[2]["name"]: data_list[2]["assists"],
     }
- 
+
     data_list = sorted(table, key=lambda x: x["g/a"], reverse=True)
 
-    top_g_a = {
-        "name": data_list[0]["name"],
-        "value": data_list[0]["g/a"]
-    }
+    top_g_a = {"name": data_list[0]["name"], "value": data_list[0]["g/a"]}
     g_a = {
         data_list[1]["name"]: data_list[1]["g/a"],
         data_list[2]["name"]: data_list[2]["g/a"],
     }
- 
+
     data_list = sorted(table, key=lambda x: x["cleansheets"], reverse=True)
     top_cleansheets = {
         "name": data_list[0]["name"],
-        "value": data_list[0]["cleansheets"]
+        "value": data_list[0]["cleansheets"],
     }
     cleansheets = {
         data_list[1]["name"]: data_list[1]["cleansheets"],
         data_list[2]["name"]: data_list[2]["cleansheets"],
     }
- 
 
     context = {
         "url": "./",
@@ -330,7 +313,7 @@ def build_season_footballspot(season):
         "data": season_data,
         "raw_season": season,
         "season": season.replace("_", " ").capitalize(),
-        "team_to_color" : team_to_color,
+        "team_to_color": team_to_color,
         "goals": goals,
         "top_goal_scorer": top_goal_scorer,
         "assists": assists,
@@ -354,7 +337,6 @@ def build_season_footballspot(season):
     with open(season_html, "w", encoding="utf-8") as s:
         s.write(rendered_template)
 
-
     default_html = (
         pathlib.PurePath(__file__).parent.parent
         / "frontend"
@@ -376,16 +358,14 @@ def build_season_footballspot(season):
         s.write(rendered_template)
 
 
-
-def write_leagues(league):
-    ...
+def write_leagues(league): ...
 
 
 def main():
     ...
-    # get_football_spot_result_data("april_2026", write = True)
+    get_football_spot_result_data("april_2026", write=True)
     # update_football_spot("april_2026", True)
-    build_season_footballspot("april_2026")
+    # build_season_footballspot("april_2026")
 
 
 if __name__ == "__main__":
