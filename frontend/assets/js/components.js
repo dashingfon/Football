@@ -197,6 +197,14 @@ customElements.define('search-filter',
     });
 
 
+const stats_object = {
+    "g/a": 20,
+    "assists": 20,
+    "goals": 20,
+    "cleansheets": 20
+}
+
+
 customElements.define('init-league',
     class InitLeague extends HTMLElement {
 

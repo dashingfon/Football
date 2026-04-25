@@ -16,3 +16,12 @@ Fotclan is a social network for footballers
 - [ ] add league availability beside league and add option to filter active
 
 
+# weekly update
+
+## objectives
+
+- custom domain
+- update the default table view
+- update the zero index
+- fixed some ui quirks
+
