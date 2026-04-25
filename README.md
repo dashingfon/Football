@@ -20,8 +20,8 @@ Fotclan is a social network for footballers
 
 ## objectives
 
-- custom domain
-- update the default table view
-- update the zero index
-- fixed some ui quirks
+- [x] custom domain
+- [x] fixed some ui quirks
+- [ ] update the default table view
+- [ ] update the zero index
 

@@ -228,7 +228,7 @@ customElements.define('init-league',
             }
 
             this.set_round()
-            this.set_table("1")
+            this.set_table(`${this.season_data.current_round}`)
             this.dispatchEvent(new CustomEvent("ready", {
                 bubbles: true,
                 composed: true
@@ -242,7 +242,7 @@ customElements.define('init-league',
                 keys = keys.slice(1)
             }
             this.rounds = keys;
-            document.querySelector("#round-dropdown-button .id").textContent = keys[0]
+            document.querySelector("#round-dropdown-button .id").textContent = this.season_data.current_round
             const round_template = document.getElementById("round-template")
             const round_container = document.getElementById("rounds-list")
             round_container.innerHTML = ""
@@ -300,7 +300,7 @@ customElements.define('init-stats',
                 keys = keys.slice(1)
             }
             this.rounds = keys;
-            document.querySelector("#round-dropdown-button .id").textContent = keys[0]
+            document.querySelector("#round-dropdown-button .id").textContent = this.season_data.current_round
             const round_template = document.getElementById("round-template")
             const round_container = document.getElementById("rounds-list")
             round_container.innerHTML = ""
@@ -427,7 +427,7 @@ customElements.define('init-stats',
             })
 
             this.set_rounds()
-            this.set_table("1")
+            this.set_table(`${this.season_data.current_round}`)
             this.dispatchEvent(new CustomEvent("ready", {
                 bubbles: true,
                 composed: true
