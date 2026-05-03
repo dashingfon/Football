@@ -55,8 +55,6 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
         # write season.html
         # write default
 
-        return
-
     num_teams = input("number of teams: ")
     teams = {}
     for i in range(int(num_teams)):
@@ -94,7 +92,7 @@ def get_football_spot_result_data(season, new: bool = False, write: bool = False
 
     if write:
         with open(PATH, "w") as f:
-            data["current_round"] = curr_round + 1
+            data["current_round"] = curr_round
             data["rounds"][f"{curr_round + 1}"] = {}
             data["rounds"][f"{curr_round + 1}"]["teams"] = teams
             data["rounds"][f"{curr_round + 1}"]["results"] = result
@@ -363,7 +361,7 @@ def write_leagues(league): ...
 
 def main():
     ...
-    get_football_spot_result_data("may_2026", new=True, write=True)
+    get_football_spot_result_data("may_2026", write=True)
     # update_football_spot("may_2026", True)
     # build_season_footballspot("may_2026")
 
