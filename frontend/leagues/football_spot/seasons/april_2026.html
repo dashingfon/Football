@@ -87,7 +87,7 @@
 <body data-theme="light"
   class="font-[Inter] antialiased text-gray-800 transition-colors duration-500 dark:bg-gray-50 dark:text-white flex h-screen whitespace-nowrap group/body">
 
-  <aside class="hidden md:block z-40 h-screen relative border-r border-bg-3" aria-label="Sidebar">
+  <aside class="hidden md:block left-0 top-0 z-10 h-screen fixed border-r border-bg-3" aria-label="Sidebar">
     <div
       class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-bg-1 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
       data-active="">
@@ -148,7 +148,7 @@
     </div>
   </aside>
 
-  <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 h-screen bg-bg-2 text-text-1">
+  <main class="flex-1 overflow-y-auto md:ml-16 p-4 md:p-8 space-y-6 h-screen bg-bg-2 text-text-1 w-fit">
     <!-- use grid to maitain spacing -->
     <div class="max-w-5xl mx-auto grid grid-rows-[auto_auto_1fr] h-full">
       <!-- Nav -->
