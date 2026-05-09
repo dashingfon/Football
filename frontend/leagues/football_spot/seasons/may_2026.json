@@ -1055,6 +1055,248 @@
             ]
           }
         ]
+      ],
+      "table": [
+        {
+          "name": "McKen",
+          "pts": 29,
+          "p": 15,
+          "w": 8,
+          "d": 5,
+          "l": 2,
+          "goals": 5,
+          "assists": 0,
+          "g/a": 5,
+          "cleansheets": 11
+        },
+        {
+          "name": "Ekene",
+          "pts": 27,
+          "p": 16,
+          "w": 7,
+          "d": 6,
+          "l": 3,
+          "goals": 5,
+          "assists": 2,
+          "g/a": 7,
+          "cleansheets": 9
+        },
+        {
+          "name": "Richard",
+          "pts": 22,
+          "p": 15,
+          "w": 6,
+          "d": 4,
+          "l": 5,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 7
+        },
+        {
+          "name": "Scholes",
+          "pts": 20,
+          "p": 14,
+          "w": 5,
+          "d": 5,
+          "l": 4,
+          "goals": 1,
+          "assists": 1,
+          "g/a": 2,
+          "cleansheets": 7
+        },
+        {
+          "name": "Mfon",
+          "pts": 20,
+          "p": 14,
+          "w": 5,
+          "d": 5,
+          "l": 4,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 7
+        },
+        {
+          "name": "Paszytin",
+          "pts": 19,
+          "p": 11,
+          "w": 5,
+          "d": 4,
+          "l": 2,
+          "goals": 0,
+          "assists": 1,
+          "g/a": 1,
+          "cleansheets": 6
+        },
+        {
+          "name": "Balo",
+          "pts": 19,
+          "p": 11,
+          "w": 5,
+          "d": 4,
+          "l": 2,
+          "goals": 3,
+          "assists": 3,
+          "g/a": 6,
+          "cleansheets": 6
+        },
+        {
+          "name": "Abu",
+          "pts": 19,
+          "p": 11,
+          "w": 5,
+          "d": 4,
+          "l": 2,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 6
+        },
+        {
+          "name": "Dan-Cmr",
+          "pts": 17,
+          "p": 12,
+          "w": 4,
+          "d": 5,
+          "l": 3,
+          "goals": 5,
+          "assists": 0,
+          "g/a": 5,
+          "cleansheets": 4
+        },
+        {
+          "name": "Chibuike",
+          "pts": 16,
+          "p": 12,
+          "w": 3,
+          "d": 7,
+          "l": 2,
+          "goals": 2,
+          "assists": 1,
+          "g/a": 3,
+          "cleansheets": 6
+        },
+        {
+          "name": "Greg",
+          "pts": 12,
+          "p": 12,
+          "w": 2,
+          "d": 6,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 3
+        },
+        {
+          "name": "Martins",
+          "pts": 11,
+          "p": 11,
+          "w": 2,
+          "d": 5,
+          "l": 4,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 4
+        },
+        {
+          "name": "Yomi",
+          "pts": 11,
+          "p": 11,
+          "w": 2,
+          "d": 5,
+          "l": 4,
+          "goals": 2,
+          "assists": 2,
+          "g/a": 4,
+          "cleansheets": 4
+        },
+        {
+          "name": "Geepee",
+          "pts": 10,
+          "p": 10,
+          "w": 2,
+          "d": 4,
+          "l": 4,
+          "goals": 0,
+          "assists": 3,
+          "g/a": 3,
+          "cleansheets": 2
+        },
+        {
+          "name": "Epic",
+          "pts": 10,
+          "p": 7,
+          "w": 2,
+          "d": 4,
+          "l": 1,
+          "goals": 1,
+          "assists": 0,
+          "g/a": 1,
+          "cleansheets": 3
+        },
+        {
+          "name": "Daniel-Felix",
+          "pts": 9,
+          "p": 10,
+          "w": 1,
+          "d": 6,
+          "l": 3,
+          "goals": 3,
+          "assists": 2,
+          "g/a": 5,
+          "cleansheets": 4
+        },
+        {
+          "name": "Hamis",
+          "pts": 7,
+          "p": 11,
+          "w": 1,
+          "d": 4,
+          "l": 6,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 1
+        },
+        {
+          "name": "Majiri",
+          "pts": 7,
+          "p": 11,
+          "w": 1,
+          "d": 4,
+          "l": 6,
+          "goals": 2,
+          "assists": 0,
+          "g/a": 2,
+          "cleansheets": 1
+        },
+        {
+          "name": "Akin",
+          "pts": 5,
+          "p": 10,
+          "w": 0,
+          "d": 5,
+          "l": 5,
+          "goals": 1,
+          "assists": 2,
+          "g/a": 3,
+          "cleansheets": 1
+        },
+        {
+          "name": "Jozi",
+          "pts": 2,
+          "p": 5,
+          "w": 0,
+          "d": 2,
+          "l": 3,
+          "goals": 0,
+          "assists": 0,
+          "g/a": 0,
+          "cleansheets": 0
+        }
       ]
     }
   }
