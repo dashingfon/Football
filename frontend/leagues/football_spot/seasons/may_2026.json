@@ -27,7 +27,7 @@
     "assists",
     "cleansheets"
   ],
-  "current_round": 1,
+  "current_round": 2,
   "rounds": {
     "0": {
       "table": [
@@ -780,6 +780,281 @@
           "g/a": 0,
           "cleansheets": 0
         }
+      ]
+    },
+    "2": {
+      "teams": {
+        "1": [
+          "Greg",
+          "Hamis",
+          "Akin",
+          "Majiri",
+          "Jozi"
+        ],
+        "2": [
+          "Mfon",
+          "McKen",
+          "Scholes",
+          "Richard",
+          "Ekene"
+        ],
+        "3": [
+          "Yomi",
+          "Daniel-Felix",
+          "Martins",
+          "Chibuike"
+        ],
+        "4": [
+          "Balo",
+          "Abu",
+          "Geepee",
+          "Paszytin",
+          "Dan-Cmr"
+        ]
+      },
+      "results": [
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Majiri",
+                "assist": "Akin"
+              }
+            ]
+          },
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Yomi",
+                "assist": "Ekene"
+              },
+              {
+                "scorer": "Yomi",
+                "assist": "Scholes"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Ekene",
+                "assist": ""
+              },
+              {
+                "scorer": "Ekene",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "McKen",
+                "assist": ""
+              },
+              {
+                "scorer": "McKen",
+                "assist": "Elems"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Elems",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Dan-Cmr",
+                "assist": "Balo"
+              },
+              {
+                "scorer": "Abu",
+                "assist": "Balo"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "McKen",
+                "assist": ""
+              },
+              {
+                "scorer": "Ekene",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 0,
+            "goals": []
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Akin",
+                "assist": ""
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Balo",
+                "assist": "Paszytin"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 0,
+            "goals": []
+          },
+          {
+            "team": 3,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Dan-Cmr",
+                "assist": "Daniel-Felix"
+              },
+              {
+                "scorer": "Dan-Cmr",
+                "assist": "Yomi"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 3,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Daniel-Felix",
+                "assist": "Chibuike"
+              }
+            ]
+          },
+          {
+            "team": 1,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Hamis",
+                "assist": ""
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "team": 2,
+            "score": 1,
+            "goals": [
+              {
+                "scorer": "Scholes",
+                "assist": "Richard"
+              }
+            ]
+          },
+          {
+            "team": 4,
+            "score": 2,
+            "goals": [
+              {
+                "scorer": "Dan-Cmr",
+                "assist": "Geepee"
+              },
+              {
+                "scorer": "Dan-Cmr",
+                "assist": "Geepee"
+              }
+            ]
+          }
+        ]
       ]
     }
   }
