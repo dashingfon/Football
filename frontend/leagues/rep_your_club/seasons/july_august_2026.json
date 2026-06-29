@@ -1,0 +1,93 @@
+{
+    "teams": {
+        "Liverpool": [
+            "kenya",
+            "dami",
+            "lola",
+            "pastor",
+            "ikenga",
+            "tm",
+            "dotun",
+            "obago",
+            "emma"
+        ],
+        "Barcelona": [
+            "bisi",
+            "sadiq",
+            "tunde",
+            "somto",
+            "idris",
+            "chiboy",
+            "vardy",
+            "cambiaso",
+            "victor",
+            "taiwo"
+        ],
+        "Man United A": [
+            "ola",
+            "ebuka",
+            "chris",
+            "sancho",
+            "obinna",
+            "jamiu",
+            "brainee",
+            "eze"
+        ],
+        "Real Madrid": [
+            "utaka",
+            "tola",
+            "niah",
+            "yerima",
+            "david",
+            "amuri",
+            "martins",
+            "aremu",
+            "tunji"
+        ],
+        "Arsenal": [
+            "lanre",
+            "nketiah",
+            "seun",
+            "friday",
+            "ogbon",
+            "kunle",
+            "fortune"
+        ],
+        "Man United B": [
+            "papa",
+            "ifeanyi",
+            "hunter",
+            "jojo",
+            "benson",
+            "lino",
+            "felaini",
+            "adufe"
+        ],
+        "Chelsea A": [
+            "segun",
+            "micheal",
+            "metu",
+            "femi",
+            "ahmed",
+            "ugo",
+            "sheriff",
+            "bidemi"
+        ],
+        "Chelsea B": [
+            "ola-o",
+            "aguero",
+            "yinka",
+            "machala",
+            "roland",
+            "ayo",
+            "bobby k",
+            "nifemi"
+        ]
+    },
+    "current_round": 1,
+    "rounds": {
+        "0": {
+
+        }
+    }
+}

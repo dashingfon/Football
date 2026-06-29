@@ -356,7 +356,7 @@ def build_season_footballspot(season):
         s.write(rendered_template)
 
 
-def write_leagues(league): ...
+
 
 
 def main():
