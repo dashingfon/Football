@@ -420,6 +420,9 @@
   .-mr-3 {
     margin-right: calc(var(--spacing) * -3);
   }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
   .mr-auto {
     margin-right: auto;
   }
@@ -440,6 +443,9 @@
   }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .mb-16 {
     margin-bottom: calc(var(--spacing) * 16);
@@ -2409,6 +2415,7 @@
 }
 html {
   scroll-behavior: smooth;
+  letter-spacing: -0.8px;
 }
 @property --tw-translate-x {
   syntax: "*";

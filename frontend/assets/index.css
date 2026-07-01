@@ -87,5 +87,6 @@ color-scheme: dark;
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    letter-spacing: -0.8px;
 }
