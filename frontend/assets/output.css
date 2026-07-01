@@ -2418,7 +2418,7 @@
 }
 html {
   scroll-behavior: smooth;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.5px;
 }
 @property --tw-translate-x {
   syntax: "*";
