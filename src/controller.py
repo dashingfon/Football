@@ -356,9 +356,6 @@ def build_season_footballspot(season):
         s.write(rendered_template)
 
 
-
-
-
 def main():
     ...
     # get_football_spot_result_data("may_2026", write=True)
