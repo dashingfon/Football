@@ -1,7 +1,6 @@
 import json
 import pathlib
-
-# from typing import Protocol, TypedDict
+from copy import deepcopy
 
 from jinja2 import Template
 
@@ -25,24 +24,21 @@ class Goal:
 
 
 class Result:
-    def __init__(self, team: str, goals: list[Goal], events: dict[str, dict]) -> None:
+    def __init__(self, team: str, goals: list[Goal]) -> None:
         self.team = team
         self.goals = goals
-        self.events = events
 
     @classmethod
     def from_dict(cls, data: dict) -> "Result":
         return cls(
             team=data["team"],
             goals=[Goal.from_dict(goal_data) for goal_data in data["goals"]],
-            events=data["events"],
         )
 
     def json(self) -> dict:
         return {
             "team": self.team,
             "goals": [goal.json() for goal in self.goals],
-            "events": self.events,
         }
 
 
@@ -51,6 +47,7 @@ class Fixture:
         self,
         date: str,
         game_round: str,
+        events: list[dict],
         group: str,
         home: Result | None = None,
         away: Result | None = None,
@@ -60,6 +57,7 @@ class Fixture:
         self.date = date
         self.round = game_round
         self.group = group
+        self.events = events
 
     @classmethod
     def from_dict(cls, data: dict) -> "Fixture":
@@ -67,6 +65,7 @@ class Fixture:
             date=data["date"],
             game_round=data["round"],
             group=data["group"],
+            events=data.get("events", []),
             home=Result.from_dict(data["home"]) if data.get("home") else None,
             away=Result.from_dict(data["away"]) if data.get("away") else None,
         )
@@ -78,10 +77,24 @@ class Fixture:
             "group": self.group,
             "home": self.home.json() if self.home else None,
             "away": self.away.json() if self.away else None,
+            "events": self.events,
         }
 
     # def update_stats(self, player_stats, team_stats) -> dict:
     #     ...
+
+
+class Renderer:
+    def __init__(self, template: pathlib.PurePath, output: pathlib.PurePath) -> None:
+        self.template = template
+        self.output = output
+
+    def render(self, data: dict) -> None:
+        with open(self.template) as f:
+            template = Template(f.read())
+        rendered = template.render(**data)
+        with open(self.output, "w") as f:
+            f.write(rendered)
 
 
 class PlayerStatistics:
@@ -106,7 +119,7 @@ class IndividualPlayerStatistics:
     def __init__(self) -> None:
         pass
 
-    def apply_stats(self, store, fixtures, teams) -> dict: ...
+    def apply_stats(self, store, fixtures, teams, table_map) -> dict: ...
 
     @staticmethod
     def empty_json() -> dict:
@@ -149,7 +162,7 @@ class SetRepository:
     def __init__(self, path: pathlib.PurePath) -> None:
         self.data_path = path
 
-    def write(self, season: str, data: dict, new: bool):
+    def write(self, season: str, data: dict, new: bool = False):
         if new:
             with open(self.data_path / "seasons.json") as f:
                 seasons = json.load(f)
@@ -172,6 +185,13 @@ class Set:
         self.repo = repository
 
     def start_new_season(self, season: str) -> None:
+        print("""
+        ``````````````````````````````````````
+              
+        Starting a new season.
+
+        `````````````````````````````````````````
+        """)
         players = input("Enter list of players seperated by space: ")
         players_list = players.split(" ")
         table = []
@@ -225,8 +245,19 @@ class Set:
         return team
 
     def update_result(
-        self, season: str, teams: dict[str, list[str]] | None, new_round: bool, result: list[dict] | None
+        self,
+        season: str,
+        teams: dict[str, list[str]] | None,
+        new_round: bool,
+        result: list[dict] | None,
     ) -> None:
+        print("""
+        ``````````````````````````````````````
+              
+        Adding Match Results.
+
+        `````````````````````````````````````````
+        """)
         if teams is None:
             teams = self.get_teams()
 
@@ -235,7 +266,11 @@ class Set:
         if new_round:
             current_round += 1
             data["current_round"] = current_round
-            data["rounds"][str(current_round)] = {"results": [], "table": [], "teams": teams}
+            data["rounds"][str(current_round)] = {
+                "results": [],
+                "table": [],
+                "teams": teams,
+            }
         date = input("Enter the date of the match: ")
 
         if result is None:
@@ -245,98 +280,106 @@ class Set:
                 print("\n")
                 home: dict = self.get_result(i, "home")
                 away: dict = self.get_result(i, "away")
-                result.append({"home": home, "away": away, "date": date, "round": current_round, "group": ""})
+                result.append(
+                    {
+                        "home": home,
+                        "away": away,
+                        "date": date,
+                        "round": current_round,
+                        "group": "",
+                    }
+                )
 
         data["rounds"][str(current_round)]["results"].append(result)
-        self.repo.write(season, data, new=True)
+        self.repo.write(season, data)
 
-    def update_stats(self, player_stats, team_stats) -> None:
-        ...
-        # verify result!
+    def update_stats(self, season: str, set_stats: IndividualPlayerStatistics) -> None:
+        print("""
+        ``````````````````````````````````````
+        
+        Updating Player Statistics.
 
-    def build(self, renderer, increment: bool = False) -> None:
+        `````````````````````````````````````````
+        """)
+        data = self.repo.read(season)
+        current_round = data["current_round"]
+        table = deepcopy(data["rounds"][f"{current_round - 1}"]["table"])
+        table_map = {}
+        for item in table:
+            table_map[item["name"]] = item
+
+        teams = data["rounds"][f"{current_round}"]["teams"]
+        results = data["rounds"][f"{current_round}"]["results"]
+
+        table = set_stats.apply_stats(self.repo, results, teams, table_map)
+        data["rounds"][f"{current_round}"]["table"] = table
+        self.repo.write(season, data)
+
+    def build(
+        self, season: str, default_renderer: Renderer, season_renderer: Renderer
+    ) -> None:
         ...
+        # default_renderer = Renderer(template=pathlib.Path("templates/default.html"), output=pathlib.Path("index.html"))
+        # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
+
         # render the template
-        # increment round
 
-
-class MultipleLeagueKnockout:
-    def __init__(self, teams: list | None, fixtures: list | None, store) -> None:
-        pass
-        # if home on fixture is not in teams add to slot
-
-    def input_teams(self) -> None:
-        ...
-        # if teams is none!
-
-    def update_team_slot(self, team, slot: str) -> None: ...
-
-    def input_fixtures(self) -> None:
-        ...
-        # if fixtures is none!
-
-    def input_result(self) -> None:
-        ...
-        # ask for slot?
-        # check the fixture matches self.fixtures
-
-    def update_round(self) -> None:
-        ...
-        # verify result!
-
-    def build(self, renderer, increment: bool = False) -> None:
-        ...
-        # render the template
-        # increment round
-
-
-class LeagueKnockout:
-    def __init__(self, teams: list | None, fixtures: list | None, store) -> None:
-        pass
-
-    def input_teams(self) -> None:
-        ...
-        # if teams is none!
-
-    def update_team_slot(self, team, slot: str) -> None: ...
-
-    def input_fixtures(self) -> None:
-        ...
-        # if fixtures is none!
-
-    def input_result(self) -> None:
-        ...
-        # ask for slot?
-
-    def update_round(self) -> None:
-        ...
-        # verify result!
-
-    def build(self, renderer, increment: bool = False) -> None:
-        ...
-        # render the template
-        # increment round
+    def increment_round(self, season: str) -> None:  # ?????
+        data = self.repo.read(season)
+        current_round = data["current_round"]
+        data["current_round"] = current_round + 1
+        self.repo.write(season, data)
 
 
 class League:
+    # use the fixtures names to introduce knockout
+
     def __init__(self, store) -> None:
-        pass
+        self.repo = store
 
-    def input_teams(self) -> None:
-        ...
-        # if teams is none!
+    def start_new_season(self, season: str, teams, fixtures) -> None:
+        print("""
+            ``````````````````````````````````````
 
-    def input_fixtures(self) -> None:
-        ...
-        # if fixtures is none!
+            Starting a new season.
 
-    def input_result(self) -> None: ...
+            `````````````````````````````````````````
 
-    def update_round(self) -> None:
-        ...
-        # verify result!
+            """)
 
-    def build(self, renderer, increment: bool = False) -> None:
-        ...
-        # render the template
-        # increment round
+    @staticmethod
+    def get_events() -> dict[str, dict]: ...
+
+    def update_events(self) -> None:
+        print("""
+            ``````````````````````````````````````
+
+            Updating Fixtures Events.
+            
+            `````````````````````````````````````````
+
+            """)
+
+    def update_stats(self) -> None:
+        print("""
+            ``````````````````````````````````````
+
+            Updating Fixtures Statistics.
+
+            `````````````````````````````````````````
+
+            """)
+
+    def build(self, renderer: Renderer, increment: bool = False) -> None:
+        print("""
+            ``````````````````````````````````````
+
+            Build Static Files.
+
+            `````````````````````````````````````````
+
+            """)
+
+    def increment_round(self, season: str) -> None:
+
+        print(f"Incremented from round to round for season {season}")
