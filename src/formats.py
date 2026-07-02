@@ -5,33 +5,44 @@ from jinja2 import Template
 
 
 class Goal:
-    scorer: str
-    assist: str
+    def __init__(self, scorer: str, assist: str) -> None:
+        self.scorer = scorer
+        self.assist = assist
 
 
 class Result:
-    team: str
-    goals: list[Goal]
-    events: dict[str, dict]
+    def __init__(self, team: str, goals: list[Goal], events: dict[str, dict]) -> None:
+        self.team = team
+        self.goals = goals
+        self.events = events
 
 
 class Fixture:
-    home: Result | None
-    away: Result | None
-    date: str  # use datetime?
-    game_round: str
-    group: str
+    def __init__(self,date: str, game_round: str, group: str, home: Result | None = None, away: Result | None = None) -> None:
+        self.home = home
+        self.away = away
+        self.date = date
+        self.round = game_round
+        self.group = group
 
     def update_stats(self, player_stats, team_stats) -> dict:
         ...
 
 
 class PlayerStatistics:
-    ...
+    def __init__(self) -> None:
+        pass
+
+    def apply_stats(self, store, fixtures) -> dict:
+        ...
 
 
 class TeamStatistics:
-    ...
+    def __init__(self) -> None:
+        pass
+
+    def apply_stats(self, store, fixtures) -> dict:
+        ...
 
 
 class SetRepositoryProtocol(Protocol):
