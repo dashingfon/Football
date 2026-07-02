@@ -2422,7 +2422,8 @@
 }
 html {
   scroll-behavior: smooth;
-  letter-spacing: -1%;
+  letter-spacing: -1.5%;
+  line-height: normal;
 }
 @property --tw-translate-x {
   syntax: "*";

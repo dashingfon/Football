@@ -92,5 +92,6 @@ color-scheme: dark;
 
 html {
     scroll-behavior: smooth;
-    letter-spacing: -1%;
+    letter-spacing: -1.5%;
+    line-height: normal;
 }
