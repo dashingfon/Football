@@ -34,7 +34,7 @@ thinking of using pydantic for data validation
 
 1. able to update past events trading immutability for ease of use
    git makes it work for now as i move to a server enviroment i will use a trail to keep track of changes
-2. 
+2. events order matters to make rendering eaisier
 
 
 # set
@@ -43,6 +43,8 @@ thinking of using pydantic for data validation
     - str : {
         teams: [],
         fixtures: [],
+            - events
+            - ...
         table: [{},],
     }
 
@@ -50,6 +52,8 @@ thinking of using pydantic for data validation
 - current_round
 - teams: [],
 - fixtures: [],
+    - events
+    - ...
 - titles
 - rounds
     - str : {
@@ -62,6 +66,8 @@ thinking of using pydantic for data validation
 - current_round
 - teams: [],
 - fixtures: [],
+    - events
+    - ...
 - titles
 - rounds
     - str : {

@@ -1,11 +1,12 @@
 import json
 import pathlib
-from dataclasses import dataclass
 from copy import deepcopy
+from datetime import datetime
 
+from pydantic import BaseModel
 from jinja2 import Template
 
-# @dataclass
+# @BaseModel
 class Goal:
     def __init__(self, scorer: str, assist: str | None, own_goal: bool = False) -> None:
         self.scorer = scorer
@@ -24,12 +25,13 @@ class Goal:
         return {"scorer": self.scorer, "assist": self.assist, "own_goal": self.own_goal}
 
 
+# @BaseModel
 class Team:
     name: str
     players: list[str]
 
 
-# @dataclass
+# @BaseModel
 class TeamGoals:
     def __init__(self, team: str, goals: list[Goal], penalty_goals: list[Goal]) -> None:
         self.team = team
@@ -52,13 +54,14 @@ class TeamGoals:
         }
 
 
+# @BaseModel
 class Event:
     fixture: str
     name: str
     event: dict
 
 
-# @dataclass
+# @BaseModel
 class Fixture:
     def __init__(
         self,
@@ -289,6 +292,7 @@ class Set:
         teams: dict[str, list[str]] | None,
         new_round: bool,
         result: list[dict] | None,
+        events: list[Event]
     ) -> None:
         print("""
         ``````````````````````````````````````
