@@ -24,15 +24,20 @@ class Goal:
         return {"scorer": self.scorer, "assist": self.assist, "own_goal": self.own_goal}
 
 
+class Team:
+    name: str
+    players: list[str]
+
+
 # @dataclass
-class Result:
+class TeamGoals:
     def __init__(self, team: str, goals: list[Goal], penalty_goals: list[Goal]) -> None:
         self.team = team
         self.goals = goals
         self.penalty_goals = penalty_goals
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Result":
+    def from_dict(cls, data: dict) -> "TeamGoals":
         return cls(
             team=data["team"],
             goals=[Goal.from_dict(goal_data) for goal_data in data["goals"]],
@@ -47,16 +52,22 @@ class Result:
         }
 
 
+class Event:
+    fixture: str
+    name: str
+    event: dict
+
+
 # @dataclass
 class Fixture:
     def __init__(
         self,
         date: str,
         game_round: str,
-        events: list[dict],
+        events: list[Event],
         group: str,
-        home: Result | None = None,
-        away: Result | None = None,
+        home: TeamGoals | None = None,
+        away: TeamGoals | None = None,
     ) -> None:
         self.home = home
         self.away = away
@@ -72,8 +83,8 @@ class Fixture:
             game_round=data["round"],
             group=data["group"],
             events=data.get("events", []),
-            home=Result.from_dict(data["home"]) if data.get("home") else None,
-            away=Result.from_dict(data["away"]) if data.get("away") else None,
+            home=TeamGoals.from_dict(data["home"]) if data.get("home") else None,
+            away=TeamGoals.from_dict(data["away"]) if data.get("away") else None,
         )
 
     def json(self) -> dict:
@@ -85,6 +96,10 @@ class Fixture:
             "away": self.away.json() if self.away else None,
             "events": self.events,
         }
+
+    @classmethod
+    def injest_events(cls, store, events: list[Event]):
+        ...
 
     # def update_stats(self, player_stats, team_stats) -> dict:
     #     ...
@@ -125,7 +140,7 @@ class SetStatistics:
     def __init__(self) -> None:
         pass
 
-    def apply_stats(self, results: list[dict], teams: dict[str, list], table_map: dict) -> dict:
+    def add_events(self, results: list[dict], teams: dict[str, list], table_map: dict) -> dict:
         team_stats = {}
         player_teams = {}
 
@@ -334,7 +349,7 @@ class Set:
         teams = data["rounds"][f"{current_round}"]["teams"]
         results = data["rounds"][f"{current_round}"]["results"]
 
-        table = set_stats.apply_stats(results, teams, table_map)
+        table = set_stats.add_events(results, teams, table_map)
         data["rounds"][f"{current_round}"]["table"] = table
         self.repo.write(season, data)
 
