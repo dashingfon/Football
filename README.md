@@ -65,7 +65,7 @@ thinking of using pydantic for data validation
 - titles
 - rounds
     - str : {
-        tables: [{},],
+        tables: [[{},],],
         player_stats: [],
         team_stats: []
     }

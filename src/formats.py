@@ -97,9 +97,6 @@ class Fixture:
             "events": self.events,
         }
 
-    @classmethod
-    def injest_events(cls, store, events: list[Event]):
-        ...
 
     # def update_stats(self, player_stats, team_stats) -> dict:
     #     ...
@@ -118,23 +115,6 @@ class Renderer:
         with open(self.output, "w") as f:
             f.write(rendered)
 
-
-class LeagueKnockoutStatistics:
-    def __init__(self) -> None:
-        pass
-
-    def add_events(self, store, fixtures) -> dict: ...
-
-    def empty_table(self) -> dict:
-        return {
-            "name": "",
-            "goals": 0,
-            "assists": 0,
-            "g/a": 0,
-            "cleansheets": 0,
-            "redcards": 0,
-            "yellowcards": 0,
-        }
 
 class SetStatistics:
     def __init__(self) -> None:
@@ -172,6 +152,24 @@ class SetStatistics:
             "assists": 0,
             "g/a": 0,
             "cleansheets": 0,
+        }
+
+
+class LeagueKnockoutStatistics:
+    def __init__(self) -> None:
+        pass
+
+    def add_events(self, store, fixtures) -> dict: ...
+
+    def empty_table(self) -> dict:
+        return {
+            "name": "",
+            "goals": 0,
+            "assists": 0,
+            "g/a": 0,
+            "cleansheets": 0,
+            "redcards": 0,
+            "yellowcards": 0,
         }
 
 
@@ -216,6 +214,9 @@ class SetRepository:
         with open(self.data_path / f"{season}.json") as f:
             data = json.load(f)
         return data
+    
+    def injest_events(self, season: str, events: dict) -> None:
+        ...
 
 
 class Set:
@@ -248,7 +249,7 @@ class Set:
         self.repo.write(season, full_data, new=True)
 
     @staticmethod
-    def get_teams() -> dict[str, list[str]]:
+    def input_teams() -> dict[str, list[str]]:
         num_teams = int(input("Enter number of teams: "))
         teams = {}
         for i in range(int(num_teams)):
@@ -259,7 +260,7 @@ class Set:
         return teams
 
     @staticmethod
-    def get_result(index: int, side: str) -> dict:
+    def input_fixtures(index: int, side: str) -> dict:
         print("\n")
         team: dict = {}
         team_name = input(f"Enter the match {index} {side} team: ")
@@ -282,7 +283,7 @@ class Set:
 
         return team
 
-    def update_result(
+    def update_fixtures(
         self,
         season: str,
         teams: dict[str, list[str]] | None,
@@ -297,7 +298,7 @@ class Set:
         `````````````````````````````````````````
         """)
         if teams is None:
-            teams = self.get_teams()
+            teams = self.input_teams()
 
         data = self.repo.read(season)
         current_round = data["current_round"]
@@ -316,8 +317,8 @@ class Set:
             num_result = input("Enter the number of results: ")
             for i in range(int(num_result)):
                 print("\n")
-                home: dict = self.get_result(i, "home")
-                away: dict = self.get_result(i, "away")
+                home: dict = self.input_fixtures(i, "home")
+                away: dict = self.input_fixtures(i, "away")
                 result.append(
                     {
                         "home": home,
@@ -363,72 +364,10 @@ class Set:
         # render the template
 
 
-class League:
-    # use the fixtures names to introduce knockout
+class LeagueRepository:
+    ...
 
-    def __init__(self, store) -> None:
-        self.repo = store
 
-    def start_new_season(self, season: str, teams, fixtures) -> None:
-        print("""
-            ``````````````````````````````````````
-
-            Starting a new season.
-
-            `````````````````````````````````````````
-
-            """)
-
-    @staticmethod
-    def get_events() -> dict[str, dict]: ...
-
-    def update_events(self, season, fixture, events) -> None:
-        print("""
-            ``````````````````````````````````````
-
-            Updating Fixtures Events.
-            
-            `````````````````````````````````````````
-
-            """)
-        
-        # types of events
-        # home goal, home assists, home red card, home yellow card, home sub
-        # away goal, away assists, away red card, away yellow card, away sub
-        # match winner{team name, title}
-        # half time
-        # full time
-        # extra time half time
-        # after extra time
-        # penalty shootout
-        # home penalty scored, home penalty missed
-        # away penalty scored, away penalty missed
-        # other match data; collect json lines?
-
-        # main stats
-        # - goals scored
-        # - goals conceeded
-        # - cleansheets
-        # - redcards
-        # - yellowcards
-
-    def update_stats(self, season, stats) -> None:
-        print("""
-            ``````````````````````````````````````
-
-            Updating Fixtures Statistics.
-
-            `````````````````````````````````````````
-
-            """)
-
-    def build(self, renderer: Renderer, increment: bool = False) -> None:
-        print("""
-            ``````````````````````````````````````
-
-            Build Static Files.
-
-            `````````````````````````````````````````
-
-            """)
+class League(Set):
+    ...
 
