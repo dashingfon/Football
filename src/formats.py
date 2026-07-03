@@ -1,10 +1,11 @@
 import json
 import pathlib
+from dataclasses import dataclass
 from copy import deepcopy
 
 from jinja2 import Template
 
-
+# @dataclass
 class Goal:
     def __init__(self, scorer: str, assist: str | None, own_goal: bool = False) -> None:
         self.scorer = scorer
@@ -23,25 +24,30 @@ class Goal:
         return {"scorer": self.scorer, "assist": self.assist, "own_goal": self.own_goal}
 
 
+# @dataclass
 class Result:
-    def __init__(self, team: str, goals: list[Goal]) -> None:
+    def __init__(self, team: str, goals: list[Goal], penalty_goals: list[Goal]) -> None:
         self.team = team
         self.goals = goals
+        self.penalty_goals = penalty_goals
 
     @classmethod
     def from_dict(cls, data: dict) -> "Result":
         return cls(
             team=data["team"],
             goals=[Goal.from_dict(goal_data) for goal_data in data["goals"]],
+            penalty_goals=[Goal.from_dict(goal_data) for goal_data in data["penalty_goals"]],
         )
 
     def json(self) -> dict:
         return {
             "team": self.team,
             "goals": [goal.json() for goal in self.goals],
+            "penalty_goals": [goal.json() for goal in self.penalty_goals],
         }
 
 
+# @dataclass
 class Fixture:
     def __init__(
         self,
@@ -88,6 +94,7 @@ class Renderer:
     def __init__(self, template: pathlib.PurePath, output: pathlib.PurePath) -> None:
         self.template = template
         self.output = output
+        # add a pre processor?
 
     def render(self, data: dict) -> None:
         with open(self.template) as f:
@@ -97,13 +104,13 @@ class Renderer:
             f.write(rendered)
 
 
-class PlayerStatistics:
+class LeagueKnockoutStatistics:
     def __init__(self) -> None:
         pass
 
-    def apply_stats(self, store, fixtures) -> dict: ...
+    def add_events(self, store, fixtures) -> dict: ...
 
-    def empty_json(self) -> dict:
+    def empty_table(self) -> dict:
         return {
             "name": "",
             "goals": 0,
@@ -114,15 +121,31 @@ class PlayerStatistics:
             "yellowcards": 0,
         }
 
-
-class IndividualPlayerStatistics:
+class SetStatistics:
     def __init__(self) -> None:
         pass
 
-    def apply_stats(self, store, fixtures, teams, table_map) -> dict: ...
+    def apply_stats(self, results: list[dict], teams: dict[str, list], table_map: dict) -> dict:
+        team_stats = {}
+        player_teams = {}
+
+        for key, value in teams.items():
+            team_stats[key] = {
+                "pts": 0,
+                "p": 0,
+                "w": 0,
+                "d": 0,
+                "l": 0,
+                "cleansheets": 0,
+            }
+            for player in value:
+                player_teams[player] = key
+
+        for result in results:
+            ...
 
     @staticmethod
-    def empty_json() -> dict:
+    def empty_table() -> dict:
         return {
             "name": "",
             "pts": 0,
@@ -137,13 +160,13 @@ class IndividualPlayerStatistics:
         }
 
 
-class TeamStatistics:
+class LeaguesKnockoutStatistics:
     def __init__(self) -> None:
         pass
 
-    def apply_stats(self, store, fixtures) -> dict: ...
+    def add_events(self, store, fixtures) -> dict: ...
 
-    def empty_json(self) -> dict:
+    def empty_table(self) -> dict:
         return {
             "name": "",
             "pts": 0,
@@ -199,7 +222,7 @@ class Set:
         for player in players_list:
             if player == "":
                 continue
-            data = IndividualPlayerStatistics.empty_json()
+            data = SetStatistics.empty_table()
             data["name"] = player
             table.append(data)
         full_data = {
@@ -293,7 +316,7 @@ class Set:
         data["rounds"][str(current_round)]["results"].append(result)
         self.repo.write(season, data)
 
-    def update_stats(self, season: str, set_stats: IndividualPlayerStatistics) -> None:
+    def update_stats(self, season: str, set_stats: SetStatistics) -> None:
         print("""
         ``````````````````````````````````````
         
@@ -311,7 +334,7 @@ class Set:
         teams = data["rounds"][f"{current_round}"]["teams"]
         results = data["rounds"][f"{current_round}"]["results"]
 
-        table = set_stats.apply_stats(self.repo, results, teams, table_map)
+        table = set_stats.apply_stats(results, teams, table_map)
         data["rounds"][f"{current_round}"]["table"] = table
         self.repo.write(season, data)
 
@@ -323,12 +346,6 @@ class Set:
         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
 
         # render the template
-
-    def increment_round(self, season: str) -> None:  # ?????
-        data = self.repo.read(season)
-        current_round = data["current_round"]
-        data["current_round"] = current_round + 1
-        self.repo.write(season, data)
 
 
 class League:
@@ -350,7 +367,7 @@ class League:
     @staticmethod
     def get_events() -> dict[str, dict]: ...
 
-    def update_events(self) -> None:
+    def update_events(self, season, fixture, events) -> None:
         print("""
             ``````````````````````````````````````
 
@@ -359,8 +376,28 @@ class League:
             `````````````````````````````````````````
 
             """)
+        
+        # types of events
+        # home goal, home assists, home red card, home yellow card, home sub
+        # away goal, away assists, away red card, away yellow card, away sub
+        # match winner{team name, title}
+        # half time
+        # full time
+        # extra time half time
+        # after extra time
+        # penalty shootout
+        # home penalty scored, home penalty missed
+        # away penalty scored, away penalty missed
+        # other match data; collect json lines?
 
-    def update_stats(self) -> None:
+        # main stats
+        # - goals scored
+        # - goals conceeded
+        # - cleansheets
+        # - redcards
+        # - yellowcards
+
+    def update_stats(self, season, stats) -> None:
         print("""
             ``````````````````````````````````````
 
@@ -380,6 +417,3 @@ class League:
 
             """)
 
-    def increment_round(self, season: str) -> None:
-
-        print(f"Incremented from round to round for season {season}")
