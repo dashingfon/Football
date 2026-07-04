@@ -30,19 +30,35 @@ class Team(BaseModel):
         return result
 
 
+def select(prompt: str, error: str, exit_str: str, options: set | None) -> str:
+    gotten = ""
+    while not gotten:
+        print(f"press {exit_str} any time to cancel")
+        value = input(prompt)
+        if value == exit_str:
+            break
+        if options is not None and value not in options:
+            print(error)
+        else:
+            gotten = value
+    if not gotten:
+        raise ValueError("Failed to get the correct value!")
+    return gotten
+
+
 class Event(BaseModel):
     fixture: str
     name: str
     event: dict
 
     @staticmethod
-    def bind(home: str, away: str) -> str:
-        return f"{home}_vs_{away}"
+    def bind(home: str, away: str, datetime: datetime | None = None) -> str:
+        date_str = f"_at_{datetime}" if datetime is not None else ""
+        return f"{home}_vs_{away}{date_str}"
 
     @staticmethod
-    def input_penalty_shootout() -> "Event":
+    def input_penalty_shootout(fixture: str) -> "Event":
         result = None
-        fixture = input("Enter the fixture name: ")
         while result is None:
             shots = []
             try:
@@ -52,9 +68,15 @@ class Event(BaseModel):
                 continue
 
             for _ in range(shot_count):
-                side = input("Enter home or away to select the team side: ")
+                side = select(
+                    "Enter home or away to select the team side: ",
+                    "Expected home, h or away, a",
+                    "!q",
+                    {"home", "h", "away", "a"},
+                )
                 scored = input("Enter any character if the shot was saved: ")
-                shots.append({"side": side, "scored": bool(scored)})
+
+                shots.append({"side": side[0], "scored": bool(scored)})
             result = Event(
                 fixture=fixture,
                 name="penalty_shootout",
@@ -63,85 +85,91 @@ class Event(BaseModel):
         return result
 
     @staticmethod
-    def input_goal() -> "Event":
-        result = None
-        fixture = input("Enter the fixture name: ")
-        while result is None:
-            side = input("Was it home or away that scored: \n")
-            if side != "home" and side != "away":
-                continue
-            scorer = input("Enter the goal scorer: ")
-            assist = input("Enter the assist provider: ")
-            own_goal = input("Enter any characters if it was an own goal: ")
-            penalty_goal = input("Enter any characters if it was a penalty goal: ")
-            result = Event(
-                fixture=fixture,
-                name="goal",
-                event={
-                    "side": side,
-                    "scorer": scorer,
-                    "assist": assist,
-                    "is_own_goal": own_goal != "",
-                    "is_penalty": penalty_goal != "",
-                },
-            )
+    def input_goal(fixture: str) -> "Event":
+        side = select(
+            "Enter home or away to select the team side: ",
+            "Expected home, h or away, a",
+            "!q",
+            {"home", "h", "away", "a"},
+        )
+        scorer = input("Enter the goal scorer: ")
+        assist = input("Enter the assist provider: ")
+        own_goal = input("Enter any characters if it was an own goal: ")
+        penalty_goal = input("Enter any characters if it was a penalty goal: ")
+        result = Event(
+            fixture=fixture,
+            name="goal",
+            event={
+                "side": side[0],
+                "scorer": scorer,
+                "assist": assist,
+                "is_own_goal": own_goal != "",
+                "is_penalty": penalty_goal != "",
+            },
+        )
         return result
 
     @staticmethod
-    def input_red_card() -> "Event":
-        result = None
-        fixture = input("Enter the fixture name: ")
-        while result is None:
-            team = input("Enter the team name: ")
-            recipient = input("Enter the recipient name: ")
-            result = Event(
-                fixture=fixture,
-                name="red_card",
-                event={"team": team, "player": recipient},
-            )
+    def input_red_card(fixture: str) -> "Event":
+        side = select(
+            "Enter home or away to select the team side: ",
+            "Expected home, h or away, a",
+            "!q",
+            {"home", "h", "away", "a"},
+        )
+        recipient = input("Enter the recipient name: ")
+        result = Event(
+            fixture=fixture,
+            name="red_card",
+            event={"side": side[0], "player": recipient},
+        )
         return result
 
     @staticmethod
-    def input_yellow_card() -> "Event":
-        result = None
-        fixture = input("Enter the fixture name: ")
-        while result is None:
-            team = input("Enter the team name: ")
-            recipient = input("Enter the recipient name: ")
-            result = Event(
-                fixture=fixture,
-                name="yellow_card",
-                event={"team": team, "player": recipient},
-            )
+    def input_yellow_card(fixture: str) -> "Event":
+        side = select(
+            "Enter home or away to select the team side: ",
+            "Expected home, h or away, a",
+            "!q",
+            {"home", "h", "away", "a"},
+        )
+        recipient = input("Enter the recipient name: ")
+        result = Event(
+            fixture=fixture,
+            name="yellow_card",
+            event={"side": side[0], "player": recipient},
+        )
         return result
 
     @staticmethod
-    def input_sub() -> "Event":
-        result = None
-        fixture = input("Enter the fixture name: ")
-        while result is None:
-            team = input("Enter the team name: ")
-            player_in = input("Enter the player in: ")
-            player_out = input("Enter the player out: ")
-            result = Event(
-                fixture=fixture,
-                name="sub",
-                event={"team": team, "in": player_in, "put": player_out},
-            )
+    def input_sub(fixture: str) -> "Event":
+        side = select(
+            "Enter home or away to select the team side: ",
+            "Expected home, h or away, a",
+            "!q",
+            {"home", "h", "away", "a"},
+        )
+        player_in = input("Enter the player in: ")
+        player_out = input("Enter the player out: ")
+        result = Event(
+            fixture=fixture,
+            name="sub",
+            event={"side": side[0], "in": player_in, "put": player_out},
+        )
         return result
 
     @staticmethod
-    def handle_event(event_name: str) -> "Event | None":
+    def handle_event(event_name: str, fixture: str) -> "Event | None":
         if event_name == "goal":
-            return Event.input_goal()
+            return Event.input_goal(fixture)
         elif event_name == "penalty_shootout":
-            return Event.input_penalty_shootout()
+            return Event.input_penalty_shootout(fixture)
         elif event_name == "sub":
-            return Event.input_sub()
+            return Event.input_sub(fixture)
         elif event_name == "yellow card":
-            return Event.input_yellow_card()
+            return Event.input_yellow_card(fixture)
         elif event_name == "red card":
-            return Event.input_red_card()
+            return Event.input_red_card(fixture)
         return None
 
 
@@ -289,13 +317,12 @@ def input_fixture(
 
     for _ in range(num_events):
         event_name = input("Enter the name of the event: ")
-        event = Event.handle_event(event_name)
+        fixture_name = Event.bind(home, away, date)
+        event = Event.handle_event(event_name, fixture_name)
         if event is None:
             print(f"no handler for {event_name}! \n")
             event_data = json.loads(input("Enter the event data as valid json dict: "))
-            event = Event(
-                fixture=f"{home}_vs_{away}", name=event_name, event=event_data
-            )
+            event = Event(fixture=fixture_name, name=event_name, event=event_data)
         events.append(event)
     result = Fixture(home=home, away=away, date=date, events=events)
 
@@ -309,35 +336,95 @@ def apply_league_statistics(
     team_table: list[TeamTable],
     teams: list[Team],
 ) -> tuple[list[IndividualTable], list[TeamTable]]:
-    team_result = []
-    player_result = []
     teams_name_map = Team.map_teams(teams)
     player_map = IndividualTable.map_players(player_table)
     team_map = TeamTable.map_teams(team_table)
 
     for fixture in fixtures:
         fixture_map = fixture.map
+        home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
+        away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
+
+        # increment played
+
+        if len(home_goals) == len(away_goals):
+            ...
+            # increment team
+        elif len(home_goals) > len(away_goals):
+            ...
+            # increment team
+        else:
+            ...
+
+        if len(away_goals) == 0:
+            ...
+            # increment clean sheets + 1
+        if len(home_goals) == 0:
+            ...
+            # increment clean sheets + 1
 
         for goal in fixture_map["goals"]:
             ...
+            # increment player
+            # increment team
 
-    return (player_result, team_result)
+        for yellow in fixture_map["yellow_card"]:
+            ...
+            # increment player
+            # increment team
+
+        for red in fixture_map["red_card"]:
+            ...
+            # increment player
+            # increment team
+
+    return ([result for result in player_map.values()], [team for team in team_map.values()])
 
 
 def apply_set_statistics(
     fixtures: list[Fixture], player_table: list[IndividualTable], teams: list[Team]
 ) -> list[IndividualTable]:
-    result = []
     teams_map = Team.map_teams(teams)
     player_map = IndividualTable.map_players(player_table)
 
     for fixture in fixtures:
         fixture_map = fixture.map
 
+        home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
+        away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
+
+        # increment played
+
+        if len(home_goals) == len(away_goals):
+            ...
+            # increment players
+        elif len(home_goals) > len(away_goals):
+            ...
+            # increment players
+        else:
+            ...
+            # increment players
+
+        if len(away_goals) == 0:
+            ...
+            # increment cleansheets
+        if len(home_goals) == 0:
+            ...
+            # increment cleansheets
+
         for goal in fixture_map["goals"]:
             ...
+            # increment player
 
-    return result
+        for yellow in fixture_map["yellow_card"]:
+            ...
+            # increment player
+
+        for red in fixture_map["red_card"]:
+            ...
+            # increment player
+
+    return [result for result in player_map.values()]
 
 
 class SetRoundData(BaseModel):
