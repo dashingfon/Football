@@ -36,6 +36,10 @@ class Event(BaseModel):
     event: dict
 
     @staticmethod
+    def bind(home: str, away: str) -> str:
+        return f"{home}_vs_{away}"
+
+    @staticmethod
     def input_penalty_shootout() -> "Event":
         result = None
         fixture = input("Enter the fixture name: ")
@@ -127,7 +131,7 @@ class Event(BaseModel):
         return result
 
     @staticmethod
-    def input_event(event_name: str) -> "Event":
+    def handle_event(event_name: str) -> "Event | None":
         if event_name == "goal":
             return Event.input_goal()
         elif event_name == "penalty_shootout":
@@ -138,8 +142,7 @@ class Event(BaseModel):
             return Event.input_yellow_card()
         elif event_name == "red card":
             return Event.input_red_card()
-        else:
-            raise ValueError(f"input name {event_name} doesnt have a handler")
+        return None
 
 
 class Fixture(BaseModel):
@@ -286,9 +289,8 @@ def input_fixture(
 
     for _ in range(num_events):
         event_name = input("Enter the name of the event: ")
-        try:
-            event = Event.input_event(event_name)
-        except KeyError:
+        event = Event.handle_event(event_name)
+        if event is None:
             print(f"no handler for {event_name}! \n")
             event_data = json.loads(input("Enter the event data as valid json dict: "))
             event = Event(
