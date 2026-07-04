@@ -2,10 +2,13 @@ import json
 import pathlib
 from copy import deepcopy
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from typing import Callable
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from jinja2 import Template
+
+DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class Goal(BaseModel):
@@ -18,11 +21,98 @@ class Team(BaseModel):
     name: str
     players: list[str]
 
+    @staticmethod
+    def map_teams(teams: list["Team"]):
+        result = {}
+        for team in teams:
+            result[team.name] = team
+        return result
+
 
 class Event(BaseModel):
     fixture: str
     name: str
     event: dict
+
+    @staticmethod
+    def input_goal() -> "Event":
+        result = None
+        fixture = input("Enter the fixture name: ")
+        while result is None:
+            side = input("Was it home or away that scored: \n")
+            if side != "home" and side != "away":
+                continue
+            scorer = input("Enter the goal scorer: ")
+            assist = input("Enter the assist provider: ")
+            own_goal = input("Enter any characters if it was an own goal: ")
+            penalty_goal = input("Enter any characters if it was a penalty goal: ")
+            result = Event(
+                fixture=fixture,
+                name="goal",
+                event={
+                    "scorer": scorer,
+                    "assist": assist,
+                    "is_own_goal": own_goal != "",
+                    "is_penalty": penalty_goal != "",
+                },
+            )
+        return result
+
+    @staticmethod
+    def input_red_card() -> "Event":
+        result = None
+        fixture = input("Enter the fixture name: ")
+        while result is None:
+            team = input("Enter the team name: ")
+            recipient = input("Enter the recipient name: ")
+            result = Event(
+                fixture=fixture,
+                name="red_card",
+                event={"team": team, "player": recipient},
+            )
+        return result
+
+    @staticmethod
+    def input_yellow_card() -> "Event":
+        result = None
+        fixture = input("Enter the fixture name: ")
+        while result is None:
+            team = input("Enter the team name: ")
+            recipient = input("Enter the recipient name: ")
+            result = Event(
+                fixture=fixture,
+                name="yellow_card",
+                event={"team": team, "player": recipient},
+            )
+        return result
+
+    @staticmethod
+    def input_sub() -> "Event":
+        result = None
+        fixture = input("Enter the fixture name: ")
+        while result is None:
+            team = input("Enter the team name: ")
+            player_in = input("Enter the player in: ")
+            player_out = input("Enter the player out: ")
+            result = Event(
+                fixture=fixture,
+                name="sub",
+                event={"team": team, "in": player_in, "put": player_out},
+            )
+        return result
+
+    @staticmethod
+    def input_event(event_name: str) -> "Event":
+        if event_name == "goal":
+            return Event.input_goal()
+        elif event_name == "sub":
+            return Event.input_sub()
+        elif event_name == "yellow card":
+            return Event.input_yellow_card()
+        elif event_name == "red card":
+            return Event.input_red_card()
+        else:
+            raise ValueError(f"input name {event_name} doesnt have a handler")
 
 
 class Fixture(BaseModel):
@@ -31,7 +121,14 @@ class Fixture(BaseModel):
     date: datetime
     events: list[Event] | None = None
 
-    # post init events_map
+    def model_post_init(self, _):
+        event_map = {}
+        if self.events is None:
+            return None
+        for event in self.events:
+            if event.name not in event_map:
+                event_map[event.name] = []
+            event_map[event.name].append(event.event)
 
 
 class Renderer:
@@ -61,6 +158,13 @@ class IndividualTable(BaseModel):
     red_cards: int = 0
     yellow_cards: int = 0
 
+    @staticmethod
+    def map_players(stats: list["IndividualTable"]):
+        result = {}
+        for stat in stats:
+            result[stat.name] = stat
+        return result
+
 
 class TeamTable(BaseModel):
     team: str = ""
@@ -75,6 +179,13 @@ class TeamTable(BaseModel):
     cleansheets: int = 0
     red_cards: int = 0
     yellow_cards: int = 0
+
+    @staticmethod
+    def map_teams(stats: list["TeamTable"]):
+        result = {}
+        for stat in stats:
+            result[stat.team] = stat
+        return result
 
 
 class LeagueRoundData(BaseModel):
@@ -104,21 +215,76 @@ class LeaguesData(BaseModel):
     round_data: dict[str, Leagues_RoundData]
 
 
+def save(model: BaseModel, path: pathlib.PurePath) -> None:
+    with open(path, "w") as f:
+        json.dump(model.model_dump_json(), f, indent=2)
+
+
+def input_teams() -> list[Team]:
+    num_teams = int(input("Enter number of teams: "))
+    teams = []
+    for i in range(int(num_teams)):
+        team_name = input(f"Enter name of team {i + 1}: ")
+        team_name = f"{i + 1}" if team_name == "" else team_name
+        players = input(f"Enter players in team {team_name}, seperated by space: ")
+        teams.append(Team(name=team_name, players=players.split(" ")))
+    return teams
+
+
+def input_fixture(
+    home: str, away: str, date: datetime | str, timezone: str = "Africa/Lagos"
+) -> Fixture:
+    if isinstance(date, str):
+        # "2024-01-15 10:30:00"
+        date = datetime.strptime(date, DATETIME_FORMAT)
+    date = date.replace(tzinfo=ZoneInfo(timezone))
+    events = []
+    num_events = int(input(f"Enter the number of events: "))
+
+    for _ in range(num_events):
+        event_name = input("Enter the name of the event: ")
+        try:
+            event = Event.input_event(event_name)
+        except KeyError:
+            print(f"no handler for {event_name}! \n")
+            event_data = json.loads(input("Enter the event data as valid json"))
+            event = Event(fixture=f"{home}_vs_{away}", name=event_name, event=event_data)
+        events.append(event)
+    result = Fixture(home=home, away=away, date=date, events=events)
+
+    result.events = events
+    return result
+
+
+def apply_league_statistics(
+    fixtures: list[Fixture],
+    player_table: list[IndividualTable],
+    team_table: list[TeamTable],
+    teams: list[Team],
+) -> tuple[list[IndividualTable], list[TeamTable]]: ...
+
+
 def apply_set_statistics(
-    fixtures: list[Fixture], table: list[IndividualTable]
-) -> list[IndividualTable]: ...
+    fixtures: list[Fixture], player_table: list[IndividualTable], teams: list[Team]
+) -> list[IndividualTable]:
+    result = IndividualTable()
+    team_map = Team.map_teams(teams)
+    player_map = IndividualTable.map_players(player_table)
+
+    for fixture in fixtures:
+        ...
 
 
 class SetRoundData(BaseModel):
-    teams: dict[str, list[str]]
-    fixtures: list[Fixture]
+    teams: list[Team] = Field(default_factory=list)
+    fixtures: list[Fixture] = Field(default_factory=list)
     table: list[IndividualTable]
 
 
 class SetData(BaseModel):
     season: str
     current_round: int
-    round_data: dict[str, SetRoundData]
+    round_data: list[SetRoundData]
 
     @classmethod
     def from_path(cls, path: pathlib.PurePath) -> "SetData":
@@ -127,45 +293,9 @@ class SetData(BaseModel):
         return cls(**data)
 
     @classmethod
-    def new_season(cls, season: str) -> "SetData": ...
+    def new_season(cls, season: str, path: pathlib.PurePath) -> "SetData":
+        print("Starting a new season! ...\n")
 
-    def save(self, path: pathlib.PurePath, new: bool = False) -> None:
-        if new:
-            with open(path / "seasons.json") as f:
-                seasons = json.load(f)
-                seasons.append(self.season)
-
-            with open(path / "seasons.json", "w") as f:
-                json.dump(seasons, f, indent=2)
-
-        with open(path / f"{self.season}.json", "w") as f:
-            json.dump(self.model_dump_json(), f, indent=2)
-
-    @staticmethod
-    def input_teams() -> list[Team]: ...
-
-    @staticmethod
-    def input_fixtures() -> list[Fixture]: ...
-
-    def update_fixtures(self, fixtures: list[Fixture] | None): ...
-
-    def update_stats(
-        self, stats: Callable[[list[Fixture], IndividualTable], IndividualTable]
-    ) -> None: ...
-
-
-class Set:
-    def __init__(self, repository: SetRepository) -> None:
-        self.repo = repository
-
-    def start_new_season(self, season: str) -> None:
-        print("""
-        ``````````````````````````````````````
-              
-        Starting a new season.
-
-        `````````````````````````````````````````
-        """)
         players = input("Enter list of players seperated by space: ")
         players_list = players.split(" ")
         table = []
@@ -173,176 +303,237 @@ class Set:
         for player in players_list:
             if player == "":
                 continue
-            data = SetStatistics.empty_table()
-            data["name"] = player
+            data = IndividualTable()
+            data.name = player
             table.append(data)
-        full_data = {
-            "players": players_list,
-            "current_round": 0,
-            "rounds": {"0": {"table": table}},
-        }
-        self.repo.write(season, full_data, new=True)
+        round_data = [SetRoundData(table=table)]
+        full_data = cls(season=season, current_round=0, round_data=round_data)
+        with open(path / "seasons.json") as f:
+            seasons = json.load(f)
+            seasons.append(season)
 
-    @staticmethod
-    def input_teams() -> dict[str, list[str]]:
-        num_teams = int(input("Enter number of teams: "))
-        teams = {}
-        for i in range(int(num_teams)):
-            team_name = input(f"Enter name of team {i + 1}: ")
-            team_name = f"{i + 1}" if team_name == "" else team_name
-            players = input(f"Enter players in team {team_name}, seperated by space: ")
-            teams[team_name] = players.split(" ")
-        return teams
+        with open(path / "seasons.json", "w") as f:
+            json.dump(seasons, f, indent=2)
 
-    @staticmethod
-    def input_fixtures(index: int, side: str) -> dict:
-        print("\n")
-        team: dict = {}
-        team_name = input(f"Enter the match {index} {side} team: ")
-        team["goals"] = []
-        team["team"] = team_name
-        team_goals = int(
-            input(f"Enter the number of goals scored by the {side} team: ")
-        )
-        for j in range(team_goals):
-            goal: dict[str, str | bool] = {}
-            scorer = input(f"goalscorer {j + 1}: ")
-            if scorer[:3].lower() == "og:":
-                scorer = scorer[3:]
-                goal["own_goal"] = True
-            goal["scorer"] = scorer
-            assist = input(f"assist provider {j + 1}: ")
-            if assist != "":
-                goal["assist"] = assist
-            team["goals"].append(goal)
-
-        return team
+        return full_data
 
     def update_fixtures(
         self,
-        season: str,
-        teams: dict[str, list[str]] | None,
+        teams: list[Team] | None,
+        fixtures: list[Fixture] | None,
         new_round: bool,
-        result: list[dict] | None,
-        fixtures: list[Fixture],
-    ) -> None:
-        print("""
-        ``````````````````````````````````````
-              
-        Adding Match Results.
+        path: pathlib.PurePath,
+    ):
+        print("Updating matchday Fixtures! ...\n")
 
-        `````````````````````````````````````````
-        """)
-        if teams is None:
-            teams = self.input_teams()
+        if teams is None and new_round:
+            teams = input_teams()
+        else:
+            teams = self.round_data[self.current_round].teams
+        team_map = Team.map_teams(teams)
 
-        data = self.repo.read(season)
-        current_round = data["current_round"]
+        if fixtures is None:
+            home = input("Enter the home team name: ")
+            away = input("Enter the away team name: ")
+            if home not in team_map:
+                raise ValueError(f"Invalid team {home}")
+            if away not in team_map:
+                raise ValueError(f"Invalid team {away}")
+
+            datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
+            fixtures = [input_fixture(home=home, away=away, date=datetime)]
+
         if new_round:
-            current_round += 1
-            data["current_round"] = current_round
-            data["rounds"][str(current_round)] = {
-                "results": [],
-                "table": [],
-                "teams": teams,
-            }
-        date = input("Enter the date of the match: ")
+            self.current_round += 1
+            self.round_data.append(
+                SetRoundData(teams=teams, fixtures=fixtures, table=[])
+            )
+        else:
+            self.round_data[self.current_round].fixtures.extend(fixtures)
+        save(self, path)
 
-        if result is None:
-            result = []
-            num_result = input("Enter the number of results: ")
-            for i in range(int(num_result)):
-                print("\n")
-                home: dict = self.input_fixtures(i, "home")
-                away: dict = self.input_fixtures(i, "away")
-                result.append(
-                    {
-                        "home": home,
-                        "away": away,
-                        "date": date,
-                        "round": current_round,
-                        "stage": "",
-                    }
-                )
+    def update_stats(
+        self,
+        stats: Callable[
+            [list[Fixture], list[IndividualTable], list[Team]], list[IndividualTable]
+        ],
+        path: pathlib.PurePath,
+    ) -> None:
+        current_round = self.current_round
+        if current_round > 1:
+            table = self.round_data[current_round - 1].table
+            teams = self.round_data[current_round].teams
+            fixtures = self.round_data[current_round].fixtures
 
-        data["rounds"][str(current_round)]["results"].append(result)
-        self.repo.write(season, data)
-
-    def update_stats(self, season: str, set_stats: SetStatistics) -> None:
-        print("""
-        ``````````````````````````````````````
-        
-        Updating Player Statistics.
-
-        `````````````````````````````````````````
-        """)
-        data = self.repo.read(season)
-        current_round = data["current_round"]
-        table = deepcopy(data["rounds"][f"{current_round - 1}"]["table"])
-        table_map = {}
-        for item in table:
-            table_map[item["name"]] = item
-
-        teams = data["rounds"][f"{current_round}"]["teams"]
-        results = data["rounds"][f"{current_round}"]["results"]
-
-        table = set_stats.add_events(results, teams, table_map)
-        data["rounds"][f"{current_round}"]["table"] = table
-        self.repo.write(season, data)
+            updated_table = stats(fixtures, table, teams)
+            self.round_data[current_round].table = updated_table
+            save(self, path)
+        else:
+            print("No Previous stats to update! ")
 
     def build(
         self, season: str, default_renderer: Renderer, season_renderer: Renderer
     ) -> None:
-        ...
         # default_renderer = Renderer(template=pathlib.Path("templates/default.html"), output=pathlib.Path("index.html"))
         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
 
         # render the template
 
-
-class League_KnockoutStatistics(BaseModel):
-    def __init__(self) -> None:
-        pass
-
-    def add_events(self, store, fixtures) -> dict: ...
-
-    def empty_table(self) -> dict:
-        return {
-            "name": "",
-            "goals": 0,
-            "assists": 0,
-            "g/a": 0,
-            "cleansheets": 0,
-            "redcards": 0,
-            "yellowcards": 0,
-        }
+        current_round = self.current_round
+        if current_round > 1:
+            ...
+        else:
+            print("No Previous stats to build! ")
 
 
-class Leagues_KnockoutStatistics(BaseModel):
-    def __init__(self) -> None:
-        pass
+# class Set:
+#     def __init__(self, repository: SetRepository) -> None:
+#         self.repo = repository
 
-    def add_events(self, store, fixtures) -> dict: ...
+#     def start_new_season(self, season: str) -> None:
+#         print("""
+#         ``````````````````````````````````````
+              
+#         Starting a new season.
 
-    def empty_table(self) -> dict:
-        return {
-            "name": "",
-            "points": 0,
-            "p": 0,
-            "w": 0,
-            "d": 0,
-            "l": 0,
-            "+/-": [0, 0],
-            "gd": 0,
-            "goals": 0,
-            "cleansheets": 0,
-        }
+#         `````````````````````````````````````````
+#         """)
+#         players = input("Enter list of players seperated by space: ")
+#         players_list = players.split(" ")
+#         table = []
+
+#         for player in players_list:
+#             if player == "":
+#                 continue
+#             data = SetStatistics.empty_table()
+#             data["name"] = player
+#             table.append(data)
+#         full_data = {
+#             "players": players_list,
+#             "current_round": 0,
+#             "rounds": {"0": {"table": table}},
+#         }
+#         self.repo.write(season, full_data, new=True)
+
+#     @staticmethod
+#     def input_teams() -> dict[str, list[str]]:
+#         num_teams = int(input("Enter number of teams: "))
+#         teams = {}
+#         for i in range(int(num_teams)):
+#             team_name = input(f"Enter name of team {i + 1}: ")
+#             team_name = f"{i + 1}" if team_name == "" else team_name
+#             players = input(f"Enter players in team {team_name}, seperated by space: ")
+#             teams[team_name] = players.split(" ")
+#         return teams
+
+#     @staticmethod
+#     def input_fixtures(index: int, side: str) -> dict:
+#         print("\n")
+#         team: dict = {}
+#         team_name = input(f"Enter the match {index} {side} team: ")
+#         team["goals"] = []
+#         team["team"] = team_name
+#         team_goals = int(
+#             input(f"Enter the number of goals scored by the {side} team: ")
+#         )
+#         for j in range(team_goals):
+#             goal: dict[str, str | bool] = {}
+#             scorer = input(f"goalscorer {j + 1}: ")
+#             if scorer[:3].lower() == "og:":
+#                 scorer = scorer[3:]
+#                 goal["own_goal"] = True
+#             goal["scorer"] = scorer
+#             assist = input(f"assist provider {j + 1}: ")
+#             if assist != "":
+#                 goal["assist"] = assist
+#             team["goals"].append(goal)
+
+#         return team
+
+#     def update_fixtures(
+#         self,
+#         season: str,
+#         teams: dict[str, list[str]] | None,
+#         new_round: bool,
+#         result: list[dict] | None,
+#         fixtures: list[Fixture],
+#     ) -> None:
+#         print("""
+#         ``````````````````````````````````````
+              
+#         Adding Match Results.
+
+#         `````````````````````````````````````````
+#         """)
+#         if teams is None:
+#             teams = self.input_teams()
+
+#         data = self.repo.read(season)
+#         current_round = data["current_round"]
+#         if new_round:
+#             current_round += 1
+#             data["current_round"] = current_round
+#             data["rounds"][str(current_round)] = {
+#                 "results": [],
+#                 "table": [],
+#                 "teams": teams,
+#             }
+#         date = input("Enter the date of the match: ")
+
+#         if result is None:
+#             result = []
+#             num_result = input("Enter the number of results: ")
+#             for i in range(int(num_result)):
+#                 print("\n")
+#                 home: dict = self.input_fixtures(i, "home")
+#                 away: dict = self.input_fixtures(i, "away")
+#                 result.append(
+#                     {
+#                         "home": home,
+#                         "away": away,
+#                         "date": date,
+#                         "round": current_round,
+#                         "stage": "",
+#                     }
+#                 )
+
+#         data["rounds"][str(current_round)]["results"].append(result)
+#         self.repo.write(season, data)
+
+#     def update_stats(self, season: str, set_stats: SetStatistics) -> None:
+#         print("""
+#         ``````````````````````````````````````
+        
+#         Updating Player Statistics.
+
+#         `````````````````````````````````````````
+#         """)
+#         data = self.repo.read(season)
+#         current_round = data["current_round"]
+#         table = deepcopy(data["rounds"][f"{current_round - 1}"]["table"])
+#         table_map = {}
+#         for item in table:
+#             table_map[item["name"]] = item
+
+#         teams = data["rounds"][f"{current_round}"]["teams"]
+#         results = data["rounds"][f"{current_round}"]["results"]
+
+#         table = set_stats.add_events(results, teams, table_map)
+#         data["rounds"][f"{current_round}"]["table"] = table
+#         self.repo.write(season, data)
+
+#     def build(
+#         self, season: str, default_renderer: Renderer, season_renderer: Renderer
+#     ) -> None:
+#         ...
+#         # default_renderer = Renderer(template=pathlib.Path("templates/default.html"), output=pathlib.Path("index.html"))
+#         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
+
+#         # render the template
 
 
-class MultipleLeagueData(BaseModel): ...
 
 
-class LeagueRepository: ...
 
 
-class League(Set): ...
+class League: ...
