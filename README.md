@@ -43,17 +43,21 @@ thinking of using pydantic for data validation
     - str : {
         teams: [],
         fixtures: [],
+            - home
+            - away
+            - datetime
             - events
-            - ...
         table: [{},],
     }
 
 # league
 - current_round
-- teams: [],
+- teams: [str -> list[str]],
 - fixtures: [],
+    - home
+    - away
+    - datetime
     - events
-    - ...
 - titles
 - rounds
     - str : {
@@ -66,8 +70,10 @@ thinking of using pydantic for data validation
 - current_round
 - teams: [],
 - fixtures: [],
+    - home
+    - away
+    - datetime
     - events
-    - ...
 - titles
 - rounds
     - str : {

@@ -6,110 +6,43 @@ from datetime import datetime
 from pydantic import BaseModel
 from jinja2 import Template
 
-# @BaseModel
-class Goal:
-    def __init__(self, scorer: str, assist: str | None, own_goal: bool = False) -> None:
-        self.scorer = scorer
-        self.assist = assist
-        self.own_goal = own_goal
 
-    @classmethod
-    def from_dict(cls, data: dict) -> "Goal":
-        return cls(
-            scorer=data["scorer"],
-            assist=data["assist"],
-            own_goal=data.get("own_goal", False),
-        )
-
-    def json(self) -> dict:
-        return {"scorer": self.scorer, "assist": self.assist, "own_goal": self.own_goal}
+class Goal(BaseModel):
+    scorer: str
+    assist: str
+    own_goal: bool = False
 
 
-# @BaseModel
-class Team:
+class Team(BaseModel):
     name: str
     players: list[str]
 
 
-# @BaseModel
-class TeamGoals:
-    def __init__(self, team: str, goals: list[Goal], penalty_goals: list[Goal]) -> None:
-        self.team = team
-        self.goals = goals
-        self.penalty_goals = penalty_goals
-
-    @classmethod
-    def from_dict(cls, data: dict) -> "TeamGoals":
-        return cls(
-            team=data["team"],
-            goals=[Goal.from_dict(goal_data) for goal_data in data["goals"]],
-            penalty_goals=[Goal.from_dict(goal_data) for goal_data in data["penalty_goals"]],
-        )
-
-    def json(self) -> dict:
-        return {
-            "team": self.team,
-            "goals": [goal.json() for goal in self.goals],
-            "penalty_goals": [goal.json() for goal in self.penalty_goals],
-        }
+class TeamGoals(BaseModel):
+    team: str
+    goals: list[Goal]
+    penalty_goals: list[Goal]
 
 
-# @BaseModel
-class Event:
+class Event(BaseModel):
     fixture: str
     name: str
     event: dict
 
 
-# @BaseModel
-class Fixture:
-    def __init__(
-        self,
-        date: str,
-        game_round: str,
-        events: list[Event],
-        group: str,
-        home: TeamGoals | None = None,
-        away: TeamGoals | None = None,
-    ) -> None:
-        self.home = home
-        self.away = away
-        self.date = date
-        self.round = game_round
-        self.group = group
-        self.events = events
+class Fixture(BaseModel):
+    home: str
+    away: str
+    date: datetime
+    events: list[Event] | None = None
 
-    @classmethod
-    def from_dict(cls, data: dict) -> "Fixture":
-        return cls(
-            date=data["date"],
-            game_round=data["round"],
-            group=data["group"],
-            events=data.get("events", []),
-            home=TeamGoals.from_dict(data["home"]) if data.get("home") else None,
-            away=TeamGoals.from_dict(data["away"]) if data.get("away") else None,
-        )
-
-    def json(self) -> dict:
-        return {
-            "date": self.date,
-            "round": self.round,
-            "group": self.group,
-            "home": self.home.json() if self.home else None,
-            "away": self.away.json() if self.away else None,
-            "events": self.events,
-        }
-
-
-    # def update_stats(self, player_stats, team_stats) -> dict:
-    #     ...
+    # post init events_map
 
 
 class Renderer:
     def __init__(self, template: pathlib.PurePath, output: pathlib.PurePath) -> None:
         self.template = template
         self.output = output
-        # add a pre processor?
 
     def render(self, data: dict) -> None:
         with open(self.template) as f:
@@ -119,82 +52,72 @@ class Renderer:
             f.write(rendered)
 
 
-class SetStatistics:
+class IndividualTable(BaseModel):
+    name: str = ""
+    points: int = 0
+    played: int = 0
+    wins: int = 0
+    draws: int = 0
+    loses: int = 0
+    goals: int = 0
+    assists: int = 0
+    goals_and_assists: int = 0
+    cleansheets: int = 0
+    red_cards: int = 0
+    yellow_cards: int = 0
+
+
+class TeamTable(BaseModel):
+    team: str = ""
+    points: int = 0
+    played: int = 0
+    wins: int = 0
+    draws: int = 0
+    losses: int = 0
+    goals_scored: int = 0
+    goals_conceded: int = 0
+    goals_difference: int = 0
+    cleansheets: int = 0
+    red_cards: int = 0
+    yellow_cards: int = 0
+
+
+class SetStatistics(BaseModel):
     def __init__(self) -> None:
         pass
 
-    def add_events(self, results: list[dict], teams: dict[str, list], table_map: dict) -> dict:
-        team_stats = {}
-        player_teams = {}
-
-        for key, value in teams.items():
-            team_stats[key] = {
-                "pts": 0,
-                "p": 0,
-                "w": 0,
-                "d": 0,
-                "l": 0,
-                "cleansheets": 0,
-            }
-            for player in value:
-                player_teams[player] = key
-
-        for result in results:
-            ...
-
-    @staticmethod
-    def empty_table() -> dict:
-        return {
-            "name": "",
-            "pts": 0,
-            "p": 0,
-            "w": 0,
-            "d": 0,
-            "l": 0,
-            "goals": 0,
-            "assists": 0,
-            "g/a": 0,
-            "cleansheets": 0,
-        }
+    def apply_stats(self) -> IndividualTable:
+        ...
 
 
-class LeagueKnockoutStatistics:
-    def __init__(self) -> None:
-        pass
-
-    def add_events(self, store, fixtures) -> dict: ...
-
-    def empty_table(self) -> dict:
-        return {
-            "name": "",
-            "goals": 0,
-            "assists": 0,
-            "g/a": 0,
-            "cleansheets": 0,
-            "redcards": 0,
-            "yellowcards": 0,
-        }
+class SetRoundData(BaseModel):
+    teams: dict[str, list[str]]
+    fixtures: list[Fixture]
+    table: IndividualTable
 
 
-class LeaguesKnockoutStatistics:
-    def __init__(self) -> None:
-        pass
+class LeagueRoundData(BaseModel):
+    players_stats: IndividualTable
+    team_stats: TeamTable
 
-    def add_events(self, store, fixtures) -> dict: ...
 
-    def empty_table(self) -> dict:
-        return {
-            "name": "",
-            "pts": 0,
-            "p": 0,
-            "w": 0,
-            "d": 0,
-            "l": 0,
-            "+/-": [0, 0],
-            "gd": 0,
-            "goals": 0,
-            "cleansheets": 0,
-        }
+class Leagues_RoundData(BaseModel):
+    table: dict[str, list[str]]
+    players_stats: IndividualTable
+    team_stats: TeamTable
+
+
+class LeaguesData(BaseModel):
+    current_round: int
+    teams: dict[str, list[str]]
+    fixtures: list[Fixture]
+    titles: dict[str, str]
+    round_data: dict[str, Leagues_RoundData]
+
+
+class SetData(BaseModel):
+    current_round: int
+    round_data: dict[str, SetRoundData]
 
 
 class SetRepository:
@@ -218,8 +141,10 @@ class SetRepository:
             data = json.load(f)
         return data
     
-    def injest_events(self, season: str, events: dict) -> None:
+    def injest_events(self, fixtures: list[Fixture]) -> None:
         ...
+        # verify the fixture exists
+        # update the fixture with the new events
 
 
 class Set:
@@ -292,7 +217,7 @@ class Set:
         teams: dict[str, list[str]] | None,
         new_round: bool,
         result: list[dict] | None,
-        events: list[Event]
+        fixtures: list[Fixture]
     ) -> None:
         print("""
         ``````````````````````````````````````
@@ -329,7 +254,7 @@ class Set:
                         "away": away,
                         "date": date,
                         "round": current_round,
-                        "group": "",
+                        "stage": "",
                     }
                 )
 
@@ -366,6 +291,53 @@ class Set:
         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
 
         # render the template
+
+
+class League_KnockoutStatistics(BaseModel):
+    def __init__(self) -> None:
+        pass
+
+    def add_events(self, store, fixtures) -> dict: ...
+
+    def empty_table(self) -> dict:
+        return {
+            "name": "",
+            "goals": 0,
+            "assists": 0,
+            "g/a": 0,
+            "cleansheets": 0,
+            "redcards": 0,
+            "yellowcards": 0,
+        }
+
+
+class Leagues_KnockoutStatistics(BaseModel):
+    def __init__(self) -> None:
+        pass
+
+    def add_events(self, store, fixtures) -> dict: ...
+
+    def empty_table(self) -> dict:
+        return {
+            "name": "",
+            "points": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "+/-": [0, 0],
+            "gd": 0,
+            "goals": 0,
+            "cleansheets": 0,
+        }
+
+
+class LeagueData(BaseModel):
+    ...
+
+
+class MultipleLeagueData(BaseModel):
+    ...
 
 
 class LeagueRepository:
