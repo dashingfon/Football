@@ -126,7 +126,8 @@ class Fixture(BaseModel):
     def group_by_datetime(
         fixtures: list["Fixture"],
     ) -> dict[str, dict[str, list["Fixture"]]]:
-        result = {}
+        matchday_group = {}
+        matchtime_group = {}
         for fixture in fixtures:
             ...
 
@@ -259,7 +260,7 @@ def input_fixture(
             event = Event.input_event(event_name)
         except KeyError:
             print(f"no handler for {event_name}! \n")
-            event_data = json.loads(input("Enter the event data as valid json"))
+            event_data = json.loads(input("Enter the event data as valid json dict: "))
             event = Event(
                 fixture=f"{home}_vs_{away}", name=event_name, event=event_data
             )
