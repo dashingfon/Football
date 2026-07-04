@@ -18,12 +18,6 @@ class Team(BaseModel):
     players: list[str]
 
 
-class TeamGoals(BaseModel):
-    team: str
-    goals: list[Goal]
-    penalty_goals: list[Goal]
-
-
 class Event(BaseModel):
     fixture: str
     name: str
@@ -82,23 +76,17 @@ class TeamTable(BaseModel):
     yellow_cards: int = 0
 
 
-class SetStatistics(BaseModel):
-    def __init__(self) -> None:
-        pass
-
-    def apply_stats(self) -> IndividualTable:
-        ...
-
-
-class SetRoundData(BaseModel):
-    teams: dict[str, list[str]]
-    fixtures: list[Fixture]
-    table: IndividualTable
-
-
 class LeagueRoundData(BaseModel):
     players_stats: IndividualTable
     team_stats: TeamTable
+
+
+class LeagueData(BaseModel):
+    current_round: int
+    teams: dict[str, list[str]]
+    fixtures: list[Fixture]
+    titles: dict[str, str]
+    round_data: dict[str, LeagueRoundData]
 
 
 class Leagues_RoundData(BaseModel):
@@ -115,9 +103,29 @@ class LeaguesData(BaseModel):
     round_data: dict[str, Leagues_RoundData]
 
 
+class SetStatistics(BaseModel):
+    def __init__(self) -> None:
+        pass
+
+    def apply_stats(self) -> IndividualTable:
+        ...
+
+
+class SetRoundData(BaseModel):
+    teams: dict[str, list[str]]
+    fixtures: list[Fixture]
+    table: IndividualTable
+
 class SetData(BaseModel):
     current_round: int
     round_data: dict[str, SetRoundData]
+
+    @classmethod
+    def from_path(path: pathlib.PurePath) -> "SetData":
+        ...
+
+    def save(self, season: str, path: pathlib.PurePath) -> None:
+        ...
 
 
 class SetRepository:
@@ -331,9 +339,6 @@ class Leagues_KnockoutStatistics(BaseModel):
             "cleansheets": 0,
         }
 
-
-class LeagueData(BaseModel):
-    ...
 
 
 class MultipleLeagueData(BaseModel):
