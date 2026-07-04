@@ -36,6 +36,29 @@ class Event(BaseModel):
     event: dict
 
     @staticmethod
+    def input_penalty_shootout() -> "Event":
+        result = None
+        fixture = input("Enter the fixture name: ")
+        while result is None:
+            shots = []
+            try:
+                shot_count = int(input("Enter the number of shoots in the shootout: "))
+            except NameError:
+                print(f"Invalid integer!, try Again...")
+                continue
+
+            for _ in range(shot_count):
+                side = input("Enter home or away to select the team side: ")
+                scored = input("Enter any character if the shot was saved: ")
+                shots.append({"side": side, "scored": bool(scored)})
+            result = Event(
+                fixture=fixture,
+                name="penalty_shootout",
+                event={"shots": shots},
+            )
+        return result
+
+    @staticmethod
     def input_goal() -> "Event":
         result = None
         fixture = input("Enter the fixture name: ")
@@ -51,6 +74,7 @@ class Event(BaseModel):
                 fixture=fixture,
                 name="goal",
                 event={
+                    "side": side,
                     "scorer": scorer,
                     "assist": assist,
                     "is_own_goal": own_goal != "",
@@ -106,6 +130,8 @@ class Event(BaseModel):
     def input_event(event_name: str) -> "Event":
         if event_name == "goal":
             return Event.input_goal()
+        elif event_name == "penalty_shootout":
+            return Event.input_penalty_shootout()
         elif event_name == "sub":
             return Event.input_sub()
         elif event_name == "yellow card":
@@ -126,13 +152,16 @@ class Fixture(BaseModel):
     def group_by_datetime(
         fixtures: list["Fixture"],
     ) -> dict[str, dict[str, list["Fixture"]]]:
-        matchday_group = {}
-        matchtime_group = {}
+        matchday_group: dict[str, dict[str, list["Fixture"]]] = {}
         for fixture in fixtures:
-            ...
-
-
-        return result
+            date_str = fixture.date.strftime(DATE_FORMAT)
+            time_str = fixture.date.strftime(TIME_FORMAT)
+            if date_str not in matchday_group:
+                matchday_group[date_str] = {}
+            if time_str not in matchday_group[date_str]:
+                matchday_group[date_str][time_str] = []
+            matchday_group[date_str][time_str].append(fixture)
+        return matchday_group
 
     def model_post_init(self, _):
         event_map = {}
@@ -142,6 +171,7 @@ class Fixture(BaseModel):
             if event.name not in event_map:
                 event_map[event.name] = []
             event_map[event.name].append(event.event)
+        self.map = event_map
 
 
 class Renderer:
@@ -284,8 +314,10 @@ def apply_league_statistics(
     team_map = TeamTable.map_teams(team_table)
 
     for fixture in fixtures:
-        ...
+        fixture_map = fixture.map
 
+        for goal in fixture_map["goals"]:
+            ...
 
     return (player_result, team_result)
 
@@ -298,7 +330,10 @@ def apply_set_statistics(
     player_map = IndividualTable.map_players(player_table)
 
     for fixture in fixtures:
-        ...
+        fixture_map = fixture.map
+
+        for goal in fixture_map["goals"]:
+            ...
 
     return result
 
@@ -382,9 +417,6 @@ class Set(BaseModel):
 
     def update_stats(
         self,
-        stats: Callable[
-            [list[Fixture], list[IndividualTable], list[Team]], list[IndividualTable]
-        ],
         path: pathlib.PurePath,
     ) -> None:
         current_round = self.current_round
@@ -393,7 +425,7 @@ class Set(BaseModel):
             teams = self.round_data[current_round].teams
             fixtures = self.round_data[current_round].fixtures
 
-            updated_table = stats(fixtures, table, teams)
+            updated_table = apply_set_statistics(fixtures, table, teams)
             self.round_data[current_round].table = updated_table
             save(self, path)
         else:
