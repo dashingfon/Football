@@ -1,6 +1,5 @@
 import json
 import pathlib
-from copy import deepcopy
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from typing import Callable
@@ -9,6 +8,8 @@ from pydantic import BaseModel, Field
 from jinja2 import Template
 
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+DATE_FORMAT = "%Y-%m-%d"
+TIME_FORMAT = "%H:%M:%S"
 
 
 class Goal(BaseModel):
@@ -120,6 +121,17 @@ class Fixture(BaseModel):
     away: str
     date: datetime
     events: list[Event] | None = None
+
+    @staticmethod
+    def group_by_datetime(
+        fixtures: list["Fixture"],
+    ) -> dict[str, dict[str, list["Fixture"]]]:
+        result = {}
+        for fixture in fixtures:
+            ...
+
+
+        return result
 
     def model_post_init(self, _):
         event_map = {}
@@ -248,7 +260,9 @@ def input_fixture(
         except KeyError:
             print(f"no handler for {event_name}! \n")
             event_data = json.loads(input("Enter the event data as valid json"))
-            event = Event(fixture=f"{home}_vs_{away}", name=event_name, event=event_data)
+            event = Event(
+                fixture=f"{home}_vs_{away}", name=event_name, event=event_data
+            )
         events.append(event)
     result = Fixture(home=home, away=away, date=date, events=events)
 
@@ -261,18 +275,31 @@ def apply_league_statistics(
     player_table: list[IndividualTable],
     team_table: list[TeamTable],
     teams: list[Team],
-) -> tuple[list[IndividualTable], list[TeamTable]]: ...
+) -> tuple[list[IndividualTable], list[TeamTable]]:
+    team_result = []
+    player_result = []
+    teams_name_map = Team.map_teams(teams)
+    player_map = IndividualTable.map_players(player_table)
+    team_map = TeamTable.map_teams(team_table)
+
+    for fixture in fixtures:
+        ...
+
+
+    return (player_result, team_result)
 
 
 def apply_set_statistics(
     fixtures: list[Fixture], player_table: list[IndividualTable], teams: list[Team]
 ) -> list[IndividualTable]:
-    result = IndividualTable()
-    team_map = Team.map_teams(teams)
+    result = []
+    teams_map = Team.map_teams(teams)
     player_map = IndividualTable.map_players(player_table)
 
     for fixture in fixtures:
         ...
+
+    return result
 
 
 class SetRoundData(BaseModel):
@@ -281,19 +308,19 @@ class SetRoundData(BaseModel):
     table: list[IndividualTable]
 
 
-class SetData(BaseModel):
+class Set(BaseModel):
     season: str
     current_round: int
     round_data: list[SetRoundData]
 
     @classmethod
-    def from_path(cls, path: pathlib.PurePath) -> "SetData":
+    def load(cls, path: pathlib.PurePath) -> "Set":
         with open(path) as f:
             data = json.load(f)
         return cls(**data)
 
     @classmethod
-    def new_season(cls, season: str, path: pathlib.PurePath) -> "SetData":
+    def new_season(cls, season: str, path: pathlib.PurePath) -> "Set":
         print("Starting a new season! ...\n")
 
         players = input("Enter list of players seperated by space: ")
@@ -393,7 +420,7 @@ class SetData(BaseModel):
 #     def start_new_season(self, season: str) -> None:
 #         print("""
 #         ``````````````````````````````````````
-              
+
 #         Starting a new season.
 
 #         `````````````````````````````````````````
@@ -460,7 +487,7 @@ class SetData(BaseModel):
 #     ) -> None:
 #         print("""
 #         ``````````````````````````````````````
-              
+
 #         Adding Match Results.
 
 #         `````````````````````````````````````````
@@ -503,7 +530,7 @@ class SetData(BaseModel):
 #     def update_stats(self, season: str, set_stats: SetStatistics) -> None:
 #         print("""
 #         ``````````````````````````````````````
-        
+
 #         Updating Player Statistics.
 
 #         `````````````````````````````````````````
@@ -530,10 +557,6 @@ class SetData(BaseModel):
 #         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
 
 #         # render the template
-
-
-
-
 
 
 class League: ...
