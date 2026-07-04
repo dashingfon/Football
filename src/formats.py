@@ -2,6 +2,7 @@ import json
 import pathlib
 from copy import deepcopy
 from datetime import datetime
+from typing import Callable
 
 from pydantic import BaseModel
 from jinja2 import Template
@@ -91,8 +92,8 @@ class LeagueData(BaseModel):
 
 class Leagues_RoundData(BaseModel):
     table: dict[str, list[str]]
-    players_stats: IndividualTable
-    team_stats: TeamTable
+    players_stats: list[IndividualTable]
+    team_stats: list[TeamTable]
 
 
 class LeaguesData(BaseModel):
@@ -103,56 +104,54 @@ class LeaguesData(BaseModel):
     round_data: dict[str, Leagues_RoundData]
 
 
-class SetStatistics(BaseModel):
-    def __init__(self) -> None:
-        pass
-
-    def apply_stats(self) -> IndividualTable:
-        ...
+def apply_set_statistics(
+    fixtures: list[Fixture], table: list[IndividualTable]
+) -> list[IndividualTable]: ...
 
 
 class SetRoundData(BaseModel):
     teams: dict[str, list[str]]
     fixtures: list[Fixture]
-    table: IndividualTable
+    table: list[IndividualTable]
+
 
 class SetData(BaseModel):
+    season: str
     current_round: int
     round_data: dict[str, SetRoundData]
 
     @classmethod
-    def from_path(path: pathlib.PurePath) -> "SetData":
-        ...
+    def from_path(cls, path: pathlib.PurePath) -> "SetData":
+        with open(path) as f:
+            data = json.load(f)
+        return cls(**data)
 
-    def save(self, season: str, path: pathlib.PurePath) -> None:
-        ...
+    @classmethod
+    def new_season(cls, season: str) -> "SetData": ...
 
-
-class SetRepository:
-    def __init__(self, path: pathlib.PurePath) -> None:
-        self.data_path = path
-
-    def write(self, season: str, data: dict, new: bool = False):
+    def save(self, path: pathlib.PurePath, new: bool = False) -> None:
         if new:
-            with open(self.data_path / "seasons.json") as f:
+            with open(path / "seasons.json") as f:
                 seasons = json.load(f)
-                seasons.append(season)
+                seasons.append(self.season)
 
-            with open(self.data_path / "seasons.json", "w") as f:
+            with open(path / "seasons.json", "w") as f:
                 json.dump(seasons, f, indent=2)
 
-        with open(self.data_path / f"{season}.json", "w") as f:
-            json.dump(data, f, indent=2)
+        with open(path / f"{self.season}.json", "w") as f:
+            json.dump(self.model_dump_json(), f, indent=2)
 
-    def read(self, season: str) -> dict:
-        with open(self.data_path / f"{season}.json") as f:
-            data = json.load(f)
-        return data
-    
-    def injest_events(self, fixtures: list[Fixture]) -> None:
-        ...
-        # verify the fixture exists
-        # update the fixture with the new events
+    @staticmethod
+    def input_teams() -> list[Team]: ...
+
+    @staticmethod
+    def input_fixtures() -> list[Fixture]: ...
+
+    def update_fixtures(self, fixtures: list[Fixture] | None): ...
+
+    def update_stats(
+        self, stats: Callable[[list[Fixture], IndividualTable], IndividualTable]
+    ) -> None: ...
 
 
 class Set:
@@ -225,7 +224,7 @@ class Set:
         teams: dict[str, list[str]] | None,
         new_round: bool,
         result: list[dict] | None,
-        fixtures: list[Fixture]
+        fixtures: list[Fixture],
     ) -> None:
         print("""
         ``````````````````````````````````````
@@ -340,15 +339,10 @@ class Leagues_KnockoutStatistics(BaseModel):
         }
 
 
-
-class MultipleLeagueData(BaseModel):
-    ...
+class MultipleLeagueData(BaseModel): ...
 
 
-class LeagueRepository:
-    ...
+class LeagueRepository: ...
 
 
-class League(Set):
-    ...
-
+class League(Set): ...
