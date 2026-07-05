@@ -17,9 +17,6 @@
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
@@ -29,7 +26,6 @@
     --color-zinc-600: oklch(44.2% 0.017 285.786);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
     --color-neutral-800: oklch(26.9% 0 0);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-sm: 24rem;
@@ -294,9 +290,6 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
-  .bottom-18 {
-    bottom: calc(var(--spacing) * 18);
-  }
   .bottom-\[-1\.1em\] {
     bottom: -1.1em;
   }
@@ -320,9 +313,6 @@
   }
   .z-10 {
     z-index: 10;
-  }
-  .z-40 {
-    z-index: 40;
   }
   .z-50 {
     z-index: 50;
@@ -416,9 +406,6 @@
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
-  }
-  .-mr-3 {
-    margin-right: calc(var(--spacing) * -3);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
@@ -947,9 +934,6 @@
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
-  .border-gray-300 {
-    border-color: var(--color-gray-300);
-  }
   .border-gray-950 {
     border-color: var(--color-gray-950);
   }
@@ -1027,12 +1011,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--brand) 80%, transparent);
     }
-  }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
   }
   .bg-gray-800 {
     background-color: var(--color-gray-800);
@@ -1174,9 +1152,6 @@
   .bg-clip-text {
     background-clip: text;
   }
-  .fill-black {
-    fill: var(--color-black);
-  }
   .fill-brand {
     fill: var(--brand);
   }
@@ -1191,9 +1166,6 @@
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
-  }
-  .p-1\.5 {
-    padding: calc(var(--spacing) * 1.5);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -1375,9 +1347,6 @@
   }
   .text-brand {
     color: var(--brand);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
   }
   .text-gray-800 {
     color: var(--color-gray-800);
@@ -1679,19 +1648,9 @@
       border-color: transparent;
     }
   }
-  .group-data-\[active\=league\]\:block {
-    &:is(:where(.group)[data-active="league"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=league\]\:hidden {
-    &:is(:where(.group)[data-active="league"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=league\]\:text-black {
-    &:is(:where(.group)[data-active="league"] *) {
-      color: var(--color-black);
+  .group-data-\[active\=false\]\:text-text-6 {
+    &:is(:where(.group)[data-active="false"] *) {
+      color: var(--text-6);
     }
   }
   .group-data-\[active\=league\]\:text-brand {
@@ -1704,31 +1663,6 @@
       color: var(--text-1);
     }
   }
-  .group-data-\[active\=league\]\:text-white {
-    &:is(:where(.group)[data-active="league"] *) {
-      color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=matches\]\:block {
-    &:is(:where(.group)[data-active="matches"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=matches\]\:hidden {
-    &:is(:where(.group)[data-active="matches"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=matches\]\:fill-black {
-    &:is(:where(.group)[data-active="matches"] *) {
-      fill: var(--color-black);
-    }
-  }
-  .group-data-\[active\=matches\]\:text-black {
-    &:is(:where(.group)[data-active="matches"] *) {
-      color: var(--color-black);
-    }
-  }
   .group-data-\[active\=matches\]\:text-brand {
     &:is(:where(.group)[data-active="matches"] *) {
       color: var(--brand);
@@ -1737,26 +1671,6 @@
   .group-data-\[active\=matches\]\:text-text-1 {
     &:is(:where(.group)[data-active="matches"] *) {
       color: var(--text-1);
-    }
-  }
-  .group-data-\[active\=matches\]\:text-white {
-    &:is(:where(.group)[data-active="matches"] *) {
-      color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=news\]\:block {
-    &:is(:where(.group)[data-active="news"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=news\]\:hidden {
-    &:is(:where(.group)[data-active="news"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=news\]\:text-black {
-    &:is(:where(.group)[data-active="news"] *) {
-      color: var(--color-black);
     }
   }
   .group-data-\[active\=news\]\:text-brand {
@@ -1769,26 +1683,6 @@
       color: var(--text-1);
     }
   }
-  .group-data-\[active\=news\]\:text-white {
-    &:is(:where(.group)[data-active="news"] *) {
-      color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=profile\]\:block {
-    &:is(:where(.group)[data-active="profile"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[active\=profile\]\:hidden {
-    &:is(:where(.group)[data-active="profile"] *) {
-      display: none;
-    }
-  }
-  .group-data-\[active\=profile\]\:text-black {
-    &:is(:where(.group)[data-active="profile"] *) {
-      color: var(--color-black);
-    }
-  }
   .group-data-\[active\=profile\]\:text-brand {
     &:is(:where(.group)[data-active="profile"] *) {
       color: var(--brand);
@@ -1797,11 +1691,6 @@
   .group-data-\[active\=profile\]\:text-text-1 {
     &:is(:where(.group)[data-active="profile"] *) {
       color: var(--text-1);
-    }
-  }
-  .group-data-\[active\=profile\]\:text-white {
-    &:is(:where(.group)[data-active="profile"] *) {
-      color: var(--color-white);
     }
   }
   .group-data-\[active\=true\]\:border-b-4 {
@@ -1822,11 +1711,6 @@
   }
   .group-data-\[direction\=up\]\:block {
     &:is(:where(.group)[data-direction="up"] *) {
-      display: block;
-    }
-  }
-  .group-data-\[expanded\=true\]\:block {
-    &:is(:where(.group)[data-expanded="true"] *) {
       display: block;
     }
   }
@@ -1870,11 +1754,6 @@
       display: none;
     }
   }
-  .group-data-\[theme\=dark\]\:block {
-    &:is(:where(.group)[data-theme="dark"] *) {
-      display: block;
-    }
-  }
   .group-data-\[theme\=dark\]\:hidden {
     &:is(:where(.group)[data-theme="dark"] *) {
       display: none;
@@ -1893,11 +1772,6 @@
   .group-data-\[theme\=light\]\:block {
     &:is(:where(.group)[data-theme="light"] *) {
       display: block;
-    }
-  }
-  .group-data-\[theme\=light\]\:hidden {
-    &:is(:where(.group)[data-theme="light"] *) {
-      display: none;
     }
   }
   .group-data-\[theme\=light\]\/body\:block {
@@ -2015,13 +1889,6 @@
       }
     }
   }
-  .hover\:bg-gray-100 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-100);
-      }
-    }
-  }
   .hover\:bg-gray-200 {
     &:hover {
       @media (hover: hover) {
@@ -2085,11 +1952,6 @@
   .data-\[expanded\=false\]\:w-16 {
     &[data-expanded="false"] {
       width: calc(var(--spacing) * 16);
-    }
-  }
-  .data-\[expanded\=true\]\:w-70 {
-    &[data-expanded="true"] {
-      width: calc(var(--spacing) * 70);
     }
   }
   .data-\[hidden\=true\]\:translate-y-full {
@@ -2238,34 +2100,9 @@
       padding-left: calc(var(--spacing) * 5);
     }
   }
-  .dark\:border-gray-600 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-gray-600);
-    }
-  }
-  .dark\:border-gray-700 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-gray-700);
-    }
-  }
   .dark\:bg-gray-50 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-50);
-    }
-  }
-  .dark\:bg-gray-700 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-gray-700);
-    }
-  }
-  .dark\:bg-gray-900 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-gray-900);
-    }
-  }
-  .dark\:fill-white {
-    @media (prefers-color-scheme: dark) {
-      fill: var(--color-white);
     }
   }
   .dark\:text-gray-100 {
@@ -2281,78 +2118,6 @@
   .dark\:text-white {
     @media (prefers-color-scheme: dark) {
       color: var(--color-white);
-    }
-  }
-  .group-data-\[active\=league\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="league"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=league\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="league"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=matches\]\:dark\:fill-white {
-    &:is(:where(.group)[data-active="matches"] *) {
-      @media (prefers-color-scheme: dark) {
-        fill: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=matches\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="matches"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=matches\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="matches"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=news\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="news"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=news\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="news"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .group-data-\[active\=profile\]\:dark\:text-black {
-    &:is(:where(.group)[data-active="profile"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .group-data-\[active\=profile\]\:dark\:text-white {
-    &:is(:where(.group)[data-active="profile"] *) {
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .dark\:hover\:bg-gray-600 {
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: var(--color-gray-600);
-        }
-      }
     }
   }
   .dark\:hover\:bg-gray-700 {
