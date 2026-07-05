@@ -618,6 +618,7 @@ class Set(BaseModel):
 
         team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
         table = self.round_data[-1].table
+
         g_a = {}
         for item in table:
             if item.name not in g_a:
@@ -688,9 +689,7 @@ class MultipleLeagueKnockout(BaseModel):
             table=table_dict,
             pre_season=pre_season,
             rounds=[
-                Leagues_RoundData(
-                    players_stats=player_stats, team_stats=team_stats
-                )
+                Leagues_RoundData(players_stats=player_stats, team_stats=team_stats)
             ],
         )
         print(path)
@@ -737,11 +736,7 @@ class MultipleLeagueKnockout(BaseModel):
 
         if new_round:
             self.current_round += 1
-            self.rounds.append(
-                Leagues_RoundData(
-                    players_stats=[], team_stats=[]
-                )
-            )
+            self.rounds.append(Leagues_RoundData(players_stats=[], team_stats=[]))
             self.fixtures = fixtures
         else:
             self.fixtures.extend(fixtures)
@@ -796,11 +791,16 @@ class MultipleLeagueKnockout(BaseModel):
         #     "data": self,
         #     "raw_season": season,
         #     "season": season.replace("_", " ").capitalize(),
-        #     "team_to_color": team_to_color,
+        #     "team_to_logo": team_to_color,
         #     "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
         #     "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
-        #     "goal_difference": g_a_tuple[:3],
+        #     "g_a": g_a_tuple[:3],
         #     "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
+                # team_goals_scored:
+                # team_goals_conceeded:
+                # team_goals_cleansheet:
+                # team_goals_red_cards:
+                # team_goals_yellow_cards:
         # }
         # default_renderer.render(default_content)
 
