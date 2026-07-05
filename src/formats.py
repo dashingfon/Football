@@ -360,8 +360,8 @@ def apply_league_statistics(
 
     for fixture in fixtures:
         fixture_map = fixture.map
-        home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
-        away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
+        home_goals = [g for g in fixture_map["goal"] if g["side"] == "h"]
+        away_goals = [g for g in fixture_map["goal"] if g["side"] == "a"]
 
         team_map[fixture.home].played += 1
         team_map[fixture.away].played += 1
@@ -407,32 +407,35 @@ def apply_league_statistics(
             player_map[player].draws += team_map[fixture.away].draws
             player_map[player].loses += team_map[fixture.away].loses
 
-        for goal in fixture_map["goals"]:
-            if goal["is_own_goal"]:
-                continue
-            player_map[goal["scorer"]].goals += 1
-            if "assist" in goal and goal["assist"] != "":
-                player_map[goal["assist"]].assists += 1
+        if "goal" in fixture_map:
+            for goal in fixture_map["goal"]:
+                if goal["is_own_goal"]:
+                    continue
+                player_map[goal["scorer"]].goals += 1
+                if "assist" in goal and goal["assist"] != "":
+                    player_map[goal["assist"]].assists += 1
 
-        for yellow in fixture_map["yellow_card"]:
-            player_map[yellow["player"]].yellow_cards += 1
+        if "yellow_card" in fixture_map:
+            for yellow in fixture_map["yellow_card"]:
+                player_map[yellow["player"]].yellow_cards += 1
 
-        for red in fixture_map["red_card"]:
-            player_map[red["player"]].red_cards += 1
+            team_map[fixture.home].yellow_cards += len(
+                [item for item in fixture_map["yellow_card"] if item["side"] == "h"]
+            )
+            team_map[fixture.away].yellow_cards += len(
+                [item for item in fixture_map["yellow_card"] if item["side"] == "a"]
+            )
 
-        team_map[fixture.home].red_cards += len(
-            [item for item in fixture_map["red_card"] if item["side"] == "h"]
-        )
-        team_map[fixture.away].red_cards += len(
-            [item for item in fixture_map["red_card"] if item["side"] == "a"]
-        )
+        if "red_card" in fixture_map:
+            for red in fixture_map["red_card"]:
+                player_map[red["player"]].red_cards += 1
 
-        team_map[fixture.home].yellow_cards += len(
-            [item for item in fixture_map["yellow_card"] if item["side"] == "h"]
-        )
-        team_map[fixture.away].yellow_cards += len(
-            [item for item in fixture_map["yellow_card"] if item["side"] == "a"]
-        )
+            team_map[fixture.home].red_cards += len(
+                [item for item in fixture_map["red_card"] if item["side"] == "h"]
+            )
+            team_map[fixture.away].red_cards += len(
+                [item for item in fixture_map["red_card"] if item["side"] == "a"]
+            )
 
     return (
         [result for result in player_map.values()],
@@ -449,8 +452,8 @@ def apply_set_statistics(
     for fixture in fixtures:
         fixture_map = fixture.map
 
-        home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
-        away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
+        home_goals = [g for g in fixture_map["goal"] if g["side"] == "h"]
+        away_goals = [g for g in fixture_map["goal"] if g["side"] == "a"]
 
         home_players = teams_map[fixture.home]
         away_players = teams_map[fixture.away]
@@ -476,7 +479,7 @@ def apply_set_statistics(
         if len(home_goals) == 0:
             home_table.cleansheets += 1
 
-        for goal in fixture_map["goals"]:
+        for goal in fixture_map["goal"]:
             player_map[goal["scorer"]].goals += 1
             if "assist" in goal:
                 player_map[goal["assist"]].assists += 1
@@ -669,19 +672,37 @@ class MultipleLeagueKnockout(BaseModel):
     ) -> "MultipleLeagueKnockout":
         print("Starting a new season! ...\n")
 
+        player_stats = []
+        team_stats = []
+
+        for team in teams:
+            team_stats.append(TeamTable(team=team.name))
+            for player in team.players:
+                player_stats.append(IndividualTable(name=player))
+
         full_data = cls(
             season=season,
             current_round=0,
             teams=teams,
             fixtures=fixtures,
             pre_season=pre_season,
-            rounds=[Leagues_RoundData(table=table_dict)],
+            rounds=[
+                Leagues_RoundData(
+                    table=table_dict, players_stats=player_stats, team_stats=team_stats
+                )
+            ],
         )
         print(path)
 
-        with open(path / "seasons.json") as f:
-            seasons = json.load(f)
-            seasons.append(season)
+        try:
+            with open(path / "seasons.json") as f:
+                seasons = json.load(f)
+                seasons.append(season)
+        except Exception:
+            pathlib.Path(path).mkdir(exist_ok=True)
+            with open(path / "seasons.json", "w") as f:
+                json.dump([season], f)
+            seasons = [season]
 
         with open(path / "seasons.json", "w") as f:
             json.dump(seasons, f, indent=2)
@@ -729,14 +750,14 @@ class MultipleLeagueKnockout(BaseModel):
 
     def update_stats(self, path: pathlib.PurePath) -> None:
         current_round = self.current_round
-        if current_round > 1:
+        if current_round >= 1:
             teams = self.teams
             fixtures = self.fixtures
 
             individual_table, team_table = apply_league_statistics(
                 fixtures,
-                self.rounds[current_round].players_stats,
-                self.rounds[current_round].team_stats,
+                self.rounds[current_round - 1].players_stats,
+                self.rounds[current_round - 1].team_stats,
                 teams,
             )
             self.rounds[current_round].players_stats = individual_table
@@ -787,7 +808,13 @@ class MultipleLeagueKnockout(BaseModel):
 
 
 if __name__ == "__main__":
-    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons"
+    path = (
+        pathlib.PurePath(__file__).parent.parent
+        / "frontend"
+        / "leagues"
+        / "test"
+        / "seasons"
+    )
     season = "july_august"
     teams = [
         Team(
@@ -1427,7 +1454,7 @@ if __name__ == "__main__":
                     name="yellow_card",
                     event={
                         "side": "h",
-                        "player": "Damsel",
+                        "player": "Dami",
                     },
                 ),
                 Event(
@@ -1481,7 +1508,12 @@ if __name__ == "__main__":
         ),
     ]
 
-    data.update_fixtures(preseason=[], fixtures=new_fixtures, new_round=True, path=path / "july_august.json")
-    data.update_stats(path)
+    data.update_fixtures(
+        preseason=[],
+        fixtures=new_fixtures,
+        new_round=True,
+        path=path / "july_august.json",
+    )
+    data.update_stats(path / "july_august.json")
 
     # data.build(season=season)
