@@ -729,7 +729,7 @@ class MultipleLeagueKnockout(BaseModel):
         else:
             print("No Previous stats to update! ")
 
-        # build statistics!
+        # build statistics file!
 
     def build(
         self, season: str, default_renderer: Renderer, season_renderer: Renderer
@@ -744,27 +744,160 @@ class MultipleLeagueKnockout(BaseModel):
         team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
         table = self.rounds[-1].table
         goal_difference = {}
-        for item in table:
-            if item.name not in goal_difference:
-                goal_difference[item.name] = 0
-            goal_difference[item.name] += item.assists
-            goal_difference[item.name] += item.goals
-        g_a_tuple = tuple(sorted(goal_difference.items(), key=lambda item: item[1], reverse=True))
 
-        default_content = {
-            "url": "./",
-            "root": "",
-            "data": self,
-            "raw_season": season,
-            "season": season.replace("_", " ").capitalize(),
-            "team_to_color": team_to_color,
-            "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
-            "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
-            "goal_difference": g_a_tuple[:3],
-            "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
-        }
-        default_renderer.render(default_content)
+        # for item in table:
+        #     if item.name not in goal_difference:
+        #         goal_difference[item.name] = 0
+        #     goal_difference[item.name] += item.assists
+        #     goal_difference[item.name] += item.goals
+        # g_a_tuple = tuple(sorted(goal_difference.items(), key=lambda item: item[1], reverse=True))
 
-        season_content = {**default_content, "url": "./seasons/"}
-        season_renderer.render(season_content)
+        # default_content = {
+        #     "url": "./",
+        #     "root": "",
+        #     "data": self,
+        #     "raw_season": season,
+        #     "season": season.replace("_", " ").capitalize(),
+        #     "team_to_color": team_to_color,
+        #     "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
+        #     "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
+        #     "goal_difference": g_a_tuple[:3],
+        #     "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
+        # }
+        # default_renderer.render(default_content)
 
+        # season_content = {**default_content, "url": "./seasons/"}
+        # season_renderer.render(season_content)
+
+
+if __name__ == "__main__":
+    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test"
+    season = "july_august"
+    teams = [
+        Team(
+            name="Liverpool",
+            players=[
+                "Kenya",
+                "Dami",
+                "Lola",
+                "Pastor",
+                "Ikenga",
+                "Tm",
+                "Dotun",
+                "Obago",
+                "Emma",
+            ],
+        ),
+        Team(
+            name="Barcelona",
+            players=[
+                "Bisi",
+                "Sadiq",
+                "Tunde",
+                "Somto",
+                "Idris",
+                "Chiboy",
+                "Vardy",
+                "Cambiaso",
+                "Victor",
+                "Taiwo",
+            ],
+        ),
+        Team(
+            name="Manchester United A",
+            players=[
+                "Ola",
+                "Ebuka",
+                "Chris",
+                "Sancho",
+                "Obinna",
+                "Jamiu",
+                "Brainee",
+                "Eze",
+            ],
+        ),
+        Team(
+            name="Real Madrid",
+            players=[
+                "Utaka",
+                "Tola",
+                "Noah",
+                "Yerima",
+                "David",
+                "Amuri",
+                "Martins",
+                "Aremu",
+                "Tunji",
+            ],
+        ),
+        Team(
+            name="Chelsea A",
+            players=[
+                "Segun",
+                "Micheal",
+                "Metu",
+                "Femi",
+                "Ahmed",
+                "Ugo",
+                "Sheriff",
+                "Bidemi",
+            ],
+        ),
+        Team(
+            name="Arsenal",
+            players=[
+                "Lanre",
+                "Nketiah",
+                "Seun",
+                "Friday",
+                "Ogbon",
+                "Kunle",
+                "Fortune",
+            ],
+        ),
+        Team(
+            name="Manchester United B",
+            players=[
+                "Papa",
+                "Ifeanyi",
+                "Hunter",
+                "Jojo",
+                "Benson",
+                "Lino",
+                "Felaini",
+                "Adufe",
+            ],
+        ),
+        Team(
+            name="Chelsea B",
+            players=[
+                "Ola-o",
+                "Aguero",
+                "Yinka",
+                "Machala",
+                "Roland",
+                "Ayo",
+                "Bobby K",
+                "Nifemi",
+            ],
+        ),
+    ]
+    fixtures = []
+    pre_season = []
+    table_dict = {}
+
+    data = MultipleLeagueKnockout.new_season(
+        season=season,
+        path=path,
+        teams=teams,
+        fixtures=fixtures,
+        pre_season=pre_season,
+        table_dict=table_dict,
+    )
+
+    new_fixtures = []
+
+    data.update_fixtures(preseason=[], fixtures=new_fixtures, new_round=True, path=path)
+    data.update_stats(path)
+
+    # data.build(season=season)
