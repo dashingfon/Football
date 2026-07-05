@@ -361,9 +361,9 @@ def apply_league_statistics(
         team_map[fixture.home].played += 1
         team_map[fixture.away].played += 1
 
-        team_map[fixture.home].goals_conceded += 1
+        team_map[fixture.home].goals_conceded += len(away_goals)
         team_map[fixture.home].goals_scored += len(home_goals)
-        team_map[fixture.away].goals_conceded += 1
+        team_map[fixture.away].goals_conceded += len(home_goals)
         team_map[fixture.away].goals_scored += len(away_goals)
 
         if len(home_goals) == len(away_goals):
@@ -381,9 +381,9 @@ def apply_league_statistics(
             team_map[fixture.away].points += 3
 
         if len(away_goals) == 0:
-            team_map[fixture.away].cleansheets += 1
-        if len(home_goals) == 0:
             team_map[fixture.home].cleansheets += 1
+        if len(home_goals) == 0:
+            team_map[fixture.away].cleansheets += 1
         
         home_players = teams_name_map[fixture.home]
         away_players = teams_name_map[fixture.away]
@@ -440,33 +440,26 @@ def apply_set_statistics(
         home_players = teams_map[fixture.home]
         away_players = teams_map[fixture.away]
 
-        home_points = 0
-        away_points = 0
-        home_win = 0
-        away_win = 0
-        home_lose = 0
-        away_lose = 0
-        draws = 0
-        home_cleansheet = 0
-        away_cleansheet = 1
+        home_table = TeamTable()
+        away_table = TeamTable()
 
         if len(home_goals) == len(away_goals):
-            home_points += 1
-            away_points = 1
-            draws += 1
+            home_table.points += 1
+            away_table.points = 1
+            home_table.draws += 1
         elif len(home_goals) > len(away_goals):
-            home_points += 3
-            home_win += 1
-            away_lose += 1
+            home_table.points += 3
+            home_table.wins += 1
+            away_table.loses += 1
         else:
-            away_points += 3
-            home_lose += 1
-            away_win += 1
+            away_table.points += 3
+            away_table.wins += 1
+            home_table.loses += 1
 
         if len(away_goals) == 0:
-            away_cleansheet += 1
+            away_table.cleansheets += 1
         if len(home_goals) == 0:
-            home_cleansheet += 1
+            home_table.cleansheets += 1
 
         for goal in fixture_map["goals"]:
             player_map[goal["scorer"]].goals += 1
@@ -481,19 +474,19 @@ def apply_set_statistics(
 
         for player in home_players.players:
             player_map[player].played += 1
-            player_map[player].points += home_points
-            player_map[player].wins += home_win
-            player_map[player].draws += draws
-            player_map[player].loses += home_lose
-            player_map[player].cleansheets += home_cleansheet
+            player_map[player].points += home_table.points
+            player_map[player].wins += home_table.wins
+            player_map[player].draws += home_table.draws
+            player_map[player].loses += home_table.loses
+            player_map[player].cleansheets += home_table.cleansheets
 
         for player in away_players.players:
             player_map[player].played += 1
-            player_map[player].points += away_points
-            player_map[player].wins += away_win
-            player_map[player].draws += draws
-            player_map[player].loses += away_lose
-            player_map[player].cleansheets += away_cleansheet
+            player_map[player].points += away_table.points
+            player_map[player].wins += away_table.wins
+            player_map[player].draws += home_table.draws
+            player_map[player].loses += away_table.loses
+            player_map[player].cleansheets += away_table.cleansheets
 
     return [result for result in player_map.values()]
 
