@@ -277,7 +277,6 @@ class LeagueData(BaseModel):
 
 
 class Leagues_RoundData(BaseModel):
-    table: dict[str, list[str]]
     players_stats: list[IndividualTable] = Field(default_factory=list)
     team_stats: list[TeamTable] = Field(default_factory=list)
 
@@ -650,6 +649,7 @@ class MultipleLeagueKnockout(BaseModel):
     current_round: int
     teams: list[Team]
     fixtures: list[Fixture]
+    table: dict[str, list[str]]
     pre_season: list[Fixture]
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
@@ -685,10 +685,11 @@ class MultipleLeagueKnockout(BaseModel):
             current_round=0,
             teams=teams,
             fixtures=fixtures,
+            table=table_dict,
             pre_season=pre_season,
             rounds=[
                 Leagues_RoundData(
-                    table=table_dict, players_stats=player_stats, team_stats=team_stats
+                    players_stats=player_stats, team_stats=team_stats
                 )
             ],
         )
@@ -738,7 +739,7 @@ class MultipleLeagueKnockout(BaseModel):
             self.current_round += 1
             self.rounds.append(
                 Leagues_RoundData(
-                    table=self.rounds[-1].table, players_stats=[], team_stats=[]
+                    players_stats=[], team_stats=[]
                 )
             )
             self.fixtures = fixtures
@@ -779,7 +780,7 @@ class MultipleLeagueKnockout(BaseModel):
             return None
 
         team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
-        table = self.rounds[-1].table
+        # table = self.rounds[-1].table
         # goal_difference = {}
 
         # for item in table:
