@@ -1,0 +1,712 @@
+{
+  "season": "july_august",
+  "current_round": 1,
+  "teams": [
+    {
+      "name": "Liverpool",
+      "players": [
+        "Kenya",
+        "Dami",
+        "Lola",
+        "Pastor",
+        "Ikenga",
+        "Tm",
+        "Dotun",
+        "Obago",
+        "Emma"
+      ]
+    },
+    {
+      "name": "Barcelona",
+      "players": [
+        "Bisi",
+        "Sadiq",
+        "Tunde",
+        "Somto",
+        "Idris",
+        "Chiboy",
+        "Vardy",
+        "Cambiaso",
+        "Victor",
+        "Taiwo"
+      ]
+    },
+    {
+      "name": "Manchester United A",
+      "players": [
+        "Ola",
+        "Ebuka",
+        "Chris",
+        "Sancho",
+        "Obinna",
+        "Jamiu",
+        "Brainee",
+        "Eze"
+      ]
+    },
+    {
+      "name": "Real Madrid",
+      "players": [
+        "Utaka",
+        "Tola",
+        "Noah",
+        "Yerima",
+        "David",
+        "Amuri",
+        "Martins",
+        "Aremu",
+        "Tunji"
+      ]
+    },
+    {
+      "name": "Chelsea A",
+      "players": [
+        "Segun",
+        "Micheal",
+        "Metu",
+        "Femi",
+        "Ahmed",
+        "Ugo",
+        "Sheriff",
+        "Bidemi"
+      ]
+    },
+    {
+      "name": "Arsenal",
+      "players": [
+        "Lanre",
+        "Nketiah",
+        "Seun",
+        "Friday",
+        "Ogbon",
+        "Kunle",
+        "Fortune"
+      ]
+    },
+    {
+      "name": "Manchester United B",
+      "players": [
+        "Papa",
+        "Ifeanyi",
+        "Hunter",
+        "Jojo",
+        "Benson",
+        "Lino",
+        "Felaini",
+        "Adufe"
+      ]
+    },
+    {
+      "name": "Chelsea B",
+      "players": [
+        "Ola-o",
+        "Aguero",
+        "Yinka",
+        "Machala",
+        "Roland",
+        "Ayo",
+        "Bobby K",
+        "Nifemi"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "home": "Arsenal",
+      "away": "Manchester United B",
+      "date": "2026-07-05T16:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Manchester United A",
+      "away": "Real Madrid",
+      "date": "2026-07-05T16:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "in": "Aremu", "out": "Brainee" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Sancho" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Yerima" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Martins" }
+        }
+      ],
+      "map": {
+        "sub": [{ "side": "h", "in": "Aremu", "out": "Brainee" }],
+        "yellow_card": [
+          { "side": "h", "player": "Sancho" },
+          { "side": "a", "player": "Yerima" },
+          { "side": "a", "player": "Martins" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Chelsea A",
+      "away": "Barcelona",
+      "date": "2026-07-05T17:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
+        }
+      ],
+      "map": {
+        "sub": [
+          { "side": "a", "in": "Tunde", "out": "Bisi" },
+          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
+          { "side": "a", "in": "Bisi", "out": "Taiwo" },
+          { "side": "h", "in": "Sheriff", "out": "Metu" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Liverpool",
+      "away": "Chelsea B",
+      "date": "2026-07-05T17:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Damsel" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Emma" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Machala" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "yellow_card": [
+          { "side": "h", "player": "Damsel" },
+          { "side": "h", "player": "Emma" },
+          { "side": "a", "player": "Machala" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
+      }
+    }
+  ],
+  "pre_season": [
+    {
+      "home": "Arsenal",
+      "away": "Manchester United B",
+      "date": "2026-07-05T16:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Manchester United A",
+      "away": "Real Madrid",
+      "date": "2026-07-05T16:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "in": "Aremu", "out": "Brainee" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Sancho" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Yerima" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Martins" }
+        }
+      ],
+      "map": {
+        "sub": [{ "side": "h", "in": "Aremu", "out": "Brainee" }],
+        "yellow_card": [
+          { "side": "h", "player": "Sancho" },
+          { "side": "a", "player": "Yerima" },
+          { "side": "a", "player": "Martins" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Chelsea A",
+      "away": "Barcelona",
+      "date": "2026-07-05T17:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
+        }
+      ],
+      "map": {
+        "sub": [
+          { "side": "a", "in": "Tunde", "out": "Bisi" },
+          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
+          { "side": "a", "in": "Bisi", "out": "Taiwo" },
+          { "side": "h", "in": "Sheriff", "out": "Metu" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Liverpool",
+      "away": "Chelsea B",
+      "date": "2026-07-05T17:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Damsel" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Emma" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Machala" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "yellow_card": [
+          { "side": "h", "player": "Damsel" },
+          { "side": "h", "player": "Emma" },
+          { "side": "a", "player": "Machala" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
+      }
+    }
+  ],
+  "titles": {},
+  "rounds": [
+    {
+      "table": {
+        "A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+        "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+      },
+      "players_stats": [],
+      "team_stats": []
+    },
+    {
+      "table": {
+        "A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+        "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+      },
+      "players_stats": [],
+      "team_stats": []
+    }
+  ]
+}

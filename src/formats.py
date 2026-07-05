@@ -177,7 +177,9 @@ class Fixture(BaseModel):
     home: str
     away: str
     date: datetime
+    seconds_duration: int
     events: list[Event] | None = None
+    map: dict = Field(default_factory=dict)
 
     @staticmethod
     def group_by_datetime(
@@ -197,6 +199,7 @@ class Fixture(BaseModel):
     def model_post_init(self, _) -> None:
         event_map: dict[str, list[dict]] = {}
         if self.events is None:
+            self.events = []
             return None
         for event in self.events:
             if event.name not in event_map:
@@ -281,7 +284,7 @@ class Leagues_RoundData(BaseModel):
 
 def save(model: BaseModel, path: pathlib.PurePath) -> None:
     with open(path, "w") as f:
-        json.dump(model.model_dump_json(), f, indent=2)
+        f.write(model.model_dump_json())
 
 
 def input_teams() -> list[Team]:
@@ -296,7 +299,11 @@ def input_teams() -> list[Team]:
 
 
 def input_fixture(
-    home: str, away: str, date: datetime | str, timezone: str = "Africa/Lagos"
+    home: str,
+    away: str,
+    date: datetime | str,
+    seconds_duration: int,
+    timezone: str = "Africa/Lagos",
 ) -> Fixture:
     if isinstance(date, str):
         # "2024-01-15 10:30:00"
@@ -314,7 +321,13 @@ def input_fixture(
             event_data = json.loads(input("Enter the event data as valid json dict: "))
             event = Event(fixture=fixture_name, name=event_name, event=event_data)
         events.append(event)
-    result = Fixture(home=home, away=away, date=date, events=events)
+    result = Fixture(
+        home=home,
+        away=away,
+        date=date,
+        seconds_duration=seconds_duration,
+        events=events,
+    )
 
     result.events = events
     return result
@@ -395,8 +408,10 @@ def apply_league_statistics(
             player_map[player].loses += team_map[fixture.away].loses
 
         for goal in fixture_map["goals"]:
+            if goal["is_own_goal"]:
+                continue
             player_map[goal["scorer"]].goals += 1
-            if "assist" in goal:
+            if "assist" in goal and goal["assist"] != "":
                 player_map[goal["assist"]].assists += 1
 
         for yellow in fixture_map["yellow_card"]:
@@ -551,13 +566,18 @@ class Set(BaseModel):
         if fixtures is None:
             home = input("Enter the home team name: ")
             away = input("Enter the away team name: ")
+            duration = int(input("Enter the seconds duration of the match: "))
             if home not in team_map:
                 raise ValueError(f"Invalid team {home}")
             if away not in team_map:
                 raise ValueError(f"Invalid team {away}")
 
             datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
-            fixtures = [input_fixture(home=home, away=away, date=datetime)]
+            fixtures = [
+                input_fixture(
+                    home=home, away=away, date=datetime, seconds_duration=duration
+                )
+            ]
 
         if new_round:
             self.current_round += 1
@@ -649,16 +669,6 @@ class MultipleLeagueKnockout(BaseModel):
     ) -> "MultipleLeagueKnockout":
         print("Starting a new season! ...\n")
 
-        players = input("Enter list of players seperated by space: ")
-        players_list = players.split(" ")
-        table = []
-
-        for player in players_list:
-            if player == "":
-                continue
-            data = IndividualTable()
-            data.name = player
-            table.append(data)
         full_data = cls(
             season=season,
             current_round=0,
@@ -667,6 +677,7 @@ class MultipleLeagueKnockout(BaseModel):
             pre_season=pre_season,
             rounds=[Leagues_RoundData(table=table_dict)],
         )
+        print(path)
 
         with open(path / "seasons.json") as f:
             seasons = json.load(f)
@@ -689,13 +700,18 @@ class MultipleLeagueKnockout(BaseModel):
         if fixtures is None:
             home = input("Enter the home team name: ")
             away = input("Enter the away team name: ")
+            duration = int(input("Enter the seconds duration of the match: "))
             if home not in self.teams:
                 raise ValueError(f"Invalid team {home}")
             if away not in self.teams:
                 raise ValueError(f"Invalid team {away}")
 
             datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
-            fixtures = [input_fixture(home=home, away=away, date=datetime)]
+            fixtures = [
+                input_fixture(
+                    home=home, away=away, date=datetime, seconds_duration=duration
+                )
+            ]
 
         if new_round:
             self.current_round += 1
@@ -743,7 +759,7 @@ class MultipleLeagueKnockout(BaseModel):
 
         team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
         table = self.rounds[-1].table
-        goal_difference = {}
+        # goal_difference = {}
 
         # for item in table:
         #     if item.name not in goal_difference:
@@ -771,7 +787,7 @@ class MultipleLeagueKnockout(BaseModel):
 
 
 if __name__ == "__main__":
-    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test"
+    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons"
     season = "july_august"
     teams = [
         Team(
@@ -882,9 +898,343 @@ if __name__ == "__main__":
             ],
         ),
     ]
-    fixtures = []
-    pre_season = []
-    table_dict = {}
+    fixtures = [
+        Fixture(
+            home="Arsenal",
+            away="Chelsea A",
+            date=datetime.fromisoformat("2026-07-05 16:00:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Barcelona",
+            away="Chelsea B",
+            date=datetime.fromisoformat("2026-07-05 16:50:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Liverpool",
+            away="Manchester United B",
+            date=datetime.fromisoformat("2026-07-05 17:40:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Manchester United A",
+            away="Real Madrid",
+            date=datetime.fromisoformat("2026-07-05 18:30:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Real Madrid",
+            away="Barcelona",
+            date=datetime.fromisoformat("2026-07-12 16:00:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Liverpool",
+            away="Arsenal",
+            date=datetime.fromisoformat("2026-07-12 16:50:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Chelsea B",
+            away="Manchester United A",
+            date=datetime.fromisoformat("2026-07-12 17:40:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Manchester United B",
+            away="Chelsea A",
+            date=datetime.fromisoformat("2026-07-12 18:30:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Manchester United B",
+            away="Arsenal",
+            date=datetime.fromisoformat("2026-07-19 16:00:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Manchester United A",
+            away="Barcelona",
+            date=datetime.fromisoformat("2026-07-19 16:50:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Chelsea A",
+            away="Liverpool",
+            date=datetime.fromisoformat("2026-07-19 17:40:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Real Madrid",
+            away="Chelsea B",
+            date=datetime.fromisoformat("2026-07-19 18:30:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Group A Winner",
+            away="Group B RunnersUp",
+            date=datetime.fromisoformat("2026-07-26 16:20:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Group B Winner",
+            away="Group A RUnnersUp",
+            date=datetime.fromisoformat("2026-07-26 17:20:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Loser Semi Final 1",
+            away="Loser Semi Final 2",
+            date=datetime.fromisoformat("2026-08-02 16:20:00"),
+            seconds_duration=2400,
+        ),
+        Fixture(
+            home="Winer Semi Final 1",
+            away="Winner Semi Final 2",
+            date=datetime.fromisoformat("2026-08-02 17:20:00"),
+            seconds_duration=2400,
+        ),
+    ]
+    pre_season = [
+        Fixture(
+            home="Arsenal",
+            away="Manchester United B",
+            date=datetime.fromisoformat("2026-07-05 16:00:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Ogbon",
+                        "assist": "Lanre",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Felaini",
+                        "assist": "Benson",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Kunle",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Lanre",
+                        "assist": "Seun",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Manchester United A",
+            away="Real Madrid",
+            date=datetime.fromisoformat("2026-07-05 16:30:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Aremu",
+                        "out": "Brainee",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Sancho",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Yerima",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Eze",
+                        "assist": "",
+                        "is_own_goal": True,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Martins",
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Chelsea A",
+            away="Barcelona",
+            date=datetime.fromisoformat("2026-07-05 17:00:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Tunde",
+                        "out": "Bisi",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Somto",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Micheal",
+                        "assist": "Sheriff",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Chiboy",
+                        "out": "Cambiaso",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Bisi",
+                        "out": "Taiwo",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Sheriff",
+                        "out": "Metu",
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Liverpool",
+            away="Chelsea B",
+            date=datetime.fromisoformat("2026-07-05 17:30:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Damsel",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Emma",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Machala",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Tm",
+                        "assist": "Ikenga",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Ola-o",
+                        "out": "Bobby K",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Tm",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+            ],
+        ),
+    ]
+    table_dict: dict[str, list[str]] = {
+        "A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+        "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"],
+    }
 
     data = MultipleLeagueKnockout.new_season(
         season=season,
@@ -895,9 +1245,243 @@ if __name__ == "__main__":
         table_dict=table_dict,
     )
 
-    new_fixtures = []
+    new_fixtures = [
+        Fixture(
+            home="Arsenal",
+            away="Manchester United B",
+            date=datetime.fromisoformat("2026-07-05 16:00:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Ogbon",
+                        "assist": "Lanre",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Felaini",
+                        "assist": "Benson",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Kunle",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Manchester United B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Lanre",
+                        "assist": "Seun",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Manchester United A",
+            away="Real Madrid",
+            date=datetime.fromisoformat("2026-07-05 16:30:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Aremu",
+                        "out": "Brainee",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Sancho",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Yerima",
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Eze",
+                        "assist": "",
+                        "is_own_goal": True,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Martins",
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Chelsea A",
+            away="Barcelona",
+            date=datetime.fromisoformat("2026-07-05 17:00:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Tunde",
+                        "out": "Bisi",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Somto",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Micheal",
+                        "assist": "Sheriff",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Chiboy",
+                        "out": "Cambiaso",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Bisi",
+                        "out": "Taiwo",
+                    },
+                ),
+                Event(
+                    fixture="Chelsea A_vs_Barcelona",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Sheriff",
+                        "out": "Metu",
+                    },
+                ),
+            ],
+        ),
+        Fixture(
+            home="Liverpool",
+            away="Chelsea B",
+            date=datetime.fromisoformat("2026-07-05 17:30:00"),
+            seconds_duration=1200,
+            events=[
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Damsel",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Emma",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Machala",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Tm",
+                        "assist": "Ikenga",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Ola-o",
+                        "out": "Bobby K",
+                    },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Chelsea B",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Tm",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+            ],
+        ),
+    ]
 
-    data.update_fixtures(preseason=[], fixtures=new_fixtures, new_round=True, path=path)
+    data.update_fixtures(preseason=[], fixtures=new_fixtures, new_round=True, path=path / "july_august.json")
     data.update_stats(path)
 
     # data.build(season=season)
