@@ -718,6 +718,9 @@
   .flex-row {
     flex-direction: row;
   }
+  .place-items-center {
+    place-items: center;
+  }
   .items-center {
     align-items: center;
   }
@@ -797,6 +800,9 @@
         border-color: color-mix(in oklab, var(--fg-1) 40%, transparent);
       }
     }
+  }
+  .justify-self-start {
+    justify-self: flex-start;
   }
   .truncate {
     overflow: hidden;
