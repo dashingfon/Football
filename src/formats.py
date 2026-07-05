@@ -275,16 +275,8 @@ class LeagueData(BaseModel):
 
 class Leagues_RoundData(BaseModel):
     table: dict[str, list[str]]
-    players_stats: list[IndividualTable]
-    team_stats: list[TeamTable]
-
-
-class LeaguesData(BaseModel):
-    current_round: int
-    teams: dict[str, list[str]]
-    fixtures: list[Fixture]
-    titles: dict[str, str]
-    round_data: dict[str, Leagues_RoundData]
+    players_stats: list[IndividualTable] = Field(default_factory=list)
+    team_stats: list[TeamTable] = Field(default_factory=list)
 
 
 def save(model: BaseModel, path: pathlib.PurePath) -> None:
@@ -384,7 +376,7 @@ def apply_league_statistics(
             team_map[fixture.home].cleansheets += 1
         if len(home_goals) == 0:
             team_map[fixture.away].cleansheets += 1
-        
+
         home_players = teams_name_map[fixture.home]
         away_players = teams_name_map[fixture.away]
 
@@ -413,11 +405,19 @@ def apply_league_statistics(
         for red in fixture_map["red_card"]:
             player_map[red["player"]].red_cards += 1
 
-        team_map[fixture.home].red_cards += len([item for item in fixture_map["red_card"] if item["side"] == "h"])
-        team_map[fixture.away].red_cards += len([item for item in fixture_map["red_card"] if item["side"] == "a"])
+        team_map[fixture.home].red_cards += len(
+            [item for item in fixture_map["red_card"] if item["side"] == "h"]
+        )
+        team_map[fixture.away].red_cards += len(
+            [item for item in fixture_map["red_card"] if item["side"] == "a"]
+        )
 
-        team_map[fixture.home].yellow_cards += len([item for item in fixture_map["yellow_card"] if item["side"] == "h"])
-        team_map[fixture.away].yellow_cards += len([item for item in fixture_map["yellow_card"] if item["side"] == "a"])
+        team_map[fixture.home].yellow_cards += len(
+            [item for item in fixture_map["yellow_card"] if item["side"] == "h"]
+        )
+        team_map[fixture.away].yellow_cards += len(
+            [item for item in fixture_map["yellow_card"] if item["side"] == "a"]
+        )
 
     return (
         [result for result in player_map.values()],
@@ -587,163 +587,184 @@ class Set(BaseModel):
     def build(
         self, season: str, default_renderer: Renderer, season_renderer: Renderer
     ) -> None:
-        # default_renderer = Renderer(template=pathlib.Path("templates/default.html"), output=pathlib.Path("index.html"))
-        # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
-
-        # render the template
-
         current_round = self.current_round
         if current_round > 1:
             ...
         else:
             print("No Previous stats to build! ")
+            return None
+
+        team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
+        table = self.round_data[-1].table
+        g_a = {}
+        for item in table:
+            if item.name not in g_a:
+                g_a[item.name] = 0
+            g_a[item.name] += item.assists
+            g_a[item.name] += item.goals
+        g_a_tuple = tuple(sorted(g_a.items(), key=lambda item: item[1], reverse=True))
+
+        default_content = {
+            "url": "./",
+            "root": "",
+            "data": self,
+            "raw_season": season,
+            "season": season.replace("_", " ").capitalize(),
+            "team_to_color": team_to_color,
+            "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
+            "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
+            "g_a": g_a_tuple[:3],
+            "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
+        }
+        default_renderer.render(default_content)
+
+        season_content = {**default_content, "url": "./seasons/"}
+        season_renderer.render(season_content)
 
 
 class MultipleLeagueKnockout(BaseModel):
-    ...
+    season: str
+    current_round: int
+    teams: list[Team]
+    fixtures: list[Fixture]
+    pre_season: list[Fixture]
+    titles: dict[str, str] = Field(default_factory=dict)
+    rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
+    @classmethod
+    def load(cls, path: pathlib.PurePath) -> "MultipleLeagueKnockout":
+        with open(path) as f:
+            data = json.load(f)
+        return cls(**data)
 
-# class Set:
-#     def __init__(self, repository: SetRepository) -> None:
-#         self.repo = repository
+    @classmethod
+    def new_season(
+        cls,
+        season: str,
+        path: pathlib.PurePath,
+        teams: list[Team],
+        fixtures: list[Fixture],
+        pre_season: list[Fixture],
+        table_dict: dict[str, list[str]],
+    ) -> "MultipleLeagueKnockout":
+        print("Starting a new season! ...\n")
 
-#     def start_new_season(self, season: str) -> None:
-#         print("""
-#         ``````````````````````````````````````
+        players = input("Enter list of players seperated by space: ")
+        players_list = players.split(" ")
+        table = []
 
-#         Starting a new season.
+        for player in players_list:
+            if player == "":
+                continue
+            data = IndividualTable()
+            data.name = player
+            table.append(data)
+        full_data = cls(
+            season=season,
+            current_round=0,
+            teams=teams,
+            fixtures=fixtures,
+            pre_season=pre_season,
+            rounds=[Leagues_RoundData(table=table_dict)],
+        )
 
-#         `````````````````````````````````````````
-#         """)
-#         players = input("Enter list of players seperated by space: ")
-#         players_list = players.split(" ")
-#         table = []
+        with open(path / "seasons.json") as f:
+            seasons = json.load(f)
+            seasons.append(season)
 
-#         for player in players_list:
-#             if player == "":
-#                 continue
-#             data = SetStatistics.empty_table()
-#             data["name"] = player
-#             table.append(data)
-#         full_data = {
-#             "players": players_list,
-#             "current_round": 0,
-#             "rounds": {"0": {"table": table}},
-#         }
-#         self.repo.write(season, full_data, new=True)
+        with open(path / "seasons.json", "w") as f:
+            json.dump(seasons, f, indent=2)
 
-#     @staticmethod
-#     def input_teams() -> dict[str, list[str]]:
-#         num_teams = int(input("Enter number of teams: "))
-#         teams = {}
-#         for i in range(int(num_teams)):
-#             team_name = input(f"Enter name of team {i + 1}: ")
-#             team_name = f"{i + 1}" if team_name == "" else team_name
-#             players = input(f"Enter players in team {team_name}, seperated by space: ")
-#             teams[team_name] = players.split(" ")
-#         return teams
+        return full_data
 
-#     @staticmethod
-#     def input_fixtures(index: int, side: str) -> dict:
-#         print("\n")
-#         team: dict = {}
-#         team_name = input(f"Enter the match {index} {side} team: ")
-#         team["goals"] = []
-#         team["team"] = team_name
-#         team_goals = int(
-#             input(f"Enter the number of goals scored by the {side} team: ")
-#         )
-#         for j in range(team_goals):
-#             goal: dict[str, str | bool] = {}
-#             scorer = input(f"goalscorer {j + 1}: ")
-#             if scorer[:3].lower() == "og:":
-#                 scorer = scorer[3:]
-#                 goal["own_goal"] = True
-#             goal["scorer"] = scorer
-#             assist = input(f"assist provider {j + 1}: ")
-#             if assist != "":
-#                 goal["assist"] = assist
-#             team["goals"].append(goal)
+    def update_fixtures(
+        self,
+        preseason: list[Fixture],
+        fixtures: list[Fixture] | None,
+        new_round: bool,
+        path: pathlib.PurePath,
+    ) -> None:
+        print("Updating matchday Fixtures! ...\n")
 
-#         return team
+        if fixtures is None:
+            home = input("Enter the home team name: ")
+            away = input("Enter the away team name: ")
+            if home not in self.teams:
+                raise ValueError(f"Invalid team {home}")
+            if away not in self.teams:
+                raise ValueError(f"Invalid team {away}")
 
-#     def update_fixtures(
-#         self,
-#         season: str,
-#         teams: dict[str, list[str]] | None,
-#         new_round: bool,
-#         result: list[dict] | None,
-#         fixtures: list[Fixture],
-#     ) -> None:
-#         print("""
-#         ``````````````````````````````````````
+            datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
+            fixtures = [input_fixture(home=home, away=away, date=datetime)]
 
-#         Adding Match Results.
+        if new_round:
+            self.current_round += 1
+            self.rounds.append(
+                Leagues_RoundData(
+                    table=self.rounds[-1].table, players_stats=[], team_stats=[]
+                )
+            )
+            self.fixtures = fixtures
+        else:
+            self.fixtures.extend(fixtures)
+        if preseason:
+            self.pre_season = preseason
+        save(self, path)
 
-#         `````````````````````````````````````````
-#         """)
-#         if teams is None:
-#             teams = self.input_teams()
+    def update_stats(self, path: pathlib.PurePath) -> None:
+        current_round = self.current_round
+        if current_round > 1:
+            teams = self.teams
+            fixtures = self.fixtures
 
-#         data = self.repo.read(season)
-#         current_round = data["current_round"]
-#         if new_round:
-#             current_round += 1
-#             data["current_round"] = current_round
-#             data["rounds"][str(current_round)] = {
-#                 "results": [],
-#                 "table": [],
-#                 "teams": teams,
-#             }
-#         date = input("Enter the date of the match: ")
+            individual_table, team_table = apply_league_statistics(
+                fixtures,
+                self.rounds[current_round].players_stats,
+                self.rounds[current_round].team_stats,
+                teams,
+            )
+            self.rounds[current_round].players_stats = individual_table
+            self.rounds[current_round].team_stats = team_table
+            save(self, path)
+        else:
+            print("No Previous stats to update! ")
 
-#         if result is None:
-#             result = []
-#             num_result = input("Enter the number of results: ")
-#             for i in range(int(num_result)):
-#                 print("\n")
-#                 home: dict = self.input_fixtures(i, "home")
-#                 away: dict = self.input_fixtures(i, "away")
-#                 result.append(
-#                     {
-#                         "home": home,
-#                         "away": away,
-#                         "date": date,
-#                         "round": current_round,
-#                         "stage": "",
-#                     }
-#                 )
+        # build statistics!
 
-#         data["rounds"][str(current_round)]["results"].append(result)
-#         self.repo.write(season, data)
+    def build(
+        self, season: str, default_renderer: Renderer, season_renderer: Renderer
+    ) -> None:
+        current_round = self.current_round
+        if current_round > 1:
+            ...
+        else:
+            print("No Previous stats to build! ")
+            return None
 
-#     def update_stats(self, season: str, set_stats: SetStatistics) -> None:
-#         print("""
-#         ``````````````````````````````````````
+        team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
+        table = self.rounds[-1].table
+        goal_difference = {}
+        for item in table:
+            if item.name not in goal_difference:
+                goal_difference[item.name] = 0
+            goal_difference[item.name] += item.assists
+            goal_difference[item.name] += item.goals
+        g_a_tuple = tuple(sorted(goal_difference.items(), key=lambda item: item[1], reverse=True))
 
-#         Updating Player Statistics.
+        default_content = {
+            "url": "./",
+            "root": "",
+            "data": self,
+            "raw_season": season,
+            "season": season.replace("_", " ").capitalize(),
+            "team_to_color": team_to_color,
+            "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
+            "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
+            "goal_difference": g_a_tuple[:3],
+            "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
+        }
+        default_renderer.render(default_content)
 
-#         `````````````````````````````````````````
-#         """)
-#         data = self.repo.read(season)
-#         current_round = data["current_round"]
-#         table = deepcopy(data["rounds"][f"{current_round - 1}"]["table"])
-#         table_map = {}
-#         for item in table:
-#             table_map[item["name"]] = item
+        season_content = {**default_content, "url": "./seasons/"}
+        season_renderer.render(season_content)
 
-#         teams = data["rounds"][f"{current_round}"]["teams"]
-#         results = data["rounds"][f"{current_round}"]["results"]
-
-#         table = set_stats.add_events(results, teams, table_map)
-#         data["rounds"][f"{current_round}"]["table"] = table
-#         self.repo.write(season, data)
-
-#     def build(
-#         self, season: str, default_renderer: Renderer, season_renderer: Renderer
-#     ) -> None:
-#         ...
-#         # default_renderer = Renderer(template=pathlib.Path("templates/default.html"), output=pathlib.Path("index.html"))
-#         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
-
-#         # render the template
