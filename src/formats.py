@@ -584,6 +584,10 @@ class Set(BaseModel):
             print("No Previous stats to build! ")
 
 
+class MultipleLeagueKnockout(BaseModel):
+    ...
+
+
 # class Set:
 #     def __init__(self, repository: SetRepository) -> None:
 #         self.repo = repository
@@ -728,6 +732,3 @@ class Set(BaseModel):
 #         # season_renderer = Renderer(template=pathlib.Path("templates/season.html"), output=pathlib.Path(f"{season}.html"))
 
 #         # render the template
-
-
-class League: ...
