@@ -23,7 +23,7 @@ class Team(BaseModel):
     players: list[str]
 
     @staticmethod
-    def map_teams(teams: list["Team"]):
+    def map_teams(teams: list["Team"]) -> dict[str, "Team"]:
         result = {}
         for team in teams:
             result[team.name] = team
@@ -194,8 +194,8 @@ class Fixture(BaseModel):
             matchday_group[date_str][time_str].append(fixture)
         return matchday_group
 
-    def model_post_init(self, _):
-        event_map = {}
+    def model_post_init(self, _) -> None:
+        event_map: dict[str, list[dict]] = {}
         if self.events is None:
             return None
         for event in self.events:
@@ -234,7 +234,7 @@ class IndividualTable(BaseModel):
 
     @staticmethod
     def map_players(stats: list["IndividualTable"]):
-        result = {}
+        result: dict[str, "IndividualTable"] = {}
         for stat in stats:
             result[stat.name] = stat
         return result
@@ -378,7 +378,10 @@ def apply_league_statistics(
             # increment player
             # increment team
 
-    return ([result for result in player_map.values()], [team for team in team_map.values()])
+    return (
+        [result for result in player_map.values()],
+        [team for team in team_map.values()],
+    )
 
 
 def apply_set_statistics(
@@ -387,42 +390,48 @@ def apply_set_statistics(
     teams_map = Team.map_teams(teams)
     player_map = IndividualTable.map_players(player_table)
 
+    def increment_payer(
+        players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
+    ) -> None:
+        for player in players:
+            previous_value =  getattr(player_map[player], key)
+            setattr(player_map[player], key, previous_value + value)
+
     for fixture in fixtures:
         fixture_map = fixture.map
 
         home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
         away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
 
-        # increment played
+        home_players = teams_map[fixture.home]
+        away_players = teams_map[fixture.away]
+
+        increment_payer(home_players.players, "played", 1, player_map)
+        increment_payer(away_players.players, "played", 1, player_map)
 
         if len(home_goals) == len(away_goals):
-            ...
-            # increment players
+            increment_payer(home_players.players, "points", 1, player_map)
+            increment_payer(away_players.players, "points", 1, player_map)
         elif len(home_goals) > len(away_goals):
-            ...
-            # increment players
+            increment_payer(home_players.players, "wins", 1, player_map)
         else:
-            ...
-            # increment players
+            increment_payer(away_players.players, "wins", 1, player_map)
 
         if len(away_goals) == 0:
-            ...
-            # increment cleansheets
+            increment_payer(away_players.players, "cleansheets", 1, player_map)
         if len(home_goals) == 0:
-            ...
-            # increment cleansheets
+            increment_payer(home_players.players, "cleansheets", 1, player_map)
 
         for goal in fixture_map["goals"]:
-            ...
-            # increment player
+            player_map[goal["scorer"]].goals += 1
+            if "assist" in goal:
+                player_map[goal["assist"]].assists += 1
 
         for yellow in fixture_map["yellow_card"]:
-            ...
-            # increment player
+            player_map[yellow["player"]].yellow_cards += 1
 
         for red in fixture_map["red_card"]:
-            ...
-            # increment player
+            player_map[red["player"]].red_cards += 1
 
     return [result for result in player_map.values()]
 
