@@ -227,7 +227,6 @@ class IndividualTable(BaseModel):
     loses: int = 0
     goals: int = 0
     assists: int = 0
-    goals_and_assists: int = 0
     cleansheets: int = 0
     red_cards: int = 0
     yellow_cards: int = 0
@@ -246,16 +245,15 @@ class TeamTable(BaseModel):
     played: int = 0
     wins: int = 0
     draws: int = 0
-    losses: int = 0
+    loses: int = 0
     goals_scored: int = 0
     goals_conceded: int = 0
-    goals_difference: int = 0
     cleansheets: int = 0
     red_cards: int = 0
     yellow_cards: int = 0
 
     @staticmethod
-    def map_teams(stats: list["TeamTable"]):
+    def map_teams(stats: list["TeamTable"]) -> dict[str, "TeamTable"]:
         result = {}
         for stat in stats:
             result[stat.team] = stat
@@ -330,6 +328,21 @@ def input_fixture(
     return result
 
 
+def increment_player(
+    players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
+) -> None:
+    for player in players:
+        previous_value = getattr(player_map[player], key)
+        setattr(player_map[player], key, previous_value + value)
+
+
+def set_player(
+    players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
+) -> None:
+    for player in players:
+        setattr(player_map[player], key, value)
+
+
 def apply_league_statistics(
     fixtures: list[Fixture],
     player_table: list[IndividualTable],
@@ -345,38 +358,66 @@ def apply_league_statistics(
         home_goals = [g for g in fixture_map["goals"] if g["side"] == "h"]
         away_goals = [g for g in fixture_map["goals"] if g["side"] == "a"]
 
-        # increment played
+        team_map[fixture.home].played += 1
+        team_map[fixture.away].played += 1
+
+        team_map[fixture.home].goals_conceded += 1
+        team_map[fixture.home].goals_scored += len(home_goals)
+        team_map[fixture.away].goals_conceded += 1
+        team_map[fixture.away].goals_scored += len(away_goals)
 
         if len(home_goals) == len(away_goals):
-            ...
-            # increment team
+            team_map[fixture.home].draws += 1
+            team_map[fixture.home].points += 1
+            team_map[fixture.away].draws += 1
+            team_map[fixture.away].points += 1
         elif len(home_goals) > len(away_goals):
-            ...
-            # increment team
+            team_map[fixture.home].points += 3
+            team_map[fixture.home].wins += 1
+            team_map[fixture.away].loses += 1
         else:
-            ...
+            team_map[fixture.home].loses += 1
+            team_map[fixture.away].wins += 1
+            team_map[fixture.away].points += 3
 
         if len(away_goals) == 0:
-            ...
-            # increment clean sheets + 1
+            team_map[fixture.away].cleansheets += 1
         if len(home_goals) == 0:
-            ...
-            # increment clean sheets + 1
+            team_map[fixture.home].cleansheets += 1
+
+        
+        home_players = teams_name_map[fixture.home]
+        away_players = teams_name_map[fixture.away]
+
+        set_player(home_players.players, "points", team_map[fixture.home].points, player_map)
+        set_player(home_players.players, "played", team_map[fixture.home].points, player_map)
+        set_player(home_players.players, "wins", team_map[fixture.home].points, player_map)
+        set_player(home_players.players, "draws", team_map[fixture.home].points, player_map)
+        set_player(home_players.players, "loses", team_map[fixture.home].points, player_map)
+
+        set_player(away_players.players, "points", team_map[fixture.away].points, player_map)
+        set_player(away_players.players, "played", team_map[fixture.away].points, player_map)
+        set_player(away_players.players, "wins", team_map[fixture.away].points, player_map)
+        set_player(away_players.players, "draws", team_map[fixture.away].points, player_map)
+        set_player(away_players.players, "loses", team_map[fixture.away].points, player_map)
+
 
         for goal in fixture_map["goals"]:
-            ...
-            # increment player
-            # increment team
+            player_map[goal["scorer"]].goals += 1
+            if "assist" in goal:
+                player_map[goal["assist"]].assists += 1
 
         for yellow in fixture_map["yellow_card"]:
-            ...
-            # increment player
-            # increment team
+            player_map[yellow["player"]].yellow_cards += 1
 
         for red in fixture_map["red_card"]:
-            ...
-            # increment player
-            # increment team
+            player_map[red["player"]].red_cards += 1
+
+        team_map[fixture.home].red_cards += len([item for item in fixture_map["red_card"] if item["side"] == "h"])
+        team_map[fixture.away].red_cards += len([item for item in fixture_map["red_card"] if item["side"] == "a"])
+
+        team_map[fixture.home].yellow_cards += len([item for item in fixture_map["yellow_card"] if item["side"] == "h"])
+        team_map[fixture.away].yellow_cards += len([item for item in fixture_map["yellow_card"] if item["side"] == "a"])
 
     return (
         [result for result in player_map.values()],
@@ -390,13 +431,6 @@ def apply_set_statistics(
     teams_map = Team.map_teams(teams)
     player_map = IndividualTable.map_players(player_table)
 
-    def increment_payer(
-        players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
-    ) -> None:
-        for player in players:
-            previous_value =  getattr(player_map[player], key)
-            setattr(player_map[player], key, previous_value + value)
-
     for fixture in fixtures:
         fixture_map = fixture.map
 
@@ -406,21 +440,27 @@ def apply_set_statistics(
         home_players = teams_map[fixture.home]
         away_players = teams_map[fixture.away]
 
-        increment_payer(home_players.players, "played", 1, player_map)
-        increment_payer(away_players.players, "played", 1, player_map)
+        increment_player(home_players.players, "played", 1, player_map)
+        increment_player(away_players.players, "played", 1, player_map)
 
         if len(home_goals) == len(away_goals):
-            increment_payer(home_players.players, "points", 1, player_map)
-            increment_payer(away_players.players, "points", 1, player_map)
+            increment_player(home_players.players, "points", 1, player_map)
+            increment_player(away_players.players, "points", 1, player_map)
+            increment_player(home_players.players, "draws", 1, player_map)
+            increment_player(away_players.players, "draws", 1, player_map)
         elif len(home_goals) > len(away_goals):
-            increment_payer(home_players.players, "wins", 1, player_map)
+            increment_player(home_players.players, "points", 3, player_map)
+            increment_player(home_players.players, "wins", 1, player_map)
+            increment_player(away_players.players, "loses", 1, player_map)
         else:
-            increment_payer(away_players.players, "wins", 1, player_map)
+            increment_player(away_players.players, "points", 3, player_map)
+            increment_player(away_players.players, "wins", 1, player_map)
+            increment_player(home_players.players, "loses", 1, player_map)
 
         if len(away_goals) == 0:
-            increment_payer(away_players.players, "cleansheets", 1, player_map)
+            increment_player(away_players.players, "cleansheets", 1, player_map)
         if len(home_goals) == 0:
-            increment_payer(home_players.players, "cleansheets", 1, player_map)
+            increment_player(home_players.players, "cleansheets", 1, player_map)
 
         for goal in fixture_map["goals"]:
             player_map[goal["scorer"]].goals += 1
