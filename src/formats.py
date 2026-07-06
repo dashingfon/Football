@@ -1467,7 +1467,7 @@ if __name__ == "__main__":
             seconds_duration=2400,
             events=[
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="yellow_card",
                     event={
                         "side": "a",
@@ -1475,7 +1475,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="goal",
                     event={
                         "side": "h",
@@ -1486,7 +1486,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="yellow_card",
                     event={
                         "side": "h",
@@ -1494,12 +1494,12 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="half time",
                     event={},
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1508,7 +1508,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "a",
@@ -1517,7 +1517,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="goal",
                     event={
                         "side": "h",
@@ -1528,7 +1528,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="goal",
                     event={
                         "side": "h",
@@ -1539,7 +1539,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1548,7 +1548,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1557,7 +1557,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="goal",
                     event={
                         "side": "a",
@@ -1568,7 +1568,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1577,7 +1577,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="goal",
                     event={
                         "side": "a",
@@ -1588,7 +1588,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Barcelona_vs_Chelsea B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1605,7 +1605,7 @@ if __name__ == "__main__":
             seconds_duration=2400,
             events=[
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "a",
@@ -1614,7 +1614,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="goal",
                     event={
                         "side": "h",
@@ -1625,7 +1625,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="yellow_card",
                     event={
                         "side": "h",
@@ -1633,7 +1633,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="yellow_card",
                     event={
                         "side": "h",
@@ -1641,7 +1641,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "a",
@@ -1650,12 +1650,12 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="half time",
                     event={},
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="goal",
                     event={
                         "side": "h",
@@ -1666,7 +1666,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1675,7 +1675,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "a",
@@ -1684,7 +1684,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="goal",
                     event={
                         "side": "a",
@@ -1696,7 +1696,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "a",
@@ -1705,7 +1705,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1714,7 +1714,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Liverpool_vs_Manchester United B",
                     name="sub",
                     event={
                         "side": "h",
@@ -1731,7 +1731,7 @@ if __name__ == "__main__":
             seconds_duration=2400,
             events=[
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
                         "side": "h",
@@ -1742,7 +1742,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
                         "side": "h",
@@ -1753,32 +1753,32 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="half time",
                     event={},
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "a",
-                        "in": "Jamui",
+                        "in": "Jamiu",
                         "out": "Eze",
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
                         "side": "a",
-                        "scorer": "Jamui",
+                        "scorer": "Jamiu",
                         "assist": "",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
                         "side": "a",
@@ -1786,15 +1786,15 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
                         "side": "a",
-                        "player": "Jamui",
+                        "player": "Jamiu",
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "h",
@@ -1803,7 +1803,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "h",
@@ -1812,36 +1812,36 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "player": "Utaka",
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "in": "Sancho",
-                        "out": "Jamui",
+                        "out": "Jamiu",
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "out": "Obinna",
                         "in": "Brainee",
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "scorer": "Utaka",
                         "assist": "Amuri",
                         "is_own_goal": False,
@@ -1849,7 +1849,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "h",
@@ -1858,7 +1858,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "h",
@@ -1867,7 +1867,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
                         "side": "a",
@@ -1878,7 +1878,7 @@ if __name__ == "__main__":
                     },
                 ),
                 Event(
-                    fixture="",
+                    fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
                         "side": "h",
