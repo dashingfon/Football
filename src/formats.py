@@ -1596,6 +1596,11 @@ if __name__ == "__main__":
                         "in": "Idris",
                     },
                 ),
+                Event(
+                    fixture="Barcelona_vs_Chelsea B",
+                    name="full time",
+                    event={},
+                ),
             ],
         ),
         Fixture(
@@ -1721,6 +1726,11 @@ if __name__ == "__main__":
                         "in": "Lola",
                         "out": "Ikenga",
                     },
+                ),
+                Event(
+                    fixture="Liverpool_vs_Manchester United B",
+                    name="full time",
+                    event={},
                 ),
             ],
         ),
@@ -1885,6 +1895,11 @@ if __name__ == "__main__":
                         "out": "Tunji",
                         "in": "Martins",
                     },
+                ),
+                Event(
+                    fixture="Manchester United A_vs_Real Madrid",
+                    name="full time",
+                    event={},
                 ),
             ],
         ),
