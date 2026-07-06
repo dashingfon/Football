@@ -815,6 +815,7 @@ class MultipleLeagueKnockout(BaseModel):
 
 
 if __name__ == "__main__":
+    from rich import print
     path = (
         pathlib.PurePath(__file__).parent.parent
         / "frontend"
@@ -1094,7 +1095,7 @@ if __name__ == "__main__":
                     name="sub",
                     event={
                         "side": "h",
-                        "in": "Aremu",
+                        "": "Aremu",
                         "out": "Brainee",
                     },
                 ),
@@ -1270,14 +1271,14 @@ if __name__ == "__main__":
         "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"],
     }
 
-    data = MultipleLeagueKnockout.new_season(
-        season=season,
-        path=path,
-        teams=teams,
-        fixtures=fixtures,
-        pre_season=pre_season,
-        table_dict=table_dict,
-    )
+    # data = MultipleLeagueKnockout.new_season(
+    #     season=season,
+    #     path=path,
+    #     teams=teams,
+    #     fixtures=fixtures,
+    #     pre_season=pre_season,
+    #     table_dict=table_dict,
+    # )
 
     new_fixtures = [
         Fixture(
@@ -1911,12 +1912,17 @@ if __name__ == "__main__":
         ),
     ]
 
-    data.update_fixtures(
-        preseason=[],
-        fixtures=new_fixtures,
-        new_round=True,
-        path=path / "july_august.json",
-    )
-    data.update_stats(path / "july_august.json")
+    # data.update_fixtures(
+    #     preseason=[],
+    #     fixtures=new_fixtures,
+    #     new_round=True,
+    #     path=path / "july_august.json",
+    # )
+    # data.update_stats(path / "july_august.json")
+
+    data = MultipleLeagueKnockout.load(path  / "july_august.json")
+    round_data = data.rounds[-1]
+    print(round_data)
+
 
     # data.build(season=season)
