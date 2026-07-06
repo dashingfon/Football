@@ -81,3 +81,38 @@ thinking of using pydantic for data validation
         player_stats: [],
         team_stats: []
     }
+
+sub
+
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Aremu",
+                        "out": "Brainee",
+                    },
+                ),
+
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Kunle",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+
+                Event(
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Sancho",
+                    },
+                ),
+
+

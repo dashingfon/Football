@@ -1278,102 +1278,322 @@ if __name__ == "__main__":
             home="Arsenal",
             away="Chelsea A",
             date=datetime.fromisoformat("2026-07-05 16:00:00"),
-            seconds_duration=1200,
+            seconds_duration=2400,
             events=[
                 Event(
-                    fixture="Arsenal_vs_Manchester United B",
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Nketiah",
+                        "out": "Fortune",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
                     name="goal",
                     event={
                         "side": "h",
-                        "scorer": "Ogbon",
+                        "scorer": "Seun",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Femi",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Ugo",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Segun",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Sheriff",
+                        "out": "Femi",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Kunle",
+                        "out": "Friday",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="half time",
+                    event={},
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Ugo",
+                        "assist": "Micheal",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Femi",
+                        "out": "Sheriff",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Lanre",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Kunle",
+                        "out": "Seun",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Kunle",
                         "assist": "Lanre",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Arsenal_vs_Manchester United B",
-                    name="goal",
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
                     event={
                         "side": "a",
-                        "scorer": "Felaini",
-                        "assist": "Benson",
-                        "is_own_goal": False,
-                        "is_penalty": False,
+                        "in": "Metu",
+                        "out": "Femi",
                     },
                 ),
                 Event(
-                    fixture="Arsenal_vs_Manchester United B",
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Ogbon",
+                        "out": "Nketiah",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Femi",
+                        "out": "Segun",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Seun",
+                        "out": "Lanre",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Ogbon",
+                    },
+                ),
+                Event(
+                    fixture="Arsenal_vs_Chelsea A",
                     name="goal",
                     event={
                         "side": "h",
                         "scorer": "Kunle",
-                        "assist": "",
+                        "assist": "Fortune",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Arsenal_vs_Manchester United B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Lanre",
-                        "assist": "Seun",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
+                    fixture="Arsenal_vs_Chelsea A",
+                    name="full time",
+                    event={},
                 ),
             ],
         ),
         Fixture(
             home="Barcelona",
             away="Chelsea B",
-            date=datetime.fromisoformat("2026-07-05 16:30:00"),
-            seconds_duration=1200,
+            date=datetime.fromisoformat("2026-07-05 16:50:00"),
+            seconds_duration=2400,
             events=[
                 Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Aremu",
-                        "out": "Brainee",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Sancho",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
+                    fixture="",
                     name="yellow_card",
                     event={
                         "side": "a",
-                        "player": "Yerima",
+                        "player": "Yinka",
                     },
                 ),
                 Event(
-                    fixture="Manchester United A_vs_Real Madrid",
+                    fixture="",
                     name="goal",
                     event={
-                        "side": "a",
-                        "scorer": "Eze",
-                        "assist": "",
-                        "is_own_goal": True,
+                        "side": "h",
+                        "scorer": "Chiboy",
+                        "assist": "Sodiq",
+                        "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Manchester United A_vs_Real Madrid",
+                    fixture="",
                     name="yellow_card",
                     event={
+                        "side": "h",
+                        "player": "Idris",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="half time",
+                    event={},
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Somto",
+                        "out": "Victor",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
                         "side": "a",
-                        "player": "Martins",
+                        "in": "Roland",
+                        "out": "YInka",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Idris",
+                        "assist": "Chiboy",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "h",
+                        "scorer": "Sodiq",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Vardy",
+                        "out": "Idris",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Cambiaso",
+                        "out": "Sodiq",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Aguero",
+                        "assist": "Bobby K",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Cambiaso",
+                        "in": "Sodiq",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Bobby K",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Vardy",
+                        "in": "Idris",
                     },
                 ),
             ],
@@ -1381,65 +1601,125 @@ if __name__ == "__main__":
         Fixture(
             home="Liverpool",
             away="Manchester United B",
-            date=datetime.fromisoformat("2026-07-05 17:00:00"),
-            seconds_duration=1200,
+            date=datetime.fromisoformat("2026-07-05 17:40:00"),
+            seconds_duration=2400,
             events=[
                 Event(
-                    fixture="Chelsea A_vs_Barcelona",
+                    fixture="",
                     name="sub",
                     event={
                         "side": "a",
-                        "in": "Tunde",
-                        "out": "Bisi",
+                        "in": "Adufe",
+                        "out": "Jojo",
                     },
                 ),
                 Event(
-                    fixture="Chelsea A_vs_Barcelona",
+                    fixture="",
                     name="goal",
                     event={
-                        "side": "a",
-                        "scorer": "Somto",
+                        "side": "h",
+                        "scorer": "Emma",
                         "assist": "",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Chelsea A_vs_Barcelona",
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Ikenga",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "h",
+                        "player": "Lola",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Jojo",
+                        "out": "Benson",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="half time",
+                    event={},
+                ),
+                Event(
+                    fixture="",
                     name="goal",
                     event={
                         "side": "h",
-                        "scorer": "Micheal",
-                        "assist": "Sheriff",
+                        "scorer": "Emma",
+                        "assist": "Lola",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Chelsea A_vs_Barcelona",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Chiboy",
-                        "out": "Cambiaso",
-                    },
-                ),
-                Event(
-                    fixture="Chelsea A_vs_Barcelona",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Bisi",
-                        "out": "Taiwo",
-                    },
-                ),
-                Event(
-                    fixture="Chelsea A_vs_Barcelona",
+                    fixture="",
                     name="sub",
                     event={
                         "side": "h",
-                        "in": "Sheriff",
-                        "out": "Metu",
+                        "in": "Tm",
+                        "out": "Lola",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Lino",
+                        "out": "Felaini",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Papa",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_free_kick": True,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Benson",
+                        "out": "Adufe",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Kenya",
+                        "out": "Dami",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Lola",
+                        "out": "Ikenga",
                     },
                 ),
             ],
@@ -1447,62 +1727,163 @@ if __name__ == "__main__":
         Fixture(
             home="Manchester United A",
             away="Real Madrid",
-            date=datetime.fromisoformat("2026-07-05 17:30:00"),
-            seconds_duration=1200,
+            date=datetime.fromisoformat("2026-07-05 18:30:00"),
+            seconds_duration=2400,
             events=[
                 Event(
-                    fixture="Liverpool_vs_Chelsea B",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Dami",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Chelsea B",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Emma",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Chelsea B",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Machala",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Chelsea B",
+                    fixture="",
                     name="goal",
                     event={
                         "side": "h",
-                        "scorer": "Tm",
-                        "assist": "Ikenga",
+                        "scorer": "Utaka",
+                        "assist": "Tola",
                         "is_own_goal": False,
                         "is_penalty": False,
                     },
                 ),
                 Event(
-                    fixture="Liverpool_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Ola-o",
-                        "out": "Bobby K",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Chelsea B",
+                    fixture="",
                     name="goal",
                     event={
                         "side": "h",
-                        "scorer": "Tm",
+                        "scorer": "Utaka",
                         "assist": "",
                         "is_own_goal": False,
                         "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="half time",
+                    event={},
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "a",
+                        "in": "Jamui",
+                        "out": "Eze",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Jamui",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Chris",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Jamui",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Amuri",
+                        "out": "Aremu",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Tunji",
+                        "out": "Tola",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="yellow_card",
+                    event={
+                        "side": "a",
+                        "player": "Utaka",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "in": "Sancho",
+                        "out": "Jamui",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Obinna",
+                        "in": "Brainee",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Utaka",
+                        "assist": "Amuri",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Aremu",
+                        "in": "Yerima",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Utaka",
+                        "in": "Noah",
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="goal",
+                    event={
+                        "side": "a",
+                        "scorer": "Chris",
+                        "assist": "",
+                        "is_own_goal": False,
+                        "is_penalty": False,
+                    },
+                ),
+                Event(
+                    fixture="",
+                    name="sub",
+                    event={
+                        "side": "h",
+                        "out": "Tunji",
+                        "in": "Martins",
                     },
                 ),
             ],
