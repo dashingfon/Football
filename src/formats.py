@@ -1,5 +1,6 @@
 import json
 import pathlib
+from copy import deepcopy
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from typing import Callable
@@ -750,10 +751,15 @@ class MultipleLeagueKnockout(BaseModel):
             teams = self.teams
             fixtures = self.fixtures
 
+            previous_player_stats = deepcopy(
+                self.rounds[current_round - 1].players_stats
+            )
+            previous_team_stats = deepcopy(self.rounds[current_round - 1].team_stats)
+
             individual_table, team_table = apply_league_statistics(
                 fixtures,
-                self.rounds[current_round - 1].players_stats,
-                self.rounds[current_round - 1].team_stats,
+                previous_player_stats,
+                previous_team_stats,
                 teams,
             )
             self.rounds[current_round].players_stats = individual_table
@@ -796,11 +802,11 @@ class MultipleLeagueKnockout(BaseModel):
         #     "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
         #     "g_a": g_a_tuple[:3],
         #     "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
-                # team_goals_scored:
-                # team_goals_conceeded:
-                # team_goals_cleansheet:
-                # team_goals_red_cards:
-                # team_goals_yellow_cards:
+        # team_goals_scored:
+        # team_goals_conceeded:
+        # team_goals_cleansheet:
+        # team_goals_red_cards:
+        # team_goals_yellow_cards:
         # }
         # default_renderer.render(default_content)
 
@@ -836,7 +842,7 @@ if __name__ == "__main__":
             name="Barcelona",
             players=[
                 "Bisi",
-                "Sadiq",
+                "Sodiq",
                 "Tunde",
                 "Somto",
                 "Idris",
