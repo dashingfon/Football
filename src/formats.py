@@ -1276,7 +1276,7 @@ if __name__ == "__main__":
     new_fixtures = [
         Fixture(
             home="Arsenal",
-            away="Manchester United B",
+            away="Chelsea A",
             date=datetime.fromisoformat("2026-07-05 16:00:00"),
             seconds_duration=1200,
             events=[
@@ -1327,8 +1327,8 @@ if __name__ == "__main__":
             ],
         ),
         Fixture(
-            home="Manchester United A",
-            away="Real Madrid",
+            home="Barcelona",
+            away="Chelsea B",
             date=datetime.fromisoformat("2026-07-05 16:30:00"),
             seconds_duration=1200,
             events=[
@@ -1379,8 +1379,8 @@ if __name__ == "__main__":
             ],
         ),
         Fixture(
-            home="Chelsea A",
-            away="Barcelona",
+            home="Liverpool",
+            away="Manchester United B",
             date=datetime.fromisoformat("2026-07-05 17:00:00"),
             seconds_duration=1200,
             events=[
@@ -1445,8 +1445,8 @@ if __name__ == "__main__":
             ],
         ),
         Fixture(
-            home="Liverpool",
-            away="Chelsea B",
+            home="Manchester United A",
+            away="Real Madrid",
             date=datetime.fromisoformat("2026-07-05 17:30:00"),
             seconds_duration=1200,
             events=[
