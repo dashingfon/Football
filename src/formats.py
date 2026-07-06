@@ -3,7 +3,6 @@ import pathlib
 from copy import deepcopy
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from typing import Callable
 
 from pydantic import BaseModel, Field
 from jinja2 import Template
@@ -816,6 +815,7 @@ class MultipleLeagueKnockout(BaseModel):
 
 if __name__ == "__main__":
     from rich import print
+
     path = (
         pathlib.PurePath(__file__).parent.parent
         / "frontend"
@@ -1920,9 +1920,13 @@ if __name__ == "__main__":
     # )
     # data.update_stats(path / "july_august.json")
 
-    data = MultipleLeagueKnockout.load(path  / "july_august.json")
-    round_data = data.rounds[-1]
-    print(round_data)
-
+    # data = MultipleLeagueKnockout.load(path  / "july_august.json")
+    # round_data = data.rounds[-1]
+    # print(round_data)
 
     # data.build(season=season)
+
+    f = input_fixture(
+        "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
+    )
+    print(f)
