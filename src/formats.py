@@ -1750,7 +1750,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "scorer": "Utaka",
                         "assist": "Tola",
                         "is_own_goal": False,
@@ -1761,7 +1761,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "scorer": "Utaka",
                         "assist": "",
                         "is_own_goal": False,
@@ -1777,7 +1777,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "in": "Jamiu",
                         "out": "Eze",
                     },
@@ -1786,7 +1786,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "scorer": "Jamiu",
                         "assist": "",
                         "is_own_goal": False,
@@ -1797,7 +1797,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "player": "Chris",
                     },
                 ),
@@ -1805,7 +1805,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "player": "Jamiu",
                     },
                 ),
@@ -1813,7 +1813,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "in": "Amuri",
                         "out": "Aremu",
                     },
@@ -1822,7 +1822,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "in": "Tunji",
                         "out": "Tola",
                     },
@@ -1831,7 +1831,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="yellow_card",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "player": "Utaka",
                     },
                 ),
@@ -1839,7 +1839,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "in": "Sancho",
                         "out": "Jamiu",
                     },
@@ -1848,7 +1848,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "out": "Obinna",
                         "in": "Brainee",
                     },
@@ -1857,7 +1857,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "scorer": "Utaka",
                         "assist": "Amuri",
                         "is_own_goal": False,
@@ -1868,7 +1868,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "out": "Aremu",
                         "in": "Yerima",
                     },
@@ -1877,7 +1877,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "out": "Utaka",
                         "in": "Noah",
                     },
@@ -1886,7 +1886,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="goal",
                     event={
-                        "side": "a",
+                        "side": "h",
                         "scorer": "Chris",
                         "assist": "",
                         "is_own_goal": False,
@@ -1897,7 +1897,7 @@ if __name__ == "__main__":
                     fixture="Manchester United A_vs_Real Madrid",
                     name="sub",
                     event={
-                        "side": "h",
+                        "side": "a",
                         "out": "Tunji",
                         "in": "Martins",
                     },

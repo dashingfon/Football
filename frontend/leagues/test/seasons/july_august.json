@@ -613,7 +613,7 @@
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "goal",
           "event": {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "Tola",
             "is_own_goal": false,
@@ -624,7 +624,7 @@
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "goal",
           "event": {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "",
             "is_own_goal": false,
@@ -639,13 +639,13 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "in": "Jamiu", "out": "Eze" }
+          "event": { "side": "h", "in": "Jamiu", "out": "Eze" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "goal",
           "event": {
-            "side": "a",
+            "side": "h",
             "scorer": "Jamiu",
             "assist": "",
             "is_own_goal": false,
@@ -655,43 +655,43 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Chris" }
+          "event": { "side": "h", "player": "Chris" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Jamiu" }
+          "event": { "side": "h", "player": "Jamiu" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "in": "Amuri", "out": "Aremu" }
+          "event": { "side": "a", "in": "Amuri", "out": "Aremu" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "in": "Tunji", "out": "Tola" }
+          "event": { "side": "a", "in": "Tunji", "out": "Tola" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Utaka" }
+          "event": { "side": "a", "player": "Utaka" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "in": "Sancho", "out": "Jamiu" }
+          "event": { "side": "h", "in": "Sancho", "out": "Jamiu" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "out": "Obinna", "in": "Brainee" }
+          "event": { "side": "h", "out": "Obinna", "in": "Brainee" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "goal",
           "event": {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "Amuri",
             "is_own_goal": false,
@@ -701,18 +701,18 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "out": "Aremu", "in": "Yerima" }
+          "event": { "side": "a", "out": "Aremu", "in": "Yerima" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "out": "Utaka", "in": "Noah" }
+          "event": { "side": "a", "out": "Utaka", "in": "Noah" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "goal",
           "event": {
-            "side": "a",
+            "side": "h",
             "scorer": "Chris",
             "assist": "",
             "is_own_goal": false,
@@ -722,7 +722,7 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "out": "Tunji", "in": "Martins" }
+          "event": { "side": "a", "out": "Tunji", "in": "Martins" }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -733,35 +733,35 @@
       "map": {
         "goal": [
           {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "Tola",
             "is_own_goal": false,
             "is_penalty": false
           },
           {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "",
             "is_own_goal": false,
             "is_penalty": false
           },
           {
-            "side": "a",
+            "side": "h",
             "scorer": "Jamiu",
             "assist": "",
             "is_own_goal": false,
             "is_penalty": false
           },
           {
-            "side": "h",
+            "side": "a",
             "scorer": "Utaka",
             "assist": "Amuri",
             "is_own_goal": false,
             "is_penalty": false
           },
           {
-            "side": "a",
+            "side": "h",
             "scorer": "Chris",
             "assist": "",
             "is_own_goal": false,
@@ -770,19 +770,19 @@
         ],
         "half time": [{}],
         "sub": [
-          { "side": "a", "in": "Jamiu", "out": "Eze" },
-          { "side": "h", "in": "Amuri", "out": "Aremu" },
-          { "side": "h", "in": "Tunji", "out": "Tola" },
-          { "side": "a", "in": "Sancho", "out": "Jamiu" },
-          { "side": "a", "out": "Obinna", "in": "Brainee" },
-          { "side": "h", "out": "Aremu", "in": "Yerima" },
-          { "side": "h", "out": "Utaka", "in": "Noah" },
-          { "side": "h", "out": "Tunji", "in": "Martins" }
+          { "side": "h", "in": "Jamiu", "out": "Eze" },
+          { "side": "a", "in": "Amuri", "out": "Aremu" },
+          { "side": "a", "in": "Tunji", "out": "Tola" },
+          { "side": "h", "in": "Sancho", "out": "Jamiu" },
+          { "side": "h", "out": "Obinna", "in": "Brainee" },
+          { "side": "a", "out": "Aremu", "in": "Yerima" },
+          { "side": "a", "out": "Utaka", "in": "Noah" },
+          { "side": "a", "out": "Tunji", "in": "Martins" }
         ],
         "yellow_card": [
-          { "side": "a", "player": "Chris" },
-          { "side": "a", "player": "Jamiu" },
-          { "side": "h", "player": "Utaka" }
+          { "side": "h", "player": "Chris" },
+          { "side": "h", "player": "Jamiu" },
+          { "side": "a", "player": "Utaka" }
         ],
         "full time": [{}]
       }
@@ -2316,11 +2316,11 @@
         },
         {
           "name": "Ola",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2329,11 +2329,11 @@
         },
         {
           "name": "Ebuka",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2342,11 +2342,11 @@
         },
         {
           "name": "Chris",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 1,
           "assists": 0,
           "cleansheets": 0,
@@ -2355,11 +2355,11 @@
         },
         {
           "name": "Sancho",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2368,11 +2368,11 @@
         },
         {
           "name": "Obinna",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2381,11 +2381,11 @@
         },
         {
           "name": "Jamiu",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 1,
           "assists": 0,
           "cleansheets": 0,
@@ -2394,11 +2394,11 @@
         },
         {
           "name": "Brainee",
-          "points": 3,
+          "points": 0,
           "played": 1,
-          "wins": 1,
+          "wins": 0,
           "draws": 0,
-          "loses": 0,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2407,6 +2407,45 @@
         },
         {
           "name": "Eze",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Utaka",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 3,
+          "assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Tola",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Noah",
           "points": 3,
           "played": 1,
           "wins": 1,
@@ -2419,51 +2458,12 @@
           "yellow_cards": 0
         },
         {
-          "name": "Utaka",
-          "points": 0,
-          "played": 1,
-          "wins": 0,
-          "draws": 0,
-          "loses": 1,
-          "goals": 3,
-          "assists": 0,
-          "cleansheets": 0,
-          "red_cards": 0,
-          "yellow_cards": 1
-        },
-        {
-          "name": "Tola",
-          "points": 0,
-          "played": 1,
-          "wins": 0,
-          "draws": 0,
-          "loses": 1,
-          "goals": 0,
-          "assists": 1,
-          "cleansheets": 0,
-          "red_cards": 0,
-          "yellow_cards": 0
-        },
-        {
-          "name": "Noah",
-          "points": 0,
-          "played": 1,
-          "wins": 0,
-          "draws": 0,
-          "loses": 1,
-          "goals": 0,
-          "assists": 0,
-          "cleansheets": 0,
-          "red_cards": 0,
-          "yellow_cards": 0
-        },
-        {
           "name": "Yerima",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2472,11 +2472,11 @@
         },
         {
           "name": "David",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2485,11 +2485,11 @@
         },
         {
           "name": "Amuri",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 1,
           "cleansheets": 0,
@@ -2498,11 +2498,11 @@
         },
         {
           "name": "Martins",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2511,11 +2511,11 @@
         },
         {
           "name": "Aremu",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2524,11 +2524,11 @@
         },
         {
           "name": "Tunji",
-          "points": 0,
+          "points": 3,
           "played": 1,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "loses": 1,
+          "loses": 0,
           "goals": 0,
           "assists": 0,
           "cleansheets": 0,
@@ -2968,19 +2968,6 @@
         },
         {
           "team": "Manchester United A",
-          "points": 3,
-          "played": 1,
-          "wins": 1,
-          "draws": 0,
-          "loses": 0,
-          "goals_scored": 3,
-          "goals_conceded": 2,
-          "cleansheets": 0,
-          "red_cards": 0,
-          "yellow_cards": 1
-        },
-        {
-          "team": "Real Madrid",
           "points": 0,
           "played": 1,
           "wins": 0,
@@ -2991,6 +2978,19 @@
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 2
+        },
+        {
+          "team": "Real Madrid",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 3,
+          "goals_conceded": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
         },
         {
           "team": "Chelsea A",
