@@ -2057,6 +2057,11 @@
       padding: calc(var(--spacing) * 8);
     }
   }
+  .md\:py-8 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 8);
+    }
+  }
   .md\:pt-0 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 0);
