@@ -19,7 +19,5 @@ dev = [
 
 [tool.poe.tasks]
 test = "pytest"
-build = "dir"
-watch = "dir"
-css = "npm run build:css"
+build = "python src\\\\renderer.py"
 
