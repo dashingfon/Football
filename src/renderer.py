@@ -8,7 +8,7 @@ if __name__ == "__main__":
     with open(path / "templates" / "base_app.jinja") as t:
         raw_template = t.read()
     template = Template(raw_template)
-    context = {"root": "./", "raw_season": "testing.com"}
+    context = {"root": "./", "raw_season": "july_august_2026"}
     rendered = template.render(**context)
 
     with open(path / "frontend" / "app.html", "w", encoding="utf-8") as f:
