@@ -25,10 +25,6 @@ Fotclan is a social network for footballers
 - [x] update the default table view
 - [ ] update the zero index
 
-# vision
-
-thinking of using pydantic for data validation
-
 
 # assumptions and tradeoffs
 
@@ -115,4 +111,23 @@ sub
                     },
                 ),
 
+# components
+
+- table
+    - group name
+    - heading
+    - team entry
+- fixture
+    - scoreline
+    - events
+- stats
+    - stats group
+        - stats name
+        - player/ team
+- stats view
+    - competition
+    - stats
+    - controls
+    - entries
+- new landing page
 
