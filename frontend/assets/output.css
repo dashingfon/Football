@@ -2057,11 +2057,6 @@
       padding: calc(var(--spacing) * 8);
     }
   }
-  .md\:py-8 {
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 8);
-    }
-  }
   .md\:pt-0 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 0);
@@ -2171,6 +2166,14 @@
   --fg-2: oklch(21.8% 0.008 223.9);
   --fg-3: oklch(27.5% 0.011 216.9);
   --fg-4: oklch(37.8% 0.015 216);
+  --bg-alt-1: oklch(98.7% 0.002 197.1);
+  --bg-alt-2: oklch(96.3% 0.002 197.1);
+  --bg-alt-3: oklch(92.5% 0.005 214.3);
+  --bg-alt-4: oklch(87.2% 0.007 219.6);
+  --fg-alt-1: oklch(14.8% 0.004 228.8);
+  --fg-alt-2: oklch(21.8% 0.008 223.9);
+  --fg-alt-3: oklch(27.5% 0.011 216.9);
+  --fg-alt-4: oklch(37.8% 0.015 216);
   --text-1: oklch(14.8% 0.004 228.8);
   --text-2: oklch(21.8% 0.008 223.9);
   --text-3: oklch(27.5% 0.011 216.9);
@@ -2194,6 +2197,14 @@
   --fg-2: oklch(96.3% 0.002 197.1);
   --fg-3: oklch(92.5% 0.005 214.3);
   --fg-4: oklch(87.2% 0.007 219.6);
+  --bg-alt-1: oklch(14.8% 0.004 228.8);
+  --bg-alt-2: oklch(21.8% 0.008 223.9);
+  --bg-alt-3: oklch(27.5% 0.011 216.9);
+  --bg-alt-4: oklch(37.8% 0.015 216);
+  --fg-alt-1: oklch(98.7% 0.002 197.1);
+  --fg-alt-2: oklch(96.3% 0.002 197.1);
+  --fg-alt-3: oklch(92.5% 0.005 214.3);
+  --fg-alt-4: oklch(87.2% 0.007 219.6);
   --text-1: oklch(98.7% 0.002 197.1);
   --text-2: oklch(96.3% 0.002 197.1);
   --text-3: oklch(92.5% 0.005 214.3);

@@ -25,6 +25,16 @@
 --color-fg-3: var(--fg-3);
 --color-fg-4: var(--fg-4);
 
+--color-bg-alt-1: var(--bg-alt-1);
+--color-bg-alt-2: var(--bg-alt-2);
+--color-bg-alt-3: var(--bg-alt-3);
+--color-bg-alt-4: var(--bg-alt-4);
+
+--color-fg-alt-1: var(--fg-alt-1);
+--color-fg-alt-2: var(--fg-alt-2);
+--color-fg-alt-3: var(--fg-alt-3);
+--color-fg-alt-4: var(--fg-alt-4);
+
 --color-text-1: var(--text-1);
 --color-text-2: var(--text-2);
 --color-text-3: var(--text-3);
@@ -50,6 +60,16 @@
 --fg-2: theme(color.mist.900);
 --fg-3: theme(color.mist.800);
 --fg-4: theme(color.mist.700);
+
+--bg-alt-1: theme(color.slate.50);
+--bg-alt-2: theme(color.slate.100);
+--bg-alt-3: theme(color.slate.200);
+--bg-alt-4: theme(color.slate.300);
+
+--fg-alt-1: theme(color.slate.950);
+--fg-alt-2: theme(color.slate.900);
+--fg-alt-3: theme(color.slate.800);
+--fg-alt-4: theme(color.slate.700);
 
 --text-1: theme(color.mist.950);
 --text-2: theme(color.mist.900);
@@ -79,6 +99,16 @@ color-scheme: light;
 --fg-2: theme(color.mist.100);
 --fg-3: theme(color.mist.200);
 --fg-4: theme(color.mist.300);
+
+--bg-alt-1: theme(color.slate.950);
+--bg-alt-2: theme(color.slate.900);
+--bg-alt-3: theme(color.slate.800);
+--bg-alt-4: theme(color.slate.700);
+
+--fg-alt-1: theme(color.slate.50);
+--fg-alt-2: theme(color.slate.100);
+--fg-alt-3: theme(color.slate.200);
+--fg-alt-4: theme(color.slate.300);
 
 --text-1: theme(color.mist.50);
 --text-2: theme(color.mist.100);
