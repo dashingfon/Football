@@ -13,18 +13,18 @@ customElements.define('mode-toggle-checkbox',
             // const body = document.body;
 
             if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                checkbox.checked = false;
+                checkbox.checked = true;
                 document.body.dataset.theme = 'dark';
                 localStorage.setItem('theme', "dark");
             } else {
-                checkbox.checked = true;
+                checkbox.checked = false;
                 document.body.dataset.theme = 'light';
                 localStorage.setItem('theme', "light");
             }
             if (checkbox) {
                 checkbox.addEventListener('change', function () {
                     // console.log("Change event fired, checked:", this.checked); // Debug
-                    if (this.checked) {
+                    if (!this.checked) {
                         document.body.dataset.theme = "light";
                         localStorage.setItem('theme', 'light');
                     } else {
@@ -198,7 +198,8 @@ customElements.define('search-filter',
                 }
             });
         };
-    });
+    }
+);
 
 
 customElements.define('init-league',
