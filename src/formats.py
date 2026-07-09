@@ -172,7 +172,7 @@ class Event(BaseModel):
             return Event.input_red_card(fixture)
         return None
 
-
+# fixtures: dict[str, Fixture] =  Field(default_factory=dict)
 class Fixture(BaseModel):
     home: str
     away: str
@@ -180,6 +180,10 @@ class Fixture(BaseModel):
     seconds_duration: int
     events: list[Event] | None = None
     map: dict = Field(default_factory=dict)
+
+    def __repr__(self) -> str:
+        date_str = f"_at_{self.date}" if self.date is not None else ""
+        return f"{self.home}_vs_{self.away}{date_str}"
 
     @staticmethod
     def group_by_datetime(
