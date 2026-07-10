@@ -104,18 +104,47 @@
     </aside>
     
     
-
-    
-
     <main class="flex-1 overflow-y-auto md:ml-16 space-y-6 h-screen bg-bg-2 text-text-1 w-fit">
         <div class="max-w-5xl mx-auto h-full">
             
-    <div>
-    this is a simple hello world!
-    
-    <div>This is also a test</div>
+            <nav class="fixed top-0 left-0 w-full bg-bg-1 border-b border-bg-3 justify-between p-3 flex md:pl-19 items-center">
+                <div>
+                    <a class="flex items-center gap-3" href="../../leagues.html">
+                        <iconify-icon
+                        icon="ep:back"
+                        width="100%"
+                        height="100%"
+                        class="w-6 h-6"
+                        ></iconify-icon>
+                        <span class="text-sm">Leagues</span>
+                    </a>
+                </div>
+                
+                <div>
+                    <mode-toggle-button>
+                        <button
+                            class="p-1 bg-bg-3 hover:bg-bg-1 text-text-2 rounded-md border border-bg-1"
+                            mode-toggle
+                        >
+                            <iconify-icon
+                            icon="meteocons:starry-night-fill"
+                            width="100%"
+                            height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"
+                            ></iconify-icon>
 
-    </div>
+                            <iconify-icon
+                            icon="meteocons:clear-day-fill"
+                            width="100%"
+                            height="100%"
+                            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"
+                            ></iconify-icon>
+                        </button>
+                    </mode-toggle-button>
+                </div>
+            </nav>
+
+
 
         </div>
     </main>
