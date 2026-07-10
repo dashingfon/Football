@@ -1,14 +1,12 @@
 
-{% macro header() %}
-            <nav class="fixed top-0 left-0 w-full bg-bg-1 border-b border-bg-3 justify-between p-3 flex md:pl-19 items-center">
-                <div>
-                    <a class="flex items-center gap-3" href="../../leagues.html">
-                        <iconify-icon
-                        icon="ep:back"
-                        width="100%"
-                        height="100%"
-                        class="w-6 h-6"
-                        ></iconify-icon>
+{% macro header(root) %}
+            <nav class="sticky top-0 left-0 w-full justify-between p-3 flex items-center">
+                <div class="flex">
+                    <a href="{{root}}">
+                        <img src="{{root}}/assets/favicon.ico" class="w-6 h-6 md:hidden mr-4" />
+                    </a>
+                    <a class="flex items-center gap-3" href="{{root}}/leagues.html">
+                        <span>/ </span>
                         <span class="text-sm">Leagues</span>
                     </a>
                 </div>
@@ -38,8 +36,16 @@
             </nav>
 {% endmacro %}
 
-{% macro icon() %}
+{% macro hero() %}
+            <section class="flex flex-col md:flex-row">
+                <div class="justify-end">
+                    
+                </div>
 
+                <div class="justify-start">
+
+                </div>
+            </section>
 {% endmacro %}
 
 {% macro buttton() %}

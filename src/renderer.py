@@ -6,7 +6,7 @@ env = Environment(
     loader=FileSystemLoader("templates")
 )
 
-template = env.get_template("base_app.jinja")
+template = env.get_template("v2-league.jinja")
 
 if __name__ == "__main__":
 
