@@ -172,23 +172,23 @@ class Event(BaseModel):
             return Event.input_red_card(fixture)
         return None
 
-# fixtures: dict[str, Fixture] =  Field(default_factory=dict)
+
 class Fixture(BaseModel):
     home: str
     away: str
     date: datetime
     seconds_duration: int
-    events: list[Event] | None = None
+    events: list[Event] = Field(default_factory=list)
     map: dict = Field(default_factory=dict)
 
     def __repr__(self) -> str:
-        date_str = f"_at_{self.date}" if self.date is not None else ""
-        return f"{self.home}_vs_{self.away}{date_str}"
+        return f"{self.home}_vs_{self.away}_at_{self.date}"
 
     @staticmethod
     def group_by_datetime(
         fixtures: list["Fixture"],
     ) -> dict[str, dict[str, list["Fixture"]]]:
+        # return results ordered by datetime
         matchday_group: dict[str, dict[str, list["Fixture"]]] = {}
         for fixture in fixtures:
             date_str = fixture.date.strftime(DATE_FORMAT)
@@ -202,9 +202,6 @@ class Fixture(BaseModel):
 
     def model_post_init(self, _) -> None:
         event_map: dict[str, list[dict]] = {}
-        if self.events is None:
-            self.events = []
-            return None
         for event in self.events:
             if event.name not in event_map:
                 event_map[event.name] = []
@@ -653,9 +650,9 @@ class MultipleLeagueKnockout(BaseModel):
     season: str
     current_round: int
     teams: list[Team]
-    fixtures: list[Fixture]
     table: dict[str, list[str]]
     pre_season: list[Fixture]
+    fixtures: dict[str, Fixture] =  Field(default_factory=dict)
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
