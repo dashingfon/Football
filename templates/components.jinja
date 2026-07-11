@@ -5,7 +5,7 @@
                     <a href="{{root}}" class="flex items-center">
                         <img src="{{root}}/assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
                     </a>
-                    <a class="flex justify-center gap-3 py-2 px-3 bg-bg-1 rounded-xl text-xs" href="{{root}}/leagues.html">
+                    <a class="flex justify-center gap-3 py-2 px-3 bg-bg-3 hover:bg-bg-1 rounded-xl text-xs" href="{{root}}/leagues.html">
                         <span class="text-sm">Leagues</span>
                     </a>
                 </div>
@@ -36,7 +36,7 @@
 {% endmacro %}
 
 {% macro hero() %}
-            <section class="flex flex-col md:flex-row bg-bg-1 pt-8 pb-5 md:pb-10 xl:rounded-t-xl">
+            <section class="flex flex-col md:flex-row bg-bg-1 pt-8 pb-5 md:pb-10 xl:rounded-t-xl border-t border-bg-3">
                 <div class="justify-start flex w-full">
                     <img src="{{root}}assets/gyfa.png" class="h-15 pl-6" alt="">
                     <div class="pl-4">
@@ -47,15 +47,11 @@
 
                 <div class="flex justify-end pr-6">
                     <button class="flex justify-center gap-3 py-2 px-3 bg-bg-2 rounded-xl text-xs h-fit">
-                        <span class="text-sm">July / August</span>
+                        <h1 class="text-sm">July / August</h1>
                     </button>
 
                 </div>
             </section>
-{% endmacro %}
-
-{% macro display() %}
-
 {% endmacro %}
 
 {% macro tab(tabs, active) %}
@@ -75,7 +71,15 @@
             </ul>
 {% endmacro %}
 
-{% macro group_table() %}
+{% macro group_name() %}
+
+{% endmacro %}
+
+{% macro group_header() %}
+
+{% endmacro %}
+
+{% macro group_item() %}
 
 {% endmacro %}
 
