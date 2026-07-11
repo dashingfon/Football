@@ -2142,6 +2142,12 @@
       line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
+  .xl\:rounded-t-xl {
+    @media (width >= 80rem) {
+      border-top-left-radius: var(--radius-xl);
+      border-top-right-radius: var(--radius-xl);
+    }
+  }
   .rtl\:pr-11 {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       padding-right: calc(var(--spacing) * 11);
