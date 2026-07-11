@@ -163,7 +163,9 @@ customElements.define('drop-down-toggle',
         connectedCallback() {
             const button = this.querySelector("[dropdowntoggle]");
             const dropdown = this.querySelector("[dropdown]");
+            const icon = this.querySelector("[dropdownicon]");
             button?.addEventListener("click", () => {
+                icon?.classList.toggle("rotate-180");
                 dropdown?.classList.toggle("hidden")
             })
         };
