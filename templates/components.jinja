@@ -58,6 +58,23 @@
 
 {% endmacro %}
 
+{% macro tab(tabs, active) %}
+            <ul class="flex overflow-x-auto no-scrollbar">
+                {% for tab_item in tabs %}
+                    <li class="tab group" data-index="{{loop.index - 1}}" 
+                    data-active="{{ 'true' if tab_item == active else 'false' }}"
+
+                        ><button
+                        class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
+                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3"
+                        >
+                        {{tab_item}}
+                        </button>
+                    </li>
+                {% endfor %}
+            </ul>
+{% endmacro %}
+
 {% macro group_table() %}
 
 {% endmacro %}
