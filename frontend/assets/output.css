@@ -2022,11 +2022,6 @@
       flex-direction: row;
     }
   }
-  .sm\:pb-2 {
-    @media (width >= 40rem) {
-      padding-bottom: calc(var(--spacing) * 2);
-    }
-  }
   .md\:col-span-2 {
     @media (width >= 48rem) {
       grid-column: span 2 / span 2;
