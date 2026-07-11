@@ -721,9 +721,6 @@
   .grid-cols-10 {
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
-  .grid-cols-\[1fr_9\%_10\%_9\%_1fr\] {
-    grid-template-columns: 1fr 9% 10% 9% 1fr;
-  }
   .grid-cols-\[1fr_9\%_12\%_9\%_1fr\] {
     grid-template-columns: 1fr 9% 12% 9% 1fr;
   }
