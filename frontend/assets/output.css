@@ -2095,11 +2095,6 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  .md\:grid-cols-12 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-  }
   .md\:grid-cols-15 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(15, minmax(0, 1fr));
