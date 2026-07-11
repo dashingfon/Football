@@ -61,15 +61,15 @@
 --fg-3: theme(color.mist.800);
 --fg-4: theme(color.mist.700);
 
---bg-alt-1: theme(color.slate.50);
---bg-alt-2: theme(color.slate.100);
---bg-alt-3: theme(color.slate.200);
---bg-alt-4: theme(color.slate.300);
+--bg-alt-1: theme(color.olive.50);
+--bg-alt-2: theme(color.olive.100);
+--bg-alt-3: theme(color.olive.200);
+--bg-alt-4: theme(color.olive.300);
 
---fg-alt-1: theme(color.slate.950);
---fg-alt-2: theme(color.slate.900);
---fg-alt-3: theme(color.slate.800);
---fg-alt-4: theme(color.slate.700);
+--fg-alt-1: theme(color.olive.950);
+--fg-alt-2: theme(color.olive.900);
+--fg-alt-3: theme(color.olive.800);
+--fg-alt-4: theme(color.olive.700);
 
 --text-1: theme(color.mist.950);
 --text-2: theme(color.mist.900);
@@ -100,15 +100,15 @@ color-scheme: light;
 --fg-3: theme(color.mist.200);
 --fg-4: theme(color.mist.300);
 
---bg-alt-1: theme(color.slate.950);
---bg-alt-2: theme(color.slate.900);
---bg-alt-3: theme(color.slate.800);
---bg-alt-4: theme(color.slate.700);
+--bg-alt-1: theme(color.olive.950);
+--bg-alt-2: theme(color.olive.900);
+--bg-alt-3: theme(color.olive.800);
+--bg-alt-4: theme(color.olive.700);
 
---fg-alt-1: theme(color.slate.50);
---fg-alt-2: theme(color.slate.100);
---fg-alt-3: theme(color.slate.200);
---fg-alt-4: theme(color.slate.300);
+--fg-alt-1: theme(color.olive.50);
+--fg-alt-2: theme(color.olive.100);
+--fg-alt-3: theme(color.olive.200);
+--fg-alt-4: theme(color.olive.300);
 
 --text-1: theme(color.mist.50);
 --text-2: theme(color.mist.100);
