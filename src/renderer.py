@@ -12,9 +12,6 @@ stats_template = env.get_template("v2-league-stats.jinja")
 if __name__ == "__main__":
 
     path = pathlib.PurePath(__file__).parent.parent
-    # with open(path / "templates" / "base_app.jinja") as t:
-    #     raw_template = t.read()
-    # template = Template(raw_template)
     context = {"root": "./", "raw_season": "july_august_2026"}
     rendered = template.render(**context)
 

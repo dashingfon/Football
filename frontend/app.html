@@ -163,114 +163,93 @@
 <main class="flex-1 overflow-y-auto md:ml-16 space-y-6 h-screen bg-bg-2 text-text-1 w-fit">
 	<div class="fadeUp max-w-7xl mx-auto h-full grid grid-rows-[auto_auto_1fr">
 		
-            <nav class="h-fit top-0 left-0 w-full justify-between p-3 flex items-center">
-                <div class="flex">
-                    <a href="./" class="flex items-center">
-                        <img src=".//assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
-                    </a>
-                    <a class="flex justify-center gap-3 py-2 px-3 bg-bg-3 hover:bg-bg-1 rounded-xl text-xs" href=".//leagues.html">
-                        <span class="text-sm">Leagues</span>
-                    </a>
-                </div>
-                
-                <div>
-                    <mode-toggle-button>
-                        <button
-                            class="p-1 bg-bg-3 hover:bg-bg-1 text-text-2 rounded-md border border-bg-1"
-                            mode-toggle
-                        >
-                            <iconify-icon
-                            icon="meteocons:starry-night-fill"
-                            width="100%"
-                            height="100%"
-                            class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"
-                            ></iconify-icon>
+<nav class="h-fit top-0 left-0 w-full justify-between p-3 flex items-center">
+	<div class="flex">
+		<a href="./" class="flex items-center">
+			<img src=".//assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
+		</a>
+		<a class="flex justify-center gap-3 py-2 px-3 bg-bg-3 hover:bg-bg-1 rounded-xl text-xs"
+			href=".//leagues.html">
+			<span class="text-sm">Leagues</span>
+		</a>
+	</div>
 
-                            <iconify-icon
-                            icon="meteocons:clear-day-fill"
-                            width="100%"
-                            height="100%"
-                            class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"
-                            ></iconify-icon>
-                        </button>
-                    </mode-toggle-button>
-                </div>
-            </nav>
+	<div>
+		<mode-toggle-button>
+			<button class="p-1 bg-bg-3 hover:bg-bg-1 text-text-2 rounded-md border border-bg-1" mode-toggle>
+				<iconify-icon icon="meteocons:starry-night-fill" width="100%" height="100%"
+					class="w-8 h-8 group-data-[theme=dark]/body:hidden group-data-[theme=light]/body:block"></iconify-icon>
+
+				<iconify-icon icon="meteocons:clear-day-fill" width="100%" height="100%"
+					class="w-8 h-8 group-data-[theme=dark]/body:block group-data-[theme=light]/body:hidden"></iconify-icon>
+			</button>
+		</mode-toggle-button>
+	</div>
+</nav>
 
 		
-            <section class="flex flex-col md:flex-row bg-bg-1 pt-8 pb-5 md:pb-10 xl:rounded-t-xl border-t border-bg-3">
-                <div class="justify-start flex w-full">
-                    <img src="assets/gyfa.png" class="h-15 pl-6" alt="">
-                    <div class="pl-4">
-                        <h1 class="text-2xl font-bold">Rep Your Club</h1>
-                        <h3 class="text-lg">GYFA</h3>
-                    </div>
-                </div>
+<section class="flex flex-col md:flex-row bg-bg-1 pt-8 pb-5 md:pb-10 xl:rounded-t-xl border-t border-bg-3">
+	<div class="justify-start flex w-full">
+		<img src="assets/gyfa.png" class="h-15 pl-6" alt="">
+		<div class="pl-4">
+			<h1 class="text-2xl font-bold">Rep Your Club</h1>
+			<h3 class="text-lg">GYFA</h3>
+		</div>
+	</div>
 
-                <div class="flex justify-end pr-6">
-                    <button class="flex justify-center gap-3 py-2 px-3 bg-bg-2 rounded-xl text-xs h-fit">
-                        <h1 class="text-sm">July / August 2026</h1>
-                    </button>
+	<div class="flex justify-end pr-6">
+		<button class="flex justify-center gap-3 py-2 px-3 bg-bg-2 rounded-xl text-xs h-fit">
+			<h1 class="text-sm">July / August 2026</h1>
+		</button>
 
-                </div>
-            </section>
+	</div>
+</section>
 
 		<!-- Tabs -->
 		<tab-sections class="grid grid-rows-[auto_1fr] overflow-scroll no-scrollbar h-full">
 			<nav class="text-sm font-medium text-center border-b border-bg-3 overflow-auto bg-bg-1 pl-6">
 				
-            <ul class="flex overflow-x-auto no-scrollbar">
-                
-                    <li class="tab group" data-index="0" 
-                    data-active="true"
-
-                        ><button
-                        class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
-                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3"
-                        >
-                        Table
-                        </button>
-                    </li>
-                
-                    <li class="tab group" data-index="1" 
-                    data-active="false"
-
-                        ><button
-                        class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
-                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3"
-                        >
-                        Fixtures
-                        </button>
-                    </li>
-                
-                    <li class="tab group" data-index="2" 
-                    data-active="false"
-
-                        ><button
-                        class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
-                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3"
-                        >
-                        Player Stats
-                        </button>
-                    </li>
-                
-                    <li class="tab group" data-index="3" 
-                    data-active="false"
-
-                        ><button
-                        class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
-                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3"
-                        >
-                        Team Stats
-                        </button>
-                    </li>
-                
-            </ul>
+<ul class="flex overflow-x-auto no-scrollbar">
+	
+	<li class="tab group" data-index="0" data-active="true">
+		<button
+			class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
+                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3">
+			Table
+		</button>
+	</li>
+	
+	<li class="tab group" data-index="1" data-active="false">
+		<button
+			class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
+                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3">
+			Fixtures
+		</button>
+	</li>
+	
+	<li class="tab group" data-index="2" data-active="false">
+		<button
+			class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
+                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3">
+			Player Stats
+		</button>
+	</li>
+	
+	<li class="tab group" data-index="3" data-active="false">
+		<button
+			class="inline-block p-2 group-data-[active=true]:border-b-4 group-data-[active=false]:border-b-2 group-data-[active=false]:border-transparent 
+                        group-data-[active=false]:text-text-6 group-data-[active=true]:border-brand rounded-t-base hover:bg-bg-3">
+			Team Stats
+		</button>
+	</li>
+	
+</ul>
 
 			</nav>
 
 			<div id="scroll-controller"
 				class="w-full h-full rounded-b-md flex overflow-scroll snap-x snap-mandatory scroll-smooth no-scrollbar z-0">
+
 				<!-- Table -->
 				<section
 					class="rounded-md overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group scroll-smooth no-scrollbar p-3">
@@ -280,8 +259,7 @@
 					</div>
 
 					<div>
-						<div
-							class="grid py-4 bg-bg-1 text-sm text-text-6 grid-cols-9 md:grid-cols-15 place-items-center">
+						<div class="grid py-4 bg-bg-1 text-sm text-text-6 grid-cols-9 md:grid-cols-15 place-items-center">
 							<span class="col-span-1">#</span>
 							<span class="col-span-4 md:col-span-7 overflow-hidden justify-self-start">Team</span>
 							<span class="col-span-1">P</span>
@@ -480,8 +458,7 @@
 
 					<div class="bg-bg-1 flex flex-col h-fit rounded-xl">
 						<drop-down-toggle>
-							<div dropdowntoggle
-								class="rounded-xl flex justify-between p-2 w-full h-fit bg-bg-1 border border-bg-3">
+							<div dropdowntoggle class="rounded-xl flex justify-between p-2 w-full h-fit bg-bg-1 border border-bg-3">
 								<div class="text-sm m-2">
 									<span>June 28 2026</span>
 								</div>
@@ -493,8 +470,7 @@
 
 							<div dropdown class="bg-bg-alt-1 rounded-xl h-fit divide divide-y divide-bg-3">
 								<drop-down-toggle>
-									<div dropdowntoggle
-										class="rounded-b-xl w-full h-fit bg-bg-1 pt-3 border-b border-bg-3">
+									<div dropdowntoggle class="rounded-b-xl w-full h-fit bg-bg-1 pt-3 border-b border-bg-3">
 										<div
 											class="grid grid-cols-[1fr_9%_12%_9%_1fr] md:grid-cols-[auto_7%_9%_7%_auto] h-fit bg-bg-1 text-xs rounded-xl place-items-center">
 											<h1 class="col-span-1 justify-self-end font-semibold">Manchester United B
@@ -512,8 +488,7 @@
 											<div class="col-span-1 text-center text-text-6">20 : 00</div>
 											<div class="col-span-1 w-4 h-4 justify-self-end">
 												<div dropdownicon class="h-fit">
-													<iconify-icon icon="icon-park-solid:down-one"
-														class="w-4 h-4"></iconify-icon>
+													<iconify-icon icon="icon-park-solid:down-one" class="w-4 h-4"></iconify-icon>
 												</div>
 											</div>
 										</div>
@@ -529,8 +504,7 @@
 												<h3 class="text-sm text-text-6">Neymar Jr Assist</h3>
 											</div>
 										</div>
-										<div
-											class="flex flex-row-reverse items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+										<div class="flex flex-row-reverse items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
 											<div class="hidden md:block w-10 lg:w-30">
 											</div>
 											<img src="./assets/football.svg" class="w-6 h-6">
@@ -560,12 +534,10 @@
 					class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group scroll-smooth no-scrollbar">
 					<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
 						<div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
-							<a href="./stats.html"
-								class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
+							<a href="./stats.html" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
 								<span class="text-sm m-2">Top Scorer</span>
 							</a>
-							<div
-								class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-y border-brand">
+							<div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-y border-brand">
 								<div class="flex items-center">
 									<h1 class="mr-3">1</h1>
 									<img src="./assets/liverpool.svg" class="w-6">
@@ -575,8 +547,7 @@
 									339
 								</h2>
 							</div>
-							<div
-								class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-b border-b-bg-3">
+							<div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-b border-b-bg-3">
 								<div class="flex items-center">
 									<h1 class="mr-3">1</h1>
 									<img src="./assets/liverpool.svg" class="w-6">
@@ -604,13 +575,12 @@
 							</div>
 						</div>
 
-						<div class="flex flex-col p-3 h-fit">
+						<div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
 							<div
 								class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-3 text-sm border-b border-bg-3 rounded-t-xl">
 								<span class="text-sm m-2">Top Scorer</span>
 							</div>
-							<div
-								class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-y border-brand">
+							<div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-y border-brand">
 								<div class="flex items-center">
 									<h1 class="mr-3">1</h1>
 									<img src="./assets/liverpool.svg" class="w-6">
@@ -623,8 +593,7 @@
 							<div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
 								<span class="text-sm m-2">John</span>
 							</div>
-							<div
-								class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
+							<div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
 								<span class="text-sm m-2">Mary</span>
 							</div>
 						</div>
@@ -640,12 +609,10 @@
 							<div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
 								<span class="text-sm m-2">John</span>
 							</div>
-							<div
-								class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
+							<div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
 								<span class="text-sm m-2">Mary</span>
 							</div>
 						</div>
-
 					</div>
 				</section>
 
