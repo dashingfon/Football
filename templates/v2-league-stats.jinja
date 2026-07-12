@@ -5,7 +5,7 @@
     <div class="fadeUp max-w-7xl mx-auto h-full grid grid-rows-[auto_auto_1fr">
         {{components.header(root)}}
 
-        <div class="flex flex-col h-fit">
+        <div class="flex flex-col h-fit px-3">
             <!-- Season Select -->
             <section class="overflow-auto flex-none mb-2 w-full bg-bg-2 no-scrollbar">
                 <drop-down>
@@ -66,7 +66,7 @@
             </section>
 
             <!-- Stats select -->
-            <section class="overflow-auto flex-none mb-4 w-full bg-bg-2 no-scrollbar">
+            <section class="overflow-auto flex-none mb-2 w-full bg-bg-2 no-scrollbar">
                 <drop-down>
                     <style>
                         #stats-dropdown-button {
@@ -121,7 +121,7 @@
             </section>
         </div>
 
-        <section class="flex flex-col h-full">
+        <section class="flex flex-col h-full px-3">
             <div class="sticky top-0 group-data-[loading=true]:hidden flex mt-2">
                 <button id="play-controls"
                     class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
@@ -193,27 +193,31 @@
 
             <!-- heading -->
             <div
-                class="sticky top-12 group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10 font-medium">
+                class="sticky top-15 group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10 font-medium">
                 <span class="col-span-1">#</span>
                 <span class="col-span-6 overflow-hidden">Player</span>
                 <span class="col-span-3" id="specific-stats">Goals</span>
             </div>
 
-            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
-                <div class="flex items-center">
-                    <h1 class="mr-3">1</h1>
-                    <img src="{{root}}assets/liverpool.svg" class="w-6">
-                    <div>
-                        <span class="text-sm m-2">David</span>
-                        <div class="flex items-center">
-                            <img src="{{root}}assets/liverpool.svg" class="mx-2 w-3">
-                            <h1 class="text-text-6 text-sm">Argentina</h1>
+            <div class="flex flex-col justify-start">
+                <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                    <div class="flex items-center">
+                        <h1 class="mr-3">1</h1>
+                        <img src="{{root}}assets/liverpool.svg" class="w-6">
+                        <div>
+                            <span class="text-sm m-2">David</span>
+                            <div class="flex items-center">
+                                <img src="{{root}}assets/liverpool.svg" class="mx-2 w-3">
+                                <h1 class="text-text-6 text-sm">Argentina</h1>
+                            </div>
                         </div>
                     </div>
+                    <h2>
+                        339
+                    </h2>
                 </div>
-                <h2>
-                    339
-                </h2>
+                <div class="h-1 bg-brand" style="width: 30%;">
+                </div>
             </div>
 
             <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
