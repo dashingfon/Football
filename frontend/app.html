@@ -488,18 +488,18 @@
 
               <div dropdown class="bg-bg-alt-1 rounded-xl h-fit divide divide-y divide-bg-3">
                 <drop-down-toggle>
-                  <div dropdowntoggle class="rounded-xl w-full h-fit bg-bg-1 pt-3">
+                  <div dropdowntoggle class="rounded-b-xl w-full h-fit bg-bg-1 pt-3 border-b border-bg-3">
                     <div class="grid grid-cols-[1fr_9%_12%_9%_1fr] md:grid-cols-[auto_7%_9%_7%_auto] h-fit bg-bg-1 text-xs rounded-xl place-items-center">
-                      <h1 class="col-span-1 justify-self-end">Manchester United B</h1>
+                      <h1 class="col-span-1 justify-self-end font-semibold">Manchester United B</h1>
                       <img src="./assets/liverpool.svg" class="w-6">
-                      <span class="text-sm">99 - 99</span>
+                      <span class="text-sm">9 - 0</span>
                       <img src="./assets/liverpool.svg" class="w-6">
-                      <h1 class="col-span-1 justify-self-start">Manchester United B</h1>
+                      <h1 class="col-span-1 justify-self-start font-semibold">Manchester United B</h1>
                     </div>
                     <div class="grid grid-cols-[1fr_25%_1fr] md:grid-cols-[auto_20%_auto] h-8 text-xs p-2 place-items-center">
                       <div class="col-span-1 w-4 h-4 justify-self-start">
                       </div>
-                      <div class="col-span-1 text-center text-text-6">20:00</div>
+                      <div class="col-span-1 text-center text-text-6">20 : 00</div>
                       <div class="col-span-1 w-4 h-4 justify-self-end">
                         <div dropdownicon class="h-fit">
                           <iconify-icon icon="icon-park-solid:down-one" class="w-4 h-4"></iconify-icon>
@@ -508,11 +508,11 @@
                     </div>
                   </div>
 
-                 <div dropdown class="bg-bg-alt-1 hidden rounded-xl h-fit">
+                 <div dropdown class="bg-bg-alt-1 hidden rounded-xl h-fit border-b border-bg-3">
                       <div class="flex items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                         <div class="hidden md:block w-10 lg:w-30">
                         </div>
-                        <img src="./assets/football.svg" class="w-6 h-6">
+                        <img src="./assets/football.svg" class="w-6 h-6 bg-fg-1">
                         <div class="flex flex-col m-2">
                           <h3 class="text-sm">Cristiano Ronaldo</h3>
                           <h3 class="text-sm text-text-6">Neymar Jr Assist</h3>
@@ -546,300 +546,52 @@
         <!-- Player Stats -->
         <section
           class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group scroll-smooth no-scrollbar">
-
-          <div class="bg-bg-1 m-4 flex flex-col h-fit">
-            <drop-down-toggle>
-              <div dropdowntoggle class="rounded-md flex justify-between p-2 w-full h-fit bg-bg-3">
-                <div class="text-sm m-2">
-                  <span>June 28th 2026</span>
-                </div>
-                <div class="p-2">
-                  <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            <div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
+              <a class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-b border-bg-3">
+                <span class="text-sm m-2">Top Scorer</span>
+              </a>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-y-2 border-brand">
+                <span class="text-sm m-2">David</span>
               </div>
-
-              <div class="w-full h-fit hidden">
-                <button
-                  class="m-2 p-2 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3 leading-none flex justify-center">
-                  <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                  <span class="text-xs pl-3"> View Teams </span>
-                </button>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
+                <span class="text-sm m-2">John</span>
               </div>
-
-              <div dropdown class="h-fit divide divide-y divide-bg-3">
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/arsenal.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Arsenal</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      3 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Man United B</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/man_united2.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Kunle
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Felaini
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Benson
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Ogbon
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Lanre
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Lanre
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Seun
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/man_united1.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Man United A</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      0 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Real Madrid</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/real_madrid.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2"></div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Own Goal (Eze)
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/chelsea1.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Chelsea A</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      1 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Barcelona</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/barcelona.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Micheal
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"><iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%"
-                            height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Sheriff</div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Somto
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/liverpool.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Liverpool</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      2 - 0
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Chelsea B</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/chelsea2.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Tm
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"><iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%"
-                            height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Ikenga</div>
-                      </div>
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Tm
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
+                <span class="text-sm m-2">Mary</span>
               </div>
-            </drop-down-toggle>
+            </div>
+
+            <div class="flex flex-col p-3 h-fit">
+              <div class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-3 text-sm border-b border-bg-3 rounded-t-xl">
+                <span class="text-sm m-2">Top Scorer</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-y-2 border-brand">
+                <span class="text-sm m-2">David</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
+                <span class="text-sm m-2">John</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
+                <span class="text-sm m-2">Mary</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col p-3 h-fit">
+              <div class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-3 text-sm border-b border-bg-3 rounded-t-xl">
+                <span class="text-sm m-2">Top Scorer</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-y-2 border-brand">
+                <span class="text-sm m-2">David</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3">
+                <span class="text-sm m-2">John</span>
+              </div>
+              <div class="flex justify-between p-2 h-fit bg-bg-1 text-sm border-b border-bg-3 rounded-b-xl">
+                <span class="text-sm m-2">Mary</span>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -847,299 +599,8 @@
         <section
           class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group scroll-smooth no-scrollbar">
 
-          <div class="bg-bg-1 m-4 flex flex-col h-fit">
-            <drop-down-toggle>
-              <div dropdowntoggle class="rounded-md flex justify-between p-2 w-full h-fit bg-bg-3">
-                <div class="text-sm m-2">
-                  <span>June 28th 2026</span>
-                </div>
-                <div class="p-2">
-                  <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                </div>
-              </div>
+          <div class="">
 
-              <div class="w-full h-fit hidden">
-                <button
-                  class="m-2 p-2 hover:bg-bg-3 text-text-2 rounded-md border border-bg-3 leading-none flex justify-center">
-                  <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
-                    class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                  <span class="text-xs pl-3"> View Teams </span>
-                </button>
-              </div>
-
-              <div dropdown class="h-fit divide divide-y divide-bg-3">
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/arsenal.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Arsenal</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      3 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Man United B</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/man_united2.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Kunle
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Felaini
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Benson
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Ogbon
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Lanre
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Lanre
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2">
-                          <iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Seun
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/man_united1.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Man United A</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      0 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Real Madrid</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/real_madrid.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2"></div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Own Goal (Eze)
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/chelsea1.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Chelsea A</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      1 - 1
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Barcelona</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/barcelona.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Micheal
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"><iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%"
-                            height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Sheriff</div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Somto
-                        </div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mx-2 mb-4 pb-4">
-                  <!-- Scoreline -->
-                  <div class="grid grid-cols-5 p-2">
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/liverpool.svg" class="w-8 mr-2"></img>
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Liverpool</span>
-                      </div>
-                    </div>
-                    <div class="col-span-1 h-15 flex items-center justify-center font-bold">
-                      2 - 0
-                    </div>
-                    <div class="col-span-2 h-15 flex justify-center items-center gap-2">
-                      <div>
-                        <span class="text-xs md:text-base font-bold tracking-wide">Chelsea B</span>
-                      </div>
-                      <!-- <img src="../../assets/42.png" class="w-6 h-6" /> -->
-                      <img src="../../assets/chelsea2.svg" class="w-8 mr-2"></img>
-                    </div>
-                  </div>
-
-                  <!-- Goal Scorers -->
-                  <div class="grid grid-cols-2 p-2 divide-x divide-bg-3">
-                    <div class="col-span-1 pr-4 ml-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Tm
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"><iconify-icon icon="material-symbols:shoe-cleats-outline" width="100%"
-                            height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Ikenga</div>
-                      </div>
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2">
-                          <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%"
-                            class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                          Tm
-                        </div>
-                        <div class="w-2"></div>
-
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-
-                    <div class="col-span-1 pl-4 mr-auto text-xs flex flex-col gap-2">
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-
-                      <div class="flex text-text-4">
-                        <div class="flex gap-2"></div>
-                        <div class="w-2"></div>
-                        <div class="flex gap-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </drop-down-toggle>
           </div>
         </section>
 
