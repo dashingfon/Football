@@ -652,8 +652,8 @@ class MultipleLeagueKnockout(BaseModel):
     teams: list[Team]
     table: dict[str, list[str]]
     pre_season: list[Fixture]
-    # fixtures: dict[str, Fixture] =  Field(default_factory=dict)
-    fixtures: list[Fixture] =  Field(default_factory=list)
+    fixtures: dict[str, Fixture] =  Field(default_factory=dict)
+    # fixtures: list[Fixture] =  Field(default_factory=list)
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
