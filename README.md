@@ -130,6 +130,3 @@ sub
     - controls
     - entries
 - new landing page
-
-
-Recreate the attached webpage EXACTLY like the screenshot as an HTML + JavaScript implementation using Tailwind CSS. Treat the screenshot as the primary visual reference. Use the captured page structure from the imported site as the structural reference and the attached DESIGN.md as a secondary design-system token and asset reference. Use DESIGN.md only to preserve tokenized design-system cues and asset references, especially typography, spacing rhythm, radii, component styling, accessibility cues, evidenced motion cues, and listed media. If DESIGN.md conflicts with the screenshot on colors, surfaces, layout, or composition, follow the screenshot. Avoid long inline SVG markup unless there is no practical alternative. Let the screenshot drive styling decisions instead of adding extra interpretation.

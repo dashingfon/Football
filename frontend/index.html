@@ -263,69 +263,107 @@
                 </a>
             </div>
 
-            <!-- Dashboard / App Mockup -->
-            <div class="mt-20 relative mx-auto max-w-5xl">
-                <!-- Decorative subtle gradients behind mockup -->
-                <div
-                    class="absolute -inset-1 bg-gradient-to-r from-brand/20 to-text-4/20 rounded-[2rem] blur-xl opacity-50">
-                </div>
+            <!-- Competitions Showcase -->
+            <div class="mt-20 relative mx-auto max-w-5xl fadeUp">
+                <!-- Decorative subtle gradients behind cards -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand/20 to-text-4/20 rounded-[2rem] blur-xl opacity-50 pointer-events-none"></div>
 
-                <div
-                    class="relative rounded-2xl border border-bg-3 bg-bg-3/80 p-2 backdrop-blur-xl shadow-2xl shadow-bg-1">
-                    <!-- Browser/App Header -->
-                    <div class="flex items-center gap-2 px-3 pb-2 pt-1 border-b border-bg-1 mb-2">
-                        <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                    </div>
-
-                    <!-- App Content Area (Video Highlight focus) -->
-                    <div class="rounded-xl bg-bg-1 border border-bg-3/50 aspect-video relative overflow-hidden group">
-                        <!-- Abstract Video Background -->
-                        <div
-                            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMxMThBMTEiPjwvcmVjdD48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMWQxZDIwIj48L3JlY3Q+PC9zdmc+')] opacity-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                    <!-- Competition Card 1: Rep Your Club -->
+                    <a href="#" class="group flex flex-col rounded-2xl border border-bg-3 bg-bg-3/80 overflow-hidden backdrop-blur-xl shadow-2xl shadow-bg-1 hover:border-brand/40 transition-all duration-300">
+                        <!-- Image Container -->
+                        <div class="relative h-56 w-full bg-bg-2 overflow-hidden">
+                            <!-- Placeholder Image (Using Unsplash) -->
+                            <img src="https://images.unsplash.com/photo-1518605368461-1ee1252328bb?auto=format&fit=crop&q=80&w=800" alt="Rep Your Club Football Competition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 group-hover:opacity-90">
+                            
+                            <!-- Status Badge -->
+                            <div class="absolute top-4 right-4 bg-orange-500 text-zinc-50 text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                                Registration Open
+                            </div>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-tr from-bg-1 via-bg-2/50 to-bg-1/20">
-                        </div>
-
-                        <!-- Play Button -->
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                            <button
-                                class="w-16 h-16 rounded-full bg-brand/20 text-brand flex items-center justify-center backdrop-blur-md border border-brand/30 group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-300">
-                                <iconify-icon icon="solar:play-linear" width="32" height="32"></iconify-icon>
-                            </button>
-                        </div>
-
-                        <!-- UI Overlay -->
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-bg-1 via-bg-1/80 to-transparent flex justify-between items-end z-10">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-bg-2 border border-bg-3 overflow-hidden flex items-center justify-center">
-                                    <iconify-icon icon="solar:user-linear" width="20" height="20"
-                                        class="text-zinc-400"></iconify-icon>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-text-2 mb-0.5">Top Corner Free Kick 🎯</div>
-                                    <div class="text-xs text-zinc-400 flex items-center gap-2">
-                                        <span class="text-brand">@marcus_10</span>
-                                        <span class="w-1 h-1 rounded-full bg-zinc-600"></span>
-                                        <span>Sunday League Div 1</span>
+                        
+                        <!-- Content -->
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-2xl font-bold tracking-tight text-text-1 mb-1">Rep Your Club</h3>
+                            <p class="text-sm text-text-4 mb-6">The ultimate battle for neighborhood supremacy.</p>
+                            
+                            <!-- Meta Info -->
+                            <div class="space-y-4 mb-8 mt-auto">
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:map-point-linear" width="18" height="18"></iconify-icon>
                                     </div>
+                                    <span>Lagos National Stadium, Surulere</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:calendar-linear" width="18" height="18"></iconify-icon>
+                                    </div>
+                                    <span>Aug 15 - Sep 30, 2026</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:users-group-two-rounded-linear" width="18" height="18"></iconify-icon>
+                                    </div>
+                                    <span>16 Teams Participating</span>
                                 </div>
                             </div>
-                            <div class="flex gap-3 hidden sm:flex">
-                                <button
-                                    class="w-10 h-10 rounded-full bg-bg-2/80 border border-text-3/20 flex items-center justify-center text-text-4 hover:text-text-1 hover:bg-bg-3 backdrop-blur-sm transition-colors">
-                                    <iconify-icon icon="solar:heart-linear" width="20" height="20"></iconify-icon>
-                                </button>
-                                <button
-                                    class="w-10 h-10 rounded-full bg-bg-2/80 border border-text-3/20 flex items-center justify-center text-text-4 hover:text-text-1 hover:bg-bg-3 backdrop-blur-sm transition-colors">
-                                    <iconify-icon icon="solar:share-linear" width="20" height="20"></iconify-icon>
-                                </button>
+                            
+                            <!-- Card Footer/Link -->
+                            <div class="flex items-center justify-between border-t border-bg-3/50 pt-4 mt-auto">
+                                <span class="text-orange-500 font-medium text-sm group-hover:underline">View Competition Details</span>
+                                <iconify-icon icon="solar:arrow-right-linear" class="text-orange-500 group-hover:translate-x-1 transition-transform" width="20" height="20"></iconify-icon>
                             </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <!-- Competition Card 2: Football Spot -->
+                    <a href="#" class="group flex flex-col rounded-2xl border border-bg-3 bg-bg-3/80 overflow-hidden backdrop-blur-xl shadow-2xl shadow-bg-1 hover:border-brand/40 transition-all duration-300">
+                        <!-- Image Container -->
+                        <div class="relative h-56 w-full bg-bg-2 overflow-hidden">
+                            <!-- Placeholder Image (Using Unsplash) -->
+                            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=800" alt="Football Spot Competition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 group-hover:opacity-90">
+                            
+                            <!-- Status Badge -->
+                            <div class="absolute top-4 right-4 bg-bg-1/80 backdrop-blur-md border border-bg-3 text-text-2 text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                                Coming Soon
+                            </div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-2xl font-bold tracking-tight text-text-1 mb-1">Football Spot</h3>
+                            <p class="text-sm text-text-4 mb-6">High-intensity 5-a-side weekly league.</p>
+                            
+                            <!-- Meta Info -->
+                            <div class="space-y-4 mb-8 mt-auto">
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:map-point-linear" width="18" height="18"></iconify-icon>
+                                    </div>
+                                    <span>Campos Mini Stadium, Lagos Island</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:calendar-linear" width="18" height="18"></iconify-icon>
+                                    </div>
+                                    <span>Oct 5 - Nov 20, 2026</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-text-3 font-medium">
+                                    <div class="w-8 h-8 rounded-full bg-bg-2 border border-bg-3 flex items-center justify-center text-text-4">
+                                        <iconify-icon icon="solar:users-group-two-rounded-linear" width="18" height="18"></iconify-icon>
+                                    </div>
+                                    <span>8 Teams (4 Spots Left)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Card Footer/Link -->
+                            <div class="flex items-center justify-between border-t border-bg-3/50 pt-4 mt-auto">
+                                <span class="text-orange-500 font-medium text-sm group-hover:underline">View Competition Details</span>
+                                <iconify-icon icon="solar:arrow-right-linear" class="text-orange-500 group-hover:translate-x-1 transition-transform" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
