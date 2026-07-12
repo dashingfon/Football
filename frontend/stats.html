@@ -163,7 +163,7 @@
 <main class="flex-1 overflow-y-auto md:ml-16 space-y-6 h-screen bg-bg-2 text-text-1 w-fit">
     <div class="fadeUp max-w-7xl mx-auto h-full grid grid-rows-[auto_auto_1fr">
         
-            <nav class="sticky top-0 left-0 w-full justify-between p-3 flex items-center">
+            <nav class="top-0 left-0 w-full justify-between p-3 flex items-center">
                 <div class="flex">
                     <a href="./" class="flex items-center">
                         <img src=".//assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
@@ -196,6 +196,7 @@
                     </mode-toggle-button>
                 </div>
             </nav>
+
 
         <div class="flex flex-col h-fit">
             <!-- Season Select -->
@@ -313,137 +314,407 @@
             </section>
         </div>
 
-        <section class="h-full">
-            <nav-controller data-nav="mobile-nav" data-loading="true"
-                class="overflow-auto w-full h-full bg-bg-2 snap-start snap-always group">
-                <!-- Stats -->
-                <chart-race data-target="init-stats" data-playing="false" class="group h-full">
+        <section class="flex flex-col h-full">
+            <div class="sticky top-0 group-data-[loading=true]:hidden flex mt-2">
+                <button id="play-controls"
+                    class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
+                    <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
+                        class="w-4 h-4 group-data-[playing=false]:block group-data-[playing=true]:hidden"></iconify-icon>
+                    <iconify-icon icon="mingcute:pause-fill" width="100%" height="100%"
+                        class="w-4 h-4 group-data-[playing=false]:hidden group-data-[playing=true]:block"></iconify-icon>
+                </button>
+                <style>
+                    #round-dropdown-button {
+                        anchor-name: --round-anchor;
+                    }
 
-                    <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
-
-                        <svg aria-hidden="true" class="w-8 h-8 animate-spin fill-brand" viewBox="0 0 100 101"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                                fill="currentColor" />
-                            <path
-                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                                fill="currentFill" />
-                        </svg>
-
-                    </div>
-                    <!-- controls -->
-                    <div class="group-data-[loading=true]:hidden flex mt-2">
-                        <button id="play-controls"
-                            class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
-                            <iconify-icon icon="mingcute:play-fill" width="100%" height="100%"
-                                class="w-4 h-4 group-data-[playing=false]:block group-data-[playing=true]:hidden"></iconify-icon>
-                            <iconify-icon icon="mingcute:pause-fill" width="100%" height="100%"
-                                class="w-4 h-4 group-data-[playing=false]:hidden group-data-[playing=true]:block"></iconify-icon>
-                        </button>
-                        <style>
-                            #round-dropdown-button {
-                                anchor-name: --round-anchor;
-                            }
-
-                            #round-dropdown {
-                                position-anchor: --round-anchor;
-                                margin: 0;
-                                inset: auto;
-                                top: anchor(bottom);
-                                right: anchor(right);
-                            }
-                        </style>
-                        <button id="round-dropdown-button" popovertarget="round-dropdown"
-                            class="m-2 p-2 hover:bg-bg-3 text-text-1 font-bold rounded-md border border-text-6 leading-none items-center">
-                            <span class="px-2 id">1</span>
-                            <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
-                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="round-dropdown" popover
-                            class="absolute not-even:absolute max-h-96 bg-bg-2 border border-text-6 text-text-5 border-default-medium rounded-md shadow-lg w-15">
-                            <template id="round-template">
-                                <li>
-                                    <button
-                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded round">1</button>
-                                </li>
-                            </template>
-
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton"
-                                id="rounds-list">
-                                <li>
-                                    <button
-                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
-                                </li>
-                                <li>
-                                    <button
-                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">2</button>
-                                </li>
-                                <li>
-                                    <button
-                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">3</button>
-                                </li>
-                                <li>
-                                    <button
-                                        class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">4</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <button id="previous-button"
-                            class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
-                            <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
-                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                        </button>
-                        <button id="next-button"
-                            class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
-                            <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
-                                class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
-                        </button>
-                    </div>
-
-                    <!-- heading -->
-                    <div
-                        class="group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10 font-medium">
-                        <span class="col-span-1">#</span>
-                        <span class="col-span-6 overflow-hidden">Player</span>
-                        <span class="col-span-3" id="specific-stats">Goals</span>
-                    </div>
-
-                    <template id="table-entry-template">
-                        <div class="entries group" data-direction="">
-                            <div class="bg-bg-2 p-2 rounded-t-md grid grid-cols-10 transition-all">
-                                <div class="flex">
-                                    <span class="col-span-1 index">1</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                        <path d="m12 8l7 8H5z"
-                                            class="fill-green-500 w-4 h-4 group-data-[direction=up]:block hidden" />
-                                    </svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                        <path d="m5 8l7 8l7-8z"
-                                            class="fill-red-500 w-4 h-4 group-data-[direction=down]:block hidden" />
-                                    </svg>
-
-                                </div>
-                                <span class="col-span-7 overflow-hidden name">Mfon</span>
-                                <span class="col-span-2 value">99</span>
-                            </div>
-
-                            <div class="bg-bg-1 h-2 mb-4 rounded-b-md">
-                                <div class="h-full bg-brand rounded-r-full width transition-all duration-[2s]"
-                                    style="width: 80%"></div>
-                            </div>
-                        </div>
+                    #round-dropdown {
+                        position-anchor: --round-anchor;
+                        margin: 0;
+                        inset: auto;
+                        top: anchor(bottom);
+                        right: anchor(right);
+                    }
+                </style>
+                <button id="round-dropdown-button" popovertarget="round-dropdown"
+                    class="m-2 p-2 hover:bg-bg-3 text-text-1 font-bold rounded-md border border-text-6 leading-none items-center">
+                    <span class="px-2 id">1</span>
+                    <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
+                        class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="round-dropdown" popover
+                    class="absolute not-even:absolute max-h-96 bg-bg-2 border border-text-6 text-text-5 border-default-medium rounded-md shadow-lg w-15">
+                    <template id="round-template">
+                        <li>
+                            <button
+                                class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded round">1</button>
+                        </li>
                     </template>
 
-                    <!-- table -->
-                    <div class="group-data-[loading=true]:hidden flex flex-col" id="table-container">
+                    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownDefaultButton"
+                        id="rounds-list">
+                        <li>
+                            <button
+                                class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">1</button>
+                        </li>
+                        <li>
+                            <button
+                                class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">2</button>
+                        </li>
+                        <li>
+                            <button
+                                class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">3</button>
+                        </li>
+                        <li>
+                            <button
+                                class="inline-flex items-center w-full p-2 hover:bg-bg-1 hover:text-heading rounded">4</button>
+                        </li>
+                    </ul>
+                </div>
+                <button id="previous-button"
+                    class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
+                    <iconify-icon icon="fluent:previous-24-filled" width="100%" height="100%"
+                        class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                </button>
+                <button id="next-button"
+                    class="m-2 p-2 hover:bg-bg-3 text-text-5 rounded-md border border-text-6 leading-none">
+                    <iconify-icon icon="fluent:next-24-filled" width="100%" height="100%"
+                        class="w-4 h-4 group-data-[theme=dark]:hidden group-data-[theme=light]:block"></iconify-icon>
+                </button>
+            </div>
 
+            <!-- heading -->
+            <div
+                class="sticky top-12 group-data-[loading=true]:hidden gap-1 my-2 p-2 bg-bg-1 rounded-md text-sm grid grid-cols-10 font-medium">
+                <span class="col-span-1">#</span>
+                <span class="col-span-6 overflow-hidden">Player</span>
+                <span class="col-span-3" id="specific-stats">Goals</span>
+            </div>
 
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
                     </div>
-                </chart-race>
-            </nav-controller>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
+            <div class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3">
+                <div class="flex items-center">
+                    <h1 class="mr-3">1</h1>
+                    <img src="./assets/liverpool.svg" class="w-6">
+                    <div>
+                        <span class="text-sm m-2">David</span>
+                        <div class="flex items-center">
+                            <img src="./assets/liverpool.svg" class="mx-2 w-3">
+                            <h1 class="text-text-6 text-sm">Argentina</h1>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    339
+                </h2>
+            </div>
+
         </section>
 
     </div>
