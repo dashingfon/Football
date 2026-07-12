@@ -7,7 +7,6 @@
     <title> {% block title %}Fotclan{% endblock title %} </title>
 
     {% block imports %}
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -24,9 +23,7 @@
     </init-league>
 
     {% endblock imports %}
-
     {% import './components.jinja' as components %}
-
     <style>
     .skeleton {
         background: var(--color-bg-1);
@@ -93,9 +90,7 @@
     data-theme="light"
     class="font-[Inter] antialiased text-text-1 bg-bg-1 transition-colors duration-500 flex h-screen whitespace-nowrap group/body"
 >
-
     {% block desktop_nav %}
-
     <aside class="hidden md:block left-0 top-0 z-10 h-screen fixed border-r border-bg-3" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto no-scrollbar bg-bg-1 flex flex-col justify-between transition-all duration-50 group hover:w-70 data-[expanded=false]:w-16"
             data-active="">
@@ -171,7 +166,6 @@
     </main>
     
     {% endblock main_body %}
-
     {% block mobile_nav %}
     <nav id="mobile-nav" data-hidden="false"
         class="md:hidden fixed bottom-0 inset-x-0 glass dark:glass-light backdrop-blur-md border-t border-bg-2 bg-bg-2 flex justify-around pb-3 text-text-2 group data-[hidden=true]:translate-y-full transition-transform duration-300"
