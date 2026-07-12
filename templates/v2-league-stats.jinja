@@ -4,9 +4,9 @@
 <main class="flex-1 overflow-y-auto md:ml-16 space-y-6 h-screen bg-bg-2 text-text-1 w-fit">
     <div class="fadeUp max-w-7xl mx-auto h-full grid grid-rows-[auto_auto_1fr">
         {{components.header(root)}}
-        <div>
+        <div class="flex flex-col h-fit">
             <!-- Season Select -->
-            <section class="overflow-auto flex-none mb-2 w-full h-full bg-bg-2 no-scrollbar">
+            <section class="overflow-auto flex-none mb-2 w-full bg-bg-2 no-scrollbar">
                 <drop-down>
                     <style>
                         #season-dropdown-button {
@@ -65,7 +65,7 @@
             </section>
 
             <!-- Stats select -->
-            <section class="overflow-auto flex-none mb-4 w-full h-full bg-bg-2 no-scrollbar">
+            <section class="overflow-auto flex-none mb-4 w-full bg-bg-2 no-scrollbar">
                 <drop-down>
                     <style>
                         #stats-dropdown-button {
@@ -120,13 +120,11 @@
             </section>
         </div>
 
-        {# <section>
-        </section> #}
-        <nav-controller data-nav="mobile-nav" data-loading="true"
-            class="overflow-auto flex-none w-full h-full bg-bg-2 snap-start snap-always group">
-            <!-- Stats -->
-            <chart-race data-target="init-stats" data-playing="false" class="group">
-                <section>
+        <section class="h-full">
+            <nav-controller data-nav="mobile-nav" data-loading="true"
+                class="overflow-auto w-full h-full bg-bg-2 snap-start snap-always group">
+                <!-- Stats -->
+                <chart-race data-target="init-stats" data-playing="false" class="group h-full">
 
                     <div class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex">
 
@@ -251,9 +249,9 @@
 
 
                     </div>
-                </section>
-            </chart-race>
-        </nav-controller>
+                </chart-race>
+            </nav-controller>
+        </section>
 
     </div>
 </main>
