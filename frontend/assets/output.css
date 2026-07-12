@@ -1042,12 +1042,6 @@
       background-color: color-mix(in oklab, var(--bg-1) 70%, transparent);
     }
   }
-  .bg-bg-1\/80 {
-    background-color: var(--bg-1);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--bg-1) 80%, transparent);
-    }
-  }
   .bg-bg-2 {
     background-color: var(--bg-2);
   }
@@ -1110,6 +1104,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-orange-500) 10%, transparent);
     }
+  }
+  .bg-pitch {
+    background-color: var(--pitch);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);

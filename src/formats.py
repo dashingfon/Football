@@ -652,7 +652,8 @@ class MultipleLeagueKnockout(BaseModel):
     teams: list[Team]
     table: dict[str, list[str]]
     pre_season: list[Fixture]
-    fixtures: dict[str, Fixture] =  Field(default_factory=dict)
+    # fixtures: dict[str, Fixture] =  Field(default_factory=dict)
+    fixtures: list[Fixture] =  Field(default_factory=list)
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
@@ -1927,7 +1928,11 @@ if __name__ == "__main__":
 
     # data.build(season=season)
 
-    f = input_fixture(
-        "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
-    )
-    print(f)
+    # f = input_fixture(
+    #     "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
+    # )
+
+    def input_fixtures():
+        ...
+
+    input_fixtures()
