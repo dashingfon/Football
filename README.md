@@ -20,10 +20,7 @@ Fotclan is a social network for footballers
 
 ## objectives
 
-- [x] custom domain
-- [x] fixed some ui quirks
-- [x] update the default table view
-- [ ] update the zero index
+- [ ] add ui and backend for the admin
 
 
 # assumptions and tradeoffs
@@ -79,59 +76,6 @@ Fotclan is a social network for footballers
     }
 
 sub
-
-                Event(
-                    fixture="",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Aremu",
-                        "out": "Brainee",
-                    },
-                ),
-
-                Event(
-                    fixture="",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Kunle",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-
-                Event(
-                    fixture="",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Sancho",
-                    },
-                ),
-
-# components
-
-- table
-    - group name
-    - heading
-    - team entry
-- fixture
-    - scoreline
-    - events
-- stats
-    - stats group
-        - stats name
-        - player/ team
-- stats view
-    - competition
-    - stats
-    - controls
-    - entries
-- new landing page
-
-
 
 
 
