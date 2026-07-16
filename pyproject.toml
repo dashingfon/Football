@@ -23,3 +23,5 @@ dev = [
 test = 'pytest'
 build = 'python src/renderer.py'
 
+[tool.poe.tasks.watch]
+shell = 'watchfiles "uv run python src/renderer.py" templates'
