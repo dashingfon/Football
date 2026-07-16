@@ -21,7 +21,12 @@ dev = [
 
 [tool.poe.tasks]
 test = 'pytest'
-build = 'python src/renderer.py'
+
+[tool.poe.tasks.build]
+cmd = 'python src/renderer.py'
+help = "used to run the python build script"
 
 [tool.poe.tasks.watch]
-shell = 'watchfiles "uv run python src/renderer.py" templates'
+cmd = 'watchfiles "uv run python src/renderer.py" templates'
+help = "used to watch a folder for changes and run the build command"
+
