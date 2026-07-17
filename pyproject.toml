@@ -22,11 +22,25 @@ dev = [
 [tool.poe.tasks]
 test = 'pytest'
 
-[tool.poe.tasks.build]
+[tool.poe.tasks.build-src]
 cmd = 'python src/renderer.py'
 help = "used to run the python build script"
 
-[tool.poe.tasks.watch]
+[tool.poe.tasks.build-css]
+shell = 'npm run build:css'
+cwd = "./frontend"
+help = "run the css build command"
+
+[tool.poe.tasks.build]
+sequence = ["build-css", "build-src"]
+help = "Build the css and the html"
+
+[tool.poe.tasks.watch-src]
 cmd = 'watchfiles "uv run python src/renderer.py" templates'
-help = "used to watch a folder for changes and run the build command"
+help = "used to watch a folder for changes and run the html build command"
+
+[tool.poe.tasks.watch-css]
+shell = 'npm run build:css-watch'
+cwd = "./frontend"
+help = "used to watch a folder for changes and run the css build command"
 
