@@ -1,5 +1,6 @@
 {
-  "season": "july_august",
+  "league": "test",
+  "season": "july_august_2026",
   "current_round": 1,
   "teams": [
     {
@@ -110,8 +111,302 @@
       ]
     }
   ],
-  "fixtures": [
+  "table": {
+    "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+    "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+  },
+  "pre_season": [
     {
+      "home": "Arsenal",
+      "away": "Manchester United B",
+      "date": "2026-07-05T16:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Manchester United A",
+      "away": "Real Madrid",
+      "date": "2026-07-05T16:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "": "Aremu", "out": "Brainee" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Sancho" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Yerima" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Martins" }
+        }
+      ],
+      "map": {
+        "sub": [{ "side": "h", "": "Aremu", "out": "Brainee" }],
+        "yellow_card": [
+          { "side": "h", "player": "Sancho" },
+          { "side": "a", "player": "Yerima" },
+          { "side": "a", "player": "Martins" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Chelsea A",
+      "away": "Barcelona",
+      "date": "2026-07-05T17:00:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
+        }
+      ],
+      "map": {
+        "sub": [
+          { "side": "a", "in": "Tunde", "out": "Bisi" },
+          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
+          { "side": "a", "in": "Bisi", "out": "Taiwo" },
+          { "side": "h", "in": "Sheriff", "out": "Metu" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Liverpool",
+      "away": "Chelsea B",
+      "date": "2026-07-05T17:30:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Damsel" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Emma" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Machala" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "yellow_card": [
+          { "side": "h", "player": "Damsel" },
+          { "side": "h", "player": "Emma" },
+          { "side": "a", "player": "Machala" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
+      }
+    }
+  ],
+  "fixtures": {
+    "Arsenal_vs_Chelsea A_at_2026-07-05 16:00:00": {
       "home": "Arsenal",
       "away": "Chelsea A",
       "date": "2026-07-05T16:00:00",
@@ -299,7 +594,7 @@
         "full time": [{}]
       }
     },
-    {
+    "Barcelona_vs_Chelsea B_at_2026-07-05 16:50:00": {
       "home": "Barcelona",
       "away": "Chelsea B",
       "date": "2026-07-05T16:50:00",
@@ -465,7 +760,7 @@
         "full time": [{}]
       }
     },
-    {
+    "Liverpool_vs_Manchester United B_at_2026-07-05 17:40:00": {
       "home": "Liverpool",
       "away": "Manchester United B",
       "date": "2026-07-05T17:40:00",
@@ -603,7 +898,7 @@
         "full time": [{}]
       }
     },
-    {
+    "Manchester United A_vs_Real Madrid_at_2026-07-05 18:30:00": {
       "home": "Manchester United A",
       "away": "Real Madrid",
       "date": "2026-07-05T18:30:00",
@@ -787,301 +1082,7 @@
         "full time": [{}]
       }
     }
-  ],
-  "table": {
-    "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
-    "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
   },
-  "pre_season": [
-    {
-      "home": "Arsenal",
-      "away": "Manchester United B",
-      "date": "2026-07-05T16:00:00",
-      "seconds_duration": 1200,
-      "events": [
-        {
-          "fixture": "Arsenal_vs_Manchester United B",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Ogbon",
-            "assist": "Lanre",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Arsenal_vs_Manchester United B",
-          "name": "goal",
-          "event": {
-            "side": "a",
-            "scorer": "Felaini",
-            "assist": "Benson",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Arsenal_vs_Manchester United B",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Kunle",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Arsenal_vs_Manchester United B",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Lanre",
-            "assist": "Seun",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        }
-      ],
-      "map": {
-        "goal": [
-          {
-            "side": "h",
-            "scorer": "Ogbon",
-            "assist": "Lanre",
-            "is_own_goal": false,
-            "is_penalty": false
-          },
-          {
-            "side": "a",
-            "scorer": "Felaini",
-            "assist": "Benson",
-            "is_own_goal": false,
-            "is_penalty": false
-          },
-          {
-            "side": "h",
-            "scorer": "Kunle",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          },
-          {
-            "side": "h",
-            "scorer": "Lanre",
-            "assist": "Seun",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        ]
-      }
-    },
-    {
-      "home": "Manchester United A",
-      "away": "Real Madrid",
-      "date": "2026-07-05T16:30:00",
-      "seconds_duration": 1200,
-      "events": [
-        {
-          "fixture": "Manchester United A_vs_Real Madrid",
-          "name": "sub",
-          "event": { "side": "h", "in": "Aremu", "out": "Brainee" }
-        },
-        {
-          "fixture": "Manchester United A_vs_Real Madrid",
-          "name": "yellow_card",
-          "event": { "side": "h", "player": "Sancho" }
-        },
-        {
-          "fixture": "Manchester United A_vs_Real Madrid",
-          "name": "yellow_card",
-          "event": { "side": "a", "player": "Yerima" }
-        },
-        {
-          "fixture": "Manchester United A_vs_Real Madrid",
-          "name": "goal",
-          "event": {
-            "side": "a",
-            "scorer": "Eze",
-            "assist": "",
-            "is_own_goal": true,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Manchester United A_vs_Real Madrid",
-          "name": "yellow_card",
-          "event": { "side": "a", "player": "Martins" }
-        }
-      ],
-      "map": {
-        "sub": [{ "side": "h", "in": "Aremu", "out": "Brainee" }],
-        "yellow_card": [
-          { "side": "h", "player": "Sancho" },
-          { "side": "a", "player": "Yerima" },
-          { "side": "a", "player": "Martins" }
-        ],
-        "goal": [
-          {
-            "side": "a",
-            "scorer": "Eze",
-            "assist": "",
-            "is_own_goal": true,
-            "is_penalty": false
-          }
-        ]
-      }
-    },
-    {
-      "home": "Chelsea A",
-      "away": "Barcelona",
-      "date": "2026-07-05T17:00:00",
-      "seconds_duration": 1200,
-      "events": [
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "sub",
-          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
-        },
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "goal",
-          "event": {
-            "side": "a",
-            "scorer": "Somto",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Micheal",
-            "assist": "Sheriff",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "sub",
-          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
-        },
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "sub",
-          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
-        },
-        {
-          "fixture": "Chelsea A_vs_Barcelona",
-          "name": "sub",
-          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
-        }
-      ],
-      "map": {
-        "sub": [
-          { "side": "a", "in": "Tunde", "out": "Bisi" },
-          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
-          { "side": "a", "in": "Bisi", "out": "Taiwo" },
-          { "side": "h", "in": "Sheriff", "out": "Metu" }
-        ],
-        "goal": [
-          {
-            "side": "a",
-            "scorer": "Somto",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          },
-          {
-            "side": "h",
-            "scorer": "Micheal",
-            "assist": "Sheriff",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        ]
-      }
-    },
-    {
-      "home": "Liverpool",
-      "away": "Chelsea B",
-      "date": "2026-07-05T17:30:00",
-      "seconds_duration": 1200,
-      "events": [
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "yellow_card",
-          "event": { "side": "h", "player": "Damsel" }
-        },
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "yellow_card",
-          "event": { "side": "h", "player": "Emma" }
-        },
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "yellow_card",
-          "event": { "side": "a", "player": "Machala" }
-        },
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Tm",
-            "assist": "Ikenga",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "sub",
-          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
-        },
-        {
-          "fixture": "Liverpool_vs_Chelsea B",
-          "name": "goal",
-          "event": {
-            "side": "h",
-            "scorer": "Tm",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        }
-      ],
-      "map": {
-        "yellow_card": [
-          { "side": "h", "player": "Damsel" },
-          { "side": "h", "player": "Emma" },
-          { "side": "a", "player": "Machala" }
-        ],
-        "goal": [
-          {
-            "side": "h",
-            "scorer": "Tm",
-            "assist": "Ikenga",
-            "is_own_goal": false,
-            "is_penalty": false
-          },
-          {
-            "side": "h",
-            "scorer": "Tm",
-            "assist": "",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        ],
-        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
-      }
-    }
-  ],
   "titles": {},
   "rounds": [
     {
@@ -1095,6 +1096,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1108,6 +1110,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1121,6 +1124,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1134,6 +1138,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1147,6 +1152,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1160,6 +1166,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1173,6 +1180,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1186,6 +1194,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1199,6 +1208,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1212,6 +1222,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1225,6 +1236,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1238,6 +1250,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1251,6 +1264,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1264,6 +1278,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1277,6 +1292,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1290,6 +1306,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1303,6 +1320,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1316,6 +1334,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1329,6 +1348,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1342,6 +1362,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1355,6 +1376,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1368,6 +1390,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1381,6 +1404,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1394,6 +1418,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1407,6 +1432,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1420,6 +1446,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1433,6 +1460,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1446,6 +1474,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1459,6 +1488,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1472,6 +1502,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1485,6 +1516,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1498,6 +1530,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1511,6 +1544,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1524,6 +1558,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1537,6 +1572,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1550,6 +1586,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1563,6 +1600,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1576,6 +1614,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1589,6 +1628,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1602,6 +1642,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1615,6 +1656,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1628,6 +1670,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1641,6 +1684,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1654,6 +1698,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1667,6 +1712,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1680,6 +1726,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1693,6 +1740,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1706,6 +1754,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1719,6 +1768,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1732,6 +1782,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1745,6 +1796,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1758,6 +1810,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1771,6 +1824,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1784,6 +1838,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1797,6 +1852,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1810,6 +1866,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1823,6 +1880,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1836,6 +1894,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1849,6 +1908,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1862,6 +1922,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1875,6 +1936,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1888,6 +1950,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1901,6 +1964,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1914,6 +1978,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1927,6 +1992,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1940,6 +2006,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1953,6 +2020,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1968,6 +2036,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1981,6 +2050,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -1994,6 +2064,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2007,6 +2078,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2020,6 +2092,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2033,6 +2106,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2046,6 +2120,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2059,6 +2134,7 @@
           "loses": 0,
           "goals_scored": 0,
           "goals_conceded": 0,
+          "goals_difference": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2076,6 +2152,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2089,6 +2166,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2102,6 +2180,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 1,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2115,6 +2194,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2128,6 +2208,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2141,6 +2222,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2154,6 +2236,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2167,6 +2250,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2180,6 +2264,7 @@
           "loses": 0,
           "goals": 2,
           "assists": 0,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2193,6 +2278,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2206,6 +2292,7 @@
           "loses": 0,
           "goals": 1,
           "assists": 1,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2219,6 +2306,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2232,6 +2320,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2245,6 +2334,7 @@
           "loses": 0,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2258,6 +2348,7 @@
           "loses": 0,
           "goals": 1,
           "assists": 1,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2271,6 +2362,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2284,6 +2376,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2297,6 +2390,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2310,6 +2404,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2323,6 +2418,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2336,6 +2432,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2349,6 +2446,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2362,6 +2460,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2375,6 +2474,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2388,6 +2488,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2401,6 +2502,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2414,6 +2516,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2427,6 +2530,7 @@
           "loses": 0,
           "goals": 3,
           "assists": 0,
+          "goals_and_assists": 3,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2440,6 +2544,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 1,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2453,6 +2558,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2466,6 +2572,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2479,6 +2586,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2492,6 +2600,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 1,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2505,6 +2614,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2518,6 +2628,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2531,6 +2642,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2544,6 +2656,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2557,6 +2670,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 1,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2570,6 +2684,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2583,6 +2698,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2596,6 +2712,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2609,6 +2726,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2622,6 +2740,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2635,6 +2754,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2648,6 +2768,7 @@
           "loses": 0,
           "goals": 1,
           "assists": 1,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2661,6 +2782,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2674,6 +2796,7 @@
           "loses": 0,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2687,6 +2810,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2700,6 +2824,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2713,6 +2838,7 @@
           "loses": 0,
           "goals": 2,
           "assists": 0,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2726,6 +2852,7 @@
           "loses": 0,
           "goals": 0,
           "assists": 1,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2739,6 +2866,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2752,6 +2880,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2765,6 +2894,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2778,6 +2908,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2791,6 +2922,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2804,6 +2936,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2817,6 +2950,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2830,6 +2964,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2843,6 +2978,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2856,6 +2992,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 0,
+          "goals_and_assists": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2869,6 +3006,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2882,6 +3020,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2895,6 +3034,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2908,6 +3048,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2921,6 +3062,7 @@
           "loses": 1,
           "goals": 1,
           "assists": 1,
+          "goals_and_assists": 2,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2934,6 +3076,7 @@
           "loses": 1,
           "goals": 0,
           "assists": 0,
+          "goals_and_assists": 0,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -2949,6 +3092,7 @@
           "loses": 0,
           "goals_scored": 2,
           "goals_conceded": 1,
+          "goals_difference": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 2
@@ -2962,6 +3106,7 @@
           "loses": 0,
           "goals_scored": 3,
           "goals_conceded": 2,
+          "goals_difference": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -2975,6 +3120,7 @@
           "loses": 1,
           "goals_scored": 2,
           "goals_conceded": 3,
+          "goals_difference": -1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 2
@@ -2988,6 +3134,7 @@
           "loses": 0,
           "goals_scored": 3,
           "goals_conceded": 2,
+          "goals_difference": 1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -3001,6 +3148,7 @@
           "loses": 1,
           "goals_scored": 1,
           "goals_conceded": 4,
+          "goals_difference": -3,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 3
@@ -3014,6 +3162,7 @@
           "loses": 0,
           "goals_scored": 4,
           "goals_conceded": 1,
+          "goals_difference": 3,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1
@@ -3027,6 +3176,7 @@
           "loses": 1,
           "goals_scored": 1,
           "goals_conceded": 2,
+          "goals_difference": -1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
@@ -3040,6 +3190,7 @@
           "loses": 1,
           "goals_scored": 2,
           "goals_conceded": 3,
+          "goals_difference": -1,
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 1

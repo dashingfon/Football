@@ -5,7 +5,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel, Field
-from jinja2 import Template
+from jinja2 import Template, Environment, FileSystemLoader
 
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATE_FORMAT = "%Y-%m-%d"
@@ -51,6 +51,7 @@ SUB = "substitution"
 GOAL = "goal"
 PENALTY = "penalty"
 
+
 class Event(BaseModel):
     fixture: str
     name: str
@@ -85,7 +86,9 @@ class Event(BaseModel):
                 else:
                     scorer = ""
 
-                shots.append({"side": side[0], "scored": bool(scored), "scorer": scorer})
+                shots.append(
+                    {"side": side[0], "scored": bool(scored), "scorer": scorer}
+                )
             result = Event(
                 fixture=fixture,
                 name="penalty_shootout",
@@ -190,23 +193,24 @@ class Fixture(BaseModel):
     events: list[Event] = Field(default_factory=list)
     map: dict = Field(default_factory=dict)
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return f"{self.home}_vs_{self.away}_at_{self.date}"
+
+    def __repr__(self) -> str:
+        return str(self)
 
     @staticmethod
     def group_by_datetime(
         fixtures: list["Fixture"],
-    ) -> dict[str, dict[str, list["Fixture"]]]:
-        # return results ordered by datetime
-        matchday_group: dict[str, dict[str, list["Fixture"]]] = {}
+    ) -> dict[str, list["Fixture"]]:
+        matchday_group: dict[str, list["Fixture"]] = {}
         for fixture in fixtures:
             date_str = fixture.date.strftime(DATE_FORMAT)
-            time_str = fixture.date.strftime(TIME_FORMAT)
             if date_str not in matchday_group:
-                matchday_group[date_str] = {}
-            if time_str not in matchday_group[date_str]:
-                matchday_group[date_str][time_str] = []
-            matchday_group[date_str][time_str].append(fixture)
+                matchday_group[date_str] = []
+
+        for key, value in matchday_group.items():
+            matchday_group[key] = sorted(value, key=lambda x: x.date)
         return matchday_group
 
     def model_post_init(self, _) -> None:
@@ -240,6 +244,7 @@ class IndividualTable(BaseModel):
     loses: int = 0
     goals: int = 0
     assists: int = 0
+    goals_and_assists: int = 0
     cleansheets: int = 0
     red_cards: int = 0
     yellow_cards: int = 0
@@ -261,6 +266,7 @@ class TeamTable(BaseModel):
     loses: int = 0
     goals_scored: int = 0
     goals_conceded: int = 0
+    goals_difference: int = 0
     cleansheets: int = 0
     red_cards: int = 0
     yellow_cards: int = 0
@@ -321,13 +327,7 @@ def input_fixture(
     events = []
     num_events = int(input(f"Enter the number of events: "))
     print("\n")
-    event_name_mapping = {
-        "y": YELLOW,
-        "r": RED,
-        "s": SUB,
-        "g": GOAL,
-        "p": PENALTY
-    }
+    event_name_mapping = {"y": YELLOW, "r": RED, "s": SUB, "g": GOAL, "p": PENALTY}
 
     for _ in range(num_events):
         event_name = input("Enter the name of the event: ")
@@ -389,8 +389,15 @@ def apply_league_statistics(
 
         team_map[fixture.home].goals_conceded += len(away_goals)
         team_map[fixture.home].goals_scored += len(home_goals)
+        team_map[fixture.home].goals_difference = (
+            team_map[fixture.home].goals_scored - team_map[fixture.home].goals_conceded
+        )
+
         team_map[fixture.away].goals_conceded += len(home_goals)
         team_map[fixture.away].goals_scored += len(away_goals)
+        team_map[fixture.away].goals_difference = (
+            team_map[fixture.away].goals_scored - team_map[fixture.away].goals_conceded
+        )
 
         if len(home_goals) == len(away_goals):
             team_map[fixture.home].draws += 1
@@ -433,8 +440,10 @@ def apply_league_statistics(
                 if goal["is_own_goal"]:
                     continue
                 player_map[goal["scorer"]].goals += 1
+                player_map[goal["scorer"]].goals_and_assists += 1
                 if "assist" in goal and goal["assist"] != "":
                     player_map[goal["assist"]].assists += 1
+                    player_map[goal["assist"]].goals_and_assists += 1
 
         if "yellow_card" in fixture_map:
             for yellow in fixture_map["yellow_card"]:
@@ -668,12 +677,13 @@ class Set(BaseModel):
 
 
 class MultipleLeagueKnockout(BaseModel):
+    league: str
     season: str
     current_round: int
     teams: list[Team]
     table: dict[str, list[str]]
     pre_season: list[Fixture]
-    fixtures: dict[str, Fixture] =  Field(default_factory=dict)
+    fixtures: dict[str, Fixture] = Field(default_factory=dict)
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
@@ -686,6 +696,7 @@ class MultipleLeagueKnockout(BaseModel):
     @classmethod
     def new_season(
         cls,
+        league: str,
         season: str,
         path: pathlib.PurePath,
         teams: list[Team],
@@ -704,6 +715,7 @@ class MultipleLeagueKnockout(BaseModel):
                 player_stats.append(IndividualTable(name=player))
 
         full_data = cls(
+            league=league,
             season=season,
             current_round=0,
             teams=teams,
@@ -714,20 +726,24 @@ class MultipleLeagueKnockout(BaseModel):
                 Leagues_RoundData(players_stats=player_stats, team_stats=team_stats)
             ],
         )
-        print(path)
 
         try:
-            with open(path / "seasons.json") as f:
-                seasons = json.load(f)
-                seasons.append(season)
+            with open(path / "league.json") as f:
+                league_json = json.load(f)
         except Exception:
             pathlib.Path(path).mkdir(exist_ok=True)
-            with open(path / "seasons.json", "w") as f:
-                json.dump([season], f)
-            seasons = [season]
+            with open(path / "league.json", "w") as f:
+                json.dump({}, f)
+            league_json = {}
+        if "seasons" not in league_json:
+            league_json["seasons"] = []
+        league_json["seasons"].append(season)
 
-        with open(path / "seasons.json", "w") as f:
-            json.dump(seasons, f, indent=2)
+        with open(path / "league.json", "w") as f:
+            json.dump(league_json, f, indent=2)
+
+        pathlib.Path(path / "seasons").mkdir(exist_ok=True)
+        save(full_data, path / "seasons" / f"{season}.json")
 
         return full_data
 
@@ -751,10 +767,9 @@ class MultipleLeagueKnockout(BaseModel):
 
             datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
             fixture = input_fixture(
-                    home=home, away=away, date=datetime, seconds_duration=duration
-                )
+                home=home, away=away, date=datetime, seconds_duration=duration
+            )
             fixtures = {str(fixture): fixture}
-
 
         if new_round:
             self.current_round += 1
@@ -786,52 +801,202 @@ class MultipleLeagueKnockout(BaseModel):
             self.rounds[current_round].players_stats = individual_table
             self.rounds[current_round].team_stats = team_table
             save(self, path)
+
+            team_to_logo = {
+                "Chelsea A": "chelsea1",
+                "Chelsea B": "chelsea2",
+                "Manchester United A": "man_united1.svg",
+                "Manchester United B": "man_united2.svg",
+                "Barcelona": "barcelona.svg",
+                "Real Madrid": "real_madrid.svg",
+                "Arsenal": "arsenal.svg",
+                "Liverpool": "liverpool.svg",
+            }
+            context = {
+                "root": "../../../",
+                "last_round": self.rounds[-1],
+                "team logo": team_to_logo,
+            }
+            env = Environment(loader=FileSystemLoader("templates"))
+            template = env.get_template("v2-league-stats.jinja")
+            league_name = self.league.replace(" ", "_")
+
+            # player stats
+            # pathlib.Path(path).mkdir(exist_ok=True)
+            # rendered = template.render(**context)
+            # with open(path / "frontend" / "leagues" / f"{league_name}" / "season" / "stats.html", "w", encoding="utf-8") as f:
+            #     f.write(rendered)
+
+            # team stats
         else:
             print("No Previous stats to update! ")
 
-        # build statistics file!
-
-    def build(
-        self, season: str, default_renderer: Renderer, season_renderer: Renderer
-    ) -> None:
+    def build(self, season: str, path: pathlib.PurePath) -> None:
         current_round = self.current_round
-        if current_round > 1:
-            ...
+        if current_round > 0:
+            team_to_logo = {
+                "Chelsea A": "chelsea1.svg",
+                "Chelsea B": "chelsea2.svg",
+                "Manchester United A": "man_united1.svg",
+                "Manchester United B": "man_united2.svg",
+                "Barcelona": "barcelona.svg",
+                "Real Madrid": "real_madrid.svg",
+                "Arsenal": "arsenal.svg",
+                "Liverpool": "liverpool.svg",
+            }
+            last_round = self.rounds[-1]
+            group_round = self.rounds[-1] if len(self.rounds) <= 3 else self.rounds[2]
+
+            group_stats = sorted(
+                group_round.team_stats,
+                key=lambda x: (x.points, x.goals_difference, x.goals_scored),
+                reverse=True,
+            )
+            sorted_table: dict[str, list[TeamTable]] = {}
+
+            sort_map = {}
+            for group, teams in self.table.items():
+                sorted_table[group] = []
+                for team in teams:
+                    sort_map[team] = group
+            for stat in group_stats:
+                group = sort_map[stat.team]
+                sorted_table[group].append(stat)
+
+            def bundle_player(
+                table: list[IndividualTable], key: str
+            ) -> list[tuple[str, int]]:
+                result: list[tuple[str, int]] = []
+                for pl in table:
+                    result.append((pl.name, getattr(pl, key)))
+                return result
+
+            def bundle_team(table: list[TeamTable], key: str) -> list[tuple[str, int]]:
+                result: list[tuple[str, int]] = []
+                for pl in table:
+                    result.append((pl.team, getattr(pl, key)))
+                return result
+
+            player_to_team: dict[str, str] = {}
+            for team_name in self.teams:
+                for player in team_name.players:
+                    player_to_team[player] = team_name.name
+
+            context = {
+                "root": "../../../",
+                "player_teams": player_to_team,
+                "tables": sorted_table,
+                "preseason": self.pre_season,
+                "fixtures": Fixture.group_by_datetime(list(self.fixtures.values())),
+                "team_logo": team_to_logo,
+                "player_stats": {
+                    "Top Scorer": bundle_player(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.goals, x.points),
+                            reverse=True,
+                        )[:3],
+                        "goals",
+                    ),
+                    "Top Assist": bundle_player(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.assists, x.points),
+                            reverse=True,
+                        )[:3],
+                        "assists",
+                    ),
+                    "Goals and Assists": bundle_player(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.goals_and_assists, x.points),
+                            reverse=True,
+                        )[:3],
+                        "goals_and_assists",
+                    ),
+                    "Yellow Cards": bundle_player(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.yellow_cards, x.points),
+                            reverse=True,
+                        )[:3],
+                        "yellow_cards",
+                    ),
+                    "Red Cards": bundle_player(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.red_cards, x.points),
+                            reverse=True,
+                        )[:3],
+                        "red_cards",
+                    ),
+                },
+                "team_stats": {
+                    "Goals Scored": bundle_team(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.goals_scored,
+                            reverse=True,
+                        )[:3],
+                        "goals_scored",
+                    ),
+                    "Goals Conceeded": bundle_team(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.goals_conceded,
+                            reverse=True,
+                        )[:3],
+                        "goals_conceded",
+                    ),
+                    "Yellow Cards": bundle_team(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.yellow_cards,
+                            reverse=True,
+                        )[:3],
+                        "yellow_cards",
+                    ),
+                    "Red Cards": bundle_team(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.red_cards,
+                            reverse=True,
+                        )[:3],
+                        "red_cards",
+                    ),
+                    "Cleansheets": bundle_team(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.cleansheets,
+                            reverse=True,
+                        )[:3],
+                        "cleansheets",
+                    ),
+                },
+            }
+            env = Environment(loader=FileSystemLoader("templates"))
+            template = env.get_template("v2-league.jinja")
+            league_name = self.league.replace(" ", "_")
+            rendered = template.render(**context)
+            season_path = path / "frontend" / "leagues" / f"{league_name}" / "seasons"
+            pathlib.Path(season_path).mkdir(exist_ok=True)
+
+            with open(
+                season_path / f"{season}.html",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(rendered)
         else:
             print("No Previous stats to build! ")
             return None
-
-        team_to_logo = {
-            "Chelsea A": "",
-            "Chelsea B": "",
-            "Manchester United A": "",
-            "Manchester United B": "",
-            "Barcelona": "",
-            "Real Madrid": "",
-            "Arsenal": "",
-            "Liverpool": ""
-        }
-        # root = "../../"?
-        # tables = self.table
-        # last_round = self.rounds[-1]
-        # group_round = last_round if len(self.rounds) <= 3 else self.rounds[2]
-        # preseason = self.preseason
-        # fixtures = Fixture.group_by_datetime(list(self.fixtures.values()))
-        # player stats = last_round["players_stats"]
-        # team stats = last_round["team_stats"]
 
 
 if __name__ == "__main__":
     from rich import print
 
-    path = (
-        pathlib.PurePath(__file__).parent.parent
-        / "frontend"
-        / "leagues"
-        / "test"
-        / "seasons"
-    )
-    season = "july_august"
+    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test"
+    season = "july_august_2026"
     teams = [
         Team(
             name="Liverpool",
@@ -1275,667 +1440,667 @@ if __name__ == "__main__":
         ),
     ]
     table_dict: dict[str, list[str]] = {
-        "A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
-        "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"],
+        "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+        "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"],
     }
+    fixtures_dict = {str(fixture): fixture for fixture in fixtures}
 
     # data = MultipleLeagueKnockout.new_season(
+    #     league="test",
     #     season=season,
     #     path=path,
     #     teams=teams,
-    #     fixtures=fixtures,
+    #     fixtures=fixtures_dict,
     #     pre_season=pre_season,
     #     table_dict=table_dict,
     # )
 
-    new_fixtures = [
-        Fixture(
-            home="Arsenal",
-            away="Chelsea A",
-            date=datetime.fromisoformat("2026-07-05 16:00:00"),
-            seconds_duration=2400,
-            events=[
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Nketiah",
-                        "out": "Fortune",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Seun",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Femi",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Ugo",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Segun",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Sheriff",
-                        "out": "Femi",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Kunle",
-                        "out": "Friday",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="half time",
-                    event={},
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Ugo",
-                        "assist": "Micheal",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Femi",
-                        "out": "Sheriff",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Lanre",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Kunle",
-                        "out": "Seun",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Kunle",
-                        "assist": "Lanre",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Metu",
-                        "out": "Femi",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Ogbon",
-                        "out": "Nketiah",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Femi",
-                        "out": "Segun",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Seun",
-                        "out": "Lanre",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Ogbon",
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Kunle",
-                        "assist": "Fortune",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Arsenal_vs_Chelsea A",
-                    name="full time",
-                    event={},
-                ),
-            ],
-        ),
-        Fixture(
-            home="Barcelona",
-            away="Chelsea B",
-            date=datetime.fromisoformat("2026-07-05 16:50:00"),
-            seconds_duration=2400,
-            events=[
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Yinka",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Chiboy",
-                        "assist": "Sodiq",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Idris",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="half time",
-                    event={},
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Somto",
-                        "out": "Victor",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Roland",
-                        "out": "YInka",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Idris",
-                        "assist": "Chiboy",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Sodiq",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Vardy",
-                        "out": "Idris",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Cambiaso",
-                        "out": "Sodiq",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Aguero",
-                        "assist": "Bobby K",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "out": "Cambiaso",
-                        "in": "Sodiq",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Bobby K",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "out": "Vardy",
-                        "in": "Idris",
-                    },
-                ),
-                Event(
-                    fixture="Barcelona_vs_Chelsea B",
-                    name="full time",
-                    event={},
-                ),
-            ],
-        ),
-        Fixture(
-            home="Liverpool",
-            away="Manchester United B",
-            date=datetime.fromisoformat("2026-07-05 17:40:00"),
-            seconds_duration=2400,
-            events=[
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Adufe",
-                        "out": "Jojo",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Emma",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Ikenga",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Lola",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Jojo",
-                        "out": "Benson",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="half time",
-                    event={},
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Emma",
-                        "assist": "Lola",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Tm",
-                        "out": "Lola",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Lino",
-                        "out": "Felaini",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Papa",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_free_kick": True,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Benson",
-                        "out": "Adufe",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Kenya",
-                        "out": "Dami",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Lola",
-                        "out": "Ikenga",
-                    },
-                ),
-                Event(
-                    fixture="Liverpool_vs_Manchester United B",
-                    name="full time",
-                    event={},
-                ),
-            ],
-        ),
-        Fixture(
-            home="Manchester United A",
-            away="Real Madrid",
-            date=datetime.fromisoformat("2026-07-05 18:30:00"),
-            seconds_duration=2400,
-            events=[
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Utaka",
-                        "assist": "Tola",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Utaka",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="half time",
-                    event={},
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Jamiu",
-                        "out": "Eze",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Jamiu",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Chris",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="yellow_card",
-                    event={
-                        "side": "h",
-                        "player": "Jamiu",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Amuri",
-                        "out": "Aremu",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "in": "Tunji",
-                        "out": "Tola",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="yellow_card",
-                    event={
-                        "side": "a",
-                        "player": "Utaka",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "in": "Sancho",
-                        "out": "Jamiu",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "h",
-                        "out": "Obinna",
-                        "in": "Brainee",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="goal",
-                    event={
-                        "side": "a",
-                        "scorer": "Utaka",
-                        "assist": "Amuri",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "out": "Aremu",
-                        "in": "Yerima",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "out": "Utaka",
-                        "in": "Noah",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="goal",
-                    event={
-                        "side": "h",
-                        "scorer": "Chris",
-                        "assist": "",
-                        "is_own_goal": False,
-                        "is_penalty": False,
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="sub",
-                    event={
-                        "side": "a",
-                        "out": "Tunji",
-                        "in": "Martins",
-                    },
-                ),
-                Event(
-                    fixture="Manchester United A_vs_Real Madrid",
-                    name="full time",
-                    event={},
-                ),
-            ],
-        ),
-    ]
+    # new_fixtures = [
+    #     Fixture(
+    #         home="Arsenal",
+    #         away="Chelsea A",
+    #         date=datetime.fromisoformat("2026-07-05 16:00:00"),
+    #         seconds_duration=2400,
+    #         events=[
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Nketiah",
+    #                     "out": "Fortune",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Seun",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "a",
+    #                     "player": "Femi",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "a",
+    #                     "player": "Ugo",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "a",
+    #                     "player": "Segun",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Sheriff",
+    #                     "out": "Femi",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Kunle",
+    #                     "out": "Friday",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="half time",
+    #                 event={},
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Ugo",
+    #                     "assist": "Micheal",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Femi",
+    #                     "out": "Sheriff",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Lanre",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Kunle",
+    #                     "out": "Seun",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Kunle",
+    #                     "assist": "Lanre",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Metu",
+    #                     "out": "Femi",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Ogbon",
+    #                     "out": "Nketiah",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Femi",
+    #                     "out": "Segun",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Seun",
+    #                     "out": "Lanre",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Ogbon",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Kunle",
+    #                     "assist": "Fortune",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Arsenal_vs_Chelsea A",
+    #                 name="full time",
+    #                 event={},
+    #             ),
+    #         ],
+    #     ),
+    #     Fixture(
+    #         home="Barcelona",
+    #         away="Chelsea B",
+    #         date=datetime.fromisoformat("2026-07-05 16:50:00"),
+    #         seconds_duration=2400,
+    #         events=[
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "a",
+    #                     "player": "Yinka",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Chiboy",
+    #                     "assist": "Sodiq",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Idris",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="half time",
+    #                 event={},
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Somto",
+    #                     "out": "Victor",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Roland",
+    #                     "out": "YInka",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Idris",
+    #                     "assist": "Chiboy",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Sodiq",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Vardy",
+    #                     "out": "Idris",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Cambiaso",
+    #                     "out": "Sodiq",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Aguero",
+    #                     "assist": "Bobby K",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "out": "Cambiaso",
+    #                     "in": "Sodiq",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Bobby K",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "out": "Vardy",
+    #                     "in": "Idris",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Barcelona_vs_Chelsea B",
+    #                 name="full time",
+    #                 event={},
+    #             ),
+    #         ],
+    #     ),
+    #     Fixture(
+    #         home="Liverpool",
+    #         away="Manchester United B",
+    #         date=datetime.fromisoformat("2026-07-05 17:40:00"),
+    #         seconds_duration=2400,
+    #         events=[
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Adufe",
+    #                     "out": "Jojo",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Emma",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Ikenga",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Lola",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Jojo",
+    #                     "out": "Benson",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="half time",
+    #                 event={},
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Emma",
+    #                     "assist": "Lola",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Tm",
+    #                     "out": "Lola",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Lino",
+    #                     "out": "Felaini",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Papa",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_free_kick": True,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Benson",
+    #                     "out": "Adufe",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Kenya",
+    #                     "out": "Dami",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Lola",
+    #                     "out": "Ikenga",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Liverpool_vs_Manchester United B",
+    #                 name="full time",
+    #                 event={},
+    #             ),
+    #         ],
+    #     ),
+    #     Fixture(
+    #         home="Manchester United A",
+    #         away="Real Madrid",
+    #         date=datetime.fromisoformat("2026-07-05 18:30:00"),
+    #         seconds_duration=2400,
+    #         events=[
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Utaka",
+    #                     "assist": "Tola",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Utaka",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="half time",
+    #                 event={},
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Jamiu",
+    #                     "out": "Eze",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Jamiu",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Chris",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "h",
+    #                     "player": "Jamiu",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Amuri",
+    #                     "out": "Aremu",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "in": "Tunji",
+    #                     "out": "Tola",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="yellow_card",
+    #                 event={
+    #                     "side": "a",
+    #                     "player": "Utaka",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "in": "Sancho",
+    #                     "out": "Jamiu",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "h",
+    #                     "out": "Obinna",
+    #                     "in": "Brainee",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "a",
+    #                     "scorer": "Utaka",
+    #                     "assist": "Amuri",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "out": "Aremu",
+    #                     "in": "Yerima",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "out": "Utaka",
+    #                     "in": "Noah",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="goal",
+    #                 event={
+    #                     "side": "h",
+    #                     "scorer": "Chris",
+    #                     "assist": "",
+    #                     "is_own_goal": False,
+    #                     "is_penalty": False,
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="sub",
+    #                 event={
+    #                     "side": "a",
+    #                     "out": "Tunji",
+    #                     "in": "Martins",
+    #                 },
+    #             ),
+    #             Event(
+    #                 fixture="Manchester United A_vs_Real Madrid",
+    #                 name="full time",
+    #                 event={},
+    #             ),
+    #         ],
+    #     ),
+    # ]
+    # new_fixtures_dict = {str(fixture): fixture for fixture in new_fixtures}
 
     # data.update_fixtures(
     #     preseason=[],
-    #     fixtures=new_fixtures,
+    #     fixtures=new_fixtures_dict,
     #     new_round=True,
-    #     path=path / "july_august.json",
+    #     path=path / "seasons" / f"{season}.json",
     # )
-    # data.update_stats(path / "july_august.json")
+    # data.update_stats(path / "seasons" / f"{season}.json")
 
-    # data = MultipleLeagueKnockout.load(path  / "july_august.json")
-    # round_data = data.rounds[-1]
-    # print(round_data)
+    data = MultipleLeagueKnockout.load(path / "seasons" / f"{season}.json")
 
-    # data.build(season=season)
+    data.build(season=season, path=pathlib.PurePath(__file__).parent.parent)
 
-    f = input_fixture(
-        "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
-    )
-    print(f)
-
+    # first_match = input_fixture(
+    #     "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
+    # )
+    # print(first_match)

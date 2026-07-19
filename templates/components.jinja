@@ -24,10 +24,10 @@
 </nav>
 {% endmacro %}
 
-{% macro hero() %}
+{% macro hero(root) %}
 <section class="flex flex-col md:flex-row bg-bg-1 pt-8 pb-5 md:pb-10 xl:rounded-t-xl border-t border-bg-3">
 	<div class="justify-start flex w-full">
-		<img src="{{root}}assets/gyfa.png" class="h-15 pl-6" alt="">
+		<img src="{{ root }}assets/gyfa.png" class="h-15 pl-6" alt="">
 		<div class="pl-4">
 			<h1 class="text-2xl font-bold">Rep Your Club</h1>
 			<h3 class="text-lg">GYFA</h3>
