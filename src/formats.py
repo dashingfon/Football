@@ -33,7 +33,6 @@ class Team(BaseModel):
 def select(prompt: str, error: str, exit_str: str, options: set | None) -> str:
     gotten = ""
     while not gotten:
-        print(f"press {exit_str} any time to cancel")
         value = input(prompt)
         if value == exit_str:
             break
@@ -45,6 +44,12 @@ def select(prompt: str, error: str, exit_str: str, options: set | None) -> str:
         raise ValueError("Failed to get the correct value!")
     return gotten
 
+
+YELLOW = "yellow card"
+RED = "red card"
+SUB = "substitution"
+GOAL = "goal"
+PENALTY = "penalty"
 
 class Event(BaseModel):
     fixture: str
@@ -75,8 +80,12 @@ class Event(BaseModel):
                     {"home", "h", "away", "a"},
                 )
                 scored = input("Enter any character if the shot was saved: ")
+                if not scored:
+                    scorer = input("Enter player that scored: ")
+                else:
+                    scorer = ""
 
-                shots.append({"side": side[0], "scored": bool(scored)})
+                shots.append({"side": side[0], "scored": bool(scored), "scorer": scorer})
             result = Event(
                 fixture=fixture,
                 name="penalty_shootout",
@@ -160,15 +169,15 @@ class Event(BaseModel):
 
     @staticmethod
     def handle_event(event_name: str, fixture: str) -> "Event | None":
-        if event_name == "goal":
+        if event_name == GOAL:
             return Event.input_goal(fixture)
-        elif event_name == "penalty_shootout":
+        elif event_name == PENALTY:
             return Event.input_penalty_shootout(fixture)
-        elif event_name == "sub":
+        elif event_name == SUB:
             return Event.input_sub(fixture)
-        elif event_name == "yellow card":
+        elif event_name == YELLOW:
             return Event.input_yellow_card(fixture)
-        elif event_name == "red card":
+        elif event_name == RED:
             return Event.input_red_card(fixture)
         return None
 
@@ -311,16 +320,26 @@ def input_fixture(
     date = date.replace(tzinfo=ZoneInfo(timezone))
     events = []
     num_events = int(input(f"Enter the number of events: "))
+    print("\n")
+    event_name_mapping = {
+        "y": YELLOW,
+        "r": RED,
+        "s": SUB,
+        "g": GOAL,
+        "p": PENALTY
+    }
 
     for _ in range(num_events):
         event_name = input("Enter the name of the event: ")
+        full_name = event_name_mapping[event_name]
         fixture_name = Event.bind(home, away, date)
-        event = Event.handle_event(event_name, fixture_name)
+        event = Event.handle_event(full_name, fixture_name)
         if event is None:
             print(f"no handler for {event_name}! \n")
             event_data = json.loads(input("Enter the event data as valid json dict: "))
             event = Event(fixture=fixture_name, name=event_name, event=event_data)
         events.append(event)
+        print("\n")
     result = Fixture(
         home=home,
         away=away,
@@ -349,7 +368,7 @@ def set_player(
 
 
 def apply_league_statistics(
-    fixtures: list[Fixture],
+    fixtures: dict[str, Fixture],
     player_table: list[IndividualTable],
     team_table: list[TeamTable],
     teams: list[Team],
@@ -358,7 +377,9 @@ def apply_league_statistics(
     player_map = IndividualTable.map_players(player_table)
     team_map = TeamTable.map_teams(team_table)
 
-    for fixture in fixtures:
+    for fixture in fixtures.values():
+        if not fixture.events:
+            continue
         fixture_map = fixture.map
         home_goals = [g for g in fixture_map["goal"] if g["side"] == "h"]
         away_goals = [g for g in fixture_map["goal"] if g["side"] == "a"]
@@ -653,7 +674,6 @@ class MultipleLeagueKnockout(BaseModel):
     table: dict[str, list[str]]
     pre_season: list[Fixture]
     fixtures: dict[str, Fixture] =  Field(default_factory=dict)
-    # fixtures: list[Fixture] =  Field(default_factory=list)
     titles: dict[str, str] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
@@ -669,7 +689,7 @@ class MultipleLeagueKnockout(BaseModel):
         season: str,
         path: pathlib.PurePath,
         teams: list[Team],
-        fixtures: list[Fixture],
+        fixtures: dict[str, Fixture],
         pre_season: list[Fixture],
         table_dict: dict[str, list[str]],
     ) -> "MultipleLeagueKnockout":
@@ -714,7 +734,7 @@ class MultipleLeagueKnockout(BaseModel):
     def update_fixtures(
         self,
         preseason: list[Fixture],
-        fixtures: list[Fixture] | None,
+        fixtures: dict[str, Fixture] | None,
         new_round: bool,
         path: pathlib.PurePath,
     ) -> None:
@@ -730,18 +750,18 @@ class MultipleLeagueKnockout(BaseModel):
                 raise ValueError(f"Invalid team {away}")
 
             datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
-            fixtures = [
-                input_fixture(
+            fixture = input_fixture(
                     home=home, away=away, date=datetime, seconds_duration=duration
                 )
-            ]
+            fixtures = {str(fixture): fixture}
+
 
         if new_round:
             self.current_round += 1
             self.rounds.append(Leagues_RoundData(players_stats=[], team_stats=[]))
             self.fixtures = fixtures
         else:
-            self.fixtures.extend(fixtures)
+            self.fixtures.update(fixtures)
         if preseason:
             self.pre_season = preseason
         save(self, path)
@@ -781,38 +801,24 @@ class MultipleLeagueKnockout(BaseModel):
             print("No Previous stats to build! ")
             return None
 
-        team_to_color = {1: "blue", 2: "red", 3: "green", 4: "yellow"}
-        # table = self.rounds[-1].table
-        # goal_difference = {}
-
-        # for item in table:
-        #     if item.name not in goal_difference:
-        #         goal_difference[item.name] = 0
-        #     goal_difference[item.name] += item.assists
-        #     goal_difference[item.name] += item.goals
-        # g_a_tuple = tuple(sorted(goal_difference.items(), key=lambda item: item[1], reverse=True))
-
-        # default_content = {
-        #     "url": "./",
-        #     "root": "",
-        #     "data": self,
-        #     "raw_season": season,
-        #     "season": season.replace("_", " ").capitalize(),
-        #     "team_to_logo": team_to_color,
-        #     "goals": sorted(table, key=lambda x: x.goals, reverse=True)[:3],
-        #     "assists": sorted(table, key=lambda x: x.assists, reverse=True)[:3],
-        #     "g_a": g_a_tuple[:3],
-        #     "cleansheets": sorted(table, key=lambda x: x.cleansheets, reverse=True)[:3],
-        # team_goals_scored:
-        # team_goals_conceeded:
-        # team_goals_cleansheet:
-        # team_goals_red_cards:
-        # team_goals_yellow_cards:
-        # }
-        # default_renderer.render(default_content)
-
-        # season_content = {**default_content, "url": "./seasons/"}
-        # season_renderer.render(season_content)
+        team_to_logo = {
+            "Chelsea A": "",
+            "Chelsea B": "",
+            "Manchester United A": "",
+            "Manchester United B": "",
+            "Barcelona": "",
+            "Real Madrid": "",
+            "Arsenal": "",
+            "Liverpool": ""
+        }
+        # root = "../../"?
+        # tables = self.table
+        # last_round = self.rounds[-1]
+        # group_round = last_round if len(self.rounds) <= 3 else self.rounds[2]
+        # preseason = self.preseason
+        # fixtures = Fixture.group_by_datetime(list(self.fixtures.values()))
+        # player stats = last_round["players_stats"]
+        # team stats = last_round["team_stats"]
 
 
 if __name__ == "__main__":
@@ -1928,11 +1934,8 @@ if __name__ == "__main__":
 
     # data.build(season=season)
 
-    # f = input_fixture(
-    #     "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
-    # )
+    f = input_fixture(
+        "Arsenal", "Manchester United B", datetime(2026, 8, 12, 16, 5, 50, 0), 2400
+    )
+    print(f)
 
-    def input_fixtures():
-        ...
-
-    input_fixtures()

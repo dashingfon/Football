@@ -789,8 +789,8 @@
     }
   ],
   "table": {
-    "A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
-    "B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+    "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+    "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
   },
   "pre_season": [
     {

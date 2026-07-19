@@ -22,6 +22,10 @@ dev = [
 [tool.poe.tasks]
 test = 'pytest'
 
+[tool.poe.tasks.script]
+cmd = 'python src/formats.py'
+help = "used to run the python build script"
+
 [tool.poe.tasks.build-src]
 cmd = 'python src/renderer.py'
 help = "used to run the python build script"
