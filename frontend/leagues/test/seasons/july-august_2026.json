@@ -1,1 +1,3700 @@
-{"league":"Rep Your League:GYFA","season":"july-august_2026","current_round":1,"teams":[{"name":"Liverpool","players":["Kenya","Dami","Lola","Pastor","Ikenga","Tm","Dotun","Obago","Emma"]},{"name":"Barcelona","players":["Bisi","Sodiq","Tunde","Somto","Idris","Chiboy","Vardy","Cambiaso","Victor","Taiwo"]},{"name":"Manchester United A","players":["Ola","Ebuka","Chris","Sancho","Obinna","Jamiu","Brainee","Eze"]},{"name":"Real Madrid","players":["Utaka","Tola","Noah","Yerima","David","Amuri","Martins","Aremu","Tunji"]},{"name":"Chelsea A","players":["Segun","Micheal","Metu","Femi","Ahmed","Ugo","Sheriff","Bidemi"]},{"name":"Arsenal","players":["Lanre","Nketiah","Seun","Friday","Ogbon","Kunle","Fortune"]},{"name":"Manchester United B","players":["Papa","Ifeanyi","Hunter","Jojo","Benson","Lino","Felaini","Adufe"]},{"name":"Chelsea B","players":["Ola-o","Aguero","Yinka","Machala","Roland","Ayo","Bobby K","Nifemi"]}],"table":{"Group A":["Arsenal","Chelsea A","Liverpool","Manchester United B"],"Group B":["Barcelona","Chelsea B","Manchester United A","Real Madrid"]},"pre_season":[{"home":"Arsenal","away":"Manchester United B","date":"2026-07-05T16:00:00+01:00","seconds_duration":1200,"events":[{"fixture":"Arsenal_vs_Manchester United B","name":"goal","event":{"side":"h","scorer":"Ogbon","assist":"Lanre","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Manchester United B","name":"goal","event":{"side":"a","scorer":"Felaini","assist":"Benson","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Manchester United B","name":"goal","event":{"side":"h","scorer":"Kunle","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Manchester United B","name":"goal","event":{"side":"h","scorer":"Lanre","assist":"Seun","is_own_goal":false,"is_penalty":false}}],"map":{"goal":[{"side":"h","scorer":"Ogbon","assist":"Lanre","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Felaini","assist":"Benson","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Kunle","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Lanre","assist":"Seun","is_own_goal":false,"is_penalty":false}]}},{"home":"Manchester United A","away":"Real Madrid","date":"2026-07-05T16:30:00+01:00","seconds_duration":1200,"events":[{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"h","":"Aremu","out":"Brainee"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"h","player":"Sancho"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"a","player":"Yerima"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"a","scorer":"Eze","assist":"","is_own_goal":true,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"a","player":"Martins"}}],"map":{"sub":[{"side":"h","":"Aremu","out":"Brainee"}],"yellow_card":[{"side":"h","player":"Sancho"},{"side":"a","player":"Yerima"},{"side":"a","player":"Martins"}],"goal":[{"side":"a","scorer":"Eze","assist":"","is_own_goal":true,"is_penalty":false}]}},{"home":"Chelsea A","away":"Barcelona","date":"2026-07-05T17:00:00+01:00","seconds_duration":1200,"events":[{"fixture":"Chelsea A_vs_Barcelona","name":"sub","event":{"side":"a","in":"Tunde","out":"Bisi"}},{"fixture":"Chelsea A_vs_Barcelona","name":"goal","event":{"side":"a","scorer":"Somto","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Chelsea A_vs_Barcelona","name":"goal","event":{"side":"h","scorer":"Micheal","assist":"Sheriff","is_own_goal":false,"is_penalty":false}},{"fixture":"Chelsea A_vs_Barcelona","name":"sub","event":{"side":"a","in":"Chiboy","out":"Cambiaso"}},{"fixture":"Chelsea A_vs_Barcelona","name":"sub","event":{"side":"a","in":"Bisi","out":"Taiwo"}},{"fixture":"Chelsea A_vs_Barcelona","name":"sub","event":{"side":"h","in":"Sheriff","out":"Metu"}}],"map":{"sub":[{"side":"a","in":"Tunde","out":"Bisi"},{"side":"a","in":"Chiboy","out":"Cambiaso"},{"side":"a","in":"Bisi","out":"Taiwo"},{"side":"h","in":"Sheriff","out":"Metu"}],"goal":[{"side":"a","scorer":"Somto","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Micheal","assist":"Sheriff","is_own_goal":false,"is_penalty":false}]}},{"home":"Liverpool","away":"Chelsea B","date":"2026-07-05T17:30:00+01:00","seconds_duration":1200,"events":[{"fixture":"Liverpool_vs_Chelsea B","name":"yellow_card","event":{"side":"h","player":"Damsel"}},{"fixture":"Liverpool_vs_Chelsea B","name":"yellow_card","event":{"side":"h","player":"Emma"}},{"fixture":"Liverpool_vs_Chelsea B","name":"yellow_card","event":{"side":"a","player":"Machala"}},{"fixture":"Liverpool_vs_Chelsea B","name":"goal","event":{"side":"h","scorer":"Tm","assist":"Ikenga","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Chelsea B","name":"sub","event":{"side":"a","in":"Ola-o","out":"Bobby K"}},{"fixture":"Liverpool_vs_Chelsea B","name":"goal","event":{"side":"h","scorer":"Tm","assist":"","is_own_goal":false,"is_penalty":false}}],"map":{"yellow_card":[{"side":"h","player":"Damsel"},{"side":"h","player":"Emma"},{"side":"a","player":"Machala"}],"goal":[{"side":"h","scorer":"Tm","assist":"Ikenga","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Tm","assist":"","is_own_goal":false,"is_penalty":false}],"sub":[{"side":"a","in":"Ola-o","out":"Bobby K"}]}}],"fixtures":{"0":{"home":"Arsenal","away":"Chelsea A","date":"2026-07-05T16:00:00+01:00","seconds_duration":2400,"events":[{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"h","in":"Nketiah","out":"Fortune"}},{"fixture":"Arsenal_vs_Chelsea A","name":"goal","event":{"side":"h","scorer":"Seun","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Chelsea A","name":"yellow_card","event":{"side":"a","player":"Femi"}},{"fixture":"Arsenal_vs_Chelsea A","name":"yellow_card","event":{"side":"a","player":"Ugo"}},{"fixture":"Arsenal_vs_Chelsea A","name":"yellow_card","event":{"side":"a","player":"Segun"}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"a","in":"Sheriff","out":"Femi"}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"h","in":"Kunle","out":"Friday"}},{"fixture":"Arsenal_vs_Chelsea A","name":"half time","event":{}},{"fixture":"Arsenal_vs_Chelsea A","name":"goal","event":{"side":"a","scorer":"Ugo","assist":"Micheal","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"a","in":"Femi","out":"Sheriff"}},{"fixture":"Arsenal_vs_Chelsea A","name":"goal","event":{"side":"h","scorer":"Lanre","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"h","in":"Kunle","out":"Seun"}},{"fixture":"Arsenal_vs_Chelsea A","name":"goal","event":{"side":"h","scorer":"Kunle","assist":"Lanre","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"a","in":"Metu","out":"Femi"}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"h","in":"Ogbon","out":"Nketiah"}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"a","in":"Femi","out":"Segun"}},{"fixture":"Arsenal_vs_Chelsea A","name":"sub","event":{"side":"h","in":"Seun","out":"Lanre"}},{"fixture":"Arsenal_vs_Chelsea A","name":"yellow_card","event":{"side":"h","player":"Ogbon"}},{"fixture":"Arsenal_vs_Chelsea A","name":"goal","event":{"side":"h","scorer":"Kunle","assist":"Fortune","is_own_goal":false,"is_penalty":false}},{"fixture":"Arsenal_vs_Chelsea A","name":"full time","event":{}}],"map":{"sub":[{"side":"h","in":"Nketiah","out":"Fortune"},{"side":"a","in":"Sheriff","out":"Femi"},{"side":"h","in":"Kunle","out":"Friday"},{"side":"a","in":"Femi","out":"Sheriff"},{"side":"h","in":"Kunle","out":"Seun"},{"side":"a","in":"Metu","out":"Femi"},{"side":"h","in":"Ogbon","out":"Nketiah"},{"side":"a","in":"Femi","out":"Segun"},{"side":"h","in":"Seun","out":"Lanre"}],"goal":[{"side":"h","scorer":"Seun","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Ugo","assist":"Micheal","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Lanre","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Kunle","assist":"Lanre","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Kunle","assist":"Fortune","is_own_goal":false,"is_penalty":false}],"yellow_card":[{"side":"a","player":"Femi"},{"side":"a","player":"Ugo"},{"side":"a","player":"Segun"},{"side":"h","player":"Ogbon"}],"half time":[{}],"full time":[{}]}},"1":{"home":"Barcelona","away":"Chelsea B","date":"2026-07-05T16:50:00+01:00","seconds_duration":2400,"events":[{"fixture":"Barcelona_vs_Chelsea B","name":"yellow_card","event":{"side":"a","player":"Yinka"}},{"fixture":"Barcelona_vs_Chelsea B","name":"goal","event":{"side":"h","scorer":"Chiboy","assist":"Sodiq","is_own_goal":false,"is_penalty":false}},{"fixture":"Barcelona_vs_Chelsea B","name":"yellow_card","event":{"side":"h","player":"Idris"}},{"fixture":"Barcelona_vs_Chelsea B","name":"half time","event":{}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"h","in":"Somto","out":"Victor"}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"a","in":"Roland","out":"YInka"}},{"fixture":"Barcelona_vs_Chelsea B","name":"goal","event":{"side":"h","scorer":"Idris","assist":"Chiboy","is_own_goal":false,"is_penalty":false}},{"fixture":"Barcelona_vs_Chelsea B","name":"goal","event":{"side":"h","scorer":"Sodiq","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"h","in":"Vardy","out":"Idris"}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"h","in":"Cambiaso","out":"Sodiq"}},{"fixture":"Barcelona_vs_Chelsea B","name":"goal","event":{"side":"a","scorer":"Aguero","assist":"Bobby K","is_own_goal":false,"is_penalty":false}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"h","out":"Cambiaso","in":"Sodiq"}},{"fixture":"Barcelona_vs_Chelsea B","name":"goal","event":{"side":"a","scorer":"Bobby K","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Barcelona_vs_Chelsea B","name":"sub","event":{"side":"h","out":"Vardy","in":"Idris"}},{"fixture":"Barcelona_vs_Chelsea B","name":"full time","event":{}}],"map":{"yellow_card":[{"side":"a","player":"Yinka"},{"side":"h","player":"Idris"}],"goal":[{"side":"h","scorer":"Chiboy","assist":"Sodiq","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Idris","assist":"Chiboy","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Sodiq","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Aguero","assist":"Bobby K","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Bobby K","assist":"","is_own_goal":false,"is_penalty":false}],"half time":[{}],"sub":[{"side":"h","in":"Somto","out":"Victor"},{"side":"a","in":"Roland","out":"YInka"},{"side":"h","in":"Vardy","out":"Idris"},{"side":"h","in":"Cambiaso","out":"Sodiq"},{"side":"h","out":"Cambiaso","in":"Sodiq"},{"side":"h","out":"Vardy","in":"Idris"}],"full time":[{}]}},"2":{"home":"Liverpool","away":"Manchester United B","date":"2026-07-05T17:40:00+01:00","seconds_duration":2400,"events":[{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"a","in":"Adufe","out":"Jojo"}},{"fixture":"Liverpool_vs_Manchester United B","name":"goal","event":{"side":"h","scorer":"Emma","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Manchester United B","name":"yellow_card","event":{"side":"h","player":"Ikenga"}},{"fixture":"Liverpool_vs_Manchester United B","name":"yellow_card","event":{"side":"h","player":"Lola"}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"a","in":"Jojo","out":"Benson"}},{"fixture":"Liverpool_vs_Manchester United B","name":"half time","event":{}},{"fixture":"Liverpool_vs_Manchester United B","name":"goal","event":{"side":"h","scorer":"Emma","assist":"Lola","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"h","in":"Tm","out":"Lola"}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"a","in":"Lino","out":"Felaini"}},{"fixture":"Liverpool_vs_Manchester United B","name":"goal","event":{"side":"a","scorer":"Papa","assist":"","is_own_goal":false,"is_free_kick":true,"is_penalty":false}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"a","in":"Benson","out":"Adufe"}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"h","in":"Kenya","out":"Dami"}},{"fixture":"Liverpool_vs_Manchester United B","name":"sub","event":{"side":"h","in":"Lola","out":"Ikenga"}},{"fixture":"Liverpool_vs_Manchester United B","name":"full time","event":{}}],"map":{"sub":[{"side":"a","in":"Adufe","out":"Jojo"},{"side":"a","in":"Jojo","out":"Benson"},{"side":"h","in":"Tm","out":"Lola"},{"side":"a","in":"Lino","out":"Felaini"},{"side":"a","in":"Benson","out":"Adufe"},{"side":"h","in":"Kenya","out":"Dami"},{"side":"h","in":"Lola","out":"Ikenga"}],"goal":[{"side":"h","scorer":"Emma","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Emma","assist":"Lola","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Papa","assist":"","is_own_goal":false,"is_free_kick":true,"is_penalty":false}],"yellow_card":[{"side":"h","player":"Ikenga"},{"side":"h","player":"Lola"}],"half time":[{}],"full time":[{}]}},"3":{"home":"Manchester United A","away":"Real Madrid","date":"2026-07-05T18:30:00+01:00","seconds_duration":2400,"events":[{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"a","scorer":"Utaka","assist":"Tola","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"a","scorer":"Utaka","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"half time","event":{}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"h","in":"Jamiu","out":"Eze"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"h","scorer":"Jamiu","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"h","player":"Chris"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"h","player":"Jamiu"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"a","in":"Amuri","out":"Aremu"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"a","in":"Tunji","out":"Tola"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"yellow_card","event":{"side":"a","player":"Utaka"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"h","in":"Sancho","out":"Jamiu"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"h","out":"Obinna","in":"Brainee"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"a","scorer":"Utaka","assist":"Amuri","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"a","out":"Aremu","in":"Yerima"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"a","out":"Utaka","in":"Noah"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"goal","event":{"side":"h","scorer":"Chris","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United A_vs_Real Madrid","name":"sub","event":{"side":"a","out":"Tunji","in":"Martins"}},{"fixture":"Manchester United A_vs_Real Madrid","name":"full time","event":{}}],"map":{"goal":[{"side":"a","scorer":"Utaka","assist":"Tola","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Utaka","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Jamiu","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Utaka","assist":"Amuri","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Chris","assist":"","is_own_goal":false,"is_penalty":false}],"half time":[{}],"sub":[{"side":"h","in":"Jamiu","out":"Eze"},{"side":"a","in":"Amuri","out":"Aremu"},{"side":"a","in":"Tunji","out":"Tola"},{"side":"h","in":"Sancho","out":"Jamiu"},{"side":"h","out":"Obinna","in":"Brainee"},{"side":"a","out":"Aremu","in":"Yerima"},{"side":"a","out":"Utaka","in":"Noah"},{"side":"a","out":"Tunji","in":"Martins"}],"yellow_card":[{"side":"h","player":"Chris"},{"side":"h","player":"Jamiu"},{"side":"a","player":"Utaka"}],"full time":[{}]}},"4":{"home":"Manchester United B","away":"Arsenal","date":"2026-07-26T16:00:00+01:00","seconds_duration":2400,"events":[],"map":{}},"5":{"home":"Manchester United A","away":"Barcelona","date":"2026-07-26T16:50:00+01:00","seconds_duration":2400,"events":[],"map":{}},"6":{"home":"Chelsea A","away":"Liverpool","date":"2026-07-26T17:40:00+01:00","seconds_duration":2400,"events":[],"map":{}},"7":{"home":"Real Madrid","away":"Chelsea B","date":"2026-07-26T18:30:00+01:00","seconds_duration":2400,"events":[],"map":{}},"8":{"home":"Group A Winner","away":"Group B Runners Up","date":"2026-07-26T16:20:00+01:00","seconds_duration":2400,"events":[],"map":{}},"9":{"home":"Group B Winner","away":"Group A Runners Up","date":"2026-07-26T17:20:00+01:00","seconds_duration":2400,"events":[],"map":{}},"10":{"home":"Loser Semi Final 1","away":"Loser Semi Final 2","date":"2026-08-02T16:20:00+01:00","seconds_duration":2400,"events":[],"map":{}},"11":{"home":"Winner Semi Final 1","away":"Winner Semi Final 2","date":"2026-08-02T17:20:00+01:00","seconds_duration":2400,"events":[],"map":{}},"12":{"home":"Real Madrid","away":"Barcelona","date":"2026-07-12T16:00:00+01:00","seconds_duration":2400,"events":[{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"goal","event":{"side":"a","scorer":"Idris","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"sub","event":{"side":"h","in":"Amuri","out":"Tunji"}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"sub","event":{"side":"a","in":"Vardy","out":"Victor"}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"sub","event":{"side":"a","in":"Somto","out":"Idris"}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"sub","event":{"side":"a","in":"Idris","out":"Vardy"}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"goal","event":{"side":"a","scorer":"Sodiq","assist":"Idris","is_own_goal":false,"is_penalty":false}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"sub","event":{"side":"h","in":"Tola","out":"Aremu"}},{"fixture":"Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00","name":"yellow_card","event":{"side":"h","player":"Utaka"}}],"map":{"goal":[{"side":"a","scorer":"Idris","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Sodiq","assist":"Idris","is_own_goal":false,"is_penalty":false}],"sub":[{"side":"h","in":"Amuri","out":"Tunji"},{"side":"a","in":"Vardy","out":"Victor"},{"side":"a","in":"Somto","out":"Idris"},{"side":"a","in":"Idris","out":"Vardy"},{"side":"h","in":"Tola","out":"Aremu"}],"yellow_card":[{"side":"h","player":"Utaka"}]}},"13":{"home":"Liverpool","away":"Arsenal","date":"2026-07-12T16:50:00+01:00","seconds_duration":2400,"events":[{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"a","scorer":"Friday","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"h","scorer":"Obago","assist":"Lola","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"h","scorer":"Tm","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"sub","event":{"side":"h","in":"Emma","out":"Tm"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"sub","event":{"side":"a","in":"Nketiah","out":"Fortune"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"yellow_card","event":{"side":"h","player":"Dami"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"a","scorer":"Nketiah","assist":"Seun","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"yellow_card","event":{"side":"h","player":"Ikenga"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"red_card","event":{"side":"a","player":"Friday"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"sub","event":{"side":"h","in":"Pastor","out":"Dami"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"yellow_card","event":{"side":"a","player":"Nketiah"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"h","scorer":"Obago","assist":"","is_own_goal":false,"is_penalty":false}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"sub","event":{"side":"h","in":"Kenya","out":"Ikenga"}},{"fixture":"Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00","name":"goal","event":{"side":"a","scorer":"Kunle","assist":"","is_own_goal":false,"is_penalty":false}}],"map":{"goal":[{"side":"a","scorer":"Friday","assist":"","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Obago","assist":"Lola","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Tm","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Nketiah","assist":"Seun","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Obago","assist":"","is_own_goal":false,"is_penalty":false},{"side":"a","scorer":"Kunle","assist":"","is_own_goal":false,"is_penalty":false}],"sub":[{"side":"h","in":"Emma","out":"Tm"},{"side":"a","in":"Nketiah","out":"Fortune"},{"side":"h","in":"Pastor","out":"Dami"},{"side":"h","in":"Kenya","out":"Ikenga"}],"yellow_card":[{"side":"h","player":"Dami"},{"side":"h","player":"Ikenga"},{"side":"a","player":"Nketiah"}],"red_card":[{"side":"a","player":"Friday"}]}},"14":{"home":"Chelsea B","away":"Manchester United A","date":"2026-07-12T17:40:00+01:00","seconds_duration":2400,"events":[{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"goal","event":{"side":"h","scorer":"Roland","assist":"","is_own_goal":false,"is_penalty":true}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"yellow_card","event":{"side":"h","player":"Nifemi"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"sub","event":{"side":"a","in":"Sancho","out":"Ebuka"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"sub","event":{"side":"a","in":"Brainee","out":"Eze"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"goal","event":{"side":"a","scorer":"Ola","assist":"Chris","is_own_goal":false,"is_penalty":false}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"yellow_card","event":{"side":"h","player":"Bobby K"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"sub","event":{"side":"h","in":"Machala","out":"Roland"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"sub","event":{"side":"h","in":"Roland","out":"Nifemi"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"goal","event":{"side":"h","scorer":"Roland","assist":"","is_own_goal":false,"is_penalty":true}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"yellow_card","event":{"side":"h","player":"Roland"}},{"fixture":"Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00","name":"sub","event":{"side":"h","in":"Ayo","out":"Roland"}}],"map":{"goal":[{"side":"h","scorer":"Roland","assist":"","is_own_goal":false,"is_penalty":true},{"side":"a","scorer":"Ola","assist":"Chris","is_own_goal":false,"is_penalty":false},{"side":"h","scorer":"Roland","assist":"","is_own_goal":false,"is_penalty":true}],"yellow_card":[{"side":"h","player":"Nifemi"},{"side":"h","player":"Bobby K"},{"side":"h","player":"Roland"}],"sub":[{"side":"a","in":"Sancho","out":"Ebuka"},{"side":"a","in":"Brainee","out":"Eze"},{"side":"h","in":"Machala","out":"Roland"},{"side":"h","in":"Roland","out":"Nifemi"},{"side":"h","in":"Ayo","out":"Roland"}]}},"15":{"home":"Manchester United B","away":"Chelsea A","date":"2026-07-12T18:30:00+01:00","seconds_duration":2400,"events":[{"fixture":"Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00","name":"goal","event":{"side":"h","scorer":"Jojo","assist":"Lino","is_own_goal":false,"is_penalty":false}},{"fixture":"Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00","name":"sub","event":{"side":"h","in":"Adufe","out":"Micheal"}},{"fixture":"Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00","name":"yellow_card","event":{"side":"h","player":"Jojo"}},{"fixture":"Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00","name":"sub","event":{"side":"h","in":"Felaini","out":"Jojo"}}],"map":{"goal":[{"side":"h","scorer":"Jojo","assist":"Lino","is_own_goal":false,"is_penalty":false}],"sub":[{"side":"h","in":"Adufe","out":"Micheal"},{"side":"h","in":"Felaini","out":"Jojo"}],"yellow_card":[{"side":"h","player":"Jojo"}]}}},"titles":{"Group A Winner":"","Group A Runners Up":"","Group B Winner":"","Group B Runners Up":"","Winner Semi Final 1":"","Winner Semi Final 2":"","Loser Semi Final 1":"","Loser Semi Final 2":""},"rounds":[{"players_stats":[{"name":"Kenya","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Dami","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Lola","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Pastor","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ikenga","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tm","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Dotun","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Obago","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Emma","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bisi","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Sodiq","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tunde","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Somto","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Idris","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Chiboy","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Vardy","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Cambiaso","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Victor","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Taiwo","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ola","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ebuka","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Chris","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Sancho","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Obinna","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Jamiu","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Brainee","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Eze","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Utaka","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tola","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Noah","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Yerima","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"David","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Amuri","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Martins","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Aremu","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tunji","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Segun","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Micheal","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Metu","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Femi","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ahmed","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ugo","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Sheriff","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bidemi","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Lanre","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Nketiah","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Seun","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Friday","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ogbon","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Kunle","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Fortune","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Papa","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ifeanyi","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Hunter","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Jojo","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Benson","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Lino","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Felaini","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Adufe","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ola-o","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Aguero","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Yinka","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Machala","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Roland","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ayo","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bobby K","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Nifemi","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0}],"team_stats":[{"team":"Liverpool","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Barcelona","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Manchester United A","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Real Madrid","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Chelsea A","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Arsenal","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Manchester United B","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"team":"Chelsea B","points":0,"played":0,"wins":0,"draws":0,"loses":0,"goals_scored":0,"goals_conceded":0,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":0}]},{"players_stats":[{"name":"Kenya","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Dami","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Lola","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":2,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Pastor","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ikenga","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":2},{"name":"Tm","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Dotun","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Obago","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":2,"assists":0,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Emma","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":2,"assists":0,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bisi","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Sodiq","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":2,"assists":1,"goals_and_assists":3,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tunde","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Somto","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Idris","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":2,"assists":1,"goals_and_assists":3,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Chiboy","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":1,"assists":1,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Vardy","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Cambiaso","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Victor","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Taiwo","points":9,"played":3,"wins":3,"draws":0,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ola","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ebuka","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Chris","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":1,"assists":1,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Sancho","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Obinna","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Jamiu","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Brainee","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Eze","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Utaka","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":3,"assists":0,"goals_and_assists":3,"cleansheets":0,"red_cards":0,"yellow_cards":2},{"name":"Tola","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":1,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Noah","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Yerima","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"David","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Amuri","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":1,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Martins","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Aremu","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Tunji","points":6,"played":3,"wins":2,"draws":0,"loses":1,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Segun","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Micheal","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":1,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Metu","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Femi","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Ahmed","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ugo","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Sheriff","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bidemi","points":0,"played":3,"wins":0,"draws":0,"loses":3,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Lanre","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":1,"assists":1,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Nketiah","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Seun","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":1,"assists":1,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Friday","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":1,"yellow_cards":0},{"name":"Ogbon","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Kunle","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":3,"assists":0,"goals_and_assists":3,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Fortune","points":7,"played":3,"wins":2,"draws":1,"loses":0,"goals":0,"assists":1,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Papa","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ifeanyi","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Hunter","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Jojo","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Benson","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Lino","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":1,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Felaini","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Adufe","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Ola-o","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Aguero","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":1,"assists":0,"goals_and_assists":1,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Yinka","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Machala","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Roland","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":2,"assists":0,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Ayo","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":0},{"name":"Bobby K","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":1,"assists":1,"goals_and_assists":2,"cleansheets":0,"red_cards":0,"yellow_cards":1},{"name":"Nifemi","points":3,"played":3,"wins":1,"draws":0,"loses":2,"goals":0,"assists":0,"goals_and_assists":0,"cleansheets":0,"red_cards":0,"yellow_cards":1}],"team_stats":[{"team":"Liverpool","points":4,"played":2,"wins":1,"draws":1,"loses":0,"goals_scored":5,"goals_conceded":4,"goals_difference":1,"cleansheets":0,"red_cards":0,"yellow_cards":4},{"team":"Barcelona","points":6,"played":2,"wins":2,"draws":0,"loses":0,"goals_scored":5,"goals_conceded":2,"goals_difference":3,"cleansheets":1,"red_cards":0,"yellow_cards":1},{"team":"Manchester United A","points":0,"played":2,"wins":0,"draws":0,"loses":2,"goals_scored":3,"goals_conceded":5,"goals_difference":-2,"cleansheets":0,"red_cards":0,"yellow_cards":2},{"team":"Real Madrid","points":3,"played":2,"wins":1,"draws":0,"loses":1,"goals_scored":3,"goals_conceded":4,"goals_difference":-1,"cleansheets":0,"red_cards":0,"yellow_cards":2},{"team":"Chelsea A","points":0,"played":2,"wins":0,"draws":0,"loses":2,"goals_scored":1,"goals_conceded":5,"goals_difference":-4,"cleansheets":0,"red_cards":0,"yellow_cards":3},{"team":"Arsenal","points":4,"played":2,"wins":1,"draws":1,"loses":0,"goals_scored":7,"goals_conceded":4,"goals_difference":3,"cleansheets":0,"red_cards":1,"yellow_cards":2},{"team":"Manchester United B","points":3,"played":2,"wins":1,"draws":0,"loses":1,"goals_scored":2,"goals_conceded":2,"goals_difference":0,"cleansheets":1,"red_cards":0,"yellow_cards":1},{"team":"Chelsea B","points":3,"played":2,"wins":1,"draws":0,"loses":1,"goals_scored":4,"goals_conceded":4,"goals_difference":0,"cleansheets":0,"red_cards":0,"yellow_cards":4}]}]}
+{
+  "league": "Rep Your League:GYFA",
+  "season": "july-august_2026",
+  "current_round": 1,
+  "teams": [
+    {
+      "name": "Liverpool",
+      "players": [
+        "Kenya",
+        "Dami",
+        "Lola",
+        "Pastor",
+        "Ikenga",
+        "Tm",
+        "Dotun",
+        "Obago",
+        "Emma"
+      ]
+    },
+    {
+      "name": "Barcelona",
+      "players": [
+        "Bisi",
+        "Sodiq",
+        "Tunde",
+        "Somto",
+        "Idris",
+        "Chiboy",
+        "Vardy",
+        "Cambiaso",
+        "Victor",
+        "Taiwo"
+      ]
+    },
+    {
+      "name": "Manchester United A",
+      "players": [
+        "Ola",
+        "Ebuka",
+        "Chris",
+        "Sancho",
+        "Obinna",
+        "Jamiu",
+        "Brainee",
+        "Eze"
+      ]
+    },
+    {
+      "name": "Real Madrid",
+      "players": [
+        "Utaka",
+        "Tola",
+        "Noah",
+        "Yerima",
+        "David",
+        "Amuri",
+        "Martins",
+        "Aremu",
+        "Tunji"
+      ]
+    },
+    {
+      "name": "Chelsea A",
+      "players": [
+        "Segun",
+        "Micheal",
+        "Metu",
+        "Femi",
+        "Ahmed",
+        "Ugo",
+        "Sheriff",
+        "Bidemi"
+      ]
+    },
+    {
+      "name": "Arsenal",
+      "players": [
+        "Lanre",
+        "Nketiah",
+        "Seun",
+        "Friday",
+        "Ogbon",
+        "Kunle",
+        "Fortune"
+      ]
+    },
+    {
+      "name": "Manchester United B",
+      "players": [
+        "Papa",
+        "Ifeanyi",
+        "Hunter",
+        "Jojo",
+        "Benson",
+        "Lino",
+        "Felaini",
+        "Adufe"
+      ]
+    },
+    {
+      "name": "Chelsea B",
+      "players": [
+        "Ola-o",
+        "Aguero",
+        "Yinka",
+        "Machala",
+        "Roland",
+        "Ayo",
+        "Bobby K",
+        "Nifemi"
+      ]
+    }
+  ],
+  "table": {
+    "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
+    "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+  },
+  "pre_season": [
+    {
+      "home": "Arsenal",
+      "away": "Manchester United B",
+      "date": "2026-07-05T16:00:00+01:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Felaini",
+            "assist": "Benson",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Manchester United A",
+      "away": "Real Madrid",
+      "date": "2026-07-05T16:30:00+01:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "": "Aremu", "out": "Brainee" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Sancho" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Yerima" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Martins" }
+        }
+      ],
+      "map": {
+        "sub": [{ "side": "h", "": "Aremu", "out": "Brainee" }],
+        "yellow_card": [
+          { "side": "h", "player": "Sancho" },
+          { "side": "a", "player": "Yerima" },
+          { "side": "a", "player": "Martins" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Eze",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Chelsea A",
+      "away": "Barcelona",
+      "date": "2026-07-05T17:00:00+01:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
+        },
+        {
+          "fixture": "Chelsea A_vs_Barcelona",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
+        }
+      ],
+      "map": {
+        "sub": [
+          { "side": "a", "in": "Tunde", "out": "Bisi" },
+          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
+          { "side": "a", "in": "Bisi", "out": "Taiwo" },
+          { "side": "h", "in": "Sheriff", "out": "Metu" }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Micheal",
+            "assist": "Sheriff",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ]
+      }
+    },
+    {
+      "home": "Liverpool",
+      "away": "Chelsea B",
+      "date": "2026-07-05T17:30:00+01:00",
+      "seconds_duration": 1200,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Damsel" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Emma" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Machala" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
+        },
+        {
+          "fixture": "Liverpool_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "yellow_card": [
+          { "side": "h", "player": "Damsel" },
+          { "side": "h", "player": "Emma" },
+          { "side": "a", "player": "Machala" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "Ikenga",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
+      }
+    }
+  ],
+  "fixtures": {
+    "0": {
+      "home": "Arsenal",
+      "away": "Chelsea A",
+      "date": "2026-07-05T16:00:00+01:00",
+      "seconds_duration": 2400,
+      "events": [
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "h", "in": "Nketiah", "out": "Fortune" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Seun",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Femi" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Ugo" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Segun" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "a", "in": "Sheriff", "out": "Femi" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "h", "in": "Kunle", "out": "Friday" }
+        },
+        { "fixture": "Arsenal_vs_Chelsea A", "name": "half time", "event": {} },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Ugo",
+            "assist": "Micheal",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "a", "in": "Femi", "out": "Sheriff" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "h", "in": "Kunle", "out": "Seun" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "a", "in": "Metu", "out": "Femi" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ogbon", "out": "Nketiah" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "a", "in": "Femi", "out": "Segun" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "sub",
+          "event": { "side": "h", "in": "Seun", "out": "Lanre" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Ogbon" }
+        },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "Fortune",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        { "fixture": "Arsenal_vs_Chelsea A", "name": "full time", "event": {} }
+      ],
+      "map": {
+        "sub": [
+          { "side": "h", "in": "Nketiah", "out": "Fortune" },
+          { "side": "a", "in": "Sheriff", "out": "Femi" },
+          { "side": "h", "in": "Kunle", "out": "Friday" },
+          { "side": "a", "in": "Femi", "out": "Sheriff" },
+          { "side": "h", "in": "Kunle", "out": "Seun" },
+          { "side": "a", "in": "Metu", "out": "Femi" },
+          { "side": "h", "in": "Ogbon", "out": "Nketiah" },
+          { "side": "a", "in": "Femi", "out": "Segun" },
+          { "side": "h", "in": "Seun", "out": "Lanre" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Seun",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Ugo",
+            "assist": "Micheal",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Lanre",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "Lanre",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Kunle",
+            "assist": "Fortune",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "yellow_card": [
+          { "side": "a", "player": "Femi" },
+          { "side": "a", "player": "Ugo" },
+          { "side": "a", "player": "Segun" },
+          { "side": "h", "player": "Ogbon" }
+        ],
+        "half time": [{}],
+        "full time": [{}]
+      }
+    },
+    "1": {
+      "home": "Barcelona",
+      "away": "Chelsea B",
+      "date": "2026-07-05T16:50:00+01:00",
+      "seconds_duration": 2400,
+      "events": [
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Yinka" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Chiboy",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Idris" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "half time",
+          "event": {}
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Somto", "out": "Victor" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Roland", "out": "YInka" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Idris",
+            "assist": "Chiboy",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Sodiq",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Vardy", "out": "Idris" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Cambiaso", "out": "Sodiq" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Aguero",
+            "assist": "Bobby K",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "h", "out": "Cambiaso", "in": "Sodiq" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Bobby K",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "sub",
+          "event": { "side": "h", "out": "Vardy", "in": "Idris" }
+        },
+        {
+          "fixture": "Barcelona_vs_Chelsea B",
+          "name": "full time",
+          "event": {}
+        }
+      ],
+      "map": {
+        "yellow_card": [
+          { "side": "a", "player": "Yinka" },
+          { "side": "h", "player": "Idris" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Chiboy",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Idris",
+            "assist": "Chiboy",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Sodiq",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Aguero",
+            "assist": "Bobby K",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Bobby K",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "half time": [{}],
+        "sub": [
+          { "side": "h", "in": "Somto", "out": "Victor" },
+          { "side": "a", "in": "Roland", "out": "YInka" },
+          { "side": "h", "in": "Vardy", "out": "Idris" },
+          { "side": "h", "in": "Cambiaso", "out": "Sodiq" },
+          { "side": "h", "out": "Cambiaso", "in": "Sodiq" },
+          { "side": "h", "out": "Vardy", "in": "Idris" }
+        ],
+        "full time": [{}]
+      }
+    },
+    "2": {
+      "home": "Liverpool",
+      "away": "Manchester United B",
+      "date": "2026-07-05T17:40:00+01:00",
+      "seconds_duration": 2400,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Adufe", "out": "Jojo" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Emma",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Ikenga" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Lola" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Jojo", "out": "Benson" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "half time",
+          "event": {}
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Emma",
+            "assist": "Lola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Tm", "out": "Lola" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Lino", "out": "Felaini" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Papa",
+            "assist": "",
+            "is_own_goal": false,
+            "is_free_kick": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "a", "in": "Benson", "out": "Adufe" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Kenya", "out": "Dami" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "sub",
+          "event": { "side": "h", "in": "Lola", "out": "Ikenga" }
+        },
+        {
+          "fixture": "Liverpool_vs_Manchester United B",
+          "name": "full time",
+          "event": {}
+        }
+      ],
+      "map": {
+        "sub": [
+          { "side": "a", "in": "Adufe", "out": "Jojo" },
+          { "side": "a", "in": "Jojo", "out": "Benson" },
+          { "side": "h", "in": "Tm", "out": "Lola" },
+          { "side": "a", "in": "Lino", "out": "Felaini" },
+          { "side": "a", "in": "Benson", "out": "Adufe" },
+          { "side": "h", "in": "Kenya", "out": "Dami" },
+          { "side": "h", "in": "Lola", "out": "Ikenga" }
+        ],
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Emma",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Emma",
+            "assist": "Lola",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Papa",
+            "assist": "",
+            "is_own_goal": false,
+            "is_free_kick": true,
+            "is_penalty": false
+          }
+        ],
+        "yellow_card": [
+          { "side": "h", "player": "Ikenga" },
+          { "side": "h", "player": "Lola" }
+        ],
+        "half time": [{}],
+        "full time": [{}]
+      }
+    },
+    "3": {
+      "home": "Manchester United A",
+      "away": "Real Madrid",
+      "date": "2026-07-05T18:30:00+01:00",
+      "seconds_duration": 2400,
+      "events": [
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "Tola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "half time",
+          "event": {}
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "in": "Jamiu", "out": "Eze" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Jamiu",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Chris" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Jamiu" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "a", "in": "Amuri", "out": "Aremu" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "a", "in": "Tunji", "out": "Tola" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Utaka" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sancho", "out": "Jamiu" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "h", "out": "Obinna", "in": "Brainee" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "Amuri",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "a", "out": "Aremu", "in": "Yerima" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "a", "out": "Utaka", "in": "Noah" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Chris",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "sub",
+          "event": { "side": "a", "out": "Tunji", "in": "Martins" }
+        },
+        {
+          "fixture": "Manchester United A_vs_Real Madrid",
+          "name": "full time",
+          "event": {}
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "Tola",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Jamiu",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "Amuri",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Chris",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "half time": [{}],
+        "sub": [
+          { "side": "h", "in": "Jamiu", "out": "Eze" },
+          { "side": "a", "in": "Amuri", "out": "Aremu" },
+          { "side": "a", "in": "Tunji", "out": "Tola" },
+          { "side": "h", "in": "Sancho", "out": "Jamiu" },
+          { "side": "h", "out": "Obinna", "in": "Brainee" },
+          { "side": "a", "out": "Aremu", "in": "Yerima" },
+          { "side": "a", "out": "Utaka", "in": "Noah" },
+          { "side": "a", "out": "Tunji", "in": "Martins" }
+        ],
+        "yellow_card": [
+          { "side": "h", "player": "Chris" },
+          { "side": "h", "player": "Jamiu" },
+          { "side": "a", "player": "Utaka" }
+        ],
+        "full time": [{}]
+      }
+    },
+    "4": {
+      "home": "Manchester United B",
+      "away": "Arsenal",
+      "date": "2026-07-26T16:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "5": {
+      "home": "Manchester United A",
+      "away": "Barcelona",
+      "date": "2026-07-26T17:10:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "6": {
+      "home": "Chelsea A",
+      "away": "Liverpool",
+      "date": "2026-07-26T17:50:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "7": {
+      "home": "Real Madrid",
+      "away": "Chelsea B",
+      "date": "2026-07-26T18:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "8": {
+      "home": "Group A Winner",
+      "away": "Group B Runners Up",
+      "date": "2026-07-26T16:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "9": {
+      "home": "Group B Winner",
+      "away": "Group A Runners Up",
+      "date": "2026-07-26T17:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "10": {
+      "home": "Loser Semi Final 1",
+      "away": "Loser Semi Final 2",
+      "date": "2026-08-02T16:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "11": {
+      "home": "Winner Semi Final 1",
+      "away": "Winner Semi Final 2",
+      "date": "2026-08-02T17:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "12": {
+      "home": "Real Madrid",
+      "away": "Barcelona",
+      "date": "2026-07-19T16:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Idris",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Amuri", "out": "Tunji" }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Vardy", "out": "Victor" }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Somto", "out": "Idris" }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Idris", "out": "Vardy" }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sodiq",
+            "assist": "Idris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Tola", "out": "Aremu" }
+        },
+        {
+          "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Utaka" }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Idris",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Sodiq",
+            "assist": "Idris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [
+          { "side": "h", "in": "Amuri", "out": "Tunji" },
+          { "side": "a", "in": "Vardy", "out": "Victor" },
+          { "side": "a", "in": "Somto", "out": "Idris" },
+          { "side": "a", "in": "Idris", "out": "Vardy" },
+          { "side": "h", "in": "Tola", "out": "Aremu" }
+        ],
+        "yellow_card": [{ "side": "h", "player": "Utaka" }]
+      }
+    },
+    "13": {
+      "home": "Liverpool",
+      "away": "Arsenal",
+      "date": "2026-07-12T17:10:00+01:00",
+      "seconds_duration": 1800,
+      "events": [
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Friday",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Obago",
+            "assist": "Lola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Emma", "out": "Tm" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Nketiah", "out": "Fortune" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Dami" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Nketiah",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Ikenga" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "red_card",
+          "event": { "side": "a", "player": "Friday" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Pastor", "out": "Dami" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Nketiah" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Obago",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Kenya", "out": "Ikenga" }
+        },
+        {
+          "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Friday",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Obago",
+            "assist": "Lola",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Tm",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Nketiah",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Obago",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [
+          { "side": "h", "in": "Emma", "out": "Tm" },
+          { "side": "a", "in": "Nketiah", "out": "Fortune" },
+          { "side": "h", "in": "Pastor", "out": "Dami" },
+          { "side": "h", "in": "Kenya", "out": "Ikenga" }
+        ],
+        "yellow_card": [
+          { "side": "h", "player": "Dami" },
+          { "side": "h", "player": "Ikenga" },
+          { "side": "a", "player": "Nketiah" }
+        ],
+        "red_card": [{ "side": "a", "player": "Friday" }]
+      }
+    },
+    "14": {
+      "home": "Chelsea B",
+      "away": "Manchester United A",
+      "date": "2026-07-12T17:50:00+01:00",
+      "seconds_duration": 1800,
+      "events": [
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Roland",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Nifemi" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Sancho", "out": "Ebuka" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "sub",
+          "event": { "side": "a", "in": "Brainee", "out": "Eze" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Ola",
+            "assist": "Chris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Bobby K" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Machala", "out": "Roland" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Roland", "out": "Nifemi" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Roland",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Roland" }
+        },
+        {
+          "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ayo", "out": "Roland" }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Roland",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          },
+          {
+            "side": "a",
+            "scorer": "Ola",
+            "assist": "Chris",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Roland",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          }
+        ],
+        "yellow_card": [
+          { "side": "h", "player": "Nifemi" },
+          { "side": "h", "player": "Bobby K" },
+          { "side": "h", "player": "Roland" }
+        ],
+        "sub": [
+          { "side": "a", "in": "Sancho", "out": "Ebuka" },
+          { "side": "a", "in": "Brainee", "out": "Eze" },
+          { "side": "h", "in": "Machala", "out": "Roland" },
+          { "side": "h", "in": "Roland", "out": "Nifemi" },
+          { "side": "h", "in": "Ayo", "out": "Roland" }
+        ]
+      }
+    },
+    "15": {
+      "home": "Manchester United B",
+      "away": "Chelsea A",
+      "date": "2026-07-12T18:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [
+        {
+          "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Jojo",
+            "assist": "Lino",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Adufe", "out": "Micheal" }
+        },
+        {
+          "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Jojo" }
+        },
+        {
+          "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
+          "name": "sub",
+          "event": { "side": "h", "in": "Felaini", "out": "Jojo" }
+        }
+      ],
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Jojo",
+            "assist": "Lino",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [
+          { "side": "h", "in": "Adufe", "out": "Micheal" },
+          { "side": "h", "in": "Felaini", "out": "Jojo" }
+        ],
+        "yellow_card": [{ "side": "h", "player": "Jojo" }]
+      }
+    }
+  },
+  "titles": {
+    "Group A Winner": "",
+    "Group A Runners Up": "",
+    "Group B Winner": "",
+    "Group B Runners Up": "",
+    "Winner Semi Final 1": "",
+    "Winner Semi Final 2": "",
+    "Loser Semi Final 1": "",
+    "Loser Semi Final 2": ""
+  },
+  "rounds": [
+    {
+      "players_stats": [
+        {
+          "name": "Kenya",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Dami",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lola",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Pastor",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ikenga",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tm",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Dotun",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Obago",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Emma",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bisi",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sodiq",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tunde",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Somto",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Idris",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Chiboy",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Vardy",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Cambiaso",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Victor",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Taiwo",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ola",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ebuka",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Chris",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sancho",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Obinna",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Jamiu",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Brainee",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Eze",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Utaka",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tola",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Noah",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Yerima",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "David",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Amuri",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Martins",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aremu",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tunji",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Segun",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Micheal",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Metu",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Femi",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ahmed",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ugo",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sheriff",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bidemi",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lanre",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Nketiah",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Seun",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Friday",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ogbon",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Kunle",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Fortune",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Papa",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ifeanyi",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Hunter",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Jojo",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Benson",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lino",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Felaini",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Adufe",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ola-o",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aguero",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Yinka",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Machala",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Roland",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ayo",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bobby K",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Nifemi",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        }
+      ],
+      "team_stats": [
+        {
+          "team": "Liverpool",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Barcelona",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Manchester United A",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Real Madrid",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Chelsea A",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Arsenal",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Manchester United B",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "team": "Chelsea B",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 0,
+          "goals_conceded": 0,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        }
+      ]
+    },
+    {
+      "players_stats": [
+        {
+          "name": "Kenya",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Dami",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Lola",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 2,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Pastor",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ikenga",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 2
+        },
+        {
+          "name": "Tm",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Dotun",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Obago",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 2,
+          "assists": 0,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Emma",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 2,
+          "assists": 0,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bisi",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sodiq",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 2,
+          "assists": 1,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tunde",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Somto",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Idris",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 2,
+          "assists": 1,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Chiboy",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Vardy",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Cambiaso",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Victor",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Taiwo",
+          "points": 9,
+          "played": 3,
+          "wins": 3,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ola",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ebuka",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Chris",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Sancho",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Obinna",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Jamiu",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Brainee",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Eze",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Utaka",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 3,
+          "assists": 0,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 2
+        },
+        {
+          "name": "Tola",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Noah",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Yerima",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "David",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Amuri",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Martins",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aremu",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tunji",
+          "points": 6,
+          "played": 3,
+          "wins": 2,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Segun",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Micheal",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Metu",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Femi",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Ahmed",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ugo",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Sheriff",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bidemi",
+          "points": 0,
+          "played": 3,
+          "wins": 0,
+          "draws": 0,
+          "loses": 3,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lanre",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Nketiah",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Seun",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Friday",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 1,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ogbon",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Kunle",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 3,
+          "assists": 0,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Fortune",
+          "points": 7,
+          "played": 3,
+          "wins": 2,
+          "draws": 1,
+          "loses": 0,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Papa",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ifeanyi",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Hunter",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Jojo",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Benson",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lino",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Felaini",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Adufe",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ola-o",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aguero",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Yinka",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Machala",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Roland",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 2,
+          "assists": 0,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Ayo",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bobby K",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Nifemi",
+          "points": 3,
+          "played": 3,
+          "wins": 1,
+          "draws": 0,
+          "loses": 2,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        }
+      ],
+      "team_stats": [
+        {
+          "team": "Liverpool",
+          "points": 4,
+          "played": 2,
+          "wins": 1,
+          "draws": 1,
+          "loses": 0,
+          "goals_scored": 5,
+          "goals_conceded": 4,
+          "goals_difference": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 4
+        },
+        {
+          "team": "Barcelona",
+          "points": 6,
+          "played": 2,
+          "wins": 2,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 5,
+          "goals_conceded": 2,
+          "goals_difference": 3,
+          "cleansheets": 1,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "team": "Manchester United A",
+          "points": 0,
+          "played": 2,
+          "wins": 0,
+          "draws": 0,
+          "loses": 2,
+          "goals_scored": 3,
+          "goals_conceded": 5,
+          "goals_difference": -2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 2
+        },
+        {
+          "team": "Real Madrid",
+          "points": 3,
+          "played": 2,
+          "wins": 1,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 3,
+          "goals_conceded": 4,
+          "goals_difference": -1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 2
+        },
+        {
+          "team": "Chelsea A",
+          "points": 0,
+          "played": 2,
+          "wins": 0,
+          "draws": 0,
+          "loses": 2,
+          "goals_scored": 1,
+          "goals_conceded": 5,
+          "goals_difference": -4,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 3
+        },
+        {
+          "team": "Arsenal",
+          "points": 4,
+          "played": 2,
+          "wins": 1,
+          "draws": 1,
+          "loses": 0,
+          "goals_scored": 7,
+          "goals_conceded": 4,
+          "goals_difference": 3,
+          "cleansheets": 0,
+          "red_cards": 1,
+          "yellow_cards": 2
+        },
+        {
+          "team": "Manchester United B",
+          "points": 3,
+          "played": 2,
+          "wins": 1,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 2,
+          "goals_conceded": 2,
+          "goals_difference": 0,
+          "cleansheets": 1,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "team": "Chelsea B",
+          "points": 3,
+          "played": 2,
+          "wins": 1,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 4,
+          "goals_conceded": 4,
+          "goals_difference": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 4
+        }
+      ]
+    }
+  ]
+}

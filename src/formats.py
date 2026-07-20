@@ -1005,8 +1005,11 @@ if __name__ == "__main__":
     path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons" / f"{season}.json"
 
     data = MultipleLeagueKnockout.load(path)
-
-
+    fixtures = sorted(list(data.fixtures.values()), key= lambda x: x.date)
+    fixtures_dict = {}
+    for index, fixture in enumerate(fixtures):
+        fixtures_dict[str(index)] = fixture
+    data.fixtures = fixtures_dict
     save(data, path)
 
 
