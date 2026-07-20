@@ -94,16 +94,22 @@
             </div>
             <div dropdowntoggle class="rounded-b-xl w-full h-fit bg-bg-1 pt-3 border-b border-bg-3">
               <div
-                class="grid grid-cols-[minmax(35%_9%_12%_9%_35%] md:grid-cols-[38%_7%_10%_7%_38%] h-fit bg-bg-1 text-xs md:text-sm rounded-xl place-items-center">
+                class="grid grid-cols-[35%_9%_12%_9%_35%] md:grid-cols-[38%_7%_10%_7%_38%] h-fit bg-bg-1 text-xs md:text-sm rounded-xl place-items-center">
                 <h1 class="col-span-1 justify-self-end font-semibold break-words min-w-0">{{match.home}}
                 </h1>
                 <img src="{{root}}assets/{{team_logo[match.home]}}" class="w-6">
                 <span class="text-sm">
+                  {% if match.events %}
+                  
                   {{match.map.goal | selectattr("side", "equalto", "h") | list | length}} -
                   {{match.map.goal |
                   selectattr("side", "equalto", "a") | list | length}}
+                  {% else %}
+                  -
+                  {% endif %}
+
                 </span>
-                <img src="{{root}}assets/liverpool.svg" class="w-6">
+                <img src="{{root}}assets/{{team_logo[match.away]}}" class="w-6">
                 <h1 class="col-span-1 justify-self-start font-semibold break-words min-w-0">{{match.away}}
                 </h1>
               </div>
@@ -114,7 +120,7 @@
                   {% if match.events %}
                     FULL TIME
                   {% else %}
-                    match.date.strftime("%H : %M")
+                    {{match.date.strftime("%H : %M")}}
                   {% endif %}
                   </div>
                 <div class="col-span-1 w-4 h-4 justify-self-end">
@@ -130,53 +136,63 @@
               {% for event in match.events %}
 
               {% if event.name == "goal" %}
-              <div class="flex items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                 <div class="hidden md:block w-10 lg:w-30">
                 </div>
-                <img src="{{root}}assets/football.svg" class="w-6 h-6 bg-fg-1">
+                <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%" class="w-6 h-6"></iconify-icon>
                 <div class="flex flex-col m-2">
-                  <h3 class="text-sm">Cristiano Ronaldo</h3>
-                  <h3 class="text-sm text-text-6">Neymar Jr Assist</h3>
+                  <h3 class="text-sm">
+                  {{event.event.scorer}}
+                  <span></span>
+                  {{'(Own Goal)' if event.event.is_own_goal else ''}}
+                  </h3>
+                  {% if event.event.assist %}
+                  <h3 class="text-sm text-text-6">{{event.event.assist}} Assist</h3>
+                  {% endif %}
                 </div>
               </div>
-              {% elif event.name == "red card"%}
-              <div class="flex flex-row-reverse items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+              {% elif event.name == "red_card"%}
+              
+              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                 <div class="hidden md:block w-10 lg:w-30">
                 </div>
-                <img src="{{root}}assets/football.svg" class="w-6 h-6">
+                <div class="w-4 h-6 bg-red-500"></div>
                 <div class="flex flex-col m-2">
-                  <h3 class="text-sm">Cristiano Ronaldo</h3>
-                  <h3 class="text-sm text-text-6">Neymar Jr Assist</h3>
+                  <h3 class="text-sm">{{event.event.player}}</h3>
                 </div>
               </div>
-              {% elif event.name == "yellow card"%}
-              <div class="flex items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+              {% elif event.name == "yellow_card"%}
+              
+              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                 <div class="hidden md:block w-10 lg:w-30">
                 </div>
-                <img src="{{root}}assets/football.svg" class="w-6 h-6">
+                <div class="w-4 h-6 bg-yellow-500"></div>
                 <div class="flex flex-col m-2">
-                  <h3 class="text-sm">Cristiano Ronaldo</h3>
-                  <!-- <h3 class="text-sm text-text-6">Neymar Jr Assist</h3> -->
+                  <h3 class="text-sm">{{event.event.player}}</h3>
                 </div>
               </div>
-              {% elif event.name == "penalty"%}
-              <div class="flex items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+              {% elif event.name == "penalty_shootout"%}
+              
+              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                 <div class="hidden md:block w-10 lg:w-30">
                 </div>
-                <img src="{{root}}assets/football.svg" class="w-6 h-6">
+                <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%" class="w-6 h-6"></iconify-icon>
                 <div class="flex flex-col m-2">
-                  <h3 class="text-sm">Cristiano Ronaldo</h3>
-                  <!-- <h3 class="text-sm text-text-6">Neymar Jr Assist</h3> -->
+                  <h3 class="text-sm">{{event.event.scorer}}</h3>
+                  {% if event.event.assist %}
+                  <h3 class="text-sm text-text-6">{{event.event.assist}} Assist</h3>
+                  {% endif %}
                 </div>
               </div>
-              {% elif event.name == "substitution"%}
-              <div class="flex items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
+              {% elif event.name == "sub"%}
+              
+              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
                 <div class="hidden md:block w-10 lg:w-30">
                 </div>
-                <img src="{{root}}assets/football.svg" class="w-6 h-6">
+                <img src="{{root}}/assets/sub.svg" class="w-6 h-6">
                 <div class="flex flex-col m-2">
-                  <h3 class="text-sm">Cristiano Ronaldo</h3>
-                  <!-- <h3 class="text-sm text-text-6">Neymar Jr Assist</h3> -->
+                  <h3 class="text-sm">IN: {{event.event.in}}</h3>
+                  <h3 class="text-sm text-text-6">OUT: {{event.event.out}}</h3>
                 </div>
               </div>
               {% endif %}

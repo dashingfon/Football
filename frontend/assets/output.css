@@ -739,6 +739,9 @@
   .grid-cols-\[1fr_25\%_1fr\] {
     grid-template-columns: 1fr 25% 1fr;
   }
+  .grid-cols-\[35\%_9\%_12\%_9\%_35\%\] {
+    grid-template-columns: 35% 9% 12% 9% 35%;
+  }
   .grid-cols-\[minmax\(0\,1fr\)_25\%_minmax\(0\,1fr\)\] {
     grid-template-columns: minmax(0,1fr) 25% minmax(0,1fr);
   }
@@ -1069,9 +1072,6 @@
   }
   .bg-bg-alt-1 {
     background-color: var(--bg-alt-1);
-  }
-  .bg-bg-alt-2 {
-    background-color: var(--bg-alt-2);
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
@@ -1938,13 +1938,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--bg-3);
-      }
-    }
-  }
-  .hover\:bg-bg-alt-1 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--bg-alt-1);
       }
     }
   }

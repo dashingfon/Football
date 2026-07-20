@@ -166,7 +166,7 @@ class Event(BaseModel):
         result = Event(
             fixture=fixture,
             name="sub",
-            event={"side": side[0], "in": player_in, "put": player_out},
+            event={"side": side[0], "in": player_in, "out": player_out},
         )
         return result
 
