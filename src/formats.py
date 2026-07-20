@@ -202,9 +202,11 @@ class Fixture(BaseModel):
     @staticmethod
     def group_by_datetime(
         fixtures: list["Fixture"],
+        timezone: str = "Africa/Lagos",
     ) -> dict[str, list["Fixture"]]:
         matchday_group: dict[str, list["Fixture"]] = {}
         for fixture in fixtures:
+            fixture.date = fixture.date.replace(tzinfo=ZoneInfo(timezone))
             date_str = fixture.date.strftime(DATE_FORMAT)
             if date_str not in matchday_group:
                 matchday_group[date_str] = []
@@ -379,6 +381,7 @@ def apply_league_statistics(
     team_map = TeamTable.map_teams(team_table)
 
     for fixture in fixtures.values():
+        print(fixture)
         if not fixture.events:
             continue
         fixture_map = fixture.map
@@ -881,7 +884,8 @@ class MultipleLeagueKnockout(BaseModel):
                 for player in team_name.players:
                     player_to_team[player] = team_name.name
 
-            fixtures = Fixture.group_by_datetime(list(self.fixtures.values()))
+            fixtures_array = list(self.fixtures.values())
+            fixtures = Fixture.group_by_datetime(fixtures_array)
 
             context = {
                 "root": "../../../",
@@ -2089,21 +2093,30 @@ if __name__ == "__main__":
     #         ],
     #     ),
     # ]
-    
-    new_fixtures = [
-        input_fixture("Real Madrid", "Barcelona", datetime(2026, 7, 12, 16), 2400),
-        input_fixture("Liverpool", "Arsenal", datetime(2026, 7, 12, 16, 50), 2400),
-        input_fixture("Chelsea B", "Manchester United A", datetime(2026, 7, 12, 17, 40), 2400),
-        input_fixture("Manchester United B", "Chelsea A", datetime(2026, 7, 12, 18, 30), 2400),
-    ]
-    new_fixtures_dict = {str(fixture): fixture for fixture in new_fixtures}
+    # new_fixtures_dict = {str(fixture): fixture for fixture in new_fixtures}
 
-    data.update_fixtures(
-        preseason=[],
-        fixtures=new_fixtures_dict,
-        new_round=True,
-        path=path / "seasons" / f"{season}.json",
-    )
+    # data.update_fixtures(
+    #     preseason=[],
+    #     fixtures=new_fixtures_dict,
+    #     new_round=True,
+    #     path=path / "seasons" / f"{season}.json",
+    # )
+    # data.update_stats(path / "seasons" / f"{season}.json")
+    
+    # new2_fixtures = [
+    #     input_fixture("Real Madrid", "Barcelona", datetime(2026, 7, 12, 16), 2400),
+    #     input_fixture("Liverpool", "Arsenal", datetime(2026, 7, 12, 16, 50), 2400),
+    #     input_fixture("Chelsea B", "Manchester United A", datetime(2026, 7, 12, 17, 40), 2400),
+    #     input_fixture("Manchester United B", "Chelsea A", datetime(2026, 7, 12, 18, 30), 2400),
+    # ]
+    # new_fixtures_dict = {str(fixture): fixture for fixture in new2_fixtures}
+
+    # data.update_fixtures(
+    #     preseason=[],
+    #     fixtures=new_fixtures_dict,
+    #     new_round=True,
+    #     path=path / "seasons" / f"{season}.json",
+    # )
     data.update_stats(path / "seasons" / f"{season}.json")
 
     data.build(season=season, path=pathlib.PurePath(__file__).parent.parent)
