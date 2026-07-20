@@ -1,6 +1,6 @@
 {
   "league": "test",
-  "season": "july_august_2026",
+  "season": "july-august_2026",
   "current_round": 1,
   "teams": [
     {
@@ -1138,7 +1138,7 @@
       "events": [],
       "map": {}
     },
-    "Winer Semi Final 1_vs_Winner Semi Final 2_at_2026-08-02 17:20:00": {
+    "Winner Semi Final 1_vs_Winner Semi Final 2_at_2026-08-02 17:20:00": {
       "home": "Winer Semi Final 1",
       "away": "Winner Semi Final 2",
       "date": "2026-08-02T17:20:00",
