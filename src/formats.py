@@ -1456,6 +1456,8 @@ if __name__ == "__main__":
     #     table_dict=table_dict,
     # )
 
+    data = MultipleLeagueKnockout.load(path / "seasons" / f"{season}.json")
+
     # new_fixtures = [
     #     Fixture(
     #         home="Arsenal",
@@ -2087,17 +2089,22 @@ if __name__ == "__main__":
     #         ],
     #     ),
     # ]
-    # new_fixtures_dict = {str(fixture): fixture for fixture in new_fixtures}
+    
+    new_fixtures = [
+        input_fixture("Real Madrid", "Barcelona", datetime(2026, 7, 12, 16), 2400),
+        input_fixture("Liverpool", "Arsenal", datetime(2026, 7, 12, 16, 50), 2400),
+        input_fixture("Chelsea B", "Manchester United A", datetime(2026, 7, 12, 17, 40), 2400),
+        input_fixture("Manchester United B", "Chelsea A", datetime(2026, 7, 12, 18, 30), 2400),
+    ]
+    new_fixtures_dict = {str(fixture): fixture for fixture in new_fixtures}
 
-    # data.update_fixtures(
-    #     preseason=[],
-    #     fixtures=new_fixtures_dict,
-    #     new_round=True,
-    #     path=path / "seasons" / f"{season}.json",
-    # )
-    # data.update_stats(path / "seasons" / f"{season}.json")
-
-    data = MultipleLeagueKnockout.load(path / "seasons" / f"{season}.json")
+    data.update_fixtures(
+        preseason=[],
+        fixtures=new_fixtures_dict,
+        new_round=True,
+        path=path / "seasons" / f"{season}.json",
+    )
+    data.update_stats(path / "seasons" / f"{season}.json")
 
     data.build(season=season, path=pathlib.PurePath(__file__).parent.parent)
 
