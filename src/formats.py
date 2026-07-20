@@ -2117,7 +2117,7 @@ if __name__ == "__main__":
     #     new_round=True,
     #     path=path / "seasons" / f"{season}.json",
     # )
-    data.update_stats(path / "seasons" / f"{season}.json")
+    # data.update_stats(path / "seasons" / f"{season}.json")
 
     data.build(season=season, path=pathlib.PurePath(__file__).parent.parent)
 
