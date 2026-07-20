@@ -1006,23 +1006,7 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
 
-    player_to_team: dict[str, str] = {}
-    for team in data.teams:
-        for player in team.players:
-            player_to_team[player] = team.name
-    team_stats = {team.team: team for team in data.rounds[1].team_stats}
-
-    for player_data in data.rounds[1].players_stats:
-        team_data = team_stats[player_to_team[player_data.name]]
-        player_data.points = team_data.points
-        player_data.played = team_data.played
-        player_data.wins = team_data.wins
-        player_data.draws = team_data.draws
-        player_data.loses = team_data.loses
-        player_data.cleansheets = team_data.cleansheets
-
-
-
+    save(data, path)
 
     data.build(season=season, path=path.parent)
 
