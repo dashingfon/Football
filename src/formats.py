@@ -1001,15 +1001,14 @@ class MultipleLeagueKnockout(BaseModel):
 if __name__ == "__main__":
     from rich import print
 
-    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test"
     season = "july-august_2026"
+    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons" / f"{season}.json"
 
-    data = MultipleLeagueKnockout.load(path / "seasons" / f"{season}.json")
-    
-    fixtures_dict: dict[str, Fixture] = {}
-    for index, fixture in enumerate(data.fixtures.values()):
-        fixtures_dict[str(index)] = fixture
+    data = MultipleLeagueKnockout.load(path)
 
 
-    # data.build(season=season, path=path / "seasons")
+    save(data, path)
+
+
+    # data.build(season=season, path=path.parent)
 
