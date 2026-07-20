@@ -208,6 +208,7 @@ class Fixture(BaseModel):
             date_str = fixture.date.strftime(DATE_FORMAT)
             if date_str not in matchday_group:
                 matchday_group[date_str] = []
+            matchday_group[date_str].append(fixture)
 
         for key, value in matchday_group.items():
             matchday_group[key] = sorted(value, key=lambda x: x.date)
@@ -774,9 +775,7 @@ class MultipleLeagueKnockout(BaseModel):
         if new_round:
             self.current_round += 1
             self.rounds.append(Leagues_RoundData(players_stats=[], team_stats=[]))
-            self.fixtures = fixtures
-        else:
-            self.fixtures.update(fixtures)
+        self.fixtures.update(fixtures)
         if preseason:
             self.pre_season = preseason
         save(self, path)
@@ -882,12 +881,14 @@ class MultipleLeagueKnockout(BaseModel):
                 for player in team_name.players:
                     player_to_team[player] = team_name.name
 
+            fixtures = Fixture.group_by_datetime(list(self.fixtures.values()))
+
             context = {
                 "root": "../../../",
                 "player_teams": player_to_team,
                 "tables": sorted_table,
                 "preseason": self.pre_season,
-                "fixtures": Fixture.group_by_datetime(list(self.fixtures.values())),
+                "fixtures": fixtures,
                 "team_logo": team_to_logo,
                 "player_stats": {
                     "Top Scorer": bundle_player(
