@@ -1478,7 +1478,7 @@
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Adufe", "out": "Micheal" }
+          "event": { "side": "a", "in": "Femi", "out": "Micheal" }
         },
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",

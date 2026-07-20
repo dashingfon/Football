@@ -426,18 +426,18 @@ def apply_league_statistics(
         away_players = teams_name_map[fixture.away]
 
         for player in home_players.players:
-            player_map[player].played += team_map[fixture.home].played
-            player_map[player].points += team_map[fixture.home].points
-            player_map[player].wins += team_map[fixture.home].wins
-            player_map[player].draws += team_map[fixture.home].draws
-            player_map[player].loses += team_map[fixture.home].loses
+            player_map[player].played = team_map[fixture.home].played
+            player_map[player].points = team_map[fixture.home].points
+            player_map[player].wins = team_map[fixture.home].wins
+            player_map[player].draws = team_map[fixture.home].draws
+            player_map[player].loses = team_map[fixture.home].loses
 
         for player in away_players.players:
-            player_map[player].played += team_map[fixture.away].played
-            player_map[player].points += team_map[fixture.away].points
-            player_map[player].wins += team_map[fixture.away].wins
-            player_map[player].draws += team_map[fixture.away].draws
-            player_map[player].loses += team_map[fixture.away].loses
+            player_map[player].played = team_map[fixture.away].played
+            player_map[player].points = team_map[fixture.away].points
+            player_map[player].wins = team_map[fixture.away].wins
+            player_map[player].draws = team_map[fixture.away].draws
+            player_map[player].loses = team_map[fixture.away].loses
 
         if "goal" in fixture_map:
             for goal in fixture_map["goal"]:
@@ -1006,19 +1006,22 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
 
-    
-    fixtures = sorted(list(data.fixtures.values()), key= lambda x: x.date)
-    fixtures_dict = {}
-    for index, fixture in enumerate(fixtures):
-        fixtures_dict[str(index)] = fixture
-        print(fixture.date)
-        print(fixture.home)
-        print(fixture.away, end="\n")
-    to_continue = input("should i continue?: ")
-    if not to_continue:
-        print("saving ....")
-        data.fixtures = fixtures_dict
-        save(data, path)
+    player_to_team: dict[str, str] = {}
+    for team in data.teams:
+        for player in team.players:
+            player_to_team[player] = team.name
+    team_stats = {team.team: team for team in data.rounds[1].team_stats}
+
+    for player_data in data.rounds[1].players_stats:
+        team_data = team_stats[player_to_team[player_data.name]]
+        player_data.points = team_data.points
+        player_data.played = team_data.played
+        player_data.wins = team_data.wins
+        player_data.draws = team_data.draws
+        player_data.loses = team_data.loses
+        player_data.cleansheets = team_data.cleansheets
+
+
 
 
     data.build(season=season, path=path.parent)
