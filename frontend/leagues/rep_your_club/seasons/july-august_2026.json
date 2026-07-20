@@ -1,6 +1,6 @@
 {
-  "league": "test",
-  "season": "july_august_2026",
+  "league": "rep your club",
+  "season": "july-august_2026",
   "current_round": 1,
   "teams": [
     {
@@ -1116,7 +1116,7 @@
     },
     "Group A Winner_vs_Group B RunnersUp_at_2026-07-26 16:20:00": {
       "home": "Group A Winner",
-      "away": "Group B RunnersUp",
+      "away": "Group B Runners Up",
       "date": "2026-07-26T16:20:00",
       "seconds_duration": 2400,
       "events": [],
@@ -1124,7 +1124,7 @@
     },
     "Group B Winner_vs_Group A RUnnersUp_at_2026-07-26 17:20:00": {
       "home": "Group B Winner",
-      "away": "Group A RUnnersUp",
+      "away": "Group A Runners Up",
       "date": "2026-07-26T17:20:00",
       "seconds_duration": 2400,
       "events": [],
@@ -1138,8 +1138,8 @@
       "events": [],
       "map": {}
     },
-    "Winer Semi Final 1_vs_Winner Semi Final 2_at_2026-08-02 17:20:00": {
-      "home": "Winer Semi Final 1",
+    "Winner Semi Final 1_vs_Winner Semi Final 2_at_2026-08-02 17:20:00": {
+      "home": "Winner Semi Final 1",
       "away": "Winner Semi Final 2",
       "date": "2026-08-02T17:20:00",
       "seconds_duration": 2400,
@@ -1573,7 +1573,16 @@
       }
     }
   },
-  "titles": {},
+  "titles": {
+    "Group A Winner": "",
+    "Group A Runners Up": "",
+    "Group B Winner": "",
+    "Group B Runners Up": "",
+    "Winner Semi Final 1": "",
+    "Winner Semi Final 2": "",
+    "Loser Semi Final 1": "",
+    "Loser Semi Final 2": ""
+  },
   "rounds": [
     {
       "players_stats": [

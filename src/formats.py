@@ -831,7 +831,7 @@ class MultipleLeagueKnockout(BaseModel):
 
             # team stats
 
-            
+
         else:
             print("No Previous stats to update! ")
 
@@ -985,11 +985,10 @@ class MultipleLeagueKnockout(BaseModel):
             template = env.get_template("v2-league.jinja")
             league_name = self.league.replace(" ", "_")
             rendered = template.render(**context)
-            season_path = path / "frontend" / "leagues" / f"{league_name}" / "seasons"
-            pathlib.Path(season_path).mkdir(exist_ok=True)
+            pathlib.Path(path).mkdir(exist_ok=True)
 
             with open(
-                season_path / f"{season}.html",
+                path / f"{season}.html",
                 "w",
                 encoding="utf-8",
             ) as f:
@@ -1003,118 +1002,14 @@ if __name__ == "__main__":
     from rich import print
 
     path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test"
-    season = "july_august_2026"
-    teams = [
-        Team(
-            name="Liverpool",
-            players=[
-                "Kenya",
-                "Dami",
-                "Lola",
-                "Pastor",
-                "Ikenga",
-                "Tm",
-                "Dotun",
-                "Obago",
-                "Emma",
-            ],
-        ),
-        Team(
-            name="Barcelona",
-            players=[
-                "Bisi",
-                "Sodiq",
-                "Tunde",
-                "Somto",
-                "Idris",
-                "Chiboy",
-                "Vardy",
-                "Cambiaso",
-                "Victor",
-                "Taiwo",
-            ],
-        ),
-        Team(
-            name="Manchester United A",
-            players=[
-                "Ola",
-                "Ebuka",
-                "Chris",
-                "Sancho",
-                "Obinna",
-                "Jamiu",
-                "Brainee",
-                "Eze",
-            ],
-        ),
-        Team(
-            name="Real Madrid",
-            players=[
-                "Utaka",
-                "Tola",
-                "Noah",
-                "Yerima",
-                "David",
-                "Amuri",
-                "Martins",
-                "Aremu",
-                "Tunji",
-            ],
-        ),
-        Team(
-            name="Chelsea A",
-            players=[
-                "Segun",
-                "Micheal",
-                "Metu",
-                "Femi",
-                "Ahmed",
-                "Ugo",
-                "Sheriff",
-                "Bidemi",
-            ],
-        ),
-        Team(
-            name="Arsenal",
-            players=[
-                "Lanre",
-                "Nketiah",
-                "Seun",
-                "Friday",
-                "Ogbon",
-                "Kunle",
-                "Fortune",
-            ],
-        ),
-        Team(
-            name="Manchester United B",
-            players=[
-                "Papa",
-                "Ifeanyi",
-                "Hunter",
-                "Jojo",
-                "Benson",
-                "Lino",
-                "Felaini",
-                "Adufe",
-            ],
-        ),
-        Team(
-            name="Chelsea B",
-            players=[
-                "Ola-o",
-                "Aguero",
-                "Yinka",
-                "Machala",
-                "Roland",
-                "Ayo",
-                "Bobby K",
-                "Nifemi",
-            ],
-        ),
-    ]
+    season = "july-august_2026"
 
     data = MultipleLeagueKnockout.load(path / "seasons" / f"{season}.json")
+    
+    fixtures_dict: dict[str, Fixture] = {}
+    for index, fixture in enumerate(data.fixtures.values()):
+        fixtures_dict[str(index)] = fixture
 
-    data.build(season=season, path=pathlib.PurePath(__file__).parent.parent)
+
+    # data.build(season=season, path=path / "seasons")
 
