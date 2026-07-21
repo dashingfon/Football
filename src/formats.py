@@ -737,13 +737,13 @@ class MultipleLeagueKnockout(BaseModel):
             with open(path / "league.json") as f:
                 league_json = json.load(f)
         except Exception:
-            pathlib.Path(path).mkdir(exist_ok=True)
-            with open(path / "league.json", "w") as f:
-                json.dump({}, f)
-            league_json = {}
-        if "seasons" not in league_json:
-            league_json["seasons"] = []
-        league_json["seasons"].append(season)
+            league_json = {"name": league, "seasons": []}
+
+        seasons_dict: dict = {}
+        for s in league_json["seasons"]:
+            seasons_dict[s] = None
+        seasons_dict[season] = None
+        league_json["seasons"] = list(seasons_dict.keys())
 
         with open(path / "league.json", "w") as f:
             json.dump(league_json, f, indent=2)
@@ -806,20 +806,10 @@ class MultipleLeagueKnockout(BaseModel):
             self.rounds[current_round].team_stats = team_table
             save(self, path)
 
-            team_to_logo = {
-                "Chelsea A": "chelsea1",
-                "Chelsea B": "chelsea2",
-                "Manchester United A": "man_united1.svg",
-                "Manchester United B": "man_united2.svg",
-                "Barcelona": "barcelona.svg",
-                "Real Madrid": "real_madrid.svg",
-                "Arsenal": "arsenal.svg",
-                "Liverpool": "liverpool.svg",
-            }
             context = {
                 "root": "../../../",
                 "last_round": self.rounds[-1],
-                "team logo": team_to_logo,
+                "team_logo": {},
             }
             env = Environment(loader=FileSystemLoader("templates"))
             template = env.get_template("v2-league-stats.jinja")
@@ -840,22 +830,13 @@ class MultipleLeagueKnockout(BaseModel):
         self,
         season: str,
         season_path: pathlib.PurePath,
+        team_logos: dict[str, str],
         match_day_title: dict[str, str] | None = None,
         root: str = "../../../",
         buildpath: pathlib.PurePath | None = None,
     ) -> None:
         current_round = self.current_round
         if current_round > 0:
-            team_to_logo = {
-                "Chelsea A": "chelsea1.svg",
-                "Chelsea B": "chelsea2.svg",
-                "Manchester United A": "man_united1.svg",
-                "Manchester United B": "man_united2.svg",
-                "Barcelona": "barcelona.svg",
-                "Real Madrid": "real_madrid.svg",
-                "Arsenal": "arsenal.svg",
-                "Liverpool": "liverpool.svg",
-            }
             last_round = self.rounds[-1]
             group_round = self.rounds[-1] if len(self.rounds) <= 3 else self.rounds[2]
 
@@ -905,7 +886,7 @@ class MultipleLeagueKnockout(BaseModel):
                 "tables": sorted_table,
                 "preseason": self.pre_season,
                 "fixtures": fixtures,
-                "team_logo": team_to_logo,
+                "team_logo": team_logos,
                 "player_stats": {
                     "Top Scorer": bundle_player(
                         sorted(
@@ -1033,12 +1014,23 @@ if __name__ == "__main__":
         "August 2, 2026": "Semi Finals",
         "August 9, 2026": "Finals",
     }
+    team_logos = {
+        "Chelsea A": "chelsea1.svg",
+        "Chelsea B": "chelsea2.svg",
+        "Manchester United A": "man_united1.svg",
+        "Manchester United B": "man_united2.svg",
+        "Barcelona": "barcelona.svg",
+        "Real Madrid": "real_madrid.svg",
+        "Arsenal": "arsenal.svg",
+        "Liverpool": "liverpool.svg",
+    }
 
     data = MultipleLeagueKnockout.load(path)
-    data.build(
-        season=season,
-        season_path=path.parent,
-        match_day_title=match_day_title,
-        root=root,
-        buildpath=buildpath,
-    )
+    # data.build(
+    #     season=season,
+    #     season_path=path.parent,
+    #     team_logos=team_logos,
+    #     match_day_title=match_day_title,
+    #     root=root,
+    #     buildpath=buildpath,
+    # )
