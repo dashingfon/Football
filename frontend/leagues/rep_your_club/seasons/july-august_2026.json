@@ -1,5 +1,5 @@
 {
-  "league": "rep your club",
+  "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
   "current_round": 1,
   "teams": [
@@ -119,7 +119,7 @@
     {
       "home": "Arsenal",
       "away": "Manchester United B",
-      "date": "2026-07-05T16:00:00",
+      "date": "2026-06-28T16:00:00+01:00",
       "seconds_duration": 1200,
       "events": [
         {
@@ -203,7 +203,7 @@
     {
       "home": "Manchester United A",
       "away": "Real Madrid",
-      "date": "2026-07-05T16:30:00",
+      "date": "2026-06-28T16:30:00+01:00",
       "seconds_duration": 1200,
       "events": [
         {
@@ -259,7 +259,7 @@
     {
       "home": "Chelsea A",
       "away": "Barcelona",
-      "date": "2026-07-05T17:00:00",
+      "date": "2026-06-28T17:00:00+01:00",
       "seconds_duration": 1200,
       "events": [
         {
@@ -333,7 +333,7 @@
     {
       "home": "Liverpool",
       "away": "Chelsea B",
-      "date": "2026-07-05T17:30:00",
+      "date": "2026-06-28T17:30:00+01:00",
       "seconds_duration": 1200,
       "events": [
         {
@@ -406,10 +406,10 @@
     }
   ],
   "fixtures": {
-    "Arsenal_vs_Chelsea A_at_2026-07-05 16:00:00": {
+    "0": {
       "home": "Arsenal",
       "away": "Chelsea A",
-      "date": "2026-07-05T16:00:00",
+      "date": "2026-07-05T16:00:00+01:00",
       "seconds_duration": 2400,
       "events": [
         {
@@ -594,10 +594,10 @@
         "full time": [{}]
       }
     },
-    "Barcelona_vs_Chelsea B_at_2026-07-05 16:50:00": {
+    "1": {
       "home": "Barcelona",
       "away": "Chelsea B",
-      "date": "2026-07-05T16:50:00",
+      "date": "2026-07-05T16:50:00+01:00",
       "seconds_duration": 2400,
       "events": [
         {
@@ -760,10 +760,10 @@
         "full time": [{}]
       }
     },
-    "Liverpool_vs_Manchester United B_at_2026-07-05 17:40:00": {
+    "2": {
       "home": "Liverpool",
       "away": "Manchester United B",
-      "date": "2026-07-05T17:40:00",
+      "date": "2026-07-05T17:40:00+01:00",
       "seconds_duration": 2400,
       "events": [
         {
@@ -898,10 +898,10 @@
         "full time": [{}]
       }
     },
-    "Manchester United A_vs_Real Madrid_at_2026-07-05 18:30:00": {
+    "3": {
       "home": "Manchester United A",
       "away": "Real Madrid",
-      "date": "2026-07-05T18:30:00",
+      "date": "2026-07-05T18:30:00+01:00",
       "seconds_duration": 2400,
       "events": [
         {
@@ -1082,75 +1082,11 @@
         "full time": [{}]
       }
     },
-    "Manchester United B_vs_Arsenal_at_2026-07-19 16:00:00": {
-      "home": "Manchester United B",
-      "away": "Arsenal",
-      "date": "2026-07-19T16:00:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Manchester United A_vs_Barcelona_at_2026-07-19 16:50:00": {
-      "home": "Manchester United A",
-      "away": "Barcelona",
-      "date": "2026-07-19T16:50:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Chelsea A_vs_Liverpool_at_2026-07-19 17:40:00": {
-      "home": "Chelsea A",
-      "away": "Liverpool",
-      "date": "2026-07-19T17:40:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Real Madrid_vs_Chelsea B_at_2026-07-19 18:30:00": {
-      "home": "Real Madrid",
-      "away": "Chelsea B",
-      "date": "2026-07-19T18:30:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Group A Winner_vs_Group B RunnersUp_at_2026-07-26 16:20:00": {
-      "home": "Group A Winner",
-      "away": "Group B Runners Up",
-      "date": "2026-07-26T16:20:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Group B Winner_vs_Group A RUnnersUp_at_2026-07-26 17:20:00": {
-      "home": "Group B Winner",
-      "away": "Group A Runners Up",
-      "date": "2026-07-26T17:20:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Loser Semi Final 1_vs_Loser Semi Final 2_at_2026-08-02 16:20:00": {
-      "home": "Loser Semi Final 1",
-      "away": "Loser Semi Final 2",
-      "date": "2026-08-02T16:20:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Winner Semi Final 1_vs_Winner Semi Final 2_at_2026-08-02 17:20:00": {
-      "home": "Winner Semi Final 1",
-      "away": "Winner Semi Final 2",
-      "date": "2026-08-02T17:20:00",
-      "seconds_duration": 2400,
-      "events": [],
-      "map": {}
-    },
-    "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00": {
+    "4": {
       "home": "Real Madrid",
       "away": "Barcelona",
-      "date": "2026-07-12T16:00:00+01:00",
-      "seconds_duration": 2400,
+      "date": "2026-07-19T16:30:00+01:00",
+      "seconds_duration": 1800,
       "events": [
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
@@ -1232,11 +1168,11 @@
         "yellow_card": [{ "side": "h", "player": "Utaka" }]
       }
     },
-    "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00": {
+    "5": {
       "home": "Liverpool",
       "away": "Arsenal",
-      "date": "2026-07-12T16:50:00+01:00",
-      "seconds_duration": 2400,
+      "date": "2026-07-19T17:10:00+01:00",
+      "seconds_duration": 1800,
       "events": [
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
@@ -1404,11 +1340,11 @@
         "red_card": [{ "side": "a", "player": "Friday" }]
       }
     },
-    "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00": {
+    "6": {
       "home": "Chelsea B",
       "away": "Manchester United A",
-      "date": "2026-07-12T17:40:00+01:00",
-      "seconds_duration": 2400,
+      "date": "2026-07-19T17:50:00+01:00",
+      "seconds_duration": 1800,
       "events": [
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
@@ -1522,11 +1458,11 @@
         ]
       }
     },
-    "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00": {
+    "7": {
       "home": "Manchester United B",
       "away": "Chelsea A",
-      "date": "2026-07-12T18:30:00+01:00",
-      "seconds_duration": 2400,
+      "date": "2026-07-19T18:30:00+01:00",
+      "seconds_duration": 1800,
       "events": [
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
@@ -1542,7 +1478,7 @@
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Adufe", "out": "Micheal" }
+          "event": { "side": "a", "in": "Femi", "out": "Micheal" }
         },
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
@@ -1566,11 +1502,75 @@
           }
         ],
         "sub": [
-          { "side": "h", "in": "Adufe", "out": "Micheal" },
+          { "side": "a", "in": "Femi", "out": "Micheal" },
           { "side": "h", "in": "Felaini", "out": "Jojo" }
         ],
         "yellow_card": [{ "side": "h", "player": "Jojo" }]
       }
+    },
+    "8": {
+      "home": "Manchester United B",
+      "away": "Arsenal",
+      "date": "2026-07-26T16:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "9": {
+      "home": "Manchester United A",
+      "away": "Barcelona",
+      "date": "2026-07-26T17:10:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "10": {
+      "home": "Chelsea A",
+      "away": "Liverpool",
+      "date": "2026-07-26T17:50:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "11": {
+      "home": "Real Madrid",
+      "away": "Chelsea B",
+      "date": "2026-07-26T18:30:00+01:00",
+      "seconds_duration": 1800,
+      "events": [],
+      "map": {}
+    },
+    "12": {
+      "home": "Group A Winner",
+      "away": "Group B Runners Up",
+      "date": "2026-08-02T16:30:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "13": {
+      "home": "Group B Winner",
+      "away": "Group A Runners Up",
+      "date": "2026-08-02T17:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "14": {
+      "home": "Loser Semi Final 1",
+      "away": "Loser Semi Final 2",
+      "date": "2026-08-09T16:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
+    },
+    "15": {
+      "home": "Winner Semi Final 1",
+      "away": "Winner Semi Final 2",
+      "date": "2026-08-09T17:20:00+01:00",
+      "seconds_duration": 2400,
+      "events": [],
+      "map": {}
     }
   },
   "titles": {
@@ -2644,9 +2644,9 @@
       "players_stats": [
         {
           "name": "Kenya",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2658,9 +2658,9 @@
         },
         {
           "name": "Dami",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2672,9 +2672,9 @@
         },
         {
           "name": "Lola",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2686,9 +2686,9 @@
         },
         {
           "name": "Pastor",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2700,9 +2700,9 @@
         },
         {
           "name": "Ikenga",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2714,9 +2714,9 @@
         },
         {
           "name": "Tm",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 1,
@@ -2728,9 +2728,9 @@
         },
         {
           "name": "Dotun",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -2742,9 +2742,9 @@
         },
         {
           "name": "Obago",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 2,
@@ -2756,9 +2756,9 @@
         },
         {
           "name": "Emma",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 2,
@@ -2770,151 +2770,151 @@
         },
         {
           "name": "Bisi",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Sodiq",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 2,
           "assists": 1,
           "goals_and_assists": 3,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Tunde",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Somto",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Idris",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 2,
           "assists": 1,
           "goals_and_assists": 3,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 1
         },
         {
           "name": "Chiboy",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 1,
           "assists": 1,
           "goals_and_assists": 2,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Vardy",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Cambiaso",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Victor",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Taiwo",
-          "points": 9,
-          "played": 3,
-          "wins": 3,
+          "points": 6,
+          "played": 2,
+          "wins": 2,
           "draws": 0,
           "loses": 0,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Ola",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
@@ -2925,10 +2925,10 @@
         {
           "name": "Ebuka",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -2939,10 +2939,10 @@
         {
           "name": "Chris",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 1,
           "assists": 1,
           "goals_and_assists": 2,
@@ -2953,10 +2953,10 @@
         {
           "name": "Sancho",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -2967,10 +2967,10 @@
         {
           "name": "Obinna",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -2981,10 +2981,10 @@
         {
           "name": "Jamiu",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
@@ -2995,10 +2995,10 @@
         {
           "name": "Brainee",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3009,10 +3009,10 @@
         {
           "name": "Eze",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3022,9 +3022,9 @@
         },
         {
           "name": "Utaka",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 3,
@@ -3036,9 +3036,9 @@
         },
         {
           "name": "Tola",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3050,9 +3050,9 @@
         },
         {
           "name": "Noah",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3064,9 +3064,9 @@
         },
         {
           "name": "Yerima",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3078,9 +3078,9 @@
         },
         {
           "name": "David",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3092,9 +3092,9 @@
         },
         {
           "name": "Amuri",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3106,9 +3106,9 @@
         },
         {
           "name": "Martins",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3120,9 +3120,9 @@
         },
         {
           "name": "Aremu",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3134,9 +3134,9 @@
         },
         {
           "name": "Tunji",
-          "points": 6,
-          "played": 3,
-          "wins": 2,
+          "points": 3,
+          "played": 2,
+          "wins": 1,
           "draws": 0,
           "loses": 1,
           "goals": 0,
@@ -3149,10 +3149,10 @@
         {
           "name": "Segun",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3163,10 +3163,10 @@
         {
           "name": "Micheal",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 1,
           "goals_and_assists": 1,
@@ -3177,10 +3177,10 @@
         {
           "name": "Metu",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3191,10 +3191,10 @@
         {
           "name": "Femi",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3205,10 +3205,10 @@
         {
           "name": "Ahmed",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3219,10 +3219,10 @@
         {
           "name": "Ugo",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
@@ -3233,10 +3233,10 @@
         {
           "name": "Sheriff",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3247,10 +3247,10 @@
         {
           "name": "Bidemi",
           "points": 0,
-          "played": 3,
+          "played": 2,
           "wins": 0,
           "draws": 0,
-          "loses": 3,
+          "loses": 2,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3260,9 +3260,9 @@
         },
         {
           "name": "Lanre",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 1,
@@ -3274,9 +3274,9 @@
         },
         {
           "name": "Nketiah",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 1,
@@ -3288,9 +3288,9 @@
         },
         {
           "name": "Seun",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 1,
@@ -3302,9 +3302,9 @@
         },
         {
           "name": "Friday",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 1,
@@ -3316,9 +3316,9 @@
         },
         {
           "name": "Ogbon",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -3330,9 +3330,9 @@
         },
         {
           "name": "Kunle",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 3,
@@ -3344,9 +3344,9 @@
         },
         {
           "name": "Fortune",
-          "points": 7,
-          "played": 3,
-          "wins": 2,
+          "points": 4,
+          "played": 2,
+          "wins": 1,
           "draws": 1,
           "loses": 0,
           "goals": 0,
@@ -3359,122 +3359,122 @@
         {
           "name": "Papa",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Ifeanyi",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Hunter",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Jojo",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 1
         },
         {
           "name": "Benson",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Lino",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 1,
           "goals_and_assists": 1,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Felaini",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Adufe",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
-          "cleansheets": 0,
+          "cleansheets": 1,
           "red_cards": 0,
           "yellow_cards": 0
         },
         {
           "name": "Ola-o",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3485,10 +3485,10 @@
         {
           "name": "Aguero",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 1,
           "assists": 0,
           "goals_and_assists": 1,
@@ -3499,10 +3499,10 @@
         {
           "name": "Yinka",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3513,10 +3513,10 @@
         {
           "name": "Machala",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3527,10 +3527,10 @@
         {
           "name": "Roland",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 2,
           "assists": 0,
           "goals_and_assists": 2,
@@ -3541,10 +3541,10 @@
         {
           "name": "Ayo",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,
@@ -3555,10 +3555,10 @@
         {
           "name": "Bobby K",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 1,
           "assists": 1,
           "goals_and_assists": 2,
@@ -3569,10 +3569,10 @@
         {
           "name": "Nifemi",
           "points": 3,
-          "played": 3,
+          "played": 2,
           "wins": 1,
           "draws": 0,
-          "loses": 2,
+          "loses": 1,
           "goals": 0,
           "assists": 0,
           "goals_and_assists": 0,

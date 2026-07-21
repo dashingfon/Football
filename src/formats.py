@@ -1006,7 +1006,7 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
 
-    save(data, path)
+    # save(data, path)
 
     data.build(season=season, path=path.parent)
 
