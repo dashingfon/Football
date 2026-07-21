@@ -207,7 +207,9 @@ class Fixture(BaseModel):
         matchday_group: dict[str, list["Fixture"]] = {}
         for fixture in fixtures:
             fixture.date = fixture.date.replace(tzinfo=ZoneInfo(timezone))
-            date_str = f"{fixture.date.strftime('%B')} {fixture.date.day}, {fixture.date.year}"
+            date_str = (
+                f"{fixture.date.strftime('%B')} {fixture.date.day}, {fixture.date.year}"
+            )
             if date_str not in matchday_group:
                 matchday_group[date_str] = []
             matchday_group[date_str].append(fixture)
@@ -831,11 +833,17 @@ class MultipleLeagueKnockout(BaseModel):
 
             # team stats
 
-
         else:
             print("No Previous stats to update! ")
 
-    def build(self, season: str, season_path: pathlib.PurePath, match_day_title: dict[str, str] | None = None, root: str = "../../../", filename: str | None = None) -> None:
+    def build(
+        self,
+        season: str,
+        season_path: pathlib.PurePath,
+        match_day_title: dict[str, str] | None = None,
+        root: str = "../../../",
+        buildpath: pathlib.PurePath | None = None,
+    ) -> None:
         current_round = self.current_round
         if current_round > 0:
             team_to_logo = {
@@ -988,9 +996,11 @@ class MultipleLeagueKnockout(BaseModel):
             rendered = template.render(**context)
             pathlib.Path(season_path).mkdir(exist_ok=True)
 
-            filename = f"{season}.html" if filename is None else filename
+            buildpath = (
+                buildpath if buildpath is not None else season_path / f"{season}.html"
+            )
             with open(
-                season_path / filename,
+                buildpath,
                 "w",
                 encoding="utf-8",
             ) as f:
@@ -1005,16 +1015,30 @@ if __name__ == "__main__":
 
     season = "july-august_2026"
     league = "rep_your_club"
-    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / league / "seasons" / f"{season}.json"
+    root = "../../"
+    path = (
+        pathlib.PurePath(__file__).parent.parent
+        / "frontend"
+        / "leagues"
+        / league
+        / "seasons"
+        / f"{season}.json"
+    )
+    buildpath = path.parent.parent / "index.html"
     match_day_title = {
-        'June 28, 2026': "Pre Season",
-        'July 5, 2026': "Day 1",
-        'July 19, 2026': "Day 2",
-        'July 26, 2026': "Day 3",
-        'August 2, 2026': "Semi Finals",
-        'August 9, 2026': "Finals"
+        "June 28, 2026": "Pre Season",
+        "July 5, 2026": "Day 1",
+        "July 19, 2026": "Day 2",
+        "July 26, 2026": "Day 3",
+        "August 2, 2026": "Semi Finals",
+        "August 9, 2026": "Finals",
     }
+
     data = MultipleLeagueKnockout.load(path)
-
-    data.build(season=season, season_path=path.parent, match_day_title=match_day_title, root="../../", filename="index.html")
-
+    data.build(
+        season=season,
+        season_path=path.parent,
+        match_day_title=match_day_title,
+        root=root,
+        buildpath=buildpath,
+    )
