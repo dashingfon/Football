@@ -7,9 +7,9 @@ from zoneinfo import ZoneInfo
 from pydantic import BaseModel, Field
 from jinja2 import Template, Environment, FileSystemLoader
 
-DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%H:%M:%S"
+DATETIME_FORMAT = f"{DATE_FORMAT} {TIME_FORMAT}"
 
 
 class Goal(BaseModel):
@@ -45,8 +45,8 @@ def select(prompt: str, error: str, exit_str: str, options: set | None) -> str:
     return gotten
 
 
-YELLOW = "yellow card"
-RED = "red card"
+YELLOW = "yellow_card"
+RED = "red_card"
 SUB = "substitution"
 GOAL = "goal"
 PENALTY = "penalty"
@@ -219,6 +219,9 @@ class Fixture(BaseModel):
         return matchday_group
 
     def model_post_init(self, _) -> None:
+        self.remap()
+
+    def remap(self) -> None:
         event_map: dict[str, list[dict]] = {}
         for event in self.events:
             if event.name not in event_map:
@@ -318,58 +321,23 @@ def input_teams() -> list[Team]:
     return teams
 
 
-def input_fixture(
-    home: str,
-    away: str,
-    date: datetime | str,
-    seconds_duration: int,
-    timezone: str = "Africa/Lagos",
-) -> Fixture:
-    if isinstance(date, str):
-        # "2024-01-15 10:30:00"
-        date = datetime.strptime(date, DATETIME_FORMAT)
-    date = date.replace(tzinfo=ZoneInfo(timezone))
+def input_events(fixture_id: str) -> list[Event]:
     events = []
     num_events = int(input(f"Enter the number of events: "))
-    print("\n")
+    print(f"\nFetching {num_events} Events... \n")
     event_name_mapping = {"y": YELLOW, "r": RED, "s": SUB, "g": GOAL, "p": PENALTY}
 
     for _ in range(num_events):
         event_name = input("Enter the name of the event: ")
         full_name = event_name_mapping[event_name]
-        fixture_name = Event.bind(home, away, date)
-        event = Event.handle_event(full_name, fixture_name)
+        event = Event.handle_event(full_name, fixture_id)
         if event is None:
             print(f"no handler for {event_name}! \n")
             event_data = json.loads(input("Enter the event data as valid json dict: "))
-            event = Event(fixture=fixture_name, name=event_name, event=event_data)
+            event = Event(fixture=fixture_id, name=event_name, event=event_data)
         events.append(event)
         print("\n")
-    result = Fixture(
-        home=home,
-        away=away,
-        date=date,
-        seconds_duration=seconds_duration,
-        events=events,
-    )
-
-    result.events = events
-    return result
-
-
-def increment_player(
-    players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
-) -> None:
-    for player in players:
-        previous_value = getattr(player_map[player], key)
-        setattr(player_map[player], key, previous_value + value)
-
-
-def set_player(
-    players: list[str], key: str, value: int, player_map: dict[str, IndividualTable]
-) -> None:
-    for player in players:
-        setattr(player_map[player], key, value)
+    return events
 
 
 def apply_league_statistics(
@@ -578,12 +546,24 @@ class Set(BaseModel):
             table.append(data)
         round_data = [SetRoundData(table=table)]
         full_data = cls(season=season, current_round=0, round_data=round_data)
-        with open(path / "seasons.json") as f:
-            seasons = json.load(f)
-            seasons.append(season)
 
-        with open(path / "seasons.json", "w") as f:
-            json.dump(seasons, f, indent=2)
+        try:
+            with open(path / "league.json") as f:
+                league_json = json.load(f)
+        except Exception:
+            league_json = {"name": league, "seasons": []}
+
+        seasons_dict: dict = {}
+        for s in league_json["seasons"]:
+            seasons_dict[s] = None
+        seasons_dict[season] = None
+        league_json["seasons"] = list(seasons_dict.keys())
+
+        with open(path / "league.json", "w") as f:
+            json.dump(league_json, f, indent=2)
+
+        pathlib.Path(path / "seasons").mkdir(exist_ok=True)
+        save(full_data, path / "seasons" / f"{season}.json")
 
         return full_data
 
@@ -603,20 +583,29 @@ class Set(BaseModel):
         team_map = Team.map_teams(teams)
 
         if fixtures is None:
-            home = input("Enter the home team name: ")
-            away = input("Enter the away team name: ")
-            duration = int(input("Enter the seconds duration of the match: "))
-            if home not in team_map:
-                raise ValueError(f"Invalid team {home}")
-            if away not in team_map:
-                raise ValueError(f"Invalid team {away}")
-
-            datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
-            fixtures = [
-                input_fixture(
-                    home=home, away=away, date=datetime, seconds_duration=duration
+            fixtures = []
+            no_fixtures = int(input("Enter the number of fixtures: "))
+            date_str = input(f"Enter the datetime in this format {DATETIME_FORMAT}: ")
+            date = datetime.strptime(date_str, DATETIME_FORMAT)
+            duration = int(input("Enter the match duration in seconds: "))
+            for _ in range(no_fixtures):
+                home = input("Enter the home team: ")
+                away = input("Enter the away team: ")
+                if home not in team_map:
+                    raise ValueError(f"Invalid team {home}")
+                if away not in team_map:
+                    raise ValueError(f"Invalid team {away}")
+                fixture_id = input("Enter the fixture id: ")
+                events = input_events(fixture_id)
+                fixtures.append(
+                    Fixture(
+                        home=home,
+                        away=away,
+                        date=date,
+                        seconds_duration=duration,
+                        events=events,
+                    )
                 )
-            ]
 
         if new_round:
             self.current_round += 1
@@ -763,19 +752,11 @@ class MultipleLeagueKnockout(BaseModel):
         print("Updating matchday Fixtures! ...\n")
 
         if fixtures is None:
-            home = input("Enter the home team name: ")
-            away = input("Enter the away team name: ")
-            duration = int(input("Enter the seconds duration of the match: "))
-            if home not in self.teams:
-                raise ValueError(f"Invalid team {home}")
-            if away not in self.teams:
-                raise ValueError(f"Invalid team {away}")
-
-            datetime = input(f"Enter the datetime in the format {DATETIME_FORMAT}: ")
-            fixture = input_fixture(
-                home=home, away=away, date=datetime, seconds_duration=duration
-            )
-            fixtures = {str(fixture): fixture}
+            fixture_id = input("Enter the fixture Id: ")
+            fixture = self.fixtures[fixture_id]
+            events = input_events(fixture_id)
+            fixture.events.extend(events)
+            fixtures = {fixture_id: fixture}
 
         if new_round:
             self.current_round += 1
@@ -1026,6 +1007,7 @@ if __name__ == "__main__":
     }
 
     data = MultipleLeagueKnockout.load(path)
+    
     # data.build(
     #     season=season,
     #     season_path=path.parent,
