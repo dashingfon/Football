@@ -835,7 +835,7 @@ class MultipleLeagueKnockout(BaseModel):
         else:
             print("No Previous stats to update! ")
 
-    def build(self, season: str, path: pathlib.PurePath, match_day_title: dict[str, str] | None = None, root: str = "../../../") -> None:
+    def build(self, season: str, season_path: pathlib.PurePath, match_day_title: dict[str, str] | None = None, root: str = "../../../", filename: str | None = None) -> None:
         current_round = self.current_round
         if current_round > 0:
             team_to_logo = {
@@ -986,10 +986,11 @@ class MultipleLeagueKnockout(BaseModel):
             env = Environment(loader=FileSystemLoader("templates"))
             template = env.get_template("v2-league.jinja")
             rendered = template.render(**context)
-            pathlib.Path(path).mkdir(exist_ok=True)
+            pathlib.Path(season_path).mkdir(exist_ok=True)
 
+            filename = f"{season}.html" if filename is None else filename
             with open(
-                path / f"{season}.html",
+                season_path / filename,
                 "w",
                 encoding="utf-8",
             ) as f:
@@ -1003,7 +1004,8 @@ if __name__ == "__main__":
     from rich import print
 
     season = "july-august_2026"
-    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons" / f"{season}.json"
+    league = "rep_your_club"
+    path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / league / "seasons" / f"{season}.json"
     match_day_title = {
         'June 28, 2026': "Pre Season",
         'July 5, 2026': "Day 1",
@@ -1014,5 +1016,5 @@ if __name__ == "__main__":
     }
     data = MultipleLeagueKnockout.load(path)
 
-    data.build(season=season, path=path.parent, match_day_title=match_day_title)
+    data.build(season=season, season_path=path.parent, match_day_title=match_day_title, root="../../", filename="index.html")
 
