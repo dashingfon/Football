@@ -51,7 +51,7 @@
               <div class="col-span-1 justify-self-start flex items-center h-full">
                 <div class="mr-3 w-1 h-[80%] {{'bg-brand' if loop.index < 3 else 'bg-none'}} rounded-r-md">
                 </div>
-                <h2 class="py-1">{{loop.index}}</h2>
+                <h2 class="py-1 text-text-4">{{loop.index}}</h2>
               </div>
               <h3
                 class="py-1 col-span-4 md:col-span-7 overflow-hidden justify-self-start text-sm my-1 flex items-center">
@@ -175,19 +175,6 @@
                   <h3 class="text-sm">{{event.event.player}}</h3>
                 </div>
               </div>
-              {# {% elif event.name == "penalty_shootout"%}
-              
-              <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
-                <div class="hidden md:block w-10 lg:w-30">
-                </div>
-                <iconify-icon icon="fluent-emoji-high-contrast:soccer-ball" width="100%" height="100%" class="w-6 h-6"></iconify-icon>
-                <div class="flex flex-col m-2">
-                  <h3 class="text-sm">{{event.event.scorer}}</h3>
-                  {% if event.event.assist %}
-                  <h3 class="text-sm text-text-6">assist: {{event.event.assist}}</h3>
-                  {% endif %}
-                </div>
-              </div> #}
               {% elif event.name == "sub"%}
               
               <div class="flex {{ 'flex-row-reverse' if event.event.side == 'a' else ''}} items-center gap-2 p-2 h-fit bg-bg-1 text-sm rounded-xl">
@@ -219,7 +206,7 @@
 
           <div class="bg-bg-1 flex flex-col h-fit rounded-xl mb-4">
             <drop-down-toggle>
-              {{matchday("Pre Season: June 28 2026")}}
+              {{matchday("Pre Season <span class='text-text-6'>June 28 2026</span>")}}
 
               <div dropdown class="rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
 

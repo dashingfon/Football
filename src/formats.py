@@ -207,7 +207,7 @@ class Fixture(BaseModel):
         matchday_group: dict[str, list["Fixture"]] = {}
         for fixture in fixtures:
             fixture.date = fixture.date.replace(tzinfo=ZoneInfo(timezone))
-            date_str = fixture.date.strftime(DATE_FORMAT)
+            date_str = f"{fixture.date.strftime('%B')} {fixture.date.day}, {fixture.date.year}"
             if date_str not in matchday_group:
                 matchday_group[date_str] = []
             matchday_group[date_str].append(fixture)
@@ -835,7 +835,7 @@ class MultipleLeagueKnockout(BaseModel):
         else:
             print("No Previous stats to update! ")
 
-    def build(self, season: str, path: pathlib.PurePath) -> None:
+    def build(self, season: str, path: pathlib.PurePath, match_day_title: dict[str, str] | None = None, root: str = "../../../") -> None:
         current_round = self.current_round
         if current_round > 0:
             team_to_logo = {
@@ -888,9 +888,11 @@ class MultipleLeagueKnockout(BaseModel):
 
             fixtures_array = list(self.fixtures.values())
             fixtures = Fixture.group_by_datetime(fixtures_array)
+            match_day_title = {} if match_day_title is None else match_day_title
 
             context = {
-                "root": "../../../",
+                "root": root,
+                "match_title": match_day_title,
                 "player_teams": player_to_team,
                 "tables": sorted_table,
                 "preseason": self.pre_season,
@@ -983,7 +985,6 @@ class MultipleLeagueKnockout(BaseModel):
             }
             env = Environment(loader=FileSystemLoader("templates"))
             template = env.get_template("v2-league.jinja")
-            league_name = self.league.replace(" ", "_")
             rendered = template.render(**context)
             pathlib.Path(path).mkdir(exist_ok=True)
 
@@ -1003,10 +1004,14 @@ if __name__ == "__main__":
 
     season = "july-august_2026"
     path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons" / f"{season}.json"
-
+    match_day_title = {
+        'July 5, 2026': "Day 1",
+        'July 19, 2026': "Day 2",
+        'July 26, 2026': "Day 3",
+        'August 2, 2026': "Semi Finals",
+        'August 9, 2026': "Finals"
+    }
     data = MultipleLeagueKnockout.load(path)
 
-    # save(data, path)
-
-    data.build(season=season, path=path.parent)
+    # data.build(season=season, path=path.parent)
 
