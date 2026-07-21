@@ -100,7 +100,7 @@
                 </h1>
                 <img src="{{root}}assets/{{team_logo[match.home]}}" class="w-6">
 
-                <span class="text-sm">
+                <span class="text-sm font-semibold">
                   {% if match.events %}
                   
                   {{match.map.goal | selectattr("side", "equalto", "h") | list | length}} -
@@ -195,7 +195,7 @@
           {% macro matchday(day) %}
           <div dropdowntoggle class="rounded-t-xl flex justify-between p-2 w-full h-fit bg-bg-alt-1 hover:bg-bg-alt-2 border border-bg-3">
             <div class="text-sm m-2">
-              <span>{{day}}</span>
+              <span>{{match_title[day]}} <span class="text-text-6">{{day}}</span></span>
             </div>
             <div dropdownicon class="p-2 rotate-180">
               <iconify-icon icon="icon-park-solid:down-one" width="100%" height="100%"
@@ -206,7 +206,7 @@
 
           <div class="bg-bg-1 flex flex-col h-fit rounded-xl mb-4">
             <drop-down-toggle>
-              {{matchday("Pre Season <span class='text-text-6'>June 28 2026</span>")}}
+              {{matchday("June 28, 2026")}}
 
               <div dropdown class="rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
 
@@ -250,7 +250,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-y border-brand">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <div class="w-6 h-6 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="
                             shape-rendering: geometricPrecision;
@@ -290,7 +290,7 @@
                     </div>
                   </div>
                 </div>
-                <h2>
+                <h2 class="font-semibold">
                   {{player[1]}}
                 </h2>
               </div>
@@ -299,7 +299,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-b border-b-bg-3">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <div class="w-6 h-6 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="
                             shape-rendering: geometricPrecision;
@@ -339,7 +339,7 @@
                     </div>
                   </div>
                 </div>
-                <h2>
+                <h2 class="font-semibold">
                   {{player[1]}}
                 </h2>
               </div>
@@ -348,7 +348,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-bg-3">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <div class="w-6 h-6 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="
                             shape-rendering: geometricPrecision;
@@ -388,7 +388,7 @@
                     </div>
                   </div>
                 </div>
-                <h2>
+                <h2 class="font-semibold">
                   {{player[1]}}
                 </h2>
               </div>
@@ -415,7 +415,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-y border-brand">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <img src="{{root}}assets/{{team_logo[player[0]]}}" class="w-6">
                   <span class="text-sm m-2">{{player[0]}}</span>
                 </div>
@@ -428,7 +428,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-b border-b-bg-3">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <img src="{{root}}assets/{{team_logo[player[0]]}}" class="w-6">
                   <span class="text-sm m-2">{{player[0]}}</span>
                 </div>
@@ -441,7 +441,7 @@
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-bg-3">
                 <div class="flex items-center">
-                  <h1 class="mr-3">{{loop.index}}</h1>
+                  <h1 class="mr-3 text-text-6">{{loop.index}}</h1>
                   <img src="{{root}}assets/{{team_logo[player[0]]}}" class="w-6">
                   <span class="text-sm m-2">{{player[0]}}</span>
                 </div>

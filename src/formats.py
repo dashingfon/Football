@@ -1005,6 +1005,7 @@ if __name__ == "__main__":
     season = "july-august_2026"
     path = pathlib.PurePath(__file__).parent.parent / "frontend" / "leagues" / "test" / "seasons" / f"{season}.json"
     match_day_title = {
+        'June 28, 2026': "Pre Season",
         'July 5, 2026': "Day 1",
         'July 19, 2026': "Day 2",
         'July 26, 2026': "Day 3",
@@ -1013,5 +1014,5 @@ if __name__ == "__main__":
     }
     data = MultipleLeagueKnockout.load(path)
 
-    # data.build(season=season, path=path.parent)
+    data.build(season=season, path=path.parent, match_day_title=match_day_title)
 
