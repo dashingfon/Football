@@ -1008,11 +1008,11 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
     
-    # data.build(
-    #     season=season,
-    #     season_path=path.parent,
-    #     team_logos=team_logos,
-    #     match_day_title=match_day_title,
-    #     root=root,
-    #     buildpath=buildpath,
-    # )
+    data.build(
+        season=season,
+        season_path=path.parent,
+        team_logos=team_logos,
+        match_day_title=match_day_title,
+        root=root,
+        buildpath=buildpath,
+    )
