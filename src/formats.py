@@ -1004,6 +1004,7 @@ if __name__ == "__main__":
         "Real Madrid": "real_madrid.svg",
         "Arsenal": "arsenal.svg",
         "Liverpool": "liverpool.svg",
+        "": ""
     }
 
     data = MultipleLeagueKnockout.load(path)
