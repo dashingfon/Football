@@ -436,6 +436,270 @@ customElements.define('init-stats',
     }
 );
 
+customElements.define('init-league-stats',
+    class InitStats extends HTMLElement {
+
+        set_rounds() {
+            const rounds = this.season_data.rounds
+            let keys = Object.keys(rounds)
+            if (keys.length > 1) {
+                keys = keys.slice(1)
+            }
+            this.rounds = keys;
+            document.querySelector("#round-dropdown-button .id").textContent = this.season_data.current_round
+            const round_template = document.getElementById("round-template")
+            const round_container = document.getElementById("rounds-list")
+            round_container.innerHTML = ""
+            for (const key of keys) {
+                const clone = round_template.content.cloneNode(true);
+                clone.querySelector(".round").textContent = key
+                round_container?.appendChild(clone)
+            }
+        }
+
+        set_table(round) {
+            const rounds = this.season_data.rounds
+            let max_val = 5
+            let min_val = 0
+            let data = rounds["0"]
+
+            if (Object.keys(rounds).length != 1) {
+                data = rounds[round];
+                for (const item of data[this.stats_type]) {
+                    max_val = Math.max(parseInt(item[this.stats]), max_val)
+                    min_val = Math.min(parseInt(item[this.stats]), min_val)
+                }
+            }
+
+            const table_template = document.getElementById("table-entry-template")
+            const table_container = document.getElementById("table-container")
+            table_container.innerHTML = ""
+
+            data[this.stats_type].sort((a, b) => b[this.stats] - a[this.stats]);
+            data[this.stats_type].forEach((item, index) => {
+                const clone = table_template.content.cloneNode(true);
+                clone.querySelector(".index").textContent = `${index + 1}`
+                clone.querySelector(".name").textContent = item.name
+                clone.querySelector(".entries").id = item.name
+                clone.querySelector(".value").textContent = item[this.stats]
+                clone.querySelector(".width").style.width = `${5 + ((parseInt(item[this.stats]) / max_val) * 85)}%`
+                table_container?.appendChild(clone)
+            })
+
+
+        }
+
+        async connectedCallback() {
+            const self = this
+            const params = new URLSearchParams(window.location.search);
+
+            let season = params.get("season");
+            if (season == null) {
+                season = "february_2026"
+            }
+            this.season = season
+
+            let stats = params.get("stats")
+            if (stats == null) {
+                stats = "goals"
+            }
+            this.stats = stats
+            this.stats_type = this.dataset.stats
+
+            const season_el = document.getElementById("season-name")
+            const season_text = season.replaceAll("_", " ")
+            season_el.textContent = season_text[0].toUpperCase() + season_text.slice(1);
+
+            const stats_el = document.getElementById("stats-name")
+            const stats_text = stats.replaceAll("_", " ")
+            if (stats == "g/a") {
+                const val = "Goals + Assists"
+                stats_el.textContent = val;
+                document.getElementById("specific-stats").textContent = "Goals + Assists";
+            } else {
+                const val = stats_text[0].toUpperCase() + stats_text.slice(1);
+                stats_el.textContent = val;
+                document.getElementById("specific-stats").textContent = val;
+            }
+
+            const season_data = await fetch(this.dataset.season)
+            this.season_data = await season_data.json()
+            console.log("fetched data")
+
+            const seasons = await fetch(this.dataset.league)
+            const league = await seasons.json()
+            this.seasons = league.seasons
+
+            const season_template = document.getElementById("seasons-template")
+            const season_container = document.getElementById("seasons-list")
+            season_container.innerHTML = ""
+
+            // set the seasons
+            for (const season of this.seasons) {
+                const clone = season_template.content.cloneNode(true);
+                clone.querySelector(".btn").setAttribute("data-season", season)
+                const season_text = season.replaceAll("_", " ")
+                clone.querySelector('.season').textContent = season_text[0].toUpperCase() + season_text.slice(1);
+                season_container?.appendChild(clone)
+            }
+
+            // send to new stats url with season and stats
+            const season_dropdown = document.querySelectorAll("#season-dropdown button")
+            season_dropdown.forEach((el) => {
+                el.addEventListener("click", () => {
+                    const init = document.querySelector("init-stats")
+                    let url = new URL(window.location.href);
+                    url.searchParams.set("season", el.dataset.season);
+                    window.location.href = url.toString();
+                })
+            })
+
+            // update the stats, and update the table
+            const stats_dropdown = document.querySelectorAll("#stats-dropdown button")
+            stats_dropdown.forEach((el) => {
+                el.addEventListener("click", () => {
+                    stats_el.textContent = el.textContent
+                    document.getElementById("specific-stats").textContent = el.textContent
+                    let url = new URL(window.location.href);
+                    url.searchParams.set("stats", el.dataset.stats);
+                    window.history.replaceState({}, "", url)
+
+                    if (this.dataset.playing != "false") {
+                        pause()
+                    }
+                    const round = document.querySelector("#round-dropdown-button .id")
+                    self.stats = el.dataset.stats
+                    self.set_table(round.textContent)
+                    document.getElementById("stats-dropdown")?.hidePopover()
+                })
+            })
+
+            this.set_rounds()
+            this.set_table(`${this.season_data.current_round}`)
+            this.dispatchEvent(new CustomEvent("ready", {
+                bubbles: true,
+                composed: true
+            }));
+            
+            this.end = parseInt(this.rounds[this.rounds.length - 1]);
+            this.querySelector("#play-controls")?.addEventListener("click", () => {
+                if (self.dataset.playing == "true") {
+                    self.dataset.playing = "false"
+                } else {
+                    self.dataset.playing = "true";
+                    play()
+                }
+            })
+            this.querySelector("#previous-button")?.addEventListener("click", () => {
+                previous()
+            })
+            this.querySelector("#next-button")?.addEventListener("click", () => {
+                next()
+            })
+            this.querySelectorAll("#rounds-list .round").forEach((el) => {
+                el.addEventListener("click", () => {
+                    const round = el.textContent;
+                    set(round);
+                    document.getElementById("round-dropdown")?.hidePopover()
+                })
+            })
+        };
+
+        set(round) {
+            document.querySelector("#round-dropdown-button .id").textContent = `${round}`
+            self = this
+            const data = this.init.season_data.rounds[`${round}`].table
+            data.sort((a, b) => b[this.init.stats] - a[this.init.stats]);
+
+            let max_val = 5
+            for (const item of data) {
+                max_val = Math.max(parseInt(item[this.init.stats]), max_val)
+                document.getElementById(item.name).style.viewTransitionName = item.name
+            }
+            const len = data.length;
+            document.startViewTransition(() => {
+                data.forEach((item, index) => {
+                    const data_element = document.getElementById(item.name)
+                    const currentIndex = parseInt(data_element.querySelector(".index").textContent)
+                    if (currentIndex < index + 1) {
+                        data_element.dataset.direction = "down"
+                    } else if (currentIndex > index + 1) {
+                        data_element.dataset.direction = "up"
+                    }
+                    data_element.querySelector(".index").textContent = index + 1
+                    data_element.style.order = index
+                    data_element.style.zIndex = len - index
+                    data_element.querySelector(".value").textContent = item[this.init.stats]
+                    data_element.querySelector(".width").style.width = `${5 + ((parseInt(item[this.init.stats]) / max_val) * 85)}%`
+
+                })
+            })
+        }
+
+        play() {
+            if (this.dataset.playing == "false") {
+                return
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            let next_round = parseInt(round) + 1
+            if (round == "0") {
+                this.dataset.playing = "false"
+                return
+            } else if (parseInt(round) == this.end) {
+                next_round = this.rounds[0]
+            }
+
+            this.set(next_round)
+
+            setTimeout(() => {
+                document.querySelectorAll("#table-container .entries").forEach((el) => {
+                    el.dataset.direction = ""
+                })
+            }, 1500)
+
+            if (next_round < this.end) {
+                setTimeout(() => {
+                    this.play()
+                }, 3000);
+            } else {
+                this.dataset.playing = "false"
+            }
+        }
+
+        pause() {
+            this.dataset.playing = "false"
+        }
+
+        next() {
+            if (this.dataset.playing == "true") {
+                this.dataset.playing = "false"
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            if (parseInt(round) == this.end) {
+                return
+            } else if (round == "0") {
+                return
+            }
+            let next_round = parseInt(round) + 1
+            this.set(next_round)
+        }
+
+        previous() {
+            if (this.dataset.playing == "true") {
+                this.dataset.playing = "false"
+            }
+            let round = document.querySelector("#round-dropdown-button .id").textContent;
+            if ((round == "0") || (round == "1")) {
+                return
+            }
+            let next_round = parseInt(round) - 1
+            this.set(next_round)
+        }
+
+
+    }
+);
+
 
 customElements.define('chart-table',
     class ChartTable extends HTMLElement {
