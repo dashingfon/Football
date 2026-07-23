@@ -23,6 +23,18 @@
     <script src="../../assets/js/components.js" type="module" defer></script>
     <script src="../../assets/js/iconify.min.js"></script>
 
+    <init-league-stats
+      data-season="./seasons/july-august_2026.json"
+      data-league="./league.json"
+      data-stats="team_stats"
+    >
+    </init-league-stats>
+
+    <script type="application/json" id="team-info">
+        {
+            "team_to_logo": {}
+        }
+    </script>
 
     <style>
       .skeleton {
@@ -436,7 +448,7 @@
           </section>
         </div>
 
-        <section class="flex flex-col flex-1 shrink-0 h-full px-3">
+        <section class="flex flex-col flex-1 shrink-0 h-full px-3 group" data-playing="false">
           <div class="sticky top-3 bg-bg-3 rounded-md mb-3 border border-bg-1">
             <div class="flex justify-between">
               <div class="group-data-[loading=true]:hidden flex mt-1 w-fit">
@@ -573,66 +585,69 @@
             </div>
           </div>
 
-          <template id="stat-template">
-            <div class="flex flex-col mb-3 justify-start">
+          <template id="table-entry-template">
+            <div class="flex flex-col mb-3 justify-start entries">
               <div
                 class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
               >
                 <div class="flex items-center">
-                  <h1 class="ml-2 mr-4">1</h1>
+                  <h1 class="ml-2 mr-4 index">1</h1>
 
                   <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
-                  <h1 class="text-sm m-2">David</h1>
+                  <h1 class="name text-sm m-2">David</h1>
                 </div>
-                <h2 class="mx-3">339</h2>
+                <h2 class="mx-3 value">339</h2>
               </div>
-              <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
+              <div class="width h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
             </div>
           </template>
 
-          <div class="flex flex-col mb-3 justify-start">
-            <div
-              class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
-            >
-              <div class="flex items-center">
-                <h1 class="ml-2 mr-4">1</h1>
+          <div id="table-container">
 
-                <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
-                <h1 class="text-sm m-2">David</h1>
+              <div class="flex flex-col mb-3 justify-start">
+                <div
+                  class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
+                >
+                  <div class="flex items-center">
+                    <h1 class="ml-2 mr-4">1</h1>
+    
+                    <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
+                    <h1 class="text-sm m-2">David</h1>
+                  </div>
+                  <h2 class="mx-3">339</h2>
+                </div>
+                <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
               </div>
-              <h2 class="mx-3">339</h2>
-            </div>
-            <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
-          </div>
-
-          <div class="flex flex-col mb-3 justify-start">
-            <div
-              class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
-            >
-              <div class="flex items-center">
-                <h1 class="ml-2 mr-4">1</h1>
-
-                <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
-                <h1 class="text-sm m-2">David</h1>
+    
+              <div class="flex flex-col mb-3 justify-start">
+                <div
+                  class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
+                >
+                  <div class="flex items-center">
+                    <h1 class="ml-2 mr-4">1</h1>
+    
+                    <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
+                    <h1 class="text-sm m-2">David</h1>
+                  </div>
+                  <h2 class="mx-3">339</h2>
+                </div>
+                <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
               </div>
-              <h2 class="mx-3">339</h2>
-            </div>
-            <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
-          </div>
-
-          <div class="flex flex-col mb-3 justify-start">
-            <div
-              class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
-            >
-              <div class="flex items-center">
-                <h1 class="ml-2 mr-4">1</h1>
-
-                <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
-                <h1 class="text-sm m-2">David</h1>
+    
+              <div class="flex flex-col mb-3 justify-start">
+                <div
+                  class="flex justify-between items-center p-2 h-fit bg-bg-1 text-sm border-bg-3 rounded-md"
+                >
+                  <div class="flex items-center">
+                    <h1 class="ml-2 mr-4">1</h1>
+    
+                    <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
+                    <h1 class="text-sm m-2">David</h1>
+                  </div>
+                  <h2 class="mx-3">339</h2>
+                </div>
+                <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
               </div>
-              <h2 class="mx-3">339</h2>
-            </div>
-            <div class="h-1 bg-brand rounded-bl-md" style="width: 30%"></div>
           </div>
         </section>
       </div>
