@@ -977,7 +977,7 @@ if __name__ == "__main__":
 
     season = "july-august_2026"
     league = "rep_your_club"
-    root = "../../"
+    root = "../.."
     path = (
         pathlib.PurePath(__file__).parent.parent
         / "frontend"

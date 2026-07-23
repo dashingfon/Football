@@ -565,7 +565,7 @@ customElements.define('init-league-stats',
                     window.history.replaceState({}, "", url)
 
                     if (this.dataset.playing != "false") {
-                        pause()
+                        this.pause()
                     }
                     const round = document.querySelector("#round-dropdown-button .id")
                     self.stats = el.dataset.stats
@@ -591,10 +591,10 @@ customElements.define('init-league-stats',
                 }
             })
             this.querySelector("#previous-button")?.addEventListener("click", () => {
-                previous()
+                this.previous()
             })
             this.querySelector("#next-button")?.addEventListener("click", () => {
-                next()
+                this.next()
             })
             this.querySelectorAll("#rounds-list .round").forEach((el) => {
                 el.addEventListener("click", () => {
@@ -607,7 +607,6 @@ customElements.define('init-league-stats',
 
         set(round) {
             document.querySelector("#round-dropdown-button .id").textContent = `${round}`
-            self = this
             const data = this.init.season_data.rounds[`${round}`].table
             data.sort((a, b) => b[this.init.stats] - a[this.init.stats]);
 
