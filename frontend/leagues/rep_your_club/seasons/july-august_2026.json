@@ -2527,7 +2527,7 @@
       ],
       "team_stats": [
         {
-          "team": "Liverpool",
+          "name": "Liverpool",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2541,7 +2541,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Barcelona",
+          "name": "Barcelona",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2555,7 +2555,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Manchester United A",
+          "name": "Manchester United A",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2569,7 +2569,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Real Madrid",
+          "name": "Real Madrid",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2583,7 +2583,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Chelsea A",
+          "name": "Chelsea A",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2597,7 +2597,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Arsenal",
+          "name": "Arsenal",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2611,7 +2611,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Manchester United B",
+          "name": "Manchester United B",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -2625,7 +2625,7 @@
           "yellow_cards": 0
         },
         {
-          "team": "Chelsea B",
+          "name": "Chelsea B",
           "points": 0,
           "played": 0,
           "wins": 0,
@@ -3583,7 +3583,7 @@
       ],
       "team_stats": [
         {
-          "team": "Liverpool",
+          "name": "Liverpool",
           "points": 4,
           "played": 2,
           "wins": 1,
@@ -3597,7 +3597,7 @@
           "yellow_cards": 4
         },
         {
-          "team": "Barcelona",
+          "name": "Barcelona",
           "points": 6,
           "played": 2,
           "wins": 2,
@@ -3611,7 +3611,7 @@
           "yellow_cards": 1
         },
         {
-          "team": "Manchester United A",
+          "name": "Manchester United A",
           "points": 0,
           "played": 2,
           "wins": 0,
@@ -3625,7 +3625,7 @@
           "yellow_cards": 2
         },
         {
-          "team": "Real Madrid",
+          "name": "Real Madrid",
           "points": 3,
           "played": 2,
           "wins": 1,
@@ -3639,7 +3639,7 @@
           "yellow_cards": 2
         },
         {
-          "team": "Chelsea A",
+          "name": "Chelsea A",
           "points": 0,
           "played": 2,
           "wins": 0,
@@ -3653,7 +3653,7 @@
           "yellow_cards": 3
         },
         {
-          "team": "Arsenal",
+          "name": "Arsenal",
           "points": 4,
           "played": 2,
           "wins": 1,
@@ -3667,7 +3667,7 @@
           "yellow_cards": 2
         },
         {
-          "team": "Manchester United B",
+          "name": "Manchester United B",
           "points": 3,
           "played": 2,
           "wins": 1,
@@ -3681,7 +3681,7 @@
           "yellow_cards": 1
         },
         {
-          "team": "Chelsea B",
+          "name": "Chelsea B",
           "points": 3,
           "played": 2,
           "wins": 1,

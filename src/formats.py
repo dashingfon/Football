@@ -266,7 +266,7 @@ class IndividualTable(BaseModel):
 
 
 class TeamTable(BaseModel):
-    team: str = ""
+    name: str = ""
     points: int = 0
     played: int = 0
     wins: int = 0
@@ -283,7 +283,7 @@ class TeamTable(BaseModel):
     def map_teams(stats: list["TeamTable"]) -> dict[str, "TeamTable"]:
         result = {}
         for stat in stats:
-            result[stat.team] = stat
+            result[stat.name] = stat
         return result
 
 
@@ -705,7 +705,7 @@ class MultipleLeagueKnockout(BaseModel):
         team_stats = []
 
         for team in teams:
-            team_stats.append(TeamTable(team=team.name))
+            team_stats.append(TeamTable(name=team.name))
             for player in team.players:
                 player_stats.append(IndividualTable(name=player))
 
@@ -813,7 +813,7 @@ class MultipleLeagueKnockout(BaseModel):
         season_path: pathlib.PurePath,
         team_logos: dict[str, str],
         match_day_title: dict[str, str] | None = None,
-        root: str = "../../../",
+        root: str = "../../..",
         buildpath: pathlib.PurePath | None = None,
     ) -> None:
         current_round = self.current_round
@@ -834,21 +834,15 @@ class MultipleLeagueKnockout(BaseModel):
                 for team in teams:
                     sort_map[team] = group
             for stat in group_stats:
-                group = sort_map[stat.team]
+                group = sort_map[stat.name]
                 sorted_table[group].append(stat)
 
-            def bundle_player(
-                table: list[IndividualTable], key: str
+            def bundle(
+                table: list[IndividualTable] | list[TeamTable], key: str
             ) -> list[tuple[str, int]]:
                 result: list[tuple[str, int]] = []
                 for pl in table:
                     result.append((pl.name, getattr(pl, key)))
-                return result
-
-            def bundle_team(table: list[TeamTable], key: str) -> list[tuple[str, int]]:
-                result: list[tuple[str, int]] = []
-                for pl in table:
-                    result.append((pl.team, getattr(pl, key)))
                 return result
 
             player_to_team: dict[str, str] = {}
@@ -869,7 +863,7 @@ class MultipleLeagueKnockout(BaseModel):
                 "fixtures": fixtures,
                 "team_logo": team_logos,
                 "player_stats": {
-                    "Top Scorer": bundle_player(
+                    "Top Scorer": bundle(
                         sorted(
                             last_round.players_stats,
                             key=lambda x: (x.goals, x.points),
@@ -877,7 +871,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "goals",
                     ),
-                    "Top Assist": bundle_player(
+                    "Top Assist": bundle(
                         sorted(
                             last_round.players_stats,
                             key=lambda x: (x.assists, x.points),
@@ -885,7 +879,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "assists",
                     ),
-                    "Goals and Assists": bundle_player(
+                    "Goals and Assists": bundle(
                         sorted(
                             last_round.players_stats,
                             key=lambda x: (x.goals_and_assists, x.points),
@@ -893,7 +887,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "goals_and_assists",
                     ),
-                    "Yellow Cards": bundle_player(
+                    "Yellow Cards": bundle(
                         sorted(
                             last_round.players_stats,
                             key=lambda x: (x.yellow_cards, x.points),
@@ -901,7 +895,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "yellow_cards",
                     ),
-                    "Red Cards": bundle_player(
+                    "Red Cards": bundle(
                         sorted(
                             last_round.players_stats,
                             key=lambda x: (x.red_cards, x.points),
@@ -911,7 +905,7 @@ class MultipleLeagueKnockout(BaseModel):
                     ),
                 },
                 "team_stats": {
-                    "Goals Scored": bundle_team(
+                    "Goals Scored": bundle(
                         sorted(
                             last_round.team_stats,
                             key=lambda x: x.goals_scored,
@@ -919,7 +913,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "goals_scored",
                     ),
-                    "Goals Conceeded": bundle_team(
+                    "Goals Conceeded": bundle(
                         sorted(
                             last_round.team_stats,
                             key=lambda x: x.goals_conceded,
@@ -927,7 +921,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "goals_conceded",
                     ),
-                    "Yellow Cards": bundle_team(
+                    "Yellow Cards": bundle(
                         sorted(
                             last_round.team_stats,
                             key=lambda x: x.yellow_cards,
@@ -935,7 +929,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "yellow_cards",
                     ),
-                    "Red Cards": bundle_team(
+                    "Red Cards": bundle(
                         sorted(
                             last_round.team_stats,
                             key=lambda x: x.red_cards,
@@ -943,7 +937,7 @@ class MultipleLeagueKnockout(BaseModel):
                         )[:3],
                         "red_cards",
                     ),
-                    "Cleansheets": bundle_team(
+                    "Cleansheets": bundle(
                         sorted(
                             last_round.team_stats,
                             key=lambda x: x.cleansheets,
@@ -1004,11 +998,11 @@ if __name__ == "__main__":
         "Real Madrid": "real_madrid.svg",
         "Arsenal": "arsenal.svg",
         "Liverpool": "liverpool.svg",
-        "": ""
+        "": "",
     }
 
     data = MultipleLeagueKnockout.load(path)
-    
+
     data.build(
         season=season,
         season_path=path.parent,
