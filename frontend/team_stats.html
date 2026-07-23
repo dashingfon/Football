@@ -10,17 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href=".//assets/output.css" />
-    <link rel="shortcut icon" href=".//assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/output.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter&display=swap"
         rel="stylesheet" />
 
-    <script src=".//assets/js/components.js" type="module" defer></script>
-    <script src=".//assets/js/iconify.min.js"></script>
+    <script src="./assets/js/components.js" type="module" defer></script>
+    <script src="./assets/js/iconify.min.js"></script>
 
-    <init-stats>
-    </init-stats>
+    <init-league-stats
+      data-season="./seasons/july-august_2026.json"
+      data-league="./league.json"
+      data-stats="team_stats"
+    >
+    </init-league-stats>
 
     
     
@@ -97,15 +101,15 @@
             <div>
                 <ul class="space-y-2 font-medium pb-3">
                     <li>
-                        <a href=".//index.html" class="relative flex items-center p-2 text-text-1 rounded-lg">
-                            <img src=".//assets/favicon.ico" class="w-6 h-6" />
+                        <a href="./index.html" class="relative flex items-center p-2 text-text-1 rounded-lg">
+                            <img src="./assets/favicon.ico" class="w-6 h-6" />
                             <span class="text-md ms-3 hidden group-hover:block">Fotclan</span>
                         </a>
                     </li>
                 </ul>
                 <ul class="space-y-2 font-medium border-t border-bg-3 pt-3">
                     <li>
-                        <a href=".//matches.html"
+                        <a href="./matches.html"
                             class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
                             <iconify-icon icon="boxicons:football-pitch" width="100%" height="100%"
                                 class="w-6 h-6 group-data-[active=matches]:text-brand"></iconify-icon>
@@ -115,7 +119,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href=".//leagues.html"
+                        <a href="./leagues.html"
                             class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
                             <iconify-icon icon="ix:trophy" width="100%" height="100%"
                                 class="w-6 h-6 group-data-[active=league]:text-brand text-text-6">
@@ -125,7 +129,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href=".//news.html"
+                        <a href="./news.html"
                             class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
                             <iconify-icon icon="streamline-plump:news-paper" width="100%" height="100%"
                                 class="w-6 h-6 group-data-[active=news]:text-brand text-text-6">
@@ -135,7 +139,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href=".//profile.html"
+                        <a href="./profile.html"
                             class="flex items-center p-2 text-text-6 rounded-lg hover:bg-bg-3 z-200">
                             <iconify-icon icon="healthicons:ui-user-profile" width="100%" height="100%"
                                 class="w-6 h-6 group-data-[active=profile]:text-brand text-text-6">
@@ -166,16 +170,16 @@
 <nav class="h-fit top-0 left-0 w-full justify-between p-3 flex items-center">
 	<div class="flex">
 		<a href="./" class="flex items-center">
-			<img src=".//assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
+			<img src="./assets/favicon.ico" class="w-6 h-6 md:hidden mr-3" />
 		</a>
 		<div class="flex items-center">
 			<a class="flex justify-center gap-3 py-2 px-3 bg-bg-3/50 hover:bg-bg-1 rounded-xl text-xs"
-				href=".//leagues.html">
+				href="./leagues.html">
 				<span class="text-xs text-text-4">Leagues</span>
 			</a>
 			<h1 class="mx-2"> / </h1>
 			<a class="flex justify-center gap-3 py-2 px-3 bg-bg-3/50 hover:bg-bg-1 rounded-xl text-xs"
-				href=".//leagues.html">
+				href="./leagues.html">
 				<span class="text-xs text-text-4">Rep Your Club</span>
 			</a>
 		</div>
