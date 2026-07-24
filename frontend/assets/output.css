@@ -407,6 +407,9 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
   .ms-2 {
     margin-inline-start: calc(var(--spacing) * 2);
   }

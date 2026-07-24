@@ -482,7 +482,7 @@ customElements.define('init-league-stats',
                 clone.querySelector(".name").textContent = item.name
                 clone.querySelector(".entries").id = item.name
                 clone.querySelector(".value").textContent = item[this.stats]
-                clone.querySelector(".width").style.width = `${5 + ((parseInt(item[this.stats]) / max_val) * 85)}%`
+                clone.querySelector(".width").style.width = `${((parseInt(item[this.stats]) / max_val) * 90)}%`
                 table_container?.appendChild(clone)
             })
 
