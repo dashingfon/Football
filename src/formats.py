@@ -351,7 +351,6 @@ def apply_league_statistics(
     team_map = TeamTable.map_teams(team_table)
 
     for fixture in fixtures.values():
-        print(fixture)
         if not fixture.events:
             continue
         fixture_map = fixture.map
@@ -773,9 +772,9 @@ class MultipleLeagueKnockout(BaseModel):
             fixtures = self.fixtures
 
             previous_player_stats = deepcopy(
-                self.rounds[current_round - 1].players_stats
+                self.rounds[0].players_stats
             )
-            previous_team_stats = deepcopy(self.rounds[current_round - 1].team_stats)
+            previous_team_stats = deepcopy(self.rounds[0].team_stats)
 
             individual_table, team_table = apply_league_statistics(
                 fixtures,
@@ -786,24 +785,6 @@ class MultipleLeagueKnockout(BaseModel):
             self.rounds[current_round].players_stats = individual_table
             self.rounds[current_round].team_stats = team_table
             save(self, path)
-
-            context = {
-                "root": "../../../",
-                "last_round": self.rounds[-1],
-                "team_logo": {},
-            }
-            env = Environment(loader=FileSystemLoader("templates"))
-            template = env.get_template("v2-league-stats.jinja")
-            league_name = self.league.replace(" ", "_")
-
-            # player stats
-            # pathlib.Path(path).mkdir(exist_ok=True)
-            # rendered = template.render(**context)
-            # with open(path / "frontend" / "leagues" / f"{league_name}" / "season" / "stats.html", "w", encoding="utf-8") as f:
-            #     f.write(rendered)
-
-            # team stats
-
         else:
             print("No Previous stats to update! ")
 
@@ -1003,11 +984,12 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
 
-    data.build(
-        season=season,
-        season_path=path.parent,
-        team_logos=team_logos,
-        match_day_title=match_day_title,
-        root=root,
-        buildpath=buildpath,
-    )
+    # data.build(
+    #     season=season,
+    #     season_path=path.parent,
+    #     team_logos=team_logos,
+    #     match_day_title=match_day_title,
+    #     root=root,
+    #     buildpath=buildpath,
+    # )
+    
