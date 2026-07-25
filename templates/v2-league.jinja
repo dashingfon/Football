@@ -55,8 +55,8 @@
               </div>
               <h3
                 class="font-medium py-1 col-span-4 md:col-span-7 overflow-hidden justify-self-start text-sm my-1 flex items-center">
-                <img src="{{root}}/assets/{{team_logo[stat.team]}}" class="w-6 mr-2">
-                {{stat.team}}
+                <img src="{{root}}/assets/{{team_logo[stat.name]}}" class="w-6 mr-2">
+                {{stat.name}}
               </h3>
               <h3 class="py-1 col-span-1 text-sm m-2">{{stat.played}}</h3>
               <h3 class="py-1 col-span-1 text-sm m-2 hidden md:block">{{stat.wins}}</h3>
@@ -208,7 +208,7 @@
             <drop-down-toggle>
               {{matchday("June 28, 2026")}}
 
-              <div dropdown class="rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
+              <div dropdown class="hidden rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
 
                 {% for match in preseason %}
                 {{fixture(match)}}
@@ -223,7 +223,7 @@
             <drop-down-toggle>
               {{matchday(key)}}
 
-              <div dropdown class="rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
+              <div dropdown class="{{'' if active == key else 'hidden '}}rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
 
                 {% for fix in match %}
                 {{fixture(fix)}}
@@ -242,10 +242,10 @@
             {% for stat, array in player_stats.items() %}
 
             <div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
-              <a href="#" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
+              <a href="./player_stats.html?season=July / August 2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
                 <span class="text-sm m-2">{{stat}}</span>
               </a>
-              {% for player in array %}
+              {% for player in array[0] %}
               {% if loop.index == 1 %}
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-y border-brand">
@@ -407,10 +407,10 @@
             {% for stat, array in team_stats.items() %}
 
             <div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
-              <a href="#" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
+              <a href="./team_stats.html?season=July / August 2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
                 <span class="text-sm m-2">{{stat}}</span>
               </a>
-              {% for player in array %}
+              {% for player in array[0] %}
               {% if loop.index == 1 %}
 
               <div class="flex justify-between items-center py-2 px-4 h-fit bg-bg-1 text-sm border-y border-brand">

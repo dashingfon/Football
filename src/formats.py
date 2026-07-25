@@ -205,6 +205,7 @@ class Fixture(BaseModel):
         timezone: str = "Africa/Lagos",
     ) -> dict[str, list["Fixture"]]:
         matchday_group: dict[str, list["Fixture"]] = {}
+        fixtures = sorted(fixtures, key=lambda x: x.date)
         for fixture in fixtures:
             fixture.date = fixture.date.replace(tzinfo=ZoneInfo(timezone))
             date_str = (
@@ -213,9 +214,6 @@ class Fixture(BaseModel):
             if date_str not in matchday_group:
                 matchday_group[date_str] = []
             matchday_group[date_str].append(fixture)
-
-        for key, value in matchday_group.items():
-            matchday_group[key] = sorted(value, key=lambda x: x.date)
         return matchday_group
 
     def model_post_init(self, _) -> None:
@@ -771,9 +769,7 @@ class MultipleLeagueKnockout(BaseModel):
             teams = self.teams
             fixtures = self.fixtures
 
-            previous_player_stats = deepcopy(
-                self.rounds[0].players_stats
-            )
+            previous_player_stats = deepcopy(self.rounds[0].players_stats)
             previous_team_stats = deepcopy(self.rounds[0].team_stats)
 
             individual_table, team_table = apply_league_statistics(
@@ -795,6 +791,7 @@ class MultipleLeagueKnockout(BaseModel):
         team_logos: dict[str, str],
         match_day_title: dict[str, str] | None = None,
         root: str = "../../..",
+        active: str = "",
         buildpath: pathlib.PurePath | None = None,
     ) -> None:
         current_round = self.current_round
@@ -820,11 +817,11 @@ class MultipleLeagueKnockout(BaseModel):
 
             def bundle(
                 table: list[IndividualTable] | list[TeamTable], key: str
-            ) -> list[tuple[str, int]]:
+            ) -> tuple[list[tuple[str, int]], str]:
                 result: list[tuple[str, int]] = []
                 for pl in table:
                     result.append((pl.name, getattr(pl, key)))
-                return result
+                return result, key
 
             player_to_team: dict[str, str] = {}
             for team_name in self.teams:
@@ -837,6 +834,7 @@ class MultipleLeagueKnockout(BaseModel):
 
             context = {
                 "root": root,
+                "active": active,
                 "match_title": match_day_title,
                 "player_teams": player_to_team,
                 "tables": sorted_table,
@@ -984,12 +982,12 @@ if __name__ == "__main__":
 
     data = MultipleLeagueKnockout.load(path)
 
-    # data.build(
-    #     season=season,
-    #     season_path=path.parent,
-    #     team_logos=team_logos,
-    #     match_day_title=match_day_title,
-    #     root=root,
-    #     buildpath=buildpath,
-    # )
-    
+    data.build(
+        season=season,
+        season_path=path.parent,
+        team_logos=team_logos,
+        match_day_title=match_day_title,
+        root=root,
+        active="July 19, 2026",
+        buildpath=buildpath,
+    )
