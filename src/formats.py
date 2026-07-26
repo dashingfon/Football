@@ -989,7 +989,7 @@ if __name__ == "__main__":
     # fixture_ids = ["8", "9", "10", "11"]
     # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
 
-    # data.update_stats(path)
+    data.update_stats(path)
 
     data.build(
         season=season,

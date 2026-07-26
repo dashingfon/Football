@@ -1500,7 +1500,7 @@
         {
           "fixture": "11",
           "name": "red_card",
-          "event": { "side": "a", "player": "Tola" }
+          "event": { "side": "h", "player": "Tola" }
         },
         {
           "fixture": "11",
@@ -1591,7 +1591,7 @@
           { "side": "a", "in": "Roland", "out": "Ola-o" }
         ],
         "red_card": [
-          { "side": "a", "player": "Tola" },
+          { "side": "h", "player": "Tola" },
           { "side": "a", "player": "Bobby K" }
         ]
       }
@@ -6229,7 +6229,7 @@
           "goals_conceded": 5,
           "goals_difference": 0,
           "cleansheets": 0,
-          "red_cards": 0,
+          "red_cards": 1,
           "yellow_cards": 2
         },
         {
@@ -6285,7 +6285,7 @@
           "goals_conceded": 6,
           "goals_difference": -1,
           "cleansheets": 0,
-          "red_cards": 2,
+          "red_cards": 1,
           "yellow_cards": 8
         }
       ]
