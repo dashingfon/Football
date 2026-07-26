@@ -1,7 +1,7 @@
 {
   "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
-  "current_round": 2,
+  "current_round": 3,
   "teams": [
     {
       "name": "Liverpool",
@@ -1087,7 +1087,101 @@
       "away": "Arsenal",
       "date": "2026-07-26T16:30:00+01:00",
       "seconds_duration": 1800,
-      "events": [],
+      "events": [
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Adufe",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ifeanyi", "out": "Benson" }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "h", "in": "Felaini", "out": "Jojo" }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Kunle",
+            "assist": "Seun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "a", "in": "Friday", "out": "Fortune" }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "h", "in": "Lino", "out": "Benson" }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "a", "in": "Nketiah", "out": "Kunle" }
+        },
+        {
+          "fixture": "8",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Ifeanyi" }
+        },
+        {
+          "fixture": "8",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Felaini" }
+        },
+        {
+          "fixture": "8",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Lanre" }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "h", "in": "Lino", "out": "Adufe" }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ifeanyi",
+            "assist": "Papa",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "a", "in": "Fortune", "out": "Nketiah" }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": { "side": "a", "in": "Kunle", "out": "Lanre" }
+        },
+        {
+          "fixture": "8",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Lino" }
+        }
+      ],
       "map": {}
     },
     "9": {
@@ -1095,7 +1189,96 @@
       "away": "Barcelona",
       "date": "2026-07-26T17:10:00+01:00",
       "seconds_duration": 1800,
-      "events": [],
+      "events": [
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Sodiq", "out": "Taiwo" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Cambiaso", "out": "Idris" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Idris", "out": "Vardy" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Taiwo", "out": "Cambiaso" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "h", "in": "Chris", "out": "Obinna" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ebuka", "out": "Jamiu" }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Idris",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ola", "out": "Eze" }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Vardy", "out": "Taiwo" }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Vardy",
+            "assist": "Idris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Cambiaso", "out": "Idris" }
+        },
+        {
+          "fixture": "9",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Bisi" }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sodiq",
+            "assist": "Cambiaso",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": { "side": "a", "in": "Taiwo", "out": "Sodiq" }
+        }
+      ],
       "map": {}
     },
     "10": {
@@ -1103,7 +1286,76 @@
       "away": "Liverpool",
       "date": "2026-07-26T17:50:00+01:00",
       "seconds_duration": 1800,
-      "events": [],
+      "events": [
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": { "side": "h", "in": "Sheriff", "out": "Ugo" }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": { "side": "a", "in": "Lola", "out": "Dami" }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Bidemi" }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Ikenga" }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Bidemi",
+            "assist": "Segun",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Sheriff",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Ahmed" }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": { "side": "a", "in": "Dami", "out": "Lola" }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Sheriff",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ugo", "out": "Metu" }
+        }
+      ],
       "map": {}
     },
     "11": {
@@ -1111,7 +1363,86 @@
       "away": "Chelsea B",
       "date": "2026-07-26T18:30:00+01:00",
       "seconds_duration": 1800,
-      "events": [],
+      "events": [
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "David",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Bobby K" }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": { "side": "a", "in": "Machala", "out": "Roland" }
+        },
+        {
+          "fixture": "11",
+          "name": "red_card",
+          "event": { "side": "a", "player": "Tola" }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Nifemi" }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Ola-o" }
+        },
+        {
+          "fixture": "11",
+          "name": "red_card",
+          "event": { "side": "a", "player": "Bobby K" }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": { "side": "h", "in": "Tunji", "out": "Aremu" }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Machala" }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": { "side": "a", "in": "Roland", "out": "Ola-o" }
+        },
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Utaka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Yinka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
       "map": {}
     },
     "12": {
@@ -4751,6 +5082,7 @@
           "yellow_cards": 4
         }
       ]
-    }
+    },
+    { "players_stats": [], "team_stats": [] }
   ]
 }
