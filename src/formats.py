@@ -749,11 +749,15 @@ class MultipleLeagueKnockout(BaseModel):
         print("Updating matchday Fixtures! ...\n")
 
         if fixtures is None:
-            fixture_id = input("Enter the fixture Id: ")
-            fixture = self.fixtures[fixture_id]
-            events = input_events(fixture_id)
-            fixture.events.extend(events)
-            fixtures = {fixture_id: fixture}
+            fixtures = {}
+            number_of_fixtures = int(input("Enter the number of fixtures: "))
+            for i in range(number_of_fixtures):
+                fixture_id = input("Enter the fixture Id: ")
+                fixture = self.fixtures[fixture_id]
+                events = input_events(fixture_id)
+                fixture.events.extend(events)
+                fixtures[fixture_id] = fixture
+                print("\n")
 
         if new_round:
             self.current_round += 1
@@ -981,6 +985,11 @@ if __name__ == "__main__":
     }
 
     data = MultipleLeagueKnockout.load(path)
+
+    # fixture_ids = ["8", "9", "10", "11"]
+    # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
+
+    # data.update_stats(path)
 
     data.build(
         season=season,

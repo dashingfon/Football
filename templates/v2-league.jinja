@@ -98,7 +98,18 @@
 
                 <h1 class="col-span-1 justify-self-end font-medium min-w-0">{{match.home}}
                 </h1>
+                {% if match.home in team_logo %}
+                
                 <img src="{{root}}/assets/{{team_logo[match.home]}}" class="w-6">
+                {% else %}
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path fill="currentColor" d="M3 11.991c0 5.638 4.239 8.375 6.899 9.536c.721.315 1.082.473 2.101.473V8l-9 3z" />
+                  <path fill="currentColor" d="M14.101 21.527C16.761 20.365 21 17.63 21 11.991V11l-9-3v14c1.02 0 1.38-.158 2.101-.473M8.838 2.805L8.265 3c-3.007 1.03-4.51 1.545-4.887 2.082C3 5.62 3 7.22 3 10.417V11l9-3V2c-.811 0-1.595.268-3.162.805" opacity=".5" />
+                  <path fill="currentColor" d="m15.735 3l-.573-.195C13.595 2.268 12.812 2 12 2v6l9 3v-.583c0-3.198 0-4.797-.378-5.335c-.377-.537-1.88-1.052-4.887-2.081" />
+                </svg>
+                {% endif %}
 
                 <span class="text-sm font-medium">
                   {% if match.events %}
@@ -112,7 +123,18 @@
 
                 </span>
 
+                {% if match.away in team_logo %}
+                
                 <img src="{{root}}/assets/{{team_logo[match.away]}}" class="w-6">
+                {% else %}
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path fill="currentColor" d="M3 11.991c0 5.638 4.239 8.375 6.899 9.536c.721.315 1.082.473 2.101.473V8l-9 3z" />
+                  <path fill="currentColor" d="M14.101 21.527C16.761 20.365 21 17.63 21 11.991V11l-9-3v14c1.02 0 1.38-.158 2.101-.473M8.838 2.805L8.265 3c-3.007 1.03-4.51 1.545-4.887 2.082C3 5.62 3 7.22 3 10.417V11l9-3V2c-.811 0-1.595.268-3.162.805" opacity=".5" />
+                  <path fill="currentColor" d="m15.735 3l-.573-.195C13.595 2.268 12.812 2 12 2v6l9 3v-.583c0-3.198 0-4.797-.378-5.335c-.377-.537-1.88-1.052-4.887-2.081" />
+                </svg>
+                {% endif %}
                 <h1 class="col-span-1 justify-self-start font-medium">{{match.away}}
                 </h1>
                 
@@ -242,7 +264,7 @@
             {% for stat, array in player_stats.items() %}
 
             <div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
-              <a href="./player_stats.html?season=July / August 2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
+              <a href="./player_stats.html?season=july-august_2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
                 <span class="text-sm m-2">{{stat}}</span>
               </a>
               {% for player in array[0] %}
@@ -407,7 +429,7 @@
             {% for stat, array in team_stats.items() %}
 
             <div class="flex flex-col m-3 h-fit bg-bg-1 border border-bg-3 rounded-xl overflow-hidden">
-              <a href="./team_stats.html?season=July / August 2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
+              <a href="./team_stats.html?season=july-august_2026&stats={{array[1]}}" class="flex justify-between p-2 h-fit bg-bg-1 hover:bg-bg-2 text-sm border-bg-3">
                 <span class="text-sm m-2">{{stat}}</span>
               </a>
               {% for player in array[0] %}

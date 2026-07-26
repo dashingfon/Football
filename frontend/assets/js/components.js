@@ -462,6 +462,8 @@ customElements.define('init-league-stats',
             let max_val = 5
             let min_val = 0
             let data = rounds["0"]
+            const player_data = JSON.parse(document.getElementById("team-info").textContent);
+            console.log(player_data)
 
             if (Object.keys(rounds).length != 1) {
                 data = rounds[round];
@@ -483,6 +485,17 @@ customElements.define('init-league-stats',
                 clone.querySelector(".entries").id = item.name
                 clone.querySelector(".value").textContent = item[this.stats]
                 clone.querySelector(".width").style.width = `${((parseInt(item[this.stats]) / max_val) * 90)}%`
+
+                const players_team = player_data.players_team
+                const team_logos = player_data.team_logos
+
+                if (this.stats_type == "players_stats") {
+                  clone.querySelector(".team_logo").src = `../../assets/${team_logos[players_team[item.name]]}`;
+                  clone.querySelector(".team_name").textContent = players_team[item.name]
+                } else if (this.stats_type == "team_stats") {
+                  clone.querySelector(".team_logo").src = `../../assets/${team_logos[item.name]}`;
+
+                }
                 table_container?.appendChild(clone)
             })
 
@@ -490,21 +503,22 @@ customElements.define('init-league-stats',
         }
 
         async connectedCallback() {
-            const self = this
+            // Using the current page URL
             const params = new URLSearchParams(window.location.search);
+            const season = params.get('season');
+            const stats = params.get('stats');
 
-            let season = params.get("season");
-            if (season == null) {
-                season = "february_2026"
+            if (season !== null || season !== undefined) {
+              this.dataset.season = season
             }
-            this.season = season
 
-            let stats = params.get("stats")
-            if (stats == null) {
-                stats = "goals"
+            if (stats !== null || stats !== undefined) {
+              this.dataset.stats = stats
             }
-            this.stats = stats
-            this.stats_type = this.dataset.stats
+            const self = this
+
+            this.stats = this.dataset.stats
+            this.stats_type = this.dataset.stats_type
 
             const season_el = document.getElementById("season-name")
             const season_text = season.replaceAll("_", " ")
@@ -522,7 +536,7 @@ customElements.define('init-league-stats',
                 document.getElementById("specific-stats").textContent = val;
             }
 
-            const season_data = await fetch(this.dataset.season)
+            const season_data = await fetch(`./seasons/${this.dataset.season}.json`)
             this.season_data = await season_data.json()
             console.log("fetched data")
 

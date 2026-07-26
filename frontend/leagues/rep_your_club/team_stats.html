@@ -24,17 +24,26 @@
     <script src="../../assets/js/iconify.min.js"></script>
 
     <init-league-stats
-      data-season="./seasons/july-august_2026.json"
+      data-season="july-august_2026"
       data-league="./league.json"
-      data-stats="team_stats"
-      data-default-season="july-august_2026.json"
-      data-default-stats="goals_scored"
+      data-stats_type="team_stats"
+      data-stats="goals_scored"
     >
     </init-league-stats>
 
     <script type="application/json" id="team-info">
       {
-        "team_to_logo": {}
+        "team_logos": {
+          "Chelsea A": "chelsea1.svg",
+          "Chelsea B": "chelsea2.svg",
+          "Manchester United A": "man_united1.svg",
+          "Manchester United B": "man_united2.svg",
+          "Barcelona": "barcelona.svg",
+          "Real Madrid": "real_madrid.svg",
+          "Arsenal": "arsenal.svg",
+          "Liverpool": "liverpool.svg",
+          "": "unknown.svg"
+        }
       }
     </script>
 
@@ -249,7 +258,7 @@
               <h1 class="mx-2">/</h1>
               <a
                 class="flex justify-center gap-3 py-2 px-3 bg-bg-3/50 hover:bg-bg-1 rounded-xl text-xs"
-                href="./leagues.html"
+                href="./"
               >
                 <span class="text-xs text-text-4">Rep Your Club</span>
               </a>
@@ -609,7 +618,7 @@
                 <div class="flex items-center">
                   <h1 class="ml-2 mr-4 index">1</h1>
 
-                  <img src="../../assets/barcelona.svg" class="w-8 mr-2" />
+                  <img src="../../assets/barcelona.svg" class="w-8 mr-2 team_logo" />
                   <h1 class="name text-sm m-2">David</h1>
                 </div>
                 <h2 class="mx-3 value">339</h2>
@@ -624,9 +633,7 @@
           <div id="table-container">
             <div
               class="w-full h-full hidden items-center justify-center group-data-[loading=true]:flex"
-            >
-            
-            </div>
+            ></div>
           </div>
         </section>
       </div>
