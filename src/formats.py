@@ -801,7 +801,7 @@ class MultipleLeagueKnockout(BaseModel):
         current_round = self.current_round
         if current_round > 0:
             last_round = self.rounds[-1]
-            group_round = self.rounds[-1] if len(self.rounds) <= 3 else self.rounds[2]
+            group_round = self.rounds[-1] if len(self.rounds) <= 4 else self.rounds[3]
 
             group_stats = sorted(
                 group_round.team_stats,

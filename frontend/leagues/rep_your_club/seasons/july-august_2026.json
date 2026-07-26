@@ -1597,16 +1597,16 @@
       }
     },
     "12": {
-      "home": "Group A Winner",
-      "away": "Group B Runners Up",
+      "home": "Manchester United B",
+      "away": "Real Madrid",
       "date": "2026-08-02T16:30:00+01:00",
       "seconds_duration": 2400,
       "events": [],
       "map": {}
     },
     "13": {
-      "home": "Group B Winner",
-      "away": "Group A Runners Up",
+      "home": "Barcelona",
+      "away": "Arsenal",
       "date": "2026-08-02T17:20:00+01:00",
       "seconds_duration": 2400,
       "events": [],
