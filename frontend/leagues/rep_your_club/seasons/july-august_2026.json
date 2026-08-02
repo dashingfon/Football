@@ -1,7 +1,7 @@
 {
   "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
-  "current_round": 3,
+  "current_round": 4,
   "teams": [
     {
       "name": "Liverpool",
@@ -1601,7 +1601,94 @@
       "away": "Real Madrid",
       "date": "2026-08-02T16:30:00+01:00",
       "seconds_duration": 2400,
-      "events": [],
+      "events": [
+        {
+          "fixture": "12",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lino",
+            "assist": "Jojo",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "12",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Adufe",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "12",
+          "name": "sub",
+          "event": { "side": "a", "in": "Martins", "out": "Aremu" }
+        },
+        {
+          "fixture": "12",
+          "name": "sub",
+          "event": { "side": "h", "in": "Ifeanyi", "out": "Jojo" }
+        },
+        {
+          "fixture": "12",
+          "name": "sub",
+          "event": { "side": "a", "in": "Yerima", "out": "Amuri" }
+        },
+        {
+          "fixture": "12",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Martins",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "12",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tola",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "12",
+          "name": "sub",
+          "event": { "side": "h", "in": "Felaini", "out": "Lino" }
+        },
+        {
+          "fixture": "12",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Tola" }
+        },
+        {
+          "fixture": "12",
+          "name": "penalty_shootout",
+          "event": {
+            "shots": [
+              { "side": "h", "scored": true, "player": "Papa" },
+              { "side": "a", "scored": true, "player": "David" },
+              { "side": "h", "scored": true, "player": "Ifeanyi" },
+              { "side": "a", "scored": true, "player": "Utaka" },
+              { "side": "h", "scored": true, "player": "Adufe" },
+              { "side": "a", "scored": false, "player": "Martins" },
+              { "side": "h", "scored": false, "player": "" },
+              { "side": "a", "scored": false, "player": "Tola" },
+              { "side": "h", "scored": true, "player": "Felaini" }
+            ]
+          }
+        }
+      ],
       "map": {}
     },
     "13": {
@@ -1609,7 +1696,141 @@
       "away": "Arsenal",
       "date": "2026-08-02T17:20:00+01:00",
       "seconds_duration": 2400,
-      "events": [],
+      "events": [
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Chiboy",
+            "assist": "Idris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Sodiq",
+            "assist": "Idris",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Victor" }
+        },
+        {
+          "fixture": "13",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Seun" }
+        },
+        {
+          "fixture": "13",
+          "name": "sub",
+          "event": { "side": "a", "in": "Nketiah", "out": "Kunle" }
+        },
+        {
+          "fixture": "13",
+          "name": "sub",
+          "event": { "side": "h", "in": "Somto", "out": "Victor" }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Idris",
+            "assist": "Chiboy",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Idris",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "sub",
+          "event": { "side": "h", "in": "Vardy", "out": "Idris" }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Sodiq",
+            "assist": "Tunde",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "sub",
+          "event": { "side": "h", "in": "Taiwo", "out": "Sodiq" }
+        },
+        {
+          "fixture": "13",
+          "name": "sub",
+          "event": { "side": "h", "in": "Cambiaso", "out": "Chiboy" }
+        },
+        {
+          "fixture": "13",
+          "name": "yellow_card",
+          "event": { "side": "h", "player": "Vardy" }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Cambiaso",
+            "assist": "Taiwo",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Taiwo",
+            "assist": "Tunde",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "13",
+          "name": "yellow_card",
+          "event": { "side": "a", "player": "Nketiah" }
+        }
+      ],
       "map": {}
     },
     "14": {
@@ -6289,6 +6510,7 @@
           "yellow_cards": 8
         }
       ]
-    }
+    },
+    { "players_stats": [], "team_stats": [] }
   ]
 }

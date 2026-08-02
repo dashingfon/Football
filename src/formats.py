@@ -80,14 +80,11 @@ class Event(BaseModel):
                     "!q",
                     {"home", "h", "away", "a"},
                 )
-                scored = input("Enter any character if the shot was saved: ")
-                if not scored:
-                    scorer = input("Enter player that scored: ")
-                else:
-                    scorer = ""
+                scored = input("Enter any character if the shot was scored: ")
+                player = input("Enter player that scored: ")
 
                 shots.append(
-                    {"side": side[0], "scored": bool(scored), "scorer": scorer}
+                    {"side": side[0], "scored": bool(scored), "player": player}
                 )
             result = Event(
                 fixture=fixture,
