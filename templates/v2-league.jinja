@@ -143,7 +143,10 @@
                 <div class="col-span-1 w-4 h-4 justify-self-start">
                 </div>
                 <div class="col-span-1 text-center text-text-6">
-                  {% if match.events %}
+                  {% if "penalty_shootout" in match.map %}
+                  PEN: {{match.map.penalty_shootout[0].scoreline[0]}} -
+                  {{match.map.penalty_shootout[0].scoreline[1]}}
+                  {% elif match.events %}
                     FULL TIME
                   {% else %}
                     {{match.date.strftime("%H : %M")}}

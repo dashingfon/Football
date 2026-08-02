@@ -1729,6 +1729,7 @@
         "yellow_card": [{ "side": "a", "player": "Tola" }],
         "penalty_shootout": [
           {
+            "scoreline": [4, 2],
             "shots": [
               { "side": "h", "scored": true, "player": "Papa" },
               { "side": "a", "scored": true, "player": "David" },

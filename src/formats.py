@@ -66,6 +66,7 @@ class Event(BaseModel):
     def input_penalty_shootout(fixture: str) -> "Event":
         result = None
         while result is None:
+            scoreline = [0, 0]
             shots = []
             try:
                 shot_count = int(input("Enter the number of shoots in the shootout: "))
@@ -82,14 +83,17 @@ class Event(BaseModel):
                 )
                 scored = input("Enter any character if the shot was scored: ")
                 player = input("Enter player that scored: ")
-
+                if side[0] == "h":
+                    scoreline[0] += 1
+                else:
+                    scoreline[1] += 1
                 shots.append(
                     {"side": side[0], "scored": bool(scored), "player": player}
                 )
             result = Event(
                 fixture=fixture,
                 name="penalty_shootout",
-                event={"shots": shots},
+                event={"shots": shots, "scoreline": scoreline},
             )
         return result
 
