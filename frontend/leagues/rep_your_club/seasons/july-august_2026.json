@@ -1,7 +1,7 @@
 {
   "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
-  "current_round": 4,
+  "current_round": 5,
   "teams": [
     {
       "name": "Liverpool",
@@ -1675,6 +1675,7 @@
           "fixture": "12",
           "name": "penalty_shootout",
           "event": {
+            "scoreline": [4, 2],
             "shots": [
               { "side": "h", "scored": true, "player": "Papa" },
               { "side": "a", "scored": true, "player": "David" },
@@ -7692,6 +7693,7 @@
           "yellow_cards": 8
         }
       ]
-    }
+    },
+    { "players_stats": [], "team_stats": [] }
   ]
 }

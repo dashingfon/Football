@@ -82,7 +82,7 @@ class Event(BaseModel):
                     {"home", "h", "away", "a"},
                 )
                 scored = input("Enter any character if the shot was scored: ")
-                player = input("Enter player that scored: ")
+                player = input("Enter player name: ")
                 if side[0] == "h":
                     scoreline[0] += 1
                 else:
@@ -988,16 +988,16 @@ if __name__ == "__main__":
     data = MultipleLeagueKnockout.load(path)
 
     # fixture_ids = ["12", "13"]
-    # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
+    data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
 
     # data.update_stats(path)
 
-    data.build(
-        season=season,
-        season_path=path.parent,
-        team_logos=team_logos,
-        match_day_title=match_day_title,
-        root=root,
-        active="August 2, 2026",
-        buildpath=buildpath,
-    )
+    # data.build(
+    #     season=season,
+    #     season_path=path.parent,
+    #     team_logos=team_logos,
+    #     match_day_title=match_day_title,
+    #     root=root,
+    #     active="August 2, 2026",
+    #     buildpath=buildpath,
+    # )
