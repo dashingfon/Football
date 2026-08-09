@@ -988,16 +988,16 @@ if __name__ == "__main__":
     data = MultipleLeagueKnockout.load(path)
 
     # fixture_ids = ["14"]
-    data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
+    # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
 
-    # data.update_stats(path)
+    data.update_stats(path)
 
-    # data.build(
-    #     season=season,
-    #     season_path=path.parent,
-    #     team_logos=team_logos,
-    #     match_day_title=match_day_title,
-    #     root=root,
-    #     active="August 9, 2026",
-    #     buildpath=buildpath,
-    # )
+    data.build(
+        season=season,
+        season_path=path.parent,
+        team_logos=team_logos,
+        match_day_title=match_day_title,
+        root=root,
+        active="August 9, 2026",
+        buildpath=buildpath,
+    )
