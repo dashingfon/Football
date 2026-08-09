@@ -1,7 +1,7 @@
 {
   "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
-  "current_round": 6,
+  "current_round": 7,
   "teams": [
     {
       "name": "Liverpool",
@@ -3107,11 +3107,113 @@
       }
     },
     "15": {
-      "home": "Winner Semi Final 1",
-      "away": "Winner Semi Final 2",
+      "home": "Manchester United B",
+      "away": "Barcelona",
       "date": "2026-08-09T17:20:00+01:00",
       "seconds_duration": 2400,
-      "events": [],
+      "events": [
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Vardy",
+            "out": "Chiboy"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Victor"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Jojo",
+            "out": "Lino"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Victor",
+            "out": "Taiwo"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Victor"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Cambiaso",
+            "out": "Vardy"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Jojo",
+            "assist": "Ifeanyi",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Cambiaso"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Bisi",
+            "out": "Cambiaso"
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Jojo",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "15",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Adufe"
+          }
+        }
+      ],
       "map": {}
     },
     "4": {
@@ -10079,6 +10181,10 @@
           "yellow_cards": 8
         }
       ]
+    },
+    {
+      "players_stats": [],
+      "team_stats": []
     }
   ]
 }
