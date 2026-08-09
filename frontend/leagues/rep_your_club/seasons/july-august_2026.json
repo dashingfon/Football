@@ -1,7 +1,7 @@
 {
   "league": "Rep Your League:GYFA",
   "season": "july-august_2026",
-  "current_round": 5,
+  "current_round": 6,
   "teams": [
     {
       "name": "Liverpool",
@@ -112,8 +112,18 @@
     }
   ],
   "table": {
-    "Group A": ["Arsenal", "Chelsea A", "Liverpool", "Manchester United B"],
-    "Group B": ["Barcelona", "Chelsea B", "Manchester United A", "Real Madrid"]
+    "Group A": [
+      "Arsenal",
+      "Chelsea A",
+      "Liverpool",
+      "Manchester United B"
+    ],
+    "Group B": [
+      "Barcelona",
+      "Chelsea B",
+      "Manchester United A",
+      "Real Madrid"
+    ]
   },
   "pre_season": [
     {
@@ -209,17 +219,27 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "": "Aremu", "out": "Brainee" }
+          "event": {
+            "side": "h",
+            "": "Aremu",
+            "out": "Brainee"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Sancho" }
+          "event": {
+            "side": "h",
+            "player": "Sancho"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Yerima" }
+          "event": {
+            "side": "a",
+            "player": "Yerima"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -235,15 +255,33 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Martins" }
+          "event": {
+            "side": "a",
+            "player": "Martins"
+          }
         }
       ],
       "map": {
-        "sub": [{ "side": "h", "": "Aremu", "out": "Brainee" }],
+        "sub": [
+          {
+            "side": "h",
+            "": "Aremu",
+            "out": "Brainee"
+          }
+        ],
         "yellow_card": [
-          { "side": "h", "player": "Sancho" },
-          { "side": "a", "player": "Yerima" },
-          { "side": "a", "player": "Martins" }
+          {
+            "side": "h",
+            "player": "Sancho"
+          },
+          {
+            "side": "a",
+            "player": "Yerima"
+          },
+          {
+            "side": "a",
+            "player": "Martins"
+          }
         ],
         "goal": [
           {
@@ -265,7 +303,11 @@
         {
           "fixture": "Chelsea A_vs_Barcelona",
           "name": "sub",
-          "event": { "side": "a", "in": "Tunde", "out": "Bisi" }
+          "event": {
+            "side": "a",
+            "in": "Tunde",
+            "out": "Bisi"
+          }
         },
         {
           "fixture": "Chelsea A_vs_Barcelona",
@@ -292,25 +334,53 @@
         {
           "fixture": "Chelsea A_vs_Barcelona",
           "name": "sub",
-          "event": { "side": "a", "in": "Chiboy", "out": "Cambiaso" }
+          "event": {
+            "side": "a",
+            "in": "Chiboy",
+            "out": "Cambiaso"
+          }
         },
         {
           "fixture": "Chelsea A_vs_Barcelona",
           "name": "sub",
-          "event": { "side": "a", "in": "Bisi", "out": "Taiwo" }
+          "event": {
+            "side": "a",
+            "in": "Bisi",
+            "out": "Taiwo"
+          }
         },
         {
           "fixture": "Chelsea A_vs_Barcelona",
           "name": "sub",
-          "event": { "side": "h", "in": "Sheriff", "out": "Metu" }
+          "event": {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Metu"
+          }
         }
       ],
       "map": {
         "sub": [
-          { "side": "a", "in": "Tunde", "out": "Bisi" },
-          { "side": "a", "in": "Chiboy", "out": "Cambiaso" },
-          { "side": "a", "in": "Bisi", "out": "Taiwo" },
-          { "side": "h", "in": "Sheriff", "out": "Metu" }
+          {
+            "side": "a",
+            "in": "Tunde",
+            "out": "Bisi"
+          },
+          {
+            "side": "a",
+            "in": "Chiboy",
+            "out": "Cambiaso"
+          },
+          {
+            "side": "a",
+            "in": "Bisi",
+            "out": "Taiwo"
+          },
+          {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Metu"
+          }
         ],
         "goal": [
           {
@@ -339,17 +409,26 @@
         {
           "fixture": "Liverpool_vs_Chelsea B",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Damsel" }
+          "event": {
+            "side": "h",
+            "player": "Damsel"
+          }
         },
         {
           "fixture": "Liverpool_vs_Chelsea B",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Emma" }
+          "event": {
+            "side": "h",
+            "player": "Emma"
+          }
         },
         {
           "fixture": "Liverpool_vs_Chelsea B",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Machala" }
+          "event": {
+            "side": "a",
+            "player": "Machala"
+          }
         },
         {
           "fixture": "Liverpool_vs_Chelsea B",
@@ -365,7 +444,11 @@
         {
           "fixture": "Liverpool_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "a", "in": "Ola-o", "out": "Bobby K" }
+          "event": {
+            "side": "a",
+            "in": "Ola-o",
+            "out": "Bobby K"
+          }
         },
         {
           "fixture": "Liverpool_vs_Chelsea B",
@@ -381,9 +464,18 @@
       ],
       "map": {
         "yellow_card": [
-          { "side": "h", "player": "Damsel" },
-          { "side": "h", "player": "Emma" },
-          { "side": "a", "player": "Machala" }
+          {
+            "side": "h",
+            "player": "Damsel"
+          },
+          {
+            "side": "h",
+            "player": "Emma"
+          },
+          {
+            "side": "a",
+            "player": "Machala"
+          }
         ],
         "goal": [
           {
@@ -401,7 +493,13 @@
             "is_penalty": false
           }
         ],
-        "sub": [{ "side": "a", "in": "Ola-o", "out": "Bobby K" }]
+        "sub": [
+          {
+            "side": "a",
+            "in": "Ola-o",
+            "out": "Bobby K"
+          }
+        ]
       }
     }
   ],
@@ -415,7 +513,11 @@
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "h", "in": "Nketiah", "out": "Fortune" }
+          "event": {
+            "side": "h",
+            "in": "Nketiah",
+            "out": "Fortune"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
@@ -431,29 +533,50 @@
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Femi" }
+          "event": {
+            "side": "a",
+            "player": "Femi"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Ugo" }
+          "event": {
+            "side": "a",
+            "player": "Ugo"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Segun" }
+          "event": {
+            "side": "a",
+            "player": "Segun"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "a", "in": "Sheriff", "out": "Femi" }
+          "event": {
+            "side": "a",
+            "in": "Sheriff",
+            "out": "Femi"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "h", "in": "Kunle", "out": "Friday" }
+          "event": {
+            "side": "h",
+            "in": "Kunle",
+            "out": "Friday"
+          }
         },
-        { "fixture": "Arsenal_vs_Chelsea A", "name": "half time", "event": {} },
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "half time",
+          "event": {}
+        },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "goal",
@@ -468,7 +591,11 @@
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "a", "in": "Femi", "out": "Sheriff" }
+          "event": {
+            "side": "a",
+            "in": "Femi",
+            "out": "Sheriff"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
@@ -484,7 +611,11 @@
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "h", "in": "Kunle", "out": "Seun" }
+          "event": {
+            "side": "h",
+            "in": "Kunle",
+            "out": "Seun"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
@@ -500,27 +631,46 @@
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "a", "in": "Metu", "out": "Femi" }
+          "event": {
+            "side": "a",
+            "in": "Metu",
+            "out": "Femi"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "h", "in": "Ogbon", "out": "Nketiah" }
+          "event": {
+            "side": "h",
+            "in": "Ogbon",
+            "out": "Nketiah"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "a", "in": "Femi", "out": "Segun" }
+          "event": {
+            "side": "a",
+            "in": "Femi",
+            "out": "Segun"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "sub",
-          "event": { "side": "h", "in": "Seun", "out": "Lanre" }
+          "event": {
+            "side": "h",
+            "in": "Seun",
+            "out": "Lanre"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Ogbon" }
+          "event": {
+            "side": "h",
+            "player": "Ogbon"
+          }
         },
         {
           "fixture": "Arsenal_vs_Chelsea A",
@@ -533,19 +683,59 @@
             "is_penalty": false
           }
         },
-        { "fixture": "Arsenal_vs_Chelsea A", "name": "full time", "event": {} }
+        {
+          "fixture": "Arsenal_vs_Chelsea A",
+          "name": "full time",
+          "event": {}
+        }
       ],
       "map": {
         "sub": [
-          { "side": "h", "in": "Nketiah", "out": "Fortune" },
-          { "side": "a", "in": "Sheriff", "out": "Femi" },
-          { "side": "h", "in": "Kunle", "out": "Friday" },
-          { "side": "a", "in": "Femi", "out": "Sheriff" },
-          { "side": "h", "in": "Kunle", "out": "Seun" },
-          { "side": "a", "in": "Metu", "out": "Femi" },
-          { "side": "h", "in": "Ogbon", "out": "Nketiah" },
-          { "side": "a", "in": "Femi", "out": "Segun" },
-          { "side": "h", "in": "Seun", "out": "Lanre" }
+          {
+            "side": "h",
+            "in": "Nketiah",
+            "out": "Fortune"
+          },
+          {
+            "side": "a",
+            "in": "Sheriff",
+            "out": "Femi"
+          },
+          {
+            "side": "h",
+            "in": "Kunle",
+            "out": "Friday"
+          },
+          {
+            "side": "a",
+            "in": "Femi",
+            "out": "Sheriff"
+          },
+          {
+            "side": "h",
+            "in": "Kunle",
+            "out": "Seun"
+          },
+          {
+            "side": "a",
+            "in": "Metu",
+            "out": "Femi"
+          },
+          {
+            "side": "h",
+            "in": "Ogbon",
+            "out": "Nketiah"
+          },
+          {
+            "side": "a",
+            "in": "Femi",
+            "out": "Segun"
+          },
+          {
+            "side": "h",
+            "in": "Seun",
+            "out": "Lanre"
+          }
         ],
         "goal": [
           {
@@ -585,13 +775,29 @@
           }
         ],
         "yellow_card": [
-          { "side": "a", "player": "Femi" },
-          { "side": "a", "player": "Ugo" },
-          { "side": "a", "player": "Segun" },
-          { "side": "h", "player": "Ogbon" }
+          {
+            "side": "a",
+            "player": "Femi"
+          },
+          {
+            "side": "a",
+            "player": "Ugo"
+          },
+          {
+            "side": "a",
+            "player": "Segun"
+          },
+          {
+            "side": "h",
+            "player": "Ogbon"
+          }
         ],
-        "half time": [{}],
-        "full time": [{}]
+        "half time": [
+          {}
+        ],
+        "full time": [
+          {}
+        ]
       }
     },
     "1": {
@@ -603,7 +809,10 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Yinka" }
+          "event": {
+            "side": "a",
+            "player": "Yinka"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -619,7 +828,10 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Idris" }
+          "event": {
+            "side": "h",
+            "player": "Idris"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -629,12 +841,20 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "h", "in": "Somto", "out": "Victor" }
+          "event": {
+            "side": "h",
+            "in": "Somto",
+            "out": "Victor"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "a", "in": "Roland", "out": "YInka" }
+          "event": {
+            "side": "a",
+            "in": "Roland",
+            "out": "YInka"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -661,12 +881,20 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "h", "in": "Vardy", "out": "Idris" }
+          "event": {
+            "side": "h",
+            "in": "Vardy",
+            "out": "Idris"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "h", "in": "Cambiaso", "out": "Sodiq" }
+          "event": {
+            "side": "h",
+            "in": "Cambiaso",
+            "out": "Sodiq"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -682,7 +910,11 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "h", "out": "Cambiaso", "in": "Sodiq" }
+          "event": {
+            "side": "h",
+            "out": "Cambiaso",
+            "in": "Sodiq"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -698,7 +930,11 @@
         {
           "fixture": "Barcelona_vs_Chelsea B",
           "name": "sub",
-          "event": { "side": "h", "out": "Vardy", "in": "Idris" }
+          "event": {
+            "side": "h",
+            "out": "Vardy",
+            "in": "Idris"
+          }
         },
         {
           "fixture": "Barcelona_vs_Chelsea B",
@@ -708,8 +944,14 @@
       ],
       "map": {
         "yellow_card": [
-          { "side": "a", "player": "Yinka" },
-          { "side": "h", "player": "Idris" }
+          {
+            "side": "a",
+            "player": "Yinka"
+          },
+          {
+            "side": "h",
+            "player": "Idris"
+          }
         ],
         "goal": [
           {
@@ -748,16 +990,44 @@
             "is_penalty": false
           }
         ],
-        "half time": [{}],
-        "sub": [
-          { "side": "h", "in": "Somto", "out": "Victor" },
-          { "side": "a", "in": "Roland", "out": "YInka" },
-          { "side": "h", "in": "Vardy", "out": "Idris" },
-          { "side": "h", "in": "Cambiaso", "out": "Sodiq" },
-          { "side": "h", "out": "Cambiaso", "in": "Sodiq" },
-          { "side": "h", "out": "Vardy", "in": "Idris" }
+        "half time": [
+          {}
         ],
-        "full time": [{}]
+        "sub": [
+          {
+            "side": "h",
+            "in": "Somto",
+            "out": "Victor"
+          },
+          {
+            "side": "a",
+            "in": "Roland",
+            "out": "YInka"
+          },
+          {
+            "side": "h",
+            "in": "Vardy",
+            "out": "Idris"
+          },
+          {
+            "side": "h",
+            "in": "Cambiaso",
+            "out": "Sodiq"
+          },
+          {
+            "side": "h",
+            "out": "Cambiaso",
+            "in": "Sodiq"
+          },
+          {
+            "side": "h",
+            "out": "Vardy",
+            "in": "Idris"
+          }
+        ],
+        "full time": [
+          {}
+        ]
       }
     },
     "2": {
@@ -769,7 +1039,11 @@
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "a", "in": "Adufe", "out": "Jojo" }
+          "event": {
+            "side": "a",
+            "in": "Adufe",
+            "out": "Jojo"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
@@ -785,17 +1059,27 @@
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Ikenga" }
+          "event": {
+            "side": "h",
+            "player": "Ikenga"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Lola" }
+          "event": {
+            "side": "h",
+            "player": "Lola"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "a", "in": "Jojo", "out": "Benson" }
+          "event": {
+            "side": "a",
+            "in": "Jojo",
+            "out": "Benson"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
@@ -816,12 +1100,20 @@
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "h", "in": "Tm", "out": "Lola" }
+          "event": {
+            "side": "h",
+            "in": "Tm",
+            "out": "Lola"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "a", "in": "Lino", "out": "Felaini" }
+          "event": {
+            "side": "a",
+            "in": "Lino",
+            "out": "Felaini"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
@@ -838,17 +1130,29 @@
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "a", "in": "Benson", "out": "Adufe" }
+          "event": {
+            "side": "a",
+            "in": "Benson",
+            "out": "Adufe"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "h", "in": "Kenya", "out": "Dami" }
+          "event": {
+            "side": "h",
+            "in": "Kenya",
+            "out": "Dami"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
           "name": "sub",
-          "event": { "side": "h", "in": "Lola", "out": "Ikenga" }
+          "event": {
+            "side": "h",
+            "in": "Lola",
+            "out": "Ikenga"
+          }
         },
         {
           "fixture": "Liverpool_vs_Manchester United B",
@@ -858,13 +1162,41 @@
       ],
       "map": {
         "sub": [
-          { "side": "a", "in": "Adufe", "out": "Jojo" },
-          { "side": "a", "in": "Jojo", "out": "Benson" },
-          { "side": "h", "in": "Tm", "out": "Lola" },
-          { "side": "a", "in": "Lino", "out": "Felaini" },
-          { "side": "a", "in": "Benson", "out": "Adufe" },
-          { "side": "h", "in": "Kenya", "out": "Dami" },
-          { "side": "h", "in": "Lola", "out": "Ikenga" }
+          {
+            "side": "a",
+            "in": "Adufe",
+            "out": "Jojo"
+          },
+          {
+            "side": "a",
+            "in": "Jojo",
+            "out": "Benson"
+          },
+          {
+            "side": "h",
+            "in": "Tm",
+            "out": "Lola"
+          },
+          {
+            "side": "a",
+            "in": "Lino",
+            "out": "Felaini"
+          },
+          {
+            "side": "a",
+            "in": "Benson",
+            "out": "Adufe"
+          },
+          {
+            "side": "h",
+            "in": "Kenya",
+            "out": "Dami"
+          },
+          {
+            "side": "h",
+            "in": "Lola",
+            "out": "Ikenga"
+          }
         ],
         "goal": [
           {
@@ -891,11 +1223,21 @@
           }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Ikenga" },
-          { "side": "h", "player": "Lola" }
+          {
+            "side": "h",
+            "player": "Ikenga"
+          },
+          {
+            "side": "h",
+            "player": "Lola"
+          }
         ],
-        "half time": [{}],
-        "full time": [{}]
+        "half time": [
+          {}
+        ],
+        "full time": [
+          {}
+        ]
       }
     },
     "3": {
@@ -934,7 +1276,11 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "in": "Jamiu", "out": "Eze" }
+          "event": {
+            "side": "h",
+            "in": "Jamiu",
+            "out": "Eze"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -950,37 +1296,62 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Chris" }
+          "event": {
+            "side": "h",
+            "player": "Chris"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Jamiu" }
+          "event": {
+            "side": "h",
+            "player": "Jamiu"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "in": "Amuri", "out": "Aremu" }
+          "event": {
+            "side": "a",
+            "in": "Amuri",
+            "out": "Aremu"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "in": "Tunji", "out": "Tola" }
+          "event": {
+            "side": "a",
+            "in": "Tunji",
+            "out": "Tola"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Utaka" }
+          "event": {
+            "side": "a",
+            "player": "Utaka"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "in": "Sancho", "out": "Jamiu" }
+          "event": {
+            "side": "h",
+            "in": "Sancho",
+            "out": "Jamiu"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "h", "out": "Obinna", "in": "Brainee" }
+          "event": {
+            "side": "h",
+            "out": "Obinna",
+            "in": "Brainee"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -996,12 +1367,20 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "out": "Aremu", "in": "Yerima" }
+          "event": {
+            "side": "a",
+            "out": "Aremu",
+            "in": "Yerima"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "out": "Utaka", "in": "Noah" }
+          "event": {
+            "side": "a",
+            "out": "Utaka",
+            "in": "Noah"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -1017,7 +1396,11 @@
         {
           "fixture": "Manchester United A_vs_Real Madrid",
           "name": "sub",
-          "event": { "side": "a", "out": "Tunji", "in": "Martins" }
+          "event": {
+            "side": "a",
+            "out": "Tunji",
+            "in": "Martins"
+          }
         },
         {
           "fixture": "Manchester United A_vs_Real Madrid",
@@ -1063,23 +1446,68 @@
             "is_penalty": false
           }
         ],
-        "half time": [{}],
+        "half time": [
+          {}
+        ],
         "sub": [
-          { "side": "h", "in": "Jamiu", "out": "Eze" },
-          { "side": "a", "in": "Amuri", "out": "Aremu" },
-          { "side": "a", "in": "Tunji", "out": "Tola" },
-          { "side": "h", "in": "Sancho", "out": "Jamiu" },
-          { "side": "h", "out": "Obinna", "in": "Brainee" },
-          { "side": "a", "out": "Aremu", "in": "Yerima" },
-          { "side": "a", "out": "Utaka", "in": "Noah" },
-          { "side": "a", "out": "Tunji", "in": "Martins" }
+          {
+            "side": "h",
+            "in": "Jamiu",
+            "out": "Eze"
+          },
+          {
+            "side": "a",
+            "in": "Amuri",
+            "out": "Aremu"
+          },
+          {
+            "side": "a",
+            "in": "Tunji",
+            "out": "Tola"
+          },
+          {
+            "side": "h",
+            "in": "Sancho",
+            "out": "Jamiu"
+          },
+          {
+            "side": "h",
+            "out": "Obinna",
+            "in": "Brainee"
+          },
+          {
+            "side": "a",
+            "out": "Aremu",
+            "in": "Yerima"
+          },
+          {
+            "side": "a",
+            "out": "Utaka",
+            "in": "Noah"
+          },
+          {
+            "side": "a",
+            "out": "Tunji",
+            "in": "Martins"
+          }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Chris" },
-          { "side": "h", "player": "Jamiu" },
-          { "side": "a", "player": "Utaka" }
+          {
+            "side": "h",
+            "player": "Chris"
+          },
+          {
+            "side": "h",
+            "player": "Jamiu"
+          },
+          {
+            "side": "a",
+            "player": "Utaka"
+          }
         ],
-        "full time": [{}]
+        "full time": [
+          {}
+        ]
       }
     },
     "8": {
@@ -1102,12 +1530,20 @@
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "h", "in": "Ifeanyi", "out": "Benson" }
+          "event": {
+            "side": "h",
+            "in": "Ifeanyi",
+            "out": "Benson"
+          }
         },
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "h", "in": "Felaini", "out": "Jojo" }
+          "event": {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Jojo"
+          }
         },
         {
           "fixture": "8",
@@ -1123,37 +1559,62 @@
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "a", "in": "Friday", "out": "Fortune" }
+          "event": {
+            "side": "a",
+            "in": "Friday",
+            "out": "Fortune"
+          }
         },
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "h", "in": "Lino", "out": "Benson" }
+          "event": {
+            "side": "h",
+            "in": "Lino",
+            "out": "Benson"
+          }
         },
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "a", "in": "Nketiah", "out": "Kunle" }
+          "event": {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Kunle"
+          }
         },
         {
           "fixture": "8",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Ifeanyi" }
+          "event": {
+            "side": "h",
+            "player": "Ifeanyi"
+          }
         },
         {
           "fixture": "8",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Felaini" }
+          "event": {
+            "side": "h",
+            "player": "Felaini"
+          }
         },
         {
           "fixture": "8",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Lanre" }
+          "event": {
+            "side": "a",
+            "player": "Lanre"
+          }
         },
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "h", "in": "Lino", "out": "Adufe" }
+          "event": {
+            "side": "h",
+            "in": "Lino",
+            "out": "Adufe"
+          }
         },
         {
           "fixture": "8",
@@ -1169,17 +1630,28 @@
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "a", "in": "Fortune", "out": "Nketiah" }
+          "event": {
+            "side": "a",
+            "in": "Fortune",
+            "out": "Nketiah"
+          }
         },
         {
           "fixture": "8",
           "name": "sub",
-          "event": { "side": "a", "in": "Kunle", "out": "Lanre" }
+          "event": {
+            "side": "a",
+            "in": "Kunle",
+            "out": "Lanre"
+          }
         },
         {
           "fixture": "8",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Lino" }
+          "event": {
+            "side": "h",
+            "player": "Lino"
+          }
         }
       ],
       "map": {
@@ -1207,20 +1679,64 @@
           }
         ],
         "sub": [
-          { "side": "h", "in": "Ifeanyi", "out": "Benson" },
-          { "side": "h", "in": "Felaini", "out": "Jojo" },
-          { "side": "a", "in": "Friday", "out": "Fortune" },
-          { "side": "h", "in": "Lino", "out": "Benson" },
-          { "side": "a", "in": "Nketiah", "out": "Kunle" },
-          { "side": "h", "in": "Lino", "out": "Adufe" },
-          { "side": "a", "in": "Fortune", "out": "Nketiah" },
-          { "side": "a", "in": "Kunle", "out": "Lanre" }
+          {
+            "side": "h",
+            "in": "Ifeanyi",
+            "out": "Benson"
+          },
+          {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Jojo"
+          },
+          {
+            "side": "a",
+            "in": "Friday",
+            "out": "Fortune"
+          },
+          {
+            "side": "h",
+            "in": "Lino",
+            "out": "Benson"
+          },
+          {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Kunle"
+          },
+          {
+            "side": "h",
+            "in": "Lino",
+            "out": "Adufe"
+          },
+          {
+            "side": "a",
+            "in": "Fortune",
+            "out": "Nketiah"
+          },
+          {
+            "side": "a",
+            "in": "Kunle",
+            "out": "Lanre"
+          }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Ifeanyi" },
-          { "side": "h", "player": "Felaini" },
-          { "side": "a", "player": "Lanre" },
-          { "side": "h", "player": "Lino" }
+          {
+            "side": "h",
+            "player": "Ifeanyi"
+          },
+          {
+            "side": "h",
+            "player": "Felaini"
+          },
+          {
+            "side": "a",
+            "player": "Lanre"
+          },
+          {
+            "side": "h",
+            "player": "Lino"
+          }
         ]
       }
     },
@@ -1233,32 +1749,56 @@
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Sodiq", "out": "Taiwo" }
+          "event": {
+            "side": "a",
+            "in": "Sodiq",
+            "out": "Taiwo"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Cambiaso", "out": "Idris" }
+          "event": {
+            "side": "a",
+            "in": "Cambiaso",
+            "out": "Idris"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Idris", "out": "Vardy" }
+          "event": {
+            "side": "a",
+            "in": "Idris",
+            "out": "Vardy"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Taiwo", "out": "Cambiaso" }
+          "event": {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Cambiaso"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "h", "in": "Chris", "out": "Obinna" }
+          "event": {
+            "side": "h",
+            "in": "Chris",
+            "out": "Obinna"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "h", "in": "Ebuka", "out": "Jamiu" }
+          "event": {
+            "side": "h",
+            "in": "Ebuka",
+            "out": "Jamiu"
+          }
         },
         {
           "fixture": "9",
@@ -1274,12 +1814,20 @@
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "h", "in": "Ola", "out": "Eze" }
+          "event": {
+            "side": "h",
+            "in": "Ola",
+            "out": "Eze"
+          }
         },
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Vardy", "out": "Taiwo" }
+          "event": {
+            "side": "a",
+            "in": "Vardy",
+            "out": "Taiwo"
+          }
         },
         {
           "fixture": "9",
@@ -1295,12 +1843,19 @@
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Cambiaso", "out": "Idris" }
+          "event": {
+            "side": "a",
+            "in": "Cambiaso",
+            "out": "Idris"
+          }
         },
         {
           "fixture": "9",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Bisi" }
+          "event": {
+            "side": "a",
+            "player": "Bisi"
+          }
         },
         {
           "fixture": "9",
@@ -1316,21 +1871,65 @@
         {
           "fixture": "9",
           "name": "sub",
-          "event": { "side": "a", "in": "Taiwo", "out": "Sodiq" }
+          "event": {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Sodiq"
+          }
         }
       ],
       "map": {
         "sub": [
-          { "side": "a", "in": "Sodiq", "out": "Taiwo" },
-          { "side": "a", "in": "Cambiaso", "out": "Idris" },
-          { "side": "a", "in": "Idris", "out": "Vardy" },
-          { "side": "a", "in": "Taiwo", "out": "Cambiaso" },
-          { "side": "h", "in": "Chris", "out": "Obinna" },
-          { "side": "h", "in": "Ebuka", "out": "Jamiu" },
-          { "side": "h", "in": "Ola", "out": "Eze" },
-          { "side": "a", "in": "Vardy", "out": "Taiwo" },
-          { "side": "a", "in": "Cambiaso", "out": "Idris" },
-          { "side": "a", "in": "Taiwo", "out": "Sodiq" }
+          {
+            "side": "a",
+            "in": "Sodiq",
+            "out": "Taiwo"
+          },
+          {
+            "side": "a",
+            "in": "Cambiaso",
+            "out": "Idris"
+          },
+          {
+            "side": "a",
+            "in": "Idris",
+            "out": "Vardy"
+          },
+          {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Cambiaso"
+          },
+          {
+            "side": "h",
+            "in": "Chris",
+            "out": "Obinna"
+          },
+          {
+            "side": "h",
+            "in": "Ebuka",
+            "out": "Jamiu"
+          },
+          {
+            "side": "h",
+            "in": "Ola",
+            "out": "Eze"
+          },
+          {
+            "side": "a",
+            "in": "Vardy",
+            "out": "Taiwo"
+          },
+          {
+            "side": "a",
+            "in": "Cambiaso",
+            "out": "Idris"
+          },
+          {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Sodiq"
+          }
         ],
         "goal": [
           {
@@ -1355,7 +1954,12 @@
             "is_penalty": false
           }
         ],
-        "yellow_card": [{ "side": "a", "player": "Bisi" }]
+        "yellow_card": [
+          {
+            "side": "a",
+            "player": "Bisi"
+          }
+        ]
       }
     },
     "10": {
@@ -1367,22 +1971,36 @@
         {
           "fixture": "10",
           "name": "sub",
-          "event": { "side": "h", "in": "Sheriff", "out": "Ugo" }
+          "event": {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Ugo"
+          }
         },
         {
           "fixture": "10",
           "name": "sub",
-          "event": { "side": "a", "in": "Lola", "out": "Dami" }
+          "event": {
+            "side": "a",
+            "in": "Lola",
+            "out": "Dami"
+          }
         },
         {
           "fixture": "10",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Bidemi" }
+          "event": {
+            "side": "h",
+            "player": "Bidemi"
+          }
         },
         {
           "fixture": "10",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Ikenga" }
+          "event": {
+            "side": "a",
+            "player": "Ikenga"
+          }
         },
         {
           "fixture": "10",
@@ -1409,12 +2027,19 @@
         {
           "fixture": "10",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Ahmed" }
+          "event": {
+            "side": "h",
+            "player": "Ahmed"
+          }
         },
         {
           "fixture": "10",
           "name": "sub",
-          "event": { "side": "a", "in": "Dami", "out": "Lola" }
+          "event": {
+            "side": "a",
+            "in": "Dami",
+            "out": "Lola"
+          }
         },
         {
           "fixture": "10",
@@ -1430,20 +2055,49 @@
         {
           "fixture": "10",
           "name": "sub",
-          "event": { "side": "h", "in": "Ugo", "out": "Metu" }
+          "event": {
+            "side": "h",
+            "in": "Ugo",
+            "out": "Metu"
+          }
         }
       ],
       "map": {
         "sub": [
-          { "side": "h", "in": "Sheriff", "out": "Ugo" },
-          { "side": "a", "in": "Lola", "out": "Dami" },
-          { "side": "a", "in": "Dami", "out": "Lola" },
-          { "side": "h", "in": "Ugo", "out": "Metu" }
+          {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Ugo"
+          },
+          {
+            "side": "a",
+            "in": "Lola",
+            "out": "Dami"
+          },
+          {
+            "side": "a",
+            "in": "Dami",
+            "out": "Lola"
+          },
+          {
+            "side": "h",
+            "in": "Ugo",
+            "out": "Metu"
+          }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Bidemi" },
-          { "side": "a", "player": "Ikenga" },
-          { "side": "h", "player": "Ahmed" }
+          {
+            "side": "h",
+            "player": "Bidemi"
+          },
+          {
+            "side": "a",
+            "player": "Ikenga"
+          },
+          {
+            "side": "h",
+            "player": "Ahmed"
+          }
         ],
         "goal": [
           {
@@ -1490,47 +2144,77 @@
         {
           "fixture": "11",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Bobby K" }
+          "event": {
+            "side": "a",
+            "player": "Bobby K"
+          }
         },
         {
           "fixture": "11",
           "name": "sub",
-          "event": { "side": "a", "in": "Machala", "out": "Roland" }
+          "event": {
+            "side": "a",
+            "in": "Machala",
+            "out": "Roland"
+          }
         },
         {
           "fixture": "11",
           "name": "red_card",
-          "event": { "side": "h", "player": "Tola" }
+          "event": {
+            "side": "h",
+            "player": "Tola"
+          }
         },
         {
           "fixture": "11",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Nifemi" }
+          "event": {
+            "side": "a",
+            "player": "Nifemi"
+          }
         },
         {
           "fixture": "11",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Ola-o" }
+          "event": {
+            "side": "a",
+            "player": "Ola-o"
+          }
         },
         {
           "fixture": "11",
           "name": "red_card",
-          "event": { "side": "a", "player": "Bobby K" }
+          "event": {
+            "side": "a",
+            "player": "Bobby K"
+          }
         },
         {
           "fixture": "11",
           "name": "sub",
-          "event": { "side": "h", "in": "Tunji", "out": "Aremu" }
+          "event": {
+            "side": "h",
+            "in": "Tunji",
+            "out": "Aremu"
+          }
         },
         {
           "fixture": "11",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Machala" }
+          "event": {
+            "side": "a",
+            "player": "Machala"
+          }
         },
         {
           "fixture": "11",
           "name": "sub",
-          "event": { "side": "a", "in": "Roland", "out": "Ola-o" }
+          "event": {
+            "side": "a",
+            "in": "Roland",
+            "out": "Ola-o"
+          }
         },
         {
           "fixture": "11",
@@ -1580,19 +2264,49 @@
           }
         ],
         "yellow_card": [
-          { "side": "a", "player": "Bobby K" },
-          { "side": "a", "player": "Nifemi" },
-          { "side": "a", "player": "Ola-o" },
-          { "side": "a", "player": "Machala" }
+          {
+            "side": "a",
+            "player": "Bobby K"
+          },
+          {
+            "side": "a",
+            "player": "Nifemi"
+          },
+          {
+            "side": "a",
+            "player": "Ola-o"
+          },
+          {
+            "side": "a",
+            "player": "Machala"
+          }
         ],
         "sub": [
-          { "side": "a", "in": "Machala", "out": "Roland" },
-          { "side": "h", "in": "Tunji", "out": "Aremu" },
-          { "side": "a", "in": "Roland", "out": "Ola-o" }
+          {
+            "side": "a",
+            "in": "Machala",
+            "out": "Roland"
+          },
+          {
+            "side": "h",
+            "in": "Tunji",
+            "out": "Aremu"
+          },
+          {
+            "side": "a",
+            "in": "Roland",
+            "out": "Ola-o"
+          }
         ],
         "red_card": [
-          { "side": "h", "player": "Tola" },
-          { "side": "a", "player": "Bobby K" }
+          {
+            "side": "h",
+            "player": "Tola"
+          },
+          {
+            "side": "a",
+            "player": "Bobby K"
+          }
         ]
       }
     },
@@ -1627,17 +2341,29 @@
         {
           "fixture": "12",
           "name": "sub",
-          "event": { "side": "a", "in": "Martins", "out": "Aremu" }
+          "event": {
+            "side": "a",
+            "in": "Martins",
+            "out": "Aremu"
+          }
         },
         {
           "fixture": "12",
           "name": "sub",
-          "event": { "side": "h", "in": "Ifeanyi", "out": "Jojo" }
+          "event": {
+            "side": "h",
+            "in": "Ifeanyi",
+            "out": "Jojo"
+          }
         },
         {
           "fixture": "12",
           "name": "sub",
-          "event": { "side": "a", "in": "Yerima", "out": "Amuri" }
+          "event": {
+            "side": "a",
+            "in": "Yerima",
+            "out": "Amuri"
+          }
         },
         {
           "fixture": "12",
@@ -1664,28 +2390,74 @@
         {
           "fixture": "12",
           "name": "sub",
-          "event": { "side": "h", "in": "Felaini", "out": "Lino" }
+          "event": {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Lino"
+          }
         },
         {
           "fixture": "12",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Tola" }
+          "event": {
+            "side": "a",
+            "player": "Tola"
+          }
         },
         {
           "fixture": "12",
           "name": "penalty_shootout",
           "event": {
-            "scoreline": [4, 2],
+            "scoreline": [
+              4,
+              2
+            ],
             "shots": [
-              { "side": "h", "scored": true, "player": "Papa" },
-              { "side": "a", "scored": true, "player": "David" },
-              { "side": "h", "scored": true, "player": "Ifeanyi" },
-              { "side": "a", "scored": true, "player": "Utaka" },
-              { "side": "h", "scored": true, "player": "Adufe" },
-              { "side": "a", "scored": false, "player": "Martins" },
-              { "side": "h", "scored": false, "player": "" },
-              { "side": "a", "scored": false, "player": "Tola" },
-              { "side": "h", "scored": true, "player": "Felaini" }
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Papa"
+              },
+              {
+                "side": "a",
+                "scored": true,
+                "player": "David"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Ifeanyi"
+              },
+              {
+                "side": "a",
+                "scored": true,
+                "player": "Utaka"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Adufe"
+              },
+              {
+                "side": "a",
+                "scored": false,
+                "player": "Martins"
+              },
+              {
+                "side": "h",
+                "scored": false,
+                "player": ""
+              },
+              {
+                "side": "a",
+                "scored": false,
+                "player": "Tola"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Felaini"
+              }
             ]
           }
         }
@@ -1722,25 +2494,85 @@
           }
         ],
         "sub": [
-          { "side": "a", "in": "Martins", "out": "Aremu" },
-          { "side": "h", "in": "Ifeanyi", "out": "Jojo" },
-          { "side": "a", "in": "Yerima", "out": "Amuri" },
-          { "side": "h", "in": "Felaini", "out": "Lino" }
+          {
+            "side": "a",
+            "in": "Martins",
+            "out": "Aremu"
+          },
+          {
+            "side": "h",
+            "in": "Ifeanyi",
+            "out": "Jojo"
+          },
+          {
+            "side": "a",
+            "in": "Yerima",
+            "out": "Amuri"
+          },
+          {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Lino"
+          }
         ],
-        "yellow_card": [{ "side": "a", "player": "Tola" }],
+        "yellow_card": [
+          {
+            "side": "a",
+            "player": "Tola"
+          }
+        ],
         "penalty_shootout": [
           {
-            "scoreline": [4, 2],
+            "scoreline": [
+              4,
+              2
+            ],
             "shots": [
-              { "side": "h", "scored": true, "player": "Papa" },
-              { "side": "a", "scored": true, "player": "David" },
-              { "side": "h", "scored": true, "player": "Ifeanyi" },
-              { "side": "a", "scored": true, "player": "Utaka" },
-              { "side": "h", "scored": true, "player": "Adufe" },
-              { "side": "a", "scored": false, "player": "Martins" },
-              { "side": "h", "scored": false, "player": "" },
-              { "side": "a", "scored": false, "player": "Tola" },
-              { "side": "h", "scored": true, "player": "Felaini" }
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Papa"
+              },
+              {
+                "side": "a",
+                "scored": true,
+                "player": "David"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Ifeanyi"
+              },
+              {
+                "side": "a",
+                "scored": true,
+                "player": "Utaka"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Adufe"
+              },
+              {
+                "side": "a",
+                "scored": false,
+                "player": "Martins"
+              },
+              {
+                "side": "h",
+                "scored": false,
+                "player": ""
+              },
+              {
+                "side": "a",
+                "scored": false,
+                "player": "Tola"
+              },
+              {
+                "side": "h",
+                "scored": true,
+                "player": "Felaini"
+              }
             ]
           }
         ]
@@ -1788,22 +2620,36 @@
         {
           "fixture": "13",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Victor" }
+          "event": {
+            "side": "h",
+            "player": "Victor"
+          }
         },
         {
           "fixture": "13",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Seun" }
+          "event": {
+            "side": "a",
+            "player": "Seun"
+          }
         },
         {
           "fixture": "13",
           "name": "sub",
-          "event": { "side": "a", "in": "Nketiah", "out": "Kunle" }
+          "event": {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Kunle"
+          }
         },
         {
           "fixture": "13",
           "name": "sub",
-          "event": { "side": "h", "in": "Somto", "out": "Victor" }
+          "event": {
+            "side": "h",
+            "in": "Somto",
+            "out": "Victor"
+          }
         },
         {
           "fixture": "13",
@@ -1830,7 +2676,11 @@
         {
           "fixture": "13",
           "name": "sub",
-          "event": { "side": "h", "in": "Vardy", "out": "Idris" }
+          "event": {
+            "side": "h",
+            "in": "Vardy",
+            "out": "Idris"
+          }
         },
         {
           "fixture": "13",
@@ -1846,17 +2696,28 @@
         {
           "fixture": "13",
           "name": "sub",
-          "event": { "side": "h", "in": "Taiwo", "out": "Sodiq" }
+          "event": {
+            "side": "h",
+            "in": "Taiwo",
+            "out": "Sodiq"
+          }
         },
         {
           "fixture": "13",
           "name": "sub",
-          "event": { "side": "h", "in": "Cambiaso", "out": "Chiboy" }
+          "event": {
+            "side": "h",
+            "in": "Cambiaso",
+            "out": "Chiboy"
+          }
         },
         {
           "fixture": "13",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Vardy" }
+          "event": {
+            "side": "h",
+            "player": "Vardy"
+          }
         },
         {
           "fixture": "13",
@@ -1883,7 +2744,10 @@
         {
           "fixture": "13",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Nketiah" }
+          "event": {
+            "side": "a",
+            "player": "Nketiah"
+          }
         }
       ],
       "map": {
@@ -1946,26 +2810,206 @@
           }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Victor" },
-          { "side": "a", "player": "Seun" },
-          { "side": "h", "player": "Vardy" },
-          { "side": "a", "player": "Nketiah" }
+          {
+            "side": "h",
+            "player": "Victor"
+          },
+          {
+            "side": "a",
+            "player": "Seun"
+          },
+          {
+            "side": "h",
+            "player": "Vardy"
+          },
+          {
+            "side": "a",
+            "player": "Nketiah"
+          }
         ],
         "sub": [
-          { "side": "a", "in": "Nketiah", "out": "Kunle" },
-          { "side": "h", "in": "Somto", "out": "Victor" },
-          { "side": "h", "in": "Vardy", "out": "Idris" },
-          { "side": "h", "in": "Taiwo", "out": "Sodiq" },
-          { "side": "h", "in": "Cambiaso", "out": "Chiboy" }
+          {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Kunle"
+          },
+          {
+            "side": "h",
+            "in": "Somto",
+            "out": "Victor"
+          },
+          {
+            "side": "h",
+            "in": "Vardy",
+            "out": "Idris"
+          },
+          {
+            "side": "h",
+            "in": "Taiwo",
+            "out": "Sodiq"
+          },
+          {
+            "side": "h",
+            "in": "Cambiaso",
+            "out": "Chiboy"
+          }
         ]
       }
     },
     "14": {
-      "home": "Loser Semi Final 1",
-      "away": "Loser Semi Final 2",
+      "home": "Arsenal",
+      "away": "Real Madrid",
       "date": "2026-08-09T16:20:00+01:00",
       "seconds_duration": 2400,
-      "events": [],
+      "events": [
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Seun",
+            "assist": "Ogbon",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tunji",
+            "assist": "Utaka",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Seun"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tunji",
+            "assist": "Utaka",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Lanre",
+            "out": "Fortune"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Utaka"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Aremu",
+            "out": "Noah"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tunji",
+            "assist": "Tola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tunji",
+            "assist": "Tola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Tunji"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Martins",
+            "out": "Tunji"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Friday"
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Utaka",
+            "assist": "Tola",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "14",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Ogbon",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        }
+      ],
       "map": {}
     },
     "15": {
@@ -1996,22 +3040,38 @@
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Amuri", "out": "Tunji" }
+          "event": {
+            "side": "h",
+            "in": "Amuri",
+            "out": "Tunji"
+          }
         },
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Vardy", "out": "Victor" }
+          "event": {
+            "side": "a",
+            "in": "Vardy",
+            "out": "Victor"
+          }
         },
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Somto", "out": "Idris" }
+          "event": {
+            "side": "a",
+            "in": "Somto",
+            "out": "Idris"
+          }
         },
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Idris", "out": "Vardy" }
+          "event": {
+            "side": "a",
+            "in": "Idris",
+            "out": "Vardy"
+          }
         },
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
@@ -2027,12 +3087,19 @@
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Tola", "out": "Aremu" }
+          "event": {
+            "side": "h",
+            "in": "Tola",
+            "out": "Aremu"
+          }
         },
         {
           "fixture": "Real Madrid_vs_Barcelona_at_2026-07-12 16:00:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Utaka" }
+          "event": {
+            "side": "h",
+            "player": "Utaka"
+          }
         }
       ],
       "map": {
@@ -2053,13 +3120,38 @@
           }
         ],
         "sub": [
-          { "side": "h", "in": "Amuri", "out": "Tunji" },
-          { "side": "a", "in": "Vardy", "out": "Victor" },
-          { "side": "a", "in": "Somto", "out": "Idris" },
-          { "side": "a", "in": "Idris", "out": "Vardy" },
-          { "side": "h", "in": "Tola", "out": "Aremu" }
+          {
+            "side": "h",
+            "in": "Amuri",
+            "out": "Tunji"
+          },
+          {
+            "side": "a",
+            "in": "Vardy",
+            "out": "Victor"
+          },
+          {
+            "side": "a",
+            "in": "Somto",
+            "out": "Idris"
+          },
+          {
+            "side": "a",
+            "in": "Idris",
+            "out": "Vardy"
+          },
+          {
+            "side": "h",
+            "in": "Tola",
+            "out": "Aremu"
+          }
         ],
-        "yellow_card": [{ "side": "h", "player": "Utaka" }]
+        "yellow_card": [
+          {
+            "side": "h",
+            "player": "Utaka"
+          }
+        ]
       }
     },
     "5": {
@@ -2104,17 +3196,28 @@
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Emma", "out": "Tm" }
+          "event": {
+            "side": "h",
+            "in": "Emma",
+            "out": "Tm"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Nketiah", "out": "Fortune" }
+          "event": {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Fortune"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Dami" }
+          "event": {
+            "side": "h",
+            "player": "Dami"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
@@ -2130,22 +3233,35 @@
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Ikenga" }
+          "event": {
+            "side": "h",
+            "player": "Ikenga"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "red_card",
-          "event": { "side": "a", "player": "Friday" }
+          "event": {
+            "side": "a",
+            "player": "Friday"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Pastor", "out": "Dami" }
+          "event": {
+            "side": "h",
+            "in": "Pastor",
+            "out": "Dami"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "a", "player": "Nketiah" }
+          "event": {
+            "side": "a",
+            "player": "Nketiah"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
@@ -2161,7 +3277,11 @@
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Kenya", "out": "Ikenga" }
+          "event": {
+            "side": "h",
+            "in": "Kenya",
+            "out": "Ikenga"
+          }
         },
         {
           "fixture": "Liverpool_vs_Arsenal_at_2026-07-12 16:50:00+01:00",
@@ -2221,17 +3341,47 @@
           }
         ],
         "sub": [
-          { "side": "h", "in": "Emma", "out": "Tm" },
-          { "side": "a", "in": "Nketiah", "out": "Fortune" },
-          { "side": "h", "in": "Pastor", "out": "Dami" },
-          { "side": "h", "in": "Kenya", "out": "Ikenga" }
+          {
+            "side": "h",
+            "in": "Emma",
+            "out": "Tm"
+          },
+          {
+            "side": "a",
+            "in": "Nketiah",
+            "out": "Fortune"
+          },
+          {
+            "side": "h",
+            "in": "Pastor",
+            "out": "Dami"
+          },
+          {
+            "side": "h",
+            "in": "Kenya",
+            "out": "Ikenga"
+          }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Dami" },
-          { "side": "h", "player": "Ikenga" },
-          { "side": "a", "player": "Nketiah" }
+          {
+            "side": "h",
+            "player": "Dami"
+          },
+          {
+            "side": "h",
+            "player": "Ikenga"
+          },
+          {
+            "side": "a",
+            "player": "Nketiah"
+          }
         ],
-        "red_card": [{ "side": "a", "player": "Friday" }]
+        "red_card": [
+          {
+            "side": "a",
+            "player": "Friday"
+          }
+        ]
       }
     },
     "6": {
@@ -2254,17 +3404,28 @@
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Nifemi" }
+          "event": {
+            "side": "h",
+            "player": "Nifemi"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Sancho", "out": "Ebuka" }
+          "event": {
+            "side": "a",
+            "in": "Sancho",
+            "out": "Ebuka"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Brainee", "out": "Eze" }
+          "event": {
+            "side": "a",
+            "in": "Brainee",
+            "out": "Eze"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
@@ -2280,17 +3441,28 @@
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Bobby K" }
+          "event": {
+            "side": "h",
+            "player": "Bobby K"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Machala", "out": "Roland" }
+          "event": {
+            "side": "h",
+            "in": "Machala",
+            "out": "Roland"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Roland", "out": "Nifemi" }
+          "event": {
+            "side": "h",
+            "in": "Roland",
+            "out": "Nifemi"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
@@ -2306,12 +3478,19 @@
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Roland" }
+          "event": {
+            "side": "h",
+            "player": "Roland"
+          }
         },
         {
           "fixture": "Chelsea B_vs_Manchester United A_at_2026-07-12 17:40:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Ayo", "out": "Roland" }
+          "event": {
+            "side": "h",
+            "in": "Ayo",
+            "out": "Roland"
+          }
         }
       ],
       "map": {
@@ -2339,16 +3518,45 @@
           }
         ],
         "yellow_card": [
-          { "side": "h", "player": "Nifemi" },
-          { "side": "h", "player": "Bobby K" },
-          { "side": "h", "player": "Roland" }
+          {
+            "side": "h",
+            "player": "Nifemi"
+          },
+          {
+            "side": "h",
+            "player": "Bobby K"
+          },
+          {
+            "side": "h",
+            "player": "Roland"
+          }
         ],
         "sub": [
-          { "side": "a", "in": "Sancho", "out": "Ebuka" },
-          { "side": "a", "in": "Brainee", "out": "Eze" },
-          { "side": "h", "in": "Machala", "out": "Roland" },
-          { "side": "h", "in": "Roland", "out": "Nifemi" },
-          { "side": "h", "in": "Ayo", "out": "Roland" }
+          {
+            "side": "a",
+            "in": "Sancho",
+            "out": "Ebuka"
+          },
+          {
+            "side": "a",
+            "in": "Brainee",
+            "out": "Eze"
+          },
+          {
+            "side": "h",
+            "in": "Machala",
+            "out": "Roland"
+          },
+          {
+            "side": "h",
+            "in": "Roland",
+            "out": "Nifemi"
+          },
+          {
+            "side": "h",
+            "in": "Ayo",
+            "out": "Roland"
+          }
         ]
       }
     },
@@ -2372,17 +3580,28 @@
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
           "name": "sub",
-          "event": { "side": "a", "in": "Femi", "out": "Micheal" }
+          "event": {
+            "side": "a",
+            "in": "Femi",
+            "out": "Micheal"
+          }
         },
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
           "name": "yellow_card",
-          "event": { "side": "h", "player": "Jojo" }
+          "event": {
+            "side": "h",
+            "player": "Jojo"
+          }
         },
         {
           "fixture": "Manchester United B_vs_Chelsea A_at_2026-07-12 18:30:00+01:00",
           "name": "sub",
-          "event": { "side": "h", "in": "Felaini", "out": "Jojo" }
+          "event": {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Jojo"
+          }
         }
       ],
       "map": {
@@ -2396,10 +3615,23 @@
           }
         ],
         "sub": [
-          { "side": "a", "in": "Femi", "out": "Micheal" },
-          { "side": "h", "in": "Felaini", "out": "Jojo" }
+          {
+            "side": "a",
+            "in": "Femi",
+            "out": "Micheal"
+          },
+          {
+            "side": "h",
+            "in": "Felaini",
+            "out": "Jojo"
+          }
         ],
-        "yellow_card": [{ "side": "h", "player": "Jojo" }]
+        "yellow_card": [
+          {
+            "side": "h",
+            "player": "Jojo"
+          }
+        ]
       }
     }
   },
@@ -7694,6 +8926,13 @@
         }
       ]
     },
-    { "players_stats": [], "team_stats": [] }
+    {
+      "players_stats": [],
+      "team_stats": []
+    },
+    {
+      "players_stats": [],
+      "team_stats": []
+    }
   ]
 }
