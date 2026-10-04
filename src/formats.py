@@ -942,7 +942,6 @@ class League(BaseModel):
     season: str
     current_round: int
     teams: list[Team] = Field(default_factory=list)
-    table: list[str] = Field(default_factory=list)
     fixtures: dict[str, Fixture] = Field(default_factory=dict)
     rounds: list[Leagues_RoundData] = Field(default_factory=list)
 
@@ -960,7 +959,6 @@ class League(BaseModel):
         path: pathlib.PurePath,
         teams: list[Team],
         fixtures: dict[str, Fixture],
-        table_dict: list[str],
     ) -> "League":
         print("Starting a new season! ...\n")
         player_stats = []
@@ -976,7 +974,6 @@ class League(BaseModel):
             season=season,
             current_round=0,
             teams=teams,
-            table=table_dict,
             fixtures=fixtures,
             rounds=[
                 Leagues_RoundData(players_stats=player_stats, team_stats=team_stats)
@@ -988,7 +985,7 @@ class League(BaseModel):
                 league_json = json.load(f)
         except Exception:
             league_json = {"name": league, "seasons": []}
-            
+
         seasons_dict: dict = {}
         for s in league_json["seasons"]:
             seasons_dict[s] = None
@@ -1002,7 +999,6 @@ class League(BaseModel):
         save(full_data, path / "seasons" / f"{season}.json")
 
         return full_data
-
 
     def update_fixtures(
         self,
@@ -1027,7 +1023,7 @@ class League(BaseModel):
             self.current_round += 1
             self.rounds.append(Leagues_RoundData(players_stats=[], team_stats=[]))
         self.fixtures.update(fixtures)
-        
+
         save(self, path)
 
     def update_stats(self, path: pathlib.PurePath) -> None:
@@ -1204,8 +1200,8 @@ class League(BaseModel):
 if __name__ == "__main__":
     from rich import print
 
-    season = "july-august_2026"
-    league = "rep_your_club"
+    season = "october-december_2026.json"
+    league = "gyfa_league_cup"
     root = "../.."
     path = (
         pathlib.PurePath(__file__).parent.parent
@@ -1217,26 +1213,170 @@ if __name__ == "__main__":
     )
     buildpath = path.parent.parent / "index.html"
     match_day_title = {
-        "June 28, 2026": "Pre Season",
-        "July 5, 2026": "Day 1",
-        "July 19, 2026": "Day 2",
-        "July 26, 2026": "Day 3",
-        "August 2, 2026": "Semi Finals",
-        "August 9, 2026": "Finals",
+        "October 4, 2026": "Day 1",
+        "October 11, 2026": "Day 2",
+        "October 18, 2026": "Day 3",
+        "October 25, 2026": "Day 4",
+        "November 1, 2026": "Day 5",
+        "November 8, 2026": "Day 6",
+        "November 15, 2026": "Day 7",
+        "November 22, 2026": "Day 8",
+        "November 29, 2026": "Day 9",
+        "December 6, 2026": "Day 10",
     }
     team_logos = {
-        "Chelsea A": "chelsea1.svg",
-        "Chelsea B": "chelsea2.svg",
-        "Manchester United A": "man_united1.svg",
-        "Manchester United B": "man_united2.svg",
-        "Barcelona": "barcelona.svg",
-        "Real Madrid": "real_madrid.svg",
-        "Arsenal": "arsenal.svg",
-        "Liverpool": "liverpool.svg",
+        "Eyimba": "chelsea1.svg",
+        "Shooting Stars": "man_united1.svg",
+        "Abia Warriors": "barcelona.svg",
+        "Ikorodu United": "real_madrid.svg",
+        "Remo Stars": "arsenal.svg",
+        "Rivers United": "liverpool.svg",
         "": "",
     }
 
-    data = MultipleLeagueKnockout.load(path)
+    # data = League.load(path)
+
+    teams = [
+        Team(
+            name="Eyimba",
+            players=[
+                "Jojo",
+                "Taiwo",
+                "Shirifudeen",
+                "Prosper",
+                "Yerima",
+                "Obinna",
+                "Ogbon",
+                "Jamiu",
+                "Bobby Kay",
+                "Kenya",
+                "Femi",
+            ],
+        ),
+        Team(
+            name="Shooting Stars",
+            players=[
+                "Ifeanyi",
+                "Ayo",
+                "Pastor",
+                "Idris",
+                "Gilo",
+                "Cambiaso",
+                "Martins",
+                "Fortune",
+                "Aguero",
+                "Lino",
+            ],
+        ),
+        Team(
+            name="Abia Warriors",
+            players=[
+                "Ebuka",
+                "Ikenga",
+                "Agba Vee",
+                "Tunji",
+                "Skilla",
+                "Micheal",
+                "Brainy",
+                "David",
+                "Bidemi",
+                "Amuri",
+                "Machala",
+            ],
+        ),
+        Team(
+            name="Ikorodu United",
+            players=[
+                "Solo B",
+                "Sodiq",
+                "Nketiah",
+                "Dami",
+                "Dotun",
+                "Chi Boy",
+                "Admoore",
+                "Victor",
+                "Tm",
+                "Benson",
+                "Yinka",
+            ],
+        ),
+        Team(
+            name="Remo Stars",
+            players=[
+                "Ola",
+                "Utaka",
+                "Falaini",
+                "Somto",
+                "Chris",
+                "Seun",
+                "Sancho",
+                "Noah",
+                "Hunter",
+                "Bubu",
+                "Kunle",
+                "Papa",
+            ],
+        ),
+        Team(
+            name="Rivers United",
+            players=[
+                "Obago",
+                "Emmaga",
+                "Aremu",
+                "Hammed",
+                "Nifemi",
+                "Kimpembe",
+                "Adufe",
+                "Ugo",
+                "Lola",
+                "Lanre",
+                "Metu",
+                "Dara",
+            ],
+        ),
+    ]
+    fixtures = {
+        "0": Fixture(home="Eyimba", away="Rivers United", date=datetime(2026, 10, 4, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Shooting Stars", away="Remo Stars", date=datetime(2026, 10, 4, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Abia Warriors", away="Ikorodu United", date=datetime(2026, 10, 4, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Rivers United", away="Ikorodu United", date=datetime(2026, 10, 11, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Remo Stars", away="Abia Warriors", date=datetime(2026, 10, 11, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Eyimba", away="Shooting Stars", date=datetime(2026, 10, 11, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Shooting Stars", away="Rivers United", date=datetime(2026, 10, 18, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Abia Warriors", away="Eyimba", date=datetime(2026, 10, 18, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Ikorodu United", away="Remo Stars", date=datetime(2026, 10, 18, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Rivers United", away="Remo Stars", date=datetime(2026, 10, 25, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Eyimba", away="Ikorodu United", date=datetime(2026, 10, 25, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Shooting Stars", away="Abia Warriors", date=datetime(2026, 10, 25, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Abia Warriors", away="Rivers United", date=datetime(2026, 11, 1, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Ikorodu United", away="Shooting Stars", date=datetime(2026, 11, 1, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Remo Stars", away="Eyimba", date=datetime(2026, 11, 1, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Rivers United", away="Eyimba", date=datetime(2026, 11, 8, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Remo Stars", away="Shooting Stars", date=datetime(2026, 11, 8, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Ikorodu United", away="Abia Warriors", date=datetime(2026, 11, 8, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Ikorodu United", away="Rivers United", date=datetime(2026, 11, 15, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Abia Warriors", away="Remo Stars", date=datetime(2026, 11, 15, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Shooting Stars", away="Eyimba", date=datetime(2026, 11, 15, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Rivers United", away="Shooting Stars", date=datetime(2026, 11, 22, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Eyimba", away="Abia Warriors", date=datetime(2026, 11, 22, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Remo Stars", away="Ikorodu United", date=datetime(2026, 11, 22, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Remo Stars", away="Rivers United", date=datetime(2026, 11, 29, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Ikorodu United", away="Eyimba", date=datetime(2026, 11, 29, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Abia Warriors", away="Shooting Stars", date=datetime(2026, 11, 29, 18, 30, 0), seconds_duration=240),
+        
+        "0": Fixture(home="Rivers United", away="Abia Warriors", date=datetime(2026, 12, 6, 16, 10, 0), seconds_duration=240),
+        "0": Fixture(home="Shooting Stars", away="Ikorodu United", date=datetime(2026, 12, 6, 17, 20, 0), seconds_duration=240),
+        "0": Fixture(home="Eyimba", away="Remo Stars", date=datetime(2026, 12, 6, 18, 30, 0), seconds_duration=240),
+    }
+    data = League.new_season(league, season, path, teams, fixtures, )
 
     # fixture_ids = ["14"]
     # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
