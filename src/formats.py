@@ -1056,151 +1056,145 @@ class League(BaseModel):
         root: str = "../../..",
         active: str = "",
         buildpath: pathlib.PurePath | None = None,
-    ) -> None:
-        current_round = self.current_round
-        if current_round > 0:
-            last_round = self.rounds[-1]
-            group_round = self.rounds[-1] if len(self.rounds) <= 4 else self.rounds[3]
+    ) -> None:            
+        last_round = self.rounds[-1]
 
-            group_stats = sorted(
-                group_round.team_stats,
-                key=lambda x: (x.points, x.goals_difference, x.goals_scored),
-                reverse=True,
-            )
+        group_stats = sorted(
+            last_round.team_stats,
+            key=lambda x: (x.points, x.goals_difference, x.goals_scored),
+            reverse=True,
+        )
 
-            def bundle(
-                table: list[IndividualTable] | list[TeamTable], key: str
-            ) -> tuple[list[tuple[str, int]], str]:
-                result: list[tuple[str, int]] = []
-                for pl in table:
-                    result.append((pl.name, getattr(pl, key)))
-                return result, key
+        def bundle(
+            table: list[IndividualTable] | list[TeamTable], key: str
+        ) -> tuple[list[tuple[str, int]], str]:
+            result: list[tuple[str, int]] = []
+            for pl in table:
+                result.append((pl.name, getattr(pl, key)))
+            return result, key
 
-            player_to_team: dict[str, str] = {}
-            for team_name in self.teams:
-                for player in team_name.players:
-                    player_to_team[player] = team_name.name
+        player_to_team: dict[str, str] = {}
+        for team_name in self.teams:
+            for player in team_name.players:
+                player_to_team[player] = team_name.name
 
-            fixtures_array = list(self.fixtures.values())
-            fixtures = Fixture.group_by_datetime(fixtures_array)
-            match_day_title = {} if match_day_title is None else match_day_title
+        fixtures_array = list(self.fixtures.values())
+        fixtures = Fixture.group_by_datetime(fixtures_array)
+        match_day_title = {} if match_day_title is None else match_day_title
 
-            context = {
-                "root": root,
-                "active": active,
-                "match_title": match_day_title,
-                "player_teams": player_to_team,
-                "tables": group_stats,
-                "fixtures": fixtures,
-                "team_logo": team_logos,
-                "player_stats": {
-                    "Top Scorer": bundle(
-                        sorted(
-                            last_round.players_stats,
-                            key=lambda x: (x.goals, x.points),
-                            reverse=True,
-                        )[:3],
-                        "goals",
-                    ),
-                    "Top Assist": bundle(
-                        sorted(
-                            last_round.players_stats,
-                            key=lambda x: (x.assists, x.points),
-                            reverse=True,
-                        )[:3],
-                        "assists",
-                    ),
-                    "Goals and Assists": bundle(
-                        sorted(
-                            last_round.players_stats,
-                            key=lambda x: (x.goals_and_assists, x.points),
-                            reverse=True,
-                        )[:3],
-                        "goals_and_assists",
-                    ),
-                    "Yellow Cards": bundle(
-                        sorted(
-                            last_round.players_stats,
-                            key=lambda x: (x.yellow_cards, x.points),
-                            reverse=True,
-                        )[:3],
-                        "yellow_cards",
-                    ),
-                    "Red Cards": bundle(
-                        sorted(
-                            last_round.players_stats,
-                            key=lambda x: (x.red_cards, x.points),
-                            reverse=True,
-                        )[:3],
-                        "red_cards",
-                    ),
-                },
-                "team_stats": {
-                    "Goals Scored": bundle(
-                        sorted(
-                            last_round.team_stats,
-                            key=lambda x: x.goals_scored,
-                            reverse=True,
-                        )[:3],
-                        "goals_scored",
-                    ),
-                    "Goals Conceeded": bundle(
-                        sorted(
-                            last_round.team_stats,
-                            key=lambda x: x.goals_conceded,
-                            reverse=True,
-                        )[:3],
-                        "goals_conceded",
-                    ),
-                    "Yellow Cards": bundle(
-                        sorted(
-                            last_round.team_stats,
-                            key=lambda x: x.yellow_cards,
-                            reverse=True,
-                        )[:3],
-                        "yellow_cards",
-                    ),
-                    "Red Cards": bundle(
-                        sorted(
-                            last_round.team_stats,
-                            key=lambda x: x.red_cards,
-                            reverse=True,
-                        )[:3],
-                        "red_cards",
-                    ),
-                    "Cleansheets": bundle(
-                        sorted(
-                            last_round.team_stats,
-                            key=lambda x: x.cleansheets,
-                            reverse=True,
-                        )[:3],
-                        "cleansheets",
-                    ),
-                },
-            }
-            env = Environment(loader=FileSystemLoader("templates"))
-            template = env.get_template("v3-league.jinja")
-            rendered = template.render(**context)
-            pathlib.Path(season_path).mkdir(exist_ok=True)
+        context = {
+            "root": root,
+            "active": active,
+            "match_title": match_day_title,
+            "player_teams": player_to_team,
+            "tables": group_stats,
+            "fixtures": fixtures,
+            "team_logo": team_logos,
+            "player_stats": {
+                "Top Scorer": bundle(
+                    sorted(
+                        last_round.players_stats,
+                        key=lambda x: (x.goals, x.points),
+                        reverse=True,
+                    )[:3],
+                    "goals",
+                ),
+                "Top Assist": bundle(
+                    sorted(
+                        last_round.players_stats,
+                        key=lambda x: (x.assists, x.points),
+                        reverse=True,
+                    )[:3],
+                    "assists",
+                ),
+                "Goals and Assists": bundle(
+                    sorted(
+                        last_round.players_stats,
+                        key=lambda x: (x.goals_and_assists, x.points),
+                        reverse=True,
+                    )[:3],
+                    "goals_and_assists",
+                ),
+                "Yellow Cards": bundle(
+                    sorted(
+                        last_round.players_stats,
+                        key=lambda x: (x.yellow_cards, x.points),
+                        reverse=True,
+                    )[:3],
+                    "yellow_cards",
+                ),
+                "Red Cards": bundle(
+                    sorted(
+                        last_round.players_stats,
+                        key=lambda x: (x.red_cards, x.points),
+                        reverse=True,
+                    )[:3],
+                    "red_cards",
+                ),
+            },
+            "team_stats": {
+                "Goals Scored": bundle(
+                    sorted(
+                        last_round.team_stats,
+                        key=lambda x: x.goals_scored,
+                        reverse=True,
+                    )[:3],
+                    "goals_scored",
+                ),
+                "Goals Conceeded": bundle(
+                    sorted(
+                        last_round.team_stats,
+                        key=lambda x: x.goals_conceded,
+                        reverse=True,
+                    )[:3],
+                    "goals_conceded",
+                ),
+                "Yellow Cards": bundle(
+                    sorted(
+                        last_round.team_stats,
+                        key=lambda x: x.yellow_cards,
+                        reverse=True,
+                    )[:3],
+                    "yellow_cards",
+                ),
+                "Red Cards": bundle(
+                    sorted(
+                        last_round.team_stats,
+                        key=lambda x: x.red_cards,
+                        reverse=True,
+                    )[:3],
+                    "red_cards",
+                ),
+                "Cleansheets": bundle(
+                    sorted(
+                        last_round.team_stats,
+                        key=lambda x: x.cleansheets,
+                        reverse=True,
+                    )[:3],
+                    "cleansheets",
+                ),
+            },
+        }
+        env = Environment(loader=FileSystemLoader("templates"))
+        template = env.get_template("v3-league.jinja")
+        rendered = template.render(**context)
+        pathlib.Path(season_path).mkdir(exist_ok=True)
 
-            buildpath = (
-                buildpath if buildpath is not None else season_path / f"{season}.html"
-            )
-            with open(
-                buildpath,
-                "w",
-                encoding="utf-8",
-            ) as f:
-                f.write(rendered)
-        else:
-            print("No Previous stats to build! ")
-            return None
+        buildpath = (
+            buildpath if buildpath is not None else season_path / f"{season}.html"
+        )
+        with open(
+            buildpath,
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(rendered)
 
 
 if __name__ == "__main__":
     from rich import print
 
-    season = "october-december_2026.json"
+    season = "october-december_2026"
     league = "gyfa_league_cup"
     root = "../.."
     path = (
@@ -1337,51 +1331,50 @@ if __name__ == "__main__":
     ]
     fixtures = {
         "0": Fixture(home="Eyimba", away="Rivers United", date=datetime(2026, 10, 4, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Shooting Stars", away="Remo Stars", date=datetime(2026, 10, 4, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Abia Warriors", away="Ikorodu United", date=datetime(2026, 10, 4, 18, 30, 0), seconds_duration=240),
+        "1": Fixture(home="Shooting Stars", away="Remo Stars", date=datetime(2026, 10, 4, 17, 20, 0), seconds_duration=240),
+        "2": Fixture(home="Abia Warriors", away="Ikorodu United", date=datetime(2026, 10, 4, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Rivers United", away="Ikorodu United", date=datetime(2026, 10, 11, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Remo Stars", away="Abia Warriors", date=datetime(2026, 10, 11, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Eyimba", away="Shooting Stars", date=datetime(2026, 10, 11, 18, 30, 0), seconds_duration=240),
+        "3": Fixture(home="Rivers United", away="Ikorodu United", date=datetime(2026, 10, 11, 16, 10, 0), seconds_duration=240),
+        "4": Fixture(home="Remo Stars", away="Abia Warriors", date=datetime(2026, 10, 11, 17, 20, 0), seconds_duration=240),
+        "5": Fixture(home="Eyimba", away="Shooting Stars", date=datetime(2026, 10, 11, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Shooting Stars", away="Rivers United", date=datetime(2026, 10, 18, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Abia Warriors", away="Eyimba", date=datetime(2026, 10, 18, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Ikorodu United", away="Remo Stars", date=datetime(2026, 10, 18, 18, 30, 0), seconds_duration=240),
+        "6": Fixture(home="Shooting Stars", away="Rivers United", date=datetime(2026, 10, 18, 16, 10, 0), seconds_duration=240),
+        "7": Fixture(home="Abia Warriors", away="Eyimba", date=datetime(2026, 10, 18, 17, 20, 0), seconds_duration=240),
+        "8": Fixture(home="Ikorodu United", away="Remo Stars", date=datetime(2026, 10, 18, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Rivers United", away="Remo Stars", date=datetime(2026, 10, 25, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Eyimba", away="Ikorodu United", date=datetime(2026, 10, 25, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Shooting Stars", away="Abia Warriors", date=datetime(2026, 10, 25, 18, 30, 0), seconds_duration=240),
+        "9": Fixture(home="Rivers United", away="Remo Stars", date=datetime(2026, 10, 25, 16, 10, 0), seconds_duration=240),
+        "10": Fixture(home="Eyimba", away="Ikorodu United", date=datetime(2026, 10, 25, 17, 20, 0), seconds_duration=240),
+        "11": Fixture(home="Shooting Stars", away="Abia Warriors", date=datetime(2026, 10, 25, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Abia Warriors", away="Rivers United", date=datetime(2026, 11, 1, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Ikorodu United", away="Shooting Stars", date=datetime(2026, 11, 1, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Remo Stars", away="Eyimba", date=datetime(2026, 11, 1, 18, 30, 0), seconds_duration=240),
+        "12": Fixture(home="Abia Warriors", away="Rivers United", date=datetime(2026, 11, 1, 16, 10, 0), seconds_duration=240),
+        "13": Fixture(home="Ikorodu United", away="Shooting Stars", date=datetime(2026, 11, 1, 17, 20, 0), seconds_duration=240),
+        "14": Fixture(home="Remo Stars", away="Eyimba", date=datetime(2026, 11, 1, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Rivers United", away="Eyimba", date=datetime(2026, 11, 8, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Remo Stars", away="Shooting Stars", date=datetime(2026, 11, 8, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Ikorodu United", away="Abia Warriors", date=datetime(2026, 11, 8, 18, 30, 0), seconds_duration=240),
+        "15": Fixture(home="Rivers United", away="Eyimba", date=datetime(2026, 11, 8, 16, 10, 0), seconds_duration=240),
+        "16": Fixture(home="Remo Stars", away="Shooting Stars", date=datetime(2026, 11, 8, 17, 20, 0), seconds_duration=240),
+        "17": Fixture(home="Ikorodu United", away="Abia Warriors", date=datetime(2026, 11, 8, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Ikorodu United", away="Rivers United", date=datetime(2026, 11, 15, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Abia Warriors", away="Remo Stars", date=datetime(2026, 11, 15, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Shooting Stars", away="Eyimba", date=datetime(2026, 11, 15, 18, 30, 0), seconds_duration=240),
+        "18": Fixture(home="Ikorodu United", away="Rivers United", date=datetime(2026, 11, 15, 16, 10, 0), seconds_duration=240),
+        "19": Fixture(home="Abia Warriors", away="Remo Stars", date=datetime(2026, 11, 15, 17, 20, 0), seconds_duration=240),
+        "20": Fixture(home="Shooting Stars", away="Eyimba", date=datetime(2026, 11, 15, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Rivers United", away="Shooting Stars", date=datetime(2026, 11, 22, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Eyimba", away="Abia Warriors", date=datetime(2026, 11, 22, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Remo Stars", away="Ikorodu United", date=datetime(2026, 11, 22, 18, 30, 0), seconds_duration=240),
+        "21": Fixture(home="Rivers United", away="Shooting Stars", date=datetime(2026, 11, 22, 16, 10, 0), seconds_duration=240),
+        "22": Fixture(home="Eyimba", away="Abia Warriors", date=datetime(2026, 11, 22, 17, 20, 0), seconds_duration=240),
+        "23": Fixture(home="Remo Stars", away="Ikorodu United", date=datetime(2026, 11, 22, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Remo Stars", away="Rivers United", date=datetime(2026, 11, 29, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Ikorodu United", away="Eyimba", date=datetime(2026, 11, 29, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Abia Warriors", away="Shooting Stars", date=datetime(2026, 11, 29, 18, 30, 0), seconds_duration=240),
+        "24": Fixture(home="Remo Stars", away="Rivers United", date=datetime(2026, 11, 29, 16, 10, 0), seconds_duration=240),
+        "25": Fixture(home="Ikorodu United", away="Eyimba", date=datetime(2026, 11, 29, 17, 20, 0), seconds_duration=240),
+        "26": Fixture(home="Abia Warriors", away="Shooting Stars", date=datetime(2026, 11, 29, 18, 30, 0), seconds_duration=240),
         
-        "0": Fixture(home="Rivers United", away="Abia Warriors", date=datetime(2026, 12, 6, 16, 10, 0), seconds_duration=240),
-        "0": Fixture(home="Shooting Stars", away="Ikorodu United", date=datetime(2026, 12, 6, 17, 20, 0), seconds_duration=240),
-        "0": Fixture(home="Eyimba", away="Remo Stars", date=datetime(2026, 12, 6, 18, 30, 0), seconds_duration=240),
+        "27": Fixture(home="Rivers United", away="Abia Warriors", date=datetime(2026, 12, 6, 16, 10, 0), seconds_duration=240),
+        "28": Fixture(home="Shooting Stars", away="Ikorodu United", date=datetime(2026, 12, 6, 17, 20, 0), seconds_duration=240),
+        "29": Fixture(home="Eyimba", away="Remo Stars", date=datetime(2026, 12, 6, 18, 30, 0), seconds_duration=240),
     }
-    data = League.new_season(league, season, path, teams, fixtures, )
+    data = League.new_season(league, season, path.parent.parent, teams, fixtures, )
 
-    # fixture_ids = ["14"]
-    # data.update_fixtures(preseason=[], fixtures=None, new_round=True, path=path)
+    # data.update_fixtures(fixtures=None, new_round=True, path=path)
 
-    data.update_stats(path)
+    # data.update_stats(path)
 
     data.build(
         season=season,
@@ -1389,6 +1382,6 @@ if __name__ == "__main__":
         team_logos=team_logos,
         match_day_title=match_day_title,
         root=root,
-        active="August 9, 2026",
+        active="October 4, 2026",
         buildpath=buildpath,
     )
