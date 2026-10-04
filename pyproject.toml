@@ -48,3 +48,5 @@ shell = 'npm run build:css-watch'
 cwd = "./frontend"
 help = "used to watch a folder for changes and run the css build command"
 
+[tool.black]
+target-version = ["py313"]

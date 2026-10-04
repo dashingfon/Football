@@ -286,19 +286,6 @@ class TeamTable(BaseModel):
         return result
 
 
-class LeagueRoundData(BaseModel):
-    players_stats: IndividualTable
-    team_stats: TeamTable
-
-
-class LeagueData(BaseModel):
-    current_round: int
-    teams: dict[str, list[str]]
-    fixtures: list[Fixture]
-    titles: dict[str, str]
-    round_data: dict[str, LeagueRoundData]
-
-
 class Leagues_RoundData(BaseModel):
     players_stats: list[IndividualTable] = Field(default_factory=list)
     team_stats: list[TeamTable] = Field(default_factory=list)
@@ -844,6 +831,270 @@ class MultipleLeagueKnockout(BaseModel):
                 "player_teams": player_to_team,
                 "tables": sorted_table,
                 "preseason": self.pre_season,
+                "fixtures": fixtures,
+                "team_logo": team_logos,
+                "player_stats": {
+                    "Top Scorer": bundle(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.goals, x.points),
+                            reverse=True,
+                        )[:3],
+                        "goals",
+                    ),
+                    "Top Assist": bundle(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.assists, x.points),
+                            reverse=True,
+                        )[:3],
+                        "assists",
+                    ),
+                    "Goals and Assists": bundle(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.goals_and_assists, x.points),
+                            reverse=True,
+                        )[:3],
+                        "goals_and_assists",
+                    ),
+                    "Yellow Cards": bundle(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.yellow_cards, x.points),
+                            reverse=True,
+                        )[:3],
+                        "yellow_cards",
+                    ),
+                    "Red Cards": bundle(
+                        sorted(
+                            last_round.players_stats,
+                            key=lambda x: (x.red_cards, x.points),
+                            reverse=True,
+                        )[:3],
+                        "red_cards",
+                    ),
+                },
+                "team_stats": {
+                    "Goals Scored": bundle(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.goals_scored,
+                            reverse=True,
+                        )[:3],
+                        "goals_scored",
+                    ),
+                    "Goals Conceeded": bundle(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.goals_conceded,
+                            reverse=True,
+                        )[:3],
+                        "goals_conceded",
+                    ),
+                    "Yellow Cards": bundle(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.yellow_cards,
+                            reverse=True,
+                        )[:3],
+                        "yellow_cards",
+                    ),
+                    "Red Cards": bundle(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.red_cards,
+                            reverse=True,
+                        )[:3],
+                        "red_cards",
+                    ),
+                    "Cleansheets": bundle(
+                        sorted(
+                            last_round.team_stats,
+                            key=lambda x: x.cleansheets,
+                            reverse=True,
+                        )[:3],
+                        "cleansheets",
+                    ),
+                },
+            }
+            env = Environment(loader=FileSystemLoader("templates"))
+            template = env.get_template("v2-league.jinja")
+            rendered = template.render(**context)
+            pathlib.Path(season_path).mkdir(exist_ok=True)
+
+            buildpath = (
+                buildpath if buildpath is not None else season_path / f"{season}.html"
+            )
+            with open(
+                buildpath,
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(rendered)
+        else:
+            print("No Previous stats to build! ")
+            return None
+
+
+class League(BaseModel):
+    league: str
+    season: str
+    current_round: int
+    teams: list[Team] = Field(default_factory=list)
+    table: list[str] = Field(default_factory=list)
+    fixtures: dict[str, Fixture] = Field(default_factory=dict)
+    rounds: list[Leagues_RoundData] = Field(default_factory=list)
+
+    @classmethod
+    def load(cls, path: pathlib.PurePath) -> "League":
+        with open(path) as f:
+            data = json.load(f)
+        return cls(**data)
+
+    @classmethod
+    def new_season(
+        cls,
+        league: str,
+        season: str,
+        path: pathlib.PurePath,
+        teams: list[Team],
+        fixtures: dict[str, Fixture],
+        table_dict: list[str],
+    ) -> "League":
+        print("Starting a new season! ...\n")
+        player_stats = []
+        team_stats = []
+
+        for team in teams:
+            team_stats.append(TeamTable(name=team.name))
+            for player in team.players:
+                player_stats.append(IndividualTable(name=player))
+
+        full_data = cls(
+            league=league,
+            season=season,
+            current_round=0,
+            teams=teams,
+            table=table_dict,
+            fixtures=fixtures,
+            rounds=[
+                Leagues_RoundData(players_stats=player_stats, team_stats=team_stats)
+            ],
+        )
+
+        try:
+            with open(path / "league.json") as f:
+                league_json = json.load(f)
+        except Exception:
+            league_json = {"name": league, "seasons": []}
+            
+        seasons_dict: dict = {}
+        for s in league_json["seasons"]:
+            seasons_dict[s] = None
+        seasons_dict[season] = None
+        league_json["seasons"] = list(seasons_dict.keys())
+
+        with open(path / "league.json", "w") as f:
+            json.dump(league_json, f, indent=2)
+
+        pathlib.Path(path / "seasons").mkdir(exist_ok=True)
+        save(full_data, path / "seasons" / f"{season}.json")
+
+        return full_data
+
+
+    def update_fixtures(
+        self,
+        fixtures: dict[str, Fixture] | None,
+        new_round: bool,
+        path: pathlib.PurePath,
+    ) -> None:
+        print("Updating matchday Fixtures! ...\n")
+
+        if fixtures is None:
+            fixtures = {}
+            number_of_fixtures = int(input("Enter the number of fixtures: "))
+            for _ in range(number_of_fixtures):
+                fixture_id = input("Enter the fixture Id: ")
+                fixture = self.fixtures[fixture_id]
+                events = input_events(fixture_id)
+                fixture.events.extend(events)
+                fixtures[fixture_id] = fixture
+                print("\n")
+
+        if new_round:
+            self.current_round += 1
+            self.rounds.append(Leagues_RoundData(players_stats=[], team_stats=[]))
+        self.fixtures.update(fixtures)
+        
+        save(self, path)
+
+    def update_stats(self, path: pathlib.PurePath) -> None:
+        current_round = self.current_round
+        if current_round >= 1:
+            teams = self.teams
+            fixtures = self.fixtures
+
+            previous_player_stats = deepcopy(self.rounds[0].players_stats)
+            previous_team_stats = deepcopy(self.rounds[0].team_stats)
+
+            individual_table, team_table = apply_league_statistics(
+                fixtures,
+                previous_player_stats,
+                previous_team_stats,
+                teams,
+            )
+            self.rounds[current_round].players_stats = individual_table
+            self.rounds[current_round].team_stats = team_table
+            save(self, path)
+        else:
+            print("No Previous stats to update! ")
+
+    def build(
+        self,
+        season: str,
+        season_path: pathlib.PurePath,
+        team_logos: dict[str, str],
+        match_day_title: dict[str, str] | None = None,
+        root: str = "../../..",
+        active: str = "",
+        buildpath: pathlib.PurePath | None = None,
+    ) -> None:
+        current_round = self.current_round
+        if current_round > 0:
+            last_round = self.rounds[-1]
+            group_round = self.rounds[-1] if len(self.rounds) <= 4 else self.rounds[3]
+
+            group_stats = sorted(
+                group_round.team_stats,
+                key=lambda x: (x.points, x.goals_difference, x.goals_scored),
+                reverse=True,
+            )
+
+            def bundle(
+                table: list[IndividualTable] | list[TeamTable], key: str
+            ) -> tuple[list[tuple[str, int]], str]:
+                result: list[tuple[str, int]] = []
+                for pl in table:
+                    result.append((pl.name, getattr(pl, key)))
+                return result, key
+
+            player_to_team: dict[str, str] = {}
+            for team_name in self.teams:
+                for player in team_name.players:
+                    player_to_team[player] = team_name.name
+
+            fixtures_array = list(self.fixtures.values())
+            fixtures = Fixture.group_by_datetime(fixtures_array)
+            match_day_title = {} if match_day_title is None else match_day_title
+
+            context = {
+                "root": root,
+                "active": active,
+                "match_title": match_day_title,
+                "player_teams": player_to_team,
+                "tables": group_stats,
                 "fixtures": fixtures,
                 "team_logo": team_logos,
                 "player_stats": {
