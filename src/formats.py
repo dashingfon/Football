@@ -1183,7 +1183,7 @@ class League(BaseModel):
                 },
             }
             env = Environment(loader=FileSystemLoader("templates"))
-            template = env.get_template("v2-league.jinja")
+            template = env.get_template("v3-league.jinja")
             rendered = template.render(**context)
             pathlib.Path(season_path).mkdir(exist_ok=True)
 
