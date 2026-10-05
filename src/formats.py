@@ -1219,12 +1219,12 @@ if __name__ == "__main__":
         "December 6, 2026": "Day 10",
     }
     team_logos = {
-        "Eyimba": "chelsea1.svg",
-        "Shooting Stars": "man_united1.svg",
-        "Abia Warriors": "barcelona.svg",
-        "Ikorodu United": "real_madrid.svg",
-        "Remo Stars": "arsenal.svg",
-        "Rivers United": "liverpool.svg",
+        "Eyimba": "eyimba.png",
+        "Shooting Stars": "shooting_stars.png",
+        "Abia Warriors": "abia_warriors.png",
+        "Ikorodu United": "ikorodu_united.png",
+        "Remo Stars": "remo_stars.png",
+        "Rivers United": "rivers.png",
         "": "",
     }
 
