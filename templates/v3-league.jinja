@@ -273,20 +273,6 @@
                     </div>
                     {% endmacro %}
 
-                    <div class="bg-bg-1 flex flex-col h-fit rounded-xl mb-4">
-                        <drop-down-toggle>
-                            {{matchday("June 28, 2026")}}
-
-                            <div dropdown class="hidden rounded-b-xl h-fit divide divide-y divide-bg-3 bg-bg-2">
-
-                                {% for match in preseason %}
-                                {{fixture(match)}}
-                                {% endfor %}
-
-                            </div>
-                        </drop-down-toggle>
-                    </div>
-
                     {% for key, match in fixtures.items() %}
                     <div class="bg-bg-1 flex flex-col h-fit rounded-xl mb-4">
                         <drop-down-toggle>
