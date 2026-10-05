@@ -282,7 +282,110 @@
           }
         }
       ],
-      "map": {}
+      "map": {
+        "goal": [
+          {
+            "side": "h",
+            "scorer": "Oluwatoyin",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Aremu",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Adufe",
+            "assist": "Cb",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Perspex",
+            "assist": "Obinna",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Yerima",
+            "assist": "Perspex",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "yellow_card": [
+          {
+            "side": "h",
+            "player": "Jojo"
+          },
+          {
+            "side": "a",
+            "player": "Ajenifuja"
+          },
+          {
+            "side": "h",
+            "player": "Perspex"
+          },
+          {
+            "side": "h",
+            "player": "Yerima"
+          }
+        ],
+        "sub": [
+          {
+            "side": "a",
+            "in": "Eheleodu",
+            "out": "Aremu"
+          },
+          {
+            "side": "a",
+            "in": "Agbas",
+            "out": "Ajenifuja"
+          },
+          {
+            "side": "h",
+            "in": "Bobby Kay",
+            "out": "Oluwatoyin"
+          },
+          {
+            "side": "h",
+            "in": "Yerima",
+            "out": "Ogbon"
+          },
+          {
+            "side": "a",
+            "in": "Kimpembe",
+            "out": "Cb"
+          },
+          {
+            "side": "a",
+            "in": "Eheleodu",
+            "out": "Kimpembe"
+          },
+          {
+            "side": "a",
+            "in": "Darah",
+            "out": "Adufe"
+          },
+          {
+            "side": "h",
+            "in": "Oluwatoyin",
+            "out": "Bobby Kay"
+          },
+          {
+            "side": "a",
+            "in": "Nf",
+            "out": "Darah"
+          }
+        ]
+      }
     },
     "1": {
       "home": "Shooting Stars",
@@ -444,7 +547,103 @@
           }
         }
       ],
-      "map": {}
+      "map": {
+        "yellow_card": [
+          {
+            "side": "h",
+            "player": "Gattuso"
+          },
+          {
+            "side": "a",
+            "player": "Latino"
+          },
+          {
+            "side": "h",
+            "player": "Aguero"
+          }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Sewenzy",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Muntaka",
+            "assist": "Sewenzy",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Fryo",
+            "assist": "Holuwatunmise",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Muntaka",
+            "assist": "Emelu",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Muntaka",
+            "assist": "Emelu",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Latino",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        ],
+        "sub": [
+          {
+            "side": "h",
+            "in": "Fryo",
+            "out": "Don Mayor"
+          },
+          {
+            "side": "h",
+            "in": "Cambiasso",
+            "out": "Aguero"
+          },
+          {
+            "side": "h",
+            "in": "Aguero",
+            "out": "Cambiasso"
+          },
+          {
+            "side": "a",
+            "in": "Olah",
+            "out": "Sewenzy"
+          },
+          {
+            "side": "a",
+            "in": "Latino",
+            "out": "Emelu"
+          },
+          {
+            "side": "a",
+            "in": "Kunle",
+            "out": "Big Papa"
+          },
+          {
+            "side": "a",
+            "in": "Noah",
+            "out": "Muntaka"
+          }
+        ]
+      }
     },
     "2": {
       "home": "Abia Warriors",
@@ -582,7 +781,89 @@
           }
         }
       ],
-      "map": {}
+      "map": {
+        "sub": [
+          {
+            "side": "h",
+            "in": "Dave",
+            "out": "Ayotunde"
+          },
+          {
+            "side": "a",
+            "in": "Admoore",
+            "out": "Damdigit"
+          },
+          {
+            "side": "a",
+            "in": "Wire",
+            "out": "Sodiq"
+          },
+          {
+            "side": "a",
+            "in": "Tiwatope",
+            "out": "Uneke"
+          },
+          {
+            "side": "a",
+            "in": "Solo B",
+            "out": "Victor"
+          },
+          {
+            "side": "h",
+            "in": "Famous",
+            "out": "Bidex"
+          },
+          {
+            "side": "a",
+            "in": "Honourable",
+            "out": "Admoore"
+          }
+        ],
+        "goal": [
+          {
+            "side": "a",
+            "scorer": "Mazeedah",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Uneke",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Mazeedah",
+            "assist": "Sodiq",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Uneke",
+            "assist": "Victor",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "a",
+            "scorer": "Wire",
+            "assist": "Uneke",
+            "is_own_goal": false,
+            "is_penalty": false
+          },
+          {
+            "side": "h",
+            "scorer": "Akins",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          }
+        ]
+      }
     },
     "3": {
       "home": "Rivers United",
@@ -1901,8 +2182,1102 @@
       ]
     },
     {
-      "players_stats": [],
-      "team_stats": []
+      "players_stats": [
+        {
+          "name": "Jojo",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Yerima",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Perspex",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Ogbon",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Taiwo",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Eze",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Obinna",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Oluwatoyin",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bobby Kay",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Oluwafemi",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sheriff",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Kenya",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aguero",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Gattuso",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Holuwatunmise",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Don Mayor",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Cambiasso",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Arshavin",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ifeanyi",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lino",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Fortune",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Fryo",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Skipol",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Rowland",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bidex",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Famous",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "S Ikemba",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Dave",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ayotunde",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Akins",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tommy",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ikenga",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Brainy",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Machala",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Irregular",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Mazeedah",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 2,
+          "assists": 0,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Victor",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Wire",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "C Benson",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Honourable",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Damdigit",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Uneke",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 2,
+          "assists": 1,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Admoore",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tiwatope",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Tm",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sodiq",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 2,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Solo B",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bubu",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sewenzy",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 1,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Kunle",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Somto",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Emelu",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 2,
+          "goals_and_assists": 2,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Bj Hunter",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Noah",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Latino",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Big Papa",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Olah",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Muntaka",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 3,
+          "assists": 0,
+          "goals_and_assists": 3,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Sir Shigo",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Jasperido",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Mr Dan",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Aremu",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Cb",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 1,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Kimpembe",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Nf",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Darah",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Agbwoselusi",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Agbas",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Eheleodu",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Adufe",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 1,
+          "assists": 0,
+          "goals_and_assists": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ajenifuja",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Miizy",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        }
+      ],
+      "team_stats": [
+        {
+          "name": "Eyimba",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 3,
+          "goals_conceded": 2,
+          "goals_difference": 1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 3
+        },
+        {
+          "name": "Shooting Stars",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 1,
+          "goals_conceded": 5,
+          "goals_difference": -4,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 2
+        },
+        {
+          "name": "Abia Warriors",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 1,
+          "goals_conceded": 5,
+          "goals_difference": -4,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Ikorodu United",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 5,
+          "goals_conceded": 1,
+          "goals_difference": 4,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Remo Stars",
+          "points": 3,
+          "played": 1,
+          "wins": 1,
+          "draws": 0,
+          "loses": 0,
+          "goals_scored": 5,
+          "goals_conceded": 1,
+          "goals_difference": 4,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        },
+        {
+          "name": "Rivers United",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals_scored": 2,
+          "goals_conceded": 3,
+          "goals_difference": -1,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 1
+        }
+      ]
     }
   ]
 }
