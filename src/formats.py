@@ -1230,16 +1230,16 @@ if __name__ == "__main__":
 
     data = League.load(path)
 
-    data.update_fixtures(fixtures=None, new_round=True, path=path)
+    # data.update_fixtures(fixtures=None, new_round=True, path=path)
 
-    # data.update_stats(path)
+    data.update_stats(path)
 
-    # data.build(
-    #     season=season,
-    #     season_path=path.parent,
-    #     team_logos=team_logos,
-    #     match_day_title=match_day_title,
-    #     root=root,
-    #     active="October 11, 2026",
-    #     buildpath=buildpath,
-    # )
+    data.build(
+        season=season,
+        season_path=path.parent,
+        team_logos=team_logos,
+        match_day_title=match_day_title,
+        root=root,
+        active="October 11, 2026",
+        buildpath=buildpath,
+    )
