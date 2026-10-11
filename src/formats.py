@@ -1240,6 +1240,6 @@ if __name__ == "__main__":
         team_logos=team_logos,
         match_day_title=match_day_title,
         root=root,
-        active="October 4, 2026",
+        active="October 11, 2026",
         buildpath=buildpath,
     )

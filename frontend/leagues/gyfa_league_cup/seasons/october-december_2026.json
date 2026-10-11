@@ -866,49 +866,49 @@
       }
     },
     "3": {
-      "home": "Rivers United",
-      "away": "Ikorodu United",
-      "date": "2026-10-11T16:10:00",
+      "home": "Eyimba",
+      "away": "Shooting Stars",
+      "date": "2026-10-11T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "4": {
-      "home": "Remo Stars",
-      "away": "Abia Warriors",
-      "date": "2026-10-11T17:20:00",
+      "home": "Rivers United",
+      "away": "Ikorodu United",
+      "date": "2026-10-11T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "5": {
-      "home": "Eyimba",
-      "away": "Shooting Stars",
-      "date": "2026-10-11T18:30:00",
+      "home": "Remo Stars",
+      "away": "Abia Warriors",
+      "date": "2026-10-11T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "6": {
-      "home": "Shooting Stars",
-      "away": "Rivers United",
-      "date": "2026-10-18T16:10:00",
+      "home": "Abia Warriors",
+      "away": "Eyimba",
+      "date": "2026-10-18T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "7": {
-      "home": "Abia Warriors",
-      "away": "Eyimba",
-      "date": "2026-10-18T17:20:00",
+      "home": "Ikorodu United",
+      "away": "Remo Stars",
+      "date": "2026-10-18T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "8": {
-      "home": "Ikorodu United",
-      "away": "Remo Stars",
-      "date": "2026-10-18T18:30:00",
+      "home": "Shooting Stars",
+      "away": "Rivers United",
+      "date": "2026-10-18T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -916,23 +916,23 @@
     "9": {
       "home": "Rivers United",
       "away": "Remo Stars",
-      "date": "2026-10-25T16:10:00",
+      "date": "2026-10-25T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "10": {
-      "home": "Eyimba",
-      "away": "Ikorodu United",
-      "date": "2026-10-25T17:20:00",
+      "home": "Shooting Stars",
+      "away": "Abia Warriors",
+      "date": "2026-10-25T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "11": {
-      "home": "Shooting Stars",
-      "away": "Abia Warriors",
-      "date": "2026-10-25T18:30:00",
+      "home": "Eyimba",
+      "away": "Ikorodu United",
+      "date": "2026-10-25T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -940,7 +940,7 @@
     "12": {
       "home": "Abia Warriors",
       "away": "Rivers United",
-      "date": "2026-11-01T16:10:00",
+      "date": "2026-11-01T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -948,7 +948,7 @@
     "13": {
       "home": "Ikorodu United",
       "away": "Shooting Stars",
-      "date": "2026-11-01T17:20:00",
+      "date": "2026-11-01T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -956,23 +956,23 @@
     "14": {
       "home": "Remo Stars",
       "away": "Eyimba",
-      "date": "2026-11-01T18:30:00",
+      "date": "2026-11-01T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "15": {
-      "home": "Rivers United",
-      "away": "Eyimba",
-      "date": "2026-11-08T16:10:00",
+      "home": "Remo Stars",
+      "away": "Shooting Stars",
+      "date": "2026-11-08T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "16": {
-      "home": "Remo Stars",
-      "away": "Shooting Stars",
-      "date": "2026-11-08T17:20:00",
+      "home": "Rivers United",
+      "away": "Eyimba",
+      "date": "2026-11-08T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -980,7 +980,7 @@
     "17": {
       "home": "Ikorodu United",
       "away": "Abia Warriors",
-      "date": "2026-11-08T18:30:00",
+      "date": "2026-11-08T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -988,31 +988,31 @@
     "18": {
       "home": "Ikorodu United",
       "away": "Rivers United",
-      "date": "2026-11-15T16:10:00",
+      "date": "2026-11-15T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "19": {
-      "home": "Abia Warriors",
-      "away": "Remo Stars",
-      "date": "2026-11-15T17:20:00",
+      "home": "Shooting Stars",
+      "away": "Eyimba",
+      "date": "2026-11-15T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "20": {
-      "home": "Shooting Stars",
-      "away": "Eyimba",
-      "date": "2026-11-15T18:30:00",
+      "home": "Abia Warriors",
+      "away": "Remo Stars",
+      "date": "2026-11-15T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "21": {
-      "home": "Rivers United",
-      "away": "Shooting Stars",
-      "date": "2026-11-22T16:10:00",
+      "home": "Remo Stars",
+      "away": "Ikorodu United",
+      "date": "2026-11-22T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
@@ -1020,63 +1020,63 @@
     "22": {
       "home": "Eyimba",
       "away": "Abia Warriors",
-      "date": "2026-11-22T17:20:00",
+      "date": "2026-11-22T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "23": {
-      "home": "Remo Stars",
-      "away": "Ikorodu United",
-      "date": "2026-11-22T18:30:00",
+      "home": "Rivers United",
+      "away": "Shooting Stars",
+      "date": "2026-11-22T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "24": {
-      "home": "Remo Stars",
-      "away": "Rivers United",
-      "date": "2026-11-29T16:10:00",
+      "home": "Abia Warriors",
+      "away": "Shooting Stars",
+      "date": "2026-11-28T09:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "25": {
-      "home": "Ikorodu United",
-      "away": "Eyimba",
-      "date": "2026-11-29T17:20:00",
+      "home": "Remo Stars",
+      "away": "Rivers United",
+      "date": "2026-11-28T10:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "26": {
-      "home": "Abia Warriors",
-      "away": "Shooting Stars",
-      "date": "2026-11-29T18:30:00",
+      "home": "Ikorodu United",
+      "away": "Eyimba",
+      "date": "2026-11-28T11:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "27": {
-      "home": "Rivers United",
-      "away": "Abia Warriors",
-      "date": "2026-12-06T16:10:00",
+      "home": "Shooting Stars",
+      "away": "Ikorodu United",
+      "date": "2026-12-06T16:30:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "28": {
-      "home": "Shooting Stars",
-      "away": "Ikorodu United",
-      "date": "2026-12-06T17:20:00",
+      "home": "Eyimba",
+      "away": "Remo Stars",
+      "date": "2026-12-06T17:10:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
     },
     "29": {
-      "home": "Eyimba",
-      "away": "Remo Stars",
-      "date": "2026-12-06T18:30:00",
+      "home": "Rivers United",
+      "away": "Abia Warriors",
+      "date": "2026-12-06T17:50:00",
       "seconds_duration": 240,
       "events": [],
       "map": {}
