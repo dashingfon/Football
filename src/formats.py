@@ -1215,7 +1215,7 @@ if __name__ == "__main__":
         "November 8, 2026": "Day 6",
         "November 15, 2026": "Day 7",
         "November 22, 2026": "Day 8",
-        "November 29, 2026": "Day 9",
+        "November 28, 2026": "Day 9",
         "December 6, 2026": "Day 10",
     }
     team_logos = {
