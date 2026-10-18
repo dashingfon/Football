@@ -1,7 +1,7 @@
 {
   "league": "gyfa_league_cup",
   "season": "october-december_2026",
-  "current_round": 2,
+  "current_round": 3,
   "teams": [
     {
       "name": "Eyimba",
@@ -102,7 +102,8 @@
         "Eheleodu",
         "Adufe",
         "Ajenifuja",
-        "Miizy"
+        "Miizy",
+        "Lol"
       ]
     }
   ],
@@ -1404,7 +1405,142 @@
       "away": "Eyimba",
       "date": "2026-10-18T16:30:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "6",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Yerima",
+            "assist": "Obinna",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Irregular",
+            "out": "Rowland"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Oluwatoyin",
+            "out": "Kenya"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Taiwo",
+            "out": "Obinna"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Ayotunde",
+            "out": "Famous"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Brainy",
+            "out": "Rowland"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Brainy",
+            "assist": "Bidex",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Obinna",
+            "out": "Taiwo"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Obinna",
+            "assist": "Perspex",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Tommy",
+            "out": "Bidex"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Machala",
+            "out": "Ayotunde"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Oluwatoyin",
+            "out": "Obinna"
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Bobby Kay",
+            "assist": "Perspex",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "6",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Famous",
+            "out": "Brainy"
+          }
+        }
+      ],
       "map": {}
     },
     "7": {
@@ -1412,7 +1548,202 @@
       "away": "Remo Stars",
       "date": "2026-10-18T17:10:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "7",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sewenzy",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Victor"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Wire"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sewenzy",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": true
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Damdigit",
+            "out": "Wire"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Admoore",
+            "out": "Mazeedah"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Jasperido",
+            "assist": "Sewenzy",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Tm",
+            "out": "Sodiq"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Jasperido"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Latino",
+            "out": "Sewenzy"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Somto"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Tiwatope",
+            "out": "Uneke"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Noah",
+            "out": "Jasperido"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Honourable",
+            "out": "Victor"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Admoore"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Big Papa"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Damdigit"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Solo B",
+            "out": "Damdigit"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "red_card",
+          "event": {
+            "side": "a",
+            "player": "Latino"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Mazeedah"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Uneke",
+            "out": "Admoore"
+          }
+        },
+        {
+          "fixture": "7",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Olah"
+          }
+        }
+      ],
       "map": {}
     },
     "8": {
@@ -1420,7 +1751,194 @@
       "away": "Rivers United",
       "date": "2026-10-18T17:50:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Kimpembe",
+            "out": "Mr Dan"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lino",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Aremu",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Adufe",
+            "assist": "Kimpembe",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Lino",
+            "assist": "Arshavin",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Skipol",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Agbwoselusi",
+            "out": "Cb"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Gattuso",
+            "out": "Don Mayor"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Fortune",
+            "out": "Arshavin"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Gattuso"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Adufe",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Fortune",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Lol",
+            "out": "Nf"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Arshavin",
+            "out": "Lino"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Agbas",
+            "out": "Kimpembe"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Darah",
+            "out": "Agbwoselusi"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Lino",
+            "out": "Fortune"
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Aremu",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "8",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Kimpembe",
+            "out": "Aremu"
+          }
+        }
+      ],
       "map": {}
     },
     "9": {
@@ -2602,6 +3120,20 @@
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
+        },
+        {
+          "name": "Lol",
+          "points": 0,
+          "played": 0,
+          "wins": 0,
+          "draws": 0,
+          "loses": 0,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
         }
       ],
       "team_stats": [
@@ -3689,6 +4221,20 @@
         },
         {
           "name": "Miizy",
+          "points": 0,
+          "played": 1,
+          "wins": 0,
+          "draws": 0,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
+        },
+        {
+          "name": "Lol",
           "points": 0,
           "played": 1,
           "wins": 0,
@@ -4798,6 +5344,20 @@
           "cleansheets": 0,
           "red_cards": 0,
           "yellow_cards": 0
+        },
+        {
+          "name": "Lol",
+          "points": 1,
+          "played": 2,
+          "wins": 0,
+          "draws": 1,
+          "loses": 1,
+          "goals": 0,
+          "assists": 0,
+          "goals_and_assists": 0,
+          "cleansheets": 0,
+          "red_cards": 0,
+          "yellow_cards": 0
         }
       ],
       "team_stats": [
@@ -4886,6 +5446,10 @@
           "yellow_cards": 2
         }
       ]
+    },
+    {
+      "players_stats": [],
+      "team_stats": []
     }
   ]
 }
