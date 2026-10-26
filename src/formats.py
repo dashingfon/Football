@@ -1232,7 +1232,7 @@ if __name__ == "__main__":
 
     # data.update_fixtures(fixtures=None, new_round=True, path=path)
 
-    # data.update_stats(path)
+    data.update_stats(path)
 
     data.build(
         season=season,
@@ -1240,6 +1240,6 @@ if __name__ == "__main__":
         team_logos=team_logos,
         match_day_title=match_day_title,
         root=root,
-        active="October 18, 2026",
+        active="October 25, 2026",
         buildpath=buildpath,
     )

@@ -1,7 +1,7 @@
 {
   "league": "gyfa_league_cup",
   "season": "october-december_2026",
-  "current_round": 3,
+  "current_round": 4,
   "teams": [
     {
       "name": "Eyimba",
@@ -2261,7 +2261,176 @@
       "away": "Remo Stars",
       "date": "2026-10-25T16:30:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Adufe",
+            "assist": "Ajenifuja",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Aremu",
+            "assist": "",
+            "is_own_goal": true,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Agbas",
+            "out": "Lol"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Adufe",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Jasperdo",
+            "assist": "Muntaka",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Aremu"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Muntaka",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Sewenzy",
+            "out": "Emelu"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Somto"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sewenzy",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Darah",
+            "out": "Agbas"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Aremu",
+            "assist": "Darah",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Adufe"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Somto",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Kunle",
+            "out": "Jasperdo"
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Kunle",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "9",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Latino",
+            "out": "Muntaka"
+          }
+        }
+      ],
       "map": {}
     },
     "10": {
@@ -2269,7 +2438,202 @@
       "away": "Abia Warriors",
       "date": "2026-10-25T17:10:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Dave",
+            "assist": "Ayotunde",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Holuwatunmise",
+            "out": "Gatusso"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Don Mayor"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Aguero",
+            "assist": "Skipol",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Dave"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Fryo",
+            "out": "Don Mayor"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Famous",
+            "out": "Rowland"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Skipol",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Tommy",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Miizy",
+            "out": "Lino"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Tommy"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Aguero",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Fortune",
+            "out": "Miizy"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Lino",
+            "out": "Aguero"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Fortune"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Irregular",
+            "out": "Tommy"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Brainy",
+            "out": "Famous"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Ayotunde",
+            "out": "Bidex"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Brainy"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Cambiasso",
+            "out": "Fortune"
+          }
+        },
+        {
+          "fixture": "10",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Bidex",
+            "out": "Irregular"
+          }
+        }
+      ],
       "map": {}
     },
     "11": {
@@ -2277,7 +2641,217 @@
       "away": "Ikorodu United",
       "date": "2026-10-25T17:50:00",
       "seconds_duration": 240,
-      "events": [],
+      "events": [
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "h",
+            "scorer": "Obinna",
+            "assist": "Jojo",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Mazeedah"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": {
+            "side": "h",
+            "player": "Bobby Kay"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Bobby Kay"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sodiq",
+            "assist": "Uneke",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Oluwatoyin",
+            "out": "Obinna"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Taiwo",
+            "out": "Bobby Kay"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "C Benson",
+            "assist": "Admoore",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Tm",
+            "out": "C Benson"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Tm"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Oluwafemi",
+            "out": "Oluwatoyin"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "goal",
+          "event": {
+            "side": "a",
+            "scorer": "Sodiq",
+            "assist": "",
+            "is_own_goal": false,
+            "is_penalty": false
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Tiwatope",
+            "out": "Sodiq"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Admoore"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Oluwatoyin",
+            "out": "Obinna"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Sheriff",
+            "out": "Jojo"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Taiwo",
+            "out": "Perspex"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "red_card",
+          "event": {
+            "side": "h",
+            "player": "Oluwafemi"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Honourable",
+            "out": "Mazeedah"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Perspex",
+            "out": "Sheriff"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "yellow_card",
+          "event": {
+            "side": "a",
+            "player": "Tiwatope"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "a",
+            "in": "Wire",
+            "out": "Tiwatope"
+          }
+        },
+        {
+          "fixture": "11",
+          "name": "sub",
+          "event": {
+            "side": "h",
+            "in": "Obinna",
+            "out": "Taiwo"
+          }
+        }
+      ],
       "map": {}
     },
     "12": {
@@ -6873,6 +7447,10 @@
           "yellow_cards": 2
         }
       ]
+    },
+    {
+      "players_stats": [],
+      "team_stats": []
     }
   ]
 }
