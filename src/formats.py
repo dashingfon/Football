@@ -1232,7 +1232,7 @@ if __name__ == "__main__":
 
     # data.update_fixtures(fixtures=None, new_round=True, path=path)
 
-    data.update_stats(path)
+    # data.update_stats(path)
 
     data.build(
         season=season,
