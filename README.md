@@ -77,6 +77,11 @@ Fotclan is a social network for footballers
 
 sub
 
+# key actions
+
+1. match stats; goals, assists, yellow cards
+2. transfers
+3. 
 
 
 
