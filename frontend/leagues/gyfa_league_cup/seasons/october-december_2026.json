@@ -4716,17 +4716,6 @@
         },
         {
           "fixture": "19",
-          "name": "goal",
-          "event": {
-            "side": "a",
-            "scorer": "Oluwatoyin",
-            "assist": "Perspex",
-            "is_own_goal": false,
-            "is_penalty": false
-          }
-        },
-        {
-          "fixture": "19",
           "name": "yellow_card",
           "event": {
             "side": "h",
